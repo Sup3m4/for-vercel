@@ -1,0 +1,22 @@
+export const jaguarModels = [
+    "Daimler",
+    "E-Pace",
+    "F-Pace",
+    "F-Type",
+    "MK II",
+    "S-Type",
+    "XE",
+    "XF",
+    "XJ",
+    "XJ12",
+    "XJ40",
+    "XJ6",
+    "XJ8",
+    "XJR",
+    "XJS",
+    "XJSC",
+    "XK",
+    "XK8",
+    "XKR",
+    "X-Type"
+  ]

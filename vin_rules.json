@@ -1,0 +1,107 @@
+{   
+    "ford_patterns": [
+      { "pattern": "GBWA", "model": "S-MAX", "generation": "Mk1 (Genk)" },
+      { "pattern": "GBWM", "model": "Galaxy", "generation": "Mk3 (Genk)" },
+      { "pattern": "WS", "model": "S-MAX", "generation": "Mk2 (Valencia)" },
+      { "pattern": "WG", "model": "Galaxy", "generation": "Mk4 (Valencia)" },
+  
+      { "pattern": "GCE", "model": "C-MAX", "generation": "Mk1" },
+      { "pattern": "CB3", "model": "C-MAX", "generation": "Mk1" },
+      { "pattern": "CB7", "model": "C-MAX", "generation": "Mk2" },
+      { "pattern": "CEU", "model": "Grand C-MAX", "generation": "Mk2" },
+      { "pattern": "WF0S", "model": "C-MAX", "generation": "Mk1 (Korai széria)" },
+  
+      { "pattern": "GBBB", "model": "Mondeo", "generation": "Mk4 (5-ajtós)" },
+      { "pattern": "GBBA", "model": "Mondeo", "generation": "Mk4 (4-ajtós)" },
+      { "pattern": "GBBW", "model": "Mondeo", "generation": "Mk4 (Kombi)" },
+      { "pattern": "XXGA", "model": "Mondeo", "generation": "Mk3" },
+      { "pattern": "XXGB", "model": "Mondeo", "generation": "Mk4" },
+      { "pattern": "XXFD", "model": "Mondeo", "generation": "Mk5" },
+      { "pattern": "WF0F", "model": "Mondeo", "generation": "Mk1/Mk2" },
+      { "pattern": "WF0N", "model": "Mondeo", "generation": "Mk1/Mk2" },
+  
+      { "pattern": "GCDA", "model": "Focus", "generation": "Mk2 (5-ajtós)" },
+      { "pattern": "GCDB", "model": "Focus", "generation": "Mk2 (3-ajtós)" },
+      { "pattern": "XXDA", "model": "Focus", "generation": "Mk2" },
+      { "pattern": "XXDB", "model": "Focus", "generation": "Mk2" },
+      { "pattern": "XXBK", "model": "Focus", "generation": "Mk3" },
+      { "pattern": "XXBL", "model": "Focus", "generation": "Mk3 (Kombi)" },
+      { "pattern": "WF05", "model": "Focus", "generation": "Mk1" },
+      { "pattern": "WF0P", "model": "Focus", "generation": "Mk1" },
+      { "pattern": "WF0D", "model": "Focus", "generation": "Mk1/Mk2 Vegyes" },
+  
+      { "pattern": "XXWP", "model": "Fiesta", "generation": "Mk6" },
+      { "pattern": "XXCE", "model": "Fiesta", "generation": "Mk7" },
+      { "pattern": "WF0J", "model": "Fiesta", "generation": "Mk5" },
+      { "pattern": "WF0A", "model": "Fiesta", "generation": "Mk4" },
+      { "pattern": "WF0C", "model": "Fiesta", "generation": "Mk1/Mk2/Mk3" },
+  
+      { "pattern": "XXGD", "model": "Kuga", "generation": "Mk1" },
+      { "pattern": "XXMA", "model": "Kuga", "generation": "Mk2" },
+      { "pattern": "DMA", "model": "Kuga", "generation": "Mk2" },
+      { "pattern": "CTD", "model": "Kuga", "generation": "Mk3" },
+  
+      { "pattern": "XXJU", "model": "Fusion", "generation": "EU Model" },
+      { "pattern": "1FA6P", "model": "Fusion", "generation": "USA Sedan" },
+  
+      { "pattern": "GAEC", "model": "Puma", "generation": "Mk1 (Coupe)" },
+      { "pattern": "EC", "model": "Puma", "generation": "Mk1 (Coupe)" },
+      { "pattern": "CF7", "model": "Puma", "generation": "Mk2 (SUV)" },
+      
+      { "pattern": "WF0R", "model": "Ka", "generation": "Mk1" },
+      { "pattern": "WF0U", "model": "Ka", "generation": "Mk2 (Fiat alap)" },
+      { "pattern": "JK8", "model": "Ka+", "generation": "Mk3" },
+  
+      { "pattern": "JK8", "model": "B-MAX", "generation": "Mk1" },
+      { "pattern": "MAJ", "model": "EcoSport", "generation": "India Gyártás" },
+      { "pattern": "WF0X", "model": "EcoSport", "generation": "Romania Gyártás (Ha nem Transit)" },
+  
+      { "pattern": "1FA", "model": "Mustang", "generation": "USA" },
+      { "pattern": "1ZV", "model": "Mustang", "generation": "USA (AutoAlliance)" },
+      { "pattern": "1FAT", "model": "Mustang", "generation": "Convertible" },
+      
+      { "pattern": "1FM", "model": "Explorer", "generation": "USA SUV" },
+      { "pattern": "1FMY", "model": "Explorer", "generation": "USA" },
+      
+      { "pattern": "2FM", "model": "Edge", "generation": "Canada Gyártás" },
+      
+      { "pattern": "1FME", "model": "Escape", "generation": "USA SUV" },
+      { "pattern": "1FMCU", "model": "Escape", "generation": "USA" },
+      { "pattern": "WF0U", "model": "Maverick", "generation": "EU Escape" },
+  
+      { "pattern": "1FT", "model": "F-150", "generation": "Truck" },
+      { "pattern": "1FD", "model": "F-250", "generation": "Super Duty" },
+      { "pattern": "3FT", "model": "Ranger", "generation": "USA/Mexico" },
+      { "pattern": "MNA", "model": "Ranger", "generation": "Thailand/Australia" },
+      { "pattern": "6FP", "model": "Ranger", "generation": "South Africa" },
+      { "pattern": "AFA", "model": "Ranger", "generation": "South Africa" },
+  
+      { "pattern": "TTF", "model": "Transit", "generation": "Mk7" },
+      { "pattern": "TTS", "model": "Transit", "generation": "Mk7" },
+      { "pattern": "TTG", "model": "Transit Custom", "generation": "Mk1" },
+      { "pattern": "WF0V", "model": "Transit", "generation": "EU" },
+      { "pattern": "WF0T", "model": "Transit Connect", "generation": "EU" },
+      { "pattern": "NM0", "model": "Transit Connect", "generation": "Turkey Gyártás" },
+  
+      { "pattern": "WF0L", "model": "Galaxy", "generation": "Mk1/Mk2 (Régi)" },
+      { "pattern": "WF0W", "model": "Galaxy", "generation": "Mk1/Mk2 (Régi)" },
+  
+      { "pattern": "WF0G", "model": "Scorpio", "generation": "Mk2" },
+      { "pattern": "WF0E", "model": "Sierra", "generation": "Mk2" },
+      { "pattern": "GCAF", "model": "Escort", "generation": "Mk4/5/6" },
+      { "pattern": "WF0B", "model": "Escort", "generation": "Mk5/6" },
+      
+      { "pattern": "BB", "model": "Capri", "generation": "Classic" },
+      { "pattern": "GA", "model": "Capri", "generation": "Classic" },
+      
+      { "pattern": "WF0BB", "model": "Taunus", "generation": "EU" },
+      { "pattern": "GB", "model": "Granada", "generation": "Mk1/Mk2" },
+  
+      { "pattern": "1ZVBP", "model": "Probe", "generation": "USA" },
+      { "pattern": "1F6", "model": "Thunderbird", "generation": "USA" },
+      
+      { "pattern": "WF04", "model": "GT", "generation": "Supercar" },
+      
+      { "pattern": "WF0M", "model": "S-MAX", "generation": "Fallback (Alapértelmezett)" }
+    ]
+  }

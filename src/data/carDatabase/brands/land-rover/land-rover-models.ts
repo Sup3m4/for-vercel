@@ -1,0 +1,13 @@
+export const landRoverModels = [
+    "Defender",
+    "Discovery",
+    "Discovery Sport",
+    "Freelander",
+    "Range Rover",
+    "Range Rover Evoque",
+    "Range Rover Sport",
+    "Range Rover Velar",
+    "Series I",
+    "Series II",
+    "Series III"
+  ]

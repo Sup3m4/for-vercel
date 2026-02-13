@@ -1,0 +1,1 @@
+export const bmwModels = ["1 Series", "2 Series", "3 Series", "4 Series", "5 Series", "6 Series", "7 Series", "8 Series", "X1 Series", "X2 Series", "X3 Series", "X4 Series", "X5 Series", "X6 Series", "X7 Series", "XM Series", "Z Series"]
