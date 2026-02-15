@@ -19,6 +19,7 @@ function Loader() {
   );
 }
 
+
 // --- FÉNYLŐ TEXTÚRA (GLOW EFFEKT) - ENHANCED FOR REALISTIC LIGHTING ---
 function useGlowTexture(color: string, intensity: number = 1.0) {
   return useMemo(() => {
@@ -99,117 +100,81 @@ interface Hotspot3D {
 }
 
 // --- A. OPCIÓ: PONTOS FÉNYEK (Ha találtunk lámpát a modellben) - ENHANCED ---
-function ExactCarLights({ 
-  lights, 
-  taillights,
-  angelEyes,
-  forwardDir, 
-  isNightMode 
-}: { 
-  lights?: { left: THREE.Vector3, right: THREE.Vector3 } | null, 
-  taillights?: { left: THREE.Vector3, right: THREE.Vector3 } | null,
-  angelEyes?: { left: THREE.Vector3, right: THREE.Vector3 } | null,
-  forwardDir: number,
-  isNightMode: boolean 
-}) {
-if (!isNightMode) return null;
+function ExactCarLights({ lights, taillights, drllight, isNightMode }: any) {
+  if (!isNightMode) return null;
 
-const beamDistance = 40; 
-const beamDrop = -3.0; // Kicsit lefelé világítson
-const bulbSize = 0.05; // 5 cm-es izzó (nagyon kicsi!)
+  const beamDistance = 5; 
+  const frontOffset = 0.05; 
 
-return (
-  <group>
-      {/* --- ELSŐ LÁMPÁK --- */}
-      {lights && lights.left && (
-          <group>
-              {/* Bal Izzó - Fizikai test */}
-              <mesh position={lights.left}>
-                  {/* Apró gömb */}
-                  <sphereGeometry args={[bulbSize, 16, 16]} />
-                  {/* Erősen világító fehér anyag */}
-                  <meshStandardMaterial 
-                      color="#ffffff" 
-                      emissive="#D4EBFF"
-                      emissiveIntensity={20} // Nagyon fényes, de kicsi
-                      toneMapped={false}
-                  />
-              </mesh>
-              {/* Fénycsóva */}
-              <SpotLight
-                  position={lights.left}
-                  target-position={[lights.left.x, beamDrop, lights.left.z + (beamDistance * forwardDir)]} 
-                  angle={0.6} 
-                  penumbra={0.5} 
-                  distance={60} 
-                  attenuation={5} 
-                  anglePower={5} 
-                  intensity={150} 
-                  color="#D4EBFF" 
-                  opacity={0.4} 
-              />
-          </group>
-      )}
+  const getOffsetPosition = (lightPos: THREE.Vector3) => {
+      if (!lightPos) return new THREE.Vector3(0,0,0);
+      const pos = lightPos.clone();
+      const isXLonger = Math.abs(lightPos.x) > Math.abs(lightPos.z);
+      
+      if (isXLonger) {
+          const dirX = lightPos.x >= 0 ? 1 : -1;
+          pos.x += frontOffset * dirX;
+      } else {
+          const dirZ = lightPos.z >= 0 ? 1 : -1;
+          pos.z += frontOffset * dirZ;
+      }
+      return pos;
+  };
 
-      {lights && lights.right && (
-          <group>
-              <mesh position={lights.right}>
-                  <sphereGeometry args={[bulbSize, 16, 16]} />
-                  <meshStandardMaterial 
-                      color="#ffffff" 
-                      emissive="#D4EBFF"
-                      emissiveIntensity={20}
-                      toneMapped={false}
-                  />
-              </mesh>
-              <SpotLight
-                  position={lights.right}
-                  target-position={[lights.right.x, beamDrop, lights.right.z + (beamDistance * forwardDir)]}
-                  angle={0.6} 
-                  penumbra={0.5} 
-                  distance={60} 
-                  attenuation={5} 
-                  anglePower={5} 
-                  intensity={150} 
-                  color="#D4EBFF" 
-                  opacity={0.4}
-              />
-          </group>
-      )}
+  const getTargetPosition = (lightPos: THREE.Vector3) => {
+      if (!lightPos) return [0,0,0];
+      const isXLonger = Math.abs(lightPos.x) > Math.abs(lightPos.z);
+      
+      const targetY = lightPos.y - 0.8; 
+      
+      if (isXLonger) {
+          const dirX = lightPos.x >= 0 ? 1 : -1;
+          return [lightPos.x + (beamDistance * dirX), targetY, lightPos.z];
+      } else {
+          const dirZ = lightPos.z >= 0 ? 1 : -1;
+          return [lightPos.x, targetY, lightPos.z + (beamDistance * dirZ)];
+      }
+  };
 
-      {/* --- HÁTSÓ LÁMPÁK --- */}
-      {taillights && taillights.left && (
-          <group>
-              {/* Bal Hátsó Izzó */}
-              <mesh position={taillights.left}>
-                  <sphereGeometry args={[bulbSize, 16, 16]} />
-                  <meshStandardMaterial 
-                      color="#ff0000" 
-                      emissive="#FF0000"
-                      emissiveIntensity={10}
-                      toneMapped={false}
-                  />
-              </mesh>
-              {/* Piros fény környezetnek */}
-              <pointLight position={taillights.left} intensity={5} distance={3} color="#FF2200" decay={2} />
-          </group>
-      )}
-      {taillights && taillights.right && (
-          <group>
-              <mesh position={taillights.right}>
-                  <sphereGeometry args={[bulbSize, 16, 16]} />
-                  <meshStandardMaterial 
-                      color="#ff0000" 
-                      emissive="#FF0000"
-                      emissiveIntensity={10}
-                      toneMapped={false}
-                  />
-              </mesh>
-              <pointLight position={taillights.right} intensity={5} distance={3} color="#FF2200" decay={2} />
-          </group>
-      )}
-  </group>
-);
+  return (
+    <group>
+        {/* --- DRL LIGHTS --- */}
+        {/* Nincs fizikai fény, maga az anyag világít (emissive) */}
+
+        {/* --- HEADLIGHTS --- */}
+        {lights && lights.left && (
+            <SpotLight
+                position={getOffsetPosition(lights.left)}
+                target-position={getTargetPosition(lights.left)}
+                angle={0.45} 
+                penumbra={0.8}      // Sokkal lágyabb szélek az úton
+                distance={50} 
+                attenuation={4}     // Természetesebb elhalványulás
+                anglePower={5} 
+                intensity={1800}    // Visszavett fényerő
+                color="#ffffff" 
+                opacity={0.8}       // Halványabb fénycsóva a levegőben
+            />
+        )}
+        {lights && lights.right && (
+            <SpotLight
+                position={getOffsetPosition(lights.right)}
+                target-position={getTargetPosition(lights.right)}
+                angle={0.45} 
+                penumbra={0.8}
+                distance={50} 
+                attenuation={4}
+                anglePower={5} 
+                intensity={1800}
+                color="#ffffff" 
+                opacity={0.8}
+            />
+        )}
+
+        {/* --- TAILLIGHTS --- */}
+        {/* Nincs fizikai fény a földre, maga az anyag világít (emissive) */}
+    </group>
+  );
 }
 
 // --- B. OPCIÓ: UNIVERZÁLIS FÉNYEK (Fallback - Ha nem találtunk lámpát) - ENHANCED ---
@@ -218,7 +183,7 @@ function UniversalCarLights({
     isNightMode,
     rotation = [0, 0, 0] 
 }: { 
-    carBounds: { width: number, length: number, height: number, forwardDir: number }, 
+    carBounds: { width?: number, length?: number, height?: number, forwardDir: number },
     isNightMode: boolean,
     rotation?: [number, number, number] 
 }) {
@@ -227,6 +192,7 @@ function UniversalCarLights({
 
   if (!isNightMode) return null;
 
+    
     const zFrontLocal = (carBounds.length / 2) * carBounds.forwardDir;
     const xSideLocal = carBounds.width / 2.8; // Kicsit beljebb húzzuk a szélességnél
     const yHeight = carBounds.height * 0.45;
@@ -276,7 +242,7 @@ function UniversalCarLights({
      );
   }
 
-  const { width, length, height, forwardDir } = carBounds;
+  const { width = 1.8, length = 4.5, height = 1.5, forwardDir = 1 } = carBounds;
 
   // Matematikai pozíciók (sarkok) - improved positioning
   const lampX = (width / 2) * 0.72; 
@@ -287,7 +253,7 @@ function UniversalCarLights({
   const rearZ = ((length / 2) * -forwardDir) - (0.15 * forwardDir);
 
   const beamDist = 35;
-  const beamDrop = -3.5;
+  const beamDrop = -8;
 
   return (
     <group>
@@ -327,7 +293,7 @@ function UniversalCarLights({
 }
 
 // --- KAMERA VEZÉRLŐ ---
-function CameraController({ activeSpot, hotspots, modelRadius }: { activeSpot: number | null, hotspots?: Hotspot3D[], modelRadius: number }) {
+function CameraController({ activeSpot, hotspots, modelRadius, modelRef }: { activeSpot: number | null, hotspots?: Hotspot3D[], modelRadius: number, modelRef: React.RefObject<THREE.Group> }) {
   const { camera, controls } = useThree();
   const targetVec = useRef(new THREE.Vector3(0, 0, 0)); 
   const cameraPosVec = useRef(new THREE.Vector3(0, 2, 6)); 
@@ -337,24 +303,50 @@ function CameraController({ activeSpot, hotspots, modelRadius }: { activeSpot: n
   useEffect(() => {
     if (activeSpot !== lastSpot.current) {
       lastSpot.current = activeSpot;
+      
       if (activeSpot !== null && hotspots && hotspots[activeSpot]) {
         const spot = hotspots[activeSpot];
-        const spotPos = new THREE.Vector3(spot.x, spot.y, spot.z);
-        const isTop = spot.y > 0.3;
-        const verticalOffset = isTop ? -(modelRadius * 0.20) : (modelRadius * 0.20); 
+        
+        // 1. ÁTVÁLTÁS VILÁGKOORDINÁTÁRA
+        // A hotspot a kicsinyített modell belső terében van. Ezt átszámoljuk a valós világba:
+        const worldPos = new THREE.Vector3(spot.x, spot.y, spot.z);
+        const centerWorld = new THREE.Vector3(0, 0, 0);
+        
+        if (modelRef && modelRef.current) {
+            modelRef.current.localToWorld(worldPos);
+            
+            // Megkeressük az autó TÉNYLEGES fizikai közepét a térben
+            const box = new THREE.Box3().setFromObject(modelRef.current);
+            box.getCenter(centerWorld);
+        }
 
-        targetVec.current.copy(spotPos);
+        // 2. CÉLPONT (A te eredeti UI eltolás logikád!)
+        const isTop = worldPos.y > 0.3;
+        const verticalOffset = isTop ? -(modelRadius * 0.20) : (modelRadius * 0.20); 
+        targetVec.current.copy(worldPos);
         targetVec.current.y += verticalOffset;
 
-        const direction = spotPos.clone().normalize();
+        // 3. KAMERA IRÁNYA ÉS POZÍCIÓJA
+        // A Varázslat: Kivonjuk az autó közepét a hotspotból. 
+        // Ez egy olyan nyílvesszőt hoz létre, ami az autó közepéből fixen KIFELÉ (a hotspot felé) mutat!
+        let direction = worldPos.clone().sub(centerWorld).normalize();
+        
         if (direction.length() < 0.1) direction.set(0, 0.5, 1).normalize();
 
+        // Okos Magasság (Ne menjen a padló alá)
+        direction.y = Math.max(0.4, Math.abs(direction.y)); 
+        direction.normalize();
+
         const isMobile = window.innerWidth < 768;
-        const multiplier = isMobile ? 4.2 : 3.2;
+        const multiplier = isMobile ? 4.2 : 2.7;
         const distance = Math.max(modelRadius * multiplier, 2.5); 
         
-        cameraPosVec.current.copy(spotPos).add(direction.multiplyScalar(distance));
-        cameraPosVec.current.y += isMobile ? (modelRadius * 0.4) : (modelRadius * 0.3);
+        // A kamerát letesszük a hotspotra, és kitoljuk ezen a "kifelé" mutató vonalon
+        cameraPosVec.current.copy(worldPos).add(direction.multiplyScalar(distance));
+        
+        if (cameraPosVec.current.y < 0.6) {
+            cameraPosVec.current.y = 1.0; 
+        }
 
         setIsAnimating(true);
         const timer = setTimeout(() => setIsAnimating(false), 2000);
@@ -363,20 +355,24 @@ function CameraController({ activeSpot, hotspots, modelRadius }: { activeSpot: n
         targetVec.current.set(0, 0, 0);
       }
     }
-  }, [activeSpot, hotspots, modelRadius]);
+  }, [activeSpot, hotspots, modelRadius, modelRef]);
 
   useFrame((state, delta) => {
     // @ts-ignore
     if (!controls) return;
     // @ts-ignore
     controls.target.lerp(targetVec.current, 4 * delta);
-    if (isAnimating && activeSpot !== null) camera.position.lerp(cameraPosVec.current, 3 * delta);
+    if (isAnimating && activeSpot !== null) {
+        camera.position.lerp(cameraPosVec.current, 3 * delta);
+    }
   });
+  
   return null;
 }
 
+
 // --- MODELL KOMPONENS ---
-function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, customLightNames, manualLightPositions, activeProfile }: any) {
+function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
   const { scene } = useGLTF(path, '/draco/') as any;
   const modelRef = useRef<THREE.Group>(null);
   const [loadStage, setLoadStage] = useState(0); // 0: Start, 1: Mesh Ready, 2: Shaders Ready
@@ -384,10 +380,22 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
   const [modelRadiusState, setModelRadiusState] = useState(4);
   const activeManualLights = activeProfile?.manualLightPositions;
   const fileName = (path.split('/').pop() || "").split('?')[0];
+
+  useEffect(() => {
+    console.log("=== LIGHT DETECTION DATA ===");
+    console.log("Custom Light Names received:", customLightNames);
+}, [customLightNames]);
   useMemo(() => {
     if (!scene) return;
+    
+    // --- EZT ADD HOZZÁ: LISTÁZÁS ---
+    console.log("=== 🔍 MODELL ALKATRÉSZEK LISTÁJA ===");
+    
     scene.traverse((child: any) => {
        if (child.isMesh) {
+          // KIÍRJUK MINDEN MESH NEVÉT:
+          console.log(`- "${child.name}"`); 
+          
           child.castShadow = true;
           child.receiveShadow = true;
           if (child.material && (child.name.toLowerCase().includes('glass') || child.name.toLowerCase().includes('window'))) {
@@ -396,185 +404,139 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
           }
        }
     });
+    console.log("=====================================");
  }, [scene]);
+ 
 
 
   // 1. LÁMPA DETEKTÁLÁS ÉS ANYAGCSERE (ENHANCED FOR REALISTIC NIGHT MODE)
   useEffect(() => {
     if (!scene || !modelRef.current) return;
-    const blacklist = ['brake', 'caliper', 'disc', 'rotor', 'bremse', 'wheel', 'rim', 'tire', 'felge', 'blinker', 'signal', 'indicator', 'mirror', 'spiegel', 'wing', 'turn', 'interior', 'seat', 'steering', 'windshield', 'window', 'glass_window', 'plate', 'license'];
     
-    // 1. MÉRETEK KISZÁMÍTÁSA (EZ LEGYEN AZ ELSŐ!)
-    const modelBox = new THREE.Box3().setFromObject(modelRef.current);
-    const modelSize = new THREE.Vector3();
-    const modelCenter = new THREE.Vector3();
-    modelBox.getSize(modelSize);
-    modelBox.getCenter(modelCenter);
+    modelRef.current.updateMatrixWorld(true);
 
-    // 2. IRÁNY MEGHATÁROZÁSA
-    let forwardDir = 1;
-    if (forcedForwardDir !== undefined) {
-        forwardDir = forcedForwardDir;
-    } else {
-        forwardDir = modelSize.z > modelSize.x ? 1 : -1;
-    }
+    const box = new THREE.Box3().setFromObject(modelRef.current);
+    const size = new THREE.Vector3();
+    box.getSize(size);
+    // Megnézzük, hogy az autó hosszában (Z) vagy keresztben (X) áll-e
+    const isXLonger = size.x > size.z;
 
-    // 3. LÁMPÁK KERESÉSE ÉS ANYAGCSERE
-    const foundHeadlights: THREE.Object3D[] = [];
-    const foundTaillights: THREE.Object3D[] = [];
-    const foundAngelEyes: THREE.Object3D[] = [];
-    
+    const headCenters: THREE.Vector3[] = [];
+    const tailCenters: THREE.Vector3[] = [];
+    const drlCenters: THREE.Vector3[] = [];
+
+    console.log("=== 🔍 EXACT LIGHT SEARCH STARTING ===");
+
     scene.traverse((child: any) => {
       if (child.isMesh) {
-         const name = child.name;
-         const lowerName = name.toLowerCase();
+        const meshName = (child.name || "").toLowerCase();
 
-         // --- 1. DETEKTÁLÁS ---
-         let isCustomHeadlight = false;
-         let isCustomTaillight = false;
+        const processLight = (names: string[] | undefined, targetArray: THREE.Vector3[], emissiveHex: string, nightIntensity: number, offIntensity: number, lightType: string) => {
+            if (!names || !Array.isArray(names)) return;
+            
+            let matched = false;
 
-         if (customLightNames) {
-             if (customLightNames.headlights && customLightNames.headlights.some((n: string) => name.includes(n))) {
-                 isCustomHeadlight = true;
-             }
-             if (customLightNames.taillights && customLightNames.taillights.some((n: string) => name.includes(n))) {
-                 isCustomTaillight = true;
-             }
-         }
+            if (child.material) {
+                if (Array.isArray(child.material)) {
+                   child.material = child.material.map((m: any) => {
+                       const mName = (m.name || "").toLowerCase();
+                       const isThisMatMatching = names.some(n => mName === n.toLowerCase() || meshName === n.toLowerCase());
+                       
+                       if (isThisMatMatching) {
+                           matched = true;
+                           const newM = m.clone();
+                           newM.emissive = new THREE.Color(emissiveHex);
+                           newM.emissiveIntensity = isNightMode ? nightIntensity : offIntensity;
+                           newM.toneMapped = false;
+                           newM.needsUpdate = true;
+                           return newM;
+                       }
+                       return m;
+                   });
+                } else {
+                   const mName = (child.material.name || "").toLowerCase();
+                   const isThisMatMatching = names.some(n => mName === n.toLowerCase() || meshName === n.toLowerCase());
+                   
+                   if (isThisMatMatching) {
+                       matched = true;
+                       child.material = child.material.clone();
+                       child.material.emissive = new THREE.Color(emissiveHex);
+                       child.material.emissiveIntensity = isNightMode ? nightIntensity : offIntensity; 
+                       child.material.toneMapped = false;
+                       child.material.needsUpdate = true;
+                   }
+                }
+            }
 
-         const isGeneralHeadlight = lowerName.includes('headlight') || lowerName.includes('front_light');
-         const isGeneralTaillight = lowerName.includes('taillight') || lowerName.includes('rear_light');
+            if (matched) {
+                console.log(`✅ EXACT MATCH (${lightType}):`, child.name);
+                child.castShadow = false;
 
-         const isHeadlight = isCustomHeadlight || (!customLightNames?.headlights && isGeneralHeadlight);
-         const isTaillight = isCustomTaillight || (!customLightNames?.taillights && isGeneralTaillight);
-         const isAngelEye = lowerName.includes('angel') || lowerName.includes('halo');
+                // Lekérjük az elem TÉNYLEGES méretét és helyzetét a térben
+                const childBox = new THREE.Box3().setFromObject(child);
+                const childCenter = new THREE.Vector3();
+                const childSize = new THREE.Vector3();
+                childBox.getCenter(childCenter);
+                childBox.getSize(childSize);
 
-         if (isHeadlight) foundHeadlights.push(child);
-         if (isTaillight) foundTaillights.push(child);
-         if (isAngelEye) foundAngelEyes.push(child);
+                // Ha az elem szélesebb mint 80 cm, az egy egybeolvasztott bal-jobb lámpa!
+                const isCombinedMesh = isXLonger ? childSize.z > 0.8 : childSize.x > 0.8;
 
-         // --- 2. ANYAGCSERE (Hogy maga a test is világítson) ---
-         if (isNightMode) {
-             // Ha ez egy lámpa (akár név alapján, akár custom lista alapján)
-             if (isHeadlight || isTaillight || isAngelEye) {
-                 if (!child.userData.originalMaterial) child.userData.originalMaterial = child.material.clone();
-                 
-                 // Létrehozunk egy új, erősen világító anyagot
-                 const newMat = new THREE.MeshStandardMaterial({
-                     color: isHeadlight ? "#D4EBFF" : "#FF0000",
-                     emissive: isHeadlight ? "#D4EBFF" : "#FF0000",
-                     emissiveIntensity: isHeadlight ? 10 : 5, // Jó erős legyen
-                     toneMapped: false // Ez fontos a ragyogáshoz!
-                 });
-                 
-                 child.material = newMat;
-             }
-         } else {
-             // Nappal visszaállítjuk az eredetit
-             if (child.userData.originalMaterial) {
-                 child.material = child.userData.originalMaterial;
-             }
-         }
+                if (isCombinedMesh) {
+                    console.log(`⚠️ Egybeolvasztott ${lightType} mesh detektálva! Kettéosztjuk.`);
+                    const leftPos = childCenter.clone();
+                    const rightPos = childCenter.clone();
+                    
+                    // Kicsit beljebb húzzuk a szélétől (kb a szélesség 80%-ához)
+                    const offset = isXLonger ? (childSize.z / 2) * 0.8 : (childSize.x / 2) * 0.8;
+
+                    if (isXLonger) {
+                        leftPos.z -= offset;
+                        rightPos.z += offset;
+                    } else {
+                        leftPos.x -= offset;
+                        rightPos.x += offset;
+                    }
+                    targetArray.push(leftPos, rightPos);
+                } else {
+                    // Ha normális méretű, simán csak betesszük a közepét
+                    targetArray.push(childCenter);
+                }
+            }
+        };
+
+        processLight(customLightNames?.drllight, drlCenters, '#ffffff', 5, 2, "DRL");
+        processLight(customLightNames?.headlights, headCenters, '#ffffff', 10, 0, "HEADLIGHT");
+        processLight(customLightNames?.taillights, tailCenters, '#ff0000', 8, 0, "TAILLIGHT");
       }
     });
 
-    let detectedLights = null;
-    let detectedTaillights = null;
-    let detectedAngelEyes = null;
-    
-    // Detect headlight positions - improved positioning
-    if (manualLightPositions) {
-      // --- ELSŐ LÁMPÁK ---
-      if (manualLightPositions.headlights) {
-          const pos = manualLightPositions.headlights;
-          // Figyelembe vesszük az autó irányát (forwardDir)
-          const zFinal = pos.z * forwardDir; 
-          
-          detectedLights = {
-              left: new THREE.Vector3(pos.x, pos.y, zFinal),
-              right: new THREE.Vector3(-pos.x, pos.y, zFinal)
-          };
-      }
+    console.log(`Result: ${drlCenters.length} DRL, ${headCenters.length} Headlight, ${tailCenters.length} Taillight.`);
 
-      // --- HÁTSÓ LÁMPÁK ---
-      if (manualLightPositions.taillights) {
-          const pos = manualLightPositions.taillights;
-          // A hátsónál is a forwardDir-hez igazítjuk (ha -1, akkor megfordul)
-          const zFinal = pos.z * forwardDir;
-
-          detectedTaillights = {
-              left: new THREE.Vector3(pos.x, pos.y, zFinal),
-              right: new THREE.Vector3(-pos.x, pos.y, zFinal)
-          };
-      }
-  }
-    
-    // Detect angel eyes positions (for BMW and similar)
-    if (foundAngelEyes.length >= 2) {
-        let minX = Infinity, maxX = -Infinity;
-        let leftMesh = foundAngelEyes[0], rightMesh = foundAngelEyes[0];
-
-        foundAngelEyes.forEach(mesh => {
-            // @ts-ignore
-            if(!mesh.geometry.boundingBox) mesh.geometry.computeBoundingBox();
-            const c = new THREE.Vector3();
-            // @ts-ignore
-            mesh.geometry.boundingBox.getCenter(c);
-            const w = c.applyMatrix4(mesh.matrixWorld);
-            const relX = w.x - modelCenter.x;
-
-            if (relX < minX) { minX = relX; rightMesh = mesh; } 
-            if (relX > maxX) { maxX = relX; leftMesh = mesh; }
-        });
-
-        const getPos = (m: THREE.Object3D) => {
-             // @ts-ignore
-             const c = new THREE.Vector3(); 
-             // @ts-ignore
-             m.geometry.boundingBox.getCenter(c);
-             return c.applyMatrix4(m.matrixWorld).sub(modelCenter);
+    // OKOS RENDEZÉS: Ha keresztben áll az autó, a bal/jobb oldalt a Z tengely adja meg!
+    const sortLeftRight = (centers: THREE.Vector3[]) => {
+      if (centers.length >= 2) {
+        if (isXLonger) {
+            centers.sort((a, b) => a.z - b.z); 
+        } else {
+            centers.sort((a, b) => a.x - b.x); 
         }
-        
-        detectedAngelEyes = {
-            left: getPos(leftMesh),
-            right: getPos(rightMesh)
-        };
-    }
+        return { left: centers[0], right: centers[centers.length - 1] };
+      } else if (centers.length === 1) {
+        return { left: centers[0], right: centers[0] };
+      }
+      return null;
+    };
 
-    if (modelRef.current) {
-        const box = new THREE.Box3().setFromObject(modelRef.current);
-        const size = new THREE.Vector3();
-        const center = new THREE.Vector3();
-        box.getSize(size);
-        box.getCenter(center);
-        
-        let frontCount = 0;
-        let frontZSum = 0;
-        modelRef.current.traverse((child) => {
-             if (child.name.includes('grill') || child.name.includes('headlight')) {
-                 const p = new THREE.Vector3(); child.getWorldPosition(p);
-                 frontZSum += p.z; frontCount++;
-             }
-        });
-        let fwd = -1;
-        if(frontCount > 0) fwd = (frontZSum / frontCount) > center.z ? 1 : -1;
+    if (setDetectedHeadlights) setDetectedHeadlights(sortLeftRight(headCenters));
+    if (setDetectedTaillights) setDetectedTaillights(sortLeftRight(tailCenters));
+    if (setDetectedDrllight) setDetectedDrllight(sortLeftRight(drlCenters));
 
-        if (onModelLoaded) {
-            onModelLoaded({
-                width: size.x, length: size.z, height: size.y, 
-                forwardDir: fwd,
-                detectedLights: detectedLights,
-                detectedTaillights: detectedTaillights,
-                detectedAngelEyes: detectedAngelEyes
-            });
-        }
-    }
-
-  }, [scene, isNightMode]);
+  }, [scene, customLightNames, isNightMode, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight]);
 
   // --- HOTSPOT SZÁMÍTÁS ---
   useEffect(() => {
-    if (!modelRef.current || !hotspots) return;
+    if (!modelRef.current || !scene) return;
     modelRef.current.updateMatrixWorld(true);
 
     const box = new THREE.Box3().setFromObject(modelRef.current);
@@ -582,6 +544,13 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
     const center = new THREE.Vector3();
     box.getSize(size);
     box.getCenter(center);
+
+    console.log("=== 3D MODEL REAL SIZE ===");
+    console.log(`File: ${path}`);
+    console.log(`Width (X): ${size.x.toFixed(2)}`);
+    console.log(`Height (Y): ${size.y.toFixed(2)}`);
+    console.log(`Length (Z): ${size.z.toFixed(2)}`);
+    console.log("===============================");
     
     let frontCount = 0; let frontZSum = 0;
     modelRef.current.traverse((child) => {
@@ -592,9 +561,73 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
     });
     let forwardDir = -1;
     if(frontCount > 0) forwardDir = (frontZSum / frontCount) > center.z ? 1 : -1;
+
+    // Report size to parent immediately so the floor can be positioned correctly
+    if (size.x > 0 && onModelLoaded) {
+        onModelLoaded({ 
+            width: size.x, 
+            height: size.y, 
+            length: size.z, 
+            forwardDir: forcedForwardDir !== undefined ? forcedForwardDir : forwardDir 
+        });
+    }
+
+    // Camera limits based on model size
+    const sphere = new THREE.Sphere();
+    box.getBoundingSphere(sphere);
+    if (sphere.radius > 0) {
+        setModelRadiusState(sphere.radius);
+        if (setModelRadius) setModelRadius(sphere.radius);
+        const isMobileCheck = window.innerWidth < 768;
+        const minDist = sphere.radius * 1.2;
+        const maxDist = sphere.radius * (isMobileCheck ? 4.5 : 3.5);
+        if (setCalculatedMinDistance) setCalculatedMinDistance(minDist);
+        if (setCalculatedMaxDistance) setCalculatedMaxDistance(maxDist);
+    }
+  }, [scene, scale, forcedForwardDir, path]);
+
+  // --- 2. HOTSPOT CALCULATION ---
+  useEffect(() => {
+    if (!modelRef.current || !hotspots || hotspots.length === 0) {
+        setSmartHotspots([]);
+        return;
+    }
+    modelRef.current.updateMatrixWorld(true);
+
+    const box = new THREE.Box3().setFromObject(modelRef.current);
+    const size = new THREE.Vector3();
+    const center = new THREE.Vector3();
+    box.getSize(size);
+    box.getCenter(center);
     const isZLongest = size.z > size.x;
 
+    let frontCount = 0; let frontZSum = 0;
+    modelRef.current.traverse((child) => {
+         if (child.name.includes('grill') || child.name.includes('headlight')) {
+             const p = new THREE.Vector3(); child.getWorldPosition(p);
+             frontZSum += p.z; frontCount++;
+         }
+    });
+    let forwardDir = -1;
+    if(frontCount > 0) forwardDir = (frontZSum / frontCount) > center.z ? 1 : -1;
+
     const calculatedHotspots = hotspots.map((spot: Hotspot3D) => {
+      // 1. MANUAL COORDINATES (Bypass)
+      if (spot.x !== 0 || spot.y !== 0 || spot.z !== 0) {
+          const manualPos = new THREE.Vector3(spot.x, spot.y, spot.z);
+          if (modelRef.current) {
+              modelRef.current.worldToLocal(manualPos);
+          }
+          return { 
+              ...spot, 
+              x: manualPos.x, 
+              y: manualPos.y, 
+              z: manualPos.z, 
+              foundMesh: true 
+          };
+      }
+
+      // 2. AI GENERATED (0,0,0 fallback)
       const labelLower = spot.label.toLowerCase();
       let targetPos = new THREE.Vector3(spot.x, spot.y, spot.z);
       let foundMesh = false;
@@ -603,7 +636,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
         'wheel': ['wheel', 'tire', 'rim', 'felge'],
         'headlight': ['headlight', 'lamp', 'light_front'],
         'exhaust': ['exhaust', 'muffler', 'pipe', 'tip'],
-        'engine': ['engine', 'motor', 'cover', 'block'],
+        'engine': ['engine', 'motor', 'cover', 'block', 'turbo', 'dpf', 'egr', 'pump', 'thermostat', 'water pump' , 'cooler', 'injector', 'valve', 'timing', 'belt', 'manifold'],
         'door': ['door_fl', 'door_front'],
         'mirror': ['mirror'],
         'grill': ['grill', 'kidney', 'front_mesh', 'bumper_front'],
@@ -677,33 +710,22 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
       };
     });
     setSmartHotspots(calculatedHotspots);
-    
-    const sphere = new THREE.Sphere();
-    box.getBoundingSphere(sphere);
-    if (sphere.radius > 0) {
-        setModelRadiusState(sphere.radius);
-        if (setModelRadius) setModelRadius(sphere.radius);
-        // Calculate min and max distance relative to model radius for consistent zoom across all models
-        const isMobileCheck = window.innerWidth < 768;
-        const minDist = sphere.radius * 1.2;
-        const maxDist = sphere.radius * (isMobileCheck ? 4.5 : 3.5); // Consistent multiplier for all models
-        if (setCalculatedMinDistance) setCalculatedMinDistance(minDist);
-        if (setCalculatedMaxDistance) setCalculatedMaxDistance(maxDist);
-    }
-
   }, [scene, scale, hotspots]);
+  
 
   const handlePrev = (e: any) => { e.stopPropagation(); if (!smartHotspots.length) return; const count = smartHotspots.length; setActiveSpot(activeSpot === null ? 0 : (activeSpot - 1 + count) % count); };
   const handleNext = (e: any) => { e.stopPropagation(); if (!smartHotspots.length) return; const count = smartHotspots.length; setActiveSpot(activeSpot === null ? 0 : (activeSpot + 1) % count); };
 
   return (
     <group>
-      <Center>
       <primitive 
     ref={modelRef} 
     object={scene} 
     scale={scale} 
     rotation={rotation}
+    setDetectedHeadlights={setDetectedHeadlights} // <-- ÚJ
+    setDetectedTaillights={setDetectedTaillights} // <-- ÚJ
+    setDetectedRdllight={setDetectedDrllight}
     onClick={(e: any) => {
       e.stopPropagation(); // Ne forogjon a kamera kattintáskor
       
@@ -796,8 +818,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
                 )
             })}
         </primitive>
-      </Center>
-      <CameraController activeSpot={activeSpot} hotspots={smartHotspots} modelRadius={modelRadiusState} />
+      <CameraController activeSpot={activeSpot} hotspots={smartHotspots} modelRadius={modelRadiusState} modelRef={modelRef} />
     </group>
   );
 }
@@ -805,7 +826,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
 // ----------------------
 // EXPORT COMPONENT
 // ----------------------
-export default function Car3DViewer({ modelPath, hotspots, scale = 1, rotation = [0, 0, 0], isPremium = false, onUnlock = () => {}, modelForwardDir, customLightNames }: { modelPath: string, hotspots?: Hotspot3D[], scale?: number, rotation?: [number, number, number], isPremium?: boolean, onUnlock?: () => void, modelForwardDir?: number, customLightNames?: { headlights?: string[], taillights?: string[] } }) {
+export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProfile: incomingProfile, rotation = [0, 0, 0], isPremium = false, onUnlock = () => {}, modelForwardDir, customLightNames }: { modelPath: string, hotspots?: Hotspot3D[], scale?: number, rotation?: [number, number, number], isPremium?: boolean, onUnlock?: () => void, modelForwardDir?: number, customLightNames?: { headlights?: string[], taillights?: string[] }, activeProfile?: any }) {
   const [showHotspots, setShowHotspots] = useState(isPremium);
   const [isHoveringHotspot, setIsHoveringHotspot] = useState(false);
   const [activeSpot, setActiveSpot] = useState<number | null>(null);
@@ -814,20 +835,34 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, rotation =
   const [modelRadius, setModelRadius] = useState(4);
   const [isMobile, setIsMobile] = useState(false);
   const [isNightMode, setIsNightMode] = useState(false);
+  const [detectedHeadlights, setDetectedHeadlights] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
+  const [detectedTaillights, setDetectedTaillights] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
+  const [detectedDrllight, setDetectedDrllight] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
+  
 
   const activeProfile = useMemo(() => {
-    return audiEngineProfiles.find(p => p.model3DPath === modelPath);
-}, [modelPath]);
+    if (incomingProfile) return incomingProfile;
+  
+    return audiEngineProfiles.find(p => {
+      const dbFileName = p.model3DPath?.split('/').pop()?.toLowerCase();
+      const currentFileName = modelPath.split('/').pop()?.toLowerCase();
+      
+      // CSAK akkor fogadjuk el, ha egyezik a név ÉS van benne author!
+      return dbFileName === currentFileName && p.author; 
+    });
+  }, [incomingProfile, modelPath]);
 
+  const authorCredit = activeProfile?.author
   const activeForwardDir = modelForwardDir ?? activeProfile?.modelForwardDir ?? 1;
-  const activeLightNames = customLightNames ?? activeProfile?.customLightNames;
   const activeManualLights = activeProfile?.manualLightPositions;
+
+  const [activeLightNames, setActiveLightNames] = useState<any>(null);
   
   // ITT VAN A CAR DATA DEFINÍCIÓJA BIZTOSAN A HELYÉN:
   const [carData, setCarData] = useState<{
       width?: number; 
       length?: number;
-      height: number; 
+      height?: number; 
       forwardDir: number; 
       detectedLights?: { left: THREE.Vector3, right: THREE.Vector3 } | null;
       detectedTaillights?: { left: THREE.Vector3, right: THREE.Vector3 } | null;
@@ -862,6 +897,15 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, rotation =
     if (canvasElement) canvasElement.addEventListener('wheel', preventScroll, { passive: false });
     return () => { if (canvasElement) canvasElement.removeEventListener('wheel', preventScroll); };
   }, []);
+
+  
+  const formatManualLights = (pos: any) => {
+    if (!pos) return null;
+    return {
+        left: new THREE.Vector3(Math.abs(pos.x), pos.y, pos.z),
+        right: new THREE.Vector3(-Math.abs(pos.x), pos.y, pos.z)
+    };
+  };
 
   const floorOffset = -(carData.height / 2);
 
@@ -939,6 +983,8 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, rotation =
           )}
       </div>
 
+      
+
       <Canvas 
         gl={{ 
           powerPreference: "high-performance", // Kéri az erősebb GPU-t
@@ -951,15 +997,18 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, rotation =
         tabIndex={-1}
       >
         <Suspense fallback={<Loader />}>
+
+        
           
           <ambientLight intensity={isNightMode ? 0.05 : 0.8} />
           
           <Stage 
-             environment={isNightMode ? "night" : "city"} 
-             intensity={isNightMode ? 0.0 : 1} 
-             shadows={false} 
-             adjustCamera={false}
-          >
+  environment={isNightMode ? "night" : "city"} 
+  intensity={isNightMode ? 0.0 : 1} 
+  shadows={false} 
+  adjustCamera={false}
+  center={{}} // Egyszerűen csak ennyi, TypeScript hiba nélkül
+>
             {isNightMode && <Environment preset="night" blur={0.8} background={false} />}
             {!isNightMode && <Environment preset="city" blur={0.8} />}
             
@@ -979,55 +1028,53 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, rotation =
               isMobile={isMobile}
               isNightMode={isNightMode}
               forcedForwardDir={activeForwardDir}
-              customLightNames={activeLightNames} 
+              customLightNames={customLightNames || activeProfile?.customLightNames}
               manualLightPositions={activeManualLights}
+              setDetectedHeadlights={setDetectedHeadlights}
+              setDetectedTaillights={setDetectedTaillights}
+              setDetectedDrllight={setDetectedDrllight}
             />
           </Stage>
-          
-          {/* HIBRID MEGOLDÁS: Always show lights - use detected positions when available, fallback to calculated positions */}
-          {carData.detectedLights ? (
-              // Use ExactCarLights when headlights are detected (includes all detected lights)
-              <ExactCarLights 
-                 lights={carData.detectedLights} 
-                 taillights={carData.detectedTaillights || undefined}
-                 angelEyes={carData.detectedAngelEyes || undefined}
-                 forwardDir={carData.forwardDir} 
-                 isNightMode={isNightMode} 
-              />
-          ) : (
-              // Fallback: Use UniversalCarLights when headlights aren't detected (ensures headlights always show)
-              // This guarantees headlights will always be visible, even if not detected in the model
-              <>
-                  <UniversalCarLights 
-                     carBounds={carData as any} 
+
+          {/* FÉNYEK RENDERELÉSE - NINCS TÖBB DUPLIKÁCIÓ */}
+          {(!isHoveringHotspot && activeSpot === null) && (
+              (detectedHeadlights || detectedTaillights || detectedDrllight || activeManualLights) ? (
+                  <ExactCarLights 
+                     lights={detectedHeadlights || formatManualLights(activeManualLights?.headlights)}
+                     taillights={detectedTaillights || formatManualLights(activeManualLights?.taillights)}
+                     drllight={detectedDrllight || formatManualLights(activeManualLights?.drllight)}
+                     forwardDir={activeForwardDir} 
                      isNightMode={isNightMode} 
                   />
-
-{(carData.detectedLights || carData.detectedTaillights) && (
-              <ExactCarLights 
-                 lights={carData.detectedLights} 
-                 taillights={carData.detectedTaillights}
-                 angelEyes={carData.detectedAngelEyes}
-                 forwardDir={activeForwardDir} 
-                 isNightMode={isNightMode} 
-              />
+              ) : (
+                  <UniversalCarLights 
+                     carBounds={carData} 
+                     isNightMode={isNightMode} 
+                  />
+              )
           )}
 
-                  {/* Add detected special features (angel eyes) on top if available */}
-                  {carData.detectedAngelEyes && (
-                      <ExactCarLights 
-                         lights={undefined}
-                         taillights={undefined}
-                         angelEyes={carData.detectedAngelEyes}
-                         forwardDir={carData.forwardDir} 
-                         isNightMode={isNightMode} 
-                      />
-                  )}
-              </>
+{!isMobile && (
+            <ShowroomFloor 
+              isNightMode={isNightMode} 
+              yOffset={floorOffset} // <-- Ezt használd!
+              width={carData.width} 
+              length={carData.length} 
+            />
           )}
 
-          {!isMobile && <ShowroomFloor isNightMode={isNightMode} yOffset={floorOffset} width={carData.width} length={carData.length} />}
-          {isMobile && !isNightMode && <ContactShadows position={[0, floorOffset, 0]} opacity={0.6} scale={150} blur={1.5} far={10} resolution={512} color="#000000" />}
+          {/* ÁRNYÉK: Csak mobil nézetben vagy nappal */}
+          {isMobile && !isNightMode && (
+            <ContactShadows 
+              position={[0, floorOffset, 0]} // <-- Ezt is ide kösd!
+              opacity={0.6} 
+              scale={150} 
+              blur={1.5} 
+              far={10} 
+              resolution={512} 
+              color="#000000" 
+            />
+          )}
 
           <OrbitControls 
             makeDefault 
@@ -1042,6 +1089,13 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, rotation =
           />
         </Suspense>
       </Canvas>
+      {authorCredit && (
+  <div className="absolute bottom-2 right-4 z-[100] pointer-events-auto group/license">
+    <p className="text-[9px] text-white/20 group-hover/license:text-white/60 transition-colors duration-500 select-text leading-tight max-w-[250px] text-right">
+      {authorCredit}
+    </p>
+  </div>
+)}
     </div>
   );
 }

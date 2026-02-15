@@ -13,7 +13,7 @@ export const audiEngineTypes = {
     { name: "1.6 TDI", hp: "90-105-116 hp" },
     { name: "2.0 TDI", hp: "143 hp" }
   ],
-  "Audi-A1 (S)-Gen 2 - GB (2018-2026)": [
+  "Audi-A1 (S)-GB (2018-2026)": [
     { name: "25 TFSI", hp: "95 hp" },
     { name: "30 TFSI", hp: "110 hp" },
     { name: "35 TFSI", hp: "150 hp" },
@@ -444,3 +444,4 @@ export const audiEngineTypes = {
     { name: "5.2 V10 GT", hp: "620 hp" }
   ]
 }
+
