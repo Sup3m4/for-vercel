@@ -54,7 +54,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
   const [activeHotspot, setActiveHotspot] = useState<any>(null);
   const [isSpecsExpanded, setIsSpecsExpanded] = useState(false);
   const [isCrossRefExpanded, setIsCrossRefExpanded] = useState(false);
-  const [activeVisualTab, setActiveVisualTab] = useState<'3d' | 'engine' | 'tuning'>('3d');
+  const [activeVisualTab, setActiveVisualTab] = useState<'3d' | 'tuning'>(profile.model3DPath ? '3d' : 'tuning');
   const [isMaintenanceExpanded, setIsMaintenanceExpanded] = useState(false);
   const [graphStage, setGraphStage] = useState(0); 
   const baseHp = parseInt(profile.power) || 300;
@@ -971,8 +971,8 @@ export function EngineProfile({ profile }: EngineProfileProps) {
           )}
 
           {/* --- ÚJ RÉSZ: INTERAKTÍV NÉZET FÜLEKKEL --- */}
-          {profile.model3DPath && (
-            <div className="mt-12 mb-16 animate-fade-in">
+          {/* Levettük a globális feltételt, a szekció most már MINDIG megjelenik! */}
+          <div className="mt-12 mb-16 animate-fade-in">
               
               {/* Felső sáv: Cím és Gombok */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
@@ -995,34 +995,30 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                 </div>
 
                 <div className="flex p-1 bg-slate-100 rounded-lg border border-slate-200 relative z-[50] pointer-events-auto overflow-x-auto">
-                  <button
-                    onClick={() => setActiveVisualTab('3d')}
-                    className={cn(
-                      "px-4 py-2 text-sm font-bold rounded-md transition-all duration-300 flex items-center gap-2 whitespace-nowrap",
-                      activeVisualTab === '3d' ? "bg-white text-black shadow-sm" : "text-slate-500 hover:text-slate-900"
-                    )}
-                  >
-                    <Move3d className="w-4 h-4" />
-                    360° View
-                  </button>
-                  <button
-                    onClick={() => setActiveVisualTab('engine')}
-                    className={cn(
-                      "px-4 py-2 text-sm font-bold rounded-md transition-all duration-300 flex items-center gap-2 whitespace-nowrap",
-                      activeVisualTab === 'engine' ? "bg-white text-black shadow-sm" : "text-slate-500 hover:text-slate-900"
-                    )}
-                  >
-                    <Settings className="w-4 h-4" />
-                    Engine Bay
-                  </button>
+                  
+                  {/* CSAK AKKOR van 3D gomb, ha ténylegesen van modellünk! */}
+                  {profile.model3DPath && (
+                    <button
+                      onClick={() => setActiveVisualTab('3d')}
+                      className={cn(
+                        "px-4 py-2 text-sm font-bold rounded-md transition-all duration-300 flex items-center gap-2 whitespace-nowrap",
+                        activeVisualTab === '3d' ? "bg-white text-black shadow-sm" : "text-slate-500 hover:text-slate-900"
+                      )}
+                    >
+                      <Move3d className="w-4 h-4" />
+                      360° View
+                    </button>
+                  )}
+                  
+                  {/* A Tuning gomb MINDIG ott van */}
                   <button
                     onClick={() => setActiveVisualTab('tuning')}
                     className={cn(
                       "px-4 py-2 text-sm font-bold rounded-md transition-all duration-300 flex items-center gap-2 whitespace-nowrap",
-                      activeVisualTab === 'tuning' ? "bg-white text-purple-600 shadow-sm" : "text-slate-500 hover:text-purple-600"
+                      activeVisualTab === 'tuning' ? "bg-white text-black shadow-sm" : "text-slate-500 hover:text-slate-900"
                     )}
                   >
-                    <TrendingUp className="w-4 h-4" />
+                    <Settings className="w-4 h-4" />
                     Tuning Lab
                   </button>
                 </div>
@@ -1044,49 +1040,6 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                     isPremium={isPremiumUnlocked}
                     onUnlock={unlockPremium}
                   />
-                )}
-
-                {/* 2. Engine Bay View */}
-                {activeVisualTab === 'engine' && (
-                  <div className="w-full relative group overflow-hidden bg-slate-900 rounded-xl shadow-2xl border border-white/10">
-                    {profile.engineBayImageUrl ? (
-                      <div className="relative w-full h-auto">
-                        <img 
-                          src={profile.engineBayImageUrl} 
-                          alt="Engine Bay" 
-                          className="w-full h-auto block"
-                        />
-                        {/* Hotspot logika változatlan... */}
-                        {profile.engineBayHotspots?.map((spot, idx) => {
-                          const isRightSide = spot.x > 50;
-                          const isBottom = spot.y > 60;
-                          return (
-                            <div key={idx} className="absolute w-8 h-8 -ml-4 -mt-4 z-20 group/spot" style={{ left: `${spot.x}%`, top: `${spot.y}%` }}>
-                              <div className={cn(
-                                "absolute w-64 bg-slate-900/95 backdrop-blur-xl p-4 rounded-xl border border-white/20 shadow-2xl opacity-0 group-hover/spot:opacity-100 transition-opacity pointer-events-none z-30 scale-95 group-hover/spot:scale-100",
-                                isRightSide ? "right-full mr-3 origin-top-right" : "left-full ml-3 origin-top-left",
-                                isBottom ? "bottom-0 origin-bottom-left" : "top-0"
-                              )}>
-                                <h4 className={cn("font-bold text-sm mb-1 flex items-center gap-2", spot.critical ? 'text-red-400' : 'text-blue-400')}>
-                                  {spot.critical && <AlertTriangle className="w-3 h-3" />}
-                                  {spot.label}
-                                </h4>
-                                <p className="text-xs text-slate-300 leading-relaxed">{spot.details}</p>
-                              </div>
-                              <button className={cn("relative flex items-center justify-center w-full h-full rounded-full border-2 border-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-transform hover:scale-110", spot.critical ? 'bg-red-600' : 'bg-blue-600')}>
-                                <div className="w-2 h-2 bg-white rounded-full" />
-                                <span className={cn("absolute inset-0 rounded-full animate-ping opacity-75", spot.critical ? 'bg-red-500' : 'bg-blue-500')}></span>
-                              </button>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    ) : (
-                      <div className="w-full h-[500px] flex items-center justify-center text-slate-400">
-                        <p>No engine bay image</p>
-                      </div>
-                    )}
-                  </div>
                 )}
 
                 {/* 3. TUNING LAB NÉZET (BLURRED IF LOCKED) */}
@@ -1286,7 +1239,6 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
               </div>
             </div>
-          )}
           
 
           {/* --- Behind the Wheel (SPACING FIX) --- */}

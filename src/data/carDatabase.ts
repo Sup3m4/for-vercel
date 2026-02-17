@@ -22,8 +22,8 @@ export interface EngineProfile {
   timingType: string;      
   model3DVerticalOffset?: number;
   modelForwardDir?: number; 
-  manualLightPositions?: {headlights: { x: number; y: number; z: number };taillights: { x: number; y: number; z: number };};
-  customLightNames?: {headlights?: string[];taillights?: string[];drllight?: string[];};    
+  manualLightPositions?: {headlights?: { x: number; y: number; z: number };taillights?: { x: number; y: number; z: number };};
+  customLightNames?: {headlights?: string[];taillights?: string[];drllight?: string[];brakelights?: string;};    
   injectionType: string;      
   engineLifespan: string;     
   turboType?: string;         
@@ -44,7 +44,7 @@ export interface EngineProfile {
   tuningGraphData?: {stock: { hp: number; nm: number };stage1: { hp: number; nm: number };stage2: { hp: number; nm: number };stage3: { hp: number; nm: number };};
   commonIssues: string[];
   repairCostEstimate: string;
-  author: string;
+  author?: string;
   fluidCapacities?: {system: string;capacity: string;spec: string;}[];
   torqueSpecs?: {part: string;value: string;note: string;}[];
   engineeringData?: {blockDesign: string;crankshaft: string;pistonSpeed: string;alternator?: string;rotatingAssembly?: Record<string, string>; cylinderHead?: Record<string, string>;oilAndCooling?: Record<string, string>;fuelSystem?: Record<string, string>;tuningLimits?: Record<string, string>;electrical?: Record<string, string>;};

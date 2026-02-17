@@ -1,7 +1,8 @@
-import React, { Suspense, useState, useEffect, useRef, useMemo } from 'react';
+import * as React from 'react';
+import { Suspense, useState, useEffect, useRef, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, Stage, Html, useProgress, OrbitControls, ContactShadows, MeshReflectorMaterial, Environment, SpotLight } from '@react-three/drei';
-import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRight, Sun, Moon } from 'lucide-react';
+import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRight, Sun, Moon, Lightbulb, LightbulbOff } from 'lucide-react';
 import * as THREE from 'three'; 
 import { Center } from '@react-three/drei';
 import { CAR_MODEL_CONFIGS } from '../configs/carModels';
@@ -100,46 +101,59 @@ interface Hotspot3D {
 }
 
 // --- A. OPCIÓ: PONTOS FÉNYEK (Ha találtunk lámpát a modellben) - ENHANCED ---
-function ExactCarLights({ lights, taillights, drllight, isNightMode }: any) {
+function ExactCarLights({ lights, taillights, drllight, isNightMode, carBounds, forwardDir = 1, floorOffset = 0 }: any) {
   if (!isNightMode) return null;
 
-  const beamDistance = 5; 
-  const frontOffset = 0.05; 
+  // 1. DINAMIKUS MÉRET SZÁMÍTÁSA (Univerzális minden modellhez)
+  // Biztosítjuk, hogy megtalálja a méreteket, bárhogy is hívják a változóban (x/z vagy width/length)
+  const sizeX = carBounds?.x || carBounds?.width || 1.8;
+  const sizeZ = carBounds?.z || carBounds?.length || 4.5;
+  
+  // Az autó fizikai hossza mindig a nagyobb kiterjedés
+  const carLength = Math.max(sizeX, sizeZ);
+  
+  // Ebből tudjuk meg 100% pontossággal, merre áll az autó
+  const isXLonger = sizeX > sizeZ; 
 
+  // --- DINAMIKUS SZORZÓK (Nem fix számok!) ---
+  // A kiindulási pontot épphogy csak kiléptetjük a fényszóró anyagából (az autó hosszának 1.5%-a)
+  const dynFrontOffset = carLength * 0.015; 
+  // A fénypaca a földön az autó hosszának 3.5-szeresénél legyen a legerősebb
+  const dynBeamDistance = carLength * 3.5;  
+  // A fény maximális hatótávja az autó hosszának 12-szerese
+  const dynLightDistance = carLength * 12;  
+
+  // 2. HAJSZÁLPONTOS KIINDULÁSI PONT (Egyenesen a mesh-ből)
   const getOffsetPosition = (lightPos: THREE.Vector3) => {
       if (!lightPos) return new THREE.Vector3(0,0,0);
-      const pos = lightPos.clone();
-      const isXLonger = Math.abs(lightPos.x) > Math.abs(lightPos.z);
+      const pos = lightPos.clone(); // Ez a MESH pontos közepe!
       
+      // Csak azon a tengelyen toljuk ki minimálisan, amerre az autó néz,
+      // hogy ne akadjon el a 3D modell burkolatában a fény
       if (isXLonger) {
-          const dirX = lightPos.x >= 0 ? 1 : -1;
-          pos.x += frontOffset * dirX;
+          pos.x += dynFrontOffset * forwardDir;
       } else {
-          const dirZ = lightPos.z >= 0 ? 1 : -1;
-          pos.z += frontOffset * dirZ;
+          pos.z += dynFrontOffset * forwardDir;
       }
       return pos;
   };
 
+  // 3. CÉLPONT KISZÁMÍTÁSA (Padlóra vetítve, pontosan előre)
   const getTargetPosition = (lightPos: THREE.Vector3) => {
       if (!lightPos) return [0,0,0];
-      const isXLonger = Math.abs(lightPos.x) > Math.abs(lightPos.z);
-      
-      const targetY = lightPos.y - 0.8; 
+      const targetY = floorOffset; // Pontosan a padló szintje
       
       if (isXLonger) {
-          const dirX = lightPos.x >= 0 ? 1 : -1;
-          return [lightPos.x + (beamDistance * dirX), targetY, lightPos.z];
+          return [lightPos.x + (dynBeamDistance * forwardDir), targetY, lightPos.z];
       } else {
-          const dirZ = lightPos.z >= 0 ? 1 : -1;
-          return [lightPos.x, targetY, lightPos.z + (beamDistance * dirZ)];
+          return [lightPos.x, targetY, lightPos.z + (dynBeamDistance * forwardDir)];
       }
   };
 
   return (
     <group>
         {/* --- DRL LIGHTS --- */}
-        {/* Nincs fizikai fény, maga az anyag világít (emissive) */}
+        {/* Maga a 3D anyag világít emissive-vel */}
 
         {/* --- HEADLIGHTS --- */}
         {lights && lights.left && (
@@ -147,13 +161,13 @@ function ExactCarLights({ lights, taillights, drllight, isNightMode }: any) {
                 position={getOffsetPosition(lights.left)}
                 target-position={getTargetPosition(lights.left)}
                 angle={0.45} 
-                penumbra={0.8}      // Sokkal lágyabb szélek az úton
-                distance={50} 
-                attenuation={4}     // Természetesebb elhalványulás
+                penumbra={0.8}
+                distance={dynLightDistance} /* DINAMIKUS TÁVOLSÁG */
+                attenuation={4}
                 anglePower={5} 
-                intensity={1800}    // Visszavett fényerő
+                intensity={1800} /* A te beállításod maradt */
                 color="#ffffff" 
-                opacity={0.8}       // Halványabb fénycsóva a levegőben
+                opacity={0.8}    /* A te beállításod maradt */
             />
         )}
         {lights && lights.right && (
@@ -162,7 +176,7 @@ function ExactCarLights({ lights, taillights, drllight, isNightMode }: any) {
                 target-position={getTargetPosition(lights.right)}
                 angle={0.45} 
                 penumbra={0.8}
-                distance={50} 
+                distance={dynLightDistance} /* DINAMIKUS TÁVOLSÁG */
                 attenuation={4}
                 anglePower={5} 
                 intensity={1800}
@@ -172,7 +186,6 @@ function ExactCarLights({ lights, taillights, drllight, isNightMode }: any) {
         )}
 
         {/* --- TAILLIGHTS --- */}
-        {/* Nincs fizikai fény a földre, maga az anyag világít (emissive) */}
     </group>
   );
 }
@@ -372,7 +385,7 @@ function CameraController({ activeSpot, hotspots, modelRadius, modelRef }: { act
 
 
 // --- MODELL KOMPONENS ---
-function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
+function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, isHeadlightOn = true, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
   const { scene } = useGLTF(path, '/draco/') as any;
   const modelRef = useRef<THREE.Group>(null);
   const [loadStage, setLoadStage] = useState(0); // 0: Start, 1: Mesh Ready, 2: Shaders Ready
@@ -506,7 +519,11 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
         };
 
         processLight(customLightNames?.drllight, drlCenters, '#ffffff', 5, 2, "DRL");
-        processLight(customLightNames?.headlights, headCenters, '#ffffff', 10, 0, "HEADLIGHT");
+        
+        // A Tompított (Headlight) csak akkor ragyog, ha az isHeadlightOn IGAZ:
+        processLight(customLightNames?.headlights, headCenters, '#ffffff', isHeadlightOn ? 10 : 0, 0, "HEADLIGHT"); 
+        
+        // A hátsó lámpa:
         processLight(customLightNames?.taillights, tailCenters, '#ff0000', 8, 0, "TAILLIGHT");
       }
     });
@@ -532,7 +549,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
     if (setDetectedTaillights) setDetectedTaillights(sortLeftRight(tailCenters));
     if (setDetectedDrllight) setDetectedDrllight(sortLeftRight(drlCenters));
 
-  }, [scene, customLightNames, isNightMode, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight]);
+  }, [scene, customLightNames, isNightMode, setDetectedHeadlights, isHeadlightOn, setDetectedTaillights, setDetectedDrllight]);
 
   // --- HOTSPOT SZÁMÍTÁS ---
   useEffect(() => {
@@ -835,6 +852,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   const [modelRadius, setModelRadius] = useState(4);
   const [isMobile, setIsMobile] = useState(false);
   const [isNightMode, setIsNightMode] = useState(false);
+  const [isHeadlightOn, setIsHeadlightOn] = useState(true);
   const [detectedHeadlights, setDetectedHeadlights] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
   const [detectedTaillights, setDetectedTaillights] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
   const [detectedDrllight, setDetectedDrllight] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
@@ -953,6 +971,21 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
             )}
           </div>
 
+          {isPremium && isNightMode && (
+              <div className="relative group animate-in fade-in slide-in-from-top-2 duration-300">
+                  <button 
+                      onClick={(e) => { e.stopPropagation(); setIsHeadlightOn(!isHeadlightOn); }} 
+                      className={`backdrop-blur-md border rounded-full p-2.5 transition-all hover:scale-110 flex items-center justify-center 
+                          ${isHeadlightOn 
+                              ? 'bg-blue-500/20 border-blue-500/50 text-blue-400 hover:bg-blue-500/30' 
+                              : 'bg-slate-900/60 border-slate-700/50 text-slate-500 hover:bg-slate-800/80'
+                          }`} 
+                  >
+                      {isHeadlightOn ? <Lightbulb className="w-5 h-5" /> : <LightbulbOff className="w-5 h-5" />}
+                  </button>
+              </div>
+          )}
+
           {/* HOTSPOT TOGGLE */}
           {hotspots && hotspots.length > 0 && (
             <div className="relative group">
@@ -1027,6 +1060,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
               onModelLoaded={setCarData} 
               isMobile={isMobile}
               isNightMode={isNightMode}
+              isHeadlightOn={isHeadlightOn}
               forcedForwardDir={activeForwardDir}
               customLightNames={customLightNames || activeProfile?.customLightNames}
               manualLightPositions={activeManualLights}
@@ -1040,11 +1074,13 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
           {(!isHoveringHotspot && activeSpot === null) && (
               (detectedHeadlights || detectedTaillights || detectedDrllight || activeManualLights) ? (
                   <ExactCarLights 
-                     lights={detectedHeadlights || formatManualLights(activeManualLights?.headlights)}
+                     // ÚJ LOGIKA: Ha a lámpa ki van kapcsolva, null-t adunk át, így a fénycsóva eltűnik!
+                     lights={isHeadlightOn ? (detectedHeadlights || formatManualLights(activeManualLights?.headlights)) : null}
                      taillights={detectedTaillights || formatManualLights(activeManualLights?.taillights)}
-                     drllight={detectedDrllight || formatManualLights(activeManualLights?.drllight)}
-                     forwardDir={activeForwardDir} 
+                     drllight={detectedDrllight || formatManualLights(activeManualLights?.rdllight)}
                      isNightMode={isNightMode} 
+                     floorOffset={floorOffset}
+                     carBounds={carData}
                   />
               ) : (
                   <UniversalCarLights 
