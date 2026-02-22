@@ -19,7 +19,10 @@ export interface EngineProfile {
   crossReferenceParts: {partName: string; category: string; oem: {brand: string;code: string;approxPrice: string;};crossRef: {brand: string;code: string;approxPrice: string;source: string;autodoclink: string;advanceautopartslink: string; };note: string;}[];
   InspectionChecklist?: {id: string; category: "Engine" | "Exhaust" |  "Emissions" | "Brakes" | "Fuel" |  "Interior" | "Lights"  | "Comfort"  | "Cooling" |  "Transmission" | "Suspension" | "Electronics" | "Body";question: string;howToCheck: string;costUSD: number; costEUR: number;severity: "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";}[],
   vulnerabilities: string[];
-  timingType: string;      
+  timingType: string;  
+  materialOverrides?: {metalness: number; roughness: number;envMapIntensity?: number;};   
+  floorSettings?: {mixStrength: number;roughness: number;}; 
+  lightSettings?: {headlightIntensity: number; headlightDistance?: number; headlightTargetDistance?: number; headlightPenumbra: number;headlightAngle: number; headlightRadiusTop: number; headlightOpacity: number;};
   model3DVerticalOffset?: number;
   modelForwardDir?: number; 
   manualLightPositions?: {headlights?: { x: number; y: number; z: number };taillights?: { x: number; y: number; z: number };};
@@ -45,6 +48,7 @@ export interface EngineProfile {
   commonIssues: string[];
   repairCostEstimate: string;
   author?: string;
+  hotspotSettings?: {distanceFactor: number;}
   fluidCapacities?: {system: string;capacity: string;spec: string;}[];
   torqueSpecs?: {part: string;value: string;note: string;}[];
   engineeringData?: {blockDesign: string;crankshaft: string;pistonSpeed: string;alternator?: string;rotatingAssembly?: Record<string, string>; cylinderHead?: Record<string, string>;oilAndCooling?: Record<string, string>;fuelSystem?: Record<string, string>;tuningLimits?: Record<string, string>;electrical?: Record<string, string>;};

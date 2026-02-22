@@ -101,13 +101,15 @@ interface Hotspot3D {
 }
 
 // --- A. OPCIÓ: PONTOS FÉNYEK (Ha találtunk lámpát a modellben) - ENHANCED ---
-function ExactCarLights({ lights, taillights, drllight, isNightMode, carBounds, forwardDir = 1, floorOffset = 0 }: any) {
+function ExactCarLights({ lights, taillights, drllight, isNightMode, carBounds, lightSettings, forwardDir = 1, floorOffset = 0 }: any) {
   if (!isNightMode) return null;
 
   // 1. DINAMIKUS MÉRET SZÁMÍTÁSA (Univerzális minden modellhez)
   // Biztosítjuk, hogy megtalálja a méreteket, bárhogy is hívják a változóban (x/z vagy width/length)
   const sizeX = carBounds?.x || carBounds?.width || 1.8;
   const sizeZ = carBounds?.z || carBounds?.length || 4.5;
+
+  
   
   // Az autó fizikai hossza mindig a nagyobb kiterjedés
   const carLength = Math.max(sizeX, sizeZ);
@@ -119,9 +121,16 @@ function ExactCarLights({ lights, taillights, drllight, isNightMode, carBounds, 
   // A kiindulási pontot épphogy csak kiléptetjük a fényszóró anyagából (az autó hosszának 1.5%-a)
   const dynFrontOffset = carLength * 0.015; 
   // A fénypaca a földön az autó hosszának 3.5-szeresénél legyen a legerősebb
-  const dynBeamDistance = carLength * 3.5;  
+  const dynBeamDistance = lightSettings?.headlightTargetDistance ?? (carLength * 3.5);
   // A fény maximális hatótávja az autó hosszának 12-szerese
-  const dynLightDistance = carLength * 12;  
+  const dynLightDistance = lightSettings?.headlightDistance ?? (carLength * 12);  
+  const beamPenumbra = lightSettings?.headlightPenumbra ?? 0.8;
+  
+  // Use custom value if provided, otherwise default to 1800
+  const beamAngle = lightSettings?.headlightAngle ?? 0.45;
+  const beamIntensity = lightSettings?.headlightIntensity ?? 4000;
+  const beamOpacity = lightSettings?.headlightOpacity ?? 0.8;
+  const beamRadiusTop = lightSettings?.headlightRadiusTop;
 
   // 2. HAJSZÁLPONTOS KIINDULÁSI PONT (Egyenesen a mesh-ből)
   const getOffsetPosition = (lightPos: THREE.Vector3) => {
@@ -139,8 +148,8 @@ function ExactCarLights({ lights, taillights, drllight, isNightMode, carBounds, 
   };
 
   // 3. CÉLPONT KISZÁMÍTÁSA (Padlóra vetítve, pontosan előre)
-  const getTargetPosition = (lightPos: THREE.Vector3) => {
-      if (!lightPos) return [0,0,0];
+  const getTargetPosition = (lightPos: THREE.Vector3): [number, number, number] => {
+    if (!lightPos) return [0, 0, 0];
       const targetY = floorOffset; // Pontosan a padló szintje
       
       if (isXLonger) {
@@ -158,31 +167,39 @@ function ExactCarLights({ lights, taillights, drllight, isNightMode, carBounds, 
         {/* --- HEADLIGHTS --- */}
         {lights && lights.left && (
             <SpotLight
-                position={getOffsetPosition(lights.left)}
-                target-position={getTargetPosition(lights.left)}
-                angle={0.45} 
-                penumbra={0.8}
-                distance={dynLightDistance} /* DINAMIKUS TÁVOLSÁG */
-                attenuation={4}
-                anglePower={5} 
-                intensity={1800} /* A te beállításod maradt */
-                color="#ffffff" 
-                opacity={0.8}    /* A te beállításod maradt */
-            />
+            position={getOffsetPosition(lights.left)}
+            target-position={getTargetPosition(lights.left)}
+            angle={beamAngle} 
+            penumbra={beamPenumbra}
+            distance={dynLightDistance}
+            attenuation={4}
+            anglePower={5} 
+            intensity={beamIntensity}
+            color="#ffffff" 
+            opacity={beamOpacity}
+            radiusTop={beamRadiusTop}
+        >
+                {/* Properly attaching the target to the scene graph */}
+                <object3D attach="target" position={getTargetPosition(lights.left)} />
+            </SpotLight>
         )}
         {lights && lights.right && (
             <SpotLight
-                position={getOffsetPosition(lights.right)}
-                target-position={getTargetPosition(lights.right)}
-                angle={0.45} 
-                penumbra={0.8}
-                distance={dynLightDistance} /* DINAMIKUS TÁVOLSÁG */
-                attenuation={4}
-                anglePower={5} 
-                intensity={1800}
-                color="#ffffff" 
-                opacity={0.8}
-            />
+            position={getOffsetPosition(lights.right)}
+            target-position={getTargetPosition(lights.right)}
+            angle={beamAngle} 
+            penumbra={beamPenumbra}
+            distance={dynLightDistance}
+            attenuation={4}
+            anglePower={5} 
+            intensity={beamIntensity}
+            color="#ffffff" 
+            opacity={beamOpacity}
+            radiusTop={beamRadiusTop}
+        >
+                {/* Properly attaching the target to the scene graph */}
+                <object3D attach="target" position={getTargetPosition(lights.right)} />
+            </SpotLight>
         )}
 
         {/* --- TAILLIGHTS --- */}
@@ -194,16 +211,20 @@ function ExactCarLights({ lights, taillights, drllight, isNightMode, carBounds, 
 function UniversalCarLights({ 
     carBounds, 
     isNightMode,
+    activeProfile,
     rotation = [0, 0, 0] 
 }: { 
     carBounds: { width?: number, length?: number, height?: number, forwardDir: number },
     isNightMode: boolean,
+    activeProfile: any,
     rotation?: [number, number, number] 
 }) {
   const frontGlow = useGlowTexture('#D4EBFF', 1.2);
   const rearGlow = useGlowTexture('#FF2200', 1.1);
 
   if (!isNightMode) return null;
+
+  const manual = activeProfile?.manualLightPositions?.headlights;
 
     
     const zFrontLocal = (carBounds.length / 2) * carBounds.forwardDir;
@@ -257,9 +278,10 @@ function UniversalCarLights({
 
   const { width = 1.8, length = 4.5, height = 1.5, forwardDir = 1 } = carBounds;
 
+
   // Matematikai pozíciók (sarkok) - improved positioning
-  const lampX = (width / 2) * 0.72; 
-  const lampY = (-height / 2) + (height * 0.60); 
+  const lampX = manual?.x ?? (width / 2) * 0.85; 
+  const lampY = manual?.y ?? ((-height / 2) + (height * 0.60));
   const tailY = (-height / 2) + (height * 0.65); 
   // FONTOS: Kicsit kijjebb toljuk (0.15), hogy ne lógjon bele a BMW lökhárítójába
   const frontZ = ((length / 2) * forwardDir) + (0.15 * forwardDir); 
@@ -273,7 +295,7 @@ function UniversalCarLights({
         {/* ELSŐ FÉNYSZÓRÓK - Light only, no visible sprites */}
         <SpotLight 
             position={[-lampX, lampY, frontZ]} 
-            target-position={[-lampX, beamDrop, frontZ + (beamDist * forwardDir)]} 
+            target-position={[-lampX, beamDrop, frontZ + (beamDist * forwardDir)]}
             angle={0.55} 
             penumbra={0.5} 
             distance={60} 
@@ -286,7 +308,7 @@ function UniversalCarLights({
 
         <SpotLight 
             position={[lampX, lampY, frontZ]} 
-            target-position={[lampX, beamDrop, frontZ + (beamDist * forwardDir)]} 
+            target-position={[lampX, beamDrop, frontZ + (beamDist * forwardDir)]}
             angle={0.55} 
             penumbra={0.5} 
             distance={60} 
@@ -385,7 +407,7 @@ function CameraController({ activeSpot, hotspots, modelRadius, modelRef }: { act
 
 
 // --- MODELL KOMPONENS ---
-function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, isHeadlightOn = true, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
+function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, isHeadlightOn = true, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
   const { scene } = useGLTF(path, '/draco/') as any;
   const modelRef = useRef<THREE.Group>(null);
   const [loadStage, setLoadStage] = useState(0); // 0: Start, 1: Mesh Ready, 2: Shaders Ready
@@ -780,7 +802,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, setActiveSpot, setIsH
                         position={[0, 0, 0]}
                         zIndexRange={[100, 0]}
                         occlude={false} 
-                        distanceFactor={Math.max(modelRadiusState * 2.2, 2)} 
+                        distanceFactor={hotspotSettings?.distanceFactor ?? Math.max(modelRadiusState * 2.2, 2)}
                         eps={0.001}
                         style={{ pointerEvents: 'none', userSelect: 'none', WebkitUserSelect: 'none' }}
                     >
@@ -1067,6 +1089,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
               setDetectedHeadlights={setDetectedHeadlights}
               setDetectedTaillights={setDetectedTaillights}
               setDetectedDrllight={setDetectedDrllight}
+              hotspotSettings={activeProfile?.hotspotSettings}
             />
           </Stage>
 
@@ -1075,17 +1098,19 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
               (detectedHeadlights || detectedTaillights || detectedDrllight || activeManualLights) ? (
                   <ExactCarLights 
                      // ÚJ LOGIKA: Ha a lámpa ki van kapcsolva, null-t adunk át, így a fénycsóva eltűnik!
-                     lights={isHeadlightOn ? (detectedHeadlights || formatManualLights(activeManualLights?.headlights)) : null}
+                     lights={isHeadlightOn ? (formatManualLights(activeManualLights?.headlights) || detectedHeadlights) : null}
                      taillights={detectedTaillights || formatManualLights(activeManualLights?.taillights)}
                      drllight={detectedDrllight || formatManualLights(activeManualLights?.rdllight)}
                      isNightMode={isNightMode} 
                      floorOffset={floorOffset}
                      carBounds={carData}
+                     lightSettings={activeProfile?.lightSettings}
                   />
               ) : (
                   <UniversalCarLights 
                      carBounds={carData} 
                      isNightMode={isNightMode} 
+                     activeProfile={activeProfile}
                   />
               )
           )}
