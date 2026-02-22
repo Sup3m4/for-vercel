@@ -6,7 +6,7 @@ import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRig
 import * as THREE from 'three'; 
 import { Center } from '@react-three/drei';
 import { CAR_MODEL_CONFIGS } from '../configs/carModels';
-import { audiEngineProfiles } from '../data/carDatabase/brands/audi/audi-engineprofiles';
+import { audiEngineProfiles } from '../data/carDatabase/brands/audi/engineprofiles/a1-a38p';
 
 function Loader() {
   const { progress } = useProgress();

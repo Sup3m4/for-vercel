@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { carDatabase } from "@/data/carDatabase";
 import { cn } from "@/lib/utils";
 import { useGLTF} from "@react-three/drei"; 
-import { audiEngineProfiles } from "@/data/carDatabase/brands/audi/audi-engineprofiles";
+import { audiEngineProfiles } from "@/data/carDatabase/brands/audi/engineprofiles/a1-a38p";
 
 interface EngineCodeSelectorProps {
   brand: string;
