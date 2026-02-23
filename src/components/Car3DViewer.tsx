@@ -6,7 +6,7 @@ import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRig
 import * as THREE from 'three'; 
 import { Center } from '@react-three/drei';
 import { CAR_MODEL_CONFIGS } from '../configs/carModels';
-import { audiEngineProfiles } from '../data/carDatabase/brands/audi/engineprofiles/a1-a38p';
+import { audiEngineProfiles } from '../data/carDatabase/brands/audi/engineprofiles';
 
 function Loader() {
   const { progress } = useProgress();
@@ -475,7 +475,10 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
                 if (Array.isArray(child.material)) {
                    child.material = child.material.map((m: any) => {
                        const mName = (m.name || "").toLowerCase();
-                       const isThisMatMatching = names.some(n => mName === n.toLowerCase() || meshName === n.toLowerCase());
+                       const isThisMatMatching = names.some(n => 
+                        mName.includes(n.toLowerCase()) || 
+                        meshName.includes(n.toLowerCase())
+                    );
                        
                        if (isThisMatMatching) {
                            matched = true;
@@ -513,6 +516,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
                 const childSize = new THREE.Vector3();
                 childBox.getCenter(childCenter);
                 childBox.getSize(childSize);
+                
 
                 // Ha az elem szélesebb mint 80 cm, az egy egybeolvasztott bal-jobb lámpa!
                 const isCombinedMesh = isXLonger ? childSize.z > 0.8 : childSize.x > 0.8;
