@@ -119,7 +119,7 @@ function ExactCarLights({ lights, taillights, drllight, isNightMode, carBounds, 
 
   // --- DINAMIKUS SZORZÓK (Nem fix számok!) ---
   // A kiindulási pontot épphogy csak kiléptetjük a fényszóró anyagából (az autó hosszának 1.5%-a)
-  const dynFrontOffset = carLength * 0.015; 
+  const dynFrontOffset = carLength * 0.01; 
   // A fénypaca a földön az autó hosszának 3.5-szeresénél legyen a legerősebb
   const dynBeamDistance = lightSettings?.headlightTargetDistance ?? (carLength * 3.5);
   // A fény maximális hatótávja az autó hosszának 12-szerese
@@ -761,6 +761,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
 
   return (
     <group>
+      <Center>
       <primitive 
     ref={modelRef} 
     object={scene} 
@@ -861,6 +862,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
                 )
             })}
         </primitive>
+        </Center>
       <CameraController activeSpot={activeSpot} hotspots={smartHotspots} modelRadius={modelRadiusState} modelRef={modelRef} />
     </group>
   );
