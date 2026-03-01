@@ -5,6 +5,7 @@ import { useGLTF, Stage, Html, useProgress, OrbitControls, ContactShadows, MeshR
 import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRight, Sun, Moon, Lightbulb, LightbulbOff } from 'lucide-react';
 import * as THREE from 'three'; 
 import { Center } from '@react-three/drei';
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { CAR_MODEL_CONFIGS } from '../configs/carModels';
 import { audiEngineProfiles } from '../data/carDatabase/brands/audi/engineprofiles';
 
@@ -444,138 +445,139 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
  
 
 
-  // 1. LÁMPA DETEKTÁLÁS ÉS ANYAGCSERE (ENHANCED FOR REALISTIC NIGHT MODE)
-  useEffect(() => {
-    if (!scene || !modelRef.current) return;
-    
-    modelRef.current.updateMatrixWorld(true);
+ useEffect(() => {
+  if (!scene || !modelRef.current) return;
+  
+  modelRef.current.updateMatrixWorld(true);
 
-    const box = new THREE.Box3().setFromObject(modelRef.current);
-    const size = new THREE.Vector3();
-    box.getSize(size);
-    // Megnézzük, hogy az autó hosszában (Z) vagy keresztben (X) áll-e
-    const isXLonger = size.x > size.z;
+  const box = new THREE.Box3().setFromObject(modelRef.current);
+  const size = new THREE.Vector3();
+  box.getSize(size);
+  // Check if the car is aligned along the X or Z axis
+  const isXLonger = size.x > size.z;
 
-    const headCenters: THREE.Vector3[] = [];
-    const tailCenters: THREE.Vector3[] = [];
-    const drlCenters: THREE.Vector3[] = [];
+  const headCenters: THREE.Vector3[] = [];
+  const tailCenters: THREE.Vector3[] = [];
+  const drlCenters: THREE.Vector3[] = [];
 
-    console.log("=== 🔍 EXACT LIGHT SEARCH STARTING ===");
+  console.log("=== 🔍 EXACT LIGHT SEARCH STARTING ===");
 
-    scene.traverse((child: any) => {
-      if (child.isMesh) {
-        const meshName = (child.name || "").toLowerCase();
+  // OPTIMIZATION: Read profile values only once before the loop
+  const drlGlow = activeProfile?.lightSettings?.meshGlowDrl ?? 5;
+  const headGlow = activeProfile?.lightSettings?.meshGlowHeadlight ?? 10;
+  const tailGlow = activeProfile?.lightSettings?.meshGlowTaillight ?? 8;
 
-        const processLight = (names: string[] | undefined, targetArray: THREE.Vector3[], emissiveHex: string, nightIntensity: number, offIntensity: number, lightType: string) => {
-            if (!names || !Array.isArray(names)) return;
-            
-            let matched = false;
+  scene.traverse((child: any) => {
+    if (child.isMesh) {
+      const meshName = (child.name || "").toLowerCase();
 
-            if (child.material) {
-                if (Array.isArray(child.material)) {
-                   child.material = child.material.map((m: any) => {
-                       const mName = (m.name || "").toLowerCase();
-                       const isThisMatMatching = names.some(n => 
-                        mName.includes(n.toLowerCase()) || 
-                        meshName.includes(n.toLowerCase())
-                    );
-                       
-                       if (isThisMatMatching) {
-                           matched = true;
-                           const newM = m.clone();
-                           newM.emissive = new THREE.Color(emissiveHex);
-                           newM.emissiveIntensity = isNightMode ? nightIntensity : offIntensity;
-                           newM.toneMapped = false;
-                           newM.needsUpdate = true;
-                           return newM;
-                       }
-                       return m;
-                   });
-                } else {
-                   const mName = (child.material.name || "").toLowerCase();
-                   const isThisMatMatching = names.some(n => mName === n.toLowerCase() || meshName === n.toLowerCase());
-                   
-                   if (isThisMatMatching) {
-                       matched = true;
-                       child.material = child.material.clone();
-                       child.material.emissive = new THREE.Color(emissiveHex);
-                       child.material.emissiveIntensity = isNightMode ? nightIntensity : offIntensity; 
-                       child.material.toneMapped = false;
-                       child.material.needsUpdate = true;
-                   }
-                }
-            }
+      const processLight = (names: string[] | undefined, targetArray: THREE.Vector3[], emissiveHex: string, nightIntensity: number, offIntensity: number, lightType: string) => {
+          // If names array is empty or undefined, skip processing
+          if (!names || !Array.isArray(names) || names.length === 0) return;
+          
+          let matched = false;
 
-            if (matched) {
-                console.log(`✅ EXACT MATCH (${lightType}):`, child.name);
-                child.castShadow = false;
+          if (child.material) {
+              if (Array.isArray(child.material)) {
+                 child.material = child.material.map((m: any) => {
+                     const mName = (m.name || "").toLowerCase();
+                     const isThisMatMatching = names.some(n => 
+                      mName.includes(n.toLowerCase()) || 
+                      meshName.includes(n.toLowerCase())
+                  );
+                     
+                     if (isThisMatMatching) {
+                         matched = true;
+                         const newM = m.clone();
+                         newM.emissive = new THREE.Color(emissiveHex);
+                         newM.emissiveIntensity = isNightMode ? nightIntensity : offIntensity;
+                         newM.toneMapped = false;
+                         newM.needsUpdate = true;
+                         return newM;
+                     }
+                     return m;
+                 });
+              } else {
+                 const mName = (child.material.name || "").toLowerCase();
+                 // BUG FIX: Using .includes() instead of strict === equality
+                 const isThisMatMatching = names.some(n => 
+                     mName.includes(n.toLowerCase()) || 
+                     meshName.includes(n.toLowerCase())
+                 );
+                 
+                 if (isThisMatMatching) {
+                     matched = true;
+                     child.material = child.material.clone();
+                     child.material.emissive = new THREE.Color(emissiveHex);
+                     child.material.emissiveIntensity = isNightMode ? nightIntensity : offIntensity; 
+                     child.material.toneMapped = false;
+                     child.material.needsUpdate = true;
+                 }
+              }
+          }
 
-                // Lekérjük az elem TÉNYLEGES méretét és helyzetét a térben
-                const childBox = new THREE.Box3().setFromObject(child);
-                const childCenter = new THREE.Vector3();
-                const childSize = new THREE.Vector3();
-                childBox.getCenter(childCenter);
-                childBox.getSize(childSize);
-                
+          if (matched) {
+              console.log(`✅ EXACT MATCH (${lightType}):`, child.name);
+              child.castShadow = false;
 
-                // Ha az elem szélesebb mint 80 cm, az egy egybeolvasztott bal-jobb lámpa!
-                const isCombinedMesh = isXLonger ? childSize.z > 0.8 : childSize.x > 0.8;
+              const childBox = new THREE.Box3().setFromObject(child);
+              const childCenter = new THREE.Vector3();
+              const childSize = new THREE.Vector3();
+              childBox.getCenter(childCenter);
+              childBox.getSize(childSize);
+              
+              // If element is wider than 0.8m, it's a combined left-right mesh
+              const isCombinedMesh = isXLonger ? childSize.z > 0.8 : childSize.x > 0.8;
 
-                if (isCombinedMesh) {
-                    console.log(`⚠️ Egybeolvasztott ${lightType} mesh detektálva! Kettéosztjuk.`);
-                    const leftPos = childCenter.clone();
-                    const rightPos = childCenter.clone();
-                    
-                    // Kicsit beljebb húzzuk a szélétől (kb a szélesség 80%-ához)
-                    const offset = isXLonger ? (childSize.z / 2) * 0.8 : (childSize.x / 2) * 0.8;
+              if (isCombinedMesh) {
+                  console.log(`⚠️ Combined ${lightType} mesh detected! Splitting into left and right.`);
+                  const leftPos = childCenter.clone();
+                  const rightPos = childCenter.clone();
+                  
+                  const offset = isXLonger ? (childSize.z / 2) * 0.8 : (childSize.x / 2) * 0.8;
 
-                    if (isXLonger) {
-                        leftPos.z -= offset;
-                        rightPos.z += offset;
-                    } else {
-                        leftPos.x -= offset;
-                        rightPos.x += offset;
-                    }
-                    targetArray.push(leftPos, rightPos);
-                } else {
-                    // Ha normális méretű, simán csak betesszük a közepét
-                    targetArray.push(childCenter);
-                }
-            }
-        };
+                  if (isXLonger) {
+                      leftPos.z -= offset;
+                      rightPos.z += offset;
+                  } else {
+                      leftPos.x -= offset;
+                      rightPos.x += offset;
+                  }
+                  targetArray.push(leftPos, rightPos);
+              } else {
+                  targetArray.push(childCenter);
+              }
+          }
+      };
 
-        processLight(customLightNames?.drllight, drlCenters, '#ffffff', 5, 2, "DRL");
-        
-        // A Tompított (Headlight) csak akkor ragyog, ha az isHeadlightOn IGAZ:
-        processLight(customLightNames?.headlights, headCenters, '#ffffff', isHeadlightOn ? 10 : 0, 0, "HEADLIGHT"); 
-        
-        // A hátsó lámpa:
-        processLight(customLightNames?.taillights, tailCenters, '#ff0000', 8, 0, "TAILLIGHT");
+      processLight(customLightNames?.drllight, drlCenters, '#ffffff', drlGlow, 2, "DRL");
+      processLight(customLightNames?.headlights, headCenters, '#ffffff', isHeadlightOn ? headGlow : 0, 0, "HEADLIGHT"); 
+      processLight(customLightNames?.taillights, tailCenters, '#ff0000', tailGlow, 0, "TAILLIGHT");
+    }
+  });
+
+  console.log(`Result: ${drlCenters.length} DRL, ${headCenters.length} Headlight, ${tailCenters.length} Taillight.`);
+
+  // Sort the matched centers based on car orientation
+  const sortLeftRight = (centers: THREE.Vector3[]) => {
+    if (centers.length >= 2) {
+      if (isXLonger) {
+          centers.sort((a, b) => a.z - b.z); 
+      } else {
+          centers.sort((a, b) => a.x - b.x); 
       }
-    });
+      return { left: centers[0], right: centers[centers.length - 1] };
+    } else if (centers.length === 1) {
+      return { left: centers[0], right: centers[0] };
+    }
+    return null;
+  };
 
-    console.log(`Result: ${drlCenters.length} DRL, ${headCenters.length} Headlight, ${tailCenters.length} Taillight.`);
+  if (setDetectedHeadlights) setDetectedHeadlights(sortLeftRight(headCenters));
+  if (setDetectedTaillights) setDetectedTaillights(sortLeftRight(tailCenters));
+  if (setDetectedDrllight) setDetectedDrllight(sortLeftRight(drlCenters));
 
-    // OKOS RENDEZÉS: Ha keresztben áll az autó, a bal/jobb oldalt a Z tengely adja meg!
-    const sortLeftRight = (centers: THREE.Vector3[]) => {
-      if (centers.length >= 2) {
-        if (isXLonger) {
-            centers.sort((a, b) => a.z - b.z); 
-        } else {
-            centers.sort((a, b) => a.x - b.x); 
-        }
-        return { left: centers[0], right: centers[centers.length - 1] };
-      } else if (centers.length === 1) {
-        return { left: centers[0], right: centers[0] };
-      }
-      return null;
-    };
-
-    if (setDetectedHeadlights) setDetectedHeadlights(sortLeftRight(headCenters));
-    if (setDetectedTaillights) setDetectedTaillights(sortLeftRight(tailCenters));
-    if (setDetectedDrllight) setDetectedDrllight(sortLeftRight(drlCenters));
-
-  }, [scene, customLightNames, isNightMode, setDetectedHeadlights, isHeadlightOn, setDetectedTaillights, setDetectedDrllight]);
+}, [scene, customLightNames, isNightMode, setDetectedHeadlights, isHeadlightOn, setDetectedTaillights, setDetectedDrllight, activeProfile]);
 
   // --- HOTSPOT SZÁMÍTÁS ---
   useEffect(() => {
@@ -622,12 +624,19 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
         setModelRadiusState(sphere.radius);
         if (setModelRadius) setModelRadius(sphere.radius);
         const isMobileCheck = window.innerWidth < 768;
-        const minDist = sphere.radius * 1.2;
-        const maxDist = sphere.radius * (isMobileCheck ? 4.5 : 3.5);
+        
+        // --- NEW: PROFILE-BASED CAMERA ZOOM LIMITS ---
+        // Alapértelmezett szorzó 1.2 (ha nincs megadva a profilban)
+        const minZoomMultiplier = activeProfile?.cameraSettings?.minDistanceMultiplier ?? 1.2;
+        const maxZoomMultiplier = activeProfile?.cameraSettings?.maxDistanceMultiplier ?? (isMobileCheck ? 4.5 : 3.5);
+
+        const minDist = sphere.radius * minZoomMultiplier;
+        const maxDist = sphere.radius * maxZoomMultiplier;
+        
         if (setCalculatedMinDistance) setCalculatedMinDistance(minDist);
         if (setCalculatedMaxDistance) setCalculatedMaxDistance(maxDist);
     }
-  }, [scene, scale, forcedForwardDir, path]);
+  }, [scene, scale, forcedForwardDir, path, activeProfile]);
 
   // --- 2. HOTSPOT CALCULATION ---
   useEffect(() => {
@@ -903,6 +912,12 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   const activeManualLights = activeProfile?.manualLightPositions;
 
   const [activeLightNames, setActiveLightNames] = useState<any>(null);
+  const isNightModeDisabled = activeProfile?.lightSettings?.disableNightMode === true || activeProfile?.disableNightMode === true;
+  useEffect(() => {
+    if (isNightModeDisabled && isNightMode) {
+        setIsNightMode(false);
+    }
+}, [isNightModeDisabled, isNightMode]);
   
   // ITT VAN A CAR DATA DEFINÍCIÓJA BIZTOSAN A HELYÉN:
   const [carData, setCarData] = useState<{
@@ -971,30 +986,28 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
       <div className="absolute top-6 right-6 z-40 flex flex-col gap-3">
           
           {/* NIGHT MODE TOGGLE */}
-          <div className="relative group">
+          <div className="relative">
             <button 
                 onClick={(e) => { 
                     e.stopPropagation(); 
-                    // Ha nincs prémium -> Unlock ablak, egyébként váltás
                     if (!isPremium) onUnlock(); 
-                    else setIsNightMode(!isNightMode); 
+                    else if (!isNightModeDisabled) setIsNightMode(!isNightMode); 
                 }} 
-                className={`backdrop-blur-md border rounded-full p-2.5 transition-all hover:scale-110 flex items-center justify-center 
-                    ${!isPremium 
-                        ? 'bg-slate-900/10 border-slate-900/20 text-slate-500 hover:bg-slate-900/20' // Zárolt stílus
+                className={`peer backdrop-blur-md border rounded-full p-2.5 transition-all flex items-center justify-center 
+                    ${!isPremium || isNightModeDisabled
+                        ? 'bg-slate-900/10 border-slate-900/20 text-slate-500 cursor-not-allowed opacity-60' 
                         : isNightMode 
-                            ? 'bg-yellow-500/20 border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/30' 
-                            : 'bg-slate-900/10 border-slate-900/20 text-slate-700 hover:bg-slate-900/20'
+                            ? 'bg-yellow-500/20 border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/30 hover:scale-110 cursor-pointer' 
+                            : 'bg-slate-900/10 border-slate-900/20 text-slate-700 hover:bg-slate-900/20 hover:scale-110 cursor-pointer'
                     }`} 
             >
-                {/* Ikon csere: Ha nincs prémium -> Lakat */}
                 {!isPremium ? <Lock className="w-5 h-5 opacity-70" /> : (isNightMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
             </button>
             
-            {/* Tooltip (Leírás) */}
-            {!isPremium && (
-                <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-slate-900/90 text-white text-xs font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none backdrop-blur-sm border border-white/10">
-                    Unlock Night Mode
+            {/* Dinamikus Tooltip (Leírás) - Csak a gomb érintésére (peer-hover) jelenik meg! */}
+            {(!isPremium || isNightModeDisabled) && (
+                <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-slate-900/90 text-white text-xs font-bold rounded-lg opacity-0 peer-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none backdrop-blur-sm border border-white/10 z-50">
+                    {!isPremium ? "Unlock Night Mode" : "Night Mode is currently not available"}
                 </div>
             )}
           </div>
@@ -1096,6 +1109,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
               setDetectedTaillights={setDetectedTaillights}
               setDetectedDrllight={setDetectedDrllight}
               hotspotSettings={activeProfile?.hotspotSettings}
+              activeProfile={activeProfile}
             />
           </Stage>
 
@@ -1154,6 +1168,16 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
             maxPolarAngle={Math.PI / 2 - 0.05} 
             target={[0, 0, 0]} 
           />
+          {/* --- ÚJ: KAMERA EFFEKTEK (BLOOM) --- */}
+          {isNightMode && activeProfile?.lightSettings?.useBloom && (
+            <EffectComposer enableNormalPass={false}>
+              <Bloom 
+                luminanceThreshold={5} // Increased from 2 to 5 to prevent metallic paint reflections from sparkling
+                mipmapBlur={true}      
+                intensity={1.2}        // Slightly reduced intensity for a cleaner, less explosive aura
+              />
+            </EffectComposer>
+          )}
         </Suspense>
       </Canvas>
       {authorCredit && (

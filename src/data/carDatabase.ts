@@ -22,7 +22,7 @@ export interface EngineProfile {
   timingType: string;  
   materialOverrides?: {metalness: number; roughness: number;envMapIntensity?: number;};   
   floorSettings?: {mixStrength: number;roughness: number;}; 
-  lightSettings?: {headlightIntensity?: number; headlightDistance?: number; headlightTargetDistance?: number; headlightPenumbra?: number;headlightAngle?: number; headlightRadiusTop?: number; headlightOpacity?: number;};
+  lightSettings?: {headlightIntensity?: number; headlightDistance?: number; headlightTargetDistance?: number; headlightPenumbra?: number;headlightAngle?: number; headlightRadiusTop?: number; headlightOpacity?: number; meshGlowHeadlight?: number; meshGlowTaillight?: number; meshGlowDrl?: number; useBloom?: boolean;};
   model3DVerticalOffset?: number;
   modelForwardDir?: number; 
   manualLightPositions?: {headlights?: { x: number; y: number; z: number };taillights?: { x: number; y: number; z: number };};
@@ -48,6 +48,8 @@ export interface EngineProfile {
   commonIssues: string[];
   repairCostEstimate: string;
   author?: string;
+  cameraSettings?: {minDistanceMultiplier: number;}
+  disableNightMode?: boolean,
   hotspotSettings?: {distanceFactor?: number;}
   fluidCapacities?: {system: string;capacity: string;spec: string;}[];
   torqueSpecs?: {part: string;value: string;note: string;}[];
