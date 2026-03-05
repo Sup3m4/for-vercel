@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
     Gauge,
     Zap,
@@ -43,6 +43,7 @@ import { Button } from "@/components/ui/button";
 import { EngineProfile as EngineProfileType } from "@/data/carDatabase";
 import { cn } from "@/lib/utils";
 import Car3DViewer from './Car3DViewer'
+import { useGLTF } from "@react-three/drei";
 
 interface EngineProfileProps {
   profile: EngineProfileType;
@@ -60,6 +61,16 @@ export function EngineProfile({ profile }: EngineProfileProps) {
   const baseHp = parseInt(profile.power) || 300;
   const baseNm = parseInt(profile.torque) || 400;
   const unlockPremium = () => setIsPremiumUnlocked(true);
+
+  // Preload 3D model smoothly as soon as the engine profile view is opened,
+  // so when the user switches to the 3D tab the model is already in cache.
+  useEffect(() => {
+    if (profile.model3DPath) {
+      // `useGLTF.preload` is a static helper, not a hook, so it is safe to call here.
+      // It only triggers the GLTF load, it does not render anything.
+      (useGLTF as any).preload?.(profile.model3DPath, "/draco/");
+    }
+  }, [profile.model3DPath]);
 
   return (
     <div className="w-full max-w-6xl mx-auto space-y-6 animate-slide-up">

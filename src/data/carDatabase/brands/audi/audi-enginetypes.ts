@@ -152,6 +152,7 @@ export const audiEngineTypes = {
     { name: "RS5 (4.2 V8)", hp: "450 hp" }
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)": [
+    { name: "1.4 TFSI", hp: "150 hp" },
     { name: "2.0 TFSI", hp: "190-204-245-252-265 hp" },
     { name: "2.0 TDI", hp: "150-190-204 hp" },
     { name: "3.0 TDI", hp: "218-272-286 hp" },

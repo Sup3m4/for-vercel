@@ -505,11 +505,15 @@ export const audiEngineCodes = {
 
   // --- A5 (B8) ---
   "Audi-A5 (S/RS)-B8 (2007-2016)-1.8 TFSI": [
+    { code: "CDHA", hp: "120 hp", torque: "230 Nm", profileId: "cdha-a5-b8" },
     { code: "CABD", hp: "170 hp", torque: "320 Nm", profileId: "cabd-a5-b8" },
     { code: "CDHB", hp: "160 hp", torque: "250 Nm", profileId: "cdhb-a5-b8" },
     { code: "CJEB", hp: "170 hp", torque: "320 Nm", profileId: "cjeb-a5-b8" }
   ],
   "Audi-A5 (S/RS)-B8 (2007-2016)-2.0 TFSI": [
+    { "code": "CFKA", "hp": "180 hp", "torque": "320 Nm", "profileId": "cfka-a5-b8" },
+    { "code": "CAEB", "hp": "211 hp", "torque": "350 Nm", "profileId": "caeb-a5-b8" },
+    { "code": "CPMB", "hp": "220 hp", "torque": "350 Nm", "profileId": "cpmb-a5-b8" },
     { code: "CDNB", hp: "180 hp", torque: "320 Nm", profileId: "cdnb-a5-b8" },
     { code: "CDNC", hp: "211 hp", torque: "350 Nm", profileId: "cdnc-a5-b8" },
     { code: "CNCD", hp: "225 hp", torque: "350 Nm", profileId: "cncd-a5-b8" }
@@ -521,22 +525,39 @@ export const audiEngineCodes = {
     { code: "CMUA", hp: "272 hp", torque: "400 Nm", profileId: "cmua-a5-b8" }
   ],
   "Audi-A5 (S/RS)-B8 (2007-2016)-2.0 TDI": [
+    { "code": "CSUA", "hp": "150 hp", "torque": "320 Nm", "profileId": "csua-a5-b8" },
+    { "code": "CAHB", "hp": "163 hp", "torque": "380 Nm", "profileId": "cahb-a5-b8" },
+    { "code": "CAGA", "hp": "143 hp", "torque": "320 Nm", "profileId": "caga-a5-b8" },
+    { "code": "CJCA", "hp": "143 hp", "torque": "320 Nm", "profileId": "cjca-a5-b8" },
+    { "code": "CJCD", "hp": "150 hp", "torque": "320 Nm", "profileId": "cjcd-a5-b8" },
     { code: "CAHA", hp: "170 hp", torque: "350 Nm", profileId: "caha-a5-b8" },
     { code: "CGLC", hp: "177 hp", torque: "380 Nm", profileId: "cglc-a5-b8" },
-    { code: "CNHA", hp: "190 hp", torque: "400 Nm", profileId: "cnha-a5-b8" }
+    { code: "CNHA", hp: "190 hp", torque: "400 Nm", profileId: "cnha-a5-b8" },
+    { "code": "CAGC", "hp": "120 hp", "torque": "290 Nm", "profileId": "cagc-a5-b8" },
+    { "code": "CAGB", "hp": "136 hp", "torque": "320 Nm", "profileId": "cagb-a5-b8" },
+    { "code": "CSUB", "hp": "136 hp", "torque": "320 Nm", "profileId": "csub-a5-b8" },
   ],
   "Audi-A5 (S/RS)-B8 (2007-2016)-2.7 TDI": [
+    { code: "CAMB", hp: "163 hp", torque: "380 Nm", profileId: "camb-a5-b8" },
+    { code: "CGKB", hp: "163 hp", torque: "380 Nm", profileId: "cgkb-a5-b8" },
     { code: "CAMA", hp: "190 hp", torque: "400 Nm", profileId: "cama-a5-b8" },
     { code: "CGKA", hp: "190 hp", torque: "400 Nm", profileId: "cgka-a5-b8" }
   ],
   "Audi-A5 (S/RS)-B8 (2007-2016)-3.0 TDI": [
-    { code: "CCWA", hp: "240 hp", torque: "500 Nm", profileId: "ccwa-a5-b8" },
-    { code: "CDUC", hp: "245 hp", torque: "500 Nm", profileId: "cduc-a5-b8" }
-  ],
+    { "code": "CCWB", "hp": "211 hp", "torque": "450 Nm", "profileId": "ccwb-a5-b8" },
+    { code: "CAPA", hp: "240 hp", torque: "500 Nm", profileId: "capa-a5-b8" },
+    { code: "CCWA", hp: "240 hp", torque: "500 Nm", profileId: "ccwa-a5-b8" }, //
+    { code: "CLAB", hp: "204 hp", torque: "400 Nm", profileId: "clab-a5-b8" },
+    { code: "CDUC", hp: "245 hp", torque: "500 Nm", profileId: "cduc-a5-b8" }, //
+    { code: "CKVB", hp: "245 hp", torque: "500 Nm", profileId: "ckvb-a5-b8" },
+    { code: "CKVC", hp: "245 hp", torque: "580 Nm", profileId: "ckvc-a5-b8" }
+],
   "Audi-A5 (S/RS)-B8 (2007-2016)-S5 (4.2 V8)": [
     { code: "CAUA", hp: "354 hp", torque: "440 Nm", profileId: "caua-s5-b8" }
   ],
   "Audi-A5 (S/RS)-B8 (2007-2016)-S5 (3.0 TFSI)": [
+    { code: "CGWC", hp: "333 hp", torque: "440 Nm", profileId: "cgwc-s5-b8" },
+    { code: "CTUB", hp: "333 hp", torque: "440 Nm", profileId: "ctub-s5-b8" },
     { code: "CAKA", hp: "333 hp", torque: "440 Nm", profileId: "caka-s5-b8" },
     { code: "CCBA", hp: "333 hp", torque: "440 Nm", profileId: "ccba-s5-b8" }
   ],
@@ -545,27 +566,53 @@ export const audiEngineCodes = {
   ],
 
   // --- A5 (B9) ---
+  "Audi-A5 (S/RS)-B9 (2016-2024)-1.4 TFSI": [
+
+{ code: "CVNA", hp: "150 hp", torque: "250 Nm", profileId: "cvna-a5-b9" }],
+
   "Audi-A5 (S/RS)-B9 (2016-2024)-2.0 TFSI": [
+    { code: "DEMA", hp: "150 hp", torque: "270 Nm", profileId: "dema-a5-b9" },
+    { code: "DLVB", hp: "150 hp", torque: "270 Nm", profileId: "dlvb-a5-b9" },
+    { code: "DMSA", hp: "204 hp", torque: "320 Nm", profileId: "dmsa-a5-b9" },
     { code: "CVKB", hp: "190 hp", torque: "320 Nm", profileId: "cvkb-a5-b9" },
     { code: "CYRB", hp: "252 hp", torque: "370 Nm", profileId: "cyrb-a5-b9" },
     { code: "DKNA", hp: "204 hp", torque: "320 Nm", profileId: "dkna-a5-b9" },
-    { code: "DMTA", hp: "265 hp", torque: "370 Nm", profileId: "dmta-a5-b9" }
+    { code: "DMTA", hp: "265 hp", torque: "370 Nm", profileId: "dmta-a5-b9" },
+    { code: "DBPA", hp: "190 hp", torque: "320 Nm", profileId: "dbpa-a5-b9" },
+    { code: "CVLA", hp: "170 hp", torque: "270 Nm", profileId: "cvla-a5-b9" }, // g-tron
+    { code: "CWPB", hp: "190 hp", torque: "320 Nm", profileId: "cwpb-a5-b9" },
+    { code: "DEMB", hp: "150 hp", torque: "270 Nm", profileId: "demb-a5-b9" },
+    { code: "DLVA", hp: "190 hp", torque: "320 Nm", profileId: "dlva-a5-b9" },
+    { code: "DMSB", hp: "204 hp", torque: "320 Nm", profileId: "dmsb-a5-b9" },
+    { code: "CZPB", hp: "190 hp", torque: "320 Nm", profileId: "czpb-a5-b9" },
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)-2.0 TDI": [
+    { code: "DTUB", hp: "163 hp", torque: "380 Nm", profileId: "dtub-a5-b9" },
+    { code: "DTNA", hp: "204 hp", torque: "400 Nm", profileId: "dtna-a5-b9" },
+    { code: "DESA", hp: "190 hp", torque: "400 Nm", profileId: "desa-a5-b9" },
+    { code: "DFVA", hp: "190 hp", torque: "400 Nm", profileId: "dfva-a5-b9" },
     { code: "DETA", hp: "190 hp", torque: "400 Nm", profileId: "deta-a5-b9" },
     { code: "DEUA", hp: "150 hp", torque: "320 Nm", profileId: "deua-a5-b9" },
-    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-a5-b9" }
+    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-a5-b9" },
+    { code: "DTNB", hp: "122 hp", torque: "270 Nm", profileId: "dtnb-a5-b9" }, // Belépő modell
+    { code: "CSUB", hp: "136 hp", torque: "320 Nm", profileId: "csub-a5-b9" },
+    { code: "DEUB", hp: "150 hp", torque: "320 Nm", profileId: "deub-a5-b9" },
+    { code: "CSUA", hp: "150 hp", torque: "320 Nm", profileId: "csua-a5-b9" },
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)-3.0 TDI": [
     { code: "CSWB", hp: "218 hp", torque: "400 Nm", profileId: "cswb-a5-b9" },
     { code: "CRTC", hp: "272 hp", torque: "600 Nm", profileId: "crtc-a5-b9" },
-    { code: "DCPC", hp: "286 hp", torque: "620 Nm", profileId: "dcpc-a5-b9" }
+    { code: "DCPC", hp: "286 hp", torque: "620 Nm", profileId: "dcpc-a5-b9" },
+    { code: "DHXA", hp: "286 hp", torque: "620 Nm", profileId: "dhxa-a5-b9" },
+    { code: "CZZA", hp: "218 hp", torque: "400 Nm", profileId: "czza-a5-b9" },
+    { code: "DIVE", hp: "341 hp", torque: "700 Nm", profileId: "dive-a5-b9" }
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)-S5 (3.0 TFSI)": [
     { code: "CWGD", hp: "354 hp", torque: "500 Nm", profileId: "cwgd-s5-b9" }
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)-S5 TDI (3.0)": [
-    { code: "DEWA", hp: "347 hp", torque: "700 Nm", profileId: "dewa-s5-b9" }
+    { code: "DEWA", hp: "347 hp", torque: "700 Nm", profileId: "dewa-s5-b9" },
+    { code: "DMGA", hp: "341 hp", torque: "700 Nm", profileId: "dmga-s5-b9" }
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)-RS5 (2.9 BiTurbo)": [
     { code: "DECA", hp: "450 hp", torque: "600 Nm", profileId: "deca-rs5-b9" }

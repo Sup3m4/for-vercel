@@ -1060,9 +1060,11 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
       
 
       <Canvas 
+        frameloop="demand"
+        performance={{ min: 0.5, max: 1, debounce: 200 }}
         gl={{ 
-          powerPreference: "high-performance", // Kéri az erősebb GPU-t
-          antialias: false // Az élsimítás kikapcsolása laptopon sokat dob az FPS-en
+          powerPreference: "high-performance",
+          antialias: false
         }}
         dpr={[1, 1.5]} 
         shadows 
@@ -1170,11 +1172,15 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
           />
           {/* --- ÚJ: KAMERA EFFEKTEK (BLOOM) --- */}
           {isNightMode && activeProfile?.lightSettings?.useBloom && (
-            <EffectComposer enableNormalPass={false}>
+            <EffectComposer 
+              enableNormalPass={false}
+              /* Extra MSAA to remove sparkle on bright edges while rotating */
+              multisampling={8}
+            >
               <Bloom 
-                luminanceThreshold={5} // Increased from 2 to 5 to prevent metallic paint reflections from sparkling
-                mipmapBlur={true}      
-                intensity={1.2}        // Slightly reduced intensity for a cleaner, less explosive aura
+                luminanceThreshold={5} // keep high to avoid paint sparkle
+                mipmapBlur      
+                intensity={1.1}
               />
             </EffectComposer>
           )}
