@@ -163,7 +163,8 @@ export const audiEngineTypes = {
   "Audi-A5 (S/RS)-B10 (2024-present)": [
     { name: "2.0 TFSI", hp: "150-204 hp" },
     { name: "2.0 TDI", hp: "204 hp" },
-    { name: "S5 (3.0 TFSI)", hp: "367 hp" }
+    { name: "S5 (3.0 TFSI)", hp: "367 hp" },
+    {name: "RS5 (2.9 BiTurbo)", hp: "585 hp"}
   ],
 
   // --- A6 ---
@@ -181,6 +182,7 @@ export const audiEngineTypes = {
     { name: "S6 Plus", hp: "326 hp" }
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)": [
+    { name: "1.8 20V", hp: "125 hp"},
     { name: "1.8 T", hp: "150-180 hp" },
     { name: "2.0", hp: "130 hp" },
     { name: "2.4 V6", hp: "136-165-170 hp" },

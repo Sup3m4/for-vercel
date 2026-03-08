@@ -35,7 +35,7 @@ const BrandLogo = ({ brand }: { brand: string }) => {
 // TYPES
 // =============================================================================
 interface QuickSearchProps {
-  onEngineCodeFound: (brand: string, model: string, generation: string, engineType: string, engineCode: string) => void;
+  onEngineCodeFound: (brand: string, model: string, generation: string, engineType: string, engineCode: string, profileId?: string) => void;
 }
 
 interface MatchResult {
@@ -44,6 +44,7 @@ interface MatchResult {
   generation: string;
   engineType: string;
   code: string;
+  profileId?: string;
   hp?: string;      // ÚJ MEZŐ: Lóerő
   torque?: string;  // ÚJ MEZŐ: Nyomaték
   searchString: string;
@@ -100,6 +101,7 @@ export function QuickSearch({ onEngineCodeFound }: QuickSearchProps) {
               code: v.code,
               hp: v.hp,         
               torque: v.torque, 
+              profileId: v.profileId,
               searchString: fullString,
               score: 0
             });
@@ -233,9 +235,9 @@ export function QuickSearch({ onEngineCodeFound }: QuickSearchProps) {
       if (matches.length === 0) {
         setError(`Code "${rawTerm}" not found.`);
       } else if (matches.length === 1) {
-         const m = matches[0];
-         onEngineCodeFound(m.brand, m.model, m.generation, m.engineType, m.code);
-      } else {
+        const m = matches[0];
+        onEngineCodeFound(m.brand, m.model, m.generation, m.engineType, m.code, m.profileId);
+     } else {
         setFoundMatches(matches);
         setShowSmartSelector(true);
       }
@@ -694,10 +696,10 @@ return (
             <div className="p-6 overflow-y-auto custom-scrollbar space-y-3">
                   {foundMatches.map((m, i) => (
                       <button 
-                          key={i} 
-                          onClick={() => { setShowSmartSelector(false); onEngineCodeFound(m.brand, m.model, m.generation, m.engineType, m.code) }} 
-                          className="w-full text-left p-4 rounded-xl border border-border bg-card hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all flex items-center justify-between group"
-                      >
+                      key={i} 
+                      onClick={() => { setShowSmartSelector(false); onEngineCodeFound(m.brand, m.model, m.generation, m.engineType, m.code, m.profileId) }} 
+                      className="w-full text-left p-4 rounded-xl border border-border bg-card hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all flex items-center justify-between group"
+                  >
                           <div className="flex items-center gap-5">
                               <div className="shrink-0"><BrandLogo brand={m.brand} /></div>
                               <div>

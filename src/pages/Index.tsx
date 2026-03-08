@@ -87,21 +87,34 @@ const Index = () => {
   };
 
   // --- 4. QUICK SEARCH HANDLER ---
-  const handleQuickSearch = (brand: string, model: string, generation: string, engineType: string, engineCode: string) => {
+  const handleQuickSearch = (brand: string, model: string, generation: string, engineType: string, engineCode: string, profileId?: string) => {
     setVehicleSelection({ brand, model, generation, engineType });
 
-    let profile = engineProfiles.find(p => p.engineCode === engineCode);
-
-    if (!profile) {
-       profile = getEngineProfile(brand, model, generation, engineCode);
+    let profile;
+    
+    // 1. TÖKÉLETES EGYEZÉS: Ha kaptunk egyedi ID-t a gombból, azt tölti be!
+    if (profileId) {
+      profile = engineProfiles.find(p => p.id === profileId || p.profileId === profileId);
     }
+    
+    // 2. OKOS TARTALÉK: Csak akkor, ha eleve nem volt profileId
+    if (!profile && !profileId) {
+      profile = engineProfiles.find(p => 
+        p.engineCode === engineCode && 
+        model.includes(p.model)
+      );
+    }
+
+    // FIGYELEM: A régi, "ha minden kötél szakad, tölts be egy random AEB-t" keresést KITÖRÖLTEM!
 
     if (profile) {
       navigate(`/engine/${profile.id}`);
       setSelectedProfile(profile);
       setViewState("profile");
     } else {
-      console.log("Profile not found for code:", engineCode);
+      // EZT A HIBÁT FOGOD LÁTNI, HA AZ ADATBÁZISBÓL HIÁNYZIK AZ AUTÓ!
+      console.error(`Profil nem található: ${profileId || engineCode}`);
+      alert(`Hiba! A rendszer kereste az '${profileId}' azonosítójú autót, de nem találja a carDatabase.ts-ben!\n\nBiztos, hogy importáltad az a6c4-a6c9.ts fájlt a carDatabase-be?`);
       setViewState("engine-code");
     }
     window.scrollTo({ top: 0, behavior: "smooth" });

@@ -605,35 +605,43 @@ export const audiEngineCodes = {
     { code: "DCPC", hp: "286 hp", torque: "620 Nm", profileId: "dcpc-a5-b9" },
     { code: "DHXA", hp: "286 hp", torque: "620 Nm", profileId: "dhxa-a5-b9" },
     { code: "CZZA", hp: "218 hp", torque: "400 Nm", profileId: "czza-a5-b9" },
-    { code: "DIVE", hp: "341 hp", torque: "700 Nm", profileId: "dive-a5-b9" }
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)-S5 (3.0 TFSI)": [
     { code: "CWGD", hp: "354 hp", torque: "500 Nm", profileId: "cwgd-s5-b9" }
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)-S5 TDI (3.0)": [
     { code: "DEWA", hp: "347 hp", torque: "700 Nm", profileId: "dewa-s5-b9" },
-    { code: "DMGA", hp: "341 hp", torque: "700 Nm", profileId: "dmga-s5-b9" }
+    { code: "DMGA", hp: "341 hp", torque: "700 Nm", profileId: "dmga-s5-b9" },
+    { code: "DIVE", hp: "341 hp", torque: "700 Nm", profileId: "dive-as-b9" }
   ],
   "Audi-A5 (S/RS)-B9 (2016-2024)-RS5 (2.9 BiTurbo)": [
     { code: "DECA", hp: "450 hp", torque: "600 Nm", profileId: "deca-rs5-b9" }
   ],
   "Audi-A5 (S/RS)-B10 (2024-present)-2.0 TFSI": [
-    { code: "DMSB", hp: "204 hp", torque: "340 Nm", profileId: "dmsb-a5-b10" } // Gen 5
+    { code: "DMSA", hp: "150 hp", torque: "280 Nm", profileId: "dmsa-a5-b10" },
+    { code: "DMSB", hp: "204 hp", torque: "340 Nm", profileId: "dmsb-a5-b10" }, // Gen 5
+    { code: "DGHA", hp: "299 hp", torque: "450 Nm", profileId: "50tfsie-a5-b10" }, // 2.0 TFSI + Electric
+    { code: "DGHB", hp: "367 hp", torque: "550 Nm", profileId: "55tfsie-a5-b10" }
   ],
   "Audi-A5 (S/RS)-B10 (2024-present)-2.0 TDI": [
     { code: "DXPA", hp: "204 hp", torque: "400 Nm", profileId: "dxpa-a5-b10" } // MHEV Plus
   ],
   "Audi-A5 (S/RS)-B10 (2024-present)-S5 (3.0 TFSI)": [
-    { code: "DLZA", hp: "367 hp", torque: "550 Nm", profileId: "dlza-s5-b10" } // V6 MHEV Plus
-
-    
+    { code: "DLZA", hp: "367 hp", torque: "550 Nm", profileId: "dlza-s5-b10" }, // V6 MHEV Plus
   ],
+  "Audi-A5 (S/RS)-B10 (2024-present)-RS5 (2.9 BiTurbo)": [
+        { code: "DLRB", hp: "585 hp", torque: "800 Nm", profileId: "dlrb-rs5-b10" } // The new King
+  ],
+
+
   "Audi-A6 (S/RS)-C4 (1994-1997)-1.8 20V": [
-    { code: "ADR", hp: "125 hp", torque: "173 Nm", profileId: "adr-a6-c4" }
+    { code: "ADR", hp: "125 hp", torque: "173 Nm", profileId: "adr-a6-c4" },
+    { code: "AFY", hp: "115 hp", torque: "168 Nm", profileId: "afy-a6-c4" }
   ],
   "Audi-A6 (S/RS)-C4 (1994-1997)-2.0": [
     { code: "AAE", hp: "101 hp", torque: "157 Nm", profileId: "aae-a6-c4" },
-    { code: "ABK", hp: "115 hp", torque: "168 Nm", profileId: "abk-a6-c4" }
+    { code: "ABK", hp: "115 hp", torque: "168 Nm", profileId: "abk-a6-c4" },
+    { code: "ADW", hp: "107 hp", torque: "168 Nm", profileId: "adw-a6-c4" }
   ],
   "Audi-A6 (S/RS)-C4 (1994-1997)-2.0 16V": [
     { code: "ACE", hp: "140 hp", torque: "185 Nm", profileId: "ace-a6-c4" }
@@ -642,19 +650,24 @@ export const audiEngineCodes = {
     { code: "AAR", hp: "133 hp", torque: "186 Nm", profileId: "aar-a6-c4" }
   ],
   "Audi-A6 (S/RS)-C4 (1994-1997)-2.6 V6": [
-    { code: "ABC", hp: "150 hp", torque: "225 Nm", profileId: "abc-a6-c4" }
+    { code: "ABC", hp: "150 hp", torque: "225 Nm", profileId: "abc-a6-c4" },
+    { code: "ACZ", hp: "139 hp", torque: "210 Nm", profileId: "acz-a6-c4" }
   ],
   "Audi-A6 (S/RS)-C4 (1994-1997)-2.8 V6": [
     { code: "AAH", hp: "174 hp", torque: "250 Nm", profileId: "aah-a6-c4" },
-    { code: "ACK", hp: "193 hp", torque: "280 Nm", profileId: "ack-a6-c4" }
+    { code: "ACK", hp: "193 hp", torque: "280 Nm", profileId: "ack-a6-c4" },
+    { code: "AEJ", hp: "163 hp", torque: "230 Nm", profileId: "aej-a6-c4" },
+    { code: "AFC", hp: "174 hp", torque: "245 Nm", profileId: "afc-a6-c4" } // Észak-amerikai 12V variáns
   ],
   "Audi-A6 (S/RS)-C4 (1994-1997)-1.9 TDI": [
     { code: "1Z", hp: "90 hp", torque: "202 Nm", profileId: "1z-a6-c4" },
-    { code: "AHU", hp: "90 hp", torque: "202 Nm", profileId: "ahu-a6-c4" }
+    { code: "AHU", hp: "90 hp", torque: "202 Nm", profileId: "ahu-a6-c4" },
+    { code: "AFN", hp: "110 hp", torque: "235 Nm", profileId: "afn-a6-c4" } // A legendás 110 lovas TDI a végéről
   ],
   "Audi-A6 (S/RS)-C4 (1994-1997)-2.5 TDI": [
     { code: "AAT", hp: "115 hp", torque: "265 Nm", profileId: "aat-a6-c4" },
-    { code: "AEL", hp: "140 hp", torque: "290 Nm", profileId: "ael-a6-c4" }
+    { code: "AEL", hp: "140 hp", torque: "290 Nm", profileId: "ael-a6-c4" },
+    { code: "ABP", hp: "115 hp", torque: "265 Nm", profileId: "abp-a6-c4" }
   ],
   "Audi-A6 (S/RS)-C4 (1994-1997)-S6 (2.2 Turbo)": [
     { code: "AAN", hp: "230 hp", torque: "350 Nm", profileId: "aan-s6-c4" }
@@ -665,10 +678,21 @@ export const audiEngineCodes = {
   "Audi-A6 (S/RS)-C4 (1994-1997)-S6 Plus": [
     { code: "AHK", hp: "326 hp", torque: "400 Nm", profileId: "ahk-s6-plus" }
   ],
-  
+
+  "Audi-A6 (S/RS)-C5 (1997-2004)-1.8 20V": [
+    { code: "AJP", hp: "125 hp", torque: "168 Nm", profileId: "ajp-a6-c5" },
+    { code: "AQE", hp: "125 hp", torque: "168 Nm", profileId: "aqe-a6-c5" },
+    { code: "ARH", hp: "125 hp", torque: "168 Nm", profileId: "arh-a6-c5" },
+    { code: "ANQ", hp: "125 hp", torque: "168 Nm", profileId: "anq-a6-c5" },
+    { code: "AFY", hp: "115 hp", torque: "168 Nm", profileId: "afy-a6-c5" }
+  ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-1.8 T": [
     { code: "AEB", hp: "150 hp", torque: "210 Nm", profileId: "aeb-a6-c5" },
-    { code: "AWT", hp: "150 hp", torque: "210 Nm", profileId: "awt-a6-c5" }
+    { code: "AWT", hp: "150 hp", torque: "210 Nm", profileId: "awt-a6-c5" },
+    { code: "APU", hp: "150 hp", torque: "210 Nm", profileId: "apu-a6-c5" },
+    { code: "ANB", hp: "150 hp", torque: "210 Nm", profileId: "anb-a6-c5" },
+    { code: "ARK", hp: "150 hp", torque: "210 Nm", profileId: "ark-a6-c5" },
+    { code: "AJL", hp: "180 hp", torque: "235 Nm", profileId: "ajl-a6-c5" } // A ritka 180 lovas kivitel
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-2.0": [
     { code: "ALT", hp: "130 hp", torque: "195 Nm", profileId: "alt-a6-c5" }
@@ -676,35 +700,65 @@ export const audiEngineCodes = {
   "Audi-A6 (S/RS)-C5 (1997-2004)-2.4 V6": [
     { code: "AGA", hp: "165 hp", torque: "230 Nm", profileId: "aga-a6-c5" },
     { code: "APS", hp: "165 hp", torque: "230 Nm", profileId: "aps-a6-c5" },
-    { code: "BDV", hp: "170 hp", torque: "230 Nm", profileId: "bdv-a6-c5" }
+    { code: "ALF", hp: "165 hp", torque: "230 Nm", profileId: "alf-a6-c5" },
+    { code: "ARJ", hp: "165 hp", torque: "230 Nm", profileId: "arj-a6-c5" },
+    { code: "AJG", hp: "163 hp", torque: "230 Nm", profileId: "ajg-a6-c5" },
+    { code: "AMM", hp: "163 hp", torque: "230 Nm", profileId: "amm-a6-c5" },
+    { code: "APZ", hp: "163 hp", torque: "230 Nm", profileId: "apz-a6-c5" },
+    { code: "BDV", hp: "170 hp", torque: "230 Nm", profileId: "bdv-a6-c5" },
+    { code: "ALW", hp: "136 hp", torque: "230 Nm", profileId: "alw-a6-c5" },
+    { code: "APC", hp: "156 hp", torque: "225 Nm", profileId: "apc-a6-c5" }
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-2.7 BiTurbo": [
     { code: "AJK", hp: "230 hp", torque: "310 Nm", profileId: "ajk-a6-c5" },
-    { code: "ARE", hp: "250 hp", torque: "350 Nm", profileId: "are-a6-c5" }
+    { code: "AZA", hp: "230 hp", torque: "310 Nm", profileId: "aza-a6-c5" },
+    { code: "ARE", hp: "250 hp", torque: "350 Nm", profileId: "are-a6-c5" },
+    { code: "BES", hp: "250 hp", torque: "350 Nm", profileId: "bes-a6-c5" },  // A késői, Allroad-specifikus kód
+    { code: "APB", hp: "250 hp", torque: "350 Nm", profileId: "apb-a6-c5" },
+    { code: "BEL", hp: "250 hp", torque: "350 Nm", profileId: "bel-a6-c5" }
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-2.8 V6": [
     { code: "ACK", hp: "193 hp", torque: "280 Nm", profileId: "ack-a6-c5" },
-    { code: "ALG", hp: "193 hp", torque: "280 Nm", profileId: "alg-a6-c5" }
+    { code: "ALG", hp: "193 hp", torque: "280 Nm", profileId: "alg-a6-c5" },
+    { code: "APR", hp: "193 hp", torque: "280 Nm", profileId: "apr-a6-c5" },
+    { code: "AQD", hp: "193 hp", torque: "280 Nm", profileId: "aqd-a6-c5" },
+    { code: "AGE", hp: "180 hp", torque: "280 Nm", profileId: "age-a6-c5" },
+    { code: "ATX", hp: "190 hp", torque: "280 Nm", profileId: "atx-a6-c5" },
+    { code: "AMX", hp: "193 hp", torque: "280 Nm", profileId: "amx-a6-c5" },
+    { code: "BBG", hp: "190 hp", torque: "280 Nm", profileId: "bbg-a6-c5" }
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-3.0 V6": [
-    { code: "ASN", hp: "220 hp", torque: "300 Nm", profileId: "asn-a6-c5" }
+    { code: "ASN", hp: "220 hp", torque: "300 Nm", profileId: "asn-a6-c5" },
+    { code: "BBJ", hp: "218 hp", torque: "290 Nm", profileId: "bbj-a6-c5" }
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-4.2 V8": [
     { code: "ARS", hp: "300 hp", torque: "400 Nm", profileId: "ars-a6-c5" },
+    { code: "ASG", hp: "300 hp", torque: "400 Nm", profileId: "asg-a6-c5" },
+    { code: "AWN", hp: "300 hp", torque: "400 Nm", profileId: "awn-a6-c5" },
     { code: "BAT", hp: "335 hp", torque: "420 Nm", profileId: "bat-a6-c5" }
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-1.9 TDI": [
     { code: "AFN", hp: "110 hp", torque: "235 Nm", profileId: "afn-a6-c5" },
-    { code: "AVF", hp: "130 hp", torque: "310 Nm", profileId: "avf-a6-c5" }
+    { code: "AVG", hp: "110 hp", torque: "235 Nm", profileId: "avg-a6-c5" },
+    { code: "AJM", hp: "115 hp", torque: "285 Nm", profileId: "ajm-a6-c5" }, // Első PD TDI itt
+    { code: "AVF", hp: "130 hp", torque: "310 Nm", profileId: "avf-a6-c5" },
+    { code: "AWX", hp: "130 hp", torque: "285 Nm", profileId: "awx-a6-c5" }  // Kisebb nyomaték, más váltó
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-2.5 TDI": [
     { code: "AFB", hp: "150 hp", torque: "310 Nm", profileId: "afb-a6-c5" },
     { code: "AKN", hp: "150 hp", torque: "310 Nm", profileId: "akn-a6-c5" },
+    { code: "AYM", hp: "155 hp", torque: "310 Nm", profileId: "aym-a6-c5" },
+    { code: "BFC", hp: "163 hp", torque: "310 Nm", profileId: "bfc-a6-c5" },
+    { code: "BCZ", hp: "163 hp", torque: "310 Nm", profileId: "bcz-a6-c5" },
+    { code: "BDG", hp: "163 hp", torque: "310 Nm", profileId: "bdg-a6-c5" },
     { code: "AKE", hp: "180 hp", torque: "370 Nm", profileId: "ake-a6-c5" },
-    { code: "BAU", hp: "180 hp", torque: "370 Nm", profileId: "bau-a6-c5" }
+    { code: "BAU", hp: "180 hp", torque: "370 Nm", profileId: "bau-a6-c5" },
+    { code: "BDH", hp: "180 hp", torque: "370 Nm", profileId: "bdh-a6-c5" } // Görgős himbás, tartós változat
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-S6 (4.2 V8)": [
-    { code: "ANK", hp: "340 hp", torque: "420 Nm", profileId: "ank-s6-c5" }
+    { code: "ANK", hp: "340 hp", torque: "420 Nm", profileId: "ank-s6-c5" },
+    { code: "AQJ", hp: "340 hp", torque: "420 Nm", profileId: "aqj-s6-c5" },
+    { code: "BBD", hp: "340 hp", torque: "420 Nm", profileId: "bbd-s6-c5" }
   ],
   "Audi-A6 (S/RS)-C5 (1997-2004)-RS6 (4.2 BiTurbo)": [
     { code: "BCY", hp: "450 hp", torque: "560 Nm", profileId: "bcy-rs6-c5" }
