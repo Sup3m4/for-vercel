@@ -200,6 +200,7 @@ export const audiEngineTypes = {
     { name: "2.0 TFSI", hp: "170 hp" },
     { name: "2.4 V6", hp: "177 hp" },
     { name: "2.8 FSI", hp: "190-210-220 hp" },
+    { name: "3.0 V6 MPI", hp: "218 hp"},
     { name: "3.0 TFSI", hp: "290 hp" },
     { name: "3.2 FSI", hp: "255 hp" },
     { name: "4.2 V8", hp: "335-350 hp" },
@@ -213,6 +214,7 @@ export const audiEngineTypes = {
     { name: "1.8 TFSI", hp: "190 hp" },
     { name: "2.0 TFSI", hp: "180-252 hp" },
     { name: "A6 Hybrid (2.0 TFSI)", hp: "245 hp" },
+    { name: "2.5 V6 FSI", hp: "204"},
     { name: "2.8 FSI", hp: "204 hp" },
     { name: "3.0 TFSI", hp: "300-310-333 hp" },
     { name: "2.0 TDI", hp: "136-150-177-190 hp" },
@@ -237,9 +239,20 @@ export const audiEngineTypes = {
     { name: "RS6 Performance", hp: "630 hp" }
   ],
   "Audi-A6 (S/RS)-C9 (2025-present)": [
-    { name: "2.0 TFSI", hp: "204 hp" },
-    { name: "3.0 TFSI", hp: "362 hp" },
-    { name: "2.0 TDI", hp: "204 hp" }
+    { name: "40 TFSI", hp: "204 hp" },
+    { name: "45 TFSI", hp: "265 hp" },
+    { name: "55 TFSI", hp: "340-362 hp" },
+    { name: "30 TDI", hp: "136 hp" },
+    { name: "35 TDI", hp: "163 hp" },
+    { name: "40 TDI", hp: "204 hp" },
+    { name: "45 TDI", hp: "245 hp" },
+    { name: "50 TDI", hp: "286 hp" },
+    { name: "S6 TDI", hp: "344 hp" },
+    { name: "50 TFSI e", hp: "299 hp" },
+    { name: "55 TFSI e", hp: "367 hp" },
+    { name: "S6 TFSI", hp: "450 hp" },
+    { name: "RS6", hp: "600 hp" },
+    { name: "RS6 Performance", hp: "630 hp" }
   ],
 
   // --- A7 ---
@@ -293,6 +306,7 @@ export const audiEngineTypes = {
   ],
   "Audi-A8 (S)-D4 (2010-2017)": [
     { name: "Hybrid (2.0 TFSI)", hp: "245 hp" },
+    { name: "2.5 FSI", hp: "204 hp"}, 
     { name: "3.0 TFSI", hp: "290-310-333 hp" },
     { name: "4.0 TFSI", hp: "420-435 hp" },
     { name: "4.2 FSI", hp: "372 hp" },

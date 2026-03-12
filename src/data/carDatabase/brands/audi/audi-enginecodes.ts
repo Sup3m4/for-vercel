@@ -768,26 +768,35 @@ export const audiEngineCodes = {
   ],
 
   // --- A6 (C6) ---
-  "Audi-A6 (S/RS)-C6 (2004-2011)-2.0 TFSI": [
-    { code: "BPJ", hp: "170 hp", torque: "280 Nm", profileId: "bpj-a6-c6" }
-  ],
-  "Audi-A6 (S/RS)-C6 (2004-2011)-2.8 FSI": [
-    { code: "BDX", hp: "210 hp", torque: "280 Nm", profileId: "bdx-a6-c6" },
-    { code: "CCDA", hp: "190 hp", torque: "280 Nm", profileId: "ccda-a6-c6" }
+"Audi-A6 (S/RS)-C6 (2004-2011)-2.0 TFSI": [
+    { code: "BPJ", hp: "170 hp", torque: "280 Nm", profileId: "bpj-a6-c6" },
+    { code: "BYK", hp: "170 hp", torque: "280 Nm", profileId: "byk-a6-c6" } // Alternate code for specific markets
   ],
   "Audi-A6 (S/RS)-C6 (2004-2011)-2.4 V6": [
     { code: "BDW", hp: "177 hp", torque: "230 Nm", profileId: "bdw-a6-c6" }
   ],
+  "Audi-A6 (S/RS)-C6 (2004-2011)-2.8 FSI": [
+    { code: "BDX", hp: "210 hp", torque: "280 Nm", profileId: "bdx-a6-c6" },
+    { code: "CCDA", hp: "190 hp", torque: "280 Nm", profileId: "ccda-a6-c6" },
+    { code: "CCEA", hp: "220 hp", torque: "280 Nm", profileId: "ccea-a6-c6" },
+    { code: "CVBA", hp: "190 hp", torque: "280 Nm", profileId: "cvba-a6-c6" }
+  ],
+  "Audi-A6 (S/RS)-C6 (2004-2011)-3.0 V6 MPI": [
+    { code: "BBJ", hp: "218 hp", torque: "290 Nm", profileId: "bbj-a6-c6" } // Early carryover from C5
+  ],
   "Audi-A6 (S/RS)-C6 (2004-2011)-3.0 TFSI": [
-    { code: "CAJA", hp: "290 hp", torque: "420 Nm", profileId: "caja-a6-c6" }
+    { code: "CAJA", hp: "290 hp", torque: "420 Nm", profileId: "caja-a6-c6" },
+    { code: "CCAA", hp: "290 hp", torque: "420 Nm", profileId: "ccaa-a6-c6" } // US market variant
   ],
   "Audi-A6 (S/RS)-C6 (2004-2011)-3.2 FSI": [
     { code: "AUK", hp: "255 hp", torque: "330 Nm", profileId: "auk-a6-c6" },
-    { code: "BKH", hp: "255 hp", torque: "330 Nm", profileId: "bkh-a6-c6" }
+    { code: "BKH", hp: "255 hp", torque: "330 Nm", profileId: "bkh-a6-c6" },
+    { code: "BYU", hp: "249 hp", torque: "320 Nm", profileId: "byu-a6-c6" } // Detuned for tax purposes
   ],
   "Audi-A6 (S/RS)-C6 (2004-2011)-4.2 V8": [
-    { code: "BAT", hp: "335 hp", torque: "420 Nm", profileId: "bat-a6-c6" },
-    { code: "BVJ", hp: "350 hp", torque: "440 Nm", profileId: "bvj-a6-c6" }
+    { code: "BAT", hp: "335 hp", torque: "420 Nm", profileId: "bat-a6-c6" }, // MPI
+    { code: "BNK", hp: "335 hp", torque: "420 Nm", profileId: "bnk-a6-c6" }, // MPI alternate
+    { code: "BVJ", hp: "350 hp", torque: "440 Nm", profileId: "bvj-a6-c6" }  // FSI
   ],
   "Audi-A6 (S/RS)-C6 (2004-2011)-S6 (5.2 V10)": [
     { code: "BXA", hp: "435 hp", torque: "540 Nm", profileId: "bxa-s6-c6" }
@@ -798,48 +807,94 @@ export const audiEngineCodes = {
   "Audi-A6 (S/RS)-C6 (2004-2011)-2.0 TDI": [
     { code: "BLB", hp: "140 hp", torque: "320 Nm", profileId: "blb-a6-c6" },
     { code: "BRE", hp: "140 hp", torque: "320 Nm", profileId: "bre-a6-c6" },
-    { code: "CAGB", hp: "136 hp", torque: "320 Nm", profileId: "cagb-a6-c6" },
-    { code: "CAHA", hp: "170 hp", torque: "350 Nm", profileId: "caha-a6-c6" }
+    { code: "BNA", hp: "136 hp", torque: "320 Nm", profileId: "bna-a6-c6" },
+    { code: "BRF", hp: "136 hp", torque: "320 Nm", profileId: "brf-a6-c6" },
+    { code: "BVG", hp: "121 hp", torque: "320 Nm", profileId: "bvg-a6-c6" }, // Low output fleet version
+    { code: "CAGB", hp: "136 hp", torque: "320 Nm", profileId: "cagb-a6-c6" }, // Common Rail
+    { code: "CAHB", hp: "163 hp", torque: "350 Nm", profileId: "cahb-a6-c6" }, // Common Rail
+    { code: "CAHA", hp: "170 hp", torque: "350 Nm", profileId: "caha-a6-c6" }  // Common Rail
   ],
   "Audi-A6 (S/RS)-C6 (2004-2011)-2.7 TDI": [
     { code: "BPP", hp: "180 hp", torque: "380 Nm", profileId: "bpp-a6-c6" },
-    { code: "CANA", hp: "190 hp", torque: "400 Nm", profileId: "cana-a6-c6" }
+    { code: "BSG", hp: "163 hp", torque: "380 Nm", profileId: "bsg-a6-c6" },
+    { code: "CANA", hp: "190 hp", torque: "400 Nm", profileId: "cana-a6-c6" },
+    { code: "CANB", hp: "163 hp", torque: "380 Nm", profileId: "canb-a6-c6" },
+    { code: "CANC", hp: "190 hp", torque: "400 Nm", profileId: "canc-a6-c6" },
+    { code: "CAND", hp: "163 hp", torque: "380 Nm", profileId: "cand-a6-c6" }
   ],
   "Audi-A6 (S/RS)-C6 (2004-2011)-3.0 TDI": [
     { code: "BMK", hp: "225 hp", torque: "450 Nm", profileId: "bmk-a6-c6" },
     { code: "ASB", hp: "233 hp", torque: "450 Nm", profileId: "asb-a6-c6" },
+    { code: "BNG", hp: "211 hp", torque: "450 Nm", profileId: "bng-a6-c6" }, // Detuned variant
     { code: "CDYA", hp: "240 hp", torque: "500 Nm", profileId: "cdya-a6-c6" },
+    { code: "CDYB", hp: "211 hp", torque: "500 Nm", profileId: "cdyb-a6-c6" }, // Detuned variant
     { code: "CDYC", hp: "240 hp", torque: "500 Nm", profileId: "cdyc-a6-c6" }
   ],
 
   // --- A6 (C7) ---
-  "Audi-A6 (S/RS)-C7 (2011-2018)-1.8 TFSI": [
-    { code: "CYGA", hp: "190 hp", torque: "320 Nm", profileId: "cyga-a6-c7" }
+ "Audi-A6 (S/RS)-C7 (2011-2018)-1.8 TFSI": [
+    { code: "CYGA", hp: "190 hp", torque: "320 Nm", profileId: "cyga-a6-c7" },
+    { code: "CYGB", hp: "150 hp", torque: "320 Nm", profileId: "cygb-a6-c7" }
   ],
   "Audi-A6 (S/RS)-C7 (2011-2018)-2.0 TFSI": [
     { code: "CDNB", hp: "180 hp", torque: "320 Nm", profileId: "cdnb-a6-c7" },
-    { code: "CYPB", hp: "252 hp", torque: "370 Nm", profileId: "cypb-a6-c7" }
+    { code: "CAED", hp: "211 hp", torque: "350 Nm", profileId: "caed-a6-c7" },
+    { code: "CHHB", hp: "220 hp", torque: "350 Nm", profileId: "chhb-a6-c7" },
+    { code: "CYPB", hp: "252 hp", torque: "370 Nm", profileId: "cypb-a6-c7" },
+    { code: "CYPA", hp: "252 hp", torque: "370 Nm", profileId: "cypa-a6-c7" },
+    { code: "CYNB", hp: "252 hp", torque: "370 Nm", profileId: "cynb-a6-c7" },
+    { code: "CVKB", hp: "190 hp", torque: "320 Nm", profileId: "cvkb-a6-c7" }
   ],
   "Audi-A6 (S/RS)-C7 (2011-2018)-A6 Hybrid (2.0 TFSI)": [
     { code: "CHJA", hp: "245 hp", torque: "480 Nm", profileId: "chja-a6-c7" }
   ],
+  "Audi-A6 (S/RS)-C7 (2011-2018)-2.5 V6 FSI": [
+    { code: "CLXB", hp: "204 hp", torque: "250 Nm", profileId: "clxb-a6-c7" }
+  ],
   "Audi-A6 (S/RS)-C7 (2011-2018)-2.8 FSI": [
-    { code: "CHVA", hp: "204 hp", torque: "280 Nm", profileId: "chva-a6-c7" }
+    { code: "CHVA", hp: "204 hp", torque: "280 Nm", profileId: "chva-a6-c7" },
+    { code: "CNYA", hp: "204 hp", torque: "280 Nm", profileId: "cnya-a6-c7" }
   ],
   "Audi-A6 (S/RS)-C7 (2011-2018)-3.0 TFSI": [
     { code: "CGWB", hp: "300 hp", torque: "440 Nm", profileId: "cgwb-a6-c7" },
+    { code: "CGWD", hp: "310 hp", torque: "440 Nm", profileId: "cgwd-a6-c7" },
+    { code: "CGXB", hp: "310 hp", torque: "440 Nm", profileId: "cgxb-a6-c7" },
     { code: "CTUA", hp: "310 hp", torque: "440 Nm", profileId: "ctua-a6-c7" },
-    { code: "CREC", hp: "333 hp", torque: "440 Nm", profileId: "crec-a6-c7" }
+    { code: "CTUB", hp: "333 hp", torque: "440 Nm", profileId: "ctub-a6-c7" },
+    { code: "CREC", hp: "333 hp", torque: "440 Nm", profileId: "crec-a6-c7" },
+    { code: "CREA", hp: "333 hp", torque: "440 Nm", profileId: "crea-a6-c7" }
   ],
   "Audi-A6 (S/RS)-C7 (2011-2018)-2.0 TDI": [
     { code: "CGLC", hp: "177 hp", torque: "380 Nm", profileId: "cglc-a6-c7" },
-    { code: "CNHA", hp: "190 hp", torque: "400 Nm", profileId: "cnha-a6-c7" }
+    { code: "CGLE", hp: "136 hp", torque: "380 Nm", profileId: "cgle-a6-c7" },
+    { code: "CGLD", hp: "163 hp", torque: "380 Nm", profileId: "cgld-a6-c7" },
+    { code: "CSUD", hp: "150 hp", torque: "350 Nm", profileId: "csud-a6-c7" },
+    { code: "CSUC", hp: "150 hp", torque: "350 Nm", profileId: "csuc-a6-c7" },
+    { code: "CSUA", hp: "150 hp", torque: "350 Nm", profileId: "csua-a6-c7" },
+    { code: "CSUE", hp: "136 hp", torque: "350 Nm", profileId: "csue-a6-c7" },
+    { code: "CSUB", hp: "136 hp", torque: "350 Nm", profileId: "csub-a6-c7" },
+    { code: "CNHA", hp: "190 hp", torque: "400 Nm", profileId: "cnha-a6-c7" },
+    { code: "CNHC", hp: "190 hp", torque: "400 Nm", profileId: "cnhc-a6-c7" },
+    { code: "CZJA", hp: "190 hp", torque: "400 Nm", profileId: "czja-a6-c7" },
+    { code: "DDDA", hp: "190 hp", torque: "400 Nm", profileId: "ddda-a6-c7" }
   ],
   "Audi-A6 (S/RS)-C7 (2011-2018)-3.0 TDI": [
+    { code: "CLAA", hp: "204 hp", torque: "400 Nm", profileId: "claa-a6-c7" },
     { code: "CLAB", hp: "204 hp", torque: "400 Nm", profileId: "clab-a6-c7" },
+    { code: "CVWA", hp: "204 hp", torque: "400 Nm", profileId: "cvwa-a6-c7" },
     { code: "CDUC", hp: "245 hp", torque: "500 Nm", profileId: "cduc-a6-c7" },
+    { code: "CDUD", hp: "245 hp", torque: "580 Nm", profileId: "cdud-a6-c7" },
     { code: "CKVC", hp: "245 hp", torque: "580 Nm", profileId: "ckvc-a6-c7" },
-    { code: "CRTF", hp: "272 hp", torque: "580 Nm", profileId: "crtf-a6-c7" }
+    { code: "CPNB", hp: "240 hp", torque: "580 Nm", profileId: "cpnb-a6-c7" },
+    { code: "CTCB", hp: "211 hp", torque: "400 Nm", profileId: "ctcb-a6-c7" },
+    { code: "CTCC", hp: "218 hp", torque: "400 Nm", profileId: "ctcc-a6-c7" },
+    { code: "CZVC", hp: "211 hp", torque: "400 Nm", profileId: "czvc-a6-c7" },
+    { code: "CZVD", hp: "211 hp", torque: "400 Nm", profileId: "czvd-a6-c7" },
+    { code: "CRTE", hp: "218 hp", torque: "400 Nm", profileId: "crte-a6-c7" },
+    { code: "CZVA", hp: "218 hp", torque: "400 Nm", profileId: "czva-a6-c7" },
+    { code: "CZVB", hp: "272 hp", torque: "580 Nm", profileId: "czvb-a6-c7" },
+    { code: "CRTF", hp: "272 hp", torque: "580 Nm", profileId: "crtf-a6-c7" },
+    { code: "CRTD", hp: "272 hp", torque: "580 Nm", profileId: "crtd-a6-c7" }
   ],
   "Audi-A6 (S/RS)-C7 (2011-2018)-3.0 BiTDI": [
     { code: "CGQB", hp: "313 hp", torque: "650 Nm", profileId: "cgqb-a6-c7" },
@@ -855,63 +910,117 @@ export const audiEngineCodes = {
     { code: "CWUB", hp: "605 hp", torque: "750 Nm", profileId: "cwub-rs6-c7" }
   ],
   
-  "Audi-A6 (S/RS)-C8 (2018-2025)-40 TFSI": [
-    { code: "DKNA", hp: "204 hp", torque: "320 Nm", profileId: "dkna-a6-c8" }, // Gen 3b
-    { code: "DLHA", hp: "204 hp", torque: "320 Nm", profileId: "dlha-a6-c8" }  // MHEV 12V
+ "Audi-A6 (S/RS)-C8 (2018-2025)-40 TFSI": [
+    { code: "DKNA", hp: "204 hp", torque: "320 Nm", profileId: "dkna-a6-c8" },
+    { code: "DLHA", hp: "204 hp", torque: "320 Nm", profileId: "dlha-a6-c8" },
+    { code: "DPAA", hp: "204 hp", torque: "320 Nm", profileId: "dpaa-a6-c8" } // 2021+ Update
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-45 TFSI": [
     { code: "DKWA", hp: "245 hp", torque: "370 Nm", profileId: "dkwa-a6-c8" },
-    { code: "DMTA", hp: "265 hp", torque: "370 Nm", profileId: "dmta-a6-c8" }  // MHEV 12V
+    { code: "DLHB", hp: "245 hp", torque: "370 Nm", profileId: "dlhb-a6-c8" },
+    { code: "DMTA", hp: "265 hp", torque: "370 Nm", profileId: "dmta-a6-c8" }
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-55 TFSI": [
-    { code: "DLZA", hp: "340 hp", torque: "500 Nm", profileId: "dlza-a6-c8" }  // 3.0 V6
+    { code: "DLZA", hp: "340 hp", torque: "500 Nm", profileId: "dlza-a6-c8" },
+    { code: "DPNA", hp: "340 hp", torque: "500 Nm", profileId: "dpna-a6-c8" } // 2021+ Euro 6d update
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-35 TDI": [
     { code: "DEZD", hp: "163 hp", torque: "370 Nm", profileId: "dezd-a6-c8" },
-    { code: "DTNA", hp: "163 hp", torque: "370 Nm", profileId: "dtna-a6-c8" }
+    { code: "DEZE", hp: "163 hp", torque: "370 Nm", profileId: "deze-a6-c8" },
+    { code: "DTNA", hp: "163 hp", torque: "370 Nm", profileId: "dtna-a6-c8" },
+    { code: "DTNB", hp: "163 hp", torque: "370 Nm", profileId: "dtnb-a6-c8" }
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-40 TDI": [
-    { code: "DFBA", hp: "204 hp", torque: "400 Nm", profileId: "dfba-a6-c8" }, // EA288 Evo
-    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-a6-c8" }
+    { code: "DFBA", hp: "204 hp", torque: "400 Nm", profileId: "dfba-a6-c8" },
+    { code: "DFBC", hp: "204 hp", torque: "400 Nm", profileId: "dfbc-a6-c8" },
+    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-a6-c8" },
+    { code: "DTPB", hp: "204 hp", torque: "400 Nm", profileId: "dtpb-a6-c8" }
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-45 TDI": [
-    { code: "DDVB", hp: "231 hp", torque: "500 Nm", profileId: "ddvb-a6-c8" }  // 3.0 V6
+    { code: "DDVE", hp: "231 hp", torque: "500 Nm", profileId: "ddve-a6-c8" },
+    { code: "DMGH", hp: "245 hp", torque: "500 Nm", profileId: "dmgh-a6-c8" } // 2021+ Update
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-50 TDI": [
-    { code: "DDVB", hp: "286 hp", torque: "620 Nm", profileId: "ddvb-a6-c8-286" } // Szoftveresen fojtott/nyitott
+    { code: "DDVB", hp: "286 hp", torque: "620 Nm", profileId: "ddvb-a6-c8" },
+    { code: "DMGA", hp: "286 hp", torque: "620 Nm", profileId: "dmga-a6-c8" } // 2021+ Update
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-50 TFSI e": [
-    { code: "DLGA", hp: "299 hp", torque: "450 Nm", profileId: "dlga-a6-c8" }
+    { code: "DLGA", hp: "299 hp", torque: "450 Nm", profileId: "dlga-a6-c8" },
+    { code: "DRYA", hp: "299 hp", torque: "450 Nm", profileId: "drya-a6-c8" } // 2021+ Update
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-55 TFSI e": [
-    { code: "DLGA", hp: "367 hp", torque: "500 Nm", profileId: "dlga-a6-c8-55" }
+    { code: "DLGA", hp: "367 hp", torque: "500 Nm", profileId: "dlga-a6-c8-55" },
+    { code: "DRYA", hp: "367 hp", torque: "500 Nm", profileId: "drya-a6-c8-55" } // 2021+ Update
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-S6 TDI": [
-    { code: "DEWA", hp: "349 hp", torque: "700 Nm", profileId: "dewa-s6-c8" }  // EPC (Elektromos kompresszor)
+    { code: "DEWA", hp: "349 hp", torque: "700 Nm", profileId: "dewa-s6-c8" },
+    { code: "DMKC", hp: "344 hp", torque: "700 Nm", profileId: "dmkc-s6-c8" } // 2021+ Euro 6d
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-S6 TFSI": [
-    { code: "CWWB", hp: "450 hp", torque: "600 Nm", profileId: "cwwb-s6-c8" }  // 2.9 V6 (USA/Asia)
+    { code: "CWWB", hp: "450 hp", torque: "600 Nm", profileId: "cwwb-s6-c8" }
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-RS6": [
-    { code: "DJPB", hp: "600 hp", torque: "800 Nm", profileId: "djpb-rs6-c8" }
+    { code: "DJPB", hp: "600 hp", torque: "800 Nm", profileId: "djpb-rs6-c8" },
+    { code: "DYGA", hp: "600 hp", torque: "800 Nm", profileId: "dyga-rs6-c8" }
   ],
   "Audi-A6 (S/RS)-C8 (2018-2025)-RS6 Performance": [
-    { code: "DYGA", hp: "630 hp", torque: "850 Nm", profileId: "dyga-rs6-c8" }
+    { code: "DYGA", hp: "630 hp", torque: "850 Nm", profileId: "dyga-rs6-c8-p" }
   ],
 
   // --- A6 (C9) ---
-  "Audi-A6 (S/RS)-C9 (2025-present)-2.0 TFSI": [
-    { code: "DMSB", hp: "204 hp", torque: "340 Nm", profileId: "dmsb-a6-c9" } // Evo5
+ "Audi-A6 (S/RS)-C9 (2025-present)-30 TDI": [
+    { code: "DEZF", hp: "136 hp", torque: "320 Nm", profileId: "dezf-a6-c9" }
   ],
-  "Audi-A6 (S/RS)-C9 (2025-present)-3.0 TFSI": [
-    { code: "DLZA", hp: "362 hp", torque: "550 Nm", profileId: "dlza-a6-c9" } // Updated V6
+  "Audi-A6 (S/RS)-C9 (2025-present)-35 TDI": [
+    { code: "DTNA", hp: "163 hp", torque: "370 Nm", profileId: "dtna-a6-c9" }
   ],
-  "Audi-A6 (S/RS)-C9 (2025-present)-2.0 TDI": [
-    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-a6-c9" }
+  "Audi-A6 (S/RS)-C9 (2025-present)-40 TDI": [
+    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-a6-c9" },
+    { code: "DTPB", hp: "204 hp", torque: "400 Nm", profileId: "dtpb-a6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-45 TDI": [
+    { code: "DMGH", hp: "245 hp", torque: "500 Nm", profileId: "dmgh-a6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-50 TDI": [
+    { code: "DMGA", hp: "286 hp", torque: "620 Nm", profileId: "dmga-a6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-S6 TDI": [
+    { code: "DMKC", hp: "344 hp", torque: "700 Nm", profileId: "dmkc-s6-c9" },
+    { code: "DMKD", hp: "344 hp", torque: "700 Nm", profileId: "dmkd-s6-c9" } // Euro 6e Update
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-40 TFSI": [
+    { code: "DMSB", hp: "204 hp", torque: "340 Nm", profileId: "dmsb-a6-c9" },
+    { code: "DPAA", hp: "204 hp", torque: "320 Nm", profileId: "dpaa-a6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-45 TFSI": [
+    { code: "DPUA", hp: "265 hp", torque: "400 Nm", profileId: "dpua-a6-c9" },
+    { code: "DMTA", hp: "265 hp", torque: "370 Nm", profileId: "dmta-a6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-55 TFSI": [
+    { code: "DLZA", hp: "362 hp", torque: "550 Nm", profileId: "dlza-a6-c9" },
+    { code: "DPNA", hp: "340 hp", torque: "500 Nm", profileId: "dpna-a6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-50 TFSI e": [
+    { code: "DRYA", hp: "299 hp", torque: "450 Nm", profileId: "drya-a6-c9" },
+    { code: "DLGA", hp: "299 hp", torque: "450 Nm", profileId: "dlga-a6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-55 TFSI e": [
+    { code: "DRYA", hp: "367 hp", torque: "500 Nm", profileId: "drya-a6-c9-55" },
+    { code: "DLGA", hp: "367 hp", torque: "500 Nm", profileId: "dlga-a6-c9-55" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-S6 TFSI": [
+    { code: "DECA", hp: "450 hp", torque: "600 Nm", profileId: "deca-s6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-RS6": [
+    { code: "DYGA", hp: "600 hp", torque: "800 Nm", profileId: "dyga-rs6-c9" }
+  ],
+  "Audi-A6 (S/RS)-C9 (2025-present)-RS6 Performance": [
+    { code: "DYGA", hp: "630 hp", torque: "850 Nm", profileId: "dyga-rs6-c9-p" }
   ],
 
-  // --- A7 (C7) ---
-  "Audi-A7 (S/RS)-C7 (2010-2018)-1.8 TFSI": [
+  //A7
+
+ "Audi-A7 (S/RS)-C7 (2010-2018)-1.8 TFSI": [
     { code: "CYGA", hp: "190 hp", torque: "320 Nm", profileId: "cyga-a7-c7" }
   ],
   "Audi-A7 (S/RS)-C7 (2010-2018)-2.0 TFSI": [
@@ -923,159 +1032,232 @@ export const audiEngineCodes = {
     { code: "CNYA", hp: "204 hp", torque: "280 Nm", profileId: "cnya-a7-c7" }
   ],
   "Audi-A7 (S/RS)-C7 (2010-2018)-3.0 TFSI": [
-    { code: "CGWB", hp: "300 hp", torque: "440 Nm", profileId: "cgwb-a7-c7" }, // Kompresszor
+    { code: "CGWB", hp: "300 hp", torque: "440 Nm", profileId: "cgwb-a7-c7" },
     { code: "CGXB", hp: "310 hp", torque: "440 Nm", profileId: "cgxb-a7-c7" },
-    { code: "CTTA", hp: "333 hp", torque: "440 Nm", profileId: "ctta-a7-c7" }
+    { code: "CTUA", hp: "310 hp", torque: "440 Nm", profileId: "ctua-a7-c7" },
+    { code: "CTUC", hp: "310 hp", torque: "440 Nm", profileId: "ctuc-a7-c7" }, // US Spec
+    { code: "CTUB", hp: "333 hp", torque: "440 Nm", profileId: "ctub-a7-c7" }, // US Spec 333hp
+    { code: "CTTA", hp: "333 hp", torque: "440 Nm", profileId: "ctta-a7-c7" },
+    { code: "CREC", hp: "333 hp", torque: "440 Nm", profileId: "crec-a7-c7" }
   ],
   "Audi-A7 (S/RS)-C7 (2010-2018)-3.0 TDI": [
     { code: "CLAA", hp: "204 hp", torque: "400 Nm", profileId: "claa-a7-c7" },
     { code: "CLAB", hp: "204 hp", torque: "450 Nm", profileId: "clab-a7-c7" },
+    { code: "CZVE", hp: "190 hp", torque: "400 Nm", profileId: "czve-a7-c7" }, // Ultra 190
+    { code: "CZVF", hp: "190 hp", torque: "400 Nm", profileId: "czvf-a7-c7" }, // Ultra 190 update
     { code: "CDUC", hp: "245 hp", torque: "500 Nm", profileId: "cduc-a7-c7" },
+    { code: "CDUD", hp: "245 hp", torque: "580 Nm", profileId: "cdud-a7-c7" },
     { code: "CKVC", hp: "245 hp", torque: "580 Nm", profileId: "ckvc-a7-c7" },
+    { code: "CPNB", hp: "240 hp", torque: "580 Nm", profileId: "cpnb-a7-c7" }, // US Market TDI
     { code: "CTCC", hp: "218 hp", torque: "500 Nm", profileId: "ctcc-a7-c7" },
-    { code: "CRTF", hp: "272 hp", torque: "580 Nm", profileId: "crtf-a7-c7" }
+    { code: "CRTE", hp: "218 hp", torque: "400 Nm", profileId: "crte-a7-c7" }, // Clean Diesel
+    { code: "CZVA", hp: "218 hp", torque: "400 Nm", profileId: "czva-a7-c7" },
+    { code: "CZVB", hp: "218 hp", torque: "400 Nm", profileId: "czvb-a7-c7" },
+    { code: "CZVC", hp: "211 hp", torque: "400 Nm", profileId: "czvc-a7-c7" },
+    { code: "CZVD", hp: "211 hp", torque: "400 Nm", profileId: "czvd-a7-c7" }, // Clean Diesel 211
+    { code: "CTCZ", hp: "211 hp", torque: "500 Nm", profileId: "ctcz-a7-c7" },
+    { code: "CRTF", hp: "272 hp", torque: "580 Nm", profileId: "crtf-a7-c7" },
+    { code: "CRTD", hp: "272 hp", torque: "580 Nm", profileId: "crtd-a7-c7" }
   ],
   "Audi-A7 (S/RS)-C7 (2010-2018)-3.0 BiTDI": [
     { code: "CGQB", hp: "313 hp", torque: "650 Nm", profileId: "cgqb-a7-c7" },
     { code: "CVUA", hp: "320 hp", torque: "650 Nm", profileId: "cvua-a7-c7" },
-    { code: "CVUB", hp: "326 hp", torque: "650 Nm", profileId: "cvub-a7-c7" } // Competition
+    { code: "CVUB", hp: "326 hp", torque: "650 Nm", profileId: "cvub-a7-c7" }
   ],
-  "Audi-A7 (S/RS)-C7 (2010-2018)-S7 (4.0 V8)": [
+  "Audi-A7 (S/RS)-C7 (2010-2018)-S7": [
     { code: "CEUC", hp: "420 hp", torque: "550 Nm", profileId: "ceuc-s7-c7" },
-    { code: "CTGE", hp: "450 hp", torque: "550 Nm", profileId: "ctge-s7-c7" } // Facelift
+    { code: "CTGE", hp: "450 hp", torque: "550 Nm", profileId: "ctge-s7-c7" }
   ],
-  "Audi-A7 (S/RS)-C7 (2010-2018)-RS7 (4.0 V8)": [
+  "Audi-A7 (S/RS)-C7 (2010-2018)-RS7": [
     { code: "CRDB", hp: "560 hp", torque: "700 Nm", profileId: "crdb-rs7-c7" },
-    { code: "CWUB", hp: "605 hp", torque: "750 Nm", profileId: "cwub-rs7-c7" } // Performance
+    { code: "CWUC", hp: "560 hp", torque: "700 Nm", profileId: "cwuc-rs7-c7" },
+    { code: "CWUB", hp: "605 hp", torque: "750 Nm", profileId: "cwub-rs7-c7" }
   ],
 
   // --- A7 (C8) ---
-  "Audi-A7 (S/RS)-C8 (2018-2025)-40 TFSI": [
-    { code: "DLHA", hp: "204 hp", torque: "320 Nm", profileId: "dlha-a7-c8" }
+ "Audi-A7 (S/RS)-C8 (2018-2025)-40 TFSI": [
+    { code: "DKNB", hp: "190 hp", torque: "320 Nm", profileId: "dknb-a7-c8" }, // pre-facelift
+    { code: "DLHA", hp: "204 hp", torque: "320 Nm", profileId: "dlha-a7-c8" }, // pre-facelift
+    { code: "DPAA", hp: "204 hp", torque: "320 Nm", profileId: "dpaa-a7-c8" }, // facelift
+    { code: "DMSB", hp: "204 hp", torque: "340 Nm", profileId: "dmsb-a7-c8" }  // facelift (MHEV Plus)
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-45 TFSI": [
-    { code: "DKWA", hp: "245 hp", torque: "370 Nm", profileId: "dkwa-a7-c8" },
-    { code: "DMTA", hp: "265 hp", torque: "370 Nm", profileId: "dmta-a7-c8" }
+    { code: "DKWA", hp: "245 hp", torque: "370 Nm", profileId: "dkwa-a7-c8" }, // pre-facelift
+    { code: "DLHB", hp: "245 hp", torque: "370 Nm", profileId: "dlhb-a7-c8" }, // pre-facelift
+    { code: "DMTA", hp: "265 hp", torque: "370 Nm", profileId: "dmta-a7-c8" }  // facelift
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-55 TFSI": [
-    { code: "DLZA", hp: "340 hp", torque: "500 Nm", profileId: "dlza-a7-c8" }
+    { code: "DLZA", hp: "340 hp", torque: "500 Nm", profileId: "dlza-a7-c8" }, // pre-facelift
+    { code: "DPNA", hp: "340 hp", torque: "500 Nm", profileId: "dpna-a7-c8" }  // facelift
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-40 TDI": [
-    { code: "DFBA", hp: "204 hp", torque: "400 Nm", profileId: "dfba-a7-c8" },
-    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-a7-c8" }
+    { code: "DFBA", hp: "204 hp", torque: "400 Nm", profileId: "dfba-a7-c8" }, // pre-facelift
+    { code: "DFBC", hp: "204 hp", torque: "400 Nm", profileId: "dfbc-a7-c8" }, // pre-facelift
+    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-a7-c8" }, // facelift
+    { code: "DTPB", hp: "204 hp", torque: "400 Nm", profileId: "dtpb-a7-c8" }  // facelift
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-45 TDI": [
-    { code: "DDVB", hp: "231 hp", torque: "500 Nm", profileId: "ddvb-a7-c8" }
+    { code: "DDVE", hp: "231 hp", torque: "500 Nm", profileId: "ddve-a7-c8" }, // pre-facelift
+    { code: "DMGH", hp: "245 hp", torque: "500 Nm", profileId: "dmgh-a7-c8" }, // facelift
+    { code: "CVMD", hp: "249 hp", torque: "600 Nm", profileId: "cvmd-a7-c8" }  // global spec
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-50 TDI": [
-    { code: "DDVB", hp: "286 hp", torque: "620 Nm", profileId: "ddvb-a7-c8-286" }
+    { code: "DDVB", hp: "286 hp", torque: "620 Nm", profileId: "ddvb-a7-c8" }, // pre-facelift
+    { code: "DMGA", hp: "286 hp", torque: "620 Nm", profileId: "dmga-a7-c8" }  // facelift
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-50 TFSI e": [
-    { code: "DLGA", hp: "299 hp", torque: "450 Nm", profileId: "dlga-a7-c8" }
+    { code: "DLGA", hp: "299 hp", torque: "450 Nm", profileId: "dlga-a7-c8" }, // pre-facelift
+    { code: "DRYA", hp: "299 hp", torque: "450 Nm", profileId: "drya-a7-c8" }  // facelift
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-55 TFSI e": [
-    { code: "DLGA", hp: "367 hp", torque: "500 Nm", profileId: "dlga-a7-c8-55" }
+    { code: "DLGA", hp: "367 hp", torque: "500 Nm", profileId: "dlga-a7-c8-55" }, // pre-facelift
+    { code: "DRYA", hp: "367 hp", torque: "500 Nm", profileId: "drya-a7-c8-55" }  // facelift
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-S7 TDI": [
-    { code: "DEWA", hp: "349 hp", torque: "700 Nm", profileId: "dewa-s7-c8" }
+    { code: "DEWA", hp: "349 hp", torque: "700 Nm", profileId: "dewa-s7-c8" }, // pre-facelift
+    { code: "DMKC", hp: "344 hp", torque: "700 Nm", profileId: "dmkc-s7-c8" }  // facelift
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-S7 TFSI": [
-    { code: "DECA", hp: "450 hp", torque: "600 Nm", profileId: "deca-s7-c8" } // 2.9 V6
+    { code: "DECA", hp: "450 hp", torque: "600 Nm", profileId: "deca-s7-c8" }  // global spec
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-RS7": [
-    { code: "DJPB", hp: "600 hp", torque: "800 Nm", profileId: "djpb-rs7-c8" }
+    { code: "DJPB", hp: "600 hp", torque: "800 Nm", profileId: "djpb-rs7-c8" }, // pre-facelift
+    { code: "DYGA", hp: "600 hp", torque: "800 Nm", profileId: "dyga-rs7-c8" }  // facelift
   ],
   "Audi-A7 (S/RS)-C8 (2018-2025)-RS7 Performance": [
-    { code: "DYGA", hp: "630 hp", torque: "850 Nm", profileId: "dyga-rs7-c8" }
+    { code: "DYGA", hp: "630 hp", torque: "850 Nm", profileId: "dyga-rs7-c8-p" } // facelift
   ],
 
   // --- A8 (D2) ---
   "Audi-A8 (S)-D2 (1994-2002)-2.8 V6": [
-    { code: "AAH", hp: "174 hp", torque: "250 Nm", profileId: "aah-a8-d2" },
-    { code: "ACK", hp: "193 hp", torque: "280 Nm", profileId: "ack-a8-d2" }
+    { code: "AAH", hp: "174 hp", torque: "250 Nm", profileId: "aah-a8-d2" }, // 12V pre-facelift
+    { code: "AEJ", hp: "163 hp", torque: "250 Nm", profileId: "aej-a8-d2" }, // 12V fojtott
+    { code: "ACK", hp: "193 hp", torque: "280 Nm", profileId: "ack-a8-d2" }, // 30V pre-facelift
+    { code: "AMX", hp: "193 hp", torque: "280 Nm", profileId: "amx-a8-d2" }, // 30V facelift
+    { code: "APR", hp: "193 hp", torque: "280 Nm", profileId: "apr-a8-d2" }, // 30V facelift
+    { code: "AQD", hp: "193 hp", torque: "280 Nm", profileId: "aqd-a8-d2" }, // 30V facelift
+    { code: "ALG", hp: "193 hp", torque: "280 Nm", profileId: "alg-a8-d2" }  // 30V facelift
   ],
   "Audi-A8 (S)-D2 (1994-2002)-3.7 V8": [
-    { code: "AEW", hp: "230 hp", torque: "315 Nm", profileId: "aew-a8-d2" },
-    { code: "AKJ", hp: "260 hp", torque: "350 Nm", profileId: "akj-a8-d2" }
+    { code: "AEW", hp: "230 hp", torque: "315 Nm", profileId: "aew-a8-d2" }, // 32V pre-facelift
+    { code: "AKJ", hp: "230 hp", torque: "315 Nm", profileId: "akj-a8-d2" }, // 32V pre-facelift
+    { code: "AKC", hp: "260 hp", torque: "350 Nm", profileId: "akc-a8-d2" }, // 40V facelift
+    { code: "AQG", hp: "260 hp", torque: "350 Nm", profileId: "aqg-a8-d2" }  // 40V facelift
   ],
   "Audi-A8 (S)-D2 (1994-2002)-4.2 V8": [
-    { code: "ABZ", hp: "300 hp", torque: "400 Nm", profileId: "abz-a8-d2" },
-    { code: "AQF", hp: "310 hp", torque: "410 Nm", profileId: "aqf-a8-d2" }
+    { code: "ABZ", hp: "300 hp", torque: "400 Nm", profileId: "abz-a8-d2" }, // 32V pre-facelift
+    { code: "AKG", hp: "299 hp", torque: "400 Nm", profileId: "akg-a8-d2" }, // 32V pre-facelift
+    { code: "AEM", hp: "245 hp", torque: "400 Nm", profileId: "aem-a8-d2" }, // 32V fojtott
+    { code: "AKB", hp: "310 hp", torque: "410 Nm", profileId: "akb-a8-d2" }, // 40V facelift
+    { code: "AQF", hp: "310 hp", torque: "410 Nm", profileId: "aqf-a8-d2" }, // 40V facelift
+    { code: "AUX", hp: "310 hp", torque: "410 Nm", profileId: "aux-a8-d2" }, // 40V facelift
+    { code: "AUW", hp: "310 hp", torque: "410 Nm", profileId: "auw-a8-d2" }, // 40V facelift
+    { code: "ARU", hp: "238 hp", torque: "410 Nm", profileId: "aru-a8-d2" }  // 40V fojtott
   ],
   "Audi-A8 (S)-D2 (1994-2002)-6.0 W12": [
     { code: "AZC", hp: "420 hp", torque: "550 Nm", profileId: "azc-a8-d2" }
   ],
   "Audi-A8 (S)-D2 (1994-2002)-2.5 TDI": [
-    { code: "AFB", hp: "150 hp", torque: "310 Nm", profileId: "afb-a8-d2" },
-    { code: "AKE", hp: "180 hp", torque: "370 Nm", profileId: "ake-a8-d2" }
+    { code: "AFB", hp: "150 hp", torque: "310 Nm", profileId: "afb-a8-d2" }, // V6 VP44
+    { code: "AKN", hp: "150 hp", torque: "310 Nm", profileId: "akn-a8-d2" }, // V6 VP44
+    { code: "AKE", hp: "180 hp", torque: "370 Nm", profileId: "ake-a8-d2" }  // V6 180hp Quattro
   ],
   "Audi-A8 (S)-D2 (1994-2002)-3.3 TDI V8": [
-    { code: "AKF", hp: "225 hp", torque: "480 Nm", profileId: "akf-a8-d2" } // Common Rail V8
+    { code: "AKF", hp: "225 hp", torque: "480 Nm", profileId: "akf-a8-d2" }
   ],
   "Audi-A8 (S)-D2 (1994-2002)-S8": [
-    { code: "AHC", hp: "340 hp", torque: "410 Nm", profileId: "ahc-s8-d2" },
-    { code: "AQH", hp: "360 hp", torque: "430 Nm", profileId: "aqh-s8-d2" }
+    { code: "AHC", hp: "340 hp", torque: "410 Nm", profileId: "ahc-s8-d2" }, // 32V pre-facelift
+    { code: "AKH", hp: "340 hp", torque: "410 Nm", profileId: "akh-s8-d2" }, // 32V pre-facelift
+    { code: "AQH", hp: "360 hp", torque: "430 Nm", profileId: "aqh-s8-d2" }, // 40V facelift
+    { code: "AVP", hp: "360 hp", torque: "430 Nm", profileId: "avp-s8-d2" }, // 40V facelift
+    { code: "AYS", hp: "360 hp", torque: "430 Nm", profileId: "ays-s8-d2" }, // 40V facelift
+    { code: "BCS", hp: "360 hp", torque: "430 Nm", profileId: "bcs-s8-d2" }  // 40V facelift
   ],
 
   // --- A8 (D3) ---
-  "Audi-A8 (S)-D3 (2002-2010)-2.8 FSI": [
-    { code: "BDX", hp: "210 hp", torque: "280 Nm", profileId: "bdx-a8-d3" }
+"Audi-A8 (S)-D3 (2002-2010)-2.8 FSI": [
+    { code: "BDX", hp: "210 hp", torque: "280 Nm", profileId: "bdx-a8-d3" } // Audi Valvelift rendszerrel ellátott, rendkívül hatékony szívó V6.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-3.0 V6": [
-    { code: "BBJ", hp: "220 hp", torque: "300 Nm", profileId: "bbj-a8-d3" }
+    { code: "BBJ", hp: "220 hp", torque: "300 Nm", profileId: "bbj-a8-d3" }, // A klasszikus, 30 szelepes szívócső-befecskendezéses alapmotor.
+    { code: "ASN", hp: "220 hp", torque: "300 Nm", profileId: "asn-a8-d3" }  // A legkorábbi modellekben használt, szintén 30 szelepes variáns.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-3.2 FSI": [
-    { code: "BPK", hp: "260 hp", torque: "330 Nm", profileId: "bpk-a8-d3" }
+    { code: "BPK", hp: "260 hp", torque: "330 Nm", profileId: "bpk-a8-d3" }, // A legelterjedtebb közvetlen befecskendezéses V6.
+    { code: "CALA", hp: "265 hp", torque: "330 Nm", profileId: "cala-a8-d3" }, // A generáció végén megjelent, finomított vezérlésű változat.
+    { code: "AUK", hp: "256 hp", torque: "330 Nm", profileId: "auk-a8-d3" },  // Korai, 256 lovas FSI variáció.
+    { code: "BYU", hp: "241 hp", torque: "330 Nm", profileId: "byu-a8-d3" }   // Bizonyos exportpiacokra (pl. Kína) szánt fojtott változat.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-3.7 V8": [
-    { code: "BFL", hp: "280 hp", torque: "360 Nm", profileId: "bfl-a8-d3" }
+    { code: "BFL", hp: "280 hp", torque: "360 Nm", profileId: "bfl-a8-d3" } // A 40 szelepes, szíjjas vezérlésű V8 család kisebbik tagja.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-4.2 V8 MPI": [
-    { code: "BFM", hp: "335 hp", torque: "430 Nm", profileId: "bfm-a8-d3" } // Szíjjas
+    { code: "BFM", hp: "335 hp", torque: "430 Nm", profileId: "bfm-a8-d3" }, // A legendás szíjjas 4.2-es, amely a megbízhatóságáról híres.
+    { code: "BGK", hp: "335 hp", torque: "430 Nm", profileId: "bgk-a8-d3" }  // Elsősorban az észak-amerikai és japán piacokra szállított MPI kód.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-4.2 V8 FSI": [
-    { code: "BVJ", hp: "350 hp", torque: "440 Nm", profileId: "bvj-a8-d3" } // Láncos
+    { code: "BVJ", hp: "350 hp", torque: "440 Nm", profileId: "bvj-a8-d3" } // Láncos vezérlésű, közvetlen befecskendezéses modern V8.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-6.0 W12": [
-    { code: "BHT", hp: "450 hp", torque: "580 Nm", profileId: "bht-a8-d3" }
+    { code: "BAN", hp: "450 hp", torque: "580 Nm", profileId: "ban-a8-d3" }, // A legelső szériás W12-es egység a D3 platformban.
+    { code: "BHT", hp: "450 hp", torque: "580 Nm", profileId: "bht-a8-d3" }, // A leggyakoribb európai W12 kód.
+    { code: "BSB", hp: "450 hp", torque: "580 Nm", profileId: "bsb-a8-d3" }, // Átdolgozott emissziós értékekkel rendelkező változat.
+    { code: "BTE", hp: "450 hp", torque: "580 Nm", profileId: "bte-a8-d3" }  // A gyártási ciklus végén használt, legkiforrottabb W12-es.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-3.0 TDI": [
-    { code: "ASB", hp: "233 hp", torque: "450 Nm", profileId: "asb-a8-d3" },
-    { code: "BNG", hp: "211 hp", torque: "450 Nm", profileId: "bng-a8-d3" }
+    { code: "BMK", hp: "225 hp", torque: "450 Nm", profileId: "bmk-a8-d3" }, // Az Audi első Common Rail V6 dízele, amely forradalmasította a kategóriát.
+    { code: "ASB", hp: "233 hp", torque: "450 Nm", profileId: "asb-a8-d3" }, // A legnépszerűbb, stabil és jól tuningolható 3.0 TDI kód.
+    { code: "BNG", hp: "211 hp", torque: "450 Nm", profileId: "bng-a8-d3" }  // Szoftveresen fojtott változat adózási/biztosítási okokból.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-4.0 TDI V8": [
-    { code: "ASE", hp: "275 hp", torque: "650 Nm", profileId: "ase-a8-d3" }
+    { code: "ASE", hp: "275 hp", torque: "650 Nm", profileId: "ase-a8-d3" } // Monumentális nyomatékú, biturbó Common Rail V8 dízel.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-4.2 TDI V8": [
-    { code: "BVN", hp: "326 hp", torque: "650 Nm", profileId: "bvn-a8-d3" }
+    { code: "BMC", hp: "320 hp", torque: "650 Nm", profileId: "bmc-a8-d3" }, // Az ASE utódja, jelentősen finomított járáskultúrával.
+    { code: "BVN", hp: "326 hp", torque: "650 Nm", profileId: "bvn-a8-d3" }  // A D3 generáció legerősebb és legmodernebb dízelmotorja.
   ],
   "Audi-A8 (S)-D3 (2002-2010)-S8 (5.2 V10)": [
-    { code: "BSM", hp: "450 hp", torque: "540 Nm", profileId: "bsm-s8-d3" }
+    { code: "BSM", hp: "450 hp", torque: "540 Nm", profileId: "bsm-s8-d3" } // A Lamborghini Gallardo alapjaira épülő, szívó V10-es sportmotor.
   ],
 
   // --- A8 (D4) ---
   "Audi-A8 (S)-D4 (2010-2017)-Hybrid (2.0 TFSI)": [
-    { code: "CHJA", hp: "245 hp", torque: "480 Nm", profileId: "chja-a8-d4" } // Rendszerteljesítmény
+    { code: "CHJA", hp: "245 hp", torque: "480 Nm", profileId: "chja-a8-d4" }
+  ],
+  "Audi-A8 (S)-D4 (2010-2017)-2.5 FSI": [
+    { code: "CPAA", hp: "204 hp", torque: "250 Nm", profileId: "cpaa-a8-d4" }
   ],
   "Audi-A8 (S)-D4 (2010-2017)-3.0 TFSI": [
     { code: "CGWA", hp: "290 hp", torque: "420 Nm", profileId: "cgwa-a8-d4" },
+    { code: "CGXA", hp: "290 hp", torque: "420 Nm", profileId: "cgxa-a8-d4" },
+    { code: "CTDA", hp: "290 hp", torque: "420 Nm", profileId: "ctda-a8-d4" },
+    { code: "CGXC", hp: "310 hp", torque: "440 Nm", profileId: "cgxc-a8-d4" },
     { code: "CMDA", hp: "310 hp", torque: "440 Nm", profileId: "cmda-a8-d4" },
-    { code: "CREC", hp: "333 hp", torque: "440 Nm", profileId: "crec-a8-d4" }
+    { code: "CTUB", hp: "333 hp", torque: "440 Nm", profileId: "ctub-a8-d4" },
+    { code: "CREC", hp: "333 hp", torque: "440 Nm", profileId: "crec-a8-d4" },
+    { code: "CREA", hp: "333 hp", torque: "440 Nm", profileId: "crea-a8-d4" }
   ],
   "Audi-A8 (S)-D4 (2010-2017)-4.0 TFSI": [
     { code: "CEUA", hp: "420 hp", torque: "600 Nm", profileId: "ceua-a8-d4" },
-    { code: "CTGA", hp: "435 hp", torque: "600 Nm", profileId: "ctga-a8-d4" }
+    { code: "CTGA", hp: "435 hp", torque: "600 Nm", profileId: "ctga-a8-d4" },
+    { code: "CTFB", hp: "435 hp", torque: "600 Nm", profileId: "ctfb-a8-d4" }
   ],
   "Audi-A8 (S)-D4 (2010-2017)-4.2 FSI": [
     { code: "CDRA", hp: "372 hp", torque: "445 Nm", profileId: "cdra-a8-d4" }
   ],
   "Audi-A8 (S)-D4 (2010-2017)-6.3 W12": [
-    { code: "CEJA", hp: "500 hp", torque: "625 Nm", profileId: "ceja-a8-d4" }
+    { code: "CEJA", hp: "500 hp", torque: "625 Nm", profileId: "ceja-a8-d4" },
+    { code: "CTNA", hp: "500 hp", torque: "625 Nm", profileId: "ctna-a8-d4" }
   ],
   "Audi-A8 (S)-D4 (2010-2017)-3.0 TDI": [
     { code: "CLAB", hp: "204 hp", torque: "400 Nm", profileId: "clab-a8-d4" },
+    { code: "CDTB", hp: "211 hp", torque: "450 Nm", profileId: "cdtb-a8-d4" },
     { code: "CDTA", hp: "250 hp", torque: "550 Nm", profileId: "cdta-a8-d4" },
+    { code: "CDTC", hp: "250 hp", torque: "550 Nm", profileId: "cdtc-a8-d4" },
+    { code: "CPNA", hp: "240 hp", torque: "550 Nm", profileId: "cpna-a8-d4" },
+    { code: "CPNB", hp: "240 hp", torque: "580 Nm", profileId: "cpnb-a8-d4" },
     { code: "CTBA", hp: "258 hp", torque: "580 Nm", profileId: "ctba-a8-d4" },
+    { code: "CTBB", hp: "211 hp", torque: "580 Nm", profileId: "ctbb-a8-d4" },
     { code: "CTBD", hp: "262 hp", torque: "580 Nm", profileId: "ctbd-a8-d4" }
   ],
   "Audi-A8 (S)-D4 (2010-2017)-4.2 TDI": [
@@ -1083,7 +1265,8 @@ export const audiEngineCodes = {
     { code: "CTEC", hp: "385 hp", torque: "850 Nm", profileId: "ctec-a8-d4" }
   ],
   "Audi-A8 (S)-D4 (2010-2017)-S8": [
-    { code: "CGTA", hp: "520 hp", torque: "650 Nm", profileId: "cgta-s8-d4" }
+    { code: "CGTA", hp: "520 hp", torque: "650 Nm", profileId: "cgta-s8-d4" },
+    { code: "CTFA", hp: "520 hp", torque: "650 Nm", profileId: "ctfa-s8-d4" }
   ],
   "Audi-A8 (S)-D4 (2010-2017)-S8 Plus": [
     { code: "DDTA", hp: "605 hp", torque: "700 Nm", profileId: "ddta-s8-d4" }

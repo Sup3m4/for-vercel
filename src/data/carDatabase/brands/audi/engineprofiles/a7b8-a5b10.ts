@@ -5077,7 +5077,7 @@ export const a4b8a5b10Profiles: EngineProfile[] = [
     drivingExperience: "The 585hp DLRB is a brutal plug-in hybrid powerhouse. It completely changes the character of the RS5. Around town, it can be driven as a silent, pure EV for up to 80km. But when you demand power, the combination of the 130kW electric motor and the 2.9L BiTurbo V6 delivers a relentless, face-melting 800Nm of torque with absolute zero lag. It is heavier than the B9, feeling more like a hyper-GT cruiser than a nimble track car, but the straight-line acceleration is violently fast.",
     mechanicVerdict: "The DLRB PHEV is a marvel of integration, but it is a mechanic's absolute worst nightmare. You have a highly advanced, heat-soaked EA839 BiTurbo combustion engine bolted to a high-voltage electric powertrain. While the core petrol engine is incredibly strong, if anything goes wrong with the hybrid transmission, the 25.9kWh HV battery, or the dual thermal management systems, you are entirely at the mercy of specialized dealership tools and massive repair bills. Enjoy the sledgehammer torque, but do not own it out of warranty.",
     repairCostEstimate: "$1500 - $3500 / year (Standard ICE maintenance. Excludes catastrophic HV battery failure)"
-}
+},
             
         
         
