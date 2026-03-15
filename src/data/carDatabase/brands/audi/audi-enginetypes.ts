@@ -317,12 +317,18 @@ export const audiEngineTypes = {
     { name: "S8 Plus", hp: "605 hp" }
   ],
   "Audi-A8 (S)-D5 (2017-present)": [
+    { name: "45 TFSI", hp: "252 hp" },
+    { name: "50 TFSI", hp: "286 hp" },
     { name: "55 TFSI", hp: "340 hp" },
+    { name: "55 TFSI e", hp: "394 hp" },
     { name: "60 TFSI (V8)", hp: "460 hp" },
     { name: "60 TFSI e", hp: "449-462 hp" },
+    { name: "45 TDI", hp: "231 hp" },
     { name: "50 TDI", hp: "286 hp" },
     { name: "60 TDI", hp: "435 hp" },
-    { name: "S8", hp: "571 hp" }
+    { name: "S8", hp: "571 hp" },
+    { name: "W12", hp: "585 hp" },
+    { name: "Horch", hp: "340 hp" },
   ],
 
   // --- Q2 ---

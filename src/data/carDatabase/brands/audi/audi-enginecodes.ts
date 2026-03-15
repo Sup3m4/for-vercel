@@ -1273,50 +1273,96 @@ export const audiEngineCodes = {
   ],
 
   // --- A8 (D5) ---
-  "Audi-A8 (S)-D5 (2017-present)-55 TFSI": [
-    { code: "CZSE", hp: "340 hp", torque: "500 Nm", profileId: "czse-a8-d5" }
+  "Audi-A8 (S)-D5 (2017-present)-45 TFSI": [
+    { code: "CHNA", hp: "252 hp", torque: "370 Nm", profileId: "chna-a8-d5" }
   ],
-  "Audi-A8 (S)-D5 (2017-present)-60 TFSI (V8)": [
-    { code: "CXYA", hp: "460 hp", torque: "660 Nm", profileId: "cxya-a8-d5" }
+  "Audi-A8 (S)-D5 (2017-present)-45 TDI": [
+    { code: "DDVE", hp: "231 hp", torque: "500 Nm", profileId: "ddve-a8-d5" }
   ],
-  "Audi-A8 (S)-D5 (2017-present)-60 TFSI e": [
-    { code: "CZSE", hp: "449 hp", torque: "700 Nm", profileId: "czse-a8-d5-phev" } // Rendszer
+  "Audi-A8 (S)-D5 (2017-present)-50 TFSI": [
+    { code: "CZSB", hp: "286 hp", torque: "450 Nm", profileId: "czsb-a8-d5" }
   ],
   "Audi-A8 (S)-D5 (2017-present)-50 TDI": [
-    { code: "DDVC", hp: "286 hp", torque: "600 Nm", profileId: "ddvc-a8-d5" }
+    { code: "DDVC", hp: "286 hp", torque: "600 Nm", profileId: "ddvc-a8-d5" },
+    { code: "DEWA", hp: "286 hp", torque: "600 Nm", profileId: "dewa-a8-d5" }
+  ],
+  "Audi-A8 (S)-D5 (2017-present)-55 TFSI": [
+    { code: "CZSE", hp: "340 hp", torque: "500 Nm", profileId: "czse-a8-d5" },
+    { code: "DLZA", hp: "340 hp", torque: "500 Nm", profileId: "dlza-a8-d5" }
+  ],
+  "Audi-A8 (S)-D5 (2017-present)-55 TFSI e": [
+    { code: "CZSE", hp: "394 hp", torque: "600 Nm", profileId: "czse-a8-d5-55phev" }
+  ],
+  "Audi-A8 (S)-D5 (2017-present)-60 TFSI (V8)": [
+    { code: "CXYA", hp: "460 hp", torque: "660 Nm", profileId: "cxya-a8-d5" },
+    { code: "DAVA", hp: "460 hp", torque: "660 Nm", profileId: "dava-a8-d5" }
+  ],
+  "Audi-A8 (S)-D5 (2017-present)-60 TFSI e": [
+    { code: "CZSE", hp: "449 hp", torque: "700 Nm", profileId: "czse-a8-d5-phev" },
+    { code: "DLZA", hp: "462 hp", torque: "700 Nm", profileId: "dlza-a8-d5-phev" }
   ],
   "Audi-A8 (S)-D5 (2017-present)-60 TDI": [
-    { code: "CZZA", hp: "435 hp", torque: "900 Nm", profileId: "czza-a8-d5" } // V8 Diesel
+    { code: "CZZA", hp: "435 hp", torque: "900 Nm", profileId: "czza-a8-d5" },
+    { code: "DMKB", hp: "435 hp", torque: "900 Nm", profileId: "dmkb-a8-d5" }
   ],
   "Audi-A8 (S)-D5 (2017-present)-S8": [
-    { code: "CMEA", hp: "571 hp", torque: "800 Nm", profileId: "cmea-s8-d5" }
+    { code: "CMEA", hp: "571 hp", torque: "800 Nm", profileId: "cmea-s8-d5" },
+    { code: "CWWB", hp: "571 hp", torque: "800 Nm", profileId: "cwwb-s8-d5" },
+    { code: "CWNA", hp: "571 hp", torque: "800 Nm", profileId: "cwna-s8-d5" }
+  ],
+  "Audi-A8 (S)-D5 (2017-present)-W12": [
+    { code: "CVNA", hp: "585 hp", torque: "800 Nm", profileId: "cvna-a8-d5" }
+  ],
+  "Audi-A8 (S)-D5 (2017-present)-Horch": [
+    { code: "CZSE", hp: "340 hp", torque: "500 Nm", profileId: "horch-a8-d5" }
   ],
 
   // --- Q2 ---
   "Audi-Q2 (S)-GA (2016-2026)-1.0 TFSI": [
     { code: "CHZJ", hp: "116 hp", torque: "200 Nm", profileId: "chzj-q2-ga" },
-    { code: "DKRF", hp: "110 hp", torque: "200 Nm", profileId: "dkrf-q2-ga" }
+    { code: "CHZK", hp: "116 hp", torque: "200 Nm", profileId: "chzk-q2-ga" },
+    { code: "DKRA", hp: "95 hp", torque: "175 Nm", profileId: "dkra-q2-ga" },
+    { code: "DKRF", hp: "110 hp", torque: "200 Nm", profileId: "dkrf-q2-ga" },
+    { code: "DLAA", hp: "110 hp", torque: "200 Nm", profileId: "dlaa-q2-ga" },
+    { code: "DBRA", hp: "116 hp", torque: "200 Nm", profileId: "dbra-q2-ga" }
   ],
   "Audi-Q2 (S)-GA (2016-2026)-1.4 TFSI": [
-    { code: "CZEA", hp: "150 hp", torque: "250 Nm", profileId: "czea-q2-ga" }
+    { code: "CZEA", hp: "150 hp", torque: "250 Nm", profileId: "czea-q2-ga" },
+    { code: "CSSA", hp: "150 hp", torque: "250 Nm", profileId: "cssa-q2-ga" },
+    { code: "DJSA", hp: "150 hp", torque: "250 Nm", profileId: "djsa-q2-ga" },
+    { code: "CPWA", hp: "110 hp", torque: "200 Nm", profileId: "cpwa-q2-ga" }
   ],
   "Audi-Q2 (S)-GA (2016-2026)-1.5 TFSI": [
     { code: "DADA", hp: "150 hp", torque: "250 Nm", profileId: "dada-q2-ga" },
-    { code: "DPCA", hp: "150 hp", torque: "250 Nm", profileId: "dpca-q2-ga" }
+    { code: "DPCA", hp: "150 hp", torque: "250 Nm", profileId: "dpca-q2-ga" },
+    { code: "DXDB", hp: "150 hp", torque: "250 Nm", profileId: "dxdb-q2-ga" },
+    { code: "DXDA", hp: "150 hp", torque: "250 Nm", profileId: "dxda-q2-ga" },
+    { code: "DSVA", hp: "160 hp", torque: "250 Nm", profileId: "dsva-q2-ga" }
   ],
   "Audi-Q2 (S)-GA (2016-2026)-2.0 TFSI": [
     { code: "CZPB", hp: "190 hp", torque: "320 Nm", profileId: "czpb-q2-ga" },
-    { code: "DKZA", hp: "190 hp", torque: "320 Nm", profileId: "dkza-q2-ga" }
+    { code: "DKZA", hp: "190 hp", torque: "320 Nm", profileId: "dkza-q2-ga" },
+    { code: "DNNA", hp: "190 hp", torque: "320 Nm", profileId: "dnna-q2-ga" },
+    { code: "DRFA", hp: "190 hp", torque: "320 Nm", profileId: "drfa-q2-ga" },
+    { code: "DBRB", hp: "220 hp", torque: "350 Nm", profileId: "dbrb-q2-ga" }
   ],
   "Audi-Q2 (S)-GA (2016-2026)-1.6 TDI": [
-    { code: "DDYA", hp: "116 hp", torque: "250 Nm", profileId: "ddya-q2-ga" }
+    { code: "DDYA", hp: "116 hp", torque: "250 Nm", profileId: "ddya-q2-ga" },
+    { code: "DGTE", hp: "116 hp", torque: "250 Nm", profileId: "dgte-q2-ga" }
   ],
   "Audi-Q2 (S)-GA (2016-2026)-2.0 TDI": [
     { code: "DFGA", hp: "150 hp", torque: "340 Nm", profileId: "dfga-q2-ga" },
-    { code: "DFHA", hp: "190 hp", torque: "400 Nm", profileId: "dfha-q2-ga" }
+    { code: "DFGC", hp: "150 hp", torque: "340 Nm", profileId: "dfgc-q2-ga" },
+    { code: "DTTC", hp: "150 hp", torque: "360 Nm", profileId: "dttc-q2-ga" },
+    { code: "DTSB", hp: "150 hp", torque: "360 Nm", profileId: "dtsb-q2-ga" },
+    { code: "DFHA", hp: "190 hp", torque: "400 Nm", profileId: "dfha-q2-ga" },
+    { code: "DTUA", hp: "190 hp", torque: "400 Nm", profileId: "dtua-q2-ga" },
+    { code: "DTRB", hp: "116 hp", torque: "300 Nm", profileId: "dtrb-q2-ga" },
+    { code: "DTRD", hp: "116 hp", torque: "300 Nm", profileId: "dtrd-q2-ga" }
   ],
   "Audi-Q2 (S)-GA (2016-2026)-SQ2": [
-    { code: "DNUE", hp: "300 hp", torque: "400 Nm", profileId: "dnue-sq2-ga" }
+    { code: "DNUE", hp: "300 hp", torque: "400 Nm", profileId: "dnue-sq2-ga" },
+    { code: "DNFG", hp: "300 hp", torque: "400 Nm", profileId: "dnfg-sq2-ga" }
   ],
 
   // --- Q3 (8U) ---
