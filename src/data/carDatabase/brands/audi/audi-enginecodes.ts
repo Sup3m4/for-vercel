@@ -1369,19 +1369,27 @@ export const audiEngineCodes = {
   "Audi-Q3 (RS)-8U (2011-2018)-1.4 TFSI": [
     { code: "CHPB", hp: "150 hp", torque: "250 Nm", profileId: "chpb-q3-8u" },
     { code: "CZDA", hp: "150 hp", torque: "250 Nm", profileId: "czda-q3-8u" },
-    { code: "CZEA", hp: "150 hp", torque: "250 Nm", profileId: "czea-q3-8u" }
+    { code: "CZEA", hp: "150 hp", torque: "250 Nm", profileId: "czea-q3-8u" },
+    { code: "CZDB", hp: "125 hp", torque: "220 Nm", profileId: "czdb-q3-8u" }
   ],
   "Audi-Q3 (RS)-8U (2011-2018)-2.0 TFSI": [
     { code: "CCZC", hp: "170 hp", torque: "280 Nm", profileId: "cczc-q3-8u" },
     { code: "CPSA", hp: "211 hp", torque: "300 Nm", profileId: "cpsa-q3-8u" },
     { code: "CULB", hp: "180 hp", torque: "320 Nm", profileId: "culb-q3-8u" },
-    { code: "CULC", hp: "220 hp", torque: "350 Nm", profileId: "culc-q3-8u" }
+    { code: "CULC", hp: "220 hp", torque: "350 Nm", profileId: "culc-q3-8u" },
+    { code: "CCZA", hp: "200 hp", torque: "280 Nm", profileId: "ccza-q3-8u" }
   ],
   "Audi-Q3 (RS)-8U (2011-2018)-2.0 TDI": [
     { code: "CFFB", hp: "140 hp", torque: "320 Nm", profileId: "cffb-q3-8u" },
     { code: "CLLB", hp: "177 hp", torque: "380 Nm", profileId: "cllb-q3-8u" },
     { code: "CUVC", hp: "150 hp", torque: "340 Nm", profileId: "cuvc-q3-8u" },
-    { code: "CUWA", hp: "184 hp", torque: "380 Nm", profileId: "cuwa-q3-8u" }
+    { code: "CUWA", hp: "184 hp", torque: "380 Nm", profileId: "cuwa-q3-8u" },
+    { code: "CFFA", hp: "136 hp", torque: "320 Nm", profileId: "cffa-q3-8u" },
+    { code: "CFGC", hp: "177 hp", torque: "380 Nm", profileId: "cfgc-q3-8u" },
+    { code: "CGLC", hp: "177 hp", torque: "380 Nm", profileId: "cglc-q3-8u" },
+    { code: "CUVD", hp: "120 hp", torque: "290 Nm", profileId: "cuvd-q3-8u" },
+    { code: "DFTB", hp: "120 hp", torque: "290 Nm", profileId: "dftb-q3-8u" },
+    { code: "DFTC", hp: "150 hp", torque: "340 Nm", profileId: "dftc-q3-8u" }
   ],
   "Audi-Q3 (RS)-8U (2011-2018)-RSQ3 (2.5)": [
     { code: "CTSA", hp: "310 hp", torque: "420 Nm", profileId: "ctsa-rsq3-8u" },
@@ -1392,74 +1400,177 @@ export const audiEngineCodes = {
   ],
 
   // --- Q3 (F3) ---
+  "Audi-Q3 (RS)-F3 (2018-2025)-30 TFSI": [
+    { code: "DHKC", hp: "110 hp", torque: "200 Nm", profileId: "dhkc-q3-f3" },
+    { code: "DPBE", hp: "110 hp", torque: "200 Nm", profileId: "dpbe-q3-f3" },
+    { code: "DLAA", hp: "110 hp", torque: "200 Nm", profileId: "dlaa-q3-f3" },
+    { code: "DLAW", hp: "110 hp", torque: "200 Nm", profileId: "dlaw-q3-f3" },
+    { code: "DLAC", hp: "110 hp", torque: "200 Nm", profileId: "dlac-q3-f3" },
+    { code: "DLAB", hp: "110 hp", torque: "200 Nm", profileId: "dlab-q3-f3" }
+  ],
   "Audi-Q3 (RS)-F3 (2018-2025)-35 TFSI": [
     { code: "DADA", hp: "150 hp", torque: "250 Nm", profileId: "dada-q3-f3" },
-    { code: "DPCA", hp: "150 hp", torque: "250 Nm", profileId: "dpca-q3-f3" }
+    { code: "DPCA", hp: "150 hp", torque: "250 Nm", profileId: "dpca-q3-f3" },
+    { code: "DFYA", hp: "150 hp", torque: "250 Nm", profileId: "dfya-q3-f3" },
+    { code: "DFYB", hp: "150 hp", torque: "250 Nm", profileId: "dfyb-q3-f3" },
+    { code: "DXDB", hp: "150 hp", torque: "250 Nm", profileId: "dxdb-q3-f3" },
+    { code: "DXDA", hp: "150 hp", torque: "250 Nm", profileId: "dxda-q3-f3" },
+    { code: "DXDE", hp: "150 hp", torque: "250 Nm", profileId: "dxde-q3-f3" }
   ],
   "Audi-Q3 (RS)-F3 (2018-2025)-40 TFSI": [
-    { code: "DKTC", hp: "190 hp", torque: "320 Nm", profileId: "dktc-q3-f3" }
+    { code: "DKTC", hp: "190 hp", torque: "320 Nm", profileId: "dktc-q3-f3" },
+    { code: "DNNA", hp: "190 hp", torque: "320 Nm", profileId: "dnna-q3-f3" },
+    { code: "DNNB", hp: "190 hp", torque: "320 Nm", profileId: "dnnb-q3-f3" },
+    { code: "DRFA", hp: "190 hp", torque: "320 Nm", profileId: "drfa-q3-f3" },
+    { code: "DNCB", hp: "190 hp", torque: "320 Nm", profileId: "dncb-q3-f3" },
+    { code: "DKZA", hp: "190 hp", torque: "320 Nm", profileId: "dkza-q3-f3" },
+    { code: "CZPB", hp: "190 hp", torque: "320 Nm", profileId: "czpb-q3-f3" },
+    { code: "CZRA", hp: "190 hp", torque: "320 Nm", profileId: "czra-q3-f3" },
+    { code: "DMSA", hp: "190 hp", torque: "320 Nm", profileId: "dmsa-q3-f3" },
+    { code: "DMSB", hp: "190 hp", torque: "320 Nm", profileId: "dmsb-q3-f3" },
+    { code: "DBFB", hp: "186 hp", torque: "320 Nm", profileId: "dbfb-q3-f3" }
   ],
   "Audi-Q3 (RS)-F3 (2018-2025)-45 TFSI": [
-    { code: "DKTA", hp: "230 hp", torque: "350 Nm", profileId: "dkta-q3-f3" }
+    { code: "DKTA", hp: "230 hp", torque: "350 Nm", profileId: "dkta-q3-f3" },
+    { code: "DNPA", hp: "245 hp", torque: "370 Nm", profileId: "dnpa-q3-f3" },
+    { code: "DNFB", hp: "245 hp", torque: "370 Nm", profileId: "dnfb-q3-f3" },
+    { code: "DNPC", hp: "245 hp", torque: "370 Nm", profileId: "dnpc-q3-f3" },
+    { code: "DNFC", hp: "245 hp", torque: "370 Nm", profileId: "dnfc-q3-f3" },
+    { code: "DNFD", hp: "245 hp", torque: "370 Nm", profileId: "dnfd-q3-f3" },
+    { code: "DNFE", hp: "245 hp", torque: "370 Nm", profileId: "dnfe-q3-f3" }
+  ],
+  "Audi-Q3 (RS)-F3 (2018-2025)-30 TDI": [
+    { code: "DFGC", hp: "116 hp", torque: "300 Nm", profileId: "dfgc-q3-f3" },
+    { code: "DTRB", hp: "116 hp", torque: "300 Nm", profileId: "dtrb-q3-f3" },
+    { code: "DTRD", hp: "116 hp", torque: "300 Nm", profileId: "dtrd-q3-f3" },
+    { code: "DTRF", hp: "116 hp", torque: "300 Nm", profileId: "dtrf-q3-f3" }
   ],
   "Audi-Q3 (RS)-F3 (2018-2025)-35 TDI": [
     { code: "DFGA", hp: "150 hp", torque: "340 Nm", profileId: "dfga-q3-f3" },
-    { code: "DTSA", hp: "150 hp", torque: "360 Nm", profileId: "dtsa-q3-f3" }
+    { code: "DFBA", hp: "150 hp", torque: "340 Nm", profileId: "dfba-q3-f3" },
+    { code: "DTSA", hp: "150 hp", torque: "360 Nm", profileId: "dtsa-q3-f3" },
+    { code: "DTSB", hp: "150 hp", torque: "360 Nm", profileId: "dtsb-q3-f3" },
+    { code: "DTSD", hp: "150 hp", torque: "360 Nm", profileId: "dtsd-q3-f3" },
+    { code: "DTTC", hp: "150 hp", torque: "360 Nm", profileId: "dttc-q3-f3" },
+    { code: "DTTB", hp: "150 hp", torque: "340 Nm", profileId: "dttb-q3-f3" },
+    { code: "DTRC", hp: "150 hp", torque: "360 Nm", profileId: "dtrc-q3-f3" }
   ],
   "Audi-Q3 (RS)-F3 (2018-2025)-40 TDI": [
     { code: "DFHA", hp: "190 hp", torque: "400 Nm", profileId: "dfha-q3-f3" },
-    { code: "DTUA", hp: "200 hp", torque: "400 Nm", profileId: "dtua-q3-f3" }
+    { code: "DFHB", hp: "190 hp", torque: "400 Nm", profileId: "dfhb-q3-f3" },
+    { code: "DTUA", hp: "200 hp", torque: "400 Nm", profileId: "dtua-q3-f3" },
+    { code: "DTUB", hp: "200 hp", torque: "400 Nm", profileId: "dtub-q3-f3" },
+    { code: "DTTA", hp: "200 hp", torque: "400 Nm", profileId: "dtta-q3-f3" }
   ],
   "Audi-Q3 (RS)-F3 (2018-2025)-45 TFSI e": [
-    { code: "DGEA", hp: "245 hp", torque: "400 Nm", profileId: "dgea-q3-f3" } // 1.4 TSI + Electric
+    { code: "DGEA", hp: "245 hp", torque: "400 Nm", profileId: "dgea-q3-f3" },
+    { code: "DGEB", hp: "245 hp", torque: "400 Nm", profileId: "dgeb-q3-f3" }
   ],
   "Audi-Q3 (RS)-F3 (2018-2025)-RSQ3": [
-    { code: "DNWA", hp: "400 hp", torque: "480 Nm", profileId: "dnwa-rsq3-f3" }
+    { code: "DNWA", hp: "400 hp", torque: "480 Nm", profileId: "dnwa-rsq3-f3" },
+    { code: "DNWC", hp: "400 hp", torque: "480 Nm", profileId: "dnwc-rsq3-f3" },
+    { code: "DNWB", hp: "400 hp", torque: "480 Nm", profileId: "dnwb-rsq3-f3" }
   ],
-  "Audi-Q3 (RS)-FJ (2025-present)-35 TFSI": [
-    { code: "DXDB", hp: "150 hp", torque: "250 Nm", profileId: "dxdb-q3-fj" } // Evo2 1.5
+
+
+ "Audi-Q3 (RS)-FJ (2025-present)-35 TFSI": [
+    { code: "DXDB", hp: "150 hp", torque: "250 Nm", profileId: "dxdb-q3-fj" },
+    { code: "DXDE", hp: "150 hp", torque: "250 Nm", profileId: "dxde-q3-fj" },
+    { code: "DXDF", hp: "150 hp", torque: "250 Nm", profileId: "dxdf-q3-fj" },
+    { code: "DXDG", hp: "150 hp", torque: "250 Nm", profileId: "dxdg-q3-fj" }
+  ],
+  "Audi-Q3 (RS)-FJ (2025-present)-40 TFSI": [
+    { code: "DMSB", hp: "204 hp", torque: "320 Nm", profileId: "dmsb-q3-fj" },
+    { code: "DMSC", hp: "204 hp", torque: "320 Nm", profileId: "dmsc-q3-fj" },
+    { code: "DMSD", hp: "204 hp", torque: "320 Nm", profileId: "dmsd-q3-fj" }
   ],
   "Audi-Q3 (RS)-FJ (2025-present)-45 TFSI": [
-    { code: "DMSB", hp: "204 hp", torque: "320 Nm", profileId: "dmsb-q3-fj" } // 2.0
+    { code: "DNFD", hp: "265 hp", torque: "400 Nm", profileId: "dnfd-q3-fj" },
+    { code: "DNFE", hp: "265 hp", torque: "400 Nm", profileId: "dnfe-q3-fj" }
   ],
   "Audi-Q3 (RS)-FJ (2025-present)-35 TDI": [
-    { code: "DTNA", hp: "150 hp", torque: "360 Nm", profileId: "dtna-q3-fj" }
+    { code: "DTNA", hp: "150 hp", torque: "360 Nm", profileId: "dtna-q3-fj" },
+    { code: "DTNB", hp: "150 hp", torque: "360 Nm", profileId: "dtnb-q3-fj" },
+    { code: "DTNC", hp: "150 hp", torque: "360 Nm", profileId: "dtnc-q3-fj" }
   ],
   "Audi-Q3 (RS)-FJ (2025-present)-40 TDI": [
-    { code: "DTPA", hp: "193 hp", torque: "400 Nm", profileId: "dtpa-q3-fj" }
+    { code: "DTPA", hp: "193 hp", torque: "400 Nm", profileId: "dtpa-q3-fj" },
+    { code: "DTPB", hp: "193 hp", torque: "400 Nm", profileId: "dtpb-q3-fj" },
+    { code: "DTPC", hp: "193 hp", torque: "400 Nm", profileId: "dtpc-q3-fj" }
   ],
+  "Audi-Q3 (RS)-FJ (2025-present)-45 TFSI e": [
+    { code: "DGEB", hp: "204 hp", torque: "350 Nm", profileId: "dgeb-q3-fj" },
+    { code: "DGEC", hp: "272 hp", torque: "400 Nm", profileId: "dgec-q3-fj" }
+  ],
+  "Audi-Q3 (RS)-FJ (2025-present)-RSQ3": [
+    { code: "DNWA", hp: "400 hp", torque: "480 Nm", profileId: "dnwa-q3-fj" },
+    { code: "DNWB", hp: "420 hp", torque: "500 Nm", profileId: "dnwb-q3-fj" }
+  ],
+
+//Q5
   "Audi-Q5 (S)-8R (2008-2017)-2.0 TFSI": [
-    { code: "CDNC", hp: "211 hp", torque: "350 Nm", profileId: "cdnc-q5-8r" }, // Olajfogyasztós
+    { code: "CDNB", hp: "180 hp", torque: "320 Nm", profileId: "cdnb-q5-8r" },
+    { code: "CDNC", hp: "211 hp", torque: "350 Nm", profileId: "cdnc-q5-8r" },
+    { code: "CAEA", hp: "180 hp", torque: "320 Nm", profileId: "caea-q5-8r" },
     { code: "CAEB", hp: "211 hp", torque: "350 Nm", profileId: "caeb-q5-8r" },
-    { code: "CNCD", hp: "225 hp", torque: "350 Nm", profileId: "cncd-q5-8r" }, // Javított (Gen 3)
-    { code: "CPMA", hp: "211 hp", torque: "350 Nm", profileId: "cpma-q5-8r" }  // FlexFuel
+    { code: "CDZA", hp: "180 hp", torque: "320 Nm", profileId: "cdza-q5-8r" },
+    { code: "CNCB", hp: "180 hp", torque: "320 Nm", profileId: "cncb-q5-8r" },
+    { code: "CNCD", hp: "225 hp", torque: "350 Nm", profileId: "cncd-q5-8r" },
+    { code: "CNCE", hp: "230 hp", torque: "350 Nm", profileId: "cnce-q5-8r" },
+    { code: "CPMA", hp: "211 hp", torque: "350 Nm", profileId: "cpma-q5-8r" },
+    { code: "CPMB", hp: "220 hp", torque: "350 Nm", profileId: "cpmb-q5-8r" }
   ],
   "Audi-Q5 (S)-8R (2008-2017)-3.2 FSI": [
     { code: "CALB", hp: "270 hp", torque: "330 Nm", profileId: "calb-q5-8r" }
   ],
   "Audi-Q5 (S)-8R (2008-2017)-3.0 TFSI": [
     { code: "CTUC", hp: "272 hp", torque: "400 Nm", profileId: "ctuc-q5-8r" },
-    { code: "CTVA", hp: "272 hp", torque: "400 Nm", profileId: "ctva-q5-8r" }
+    { code: "CTVA", hp: "272 hp", torque: "400 Nm", profileId: "ctva-q5-8r" },
+    { code: "CTWB", hp: "272 hp", torque: "400 Nm", profileId: "ctwb-q5-8r" },
+    { code: "CMDA", hp: "272 hp", torque: "400 Nm", profileId: "cmda-q5-8r" },
   ],
   "Audi-Q5 (S)-8R (2008-2017)-Q5 Hybrid (2.0 TFSI)": [
     { code: "CHJA", hp: "245 hp", torque: "480 Nm", profileId: "chja-q5-8r" }
   ],
   "Audi-Q5 (S)-8R (2008-2017)-2.0 TDI": [
+    { code: "CAGA", hp: "143 hp", torque: "320 Nm", profileId: "caga-q5-8r" },
+    { code: "CAGB", hp: "136 hp", torque: "320 Nm", profileId: "cagb-q5-8r" },
+    { code: "CAGC", hp: "120 hp", torque: "290 Nm", profileId: "cagc-q5-8r" },
     { code: "CAHA", hp: "170 hp", torque: "350 Nm", profileId: "caha-q5-8r" },
+    { code: "CAHB", hp: "163 hp", torque: "350 Nm", profileId: "cahb-q5-8r" },
+    { code: "CGLA", hp: "163 hp", torque: "380 Nm", profileId: "cgla-q5-8r" },
     { code: "CGLB", hp: "170 hp", torque: "350 Nm", profileId: "cglb-q5-8r" },
-    { code: "CJCA", hp: "143 hp", torque: "320 Nm", profileId: "cjca-q5-8r" },
     { code: "CGLC", hp: "177 hp", torque: "380 Nm", profileId: "cglc-q5-8r" },
-    { code: "CNHA", hp: "190 hp", torque: "400 Nm", profileId: "cnha-q5-8r" }, // AdBlue
-    { code: "CJCD", hp: "150 hp", torque: "320 Nm", profileId: "cjcd-q5-8r" }
+    { code: "CGLD", hp: "163 hp", torque: "380 Nm", profileId: "cgld-q5-8r" },
+    { code: "CJCA", hp: "143 hp", torque: "320 Nm", profileId: "cjca-q5-8r" },
+    { code: "CJCB", hp: "136 hp", torque: "320 Nm", profileId: "cjcb-q5-8r" },
+    { code: "CJCC", hp: "120 hp", torque: "290 Nm", profileId: "cjcc-q5-8r" },
+    { code: "CJCD", hp: "150 hp", torque: "320 Nm", profileId: "cjcd-q5-8r" },
+    { code: "CMEA", hp: "143 hp", torque: "320 Nm", profileId: "cmea-q5-8r" },
+    { code: "CMFA", hp: "143 hp", torque: "320 Nm", profileId: "cmfa-q5-8r" },
+    { code: "CMGB", hp: "177 hp", torque: "380 Nm", profileId: "cmgb-q5-8r" },
+    { code: "CNHA", hp: "190 hp", torque: "400 Nm", profileId: "cnha-q5-8r" },
+    { code: "CNHC", hp: "150 hp", torque: "400 Nm", profileId: "cnhc-q5-8r" },
+    { code: "CSUA", hp: "150 hp", torque: "320 Nm", profileId: "csua-q5-8r" },
+    { code: "CSUB", hp: "136 hp", torque: "320 Nm", profileId: "csub-q5-8r" }
   ],
   "Audi-Q5 (S)-8R (2008-2017)-3.0 TDI": [
     { code: "CCWA", hp: "240 hp", torque: "500 Nm", profileId: "ccwa-q5-8r" },
+    { code: "CCWB", hp: "211 hp", torque: "500 Nm", profileId: "ccwb-q5-8r" },
     { code: "CDUD", hp: "245 hp", torque: "580 Nm", profileId: "cdud-q5-8r" },
-    { code: "CTBA", hp: "258 hp", torque: "580 Nm", profileId: "ctba-q5-8r" }
+    { code: "CDUC", hp: "245 hp", torque: "580 Nm", profileId: "cduc-q5-8r" },
+    { code: "CKVB", hp: "245 hp", torque: "580 Nm", profileId: "ckvb-q5-8r" },
+    { code: "CKVC", hp: "245 hp", torque: "580 Nm", profileId: "ckvc-q5-8r" },
+    { code: "CLZB", hp: "240 hp", torque: "550 Nm", profileId: "clzb-q5-8r" },
+    { code: "CPNB", hp: "240 hp", torque: "580 Nm", profileId: "cpnb-q5-8r" },
+    { code: "CTBA", hp: "258 hp", torque: "580 Nm", profileId: "ctba-q5-8r" },
+    { code: "CTBB", hp: "211 hp", torque: "500 Nm", profileId: "ctbb-q5-8r" },
+    { code: "CTBC", hp: "250 hp", torque: "580 Nm", profileId: "ctbc-q5-8r" }
   ],
   "Audi-Q5 (S)-8R (2008-2017)-SQ5 (3.0 TDI BiTurbo)": [
     { code: "CGQB", hp: "313 hp", torque: "650 Nm", profileId: "cgqb-sq5-8r" },
-    { code: "CVUB", hp: "326 hp", torque: "650 Nm", profileId: "cvub-sq5-8r" }, // Competition
+    { code: "CVUA", hp: "326 hp", torque: "650 Nm", profileId: "cvua-sq5-8r" },
+    { code: "CVUB", hp: "326 hp", torque: "650 Nm", profileId: "cvub-sq5-8r" },
     { code: "CVUC", hp: "313 hp", torque: "650 Nm", profileId: "cvuc-sq5-8r" }
   ],
   "Audi-Q5 (S)-8R (2008-2017)-SQ5 (3.0 TFSI)": [
@@ -1468,35 +1579,59 @@ export const audiEngineCodes = {
   ],
 
   // --- Q5 (FY) ---
-  "Audi-Q5 (S)-FY (2017-2024)-40 TFSI": [
-    { code: "DAXB", hp: "204 hp", torque: "320 Nm", profileId: "daxb-q5-fy" }
-  ],
-  "Audi-Q5 (S)-FY (2017-2024)-45 TFSI": [
-    { code: "DAXC", hp: "252 hp", torque: "370 Nm", profileId: "daxc-q5-fy" },
-    { code: "DNTA", hp: "245 hp", torque: "370 Nm", profileId: "dnta-q5-fy" }, // OPF
-    { code: "DPAA", hp: "265 hp", torque: "370 Nm", profileId: "dpaa-q5-fy" }
+  "Audi-Q5 (S)-FY (2017-2024)-30 TDI": [
+    { code: "DEUB", hp: "136 hp", torque: "320 Nm", profileId: "deub-q5-fy" },
+    { code: "DTNB", hp: "136 hp", torque: "320 Nm", profileId: "dtnb-q5-fy" }
   ],
   "Audi-Q5 (S)-FY (2017-2024)-35 TDI": [
     { code: "DEUA", hp: "163 hp", torque: "380 Nm", profileId: "deua-q5-fy" },
-    { code: "DTNA", hp: "163 hp", torque: "380 Nm", profileId: "dtna-q5-fy" }
+    { code: "DTNA", hp: "163 hp", torque: "380 Nm", profileId: "dtna-q5-fy" },
+    { code: "DEZA", hp: "163 hp", torque: "380 Nm", profileId: "deza-q5-fy" }
   ],
   "Audi-Q5 (S)-FY (2017-2024)-40 TDI": [
     { code: "DETA", hp: "190 hp", torque: "400 Nm", profileId: "deta-q5-fy" },
-    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-q5-fy" } // MHEV
+    { code: "DESA", hp: "190 hp", torque: "400 Nm", profileId: "desa-q5-fy" },
+    { code: "DFVA", hp: "190 hp", torque: "400 Nm", profileId: "dfva-q5-fy" },
+    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-q5-fy" },
+    { code: "DFBA", hp: "204 hp", torque: "400 Nm", profileId: "dfba-q5-fy" }
   ],
   "Audi-Q5 (S)-FY (2017-2024)-45 TDI": [
-    { code: "DCPC", hp: "231 hp", torque: "500 Nm", profileId: "dcpc-q5-fy" }
+    { code: "DCPB", hp: "231 hp", torque: "500 Nm", profileId: "dcpb-q5-fy" },
+    { code: "CZVF", hp: "231 hp", torque: "500 Nm", profileId: "czvf-q5-fy" },
+    { code: "DMGH", hp: "245 hp", torque: "500 Nm", profileId: "dmgh-q5-fy" }
   ],
   "Audi-Q5 (S)-FY (2017-2024)-50 TDI": [
-    { code: "DCPC", hp: "286 hp", torque: "620 Nm", profileId: "dcpc-q5-fy-286" }
+    { code: "CVZA", hp: "286 hp", torque: "620 Nm", profileId: "cvza-q5-fy" },
+    { code: "CZVG", hp: "286 hp", torque: "620 Nm", profileId: "czvg-q5-fy" },
+    { code: "DCPC", hp: "286 hp", torque: "620 Nm", profileId: "dcpc-q5-fy-50" },
+    { code: "DMGA", hp: "286 hp", torque: "620 Nm", profileId: "dmga-q5-fy" }
+  ],
+  "Audi-Q5 (S)-FY (2017-2024)-40 TFSI": [
+    { code: "DAYB", hp: "190 hp", torque: "320 Nm", profileId: "dayb-q5-fy" },
+    { code: "DEMA", hp: "190 hp", torque: "320 Nm", profileId: "dema-q5-fy" },
+    { code: "DLHA", hp: "190 hp", torque: "320 Nm", profileId: "dlha-q5-fy" },
+    { code: "DKUA", hp: "190 hp", torque: "320 Nm", profileId: "dkua-q5-fy" },
+    { code: "DHKC", hp: "204 hp", torque: "320 Nm", profileId: "dhkc-q5-fy" }
+  ],
+  "Audi-Q5 (S)-FY (2017-2024)-45 TFSI": [
+    { code: "DAXB", hp: "252 hp", torque: "370 Nm", profileId: "daxb-q5-fy" },
+    { code: "DAXC", hp: "252 hp", torque: "370 Nm", profileId: "daxc-q5-fy" },
+    { code: "CYMC", hp: "252 hp", torque: "370 Nm", profileId: "cymc-q5-fy" },
+    { code: "CYRB", hp: "252 hp", torque: "370 Nm", profileId: "cyrb-q5-fy" },
+    { code: "DNTA", hp: "245 hp", torque: "370 Nm", profileId: "dnta-q5-fy" },
+    { code: "DKNA", hp: "245 hp", torque: "370 Nm", profileId: "dkna-q5-fy" },
+    { code: "DPAA", hp: "265 hp", torque: "370 Nm", profileId: "dpaa-q5-fy" },
+    { code: "DLHB", hp: "245 hp", torque: "370 Nm", profileId: "dlhb-q5-fy" }
   ],
   "Audi-Q5 (S)-FY (2017-2024)-50 TFSI e": [
-    { code: "DLGA", hp: "299 hp", torque: "450 Nm", profileId: "dlga-q5-fy" }
+    { code: "DLGA", hp: "299 hp", torque: "450 Nm", profileId: "dlga-q5-fy" },
+    { code: "DRYA", hp: "299 hp", torque: "450 Nm", profileId: "drya-q5-fy" }
   ],
   "Audi-Q5 (S)-FY (2017-2024)-55 TFSI e": [
-    { code: "DLGA", hp: "367 hp", torque: "500 Nm", profileId: "dlga-q5-fy-55" }
+    { code: "DLGA", hp: "367 hp", torque: "500 Nm", profileId: "dlga-q5-fy-55" },
+    { code: "DRYA", hp: "367 hp", torque: "500 Nm", profileId: "drya-q5-fy-55" }
   ],
-  "Audi-Q5 (S)-FY (2017-2024)-SQ5 (3.0 TFSI)": [
+  "Audi-Q5 (S)-FY (2017-2024)-SQ5 TFSI": [
     { code: "CWGD", hp: "354 hp", torque: "500 Nm", profileId: "cwgd-sq5-fy" }
   ],
   "Audi-Q5 (S)-FY (2017-2024)-SQ5 TDI": [
@@ -1505,30 +1640,62 @@ export const audiEngineCodes = {
   ],
 
   // --- Q5 (GU) ---
-  "Audi-Q5 (S)-GU (2024-present)-2.0 TFSI": [
-    { code: "DMSB", hp: "204 hp", torque: "340 Nm", profileId: "dmsb-q5-gu" }
+  "Audi-Q5 (S)-GU (2024-present)-40 TFSI": [
+    { code: "DMSB", hp: "204 hp", torque: "340 Nm", profileId: "dmsb-q5-gu" },
+    { code: "DMSC", hp: "204 hp", torque: "340 Nm", profileId: "dmsc-q5-gu" },
+    { code: "DMSD", hp: "204 hp", torque: "340 Nm", profileId: "dmsd-q5-gu" }
   ],
-  "Audi-Q5 (S)-GU (2024-present)-2.0 TDI": [
-    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-q5-gu" }
+  "Audi-Q5 (S)-GU (2024-present)-45 TFSI": [
+    { code: "DPAA", hp: "272 hp", torque: "400 Nm", profileId: "dpaa-q5-gu" }
+  ],
+  "Audi-Q5 (S)-GU (2024-present)-40 TDI": [
+    { code: "DTPA", hp: "204 hp", torque: "400 Nm", profileId: "dtpa-q5-gu" },
+    { code: "DTPB", hp: "204 hp", torque: "400 Nm", profileId: "dtpb-q5-gu" },
+    { code: "DTPC", hp: "204 hp", torque: "400 Nm", profileId: "dtpc-q5-gu" }
+  ],
+  "Audi-Q5 (S)-GU (2024-present)-50 TFSI e": [
+    { code: "DRYA", hp: "299 hp", torque: "450 Nm", profileId: "drya-q5-gu" },
+    { code: "DRYB", hp: "299 hp", torque: "450 Nm", profileId: "dryb-q5-gu" }
+  ],
+  "Audi-Q5 (S)-GU (2024-present)-55 TFSI e": [
+    { code: "DRYA", hp: "367 hp", torque: "500 Nm", profileId: "drya-q5-gu-55" },
+    { code: "DRYB", hp: "367 hp", torque: "500 Nm", profileId: "dryb-q5-gu-55" }
   ],
   "Audi-Q5 (S)-GU (2024-present)-SQ5": [
-    { code: "DLZA", hp: "367 hp", torque: "550 Nm", profileId: "dlza-sq5-gu" } // Specifikus V6
+    { code: "DLZA", hp: "367 hp", torque: "550 Nm", profileId: "dlza-sq5-gu" }
   ],
 
   // --- Q7 (4L) ---
   "Audi-Q7 (S)-4L (2005-2015)-3.6 FSI": [
-    { code: "BHK", hp: "280 hp", torque: "360 Nm", profileId: "bhk-q7-4l" } // VR6
+    { code: "BHK", hp: "280 hp", torque: "360 Nm", profileId: "bhk-q7-4l" },
+    { code: "BHL", hp: "280 hp", torque: "360 Nm", profileId: "bhl-q7-4l" }
   ],
   "Audi-Q7 (S)-4L (2005-2015)-4.2 FSI": [
     { code: "BAR", hp: "350 hp", torque: "440 Nm", profileId: "bar-q7-4l" }
   ],
+  "Audi-Q7 (S)-4L (2005-2015)-3.0 TFSI": [
+    { code: "CJTC", hp: "272 hp", torque: "400 Nm", profileId: "cjtc-q7-4l" },
+    { code: "CJWC", hp: "272 hp", torque: "400 Nm", profileId: "cjwc-q7-4l" },
+    { code: "CJWE", hp: "272 hp", torque: "400 Nm", profileId: "cjwe-q7-4l" },
+    { code: "CTWB", hp: "280 hp", torque: "440 Nm", profileId: "ctwb-q7-4l" },
+    { code: "CJTB", hp: "333 hp", torque: "440 Nm", profileId: "cjtb-q7-4l" },
+    { code: "CJWB", hp: "333 hp", torque: "440 Nm", profileId: "cjwb-q7-4l" },
+    { code: "CNAA", hp: "333 hp", torque: "440 Nm", profileId: "cnaa-q7-4l" },
+    { code: "CTWA", hp: "333 hp", torque: "440 Nm", profileId: "ctwa-q7-4l" }
+  ],
   "Audi-Q7 (S)-4L (2005-2015)-3.0 TDI": [
-    { code: "BUG", hp: "233 hp", torque: "500 Nm", profileId: "bug-q7-4l" }, // Hírhedt
+    { code: "BUG", hp: "233 hp", torque: "500 Nm", profileId: "bug-q7-4l" },
     { code: "BUN", hp: "211 hp", torque: "500 Nm", profileId: "bun-q7-4l" },
+    { code: "CASB", hp: "211 hp", torque: "500 Nm", profileId: "casb-q7-4l" },
     { code: "CASA", hp: "240 hp", torque: "550 Nm", profileId: "casa-q7-4l" },
-    { code: "CJGA", hp: "240 hp", torque: "550 Nm", profileId: "cjga-q7-4l" }, // Clean Diesel
-    { code: "CRCA", hp: "245 hp", torque: "550 Nm", profileId: "crca-q7-4l" }, // 8-sebességeshez
-    { code: "CJMA", hp: "204 hp", torque: "450 Nm", profileId: "cjma-q7-4l" }
+    { code: "CATA", hp: "225 hp", torque: "550 Nm", profileId: "cata-q7-4l" },
+    { code: "CCMA", hp: "239 hp", torque: "550 Nm", profileId: "ccma-q7-4l" },
+    { code: "CJGA", hp: "240 hp", torque: "550 Nm", profileId: "cjga-q7-4l" },
+    { code: "CJGC", hp: "204 hp", torque: "450 Nm", profileId: "cjgc-q7-4l" },
+    { code: "CJMA", hp: "204 hp", torque: "450 Nm", profileId: "cjma-q7-4l" },
+    { code: "CRCA", hp: "245 hp", torque: "550 Nm", profileId: "crca-q7-4l" },
+    { code: "CLZB", hp: "245 hp", torque: "550 Nm", profileId: "clzb-q7-4l" },
+    { code: "CNRB", hp: "245 hp", torque: "550 Nm", profileId: "cnrb-q7-4l" }
   ],
   "Audi-Q7 (S)-4L (2005-2015)-4.2 TDI": [
     { code: "BTR", hp: "326 hp", torque: "760 Nm", profileId: "btr-q7-4l" },
@@ -1541,28 +1708,40 @@ export const audiEngineCodes = {
 
   // --- Q7 (4M) ---
   "Audi-Q7 (S)-4M (2015-present)-45 TFSI": [
-    { code: "CVJA", hp: "252 hp", torque: "370 Nm", profileId: "cvja-q7-4m" }
+    { code: "CVJA", hp: "252 hp", torque: "370 Nm", profileId: "cvja-q7-4m" },
+    { code: "CYMC", hp: "252 hp", torque: "370 Nm", profileId: "cymc-q7-4m" },
+    { code: "CYRB", hp: "252 hp", torque: "370 Nm", profileId: "cyrb-q7-4m" },
+    { code: "DLHP", hp: "245 hp", torque: "370 Nm", profileId: "dlhp-q7-4m" },
+    { code: "DMFA", hp: "265 hp", torque: "370 Nm", profileId: "dmfa-q7-4m" }
   ],
   "Audi-Q7 (S)-4M (2015-present)-55 TFSI": [
-    { code: "CREC", hp: "333 hp", torque: "440 Nm", profileId: "crec-q7-4m" }, // Kompresszor
-    { code: "DCBD", hp: "340 hp", torque: "500 Nm", profileId: "dcbd-q7-4m" }  // Turbo
+    { code: "CREC", hp: "333 hp", torque: "440 Nm", profileId: "crec-q7-4m" },
+    { code: "DCBD", hp: "340 hp", torque: "500 Nm", profileId: "dcbd-q7-4m" },
+    { code: "DMWA", hp: "340 hp", torque: "500 Nm", profileId: "dmwa-q7-4m" }
   ],
   "Audi-Q7 (S)-4M (2015-present)-45 TDI": [
     { code: "CZZA", hp: "231 hp", torque: "500 Nm", profileId: "czza-q7-4m" },
-    { code: "DHXC", hp: "231 hp", torque: "500 Nm", profileId: "dhxc-q7-4m" }
+    { code: "CZZB", hp: "218 hp", torque: "500 Nm", profileId: "czzb-q7-4m" },
+    { code: "DHXB", hp: "231 hp", torque: "500 Nm", profileId: "dhxb-q7-4m" },
+    { code: "DHXC", hp: "231 hp", torque: "500 Nm", profileId: "dhxc-q7-4m" },
+    { code: "DMGH", hp: "231 hp", torque: "500 Nm", profileId: "dmgh-q7-4m" }
   ],
   "Audi-Q7 (S)-4M (2015-present)-50 TDI": [
     { code: "CRTC", hp: "272 hp", torque: "600 Nm", profileId: "crtc-q7-4m" },
-    { code: "DHXA", hp: "286 hp", torque: "600 Nm", profileId: "dhxa-q7-4m" }
+    { code: "CVZA", hp: "258 hp", torque: "600 Nm", profileId: "cvza-q7-4m" },
+    { code: "DHXA", hp: "286 hp", torque: "600 Nm", profileId: "dhxa-q7-4m" },
+    { code: "DMGA", hp: "286 hp", torque: "600 Nm", profileId: "dmga-q7-4m" }
   ],
   "Audi-Q7 (S)-4M (2015-present)-Q7 e-tron (3.0 TDI)": [
-    { code: "CVZA", hp: "258 hp", torque: "600 Nm", profileId: "cvza-q7-4m-etron" } // + Electric = 373hp
+    { code: "CVZA", hp: "258 hp", torque: "600 Nm", profileId: "cvza-q7-4m-etron" }
   ],
   "Audi-Q7 (S)-4M (2015-present)-55 TFSI e": [
-    { code: "DCBE", hp: "381 hp", torque: "600 Nm", profileId: "dcbe-q7-4m" }
+    { code: "DCBE", hp: "381 hp", torque: "600 Nm", profileId: "dcbe-q7-4m" },
+    { code: "DRYA", hp: "394 hp", torque: "600 Nm", profileId: "drya-q5-4m-55" }
   ],
   "Audi-Q7 (S)-4M (2015-present)-60 TFSI e": [
-    { code: "DCBE", hp: "456 hp", torque: "700 Nm", profileId: "dcbe-q7-4m-60" }
+    { code: "DCBE", hp: "456 hp", torque: "700 Nm", profileId: "dcbe-q7-4m-60" },
+    { code: "DRYA", hp: "490 hp", torque: "700 Nm", profileId: "drya-q5-4m-60" }
   ],
   "Audi-Q7 (S)-4M (2015-present)-SQ7 (4.0 TDI)": [
     { code: "CZAC", hp: "435 hp", torque: "900 Nm", profileId: "czac-sq7-4m" }

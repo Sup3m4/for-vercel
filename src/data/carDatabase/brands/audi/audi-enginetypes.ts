@@ -351,6 +351,7 @@ export const audiEngineTypes = {
     { name: "RSQ3 Performance", hp: "367 hp" }
   ],
   "Audi-Q3 (RS)-F3 (2018-2025)": [
+    { name: "30 TFSI", hp: "110 hp" },
     { name: "35 TFSI", hp: "150 hp" },
     { name: "40 TFSI", hp: "190 hp" },
     { name: "45 TFSI", hp: "230-245 hp" },
@@ -362,8 +363,10 @@ export const audiEngineTypes = {
   "Audi-Q3 (RS)-FJ (2025-present)": [
     { name: "35 TFSI", hp: "150 hp" },
     { name: "45 TFSI", hp: "204 hp" },
+    { name: "45 TFSI e", hp: "204-272 hp" },
     { name: "35 TDI", hp: "150 hp" },
-    { name: "40 TDI", hp: "193 hp" }
+    { name: "40 TDI", hp: "193 hp" },
+    { name: "RSQ3", hp: "400 hp" }
   ],
 
   // --- Q5 ---
@@ -380,6 +383,7 @@ export const audiEngineTypes = {
   "Audi-Q5 (S)-FY (2017-2024)": [
     { name: "40 TFSI", hp: "204 hp" },
     { name: "45 TFSI", hp: "245-265 hp" },
+    { name: "30 TDI", hp: "136 hp" },
     { name: "35 TDI", hp: "163 hp" },
     { name: "40 TDI", hp: "190-204 hp" },
     { name: "45 TDI", hp: "231 hp" },
@@ -390,8 +394,11 @@ export const audiEngineTypes = {
     { name: "SQ5 TDI", hp: "341-347 hp" }
   ],
   "Audi-Q5 (S)-GU (2024-present)": [
-    { name: "2.0 TFSI", hp: "204-268 hp" },
-    { name: "2.0 TDI", hp: "204 hp" },
+    { name: "40 TFSI", hp: "204 hp" },
+    { name: "45 TFSI", hp: "272 hp" },
+    { name: "50 TFSI e", hp: "299 hp" },
+    { name: "55 TFSI e", hp: "367 hp" },
+    { name: "40 TDI", hp: "204 hp" },
     { name: "SQ5", hp: "367 hp" }
   ],
 
@@ -399,6 +406,7 @@ export const audiEngineTypes = {
   "Audi-Q7 (S)-4L (2005-2015)": [
     { name: "3.6 FSI", hp: "280 hp" },
     { name: "4.2 FSI", hp: "350 hp" },
+    { name: "3.0 TFSI", hp: "272-333 hp" },
     { name: "3.0 TDI", hp: "204-233-240-245 hp" },
     { name: "4.2 TDI", hp: "326-340 hp" },
     { name: "6.0 V12 TDI", hp: "500 hp" }

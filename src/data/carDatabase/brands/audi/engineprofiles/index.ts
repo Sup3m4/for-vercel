@@ -6,6 +6,8 @@ import { a6c4a6c7Profiles } from "./a6c4-a6c7";
 import { a6c8a7c8Profiles } from "./a6c8-a7c8";
 import { a8d2a8d5Profiles } from "./a8d2-a8d5";
 import { q2q3fjProfiles } from "./q2-q3fj";
+import { q5Profiles } from "./q5";
+import { q7q8Profiles } from "./q7-q8";
 
 // Itt fűzzük össze az összes eddigi és jövőbeli Audi profilt
 export const audiEngineProfiles: EngineProfile[] = [
@@ -16,6 +18,8 @@ export const audiEngineProfiles: EngineProfile[] = [
     ...a6c8a7c8Profiles,
     ...a8d2a8d5Profiles,
     ...q2q3fjProfiles,
+    ...q5Profiles,
+    ...q7q8Profiles,
     
     // Ha elkészül a következő (pl. a4b8-q5.ts), csak ide kell majd beszúrnod
 ];
