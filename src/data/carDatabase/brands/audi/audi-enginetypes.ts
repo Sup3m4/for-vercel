@@ -425,6 +425,7 @@ export const audiEngineTypes = {
 
   // --- Q8 ---
   "Audi-Q8 (S/RS)-4M (2018-present)": [
+    { name: "45 TFSI", hp: "245-261 hp" },
     { name: "55 TFSI", hp: "340 hp" },
     { name: "45 TDI", hp: "231 hp" },
     { name: "50 TDI", hp: "286 hp" },

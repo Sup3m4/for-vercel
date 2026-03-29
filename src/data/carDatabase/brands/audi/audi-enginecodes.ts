@@ -1751,20 +1751,29 @@ export const audiEngineCodes = {
   ],
 
   // --- Q8 (4M) ---
+  "Audi-Q8 (S/RS)-4M (2018-present)-45 TFSI": [
+    { code: "DCBD", hp: "245 hp", torque: "370 Nm", profileId: "dcbd-q8-4m-45" },
+    { code: "DMFA", hp: "261 hp", torque: "370 Nm", profileId: "dmfa-q8-4m" }
+  ],
   "Audi-Q8 (S/RS)-4M (2018-present)-55 TFSI": [
-    { code: "DCBD", hp: "340 hp", torque: "500 Nm", profileId: "dcbd-q8-4m" }
+    { code: "DCBD", hp: "340 hp", torque: "500 Nm", profileId: "dcbd-q8-4m" },
+    { code: "DMWA", hp: "340 hp", torque: "500 Nm", profileId: "dmwa-q8-4m" }
   ],
   "Audi-Q8 (S/RS)-4M (2018-present)-45 TDI": [
-    { code: "DHXC", hp: "231 hp", torque: "500 Nm", profileId: "dhxc-q8-4m" }
+    { code: "DHXC", hp: "231 hp", torque: "500 Nm", profileId: "dhxc-q8-4m" },
+    { code: "DMGH", hp: "231 hp", torque: "500 Nm", profileId: "dmgh-q8-4m" }
   ],
   "Audi-Q8 (S/RS)-4M (2018-present)-50 TDI": [
-    { code: "DHXA", hp: "286 hp", torque: "600 Nm", profileId: "dhxa-q8-4m" }
+    { code: "DHXA", hp: "286 hp", torque: "600 Nm", profileId: "dhxa-q8-4m" },
+    { code: "DMGA", hp: "286 hp", torque: "600 Nm", profileId: "dmga-q8-4m" }
   ],
   "Audi-Q8 (S/RS)-4M (2018-present)-55 TFSI e": [
-    { code: "DCBE", hp: "381 hp", torque: "600 Nm", profileId: "dcbe-q8-4m" }
+    { code: "DCBE", hp: "381 hp", torque: "600 Nm", profileId: "dcbe-q8-4m" },
+    { code: "DRYA", hp: "394 hp", torque: "600 Nm", profileId: "drya-q8-4m-55" }
   ],
   "Audi-Q8 (S/RS)-4M (2018-present)-60 TFSI e": [
-    { code: "DCBE", hp: "462 hp", torque: "700 Nm", profileId: "dcbe-q8-4m-60" }
+    { code: "DCBE", hp: "462 hp", torque: "700 Nm", profileId: "dcbe-q8-4m-60" },
+    { code: "DRYA", hp: "490 hp", torque: "700 Nm", profileId: "drya-q8-4m-60" }
   ],
   "Audi-Q8 (S/RS)-4M (2018-present)-SQ8 TDI": [
     { code: "DHVA", hp: "435 hp", torque: "900 Nm", profileId: "dhva-sq8-4m" }
