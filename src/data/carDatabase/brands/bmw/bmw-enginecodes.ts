@@ -2,11 +2,11 @@ export const bmwEngineCodes = {
     "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-116i": [
     { code: "N45B16", hp: "115 hp", torque: "150 Nm", profileId: "n45b16-116i" },
     { code: "N43B16", hp: "122 hp", torque: "160 Nm", profileId: "n43b16-116i" },
-    { code: "N43B20", hp: "122 hp", torque: "185 Nm", profileId: "n43b20-116i" },
+    { code: "N43B20", hp: "122 hp", torque: "185 Nm", profileId: "n43b20-116i" }
   ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-118i": [
     { code: "N46B20", hp: "129 hp", torque: "180 Nm", profileId: "n46b20-118i" },
-    { code: "N43B20", hp: "143 hp", torque: "190 Nm", profileId: "n43b20-118i" },
+    { code: "N43B20", hp: "143 hp", torque: "190 Nm", profileId: "n43b20-118i" }
   ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-120i": [
     { code: "N46B20", hp: "150 hp", torque: "200 Nm", profileId: "n46b20-120i" },
@@ -17,30 +17,36 @@ export const bmwEngineCodes = {
     { code: "N52B30", hp: "218 hp", torque: "270 Nm", profileId: "n52b30-125i" }
   ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-128i": [
-      { code: "N52B30", hp: "230 hp", torque: "270 Nm", profileId: "n52b30-128i" },
-      { code: "N51B30", hp: "230 hp", torque: "270 Nm", profileId: "n51b30-128i" } 
-    ],
+    { code: "N52B30", hp: "230 hp", torque: "270 Nm", profileId: "n52b30-128i" },
+    { code: "N51B30", hp: "230 hp", torque: "270 Nm", profileId: "n51b30-128i" }
+  ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-130i": [
+    { code: "N52B30O0", hp: "258 hp", torque: "300 Nm", profileId: "n52b30o0-130i" },
     { code: "N52B30", hp: "265 hp", torque: "315 Nm", profileId: "n52b30-130i" }
   ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-135i": [
     { code: "N54B30", hp: "306 hp", torque: "400 Nm", profileId: "n54b30-135i" },
     { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-135i" }
   ],
-  "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-135is": [{ code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-135is" }],
+  "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-135is": [
+    { code: "N55B30", hp: "320 hp", torque: "430 Nm", profileId: "n55b30-135is" }
+  ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-1 Series M Coupe": [
     { code: "N54B30T0", hp: "340 hp", torque: "450 Nm", profileId: "n54b30t0-1-Series-M-Coupe" }
   ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-116d": [
-    { code: "N47D20", hp: "116 hp", torque: "260 Nm", profileId: "n47d20-116d"}
+    { code: "N47D20", hp: "116 hp", torque: "260 Nm", profileId: "n47d20-116d" }
   ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-118d": [
-    { code: "M47D20TU", hp: "122 hp", torque: "280 Nm", profileId: "m47d20tu-118d"},
+    { code: "M47D20TU", hp: "122 hp", torque: "280 Nm", profileId: "m47d20tu-118d" },
+    { code: "N47D20", hp: "136 hp", torque: "300 Nm", profileId: "n47d20-118d-fleet" },
     { code: "N47D20", hp: "143 hp", torque: "300 Nm", profileId: "n47d20-118d" }
   ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-120d": [
     { code: "M47D20TU", hp: "163 hp", torque: "340 Nm", profileId: "m47d20tu-120d" },
-    { code: "N47D20T0", hp: "177 hp", torque: "350 Nm", profileId: "n47d20t0-123d" }
+    { code: "N47D20", hp: "163 hp", torque: "350 Nm", profileId: "n47d20-120d-fleet" },
+    { code: "N47D20O0", hp: "177 hp", torque: "350 Nm", profileId: "n47d20o0-120d" },
+    { code: "N47D20C", hp: "184 hp", torque: "380 Nm", profileId: "n47d20c-120d" }
   ],
   "BMW-1 Series-E81/E82/E87/E88 (2004-2013)-123d": [
     { code: "N47D20T0", hp: "204 hp", torque: "400 Nm", profileId: "n47d20t0-123d" }
@@ -52,15 +58,16 @@ export const bmwEngineCodes = {
   ],
   "BMW-1 Series-F20/F21 (2011-2019)-116i": [
     { code: "N13B16", hp: "136 hp", torque: "220 Nm", profileId: "n13b16-116i" },
-    { code: "B38B15", hp: "109 hp", torque: "180 Nm", profileId: "b38b15-116i" }
+    { code: "B38B15", hp: "109 hp", torque: "190 Nm", profileId: "b38b15-116i" }
   ],
   "BMW-1 Series-F20/F21 (2011-2019)-118i": [
     { code: "N13B16", hp: "170 hp", torque: "250 Nm", profileId: "n13b16-118i"},
+    { code: "N13B16", hp: "136 hp", torque: "220 Nm", profileId: "n13b16-118i-lci" },
     { code: "B38B15", hp: "136 hp", torque: "220 Nm", profileId: "b38b15-118i" }
   ],
   "BMW-1 Series-F20/F21 (2011-2019)-120i": [
     { code: "N13B16", hp: "177 hp", torque: "250 Nm", profileId: "n13b16-120i" },
-    { code: "B48B20A", hp: "184 hp", torque: "290 Nm", profileId: "b48b20a-120i" }
+    { code: "B48B20A", hp: "184 hp", torque: "270 Nm", profileId: "b48b20a-120i" }
   ],
   "BMW-1 Series-F20/F21 (2011-2019)-125i": [
     { code: "N20B20", hp: "218 hp", torque: "310 Nm", profileId: "n20b20-125i" },
@@ -74,7 +81,8 @@ export const bmwEngineCodes = {
     { code: "B58B30M0", hp: "340 hp", torque: "500 Nm", profileId: "b58b30m0-m140i" }
   ],
   "BMW-1 Series-F20/F21 (2011-2019)-114d": [
-    { code: "N47D16", hp: "95 hp", torque: "235 Nm", profileId: "n47d16-114d" }
+    { code: "N47D16", hp: "95 hp", torque: "235 Nm", profileId: "n47d16-114d" },
+    { code: "B37D15", hp: "95 hp", torque: "235 Nm", profileId: "b37d15-114d" } // Hiányzó LCI változat
   ],
   "BMW-1 Series-F20/F21 (2011-2019)-116d": [
     { code: "N47D16", hp: "116 hp", torque: "260 Nm", profileId: "n47d16-116d" },
@@ -148,75 +156,80 @@ export const bmwEngineCodes = {
 
   // --- BMW 2 SERIES ---
     // F22/F23 (Coupe/Convertible)
-    "BMW-2 Series-F22 (2014-2021)-218i": [{ code: "B38B15", hp: "136 hp", torque: "220 Nm", profileId: "b38b15-218i" }],
-    "BMW-2 Series-F22 (2014-2021)-220i": [
-      { code: "N20B20", hp: "184 hp", torque: "270 Nm", profileId: "n20b20-220i" },
-      { code: "B48B20A", hp: "184 hp", torque: "270 Nm", profileId: "b48b20a-220i" }
-    ],
-    "BMW-2 Series-F22 (2014-2021)-228i": [
-      { code: "N20B20", hp: "245 hp", torque: "350 Nm", profileId: "n20b20-228i" },
-      { code: "N26B20", hp: "245 hp", torque: "350 Nm", profileId: "n26b20-228i" }
-    ],
-    "BMW-2 Series-F22 (2014-2021)-230i": [{ code: "B48B20B", hp: "252 hp", torque: "350 Nm", profileId: "b48b20b-230i" }],
-    "BMW-2 Series-F22 (2014-2021)-M235i": [
-  { code: "N55B30O0", hp: "326 hp", torque: "450 Nm", profileId: "n55b30o0-m235i" }
-],
-    "BMW-2 Series-F22 (2014-2021)-M240i": [{ code: "B58B30M0", hp: "340 hp", torque: "500 Nm", profileId: "b58b30m0-m240i" }],
-    "BMW-2 Series-F22 (2014-2021)-218d": [
-      { code: "N47D20", hp: "143 hp", torque: "320 Nm", profileId: "n47d20-218d" },
-      { code: "B47D20", hp: "150 hp", torque: "320 Nm", profileId: "b47d20-218d" }
-    ],
-    "BMW-2 Series-F22 (2014-2021)-220d": [
-      { code: "N47D20", hp: "184 hp", torque: "380 Nm", profileId: "n47d20-220d" },
-      { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-220d" }
-    ],
-    "BMW-2 Series-F22 (2014-2021)-225d": [
+    "BMW-2 Series-F22/F23 (2014-2021)-218i": [
+    { code: "B38B15", hp: "136 hp", torque: "220 Nm", profileId: "b38b15-218i" }
+  ],
+  "BMW-2 Series-F22/F23 (2014-2021)-220i": [
+    { code: "N20B20", hp: "184 hp", torque: "270 Nm", profileId: "n20b20-220i" },
+    { code: "B48B20A", hp: "184 hp", torque: "270 Nm", profileId: "b48b20a-220i" }
+  ],
+  "BMW-2 Series-F22/F23 (2014-2021)-228i": [
+    { code: "N20B20", hp: "245 hp", torque: "350 Nm", profileId: "n20b20-228i" },
+    { code: "N26B20", hp: "245 hp", torque: "350 Nm", profileId: "n26b20-228i" }
+  ],
+  "BMW-2 Series-F22/F23 (2014-2021)-230i": [
+    { code: "B48B20B", hp: "252 hp", torque: "350 Nm", profileId: "b48b20b-230i" }
+  ],
+  "BMW-2 Series-F22/F23 (2014-2021)-M235i": [
+    { code: "N55B30O0", hp: "326 hp", torque: "450 Nm", profileId: "n55b30o0-m235i" }
+  ],
+  "BMW-2 Series-F22/F23 (2014-2021)-M240i": [
+    { code: "B58B30M0", hp: "340 hp", torque: "500 Nm", profileId: "b58b30m0-m240i" }
+  ],
+  "BMW-2 Series-F22/F23 (2014-2021)-218d": [
+    { code: "N47D20", hp: "143 hp", torque: "320 Nm", profileId: "n47d20-218d" },
+    { code: "B47D20", hp: "150 hp", torque: "320 Nm", profileId: "b47d20-218d" }
+  ],
+  "BMW-2 Series-F22/F23 (2014-2021)-220d": [
+    { code: "N47D20", hp: "184 hp", torque: "380 Nm", profileId: "n47d20-220d" },
+    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-220d" }
+  ],
+    "BMW-2 Series-F22/F23 (2014-2021)-225d": [
       { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-225d" },
       { code: "B47D20T0", hp: "224 hp", torque: "450 Nm", profileId: "b47d20t0-225d" }
     ],
-    // F23 (Ugyanazok a motorok)
-    "BMW-2 Series-F23 (2014-2021)-218i": [{ code: "B38B15", hp: "136 hp", torque: "220 Nm", profileId: "b38b15-218i" }],
-    "BMW-2 Series-F23 (2014-2021)-220i": [{ code: "N20B20", hp: "184 hp", torque: "270 Nm", profileId: "n20b20-220i" },
-                                          { code: "B48B20A", hp: "184 hp", torque: "270 Nm", profileId: "b48b20a-220i" }],
-    "BMW-2 Series-F23 (2014-2021)-228i": [{ code: "N20B20", hp: "245 hp", torque: "350 Nm", profileId: "n20b20-228i" },
-                                          { code: "N26B20", hp: "245 hp", torque: "350 Nm", profileId: "n26b20-228i" }],
-    "BMW-2 Series-F23 (2014-2021)-230i": [{ code: "B48B20B", hp: "252 hp", torque: "350 Nm", profileId: "b48b20b-230i" }],
-    "BMW-2 Series-F23 (2014-2021)-M235i": [{ code: "N55B30O0", hp: "326 hp", torque: "450 Nm", profileId: "n55b30o0-m235i" }],
-    "BMW-2 Series-F23 (2014-2021)-M240i": [{ code: "B58B30M0", hp: "340 hp", torque: "500 Nm", profileId: "b58b30m0-m240i" }],
-    "BMW-2 Series-F23 (2014-2021)-218d": [{ code: "B47D20", hp: "150 hp", torque: "320 Nm", profileId: "b47d20-218d" },
-                                          { code: "N47D20", hp: "143 hp", torque: "320 Nm", profileId: "n47d20-218d" }],
-    "BMW-2 Series-F23 (2014-2021)-220d": [{ code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-220d" },
-                                          { code: "N47D20", hp: "184 hp", torque: "380 Nm", profileId: "n47d20-220d" }],
-    "BMW-2 Series-F23 (2014-2021)-225d": [{ code: "B47D20T0", hp: "224 hp", torque: "450 Nm", profileId: "b47d20t0-225d" },
-                                          { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-225d" }],
 
     // F87 M2
     "BMW-2 Series-F87 (2015-2021)-M2": [{ code: "N55B30T0", hp: "370 hp", torque: "465 Nm", profileId: "n55b30t0-m2" }],
     "BMW-2 Series-F87 (2015-2021)-M2 Competition": [{ code: "S55B30T0", hp: "410 hp", torque: "550 Nm", profileId: "s55b30t0-m2-competition" }],
     "BMW-2 Series-F87 (2015-2021)-M2 CS": [{ code: "S55B30T0", hp: "450 hp", torque: "550 Nm", profileId: "s55b30t0-m2-cs" }],
 
-    // F45 Active Tourer
-    "BMW-2 Series-F45 (2014-2021)-216i": [{ code: "B38A15", hp: "102 hp", torque: "180 Nm", profileId: "b38a15-216i" }],
-    "BMW-2 Series-F45 (2014-2021)-218i": [{ code: "B38A15", hp: "136 hp", torque: "220 Nm", profileId: "b38a15-218i" },
-                                          { code: "B38A15M1", hp: "140 hp", torque: "220 Nm", profileId: "b38a15m1-218i" }],
-    "BMW-2 Series-F45 (2014-2021)-220i": [{ code: "B48A20", hp: "192 hp", torque: "280 Nm", profileId: "b48a20-220i" }],
-    "BMW-2 Series-F45 (2014-2021)-225i": [{ code: "B48A20", hp: "231 hp", torque: "350 Nm", profileId: "b48a20-225i" }],
-    "BMW-2 Series-F45 (2014-2021)-225xe": [{ code: "B38A15", hp: "224 hp", torque: "385 Nm", profileId: "b38a15-225xe" }],
-    "BMW-2 Series-F45 (2014-2021)-214d": [{ code: "B37C15", hp: "95 hp", torque: "220 Nm", profileId: "b37c15-214d" }],
-    "BMW-2 Series-F45 (2014-2021)-216d": [{ code: "B37C15", hp: "116 hp", torque: "270 Nm", profileId: "b37c15-216d" }],
-    "BMW-2 Series-F45 (2014-2021)-218d": [{ code: "B47C20", hp: "150 hp", torque: "330 Nm", profileId: "b47c20-218d" }],
-    "BMW-2 Series-F45 (2014-2021)-220d": [{ code: "B47C20", hp: "190 hp", torque: "400 Nm", profileId: "b47c20-220d" }],
-
-    // F46 Gran Tourer (Hasonló az F45-höz)
-    "BMW-2 Series-F46 (2015-2021)-216i": [{ code: "B38A15", hp: "102 hp", torque: "180 Nm", profileId: "b38a15-216i" }],
-    "BMW-2 Series-F46 (2015-2021)-218i": [{ code: "B38A15", hp: "136 hp", torque: "220 Nm", profileId: "b38a15-218i" },
-      { code: "B38A15M1", hp: "140 hp", torque: "220 Nm", profileId: "b38a15m1-218i" }],
-    "BMW-2 Series-F46 (2015-2021)-220i": [{ code: "B48A20", hp: "192 hp", torque: "280 Nm", profileId: "b48a20-220i" }],
-    "BMW-2 Series-F46 (2015-2021)-225i": [{ code: "B48A20", hp: "231 hp", torque: "350 Nm", profileId: "b48a20-225i" }],
-    "BMW-2 Series-F46 (2015-2021)-214d": [{ code: "B37C15", hp: "95 hp", torque: "220 Nm", profileId: "b37c15-214d" }],
-    "BMW-2 Series-F46 (2015-2021)-216d": [{ code: "B37C15", hp: "116 hp", torque: "270 Nm", profileId: "b37c15-216d" }],
-    "BMW-2 Series-F46 (2015-2021)-218d": [{ code: "B47C20", hp: "150 hp", torque: "330 Nm", profileId: "b47c20-218d" }],
-    "BMW-2 Series-F46 (2015-2021)-220d": [{ code: "B47C20", hp: "190 hp", torque: "400 Nm", profileId: "b47c20-220d" }],
+    // F45/F46 Active Tourer
+   "BMW-2 Series-F45/F46 (2014-2021)-216i": [
+    { code: "B38A15", hp: "102 hp", torque: "180 Nm", profileId: "b38a15-216i" },
+      { code: "B38A15B", hp: "109 hp", torque: "190 Nm", profileId: "b38a15b-216i" }
+    ],
+    "BMW-2 Series-F45/F46 (2014-2021)-218i": [
+      { code: "B38A15", hp: "136 hp", torque: "220 Nm", profileId: "b38a15-218i" },
+      { code: "B38A15M1", hp: "140 hp", torque: "220 Nm", profileId: "b38a15m1-218i" }
+    ],
+  "BMW-2 Series-F45/F46 (2014-2021)-220i": [
+    { code: "B48A20A", hp: "192 hp", torque: "280 Nm", profileId: "b48a20a-220i" }
+  ],
+  "BMW-2 Series-F45/F46 (2014-2021)-225i": [
+    { code: "B48A20B", hp: "231 hp", torque: "350 Nm", profileId: "b48a20b-225i" }
+  ],
+  "BMW-2 Series-F45/F46 (2014-2021)-225xe": [
+    { code: "B38A15M0", hp: "224 hp", torque: "385 Nm", profileId: "b38a15m0-225xe" },
+    { code: "B38A15A", hp: "220 hp", torque: "385 Nm", profileId: "b38a15a-225xe-lci" }
+  ],
+  "BMW-2 Series-F45/F46 (2014-2021)-214d": [
+    { code: "B37C15A", hp: "95 hp", torque: "220 Nm", profileId: "b37c15a-214d" }
+  ],
+  "BMW-2 Series-F45/F46 (2014-2021)-216d": [
+    { code: "B37C15A", hp: "116 hp", torque: "270 Nm", profileId: "b37c15a-216d" }
+  ],
+  "BMW-2 Series-F45/F46 (2014-2021)-218d": [
+    { code: "B47C20A", hp: "150 hp", torque: "330 Nm", profileId: "b47c20a-218d" },
+    { code: "B47C20B", hp: "150 hp", torque: "330 Nm", profileId: "b47c20b-218d" }
+  ],
+  "BMW-2 Series-F45/F46 (2014-2021)-220d": [
+    { code: "B47C20A", hp: "190 hp", torque: "400 Nm", profileId: "b47c20a-220d" },
+    { code: "B47C20B", hp: "190 hp", torque: "400 Nm", profileId: "b47c20b-220d" }
+  ],
+  "BMW-2 Series-F45/F46 (2014-2021)-225d": [
+    { code: "B47C20B", hp: "231 hp", torque: "450 Nm", profileId: "b47c20b-225d" }
+  ],
 
     // F44 Gran Coupe
     "BMW-2 Series-F44 (2019-2024)-218i": [{ code: "B38A15", hp: "140 hp", torque: "220 Nm", profileId: "b38a15-f44-218i" }],

@@ -51,18 +51,7 @@ export const bmwEngineTypes =
       ],
   
       // BMW 2 Series
-      "BMW-2 Series-F22 (2014-2021)": [
-        { name: "218i", hp: "136 hp" },
-        { name: "220i", hp: "184 hp" },
-        { name: "228i", hp: "245 hp" },
-        { name: "230i", hp: "252 hp" },
-        { name: "M235i", hp: "326 hp" },
-        { name: "M240i", hp: "340 hp" },
-        { name: "218d", hp: "150 hp" },
-        { name: "220d", hp: "190 hp" },
-        { name: "225d", hp: "224 hp" }
-      ],
-      "BMW-2 Series-F23 (2014-2021)": [
+      "BMW-2 Series-F22/F23 (2014-2021)": [
         { name: "218i", hp: "136 hp" },
         { name: "220i", hp: "184 hp" },
         { name: "228i", hp: "245 hp" },
@@ -82,7 +71,7 @@ export const bmwEngineTypes =
         { name: "228i", hp: "231 hp" },
         { name: "M235i", hp: "306 hp" }
       ],
-      "BMW-2 Series-F45 (2014-2021)": [
+      "BMW-2 Series-F45/F46 (2014-2021)": [
         { name: "214d", hp: "95 hp" },
         { name: "216d", hp: "116 hp" },
         { name: "218d", hp: "150 hp" },
@@ -92,15 +81,6 @@ export const bmwEngineTypes =
         { name: "220i", hp: "192 hp" },
         { name: "225i", hp: "231 hp" },
         { name: "225xe", hp: "224 hp" }
-      ],
-      "BMW-2 Series-F46 (2015-2021)": [
-        { name: "214d", hp: "95 hp" },
-        { name: "216d", hp: "116 hp" },
-        { name: "218d", hp: "150 hp" },
-        { name: "220d", hp: "190 hp" },
-        { name: "216i", hp: "102 hp" },
-        { name: "218i", hp: "136 hp" },
-        { name: "220i", hp: "192 hp" }
       ],
       "BMW-2 Series-F74 (2025-present)": [
         { name: "218d", hp: "150 hp" },

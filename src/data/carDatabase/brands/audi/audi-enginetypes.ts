@@ -441,7 +441,6 @@ export const audiEngineTypes = {
   "Audi-TT (S/RS)-8N (1998-2006)": [
     { name: "1.8 T", hp: "150-180 hp" },
     { name: "1.8 T Quattro", hp: "225 hp" },
-    { name: "1.8 T Quattro Sport", hp: "240 hp" },
     { name: "3.2 V6", hp: "250 hp" }
   ],
   "Audi-TT (S/RS)-8J (2006-2014)": [
@@ -463,13 +462,14 @@ export const audiEngineTypes = {
   ],
 
   // --- R8 ---
-  "Audi-R8-Gen 1 - Type 42 (2006-2015)": [
+  "Audi-R8-Type 42 (2006-2015)": [
     { name: "4.2 V8 FSI", hp: "420-430 hp" },
     { name: "5.2 V10 FSI", hp: "525 hp" },
     { name: "5.2 V10 Plus", hp: "550 hp" },
-    { name: "5.2 V10 GT", hp: "560 hp" }
+    { name: "5.2 V10 GT", hp: "560 hp" },
+    { name: "5.2 V10 LMX", hp: "570 hp" }
   ],
-  "Audi-R8-Gen 2 - Type 4S (2015-2024)": [
+  "Audi-R8-Type 4S (2015-2024)": [
     { name: "5.2 V10 RWD", hp: "540-570 hp" },
     { name: "5.2 V10 Quattro", hp: "540-570 hp" },
     { name: "5.2 V10 Performance", hp: "610-620 hp" },

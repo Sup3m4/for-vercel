@@ -1790,16 +1790,19 @@ export const audiEngineCodes = {
 
   // --- TT (8N) ---
   "Audi-TT (S/RS)-8N (1998-2006)-1.8 T": [
+    { code: "AUM", hp: "150 hp", torque: "210 Nm", profileId: "aum-tt-8n" },
+    { code: "BVP", hp: "163 hp", torque: "225 Nm", profileId: "bvp-tt-8n" },
     { code: "AJQ", hp: "180 hp", torque: "235 Nm", profileId: "ajq-tt-8n" },
     { code: "APP", hp: "180 hp", torque: "235 Nm", profileId: "app-tt-8n" },
-    { code: "ARY", hp: "180 hp", torque: "235 Nm", profileId: "ary-tt-8n" },
-    { code: "AUQ", hp: "180 hp", torque: "235 Nm", profileId: "auq-tt-8n" }
+    { code: "AUQ", hp: "180 hp", torque: "235 Nm", profileId: "auq-tt-8n" },
+    { code: "BVR", hp: "190 hp", torque: "240 Nm", profileId: "bvr-tt-8n" }
   ],
   "Audi-TT (S/RS)-8N (1998-2006)-1.8 T Quattro": [
+    { code: "AJQ", hp: "180 hp", torque: "235 Nm", profileId: "ajq-tt-8n-q" },
+    { code: "ARY", hp: "180 hp", torque: "235 Nm", profileId: "ary-tt-8n" },
     { code: "APX", hp: "225 hp", torque: "280 Nm", profileId: "apx-tt-8n" },
-    { code: "BAM", hp: "225 hp", torque: "280 Nm", profileId: "bam-tt-8n" }
-  ],
-  "Audi-TT (S/RS)-8N (1998-2006)-1.8 T Quattro Sport": [
+    { code: "BAM", hp: "225 hp", torque: "280 Nm", profileId: "bam-tt-8n" },
+    { code: "BEA", hp: "225 hp", torque: "280 Nm", profileId: "bea-tt-8n" },
     { code: "BFV", hp: "240 hp", torque: "320 Nm", profileId: "bfv-tt-8n" }
   ],
   "Audi-TT (S/RS)-8N (1998-2006)-3.2 V6": [
@@ -1813,17 +1816,22 @@ export const audiEngineCodes = {
   "Audi-TT (S/RS)-8J (2006-2014)-2.0 TFSI": [
     { code: "BWA", hp: "200 hp", torque: "280 Nm", profileId: "bwa-tt-8j" },
     { code: "CCZA", hp: "200 hp", torque: "280 Nm", profileId: "ccza-tt-8j" },
-    { code: "CESA", hp: "211 hp", torque: "350 Nm", profileId: "cesa-tt-8j" } // Valvelift
+    { code: "CCTA", hp: "200 hp", torque: "280 Nm", profileId: "ccta-tt-8j" },
+    { code: "CBFA", hp: "200 hp", torque: "280 Nm", profileId: "cbfa-tt-8j" },
+    { code: "CESA", hp: "211 hp", torque: "350 Nm", profileId: "cesa-tt-8j" },
+    { code: "CETA", hp: "211 hp", torque: "350 Nm", profileId: "ceta-tt-8j" }
   ],
   "Audi-TT (S/RS)-8J (2006-2014)-3.2 V6": [
-    { code: "BUB", hp: "250 hp", torque: "320 Nm", profileId: "bub-tt-8j" }
+    { code: "BUB", hp: "250 hp", torque: "320 Nm", profileId: "bub-tt-8j" },
+    { code: "CBRA", hp: "250 hp", torque: "320 Nm", profileId: "cbra-tt-8j" }
   ],
   "Audi-TT (S/RS)-8J (2006-2014)-2.0 TDI": [
     { code: "CBBB", hp: "170 hp", torque: "350 Nm", profileId: "cbbb-tt-8j" },
     { code: "CFGB", hp: "170 hp", torque: "350 Nm", profileId: "cfgb-tt-8j" }
   ],
   "Audi-TT (S/RS)-8J (2006-2014)-TTS": [
-    { code: "CDLB", hp: "272 hp", torque: "350 Nm", profileId: "cdlb-tts-8j" }
+    { code: "CDLB", hp: "272 hp", torque: "350 Nm", profileId: "cdlb-tts-8j" },
+    { code: "CDMA", hp: "265 hp", torque: "350 Nm", profileId: "cdma-tts-8j" }
   ],
   "Audi-TT (S/RS)-8J (2006-2014)-TTRS": [
     { code: "CEPA", hp: "340 hp", torque: "450 Nm", profileId: "cepa-ttrs-8j" }
@@ -1834,21 +1842,31 @@ export const audiEngineCodes = {
 
   // --- TT (8S) ---
   "Audi-TT (S/RS)-8S (2014-2023)-1.8 TFSI": [
-    { code: "CJSA", hp: "180 hp", torque: "250 Nm", profileId: "cjsa-tt-8s" }
+    { code: "CJSA", hp: "180 hp", torque: "250 Nm", profileId: "cjsa-tt-8s" },
+    { code: "CJSB", hp: "180 hp", torque: "280 Nm", profileId: "cjsb-tt-8s" }
   ],
   "Audi-TT (S/RS)-8S (2014-2023)-40 TFSI": [
-    { code: "DKZA", hp: "197 hp", torque: "320 Nm", profileId: "dkza-tt-8s" }
+    { code: "DKZA", hp: "197 hp", torque: "320 Nm", profileId: "dkza-tt-8s" },
+    { code: "DEMA", hp: "197 hp", torque: "320 Nm", profileId: "dema-tt-8s" },
+    { code: "DEDK", hp: "197 hp", torque: "320 Nm", profileId: "dedk-tt-8s" }
   ],
   "Audi-TT (S/RS)-8S (2014-2023)-45 TFSI": [
     { code: "CHHC", hp: "230 hp", torque: "370 Nm", profileId: "chhc-tt-8s" },
-    { code: "DKTA", hp: "245 hp", torque: "370 Nm", profileId: "dkta-tt-8s" }
+    { code: "CHHB", hp: "230 hp", torque: "370 Nm", profileId: "chhb-tt-8s" },
+    { code: "DKTA", hp: "245 hp", torque: "370 Nm", profileId: "dkta-tt-8s" },
+    { code: "DNPA", hp: "245 hp", torque: "370 Nm", profileId: "dnpa-tt-8s" },
+    { code: "CNTC", hp: "220 hp", torque: "350 Nm", profileId: "cntc-tt-8s" }
   ],
   "Audi-TT (S/RS)-8S (2014-2023)-2.0 TDI": [
-    { code: "CUNA", hp: "184 hp", torque: "380 Nm", profileId: "cuna-tt-8s" }
+    { code: "CUNA", hp: "184 hp", torque: "380 Nm", profileId: "cuna-tt-8s" },
+    { code: "CUPA", hp: "184 hp", torque: "380 Nm", profileId: "cupa-tt-8s" }
   ],
   "Audi-TT (S/RS)-8S (2014-2023)-TTS": [
     { code: "CJXG", hp: "310 hp", torque: "380 Nm", profileId: "cjxg-tts-8s" },
-    { code: "DNUF", hp: "306 hp", torque: "400 Nm", profileId: "dnuf-tts-8s" } // OPF miatt kevesebb HP
+    { code: "CJXE", hp: "286 hp", torque: "380 Nm", profileId: "cjxe-tts-8s" },
+    { code: "DNUF", hp: "306 hp", torque: "400 Nm", profileId: "dnuf-tts-8s" },
+    { code: "DNFB", hp: "320 hp", torque: "400 Nm", profileId: "dnfb-tts-8s" },
+    { code: "CJXB", hp: "280 hp", torque: "380 Nm", profileId: "cjxb-tts-8s" }
   ],
   "Audi-TT (S/RS)-8S (2014-2023)-TTRS": [
     { code: "DAZA", hp: "400 hp", torque: "480 Nm", profileId: "daza-ttrs-8s" },
@@ -1859,21 +1877,25 @@ export const audiEngineCodes = {
   "Audi-R8-Type 42 (2006-2015)-4.2 V8 FSI": [
     { code: "BYH", hp: "420 hp", torque: "430 Nm", profileId: "byh-r8-42" },
     { code: "CNDA", hp: "430 hp", torque: "430 Nm", profileId: "cnda-r8-42" }
-  ],
-  "Audi-R8-Type 42 (2006-2015)-5.2 V10 FSI": [
+],
+"Audi-R8-Type 42 (2006-2015)-5.2 V10 FSI": [
     { code: "BUJ", hp: "525 hp", torque: "530 Nm", profileId: "buj-r8-42" }
-  ],
-  "Audi-R8-Type 42 (2006-2015)-5.2 V10 Plus": [
+],
+"Audi-R8-Type 42 (2006-2015)-5.2 V10 Plus": [
     { code: "CTYA", hp: "550 hp", torque: "540 Nm", profileId: "ctya-r8-42" }
-  ],
-  "Audi-R8-Type 42 (2006-2015)-5.2 V10 GT": [
+],
+"Audi-R8-Type 42 (2006-2015)-5.2 V10 GT": [
     { code: "CMPA", hp: "560 hp", torque: "540 Nm", profileId: "cmpa-r8-42" }
-  ],
+],
+"Audi-R8-Type 42 (2006-2015)-5.2 V10 LMX": [
+    { code: "CTPB", hp: "570 hp", torque: "540 Nm", profileId: "ctpb-r8-42" }
+],
 
   // --- R8 (4S) ---
   "Audi-R8-Type 4S (2015-2024)-5.2 V10 RWD": [
     { code: "CTYB", hp: "540 hp", torque: "540 Nm", profileId: "ctyb-r8-4s" }, // Pre-facelift
     { code: "CSPA", hp: "540 hp", torque: "540 Nm", profileId: "cspa-r8-4s" },
+    { code: "DKAA", hp: "540 hp", torque: "540 Nm", profileId: "dkaa-r8-4s" },
     { code: "DKAB", hp: "570 hp", torque: "550 Nm", profileId: "dkab-r8-4s" }  // Facelift
   ],
   "Audi-R8-Type 4S (2015-2024)-5.2 V10 Quattro": [
@@ -1882,7 +1904,8 @@ export const audiEngineCodes = {
   ],
   "Audi-R8-Type 4S (2015-2024)-5.2 V10 Performance": [
     { code: "CSPB", hp: "610 hp", torque: "560 Nm", profileId: "cspb-r8-4s" },
-    { code: "DMWA", hp: "620 hp", torque: "580 Nm", profileId: "dmwa-r8-4s" }
+    { code: "DMWA", hp: "620 hp", torque: "580 Nm", profileId: "dmwa-r8-4s" },
+    { code: "DMWB", hp: "602 hp", torque: "560 Nm", profileId: "dmwb-r8-4s" }
   ],
   "Audi-R8-Type 4S (2015-2024)-5.2 V10 GT": [
     { code: "DMWA", hp: "620 hp", torque: "585 Nm", profileId: "dmwa-r8-gt" } // RWD GT

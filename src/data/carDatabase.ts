@@ -69,7 +69,7 @@ import { bmwModels } from "@/data/carDatabase/brands/bmw/bmw-models";
 import { bmwGenerations } from "./carDatabase/brands/bmw/bmw-generations";
 import { bmwEngineTypes } from "./carDatabase/brands/bmw/bmw-enginetypes";
 import { bmwEngineCodes } from "./carDatabase/brands/bmw/bmw-enginecodes";
-import { bmwEngineProfiles } from "./carDatabase/brands/bmw/bmw-engineprofiles";
+import { bmwEngineProfiles } from "./carDatabase/brands/bmw/engineprofiles";
 
 import { audiModels } from "./carDatabase/brands/audi/audi-models";
 import { audiGenerations } from "./carDatabase/brands/audi/audi-generations";

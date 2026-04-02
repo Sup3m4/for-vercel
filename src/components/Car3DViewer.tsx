@@ -8,6 +8,7 @@ import { Center } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { CAR_MODEL_CONFIGS } from '../configs/carModels';
 import { audiEngineProfiles } from '../data/carDatabase/brands/audi/engineprofiles';
+import { bmwEngineProfiles } from '@/data/carDatabase/brands/bmw/engineprofiles';
 
 function Loader() {
   const { progress } = useProgress();
@@ -898,11 +899,14 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   const activeProfile = useMemo(() => {
     if (incomingProfile) return incomingProfile;
   
-    return audiEngineProfiles.find(p => {
+    // Összefűzzük az Audi és BMW listákat egy közös keresőfelületté
+    const allProfiles = [...audiEngineProfiles, ...bmwEngineProfiles];
+  
+    return allProfiles.find(p => {
       const dbFileName = p.model3DPath?.split('/').pop()?.toLowerCase();
       const currentFileName = modelPath.split('/').pop()?.toLowerCase();
       
-      // CSAK akkor fogadjuk el, ha egyezik a név ÉS van benne author!
+      // Marad az eredeti szigorú feltétel: név egyezés ÉS author megléte
       return dbFileName === currentFileName && p.author; 
     });
   }, [incomingProfile, modelPath]);
