@@ -232,20 +232,39 @@ export const bmwEngineCodes = {
   ],
 
     // F44 Gran Coupe
-    "BMW-2 Series-F44 (2019-2024)-218i": [{ code: "B38A15", hp: "140 hp", torque: "220 Nm", profileId: "b38a15-f44-218i" }],
-    "BMW-2 Series-F44 (2019-2024)-220i": [{ code: "B48A20", hp: "178 hp", torque: "280 Nm", profileId: "b48a20-f44-220i" }],
-    "BMW-2 Series-F44 (2019-2024)-228i": [{ code: "B48A20", hp: "231 hp", torque: "350 Nm", profileId: "b48a20-f44-228i" }],
-    "BMW-2 Series-F44 (2019-2024)-M235i": [{ code: "B48A20E", hp: "306 hp", torque: "450 Nm", profileId: "b48a20e-m235i" }],
-    "BMW-2 Series-F44 (2019-2024)-216d": [{ code: "B37C15", hp: "116 hp", torque: "270 Nm", profileId: "b37c15-216d" }],
-    "BMW-2 Series-F44 (2019-2024)-218d": [{ code: "B47C20", hp: "150 hp", torque: "350 Nm", profileId: "b47c20-218d" }],
-    "BMW-2 Series-F44 (2019-2024)-220d": [{ code: "B47C20", hp: "190 hp", torque: "400 Nm", profileId: "b47c20-220d" }],
+   "BMW-2 Series-F44 (2019-2024)-218i": [
+    { code: "B38A15A", hp: "140 hp", torque: "220 Nm", profileId: "b38a15a-f44-218i" },
+    { code: "B38A15F", hp: "136 hp", torque: "220 Nm", profileId: "b38a15f-f44-218i" }
+  ],
+  "BMW-2 Series-F44 (2019-2024)-220i": [
+    { code: "B48A20M1", hp: "192 hp", torque: "280 Nm", profileId: "b48a20m1-f44-220i" },
+    { code: "B48A20A", hp: "178 hp", torque: "280 Nm", profileId: "b48a20a-f44-220i" }
+  ],
+  "BMW-2 Series-F44 (2019-2024)-228i": [
+    { code: "B48A20B", hp: "231 hp", torque: "350 Nm", profileId: "b48a20b-f44-228i" }
+  ],
+  "BMW-2 Series-F44 (2019-2024)-M235i": [
+    { code: "B48A20T1", hp: "306 hp", torque: "450 Nm", profileId: "b48a20t1-f44-m235i" }
+  ],
+  "BMW-2 Series-F44 (2019-2024)-216d": [
+    { code: "B37C15U0", hp: "116 hp", torque: "270 Nm", profileId: "b37c15u0-f44-216d" }
+  ],
+  "BMW-2 Series-F44 (2019-2024)-218d": [
+    { code: "B47C20B", hp: "150 hp", torque: "350 Nm", profileId: "b47c20b-f44-218d" }
+  ],
+  "BMW-2 Series-F44 (2019-2024)-220d": [
+    { code: "B47C20B", hp: "190 hp", torque: "400 Nm", profileId: "b47c20b-f44-220d" }
+  ],
 
     // F74 Gran Coupe (2025-present)
-  "BMW-2 Series-F74 (2025-present)-218": [
+ "BMW-2 Series-F74 (2025-present)-218": [
     { code: "B38A15P", hp: "156 hp", torque: "230 Nm", profileId: "b38a15p-f74-218" }
   ],
   "BMW-2 Series-F74 (2025-present)-220": [
     { code: "B38A15P", hp: "170 hp", torque: "280 Nm", profileId: "b38a15p-f74-220" }
+  ],
+  "BMW-2 Series-F74 (2025-present)-228": [
+    { code: "B48A20P", hp: "241 hp", torque: "400 Nm", profileId: "b48a20p-f74-228" }
   ],
   "BMW-2 Series-F74 (2025-present)-M235": [
     { code: "B48A20H", hp: "300 hp", torque: "400 Nm", profileId: "b48a20h-f74-m235" }
@@ -258,54 +277,66 @@ export const bmwEngineCodes = {
   ],
 
     // G42 Coupe
-    "BMW-2 Series-G42 (2021-present)-218i": [{ code: "B48B20", hp: "156 hp", torque: "250 Nm", profileId: "b48b20-g42-218i" }],
-    "BMW-2 Series-G42 (2021-present)-220i": [{ code: "B48B20A", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g42-220i" }],
-    "BMW-2 Series-G42 (2021-present)-230i": [{ code: "B48B20B", hp: "245 hp", torque: "400 Nm", profileId: "b48b20b-g42-230i" }],
-    "BMW-2 Series-G42 (2021-present)-M240i": [{ code: "B58B30O1", hp: "374 hp", torque: "500 Nm", profileId: "b58b30o1-g42-m240i" }],
-    "BMW-2 Series-G42 (2021-present)-220d": [{ code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g42-220d" }],
+    "BMW-2 Series-G42 (2021-present)-218i": [
+    { code: "B48B20A", hp: "156 hp", torque: "250 Nm", profileId: "b48b20a-g42-218i" }
+  ],
+  "BMW-2 Series-G42 (2021-present)-220i": [
+    { code: "B48B20A", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g42-220i" }
+  ],
+  "BMW-2 Series-G42 (2021-present)-230i": [
+    { code: "B48B20B", hp: "245 hp", torque: "400 Nm", profileId: "b48b20b-g42-230i" },
+    { code: "B48B20O1", hp: "255 hp", torque: "400 Nm", profileId: "b48b20o1-g42-230i" }
+  ],
+  "BMW-2 Series-G42 (2021-present)-M240i": [
+    { code: "B58B30O1", hp: "374 hp", torque: "500 Nm", profileId: "b58b30o1-g42-m240i" },
+    { code: "B58B30O1", hp: "382 hp", torque: "500 Nm", profileId: "b58b30o1-g42-m240i-us" }
+  ],
+  "BMW-2 Series-G42 (2021-present)-220d": [
+    { code: "B47D20B", hp: "190 hp", torque: "400 Nm", profileId: "b47d20b-g42-220d" }
+  ],
     
     // G87 M2
-    "BMW-2 Series-G87 (2023-present)-M2": [{ code: "S58B30T0", hp: "460 hp", torque: "550 Nm", profileId: "s58b30t0-m2" },
-                                          { code: "S58B30T0", hp: "480 hp", torque: "600 Nm", profileId: "s58b30t0-m2"}],
+    "BMW-2 Series-G87 (2023-present)-M2": [
+    { code: "S58B30T0", hp: "460 hp", torque: "550 Nm", profileId: "s58b30t0-g87-m2-460" },
+    { code: "S58B30T0 (Manual)", hp: "480 hp", torque: "550 Nm", profileId: "s58b30t0-g87-m2-480-mt" }, // Manuális (Manual Transmission)
+    { code: "S58B30T0 (Automatic)", hp: "480 hp", torque: "600 Nm", profileId: "s58b30t0-g87-m2-480-at" }  // Automata (Automatic Transmission)
+  ],
+  "BMW-2 Series-G87 (2023-present)-M2 CS": [
+    { code: "S58B30T0", hp: "530 hp", torque: "650 Nm", profileId: "s58b30t0-g87-m2-cs" }
+  ],
 
     // U06 Active Tourer
-    "BMW-2 Series-U06 (2021-present)-218i": [{ code: "B38A15P", hp: "136 hp", torque: "230 Nm", profileId: "b38a15p-u06-218i" }],
-    "BMW-2 Series-U06 (2021-present)-220i": [{ code: "B38A15P", hp: "170 hp", torque: "280 Nm", profileId: "b38a15p-u06-220i" }],
-    "BMW-2 Series-U06 (2021-present)-223i": [{ code: "B48A20P", hp: "218 hp", torque: "360 Nm", profileId: "b48a20p-u06-223i" }],
-    "BMW-2 Series-U06 (2021-present)-225e": [{ code: "B38A15", hp: "245 hp", torque: "247 Nm", profileId: "b38a15-u06-225e" }],
-    "BMW-2 Series-U06 (2021-present)-230e": [{ code: "B38A15", hp: "326 hp", torque: "477 Nm", profileId: "b38a15-u06-230e" }],
-    "BMW-2 Series-U06 (2021-present)-218d": [{ code: "B47C20B", hp: "150 hp", torque: "360 Nm", profileId: "b47c20b-u06-218d" }],
-    "BMW-2 Series-U06 (2021-present)-223d": [{ code: "B47C20B", hp: "211 hp", torque: "400 Nm", profileId: "b47c20b-u06-223d" }],
+    "BMW-2 Series-U06 (2021-present)-216i": [
+    { code: "B38A15P", hp: "122 hp", torque: "230 Nm", profileId: "b38a15p-u06-216i" }
+  ],
+  "BMW-2 Series-U06 (2021-present)-218i": [
+    { code: "B38A15P", hp: "136 hp", torque: "230 Nm", profileId: "b38a15p-u06-218i" }
+  ],
+  "BMW-2 Series-U06 (2021-present)-220i": [
+    { code: "B38A15P", hp: "170 hp", torque: "280 Nm", profileId: "b38a15p-u06-220i" }
+  ],
+  "BMW-2 Series-U06 (2021-present)-223i": [
+    { code: "B48A20P", hp: "218 hp", torque: "360 Nm", profileId: "b48a20p-u06-223i" }
+  ],
+  "BMW-2 Series-U06 (2021-present)-225e": [
+    { code: "B38A15A", hp: "245 hp", torque: "477 Nm", profileId: "b38a15a-u06-225e" }
+  ],
+  "BMW-2 Series-U06 (2021-present)-230e": [
+    { code: "B38A15A", hp: "326 hp", torque: "477 Nm", profileId: "b38a15a-u06-230e" }
+  ],
+  "BMW-2 Series-U06 (2021-present)-218d": [
+    { code: "B47C20B", hp: "150 hp", torque: "360 Nm", profileId: "b47c20b-u06-218d" }
+  ],
+  "BMW-2 Series-U06 (2021-present)-223d": [
+    { code: "B47C20B", hp: "211 hp", torque: "400 Nm", profileId: "b47c20b-u06-223d" }
+  ],
 
     // --- BMW 3 SERIES ---
-    // E21
-    "BMW-3 Series-E21 (1975-1983)-315": [
-    { code: "M10B16", hp: "75 hp", torque: "110 Nm", profileId: "m10b16-e21-315" }
-  ],
-  "BMW-3 Series-E21 (1975-1983)-316": [
-    { code: "M10B16", hp: "90 hp", torque: "123 Nm", profileId: "m10b16-e21-316" },
-    { code: "M10B18", hp: "90 hp", torque: "140 Nm", profileId: "m10b18-e21-316" } // Hozzáadva: 1.8L változat (1980-1982)
-  ],
-  "BMW-3 Series-E21 (1975-1983)-318": [ // Hozzáadva: A sima "318" (karburátoros) hiányzott
-    { code: "M10B18", hp: "98 hp", torque: "145 Nm", profileId: "m10b18-e21-318" }
-  ],
-  "BMW-3 Series-E21 (1975-1983)-318i": [
-    { code: "M10B18", hp: "105 hp", torque: "145 Nm", profileId: "m10b18-e21-318i" }
-  ],
-  "BMW-3 Series-E21 (1975-1983)-320": [ // Hozzáadva: 320/4 és 320/6 megkülönböztetése
-    { code: "M10B20", hp: "109 hp", torque: "157 Nm", profileId: "m10b20-e21-320-4" }, // 4-hengeres (1975-1977)
-    { code: "M20B20", hp: "122 hp", torque: "160 Nm", profileId: "m20b20-e21-320-6" }  // 6-hengeres (1977-1982)
-  ],
-  "BMW-3 Series-E21 (1975-1983)-320i": [
-    { code: "M10B20", hp: "125 hp", torque: "172 Nm", profileId: "m10b20-e21-320i" }
-  ],
-  "BMW-3 Series-E21 (1975-1983)-323i": [
-    { code: "M20B23", hp: "143 hp", torque: "190 Nm", profileId: "m20b23-e21-323i" }
-  ],
 
   // --- E30 (1982-1994) ---
   "BMW-3 Series-E30 (1982-1994)-316": [ // Hozzáadva: A karburátoros alapmodell hiányzott
-    { code: "M10B18", hp: "90 hp", torque: "140 Nm", profileId: "m10b18-e30-316" }
+    { code: "M10B18", hp: "90 hp", torque: "140 Nm", profileId: "m10b18-e30-316" },
+    { code: "M10B16", hp: "75 hp", torque: "110 Nm", profileId: "m10b16-e30-316" },
   ],
   "BMW-3 Series-E30 (1982-1994)-316i": [
     { code: "M10B18", hp: "102 hp", torque: "140 Nm", profileId: "m10b18-e30-316i" },
@@ -337,13 +368,14 @@ export const bmwEngineCodes = {
     { code: "M20B27", hp: "129 hp", torque: "230 Nm", profileId: "m20b27-e30-325e-super" }
   ],
   "BMW-3 Series-E30 (1982-1994)-325i": [
-    { code: "M20B25", hp: "170 hp", torque: "222 Nm", profileId: "m20b25-e30-325i" }
+    { code: "M20B25", hp: "170 hp", torque: "222 Nm", profileId: "m20b25-e30-325i" },
+    { code: "M20B25", hp: "171 hp", torque: "226 Nm", profileId: "m20b25-e30-325i-noncat" }
   ],
   "BMW-3 Series-E30 (1982-1994)-M3": [
-    { code: "S14B23", hp: "195 hp", torque: "230 Nm", profileId: "s14b23-e30-m3-cat" }, // Kat.
-    { code: "S14B23", hp: "200 hp", torque: "240 Nm", profileId: "s14b23-e30-m3" },     // Non-Kat
-    { code: "S14B23", hp: "215 hp", torque: "230 Nm", profileId: "s14b23-e30-m3-evo1" },// Evo 1
-    { code: "S14B25", hp: "238 hp", torque: "240 Nm", profileId: "s14b25-e30-m3-evo2" } // Sport Evo
+    { code: "S14B23", hp: "195 hp", torque: "230 Nm", profileId: "s14b23-e30-m3-cat" },
+    { code: "S14B23", hp: "200 hp", torque: "240 Nm", profileId: "s14b23-e30-m3-noncat" },
+    { code: "S14B23", hp: "215 hp", torque: "230 Nm", profileId: "s14b23-e30-m3-evo2" },
+    { code: "S14B25", hp: "238 hp", torque: "240 Nm", profileId: "s14b25-e30-m3-sport-evo" }
   ],
   "BMW-3 Series-E30 (1982-1994)-324d": [ // Hozzáadva: A szívódízel hiányzott
     { code: "M21D24", hp: "86 hp", torque: "152 Nm", profileId: "m21d24-e30-324d" }
@@ -360,7 +392,8 @@ export const bmwEngineCodes = {
   ],
   "BMW-3 Series-E36 (1990-2000)-318i": [
     { code: "M40B18", hp: "113 hp", torque: "162 Nm", profileId: "m40b18-e36-318i" },
-    { code: "M43B18", hp: "115 hp", torque: "168 Nm", profileId: "m43b18-e36-318i" }
+    { code: "M43B18", hp: "115 hp", torque: "168 Nm", profileId: "m43b18-e36-318i" },
+    { code: "M43B19", hp: "118 hp", torque: "180 Nm", profileId: "m43b19-e36-318i-late" }
   ],
   "BMW-3 Series-E36 (1990-2000)-318ti": [
     { "code": "M42B18", "hp": "140 hp", "torque": "175 Nm", "profileId": "m42b18-e36-318ti" },
@@ -376,22 +409,27 @@ export const bmwEngineCodes = {
     { code: "M52B20", hp: "150 hp", torque: "190 Nm", profileId: "m52b20-e36-320i" }      // Alu blokk
   ],
   "BMW-3 Series-E36 (1990-2000)-323i": [
-    { code: "M52B25", hp: "170 hp", torque: "245 Nm", profileId: "m52b25-e36-323i" }
+    { code: "M52B25", hp: "170 hp", torque: "245 Nm", profileId: "m52b25-e36-323i" },
+    { code: "M52B24", hp: "184 hp", torque: "240 Nm", profileId: "m52b24-e36-323i-thai" },
   ],
   "BMW-3 Series-E36 (1990-2000)-323ti": [
     { "code": "M52B25", "hp": "170 hp", "torque": "245 Nm", "profileId": "m52b25-e36-323ti" }
   ],
   "BMW-3 Series-E36 (1990-2000)-325i": [
     { code: "M50B25", hp: "192 hp", torque: "245 Nm", profileId: "m50b25-e36-325i" },     // Non-Vanos
-    { code: "M50B25TU", hp: "192 hp", torque: "245 Nm", profileId: "m50b25tu-e36-325i" }  // Vanos (Hozzáadva)
+    { code: "M50B25TU", hp: "192 hp", torque: "245 Nm", profileId: "m50b25tu-e36-325i" },  // Vanos (Hozzáadva)
+    { code: "M50B24", hp: "188 hp", torque: "235 Nm", profileId: "m50b24-e36-325i-thai" }
   ],
   "BMW-3 Series-E36 (1990-2000)-328i": [
     { code: "M52B28", hp: "193 hp", torque: "280 Nm", profileId: "m52b28-e36-328i" }
   ],
   "BMW-3 Series-E36 (1990-2000)-M3": [
-    { code: "S50B30", hp: "286 hp", torque: "320 Nm", profileId: "s50b30-e36-m3" },      // 3.0
-    { code: "S50B32", hp: "321 hp", torque: "350 Nm", profileId: "s50b32-e36-m3-evo" },   // 3.2 Evo
-    { code: "S52B32", hp: "240 hp", torque: "320 Nm", profileId: "s52b32-e36-m3-us" }     // Hozzáadva: USA Spec M3
+    { code: "S50B30", hp: "286 hp", torque: "320 Nm", profileId: "s50b30-e36-m3" },
+    { code: "S50B30", hp: "295 hp", torque: "323 Nm", profileId: "s50b30-e36-m3-gt" },
+    { code: "S50B30", hp: "324 hp", torque: "350 Nm", profileId: "s50b30-e36-m3-r" }, // Ausztrál M3-R
+    { code: "S50B30US", hp: "240 hp", torque: "305 Nm", profileId: "s50b30-e36-m3-us" },
+    { code: "S50B32", hp: "321 hp", torque: "350 Nm", profileId: "s50b32-e36-m3-evo" },
+    { code: "S52B32", hp: "240 hp", torque: "320 Nm", profileId: "s52b32-e36-m3-us" }
   ],
   "BMW-3 Series-E36 (1990-2000)-318tds": [
     { code: "M41D17", hp: "90 hp", torque: "190 Nm", profileId: "m41d17-e36-318tds" }
@@ -408,12 +446,14 @@ export const bmwEngineCodes = {
     { code: "M43B19", hp: "105 hp", torque: "165 Nm", profileId: "m43b19-e46-316i" },
     { code: "N42B18", hp: "115 hp", torque: "175 Nm", profileId: "n42b18-e46-316i" },
     { code: "N46B18", hp: "115 hp", torque: "175 Nm", profileId: "n46b18-e46-316i" },
-    { code: "N40B16", hp: "115 hp", torque: "150 Nm", profileId: "n40b16-e46-316i" } // Hozzáadva: Ritka 1.6-os változat
+    { code: "N40B16", hp: "115 hp", torque: "150 Nm", profileId: "n40b16-e46-316i" },
+    { code: "N45B16", hp: "115 hp", torque: "150 Nm", profileId: "n45b16-e46-316i" }
   ],
   "BMW-3 Series-E46 (1997-2006)-318i": [
     { code: "M43B19", hp: "118 hp", torque: "180 Nm", profileId: "m43b19-e46-318i" },
     { code: "N42B20A", hp: "143 hp", torque: "200 Nm", profileId: "n42b20a-e46-318i" },
-    { code: "N46B20A", hp: "143 hp", torque: "200 Nm", profileId: "n46b20a-e46-318i" }
+    { code: "N46B20A", hp: "143 hp", torque: "200 Nm", profileId: "n46b20a-e46-318i" },
+    { code: "N46B20A", hp: "150 hp", torque: "200 Nm", profileId: "n46b20a-e46-318i-late" }
   ],
   "BMW-3 Series-E46 (1997-2006)-320i": [
     { code: "M52TUB20", hp: "150 hp", torque: "190 Nm", profileId: "m52tub20-e46-320i" },
@@ -422,24 +462,27 @@ export const bmwEngineCodes = {
   "BMW-3 Series-E46 (1997-2006)-323i": [
     { code: "M52TUB25", hp: "170 hp", torque: "245 Nm", profileId: "m52tub25-e46-323i" }
   ],
-  "BMW-3 Series-E46 (1997-2006)-323Ci": [
-    { "code": "M52TUB25", "hp": "170 hp", "torque": "245 Nm", "profileId": "m52tub25-e46-323ci" }
-  ],
   "BMW-3 Series-E46 (1997-2006)-325i": [
-    { code: "M54B25", hp: "192 hp", torque: "245 Nm", profileId: "m54b25-e46-325i" },
-    { code: "M56B25", hp: "184 hp", torque: "237 Nm", profileId: "m56b25-e46-325i" } // Hozzáadva: SULEV (US)
+    { code: "M54B25", hp: "192 hp", torque: "245 Nm", profileId: "m54b25-e46-325i-euro" },
+    { code: "M54B25", hp: "184 hp", torque: "237 Nm", profileId: "m54b25-e46-325i-us" },
+    { code: "M56B25", hp: "184 hp", torque: "237 Nm", profileId: "m56b25-e46-325i-sulev" }
   ],
   "BMW-3 Series-E46 (1997-2006)-328i": [
     { code: "M52TUB28", hp: "193 hp", torque: "280 Nm", profileId: "m52tub28-e46-328i" }
   ],
   "BMW-3 Series-E46 (1997-2006)-330i": [
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-e46-330i" }
+    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-e46-330i" },
+    { code: "M54B30", hp: "235 hp", torque: "301 Nm", profileId: "m54b30-e46-330i-zhp" }
   ],
   "BMW-3 Series-E46 (1997-2006)-M3": [
-    { code: "S54B32", hp: "343 hp", torque: "365 Nm", profileId: "s54b32-e46-m3" }
+    { code: "S54B32", hp: "343 hp", torque: "365 Nm", profileId: "s54b32-e46-m3-euro" },
+    { code: "S54B32", hp: "333 hp", torque: "355 Nm", profileId: "s54b32-e46-m3-us" }
   ],
   "BMW-3 Series-E46 (1997-2006)-M3 CSL": [
     { code: "S54B32HP", hp: "360 hp", torque: "370 Nm", profileId: "s54b32hp-e46-m3csl" }
+  ],
+  "BMW-3 Series-E46 (1997-2006)-M3 GTR": [
+    { code: "P60B40", hp: "380 hp", torque: "390 Nm", profileId: "p60b40-e46-m3gtr" }
   ],
   "BMW-3 Series-E46 (1997-2006)-318d": [
     { code: "M47D20", hp: "116 hp", torque: "265 Nm", profileId: "m47d20-e46-318d" },
@@ -457,7 +500,7 @@ export const bmwEngineCodes = {
   // --- E90/91/92/93 (2004-2013) ---
   "BMW-3 Series-E90/91/92/93 (2004-2013)-316i": [
     { code: "N45B16", hp: "115 hp", torque: "150 Nm", profileId: "n45b16-e90-316i" },
-    { code: "N43B16", hp: "122 hp", torque: "160 Nm", profileId: "n43b16-e90-316i" },
+    { code: "N43B16", hp: "122 hp", torque: "160 Nm", profileId: "n43b16-e90-316i" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-318i": [
     { code: "N46B20", hp: "129 hp", torque: "180 Nm", profileId: "n46b20-e90-318i" },
@@ -465,42 +508,43 @@ export const bmwEngineCodes = {
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-320i": [
     { code: "N46B20B", hp: "150 hp", torque: "200 Nm", profileId: "n46b20b-e90-320i" },
-    { code: "N46NB20", hp: "156 hp", torque: "200 Nm", profileId: "n46nb20-e90-320i" }, // Hozzáadva: N46N frissítés
+    { code: "N46NB20", hp: "156 hp", torque: "200 Nm", profileId: "n46nb20-e90-320i" },
     { code: "N43B20O0", hp: "170 hp", torque: "210 Nm", profileId: "n43b20o0-e90-320i" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-320si": [
-  { code: "N45B20S", hp: "173 hp", torque: "200 Nm", profileId: "n45b20s-e90-320si" }
-],
-  "BMW-3 Series-E90/91/92/93 (2004-2013)-323i": [ // Hozzáadva: Kanadai/Ázsiai modell
-    { code: "N52B25", hp: "177 hp", torque: "230 Nm", profileId: "n52b25-e90-323i" }
+    { code: "N45B20S", hp: "173 hp", torque: "200 Nm", profileId: "n45b20s-e90-320si" }
+  ],
+  "BMW-3 Series-E90/91/92/93 (2004-2013)-323i": [
+    { code: "N52B25", hp: "177 hp", torque: "230 Nm", profileId: "n52b25-e90-323i-177" },
+    { code: "N52B25", hp: "190 hp", torque: "230 Nm", profileId: "n52b25-e90-323i-190" },
+    { code: "N52B25", hp: "203 hp", torque: "244 Nm", profileId: "n52b25-e90-323i-203" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-325i": [
-    { code: "N52B25A", hp: "218 hp", torque: "250 Nm", profileId: "n52b25a-e90-325i" }, // 2.5L
-    { code: "N52B30", hp: "218 hp", torque: "270 Nm", profileId: "n52b30-e90-325i" }, // 3.0L (US/Fleet)
-    { code: "N53B30U0", hp: "218 hp", torque: "270 Nm", profileId: "n53b30u0-e90-325i" }  // 3.0L Direct Injection
+    { code: "N52B25A", hp: "218 hp", torque: "250 Nm", profileId: "n52b25a-e90-325i" },
+    { code: "N52B30", hp: "218 hp", torque: "270 Nm", profileId: "n52b30-e90-325i" },
+    { code: "N53B30U0", hp: "218 hp", torque: "270 Nm", profileId: "n53b30u0-e90-325i" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-328i": [
     { code: "N52B30", hp: "230 hp", torque: "270 Nm", profileId: "n52b30-e90-328i" },
-    { code: "N51B30", hp: "230 hp", torque: "270 Nm", profileId: "n51b30-e90-328i" }  // Hozzáadva: SULEV
+    { code: "N51B30", hp: "230 hp", torque: "270 Nm", profileId: "n51b30-e90-328i-sulev" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-330i": [
-    { code: "N52B30O0", hp: "258 hp", torque: "300 Nm", profileId: "n52b30o0-e90-330i" },
-    { code: "N53B30O0", hp: "272 hp", torque: "320 Nm", profileId: "n53b30o0-e90-330i" }
+    { code: "N52B30O0", hp: "258 hp", torque: "300 Nm", profileId: "n52b30o0-e90-330i-euro" },
+    { code: "N52B30O0", hp: "255 hp", torque: "300 Nm", profileId: "n52b30o0-e90-330i-us" },
+    { code: "N53B30O0", hp: "272 hp", torque: "320 Nm", profileId: "n53b30o0-e90-330i-lci" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-335i": [
-    { code: "N54B30O0", hp: "306 hp", torque: "400 Nm", profileId: "n54b30o0-e90-335i" }, // Twin Turbo
-    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-e90-335i" }  // Single Turbo (LCI)
+    { code: "N54B30O0", hp: "306 hp", torque: "400 Nm", profileId: "n54b30o0-e90-335i" },
+    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-e90-335i-lci" }
   ],
-  "BMW-3 Series-E90/91/92/93 (2004-2013)-335is": [ // Hozzáadva: 335is (N54 tuningolt)
-    { code: "N54B30T0", hp: "326 hp", torque: "450 Nm", profileId: "n54b30t0-e92-335is" }
+  "BMW-3 Series-E90/91/92/93 (2004-2013)-335is": [
+    { code: "N54B30T0", hp: "340 hp", torque: "450 Nm", profileId: "n54b30t0-e92-335is" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-M3": [
-    { code: "S65B40", hp: "420 hp", torque: "400 Nm", profileId: "s65b40-e90-m3" }
+    { code: "S65B40", hp: "420 hp", torque: "400 Nm", profileId: "s65b40-e90-m3" },
+    { code: "S65B44", hp: "450 hp", torque: "440 Nm", profileId: "s65b44-e9x-m3-gts-crt" }
   ],
-  "BMW-3 Series-E90/91/92/93 (2004-2013)-M3 GTS": [
-    { code: "S65B44", hp: "450 hp", torque: "440 Nm", profileId: "s65b44-e92-m3gts" }
-  ],
-  "BMW-3 Series-E90/91/92/93 (2004-2013)-316d": [ // Hozzáadva: 316d modell
+  "BMW-3 Series-E90/91/92/93 (2004-2013)-316d": [
     { code: "N47D20", hp: "116 hp", torque: "260 Nm", profileId: "n47d20-e90-316d" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-318d": [
@@ -508,7 +552,10 @@ export const bmwEngineCodes = {
     { code: "N47D20", hp: "143 hp", torque: "300 Nm", profileId: "n47d20-e90-318d" }
   ],
   "BMW-3 Series-E90/91/92/93 (2004-2013)-320d": [
+    { code: "M47D20TU2", hp: "150 hp", torque: "340 Nm", profileId: "m47d20tu2-e90-320d-fleet" },
     { code: "M47D20TU2", hp: "163 hp", torque: "340 Nm", profileId: "m47d20tu2-e90-320d" },
+    { code: "N47D20", hp: "150 hp", torque: "380 Nm", profileId: "n47d20-e90-320d-fleet" },
+    { code: "N47D20", hp: "163 hp", torque: "380 Nm", profileId: "n47d20-e90-320d-ed" },
     { code: "N47D20A", hp: "177 hp", torque: "350 Nm", profileId: "n47d20a-e90-320d-177" },
     { code: "N47D20C", hp: "184 hp", torque: "380 Nm", profileId: "n47d20c-e90-320d-184" }
   ],

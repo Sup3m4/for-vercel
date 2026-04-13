@@ -87,6 +87,7 @@ export const bmwEngineTypes =
         { name: "220d", hp: "163 hp" },
         { name: "218", hp: "156 hp" },
         { name: "220", hp: "170 hp" },
+        { name: "228", hp: "241 hp" },
         { name: "M235", hp: "300 hp" }
       ],
       "BMW-2 Series-F87 (2015-2021)": [
@@ -118,15 +119,6 @@ export const bmwEngineTypes =
       ],
   
       // BMW 3 Series
-      "BMW-3 Series-E21 (1975-1983)": [
-        { name: "315", hp: "75 hp" },
-        { name: "316", hp: "90 hp" },
-        { name: "318", hp: "98 hp" },
-        { name: "318i", hp: "105 hp" },
-        { name: "320", hp: "109 hp" },
-        { name: "320i", hp: "125 hp" },
-        { name: "323i", hp: "143 hp" }
-      ],
       "BMW-3 Series-E30 (1982-1994)": [
         { name: "316", hp: "90 hp" },
         { name: "316i", hp: "102 hp" },
@@ -162,12 +154,12 @@ export const bmwEngineTypes =
         { name: "318i", hp: "118-143 hp" },
         { name: "320i", hp: "150-170 hp" },
         { name: "323i", hp: "170 hp" },
-        { name: "323Ci", hp: "170 hp"},
         { name: "325i", hp: "192 hp" },
         { name: "328i", hp: "193 hp" },
         { name: "330i", hp: "231 hp" },
         { name: "M3", hp: "343 hp" },
         { name: "M3 CSL", hp: "360 hp" },
+        { name: "M3 GTR", hp: "380 hp" },
         { name: "318d", hp: "116 hp" },
         { name: "320d", hp: "136-150 hp" },
         { name: "330d", hp: "184-204 hp" }
