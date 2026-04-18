@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Suspense, useState, useEffect, useRef, useMemo } from 'react';
+import { Suspense, useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useGLTF, Stage, Html, useProgress, OrbitControls, ContactShadows, MeshReflectorMaterial, Environment, SpotLight } from '@react-three/drei';
+import { useGLTF, Html, useProgress, OrbitControls, ContactShadows, MeshReflectorMaterial, Environment, SpotLight } from '@react-three/drei';
 import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRight, Sun, Moon, Lightbulb, LightbulbOff } from 'lucide-react';
 import * as THREE from 'three'; 
 import { Center } from '@react-three/drei';
@@ -69,7 +69,7 @@ function useGlowTexture(color: string, intensity: number = 1.0) {
 }
 
 // --- SHOWROOM PADLÓ ---
-function ShowroomFloor({ isNightMode, yOffset = 0, width = 5, length = 10 }: { isNightMode: boolean, yOffset?: number, width?: number, length?: number }) {
+function ShowroomFloor({ isNightMode, yOffset = 0, width = 5, length = 10, liteMode = false }: { isNightMode: boolean, yOffset?: number, width?: number, length?: number, liteMode?: boolean }) {
     // A padló mérete legyen az autó hosszának 20-szorosa, de minimum 100 egység.
     // Ez megoldja, hogy a nagy modelleknél is végtelennek tűnjön a padló.
     const floorSize = Math.max(100, Math.max(width, length) * 20);
@@ -77,10 +77,10 @@ function ShowroomFloor({ isNightMode, yOffset = 0, width = 5, length = 10 }: { i
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, yOffset - 0.01, 0]}>
       <planeGeometry args={[floorSize, floorSize]} />
       <MeshReflectorMaterial
-        blur={[300, 100]}
-        resolution={1024}
+        blur={liteMode ? [64, 16] : [300, 100]}
+        resolution={liteMode ? 256 : 1024}
         mixBlur={1}
-        mixStrength={isNightMode ? 0 : 50} 
+        mixStrength={isNightMode ? 0 : (liteMode ? 12 : 50)} 
         roughness={isNightMode ? 1 : 0.8}
         depthScale={1.2}
         minDepthThreshold={0.4}
@@ -407,32 +407,29 @@ function CameraController({ activeSpot, hotspots, modelRadius, modelRef }: { act
   return null;
 }
 
+function ViewerStatus({ message }: { message: string }) {
+  return (
+    <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm">
+      <div className="max-w-sm rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-center">
+        <p className="text-sm font-medium text-white/90">{message}</p>
+      </div>
+    </div>
+  );
+}
+
 
 // --- MODELL KOMPONENS ---
 function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, isHeadlightOn = true, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
   const { scene } = useGLTF(path, '/draco/') as any;
   const modelRef = useRef<THREE.Group>(null);
-  const [loadStage, setLoadStage] = useState(0); // 0: Start, 1: Mesh Ready, 2: Shaders Ready
   const [smartHotspots, setSmartHotspots] = useState<Hotspot3D[]>([]);
   const [modelRadiusState, setModelRadiusState] = useState(4);
-  const activeManualLights = activeProfile?.manualLightPositions;
-  const fileName = (path.split('/').pop() || "").split('?')[0];
-
-  useEffect(() => {
-    console.log("=== LIGHT DETECTION DATA ===");
-    console.log("Custom Light Names received:", customLightNames);
-}, [customLightNames]);
+  
   useMemo(() => {
     if (!scene) return;
     
-    // --- EZT ADD HOZZÁ: LISTÁZÁS ---
-    console.log("=== 🔍 MODELL ALKATRÉSZEK LISTÁJA ===");
-    
     scene.traverse((child: any) => {
        if (child.isMesh) {
-          // KIÍRJUK MINDEN MESH NEVÉT:
-          console.log(`- "${child.name}"`); 
-          
           child.castShadow = true;
           child.receiveShadow = true;
           if (child.material && (child.name.toLowerCase().includes('glass') || child.name.toLowerCase().includes('window'))) {
@@ -441,7 +438,6 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
           }
        }
     });
-    console.log("=====================================");
  }, [scene]);
  
 
@@ -460,8 +456,6 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
   const headCenters: THREE.Vector3[] = [];
   const tailCenters: THREE.Vector3[] = [];
   const drlCenters: THREE.Vector3[] = [];
-
-  console.log("=== 🔍 EXACT LIGHT SEARCH STARTING ===");
 
   // OPTIMIZATION: Read profile values only once before the loop
   const drlGlow = activeProfile?.lightSettings?.meshGlowDrl ?? 5;
@@ -489,7 +483,8 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
                      
                      if (isThisMatMatching) {
                          matched = true;
-                         const newM = m.clone();
+                         const newM = m.userData?.__cardnaCloned ? m : m.clone();
+                         newM.userData = { ...newM.userData, __cardnaCloned: true };
                          newM.emissive = new THREE.Color(emissiveHex);
                          newM.emissiveIntensity = isNightMode ? nightIntensity : offIntensity;
                          newM.toneMapped = false;
@@ -508,17 +503,18 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
                  
                  if (isThisMatMatching) {
                      matched = true;
-                     child.material = child.material.clone();
-                     child.material.emissive = new THREE.Color(emissiveHex);
-                     child.material.emissiveIntensity = isNightMode ? nightIntensity : offIntensity; 
-                     child.material.toneMapped = false;
-                     child.material.needsUpdate = true;
+                     const nextMaterial = child.material.userData?.__cardnaCloned ? child.material : child.material.clone();
+                     nextMaterial.userData = { ...nextMaterial.userData, __cardnaCloned: true };
+                     nextMaterial.emissive = new THREE.Color(emissiveHex);
+                     nextMaterial.emissiveIntensity = isNightMode ? nightIntensity : offIntensity; 
+                     nextMaterial.toneMapped = false;
+                     nextMaterial.needsUpdate = true;
+                     child.material = nextMaterial;
                  }
               }
           }
 
           if (matched) {
-              console.log(`✅ EXACT MATCH (${lightType}):`, child.name);
               child.castShadow = false;
 
               const childBox = new THREE.Box3().setFromObject(child);
@@ -531,7 +527,6 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
               const isCombinedMesh = isXLonger ? childSize.z > 0.8 : childSize.x > 0.8;
 
               if (isCombinedMesh) {
-                  console.log(`⚠️ Combined ${lightType} mesh detected! Splitting into left and right.`);
                   const leftPos = childCenter.clone();
                   const rightPos = childCenter.clone();
                   
@@ -556,8 +551,6 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
       processLight(customLightNames?.taillights, tailCenters, '#ff0000', tailGlow, 0, "TAILLIGHT");
     }
   });
-
-  console.log(`Result: ${drlCenters.length} DRL, ${headCenters.length} Headlight, ${tailCenters.length} Taillight.`);
 
   // Sort the matched centers based on car orientation
   const sortLeftRight = (centers: THREE.Vector3[]) => {
@@ -591,13 +584,6 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
     box.getSize(size);
     box.getCenter(center);
 
-    console.log("=== 3D MODEL REAL SIZE ===");
-    console.log(`File: ${path}`);
-    console.log(`Width (X): ${size.x.toFixed(2)}`);
-    console.log(`Height (Y): ${size.y.toFixed(2)}`);
-    console.log(`Length (Z): ${size.z.toFixed(2)}`);
-    console.log("===============================");
-    
     let frontCount = 0; let frontZSum = 0;
     modelRef.current.traverse((child) => {
          if (child.name.includes('grill') || child.name.includes('headlight')) {
@@ -781,30 +767,29 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
     setDetectedTaillights={setDetectedTaillights} // <-- ÚJ
     setDetectedRdllight={setDetectedDrllight}
     onClick={(e: any) => {
-      e.stopPropagation(); // Ne forogjon a kamera kattintáskor
+      e.stopPropagation(); // Megakadályozza, hogy a kamera elforogjon kattintáskor
       
-      // 1. A PONTOS KATTINTÁS HELYE (Világkoordináta)
-      const hitPoint = e.point;
-      
-      console.log("------------------------------------------------");
-      console.log("🎯 CÉLZOTT KOORDINÁTÁK (Ezt másold be!):");
-      console.log(`Elem neve: "${e.object.name}"`);
-      
-      // 2. FORMÁZOTT ADAT (X mindig pozitív legyen a szimmetria miatt)
-      // A toFixed(2) két tizedesjegyre kerekít, ami bőven elég
-      const coordinateData = {
-          x: Number(Math.abs(hitPoint.x).toFixed(2)), 
-          y: Number(hitPoint.y.toFixed(2)), 
-          z: Number(hitPoint.z.toFixed(2))
-      };
-      
-      console.log("manualLightPositions:");
-      console.log(JSON.stringify(coordinateData, null, 2));
-      console.log("------------------------------------------------");
-
-      // 3. GYORS VISSZAJELZÉS
-      window.alert(`KOORDINÁTÁK MÁSOLVA A KONZOLRA (F12)!\n\nX: ${coordinateData.x}\nY: ${coordinateData.y}\nZ: ${coordinateData.z}\n\nNyisd meg a konzolt és másold ki!`);
-  }}
+      // A koordináták kinyerése és kerekítése 2 tizedesjegyre
+      const { x, y, z } = e.point;
+      const formattedX = Number(x.toFixed(2));
+      const formattedY = Number(y.toFixed(2));
+      const formattedZ = Number(z.toFixed(2));
+    
+      // Olyan formátum, amit egyből beilleszthetsz a kódba
+      const clipboardString = `{ x: ${formattedX}, y: ${formattedY}, z: ${formattedZ} }`;
+    
+      // MÁSOLÁS VÁGÓLAPRA
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(clipboardString)
+          .then(() => {
+            console.log("✅ Vágólapra másolva:", clipboardString);
+            // Opcionális: Feldobhatsz egy kis értesítést is a usernek a konzolon kívül
+          })
+          .catch(err => {
+            console.error("❌ Hiba a másolásnál:", err);
+          });
+      }
+    }}
 >
             {showHotspots && smartHotspots.map((spot: Hotspot3D, index: number) => {
                 const isTop = spot.y > 0.3;
@@ -894,6 +879,8 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   const [detectedHeadlights, setDetectedHeadlights] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
   const [detectedTaillights, setDetectedTaillights] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
   const [detectedDrllight, setDetectedDrllight] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
+  const [webglFailed, setWebglFailed] = useState(false);
+  const [hasLostContext, setHasLostContext] = useState(false);
   
 
   const activeProfile = useMemo(() => {
@@ -914,8 +901,14 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   const authorCredit = activeProfile?.author
   const activeForwardDir = modelForwardDir ?? activeProfile?.modelForwardDir ?? 1;
   const activeManualLights = activeProfile?.manualLightPositions;
+  const hardwareConcurrency = typeof navigator !== 'undefined' ? navigator.hardwareConcurrency ?? 8 : 8;
+  const deviceMemory = typeof navigator !== 'undefined' ? ((navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8) : 8;
+  const useLiteScene = isMobile || hardwareConcurrency <= 6 || deviceMemory <= 4;
+  const canvasDpr = useMemo<[number, number]>(() => useLiteScene ? [1, 1] : [1, 1.25], [useLiteScene]);
+  const showEnvironment = !useLiteScene;
+  const showReflectiveFloor = !isMobile;
+  const enableBloom = isNightMode && !useLiteScene && activeProfile?.lightSettings?.useBloom;
 
-  const [activeLightNames, setActiveLightNames] = useState<any>(null);
   const isNightModeDisabled = activeProfile?.lightSettings?.disableNightMode === true || activeProfile?.disableNightMode === true;
   useEffect(() => {
     if (isNightModeDisabled && isNightMode) {
@@ -973,6 +966,24 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   };
 
   const floorOffset = -(carData.height / 2);
+  const handleContextLost = useCallback((event: Event) => {
+    event.preventDefault();
+    setHasLostContext(true);
+    setWebglFailed(true);
+  }, []);
+
+  const handleContextRestored = useCallback(() => {
+    setHasLostContext(false);
+    setWebglFailed(false);
+  }, []);
+
+  const handleCanvasCreated = useCallback((state: any) => {
+    const canvas = state.gl?.domElement as HTMLCanvasElement | undefined;
+    if (!canvas) return;
+
+    canvas.addEventListener('webglcontextlost', handleContextLost, false);
+    canvas.addEventListener('webglcontextrestored', handleContextRestored, false);
+  }, [handleContextLost, handleContextRestored]);
 
   return (
     <div 
@@ -1061,38 +1072,49 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
           )}
       </div>
 
-      
+      {(webglFailed || hasLostContext) && (
+        <ViewerStatus message="3D viewer is temporarily unavailable because your browser could not keep a WebGL context alive for this model." />
+      )}
 
+      {!webglFailed && (
       <Canvas 
         frameloop="demand"
-        performance={{ min: 0.5, max: 1, debounce: 200 }}
+        performance={{ min: 0.25, max: 0.75, debounce: 300 }}
         gl={{ 
-          powerPreference: "high-performance",
-          antialias: false
+          antialias: false,
+          alpha: true,
+          powerPreference: useLiteScene ? "default" : "high-performance",
+          stencil: false,
+          depth: true,
+          preserveDrawingBuffer: false,
+          failIfMajorPerformanceCaveat: false
         }}
-        dpr={[1, 1.5]} 
-        shadows 
+        dpr={canvasDpr} 
+        shadows={!useLiteScene}
         camera={{ fov: 45, position: [0, 2, isMobile ? 9 : 6] }} 
         className="absolute inset-0 cursor-move outline-none" 
         tabIndex={-1}
+        onCreated={handleCanvasCreated}
+        fallback={<ViewerStatus message="WebGL is not available in this browser session." />}
       >
         <Suspense fallback={<Loader />}>
-
-        
+          <ambientLight intensity={isNightMode ? 0.12 : 0.75} />
+          <hemisphereLight
+            intensity={isNightMode ? 0.18 : 0.45}
+            groundColor={isNightMode ? "#050505" : "#d1d5db"}
+            color={isNightMode ? "#7aa2ff" : "#ffffff"}
+          />
+          <directionalLight
+            position={[6, 8, 4]}
+            intensity={isNightMode ? 0.4 : 1.2}
+            castShadow={!useLiteScene}
+            shadow-mapSize-width={useLiteScene ? 512 : 1024}
+            shadow-mapSize-height={useLiteScene ? 512 : 1024}
+          />
+          {showEnvironment && isNightMode && <Environment preset="night" blur={0.8} background={false} />}
+          {showEnvironment && !isNightMode && <Environment preset="city" blur={0.8} background={false} />}
           
-          <ambientLight intensity={isNightMode ? 0.05 : 0.8} />
-          
-          <Stage 
-  environment={isNightMode ? "night" : "city"} 
-  intensity={isNightMode ? 0.0 : 1} 
-  shadows={false} 
-  adjustCamera={false}
-  center={{}} // Egyszerűen csak ennyi, TypeScript hiba nélkül
->
-            {isNightMode && <Environment preset="night" blur={0.8} background={false} />}
-            {!isNightMode && <Environment preset="city" blur={0.8} />}
-            
-            <Model 
+          <Model 
               path={modelPath} 
               hotspots={hotspots} 
               scale={scale}
@@ -1116,8 +1138,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
               setDetectedDrllight={setDetectedDrllight}
               hotspotSettings={activeProfile?.hotspotSettings}
               activeProfile={activeProfile}
-            />
-          </Stage>
+          />
 
           {/* FÉNYEK RENDERELÉSE - NINCS TÖBB DUPLIKÁCIÓ */}
           {(!isHoveringHotspot && activeSpot === null) && (
@@ -1141,12 +1162,13 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
               )
           )}
 
-{!isMobile && (
+          {showReflectiveFloor && (
             <ShowroomFloor 
               isNightMode={isNightMode} 
               yOffset={floorOffset} // <-- Ezt használd!
               width={carData.width} 
               length={carData.length} 
+              liteMode={useLiteScene}
             />
           )}
 
@@ -1165,8 +1187,8 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
 
           <OrbitControls 
             makeDefault 
-            autoRotate={!isHoveringHotspot && activeSpot === null} 
-            autoRotateSpeed={0.5} 
+            autoRotate={false} 
+            autoRotateSpeed={0.35} 
             enablePan={false} 
             minDistance={calculatedMinDistance}
             maxDistance={calculatedMaxDistance}
@@ -1175,11 +1197,10 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
             target={[0, 0, 0]} 
           />
           {/* --- ÚJ: KAMERA EFFEKTEK (BLOOM) --- */}
-          {isNightMode && activeProfile?.lightSettings?.useBloom && (
+          {enableBloom && (
             <EffectComposer 
               enableNormalPass={false}
-              /* Extra MSAA to remove sparkle on bright edges while rotating */
-              multisampling={8}
+              multisampling={0}
             >
               <Bloom 
                 luminanceThreshold={5} // keep high to avoid paint sparkle
@@ -1190,6 +1211,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
           )}
         </Suspense>
       </Canvas>
+      )}
       {authorCredit && (
   <div className="absolute bottom-2 right-4 z-[100] pointer-events-auto group/license">
     <p className="text-[9px] text-white/20 group-hover/license:text-white/60 transition-colors duration-500 select-text leading-tight max-w-[250px] text-right">

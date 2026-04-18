@@ -322,6 +322,7 @@ export const bmwEngineTypes =
         { name: "523i", hp: "177-190 hp" },
         { name: "525i", hp: "218 hp" },
         { name: "530i", hp: "272 hp" },
+        { name: "528i", hp: "234 hp" },
         { name: "535i", hp: "306 hp" },
         { name: "540i", hp: "306 hp" },
         { name: "545i", hp: "333 hp" },
@@ -332,9 +333,19 @@ export const bmwEngineTypes =
         { name: "530d", hp: "218-235 hp" },
         { name: "535d", hp: "286 hp" }
       ],
-      "BMW-5 Series-F10/11/07/18 (2010-2017)": [
+      "BMW-5 Series-F07 (2009-2017)": [
+    { "name": "520i", "hp": "184 hp" },
+    { "name": "528i", "hp": "245 hp" },
+    { "name": "535i", "hp": "306 hp" },
+    { "name": "550i", "hp": "407-450 hp" },
+    { "name": "520d", "hp": "184-190 hp" },
+    { "name": "530d", "hp": "245-258 hp" },
+    { "name": "535d", "hp": "300-313 hp" }
+],
+      "BMW-5 Series-F10/11/18 (2010-2017)": [
         { name: "520i", hp: "184 hp" },
         { name: "523i", hp: "204 hp" },
+        { name: "525i", hp: "218 hp" },
         { name: "528i", hp: "245 hp" },
         { name: "530i", hp: "272 hp" },
         { name: "535i", hp: "306 hp" },
@@ -356,6 +367,7 @@ export const bmwEngineTypes =
       ],
       "BMW-5 Series-G30/31/38 (2017-2023)": [
         { name: "520i", hp: "184 hp" },
+        { name: "520e", hp: "204 hp" },
         { name: "530i", hp: "252 hp" },
         { name: "530e", hp: "292 hp" },
         { name: "540i", hp: "340 hp" },
@@ -363,15 +375,17 @@ export const bmwEngineTypes =
         { name: "M550i", hp: "530 hp" },
         { name: "518d", hp: "150 hp" },
         { name: "520d", hp: "190 hp" },
+        { name: "525d", hp: "231 hp" },
         { name: "530d", hp: "265 hp" },
         { name: "540d", hp: "320 hp" },
         { name: "M550d", hp: "400 hp" }
       ],
       "BMW-5 Series-G60/61/68 (2023-present)": [
-        { name: "520", hp: "208 hp" },
-        { name: "530", hp: "258 hp" },
+        { name: "520i", hp: "208 hp" },
+        { name: "530i", hp: "258 hp" },
+        { name: "520e", hp: "204 hp" },
         { name: "530e", hp: "299 hp" },
-        { name: "540", hp: "381 hp" },
+        { name: "540i", hp: "381 hp" },
         { name: "550e", hp: "489 hp" },
         { name: "520d", hp: "197 hp" },
         { name: "540d", hp: "299 hp" }
@@ -384,6 +398,7 @@ export const bmwEngineTypes =
       "BMW-6 Series-E24 (1976-1989)": [
         { name: "628csi", hp: "184 hp" },
         { name: "630cs", hp: "185 hp" },
+        { name: "630csi", hp: "176 hp" },
         { name: "633csi", hp: "200 hp" },
         { name: "635csi", hp: "218 hp" },
         { name: "M635csi", hp: "286 hp" },

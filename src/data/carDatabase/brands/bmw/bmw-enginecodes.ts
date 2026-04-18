@@ -573,57 +573,62 @@ export const bmwEngineCodes = {
 
   // --- F30/31/34/35 (2011-2019) ---
   "BMW-3 Series-F30/31/34/35 (2011-2019)-316i": [
-    { code: "N13B16", hp: "136 hp", torque: "220 Nm", profileId: "n13b16-f30-316i" }
+    { code: "N13B16A", hp: "136 hp", torque: "220 Nm", profileId: "n13b16a-f30-316i" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-318i": [
-    { code: "B38B15", hp: "136 hp", torque: "220 Nm", profileId: "b38b15-f30-318i" } // 3-hengeres
+    { code: "B38B15A", hp: "136 hp", torque: "220 Nm", profileId: "b38b15a-f30-318i" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-320i": [
     { code: "N20B20B", hp: "184 hp", torque: "270 Nm", profileId: "n20b20b-f30-320i" },
     { code: "B48B20A", hp: "184 hp", torque: "290 Nm", profileId: "b48b20a-f30-320i" },
-    { code: "N13B16", hp: "170 hp", torque: "250 Nm", profileId: "n13b16-f30-320ied" } // Hozzáadva: EfficientDynamics 1.6
+    { code: "B48B20B", hp: "184 hp", torque: "290 Nm", profileId: "b48b20b-f30-320i-high" },
+    { code: "N13B16A", hp: "170 hp", torque: "250 Nm", profileId: "n13b16a-f30-320ied" },
+    { code: "B48B20A", hp: "163 hp", torque: "270 Nm", profileId: "b48b20a-f30-320ied-lci" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-328i": [
     { code: "N20B20A", hp: "245 hp", torque: "350 Nm", profileId: "n20b20a-f30-328i" },
-    { code: "N26B20A", hp: "245 hp", torque: "350 Nm", profileId: "n26b20a-f30-328i" } // Hozzáadva: SULEV
+    { code: "N26B20A", hp: "245 hp", torque: "350 Nm", profileId: "n26b20a-f30-328i-sulev" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-330i": [
     { code: "B48B20B", hp: "252 hp", torque: "350 Nm", profileId: "b48b20b-f30-330i" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-335i": [
-  { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f30-335i" } // M0 = Alap
-],
+    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f30-335i" },
+    { code: "N55B30M0", hp: "326 hp", torque: "450 Nm", profileId: "n55b30m0-f30-335i-mppk" }
+  ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-340i": [
-    { code: "B58B30M0", hp: "326 hp", torque: "450 Nm", profileId: "b58b30m0-f30-340i" }
+    { code: "B58B30M0", hp: "326 hp", torque: "450 Nm", profileId: "b58b30m0-f30-340i" },
+    { code: "B58B30M0", hp: "360 hp", torque: "500 Nm", profileId: "b58b30m0-f30-340i-mppk" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-ActiveHybrid 3": [
-  { code: "N55B30M0", hp: "340 hp", torque: "450 Nm", profileId: "n55b30m0-f30-ah3" }
-],
+    { code: "N55B30M0", hp: "340 hp", torque: "450 Nm", profileId: "n55b30m0-f30-ah3" }
+  ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-330e": [
     { code: "B48B20B", hp: "252 hp", torque: "420 Nm", profileId: "b48b20b-f30-330e" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-316d": [
-    { code: "N47D20", hp: "116 hp", torque: "260 Nm", profileId: "n47d20-f30-316d" },
-    { code: "B47D20", hp: "116 hp", torque: "270 Nm", profileId: "b47d20-f30-316d" }
+    { code: "N47D20C", hp: "116 hp", torque: "260 Nm", profileId: "n47d20c-f30-316d" },
+    { code: "B47D20A", hp: "116 hp", torque: "270 Nm", profileId: "b47d20a-f30-316d" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-318d": [
-    { code: "N47D20", hp: "143 hp", torque: "320 Nm", profileId: "n47d20-f30-318d" },
-    { code: "B47D20", hp: "150 hp", torque: "320 Nm", profileId: "b47d20-f30-318d" }
+    { code: "N47D20C", hp: "143 hp", torque: "320 Nm", profileId: "n47d20c-f30-318d" },
+    { code: "B47D20A", hp: "150 hp", torque: "320 Nm", profileId: "b47d20a-f30-318d" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-320d": [
-    { code: "N47D20", hp: "184 hp", torque: "380 Nm", profileId: "n47d20-f30-320d" },
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-f30-320d" },
-    { code: "N47D20", hp: "163 hp", torque: "380 Nm", profileId: "n47d20-f30-320ded" } // Hozzáadva: EfficientDynamics
+    { code: "N47D20C", hp: "184 hp", torque: "380 Nm", profileId: "n47d20c-f30-320d" },
+    { code: "B47D20A", hp: "190 hp", torque: "400 Nm", profileId: "b47d20a-f30-320d" },
+    { code: "N47D20C", hp: "163 hp", torque: "380 Nm", profileId: "n47d20c-f30-320ded" },
+    { code: "B47D20A", hp: "163 hp", torque: "400 Nm", profileId: "b47d20a-f30-320ded-lci" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-325d": [
-    { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-f30-325d" }, // Twin Turbo
+    { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-f30-325d" },
     { code: "B47D20T0", hp: "224 hp", torque: "450 Nm", profileId: "b47d20t0-f30-325d" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-328d": [
-    { "code": "N47D20", "hp": "180 hp", "torque": "380 Nm", "profileId": "n47d20-f30-328d" }
+    { code: "N47D20C", hp: "180 hp", torque: "380 Nm", profileId: "n47d20c-f30-328d-us" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-330d": [
-    { code: "N57D30", hp: "258 hp", torque: "560 Nm", profileId: "n57d30-f30-330d" }
+    { code: "N57D30A", hp: "258 hp", torque: "560 Nm", profileId: "n57d30a-f30-330d" }
   ],
   "BMW-3 Series-F30/31/34/35 (2011-2019)-335d": [
     { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f30-335d" }
@@ -637,45 +642,56 @@ export const bmwEngineCodes = {
     { code: "S55B30T0", hp: "450 hp", torque: "550 Nm", profileId: "s55b30t0-f80-m3comp" }
   ],
   "BMW-3 Series-F80 (2014-2018)-M3 CS": [
-    { code: "S55B30", hp: "460 hp", torque: "600 Nm", profileId: "s55b30-f80-m3cs" }
+    { code: "S55B30T0", hp: "460 hp", torque: "600 Nm", profileId: "s55b30-f80-m3cs" }
   ],
 
   // --- G20 (2018-present) ---
   "BMW-3 Series-G20/21/28 (2018-present)-318i": [
-    { code: "B48B20", hp: "156 hp", torque: "250 Nm", profileId: "b48b20-g20-318i" }
+    { code: "B48B20A Pre-LCI", hp: "156 hp", torque: "250 Nm", profileId: "b48b20a-g20-318i-prelci" },
+    { code: "B48B20A LCI", hp: "156 hp", torque: "250 Nm", profileId: "b48b20a-g20-318i-lci" }
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-320i": [
-    { code: "B48B20A", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g20-320i" },
-    { code: "B48B16", hp: "170 hp", torque: "250 Nm", profileId: "b48b16-g20-320i" } // Hozzáadva: Egyes piacokon (pl. Törökország, Görögország)
+    { code: "B48B20A Pre-LCI", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g20-320i" },
+    { code: "B48B16A Pre-LCI", hp: "170 hp", torque: "250 Nm", profileId: "b48b16a-g20-320i" },
+    { code: "B48B16A LCI", hp: "170 hp", torque: "250 Nm", profileId: "b48b16a-g20-320i-lci" },
+    { code: "B48B20A LCI", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g20-320i-lci" },
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-330i": [
-    { code: "B48B20B", hp: "258 hp", torque: "400 Nm", profileId: "b48b20b-g20-330i" }
+    { code: "B48B20B", hp: "258 hp", torque: "400 Nm", profileId: "b48b20b-g20-330i" },
+    { code: "B48B20B", hp: "245 hp", torque: "400 Nm", profileId: "b48b20b-g20-330i-eu6" }
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-M340i": [
-    { code: "B58B30O1", hp: "374 hp", torque: "500 Nm", profileId: "b58b30o1-g20-m340i" },
-    { code: "B58B30O1", hp: "382 hp", torque: "500 Nm", profileId: "b58b30o1-g20-m340i-us" } // Hozzáadva: USA verzió (erősebb)
+    { code: "B58B30O1 Pre-LCI", hp: "374 hp", torque: "500 Nm", profileId: "b58b30o1-g20-m340i" },
+    { code: "B58B30O1 LCI", hp: "374 hp", torque: "500 Nm", profileId: "b58b30o1-g20-m340i-lci" },
+    { code: "B58B30O1", hp: "382 hp", torque: "500 Nm", profileId: "b58b30o1-g20-m340i-us" }
   ],
-  "BMW-3 Series-G20/21/28 (2018-present)-320e": [ // Hozzáadva: 320e modell
-    { code: "B48B20A", hp: "204 hp", torque: "350 Nm", profileId: "b48b20a-g20-320e" }
+  "BMW-3 Series-G20/21/28 (2018-present)-320e": [
+    { code: "B48B20A Pre-LCI", hp: "204 hp", torque: "350 Nm", profileId: "b48b20a-g20-320e-prelci" },
+    { code: "B48B20A LCI", hp: "204 hp", torque: "350 Nm", profileId: "b48b20a-g20-320e-lci" }
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-330e": [
-    { code: "B48B20A", hp: "292 hp", torque: "420 Nm", profileId: "b48b20a-g20-330e" } // XtraBoost-tal
+    { code: "B48B20B Pre-LCI", hp: "292 hp", torque: "420 Nm", profileId: "b48b20b-g20-330e-prelci" },
+    { code: "B48B20B LCI", hp: "292 hp", torque: "420 Nm", profileId: "b48b20b-g20-330e-lci" }
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-316d": [
-    { code: "B47D20", hp: "122 hp", torque: "300 Nm", profileId: "b47d20-g20-316d" }
+    { code: "B47D20B Pre-LCI", hp: "122 hp", torque: "300 Nm", profileId: "b47d20b-g20-316d-prelci" },
+    { code: "B47D20B LCI", hp: "122 hp", torque: "300 Nm", profileId: "b47d20b-g20-316d-lci" }
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-318d": [
-    { code: "B47D20", hp: "150 hp", torque: "320 Nm", profileId: "b47d20-g20-318d" }
+    { code: "B47D20B Pre-LCI", hp: "150 hp", torque: "320 Nm", profileId: "b47d20b-g20-318d-prelci" },
+    { code: "B47D20B LCI", hp: "150 hp", torque: "320 Nm", profileId: "b47d20b-g20-318d-lci" }
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-320d": [
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g20-320d" }
+    { code: "B47D20B Pre-LCI", hp: "190 hp", torque: "400 Nm", profileId: "b47d20b-g20-320d-prelci" },
+    { code: "B47D20B LCI", hp: "190 hp", torque: "400 Nm", profileId: "b47d20b-g20-320d-lci" }
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-330d": [
-    { code: "B57D30", hp: "265 hp", torque: "580 Nm", profileId: "b57d30-g20-330d" },
-    { code: "B57D30", hp: "286 hp", torque: "650 Nm", profileId: "b57d30-g20-330d-mh" } // Hozzáadva: Mild Hybrid frissítés
+    { code: "B57D30O0", hp: "265 hp", torque: "580 Nm", profileId: "b57d30o0-g20-330d" },
+    { code: "B57D30O1", hp: "286 hp", torque: "650 Nm", profileId: "b57d30o1-g20-330d-mh" }
   ],
   "BMW-3 Series-G20/21/28 (2018-present)-M340d": [
-    { code: "B57D30T0", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g20-m340d" }
+    { code: "B57D30T0 Pre-LCI", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g20-m340d-prelci" },
+    { code: "B57D30T0 LCI", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g20-m340d-lci" }
   ],
 
   // --- G80 M3 (2020-present) ---
@@ -683,7 +699,8 @@ export const bmwEngineCodes = {
     { code: "S58B30T0", hp: "480 hp", torque: "550 Nm", profileId: "s58b30t0-g80-m3" }
   ],
   "BMW-3 Series-G80/81 (2020-present)-M3 Competition": [
-    { code: "S58B30T0", hp: "510 hp", torque: "650 Nm", profileId: "s58b30t0-g80-m3comp" }
+    { code: "S58B30T0", hp: "510 hp", torque: "650 Nm", profileId: "s58b30t0-g80-m3comp" },
+    { code: "S58B30T0", hp: "530 hp", torque: "650 Nm", profileId: "s58b30t0-g80-m3comp-lci"},
   ],
   "BMW-3 Series-G80/81 (2020-present)-M3 CS": [
     { code: "S58B30T0", hp: "550 hp", torque: "650 Nm", profileId: "s58b30t0-g80-m3cs" }
@@ -691,45 +708,44 @@ export const bmwEngineCodes = {
 
     // --- BMW 4 SERIES ---
    "BMW-4 Series-F32/F33/F36 (2013-2020)-418i": [
-    { code: "B38B15", hp: "136 hp", torque: "220 Nm", profileId: "b38b15-f32-418i" } // 3-cylinder (Gran Coupe only)
+    { "code": "B38B15A", "hp": "136 hp", "torque": "220 Nm", "profileId": "b38b15a-f32-418i" }
   ],
   "BMW-4 Series-F32/F33/F36 (2013-2020)-420i": [
-    { code: "N20B20", hp: "184 hp", torque: "270 Nm", profileId: "n20b20-f32-420i" }, // Pre-LCI
-    { code: "B48B20A", hp: "184 hp", torque: "290 Nm", profileId: "b48b20a-f32-420i" }  // LCI
+    { "code": "N20B20B", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20b-f32-420i" },
+    { "code": "B48B20A", "hp": "184 hp", "torque": "290 Nm", "profileId": "b48b20a-f32-420i" }
   ],
   "BMW-4 Series-F32/F33/F36 (2013-2020)-428i": [
-    { code: "N20B20", hp: "245 hp", torque: "350 Nm", profileId: "n20b20-f32-428i" },
-    { code: "N26B20", hp: "245 hp", torque: "350 Nm", profileId: "n26b20-f32-428i" } // Hozzáadva: SULEV (US Spec)
+    { "code": "N20B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20a-f32-428i" },
+    { "code": "N26B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n26b20a-f32-428i-sulev" }
   ],
   "BMW-4 Series-F32/F33/F36 (2013-2020)-430i": [
-    { code: "B48B20B", hp: "252 hp", torque: "350 Nm", profileId: "b48b20b-f32-430i" } // Replaced 428i
-  ],
-  "BMW-4 Series-F32/F33/F36 (2013-2020)-430e": [
-    { code: "B48B20B", hp: "252 hp", torque: "420 Nm", profileId: "b48b20b-f32-430e" }
+    { "code": "B48B20B", "hp": "252 hp", "torque": "350 Nm", "profileId": "b48b20b-f32-430i" }
   ],
   "BMW-4 Series-F32/F33/F36 (2013-2020)-435i": [
-  { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f32-435i" }
-],
-  "BMW-4 Series-F32/F33/F36 (2013-2020)-440i": [
-    { code: "B58B30M0", hp: "326 hp", torque: "450 Nm", profileId: "b58b30m0-f32-440i" } // Replaced 435i
+    { "code": "N55B30M0", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30m0-f32-435i" },
+    { "code": "N55B30M0", "hp": "326 hp", "torque": "450 Nm", "profileId": "n55b30m0-f32-435i-mppk" }
   ],
-  "BMW-4 Series-F32/F33/F36 (2013-2020)-418d": [ // Hozzáadva: Hiányzott a listádból
-    { code: "N47D20", hp: "143 hp", torque: "320 Nm", profileId: "n47d20-f32-418d" }, // Pre-LCI
-    { code: "B47D20", hp: "150 hp", torque: "320 Nm", profileId: "b47d20-f32-418d" }  // LCI
+  "BMW-4 Series-F32/F33/F36 (2013-2020)-440i": [
+    { "code": "B58B30M0", "hp": "326 hp", "torque": "450 Nm", "profileId": "b58b30m0-f32-440i" },
+    { "code": "B58B30M0", "hp": "360 hp", "torque": "500 Nm", "profileId": "b58b30m0-f32-440i-mppk" }
+  ],
+  "BMW-4 Series-F32/F33/F36 (2013-2020)-418d": [
+    { "code": "N47D20C", "hp": "143 hp", "torque": "320 Nm", "profileId": "n47d20c-f32-418d" },
+    { "code": "B47D20A", "hp": "150 hp", "torque": "320 Nm", "profileId": "b47d20a-f32-418d" }
   ],
   "BMW-4 Series-F32/F33/F36 (2013-2020)-420d": [
-    { code: "N47D20", hp: "184 hp", torque: "380 Nm", profileId: "n47d20-f32-420d" }, // Pre-LCI
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-f32-420d" }  // LCI
+    { "code": "N47D20C", "hp": "184 hp", "torque": "380 Nm", "profileId": "n47d20c-f32-420d" },
+    { "code": "B47D20A", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20a-f32-420d" }
   ],
-  "BMW-4 Series-F32/F33/F36 (2013-2020)-425d": [ // Hozzáadva: Hiányzott a listádból (Twin Turbo 2.0d)
-    { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-f32-425d" }, // Pre-LCI
-    { code: "B47D20T0", hp: "224 hp", torque: "450 Nm", profileId: "b47d20t0-f32-425d" }  // LCI
+  "BMW-4 Series-F32/F33/F36 (2013-2020)-425d": [
+    { "code": "N47D20T1", "hp": "218 hp", "torque": "450 Nm", "profileId": "n47d20t1-f32-425d" },
+    { "code": "B47D20T0", "hp": "224 hp", "torque": "450 Nm", "profileId": "b47d20t0-f32-425d" }
   ],
   "BMW-4 Series-F32/F33/F36 (2013-2020)-430d": [
-    { code: "N57D30O1", hp: "258 hp", torque: "560 Nm", profileId: "n57d30o1-f32-430d" }
+    { "code": "N57D30O1", "hp": "258 hp", "torque": "560 Nm", "profileId": "n57d30o1-f32-430d" }
   ],
   "BMW-4 Series-F32/F33/F36 (2013-2020)-435d": [
-    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f32-435d" } // xDrive only
+    { "code": "N57D30T1", "hp": "313 hp", "torque": "630 Nm", "profileId": "n57d30t1-f32-435d" }
   ],
 
   // --- F82/F83 M4 (2014-2020) ---
@@ -740,145 +756,81 @@ export const bmwEngineCodes = {
     { code: "S55B30T0", hp: "450 hp", torque: "550 Nm", profileId: "s55b30t0-f82-m4comp" }
   ],
   "BMW-4 Series-F82/83 (2014-2020)-M4 CS": [ // Hozzáadva: Hiányzott a listádból (Club Sport)
-    { code: "S55B30", hp: "460 hp", torque: "600 Nm", profileId: "s55b30-f82-m4cs" }
+    { code: "S55B30T0", hp: "460 hp", torque: "600 Nm", profileId: "s55b30-f82-m4cs" }
   ],
   "BMW-4 Series-F82/83 (2014-2020)-M4 GTS": [
-    { code: "S55B30 Water Injection", hp: "500 hp", torque: "600 Nm", profileId: "s55b30-f82-m4gts" }
+    { code: "S55B30T0", hp: "500 hp", torque: "600 Nm", profileId: "s55b30-f82-m4gts" }
   ],
 
   // --- G22/G23/G26 (2020-present) ---
   "BMW-4 Series-G22/G23/G26 (2020-present)-420i": [
-    { code: "B48B20A", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g22-420i" }
+    { "code": "B48B20A", "hp": "184 hp", "torque": "300 Nm", "profileId": "b48b20a-g22-420i" },
+    { "code": "B48B16A", "hp": "170 hp", "torque": "250 Nm", "profileId": "b48b16a-g22-420i" }
   ],
   "BMW-4 Series-G22/G23/G26 (2020-present)-430i": [
-    { code: "B48B20B", hp: "258 hp", torque: "400 Nm", profileId: "b48b20b-g22-430i" }
+    { "code": "B48B20B", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20b-g22-430i" },
+    { "code": "B48B20B", "hp": "245 hp", "torque": "400 Nm", "profileId": "b48b20b-g22-430i-eu6" },
+    { "code": "B48B20O1", "hp": "255 hp", "torque": "400 Nm", "profileId": "b48b20o1-g22-430i-us" }
   ],
   "BMW-4 Series-G22/G23/G26 (2020-present)-M440i": [
-    { code: "B58B30O1", hp: "374 hp", torque: "500 Nm", profileId: "b58b30o1-g22-m440i" },
-    { code: "B58B30O1", hp: "382 hp", torque: "500 Nm", profileId: "b58b30o1-g22-m440i-us" } // Hozzáadva: USA Spec (erősebb)
+    { "code": "B58B30O1", "hp": "374 hp", "torque": "500 Nm", "profileId": "b58b30o1-g22-m440i" },
+    { "code": "B58B30O1", "hp": "382 hp", "torque": "500 Nm", "profileId": "b58b30o1-g22-m440i-us" },
+    { "code": "B58B30M2", "hp": "374 hp", "torque": "500 Nm", "profileId": "b58b30m2-g22-m440i-tu2" }
   ],
   "BMW-4 Series-G22/G23/G26 (2020-present)-420d": [
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g22-420d" } // Mild Hybrid
+    { "code": "B47D20B", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20b-g22-420d" },
+    { "code": "B47D20B", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47d20b-g22-420d-ed" }
   ],
   "BMW-4 Series-G22/G23/G26 (2020-present)-430d": [
-    { code: "B57D30", hp: "286 hp", torque: "650 Nm", profileId: "b57d30-g22-430d" } // Mild Hybrid
+    { "code": "B57D30O1", "hp": "286 hp", "torque": "650 Nm", "profileId": "b57d30o1-g22-430d" }
   ],
   "BMW-4 Series-G22/G23/G26 (2020-present)-M440d": [
-    { code: "B57D30T0", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g22-m440d" }
+    { "code": "B57D30T0", "hp": "340 hp", "torque": "700 Nm", "profileId": "b57d30t0-g22-m440d" }
   ],
 
   // --- G82/G83 M4 (2020-present) ---
   "BMW-4 Series-G82/83 (2020-present)-M4": [
-    { code: "S58B30T0", hp: "480 hp", torque: "550 Nm", profileId: "s58b30t0-g82-m4" }
+    { "code": "S58B30O1", "hp": "480 hp", "torque": "550 Nm", "profileId": "s58b30o1-g82-m4" }
   ],
   "BMW-4 Series-G82/83 (2020-present)-M4 Competition": [
-    { code: "S58B30T0", hp: "510 hp", torque: "650 Nm", profileId: "s58b30t0-g82-m4comp" },
-    { code: "S58B30T0", hp: "530 hp", torque: "650 Nm", profileId: "s58b30t0-g82-m4comp-lci" } // Hozzáadva: 2024 LCI xDrive update
+    { "code": "S58B30T0", "hp": "510 hp", "torque": "650 Nm", "profileId": "s58b30t0-g82-m4comp" },
+    { "code": "S58B30T0", "hp": "530 hp", "torque": "650 Nm", "profileId": "s58b30t0-g82-m4comp-lci" }
   ],
-  "BMW-4 Series-G82/83 (2020-present)-M4 CS": [ // Hozzáadva: A legújabb CS modell
-    { code: "S58B30T0", hp: "550 hp", torque: "650 Nm", profileId: "s58b30t0-g82-m4cs" }
+  "BMW-4 Series-G82/83 (2020-present)-M4 CS": [
+    { "code": "S58B30T0", "hp": "550 hp", "torque": "650 Nm", "profileId": "s58b30t0-g82-m4cs" }
   ],
   "BMW-4 Series-G82/83 (2020-present)-M4 CSL": [
-    { code: "S58B30T0", hp: "550 hp", torque: "650 Nm", profileId: "s58b30t0-g82-m4csl" }
+    { "code": "S58B30T0", "hp": "550 hp", "torque": "650 Nm", "profileId": "s58b30t0-g82-m4csl" }
   ],
 
   // --- BMW 5 SERIES ---
-  // --- E12 (1972-1981) ---
-  "BMW-5 Series-E12 (1972-1981)-518": [
-    { code: "M10B18", hp: "90 hp", torque: "140 Nm", profileId: "m10b18-e12-518" }
-  ],
-  "BMW-5 Series-E12 (1972-1981)-520": [
-    { code: "M10B20", hp: "115 hp", torque: "165 Nm", profileId: "m10b20-e12-520-4" }, // 4-hengeres (Stromberg karburátor)
-    { code: "M20B20", hp: "122 hp", torque: "160 Nm", profileId: "m20b20-e12-520-6" }  // 6-hengeres (1977-től)
-  ],
-  "BMW-5 Series-E12 (1972-1981)-520i": [
-  { code: "M20B20", hp: "125 hp", torque: "160 Nm", profileId: "m20b20-e12-520i" }
-],
-  "BMW-5 Series-E12 (1972-1981)-525": [
-    { code: "M30B25", hp: "145 hp", torque: "212 Nm", profileId: "m30b25-e12-525" }
-  ],
-  "BMW-5 Series-E12 (1972-1981)-528": [
-  { code: "M30B28", hp: "170 hp", torque: "238 Nm", profileId: "m30b28-e12-528" } // Karburátoros
-],
-  "BMW-5 Series-E12 (1972-1981)-528i": [
-    { code: "M30B28", hp: "177 hp", torque: "235 Nm", profileId: "m30b28-e12-528i-pre" }, // L-Jetronic
-    { code: "M30B28", hp: "184 hp", torque: "240 Nm", profileId: "m30b28-e12-528i" }     // K-Jetronic
-  ],
-  "BMW-5 Series-E12 (1972-1981)-530i": [
-  { code: "M30B30", hp: "176 hp", torque: "250 Nm", profileId: "m30b30-e12-530i" }
-],
-"BMW-5 Series-E12 (1972-1981)-533i": [
-  { code: "M30B32", hp: "200 hp", torque: "285 Nm", profileId: "m30b32-e12-533i" }
-],
-"BMW-5 Series-E12 (1972-1981)-535i": [
-  { code: "M30B35", hp: "218 hp", torque: "310 Nm", profileId: "m30b35-e12-535i" }
-],
-  "BMW-5 Series-E12 (1972-1981)-M535i": [
-    { code: "M30B35", hp: "218 hp", torque: "310 Nm", profileId: "m30b35-e12-m535i" }
-  ],
-
-  // --- E28 (1981-1988) ---
-  "BMW-5 Series-E28 (1981-1988)-518": [ // Hozzáadva: Karburátoros modell
-    { code: "M10B18", hp: "90 hp", torque: "140 Nm", profileId: "m10b18-e28-518" }
-  ],
-  "BMW-5 Series-E28 (1981-1988)-518i": [
-    { code: "M10B18", hp: "105 hp", torque: "145 Nm", profileId: "m10b18-e28-518i" }
-  ],
-  "BMW-5 Series-E28 (1981-1988)-520i": [
-    { code: "M20B20", hp: "125 hp", torque: "170 Nm", profileId: "m20b20-e28-520i" },
-    { code: "M20B20", hp: "129 hp", torque: "174 Nm", profileId: "m20b20-e28-520i-cat" } // Katalizátoros
-  ],
-  "BMW-5 Series-E28 (1981-1988)-525e": [ // Hozzáadva: Az "eta" spórmodell
-    { code: "M20B27", hp: "122 hp", torque: "230 Nm", profileId: "m20b27-e28-525e" }, // Alacsony fordulatú nyomaték
-    { code: "M20B27", hp: "129 hp", torque: "230 Nm", profileId: "m20b27-e28-525e-super" }
-  ],
-  "BMW-5 Series-E28 (1981-1988)-525i": [
-    { code: "M30B25", hp: "150 hp", torque: "215 Nm", profileId: "m30b25-e28-525i" }
-  ],
-  "BMW-5 Series-E28 (1981-1988)-528i": [
-    { code: "M30B28", hp: "184 hp", torque: "240 Nm", profileId: "m30b28-e28-528i" }
-  ],
-  "BMW-5 Series-E28 (1981-1988)-535i": [
-    { code: "M30B34", hp: "218 hp", torque: "310 Nm", profileId: "m30b34-e28-535i" }
-  ],
-  "BMW-5 Series-E28 (1981-1988)-M535i": [ // Hozzáadva: M-es optikai modell (nem M5 motor)
-    { code: "M30B34", hp: "218 hp", torque: "310 Nm", profileId: "m30b34-e28-m535i" }
-  ],
-  "BMW-5 Series-E28 (1981-1988)-M5": [
-    { code: "M88/3", hp: "286 hp", torque: "340 Nm", profileId: "m88-e28-m5" },       // EU Spec
-    { code: "S38B35", hp: "256 hp", torque: "330 Nm", profileId: "s38b35-e28-m5-us" }  // US Spec (S38)
-  ],
-  "BMW-5 Series-E28 (1981-1988)-524d": [ // Hozzáadva: Szívódízel
-    { code: "M21D24", hp: "86 hp", torque: "152 Nm", profileId: "m21d24-e28-524d" }
-  ],
-  "BMW-5 Series-E28 (1981-1988)-524td": [
-    { code: "M21D24", hp: "115 hp", torque: "210 Nm", profileId: "m21d24-e28-524td" }
-  ],
+  
 
   // --- E34 (1988-1996) ---
   "BMW-5 Series-E34 (1988-1996)-518i": [
     { code: "M40B18", hp: "113 hp", torque: "162 Nm", profileId: "m40b18-e34-518i" },
-    { code: "M43B18", hp: "115 hp", torque: "168 Nm", profileId: "m43b18-e34-518i" }  // Láncos vezérlés (1994-től)
+    { code: "M43B18", hp: "115 hp", torque: "168 Nm", profileId: "m43b18-e34-518i-m43" }
   ],
-  "BMW-5 Series-E34 (1988-1996)-518g": [ // Hozzáadva: Gyári CNG modell
+  "BMW-5 Series-E34 (1988-1996)-518g": [
     { code: "M43B18", hp: "105 hp", torque: "165 Nm", profileId: "m43b18-e34-518g" }
   ],
   "BMW-5 Series-E34 (1988-1996)-520i": [
     { code: "M20B20", hp: "129 hp", torque: "164 Nm", profileId: "m20b20-e34-520i" },
-    { code: "M50B20", hp: "150 hp", torque: "190 Nm", profileId: "m50b20-e34-520i" },     // 24 szelep
-    { code: "M50B20TU", hp: "150 hp", torque: "190 Nm", profileId: "m50b20tu-e34-520i" }  // Vanos
+    { code: "M50B20", hp: "150 hp", torque: "190 Nm", profileId: "m50b20-e34-520i-nv" },
+    { code: "M50B20TU", hp: "150 hp", torque: "190 Nm", profileId: "m50b20tu-e34-520i-v" }
   ],
   "BMW-5 Series-E34 (1988-1996)-525i": [
     { code: "M20B25", hp: "170 hp", torque: "222 Nm", profileId: "m20b25-e34-525i" },
-    { code: "M50B25", hp: "192 hp", torque: "245 Nm", profileId: "m50b25-e34-525i" },     // 24 szelep
-    { code: "M50B25TU", hp: "192 hp", torque: "245 Nm", profileId: "m50b25tu-e34-525i" }  // Vanos
+    { code: "M50B25", hp: "192 hp", torque: "245 Nm", profileId: "m50b25-e34-525i-nv" },
+    { code: "M50B25TU", hp: "192 hp", torque: "245 Nm", profileId: "m50b25tu-e34-525i-v" }
   ],
   "BMW-5 Series-E34 (1988-1996)-525ix": [
-    { code: "M50B25", hp: "192 hp", torque: "245 Nm", profileId: "m50b25-e34-525ix" }
+    { code: "M50B25", hp: "192 hp", torque: "245 Nm", profileId: "m50b25-e34-525ix-nv" },
+    { code: "M50B25TU", hp: "192 hp", torque: "245 Nm", profileId: "m50b25tu-e34-525ix-v" }
   ],
   "BMW-5 Series-E34 (1988-1996)-530i": [
-    { code: "M30B30", hp: "188 hp", torque: "260 Nm", profileId: "m30b30-e34-530i" }, // I6 (Early)
-    { code: "M60B30", hp: "218 hp", torque: "290 Nm", profileId: "m60b30-e34-530i" }  // V8 (1992-től)
+    { code: "M30B30", hp: "188 hp", torque: "260 Nm", profileId: "m30b30-e34-530i" },
+    { code: "M60B30", hp: "218 hp", torque: "290 Nm", profileId: "m60b30-e34-530i-v8" }
   ],
   "BMW-5 Series-E34 (1988-1996)-535i": [
     { code: "M30B35", hp: "211 hp", torque: "305 Nm", profileId: "m30b35-e34-535i" }
@@ -887,276 +839,362 @@ export const bmwEngineCodes = {
     { code: "M60B40", hp: "286 hp", torque: "400 Nm", profileId: "m60b40-e34-540i" }
   ],
   "BMW-5 Series-E34 (1988-1996)-M5": [
-    { code: "S38B36", hp: "315 hp", torque: "360 Nm", profileId: "s38b36-e34-m5" }, // 3.6L
-    { code: "S38B38", hp: "340 hp", torque: "400 Nm", profileId: "s38b38-e34-m5" }  // 3.8L (Nürburgring pack)
+    { code: "S38B36", hp: "315 hp", torque: "360 Nm", profileId: "s38b36-e34-m5" },
+    { code: "S38B38", hp: "340 hp", torque: "400 Nm", profileId: "s38b38-e34-m5-38" }
   ],
   "BMW-5 Series-E34 (1988-1996)-524td": [
     { code: "M21D24", hp: "115 hp", torque: "220 Nm", profileId: "m21d24-e34-524td" }
   ],
-  "BMW-5 Series-E34 (1988-1996)-525td": [ // Hozzáadva: Intercooler nélküli tds
-    { code: "M51D25", hp: "115 hp", torque: "222 Nm", profileId: "m51d25-e34-525td" }
+  "BMW-5 Series-E34 (1988-1996)-525td": [
+    { code: "M51D25UL", hp: "115 hp", torque: "222 Nm", profileId: "m51d25ul-e34-525td" }
   ],
   "BMW-5 Series-E34 (1988-1996)-525tds": [
-    { code: "M51D25TU", hp: "143 hp", torque: "260 Nm", profileId: "m51d25tu-e34-525tds" }
+    { code: "M51D25OL", hp: "143 hp", torque: "260 Nm", profileId: "m51d25ol-e34-525tds-early" },
+    { code: "M51D25TU", hp: "143 hp", torque: "280 Nm", profileId: "m51d25tu-e34-525tds-late" }
   ],
 
   // --- E39 (1995-2004) ---
   "BMW-5 Series-E39 (1995-2004)-520i": [
-    { code: "M52B20", hp: "150 hp", torque: "190 Nm", profileId: "m52b20-e39-520i" },
-    { code: "M52TUB20", hp: "150 hp", torque: "190 Nm", profileId: "m52tub20-e39-520i" }, // Double Vanos
-    { code: "M54B22", hp: "170 hp", torque: "210 Nm", profileId: "m54b22-e39-520i" }      // Facelift (2.2L)
+    { "code": "M52B20", "hp": "150 hp", "torque": "190 Nm", "profileId": "m52b20-e39-520i" },
+    { "code": "M52TUB20", "hp": "150 hp", "torque": "190 Nm", "profileId": "m52tub20-e39-520i" },
+    { "code": "M54B22", "hp": "170 hp", "torque": "210 Nm", "profileId": "m54b22-e39-520i" }
   ],
   "BMW-5 Series-E39 (1995-2004)-523i": [
-    { code: "M52B25", hp: "170 hp", torque: "245 Nm", profileId: "m52b25-e39-523i" },
-    { code: "M52TUB25", hp: "170 hp", torque: "245 Nm", profileId: "m52tub25-e39-523i" }
+    { "code": "M52B25", "hp": "170 hp", "torque": "245 Nm", "profileId": "m52b25-e39-523i" },
+    { "code": "M52TUB25", "hp": "170 hp", "torque": "245 Nm", "profileId": "m52tub25-e39-523i" }
   ],
   "BMW-5 Series-E39 (1995-2004)-525i": [
-    { code: "M54B25", hp: "192 hp", torque: "245 Nm", profileId: "m54b25-e39-525i" }
+    { "code": "M54B25", "hp": "192 hp", "torque": "245 Nm", "profileId": "m54b25-e39-525i" }
   ],
   "BMW-5 Series-E39 (1995-2004)-528i": [
-    { code: "M52B28", hp: "193 hp", torque: "280 Nm", profileId: "m52b28-e39-528i" },
-    { code: "M52TUB28", hp: "193 hp", torque: "280 Nm", profileId: "m52tub28-e39-528i" }
+    { "code": "M52B28", "hp": "193 hp", "torque": "280 Nm", "profileId": "m52b28-e39-528i" },
+    { "code": "M52TUB28", "hp": "193 hp", "torque": "280 Nm", "profileId": "m52tub28-e39-528i" }
   ],
   "BMW-5 Series-E39 (1995-2004)-530i": [
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-e39-530i" }
+    { "code": "M54B30", "hp": "231 hp", "torque": "300 Nm", "profileId": "m54b30-e39-530i" },
   ],
   "BMW-5 Series-E39 (1995-2004)-535i": [
-    { code: "M62B35", hp: "235 hp", torque: "320 Nm", profileId: "m62b35-e39-535i" },
-    { code: "M62TUB35", hp: "245 hp", torque: "345 Nm", profileId: "m62tub35-e39-535i" } // Vanos V8
+    { "code": "M62B35", "hp": "235 hp", "torque": "320 Nm", "profileId": "m62b35-e39-535i" },
+    { "code": "M62TUB35", "hp": "245 hp", "torque": "345 Nm", "profileId": "m62tub35-e39-535i" }
   ],
   "BMW-5 Series-E39 (1995-2004)-540i": [
-    { code: "M62B44", hp: "286 hp", torque: "420 Nm", profileId: "m62b44-e39-540i" },
-    { code: "M62TUB44", hp: "286 hp", torque: "440 Nm", profileId: "m62tub44-e39-540i" } // Vanos V8
+    { "code": "M62B44", "hp": "286 hp", "torque": "420 Nm", "profileId": "m62b44-e39-540i" },
+    { "code": "M62TUB44", "hp": "286 hp", "torque": "440 Nm", "profileId": "m62tub44-e39-540i" },
   ],
   "BMW-5 Series-E39 (1995-2004)-M5": [
-    { code: "S62B50", hp: "400 hp", torque: "500 Nm", profileId: "s62b50-e39-m5" }
+    { "code": "S62B50", "hp": "400 hp", "torque": "500 Nm", "profileId": "s62b50-e39-m5" }
   ],
   "BMW-5 Series-E39 (1995-2004)-520d": [
-    { code: "M47D20", hp: "136 hp", torque: "280 Nm", profileId: "m47d20-e39-520d" }
+    { "code": "M47D20", "hp": "136 hp", "torque": "280 Nm", "profileId": "m47d20-e39-520d" }
   ],
-  "BMW-5 Series-E39 (1995-2004)-525td": [ // Hozzáadva: A ritka 525td modell
-    { code: "M51D25TU", hp: "115 hp", torque: "230 Nm", profileId: "m51d25tu-e39-525td" }
+  "BMW-5 Series-E39 (1995-2004)-525td": [
+    { "code": "M51D25UL", "hp": "115 hp", "torque": "230 Nm", "profileId": "m51d25ul-e39-525td" }
   ],
   "BMW-5 Series-E39 (1995-2004)-525tds": [
-    { code: "M51D25TU", hp: "143 hp", torque: "280 Nm", profileId: "m51d25tu-e39-525tds" }
+    { "code": "M51D25OL", "hp": "143 hp", "torque": "280 Nm", "profileId": "m51d25ol-e39-525tds-early" },
+    { "code": "M51D25TU", "hp": "143 hp", "torque": "280 Nm", "profileId": "m51d25tu-e39-525tds-late" }
   ],
   "BMW-5 Series-E39 (1995-2004)-525d": [
-    { code: "M57D25", hp: "163 hp", torque: "350 Nm", profileId: "m57d25-e39-525d" } // Common Rail
+    { "code": "M57D25O0", "hp": "163 hp", "torque": "350 Nm", "profileId": "m57d25o0-e39-525d" },
+    { "code": "M57D25O0", "hp": "136 hp", "torque": "300 Nm", "profileId": "m57d25o0-e39-525d-fleet" } // Fleet Edition
   ],
   "BMW-5 Series-E39 (1995-2004)-530d": [
-    { code: "M57D30", hp: "184 hp", torque: "390 Nm", profileId: "m57d30-e39-530d" },
-    { code: "M57D30", hp: "193 hp", torque: "410 Nm", profileId: "m57d30-e39-530d-fl" } // Facelift
+    { "code": "M57D30O0", "hp": "184 hp", "torque": "390 Nm", "profileId": "m57d30o0-e39-530d" },
+    { "code": "M57D30O0", "hp": "193 hp", "torque": "410 Nm", "profileId": "m57d30o0-e39-530d-up" },
+    { "code": "M57D30O0", "hp": "163 hp", "torque": "350 Nm", "profileId": "m57d30o0-e39-530d-fleet" } // Fleet Edition
   ],
 
   // --- E60/61 (2003-2010) ---
   "BMW-5 Series-E60/61 (2003-2010)-520i": [
-    { code: "M54B22", hp: "170 hp", torque: "210 Nm", profileId: "m54b22-e60-520i" },
-    { code: "N46B20", hp: "156 hp", torque: "200 Nm", profileId: "n46b20-e60-520i" }, // Fleet edition
-    { code: "N43B20", hp: "170 hp", torque: "210 Nm", profileId: "n43b20-e60-520i" }, // LCI Direct Injection
-    { code: "N52B25", hp: "177 hp", torque: "230 Nm", profileId: "n52b25-e60-520i-2.5" } // Ritka 2.5L 520i
+    { "code": "M54B22", "hp": "170 hp", "torque": "210 Nm", "profileId": "m54b22-e60-520i" },
+    { "code": "N46B20", "hp": "156 hp", "torque": "200 Nm", "profileId": "n46b20-e60-520i" },
+    { "code": "N43B20", "hp": "170 hp", "torque": "210 Nm", "profileId": "n43b20-e60-520i" },
+    { "code": "N43B20", "hp": "156 hp", "torque": "200 Nm", "profileId": "n43b20-e60-520i-fleet" },
+    { "code": "N52B25", "hp": "177 hp", "torque": "230 Nm", "profileId": "n52b25-e60-520i-2.5" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-523i": [
-    { code: "N52B25", hp: "177 hp", torque: "230 Nm", profileId: "n52b25-e60-523i" },
-    { code: "N53B25", hp: "190 hp", torque: "240 Nm", profileId: "n53b25-e60-523i" } // LCI
+    { "code": "N52B25", "hp": "177 hp", "torque": "230 Nm", "profileId": "n52b25-e60-523i" },
+    { "code": "N53B25", "hp": "190 hp", "torque": "240 Nm", "profileId": "n53b25-e60-523i" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-525i": [
-    { code: "M54B25", hp: "192 hp", torque: "245 Nm", profileId: "m54b25-e60-525i" },
-    { code: "N52B25", hp: "218 hp", torque: "250 Nm", profileId: "n52b25-e60-525i" },
-    { code: "N53B30", hp: "218 hp", torque: "270 Nm", profileId: "n53b30-e60-525i" } // LCI (3.0L)
+    { "code": "M54B25", "hp": "192 hp", "torque": "245 Nm", "profileId": "m54b25-e60-525i" },
+    { "code": "N52B25", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25-e60-525i" },
+    { "code": "N52B30U1", "hp": "215 hp", "torque": "250 Nm", "profileId": "n52b30u1-e60-525i-us" },
+    { "code": "N53B30", "hp": "218 hp", "torque": "270 Nm", "profileId": "n53b30-e60-525i" }
+  ],
+  "BMW-5 Series-E60/61 (2003-2010)-528i": [
+    { "code": "N52B30", "hp": "234 hp", "torque": "310 Nm", "profileId": "n52b30-e60-528i" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-530i": [
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-e60-530i" },
-    { code: "N52B30", hp: "258 hp", torque: "300 Nm", profileId: "n52b30-e60-530i" },
-    { code: "N53B30", hp: "272 hp", torque: "320 Nm", profileId: "n53b30-e60-530i" } // LCI
+    { "code": "M54B30", "hp": "231 hp", "torque": "300 Nm", "profileId": "m54b30-e60-530i" },
+    { "code": "N52B30", "hp": "258 hp", "torque": "300 Nm", "profileId": "n52b30-e60-530i" },
+    { "code": "N52B30", "hp": "255 hp", "torque": "300 Nm", "profileId": "n52b30-e60-530i-us" },
+    { "code": "N52B30O1", "hp": "272 hp", "torque": "315 Nm", "profileId": "n52b30o1-e60-530i-ho" },
+    { "code": "N53B30", "hp": "272 hp", "torque": "320 Nm", "profileId": "n53b30-e60-530i" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-535i": [
-    { code: "N54B30", hp: "306 hp", torque: "400 Nm", profileId: "n54b30-e60-535i" } // Twin Turbo (USA főleg)
+    { "code": "N54B30", "hp": "306 hp", "torque": "400 Nm", "profileId": "n54b30-e60-535i" }
   ],
-  "BMW-5 Series-E60/61 (2003-2010)-540i": [ // Hozzáadva: A kis V8-as modell
-    { code: "N62B40", hp: "306 hp", torque: "390 Nm", profileId: "n62b40-e60-540i" }
+  "BMW-5 Series-E60/61 (2003-2010)-540i": [
+    { "code": "N62B40O1", "hp": "306 hp", "torque": "390 Nm", "profileId": "n62b40o1-e60-540i" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-545i": [
-    { code: "N62B44", hp: "333 hp", torque: "450 Nm", profileId: "n62b44-e60-545i" }
+    { "code": "N62B44", "hp": "333 hp", "torque": "450 Nm", "profileId": "n62b44-e60-545i" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-550i": [
-    { code: "N62B48", hp: "367 hp", torque: "490 Nm", profileId: "n62b48-e60-550i" }
+    { "code": "N62B48O1", "hp": "367 hp", "torque": "490 Nm", "profileId": "n62b48o1-e60-550i" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-M5": [
-    { code: "S85B50", hp: "507 hp", torque: "520 Nm", profileId: "s85b50-e60-m5" }
+    { "code": "S85B50", "hp": "507 hp", "torque": "520 Nm", "profileId": "s85b50-e60-m5" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-520d": [
-    { code: "M47D20TU2", hp: "163 hp", torque: "340 Nm", profileId: "m47d20tu2-e60-520d" }, // Láncos problémás M47
-    { code: "N47D20", hp: "177 hp", torque: "350 Nm", profileId: "n47d20-e60-520d" }        // LCI (Láncszakadós N47)
+    { "code": "M47D20TU2", "hp": "163 hp", "torque": "340 Nm", "profileId": "m47d20tu2-e60-520d" },
+    { "code": "M47D20TU2", "hp": "150 hp", "torque": "340 Nm", "profileId": "m47d20tu2-e60-520d-fleet" },
+    { "code": "N47D20", "hp": "177 hp", "torque": "350 Nm", "profileId": "n47d20-e60-520d" },
+    { "code": "N47D20", "hp": "163 hp", "torque": "350 Nm", "profileId": "n47d20-e60-520d-fleet" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-525d": [
-    { code: "M57D25TU", hp: "177 hp", torque: "400 Nm", profileId: "m57d25tu-e60-525d" },    // 2.5L
-    { code: "M57D30TU2", hp: "197 hp", torque: "400 Nm", profileId: "m57d30tu2-e60-525d" }   // 3.0L detuned (LCI)
+    { "code": "M57D25TU", "hp": "177 hp", "torque": "400 Nm", "profileId": "m57d25tu-e60-525d" },
+    { "code": "M57D30TU2", "hp": "197 hp", "torque": "400 Nm", "profileId": "m57d30tu2-e60-525d" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-530d": [
-    { code: "M57D30TU", hp: "218 hp", torque: "500 Nm", profileId: "m57d30tu-e60-530d" },
-    { code: "M57D30TU2", hp: "231 hp", torque: "500 Nm", profileId: "m57d30tu2-e60-530d" },
-    { code: "M57D30TU2", hp: "235 hp", torque: "500 Nm", profileId: "m57d30tu2-e60-530d-lci" } // LCI Update
+    { "code": "M57D30TU", "hp": "218 hp", "torque": "500 Nm", "profileId": "m57d30tu-e60-530d" },
+    { "code": "M57D30TU2", "hp": "231 hp", "torque": "500 Nm", "profileId": "m57d30tu2-e60-530d" },
+    { "code": "M57D30TU2", "hp": "235 hp", "torque": "500 Nm", "profileId": "m57d30tu2-e60-530d-lci" },
+    { "code": "M57D30TU2", "hp": "211 hp", "torque": "500 Nm", "profileId": "m57d30tu2-e60-530d-fleet" }
   ],
   "BMW-5 Series-E60/61 (2003-2010)-535d": [
-    { code: "M57D30T1", hp: "272 hp", torque: "560 Nm", profileId: "m57d30t1-e60-535d" },     // Pre-LCI
-    { code: "M57D30T2", hp: "286 hp", torque: "580 Nm", profileId: "m57d30t2-e60-535d-lci" }  // LCI
+    { "code": "M57D30T1", "hp": "272 hp", "torque": "560 Nm", "profileId": "m57d30t1-e60-535d" },
+    { "code": "M57D30T2", "hp": "286 hp", "torque": "580 Nm", "profileId": "m57d30t2-e60-535d-lci" }
   ],
 
   // --- F10/F11 (2010-2017) ---
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-520i": [
-    { code: "N20B20B", hp: "184 hp", torque: "270 Nm", profileId: "n20b20b-f10-520i" }
+  "BMW-5 Series-F10/11/18 (2010-2017)-520i": [
+    { "code": "N20B20B", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20b-f10-520i" },
+    { "code": "N20B20B", "hp": "156 hp", "torque": "240 Nm", "profileId": "n20b20b-f10-520i-fleet" },
+    { "code": "N20B20B", "hp": "170 hp", "torque": "250 Nm", "profileId": "n20b20b-f10-520i-global" },
+    { "code": "N20B16", "hp": "170 hp", "torque": "250 Nm", "profileId": "n20b16-f10-520i-tr" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-523i": [
-    { code: "N53B30", hp: "204 hp", torque: "270 Nm", profileId: "n53b30-f10-523i" }
+  "BMW-5 Series-F10/11/18 (2010-2017)-523i": [
+    { "code": "N53B30", "hp": "204 hp", "torque": "270 Nm", "profileId": "n53b30-f10-523i" },
+    { "code": "N52B25", "hp": "204 hp", "torque": "250 Nm", "profileId": "n52b25-f10-523i" },
+    { "code": "N52B30", "hp": "204 hp", "torque": "270 Nm", "profileId": "n52b30-f10-523i" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-528i": [
-    { code: "N53B30", hp: "258 hp", torque: "310 Nm", profileId: "n53b30-f10-528i" }, // I6 (Pre-2011)
-    { code: "N20B20A", hp: "245 hp", torque: "350 Nm", profileId: "n20b20a-f10-528i" }  // I4 Turbo (2011-től)
+  "BMW-5 Series-F10/11/18 (2010-2017)-525i": [
+    { "code": "N52B25", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25-f10-525i" },
+    { "code": "N52B30", "hp": "218 hp", "torque": "310 Nm", "profileId": "n52b30-f10-525i-global" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-530i": [ // Hozzáadva: Ritka szívómotoros modell
-    { code: "N53B30", hp: "272 hp", torque: "310 Nm", profileId: "n53b30-f10-530i" }
+  "BMW-5 Series-F10/11/18 (2010-2017)-528i": [
+    { "code": "N53B30", "hp": "258 hp", "torque": "310 Nm", "profileId": "n53b30-f10-528i" },
+    { "code": "N52B30", "hp": "243 hp", "torque": "310 Nm", "profileId": "n52b30-f10-528i-global" },
+    { "code": "N20B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20a-f10-528i" },
+    { "code": "N26B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n26b20a-f10-528i-sulev" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-535i": [
-  { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f10-535i" }
-],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-ActiveHybrid 5": [ // Hozzáadva: Hibrid modell
-    { code: "N55B30", hp: "340 hp", torque: "450 Nm", profileId: "n55b30-f10-ah5" }
+  "BMW-5 Series-F10/11/18 (2010-2017)-530i": [
+    { "code": "N53B30", "hp": "272 hp", "torque": "310 Nm", "profileId": "n53b30-f10-530i" },
+    { "code": "N52B30", "hp": "258 hp", "torque": "310 Nm", "profileId": "n52b30-f10-530i" },
+    { "code": "N52B30", "hp": "272 hp", "torque": "315 Nm", "profileId": "n52b30-f10-530i-ho" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-550i": [
-    { code: "N63B44", hp: "408 hp", torque: "600 Nm", profileId: "n63b44-f10-550i" },
-    { code: "N63B44TU", hp: "450 hp", torque: "650 Nm", profileId: "n63b44tu-f10-550i" } // LCI
+  "BMW-5 Series-F10/11/18 (2010-2017)-535i": [
+    { "code": "N55B30M0", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30m0-f10-535i" },
+    { "code": "N55B30A", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30a-f10-535i-sulev" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-M5": [
-    { code: "S63B44T0", hp: "560 hp", torque: "680 Nm", profileId: "s63b44t0-f10-m5" },
-    { code: "S63B44T0", hp: "575 hp", torque: "680 Nm", profileId: "s63b44t0-f10-m5comp" }, // Competition
-    { code: "S63B44TU", hp: "600 hp", torque: "700 Nm", profileId: "s63b44tu-f10-m530jahre" } // 30 Jahre Edition
+  "BMW-5 Series-F10/11/18 (2010-2017)-ActiveHybrid 5": [
+    { "code": "N55B30", "hp": "340 hp", "torque": "450 Nm", "profileId": "n55b30-f10-ah5" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-518d": [ // Hozzáadva: Belépő dízel
-    { code: "N47D20", hp: "143 hp", torque: "360 Nm", profileId: "n47d20-f10-518d" },
-    { code: "B47D20", hp: "150 hp", torque: "360 Nm", profileId: "b47d20-f10-518d" }
+  "BMW-5 Series-F10/11/18 (2010-2017)-550i": [
+    { "code": "N63B44", "hp": "408 hp", "torque": "600 Nm", "profileId": "n63b44-f10-550i" },
+    { "code": "N63B44TU", "hp": "450 hp", "torque": "650 Nm", "profileId": "n63b44tu-f10-550i" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-520d": [
-    { code: "N47D20", hp: "184 hp", torque: "380 Nm", profileId: "n47d20-f10-520d" }, // Láncos N47
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-f10-520d" }  // LCI (B47)
+  "BMW-5 Series-F10/11/18 (2010-2017)-M5": [
+    { "code": "S63B44T0", "hp": "560 hp", "torque": "680 Nm", "profileId": "s63b44t0-f10-m5" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-525d": [
-    { code: "N57D30U0", hp: "204 hp", torque: "450 Nm", profileId: "n57d30u0-f10-525d" },   // I6 (Korai)
-    { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-f10-525d" } // I4 Twin Turbo (Későbbi)
+  "BMW-5 Series-F10/11/18 (2010-2017)-M5 Competition": [
+    { "code": "S63B44T0", "hp": "575 hp", "torque": "680 Nm", "profileId": "s63b44t0-f10-m5comp" },
+    { "code": "S63B44T1", "hp": "600 hp", "torque": "700 Nm", "profileId": "s63b44t1-f10-m5-30jahre" },
+    { "code": "S63B44T1", "hp": "600 hp", "torque": "700 Nm", "profileId": "s63b44t1-f10-m5comp-ed" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-530d": [
-    { code: "N57D30O0", hp: "245 hp", torque: "540 Nm", profileId: "n57d30o0-f10-530d" },
-    { code: "N57D30O1", hp: "258 hp", torque: "560 Nm", profileId: "n57d30o1-f10-530d-lci" }
+  "BMW-5 Series-F10/11/18 (2010-2017)-518d": [
+    { "code": "N47D20", "hp": "143 hp", "torque": "360 Nm", "profileId": "n47d20-f10-518d" },
+    { "code": "B47D20", "hp": "150 hp", "torque": "360 Nm", "profileId": "b47d20-f10-518d" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-535d": [
-    { code: "N57D30T0", hp: "300 hp", torque: "600 Nm", profileId: "n57d30t0-f10-535d" },
-    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f10-535d" }
+  "BMW-5 Series-F10/11/18 (2010-2017)-520d": [
+    { "code": "N47D20", "hp": "184 hp", "torque": "380 Nm", "profileId": "n47d20-f10-520d" },
+    { "code": "N47D20", "hp": "163 hp", "torque": "380 Nm", "profileId": "n47d20-f10-520d-ed" },
+    { "code": "B47D20", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20-f10-520d" },
+    { "code": "B47D20", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47d20-f10-520d-ed" }
   ],
-  "BMW-5 Series-F10/11/07/18 (2010-2017)-M550d": [
-    { code: "N57D30S1", hp: "381 hp", torque: "740 Nm", profileId: "n57d30s1-f10-m550d" } // Tri-Turbo
+  "BMW-5 Series-F10/11/18 (2010-2017)-525d": [
+    { "code": "N57D30U0", "hp": "204 hp", "torque": "450 Nm", "profileId": "n57d30u0-f10-525d" },
+    { "code": "N47D20T1", "hp": "218 hp", "torque": "450 Nm", "profileId": "n47d20t1-f10-525d" },
+    { "code": "N47D20T1", "hp": "211 hp", "torque": "450 Nm", "profileId": "n47d20t1-f10-525d-fleet" }
   ],
+  "BMW-5 Series-F10/11/18 (2010-2017)-530d": [
+    { "code": "N57D30O0", "hp": "245 hp", "torque": "540 Nm", "profileId": "n57d30o0-f10-530d" },
+    { "code": "N57D30O1", "hp": "258 hp", "torque": "560 Nm", "profileId": "n57d30o1-f10-530d" },
+    { "code": "N57D30O1", "hp": "211 hp", "torque": "540 Nm", "profileId": "n57d30o1-f10-530d-fleet" }
+  ],
+  "BMW-5 Series-F10/11/18 (2010-2017)-535d": [
+    { "code": "N57D30T0", "hp": "300 hp", "torque": "600 Nm", "profileId": "n57d30t0-f10-535d" },
+    { "code": "N57D30T1", "hp": "313 hp", "torque": "630 Nm", "profileId": "n57d30t1-f10-535d" },
+    { "code": "N57D30O1", "hp": "258 hp", "torque": "560 Nm", "profileId": "n57d30o1-f10-535d-us" }
+  ],
+  "BMW-5 Series-F10/11/18 (2010-2017)-M550d": [
+    { "code": "N57D30S1", "hp": "381 hp", "torque": "740 Nm", "profileId": "n57d30s1-f10-m550d" }
+  ],
+
+  // --- F07 (2009-2017) ---
+    "BMW-5 Series-F07 (2009-2017)-520i": [
+      { "code": "N20B20B", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20b-f07-520i" }
+    ],
+    "BMW-5 Series-F07 (2009-2017)-528i": [
+      { "code": "N20B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20a-f07-528i" }
+    ],
+    "BMW-5 Series-F07 (2009-2017)-535i": [
+      { "code": "N55B30M0", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30m0-f07-535i" }
+    ],
+    "BMW-5 Series-F07 (2009-2017)-550i": [
+      { "code": "N63B44O0", "hp": "407 hp", "torque": "600 Nm", "profileId": "n63b44o0-f07-550i" },
+      { "code": "N63B44O1", "hp": "450 hp", "torque": "650 Nm", "profileId": "n63b44o1-f07-550i-tu" }
+    ],
+    "BMW-5 Series-F07 (2009-2017)-520d": [
+      { "code": "N47D20O1", "hp": "184 hp", "torque": "380 Nm", "profileId": "n47d20o1-f07-520d" },
+      { "code": "B47D20O0", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20o0-f07-520d-b47" }
+    ],
+    "BMW-5 Series-F07 (2009-2017)-530d": [
+      { "code": "N57D30O0", "hp": "245 hp", "torque": "540 Nm", "profileId": "n57d30o0-f07-530d" },
+      { "code": "N57D30O1", "hp": "258 hp", "torque": "560 Nm", "profileId": "n57d30o1-f07-530d-tu" }
+    ],
+    "BMW-5 Series-F07 (2009-2017)-535d": [
+      { "code": "N57D30T0", "hp": "300 hp", "torque": "600 Nm", "profileId": "n57d30t0-f07-535d" },
+      { "code": "N57D30T1", "hp": "313 hp", "torque": "630 Nm", "profileId": "n57d30t1-f07-535d-tu" }
+    ],
 
   // --- F90 M5 (2017-2023) ---
   "BMW-5 Series-F90 (2017-2023)-M5": [
-    { code: "S63B44T4", hp: "600 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5" }
+    { code: "S63B44T4 Pre-LCI", hp: "600 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5" },
+    { code: "S63B44T4 LCI", hp: "600 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5-lci" },
   ],
   "BMW-5 Series-F90 (2017-2023)-M5 Competition": [
-    { code: "S63B44T4", hp: "625 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5comp" }
+    { code: "S63B44T4 Pre-LCI", hp: "625 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5comp" },
+    { code: "S63B44T4 LCI", hp: "625 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5comp-lci" }
   ],
   "BMW-5 Series-F90 (2017-2023)-M5 CS": [
-    { code: "S63B44T4", hp: "635 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5cs" }
+    { code: "S63B44T4 Pre-LCI", hp: "635 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5cs" },
+    { code: "S63B44T4 LCI", hp: "635 hp", torque: "750 Nm", profileId: "s63b44t4-f90-m5cs-lci" },
   ],
 
   // --- G30/G31 (2017-2023) ---
   "BMW-5 Series-G30/31/38 (2017-2023)-520i": [
-    { code: "B48B20A", hp: "184 hp", torque: "290 Nm", profileId: "b48b20a-g30-520i" }
+    { "code": "B48B20A", "hp": "184 hp", "torque": "290 Nm", "profileId": "b48b20a-g30-520i" },
+    { "code": "B48B20B", "hp": "184 hp", "torque": "290 Nm", "profileId": "b48b20b-g30-520i-detuned" },
+    { "code": "B48B16A", "hp": "170 hp", "torque": "250 Nm", "profileId": "b48b16a-g30-520i-1.6" }
   ],
   "BMW-5 Series-G30/31/38 (2017-2023)-530i": [
-    { code: "B48B20B", hp: "252 hp", torque: "350 Nm", profileId: "b48b20b-g30-530i" }
+    { "code": "B48B20B", "hp": "252 hp", "torque": "350 Nm", "profileId": "b48b20b-g30-530i" },
+    { "code": "B48B20D", "hp": "252 hp", "torque": "350 Nm", "profileId": "b48b20d-g30-530i-tu" },
+    { "code": "B46B20B", "hp": "252 hp", "torque": "350 Nm", "profileId": "b46b20b-g30-530i-sulev" }
+  ],
+  "BMW-5 Series-G30/31/38 (2017-2023)-520e": [
+    { "code": "B48B20A", "hp": "204 hp", "torque": "350 Nm", "profileId": "b48b20a-g30-520e" }
   ],
   "BMW-5 Series-G30/31/38 (2017-2023)-530e": [
-    { code: "B48B20A", hp: "252 hp", torque: "420 Nm", profileId: "b48b20a-g30-530e" },
-    { code: "B48B20A", hp: "292 hp", torque: "420 Nm", profileId: "b48b20a-g30-530e-lci" } // XtraBoost
+    { "code": "B48B20A", "hp": "252 hp", "torque": "420 Nm", "profileId": "b48b20a-g30-530e" },
+    { "code": "B48B20A", "hp": "292 hp", "torque": "420 Nm", "profileId": "b48b20a-g30-530e-xtra" },
+    { "code": "B46B20B", "hp": "252 hp", "torque": "420 Nm", "profileId": "b46b20b-g30-530e-sulev" }
   ],
   "BMW-5 Series-G30/31/38 (2017-2023)-540i": [
-    { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g30-540i" }
+    { "code": "B58B30M1", "hp": "340 hp", "torque": "450 Nm", "profileId": "b58b30m1-g30-540i" },
+    { "code": "B58B30C", "hp": "333 hp", "torque": "450 Nm", "profileId": "b58b30c-g30-540i-mh" }
   ],
-  "BMW-5 Series-G30/31/38 (2017-2023)-545e": [ // Hozzáadva: Sorhatos hibrid
-    { code: "B58B30C", hp: "394 hp", torque: "600 Nm", profileId: "b58b30c-g30-545e" }
+  "BMW-5 Series-G30/31/38 (2017-2023)-545e": [
+    { "code": "B58B30C", "hp": "394 hp", "torque": "600 Nm", "profileId": "b58b30c-g30-545e" }
   ],
   "BMW-5 Series-G30/31/38 (2017-2023)-M550i": [
-    { code: "N63B44O2", hp: "462 hp", torque: "650 Nm", profileId: "n63b44o2-g30-m550i" },
-    { code: "N63B44T3", hp: "530 hp", torque: "750 Nm", profileId: "n63b44t3-g30-m550i-tu" } // TU2/TU3
+    { "code": "N63B44O2", "hp": "462 hp", "torque": "650 Nm", "profileId": "n63b44o2-g30-m550i" },
+    { "code": "N63B44T3", "hp": "530 hp", "torque": "750 Nm", "profileId": "n63b44t3-g30-m550i-tu" }
   ],
-  "BMW-5 Series-G30/31/38 (2017-2023)-518d": [ // Hozzáadva: Belépő dízel
-    { code: "B47D20", hp: "150 hp", torque: "360 Nm", profileId: "b47d20-g30-518d" }
+  "BMW-5 Series-G30/31/38 (2017-2023)-518d": [
+    { "code": "B47D20", "hp": "150 hp", "torque": "360 Nm", "profileId": "b47d20-g30-518d" }
   ],
   "BMW-5 Series-G30/31/38 (2017-2023)-520d": [
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g30-520d" }
+    { "code": "B47D20O1", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20o1-g30-520d" },
+    { "code": "B47D20B", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20b-g30-520d-mh" }
   ],
-  "BMW-5 Series-G30/31/38 (2017-2023)-525d": [ // Hozzáadva: Biturbo 4-hengeres
-    { code: "B47D20", hp: "231 hp", torque: "500 Nm", profileId: "b47d20-g30-525d" }
+  "BMW-5 Series-G30/31/38 (2017-2023)-525d": [
+    { "code": "B47D20T1", "hp": "231 hp", "torque": "500 Nm", "profileId": "b47d20t1-g30-525d" }
   ],
   "BMW-5 Series-G30/31/38 (2017-2023)-530d": [
-    { code: "B57D30", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g30-530d" },
-    { code: "B57D30", hp: "286 hp", torque: "650 Nm", profileId: "b57d30-g30-530d-mh" } // Mild Hybrid
+    { "code": "B57D30O0", "hp": "265 hp", "torque": "620 Nm", "profileId": "b57d30o0-g30-530d" },
+    { "code": "B57D30O1", "hp": "286 hp", "torque": "650 Nm", "profileId": "b57d30o1-g30-530d-mh" }
   ],
   "BMW-5 Series-G30/31/38 (2017-2023)-540d": [
-    { code: "B57D30", hp: "320 hp", torque: "680 Nm", profileId: "b57d30-g30-540d" },
-    { code: "B57D30", hp: "340 hp", torque: "700 Nm", profileId: "b57d30-g30-540d-mh" } // Mild Hybrid
+    { "code": "B57D30T0", "hp": "320 hp", "torque": "680 Nm", "profileId": "b57d30t0-g30-540d" },
+    { "code": "B57D30T2", "hp": "340 hp", "torque": "700 Nm", "profileId": "b57d30t2-g30-540d-mh" }
   ],
   "BMW-5 Series-G30/31/38 (2017-2023)-M550d": [
-    { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g30-m550d" } // Quad-Turbo
+    { "code": "B57D30S0", "hp": "400 hp", "torque": "760 Nm", "profileId": "b57d30s0-g30-m550d" }
   ],
 
   // --- G60 (2023-present) ---
-  "BMW-5 Series-G60/61/68 (2023-present)-520": [
-    { code: "B48B20A", hp: "208 hp", torque: "330 Nm", profileId: "b48b20a-g60-520" } // Mild Hybrid (190+18hp)
+  "BMW-5 Series-G60/61/68 (2023-present)-520i": [
+    { "code": "B48B20O2", "hp": "208 hp", "torque": "330 Nm", "profileId": "b48b20o2-g60-520i" },
+    { "code": "B48B16O2", "hp": "170 hp", "torque": "250 Nm", "profileId": "b48b16o2-g60-520i-global" }
   ],
-  "BMW-5 Series-G60/61/68 (2023-present)-530": [
-    { code: "B48B20B", hp: "258 hp", torque: "400 Nm", profileId: "b48b20b-g60-530" }
+  "BMW-5 Series-G60/61/68 (2023-present)-530i": [
+    { "code": "B48B20M2", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20m2-g60-530i" },
+    { "code": "B46B20O2", "hp": "258 hp", "torque": "400 Nm", "profileId": "b46b20o2-g60-530i-sulev" }
+  ],
+  "BMW-5 Series-G60/61/68 (2023-present)-520e": [
+    { "code": "B48B20O2", "hp": "204 hp", "torque": "350 Nm", "profileId": "b48b20o2-g60-520e" }
   ],
   "BMW-5 Series-G60/61/68 (2023-present)-530e": [
-    { code: "B48B20B", hp: "299 hp", torque: "450 Nm", profileId: "b48b20b-g60-530e" }
+    { "code": "B48B20M2", "hp": "299 hp", "torque": "450 Nm", "profileId": "b48b20m2-g60-530e" }
   ],
-  "BMW-5 Series-G60/61/68 (2023-present)-540": [
-  { code: "B58B30M2", hp: "381 hp", torque: "540 Nm", profileId: "b58b30m2-g60-540" }
-],
+  "BMW-5 Series-G60/61/68 (2023-present)-540i": [
+    { "code": "B58B30M2", "hp": "381 hp", "torque": "540 Nm", "profileId": "b58b30m2-g60-540i" }
+  ],
   "BMW-5 Series-G60/61/68 (2023-present)-550e": [
-    { code: "B58B30", hp: "489 hp", torque: "700 Nm", profileId: "b58b30-g60-550e" }
+    { "code": "B58B30M2", "hp": "489 hp", "torque": "700 Nm", "profileId": "b58b30m2-g60-550e" }
   ],
   "BMW-5 Series-G60/61/68 (2023-present)-520d": [
-    { code: "B47D20", hp: "197 hp", torque: "400 Nm", profileId: "b47d20-g60-520d" } // Mild Hybrid
+    { "code": "B47D20O2", "hp": "197 hp", "torque": "400 Nm", "profileId": "b47d20o2-g60-520d" }
   ],
-  "BMW-5 Series-G60/61/68 (2023-present)-540d": [ // Hozzáadva: Sorhatos dízel
-    { code: "B57D30", hp: "299 hp", torque: "670 Nm", profileId: "b57d30-g60-540d" }
+  "BMW-5 Series-G60/61/68 (2023-present)-540d": [
+    { "code": "B57D30T2", "hp": "299 hp", "torque": "670 Nm", "profileId": "b57d30t2-g60-540d" }
   ],
 
   // --- G90 M5 (2024-present) ---
   "BMW-5 Series-G90/99 (2024-present)-M5": [
-    { code: "S68B44", hp: "727 hp", torque: "1000 Nm", profileId: "s68b44-g90-m5" }
+    { code: "S68B44T0", hp: "727 hp", torque: "1000 Nm", profileId: "s68b44-g90-m5" }
   ],
 
     // --- BMW 6 SERIES ---
    // --- E24 (1976-1989) ---
-  "BMW-6 Series-E24 (1976-1989)-628csi": [ // Hozzáadva
-    { code: "M30B28", hp: "184 hp", torque: "240 Nm", profileId: "m30b28-e24-628csi" }
+  "BMW-6 Series-E24 (1976-1989)-628csi": [
+    { "code": "M30B28", "hp": "184 hp", "torque": "240 Nm", "profileId": "m30b28-e24-628csi" }
   ],
-  "BMW-6 Series-E24 (1976-1989)-630cs": [ // Hozzáadva: Karburátoros
-    { code: "M30B30", hp: "185 hp", torque: "260 Nm", profileId: "m30b30-e24-630cs" }
+  "BMW-6 Series-E24 (1976-1989)-630cs": [
+    { "code": "M30B30", "hp": "185 hp", "torque": "260 Nm", "profileId": "m30b30-e24-630cs-carb" } // Solex porlasztóval
   ],
-  "BMW-6 Series-E24 (1976-1989)-633csi": [ // Hozzáadva
-    { code: "M30B32", hp: "197 hp", torque: "280 Nm", profileId: "m30b32-e24-633csi" }
+  "BMW-6 Series-E24 (1976-1989)-630csi": [
+    { "code": "M30B30", "hp": "176 hp", "torque": "250 Nm", "profileId": "m30b30-e24-630csi-us" } // L-Jetronic befecskendezővel
+  ],
+  "BMW-6 Series-E24 (1976-1989)-633csi": [
+    { "code": "M30B32", "hp": "197 hp", "torque": "280 Nm", "profileId": "m30b32-e24-633csi-euro" },
+    { "code": "M30B32", "hp": "181 hp", "torque": "265 Nm", "profileId": "m30b32-e24-633csi-us" }
   ],
   "BMW-6 Series-E24 (1976-1989)-635csi": [
-    { code: "M90", hp: "218 hp", torque: "310 Nm", profileId: "m90-e24-635csi-early" },      // Korai (3.5L)
-    { code: "M30B34", hp: "218 hp", torque: "310 Nm", profileId: "m30b34-e24-635csi" },     // Későbbi (3.4L)
-    { code: "M30B34", hp: "185 hp", torque: "290 Nm", profileId: "m30b34-e24-635csi-cat" }  // Katalizátoros (fojtott)
+    { "code": "M90", "hp": "218 hp", "torque": "310 Nm", "profileId": "m90-e24-635csi-m1-block" }, // Rövid löketű, korai 3.5L
+    { "code": "M30B34", "hp": "218 hp", "torque": "310 Nm", "profileId": "m30b34-e24-635csi-euro" }, // 3.4L Motronic
+    { "code": "M30B34", "hp": "185 hp", "torque": "290 Nm", "profileId": "m30b34-e24-635csi-cat" }, // Alacsony sűrítésű, katalizátoros
+    { "code": "M30B35", "hp": "211 hp", "torque": "305 Nm", "profileId": "m30b35-e24-635csi-highline" } // Kései, modernizált 3.5L
   ],
   "BMW-6 Series-E24 (1976-1989)-M635csi": [
-    { code: "M88/3", hp: "286 hp", torque: "340 Nm", profileId: "m88-e24-m635csi" }
+    { "code": "M88/3", "hp": "286 hp", "torque": "340 Nm", "profileId": "m88-e24-m635csi" }
   ],
-  "BMW-6 Series-E24 (1976-1989)-M6": [ // Hozzáadva: USA verzió
-    { code: "S38B35", hp: "256 hp", torque: "330 Nm", profileId: "s38b35-e24-m6-us" }
+  "BMW-6 Series-E24 (1976-1989)-M6": [
+    { "code": "S38B35", "hp": "256 hp", "torque": "330 Nm", "profileId": "s38b35-e24-m6" }
   ],
 
   // --- E63/E64 (2003-2010) ---

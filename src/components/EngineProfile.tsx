@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
     Gauge,
     Zap,
@@ -62,15 +62,53 @@ export function EngineProfile({ profile }: EngineProfileProps) {
   const baseNm = parseInt(profile.torque) || 400;
   const unlockPremium = () => setIsPremiumUnlocked(true);
 
-  // Preload 3D model smoothly as soon as the engine profile view is opened,
-  // so when the user switches to the 3D tab the model is already in cache.
+  const hardwareConcurrency = typeof navigator !== "undefined" ? navigator.hardwareConcurrency ?? 8 : 8;
+  const deviceMemory = typeof navigator !== "undefined" ? ((navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8) : 8;
+  const isLowEndDevice = hardwareConcurrency <= 6 || deviceMemory <= 4;
+
+  // Preload 3D model without blocking initial page interactivity.
+  // Parsing large GLBs can jank the whole UI if done immediately.
   useEffect(() => {
-    if (profile.model3DPath) {
-      // `useGLTF.preload` is a static helper, not a hook, so it is safe to call here.
-      // It only triggers the GLTF load, it does not render anything.
+    if (!profile.model3DPath) return;
+    if (isLowEndDevice) return;
+
+    let cancelled = false;
+    let timeoutId: number | undefined;
+    let idleId: number | undefined;
+
+    const doPreload = () => {
+      if (cancelled) return;
       (useGLTF as any).preload?.(profile.model3DPath, "/draco/");
+    };
+
+    // If user is already on the 3D tab, preload right away (still async fetch/parse).
+    // Otherwise, delay + run in idle time to keep the page responsive.
+    if (activeVisualTab === "3d") {
+      timeoutId = window.setTimeout(doPreload, 50);
+    } else {
+      timeoutId = window.setTimeout(() => {
+        const ric = (window as any).requestIdleCallback as undefined | ((cb: () => void, opts?: { timeout: number }) => number);
+        if (ric) idleId = ric(doPreload, { timeout: 2000 });
+        else doPreload();
+      }, 2500);
     }
-  }, [profile.model3DPath]);
+
+    return () => {
+      cancelled = true;
+      if (timeoutId) window.clearTimeout(timeoutId);
+      const cic = (window as any).cancelIdleCallback as undefined | ((id: number) => void);
+      if (cic && idleId) cic(idleId);
+    };
+  }, [profile.model3DPath, activeVisualTab, isLowEndDevice]);
+
+  const tuningData = useMemo(() => {
+    return [
+      profile.tuningGraphData?.stock || { hp: baseHp, nm: baseNm },
+      profile.tuningGraphData?.stage1 || { hp: Math.round(baseHp * 1.1), nm: Math.round(baseNm * 1.1) },
+      profile.tuningGraphData?.stage2 || { hp: Math.round(baseHp * 1.2), nm: Math.round(baseNm * 1.2) },
+      profile.tuningGraphData?.stage3 || { hp: Math.round(baseHp * 1.4), nm: Math.round(baseNm * 1.4) },
+    ];
+  }, [profile.tuningGraphData, baseHp, baseNm]);
 
   return (
     <div className="w-full max-w-6xl mx-auto space-y-6 animate-slide-up">
@@ -229,7 +267,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                   {/* TARTALOM: Enyhébb blur, jobban látszik a szöveg */}
                   <div className={cn(
                       "flex flex-col h-full transition-all duration-500", 
-                      !isPremiumUnlocked && "filter blur-[4px] opacity-70 select-none pointer-events-none grayscale-[0.5]"
+                      !isPremiumUnlocked && "opacity-60 select-none pointer-events-none grayscale-[0.5]"
                   )}>
                      <div className="text-xs font-bold text-muted-foreground uppercase mb-1">Manual Gearbox</div>
                      <div className="text-lg font-bold text-foreground mb-3">{profile.transmission.manual.name}</div>
@@ -259,7 +297,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                   {/* TARTALOM: Enyhébb blur itt is */}
                   <div className={cn(
                       "flex flex-col h-full transition-all duration-500", 
-                      !isPremiumUnlocked && "filter blur-[4px] opacity-70 select-none pointer-events-none grayscale-[0.5]"
+                      !isPremiumUnlocked && "opacity-60 select-none pointer-events-none grayscale-[0.5]"
                   )}>
                      <div className="text-xs font-bold text-accent uppercase mb-1">Automatic Option {idx + 1 > 1 ? idx + 1 : ""}</div>
                      <div className="text-lg font-bold text-foreground mb-3">{auto.name}</div>
@@ -376,7 +414,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
               {/* Ha nincs feloldva: erős homályosítás (blur-[6px]) és kattintás tiltás */}
               <div className={cn(
                   "grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-500", 
-                  !isPremiumUnlocked && "blur-[6px] opacity-60 select-none pointer-events-none grayscale-[0.5]"
+                  !isPremiumUnlocked && "opacity-50 select-none pointer-events-none grayscale-[0.5]"
               )}>
                 <div className="bg-secondary/50 rounded-lg p-4 border-l-4 border-amber-500">
                   <span className="block text-[10px] uppercase text-muted-foreground mb-1">City</span>
@@ -599,7 +637,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                  */}
                  <div className={cn(
                      "grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500", 
-                     !isPremiumUnlocked && "filter blur-[5px] opacity-50 select-none pointer-events-none grayscale-[0.8]"
+                     !isPremiumUnlocked && "opacity-45 select-none pointer-events-none grayscale-[0.8]"
                  )}>
                     {profile.recommendedParts.parts.slice(2).map((part, idx) => (
                       <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-primary/5 border border-primary/10">
@@ -644,7 +682,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                  {/* TARTALOM (BLUR HA ZÁRVA VAN) */}
                  <div className={cn(
                     "grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500",
-                    !isPremiumUnlocked && "filter blur-[5px] opacity-50 select-none pointer-events-none grayscale-[0.8]"
+                    !isPremiumUnlocked && "opacity-45 select-none pointer-events-none grayscale-[0.8]"
                  )}>
                     {profile.oemPlusUpgrades.map((upgrade, idx) => (
                       <div key={idx} className="p-5 rounded-xl bg-gradient-to-br from-blue-50/50 to-white border border-blue-100/60 shadow-sm hover:shadow-md transition-all group">
@@ -896,7 +934,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                         <div className={cn(
                             "w-full md:w-1/4 bg-emerald-50/50 p-3 rounded-lg md:bg-transparent md:p-0 border border-emerald-100 md:border-none pl-4 transition-all duration-500",
                             // HA LE VAN ZÁRVA: Blur + Opacity + Select tiltás
-                            !isPremiumUnlocked && "filter blur-[5px] opacity-40 select-none pointer-events-none grayscale-[0.5]"
+                            !isPremiumUnlocked && "opacity-35 select-none pointer-events-none grayscale-[0.5]"
                         )}>
                           <div className="text-[10px] md:hidden font-bold text-emerald-600 uppercase mb-1">Smart Choice</div>
                           <div className="font-mono text-sm font-bold text-slate-700">{item.crossRef.code}</div>
@@ -1055,13 +1093,6 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
                 {/* 3. TUNING LAB NÉZET (BLURRED IF LOCKED) */}
                 {activeVisualTab === 'tuning' && (() => {
-                  const tuningData = [
-                    profile.tuningGraphData?.stock || { hp: baseHp, nm: baseNm },
-                    profile.tuningGraphData?.stage1 || { hp: Math.round(baseHp * 1.1), nm: Math.round(baseNm * 1.1) },
-                    profile.tuningGraphData?.stage2 || { hp: Math.round(baseHp * 1.2), nm: Math.round(baseNm * 1.2) },
-                    profile.tuningGraphData?.stage3 || { hp: Math.round(baseHp * 1.4), nm: Math.round(baseNm * 1.4) },
-                  ];
-
                   const currentData = tuningData[graphStage];
                   const stockData = tuningData[0];
 
@@ -1072,7 +1103,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                     {/* TARTALOM WRAPPER: Ez kapja a homályosítást */}
                     <div className={cn(
                         "flex flex-col gap-0 transition-all duration-500",
-                        !isPremiumUnlocked && "filter blur-[5px] opacity-40 select-none pointer-events-none grayscale-[0.8]"
+                        !isPremiumUnlocked && "opacity-35 select-none pointer-events-none grayscale-[0.8]"
                     )}>
                         
                         {/* FELSŐ RÉSZ: GRAFIKON ÉS VEZÉRLŐK */}
@@ -1268,7 +1299,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
             <div className="px-6 pb-6 pt-11 flex-grow">
               <p className={cn(
                 "text-lg text-slate-300 italic leading-relaxed transition-all duration-500", 
-                !isPremiumUnlocked && "filter blur-[3px] opacity-50 select-none pointer-events-none"
+                !isPremiumUnlocked && "opacity-45 select-none pointer-events-none"
               )}>
                 "{profile.drivingExperience}"
               </p>
@@ -1307,7 +1338,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                 */}
                 <p className={cn(
                   "text-lg text-foreground/90 italic leading-relaxed transition-all duration-500",
-                  !isPremiumUnlocked && "filter blur-[4.5px] opacity-70 select-none pointer-events-none grayscale-[0.5]"
+                  !isPremiumUnlocked && "opacity-60 select-none pointer-events-none grayscale-[0.5]"
                 )}>
                   "{profile.mechanicVerdict}"
                 </p>
@@ -1340,7 +1371,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                 <div className="relative">
                     <div className={cn(
                         "text-3xl font-bold text-foreground transition-all duration-500",
-                        !isPremiumUnlocked && "filter blur-md opacity-50 select-none pointer-events-none grayscale"
+                        !isPremiumUnlocked && "opacity-45 select-none pointer-events-none grayscale"
                     )}>
                          {/* Levágjuk a '/ year' részt az adatról, hogy ne legyen duplázás */}
                         {profile.repairCostEstimate ? profile.repairCostEstimate.replace(/\/ year/i, '').trim() : "N/A"}
@@ -1392,7 +1423,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                 */}
                 <div className={cn(
                   "grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500",
-                  !isPremiumUnlocked && "filter blur-[5px] opacity-50 select-none pointer-events-none grayscale-[0.8]"
+                  !isPremiumUnlocked && "opacity-45 select-none pointer-events-none grayscale-[0.8]"
                 )}>
                   {profile.sisterModels.map((model, idx) => (
                     <div key={idx} className="flex flex-col p-4 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
