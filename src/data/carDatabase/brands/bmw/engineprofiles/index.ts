@@ -7,6 +7,7 @@ import { fourthProfiles } from "./4series";
 import { fifthtof10Profiles } from "./5seriestof10";
 import { fifthfromf07Profiles } from "./5seriesfromf07";
 import { sixthProfiles } from "./6series";
+import { seventhProfiles } from "./7series";
 
 
 
@@ -20,6 +21,7 @@ export const bmwEngineProfiles: EngineProfile[] = [
 ...fifthtof10Profiles,
 ...fifthfromf07Profiles,
 ...sixthProfiles,
+...seventhProfiles,
 
 
 

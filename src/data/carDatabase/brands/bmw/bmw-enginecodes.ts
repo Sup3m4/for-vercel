@@ -1199,331 +1199,219 @@ export const bmwEngineCodes = {
 
   // --- E63/E64 (2003-2010) ---
   "BMW-6 Series-E63/64 (2003-2010)-630i": [
-    { code: "N52B30", hp: "258 hp", torque: "300 Nm", profileId: "n52b30-e63-630i" }, // Pre-LCI
-    { code: "N53B30", hp: "272 hp", torque: "320 Nm", profileId: "n53b30-e63-630i" } // LCI (Direct Injection)
+    { "code": "N52B30O0", "hp": "258 hp", "torque": "300 Nm", "profileId": "n52b30o0-e63-630i" },
+    { "code": "N53B30O0", "hp": "272 hp", "torque": "320 Nm", "profileId": "n53b30o0-e63-630i" }
   ],
   "BMW-6 Series-E63/64 (2003-2010)-645Ci": [
-    { code: "N62B44", hp: "333 hp", torque: "450 Nm", profileId: "n62b44-e63-645ci" }
+    { "code": "N62B44O0", "hp": "333 hp", "torque": "450 Nm", "profileId": "n62b44o0-e63-645ci" }
   ],
   "BMW-6 Series-E63/64 (2003-2010)-650i": [
-    { code: "N62B48", hp: "367 hp", torque: "490 Nm", profileId: "n62b48-e63-650i" }
+    { "code": "N62B48O1", "hp": "367 hp", "torque": "490 Nm", "profileId": "n62b48o1-e63-650i" }
   ],
   "BMW-6 Series-E63/64 (2003-2010)-M6": [
-    { code: "S85B50", hp: "507 hp", torque: "520 Nm", profileId: "s85b50-e63-m6" }
+    { "code": "S85B50A", "hp": "507 hp", "torque": "520 Nm", "profileId": "s85b50a-e63-m6" }
   ],
   "BMW-6 Series-E63/64 (2003-2010)-635d": [
-    { code: "M57D30T2", hp: "286 hp", torque: "580 Nm", profileId: "m57d30t2-e63-635d" } // Twin Turbo
+    { "code": "M57D30T2", "hp": "286 hp", "torque": "580 Nm", "profileId": "m57d30t2-e63-635d" }
   ],
 
   // --- F12/F13/F06 (2011-2018) ---
   "BMW-6 Series-F12/13/06 (2011-2018)-640i": [
-    { code: "N55B30M0", hp: "320 hp", torque: "450 Nm", profileId: "n55b30m0-f12-640i" }
+    { "code": "N55B30M0", "hp": "320 hp", "torque": "450 Nm", "profileId": "n55b30m0-f12-640i" }
   ],
   "BMW-6 Series-F12/13/06 (2011-2018)-650i": [
-    { code: "N63B44", hp: "407 hp", torque: "600 Nm", profileId: "n63b44-f12-650i" },    // Pre-LCI
-    { code: "N63B44TU", hp: "450 hp", torque: "650 Nm", profileId: "n63b44tu-f12-650i" } // LCI (Updated V8)
+    { "code": "N63B44O0", "hp": "407 hp", "torque": "600 Nm", "profileId": "n63b44o0-f12-650i" },
+    { "code": "N63B44O1", "hp": "450 hp", "torque": "650 Nm", "profileId": "n63b44o1-f12-650i-tu" }
   ],
   "BMW-6 Series-F12/13/06 (2011-2018)-M6": [
-    { code: "S63B44TU", hp: "560 hp", torque: "680 Nm", profileId: "s63b44tu-f12-m6" }
+    { "code": "S63B44T0", "hp": "560 hp", "torque": "680 Nm", "profileId": "s63b44t0-f12-m6" }
   ],
-  "BMW-6 Series-F12/13/06 (2011-2018)-M6 Competition": [ // Hozzáadva
-    { code: "S63B44TU", hp: "575 hp", torque: "680 Nm", profileId: "s63b44tu-f12-m6comp" },
-    { code: "S63B44TU", hp: "600 hp", torque: "700 Nm", profileId: "s63b44tu-f12-m6comp-lci" }
+  "BMW-6 Series-F12/13/06 (2011-2018)-M6 Competition": [
+    { "code": "S63B44T0", "hp": "575 hp", "torque": "680 Nm", "profileId": "s63b44t0-f12-m6-comp" },
+    { "code": "S63B44T0", "hp": "600 hp", "torque": "700 Nm", "profileId": "s63b44t0-f12-m6-comp-30" }
   ],
   "BMW-6 Series-F12/13/06 (2011-2018)-640d": [
-    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f12-640d" }
+    { "code": "N57D30T1", "hp": "313 hp", "torque": "630 Nm", "profileId": "n57d30t1-f12-640d" }
   ],
 
   // --- G32 Gran Turismo (2017-2023) ---
   "BMW-6 Series-G32 (2017-2023)-630i": [
-    { code: "B48B20B", hp: "258 hp", torque: "400 Nm", profileId: "b48b20b-g32-630i" }
+    { "code": "B48B20B", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20b-g32-630i" },
+    { "code": "B48B20D", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20d-g32-630i-tu" },
+    { "code": "B46B20B", "hp": "258 hp", "torque": "400 Nm", "profileId": "b46b20b-g32-630i-sulev" }
   ],
   "BMW-6 Series-G32 (2017-2023)-640i": [
-    { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g32-640i" }
+    { "code": "B58B30M1", "hp": "340 hp", "torque": "450 Nm", "profileId": "b58b30m1-g32-640i" },
+    { "code": "B58B30C", "hp": "333 hp", "torque": "450 Nm", "profileId": "b58b30c-g32-640i-mh" }
   ],
-  "BMW-6 Series-G32 (2017-2023)-620d": [ // Hozzáadva: Belépő dízel
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g32-620d" }
+  "BMW-6 Series-G32 (2017-2023)-620d": [
+    { "code": "B47D20O1", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20o1-g32-620d" },
+    { "code": "B47D20B", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20b-g32-620d-mh" }
   ],
   "BMW-6 Series-G32 (2017-2023)-630d": [
-    { code: "B57D30", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g32-630d" }
+    { "code": "B57D30O0", "hp": "265 hp", "torque": "620 Nm", "profileId": "b57d30o0-g32-630d" },
+    { "code": "B57D30O1", "hp": "286 hp", "torque": "650 Nm", "profileId": "b57d30o1-g32-630d-mh" }
   ],
-  "BMW-6 Series-G32 (2017-2023)-640d": [ // Hozzáadva: Csúcs dízel
-    { code: "B57D30T0", hp: "320 hp", torque: "680 Nm", profileId: "b57d30t0-g32-640d" }
+  "BMW-6 Series-G32 (2017-2023)-640d": [
+    { "code": "B57D30T0", "hp": "320 hp", "torque": "680 Nm", "profileId": "b57d30t0-g32-640d" },
+    { "code": "B57D30T2", "hp": "340 hp", "torque": "700 Nm", "profileId": "b57d30t2-g32-640d-mh" }
   ],
 
     // --- BMW 7 SERIES ---
-   // --- E23 (1977-1986) ---
-   "BMW-7 Series-E23 (1977-1986)-725i": [
-     { code: "M30B25", hp: "150 hp", torque: "211 Nm", profileId: "m30b25-e23-725i" }
-  ],
-  "BMW-7 Series-E23 (1977-1986)-728": [ // Hozzáadva: Karburátoros
-    { code: "M30B28", hp: "170 hp", torque: "238 Nm", profileId: "m30b28-e23-728" }
-  ],
-  "BMW-7 Series-E23 (1977-1986)-728i": [ // Hozzáadva
-    { code: "M30B28", hp: "184 hp", torque: "240 Nm", profileId: "m30b28-e23-728i" }
-  ],
-  "BMW-7 Series-E23 (1977-1986)-730": [ // Karburátoros
-     { code: "M30B30", hp: "184 hp", torque: "255 Nm", profileId: "m30b30-e23-730" }
-  ],
-  "BMW-7 Series-E23 (1977-1986)-730i": [
-     { code: "M30B30", hp: "188 hp", torque: "260 Nm", profileId: "m30b30-e23-730i" }
-  ],
-  "BMW-7 Series-E23 (1977-1986)-732i": [ // Hozzáadva: A világ első digitális motorvezérlése (Motronic)
-    { code: "M30B32", hp: "197 hp", torque: "280 Nm", profileId: "m30b32-e23-732i" }
-  ],
-  "BMW-7 Series-E23 (1977-1986)-733i": [
-     { code: "M30B32", hp: "197 hp", torque: "280 Nm", profileId: "m30b32-e23-733i" }
-  ],
-  "BMW-7 Series-E23 (1977-1986)-735i": [ // Hozzáadva
-    { code: "M30B35", hp: "218 hp", torque: "310 Nm", profileId: "m30b35-e23-735i" }
-  ],
-  "BMW-7 Series-E23 (1977-1986)-745i": [ // Hozzáadva: A legendás turbós modell
-    { code: "M102", hp: "252 hp", torque: "380 Nm", profileId: "m102-e23-745i-32" }, // 3.2L Turbo
-    { code: "M106", hp: "252 hp", torque: "380 Nm", profileId: "m106-e23-745i-34" }  // 3.4L Turbo
-  ],
-
-  // --- E32 (1986-1994) ---
-  "BMW-7 Series-E32 (1986-1994)-730i": [ // Hozzáadva
-    { code: "M30B30", hp: "188 hp", torque: "260 Nm", profileId: "m30b30-e32-730i" }, // Sorhat
-    { code: "M60B30", hp: "218 hp", torque: "290 Nm", profileId: "m60b30-e32-730i-v8" },
-
-  ],
-  "BMW-7 Series-E32 (1986-1994)-730iL": [
-    { code: "M60B30", hp: "218 hp", torque: "290 Nm", profileId: "m60b30-e32-730i-v8" },
-  ],
-  "BMW-7 Series-E32 (1986-1994)-735i": [ // Hozzáadva
-    { code: "M30B35", hp: "211 hp", torque: "305 Nm", profileId: "m30b35-e32-735i" }
-  ],
-  "BMW-7 Series-E32 (1986-1994)-735iL": [
-    { code: "M60B35", hp: "211 hp", torque: "305 Nm", profileId: "m60b35-e32-735i" },
-  ],
-  "BMW-7 Series-E32 (1986-1994)-740i": [ // Hozzáadva
-    { code: "M60B40", hp: "286 hp", torque: "400 Nm", profileId: "m60b40-e32-740i" }
-  ],
-  "BMW-7 Series-E32 (1986-1994)-740iL": [
-    { code: "M60B40", hp: "286 hp", torque: "400 Nm", profileId: "m60b40-e32-740i" },
-  ],
-  "BMW-7 Series-E32 (1986-1994)-750i": [ // Hozzáadva: Németország első háború utáni V12-ese
-    { code: "M70B50", hp: "300 hp", torque: "450 Nm", profileId: "m70b50-e32-750i" }
-  ],
-  "BMW-7 Series-E32 (1986-1994)-750iL": [
-    { code: "M70B50", hp: "300 hp", torque: "450 Nm", profileId: "m70b50-e32-750i" },
-  ],
 
   // --- E38 (1994-2001) ---
-  "BMW-7 Series-E38 (1994-2001)-728i": [
-    { code: "M52B28", hp: "193 hp", torque: "280 Nm", profileId: "m52b28-e38-728i" },
-    { code: "M52TUB28", hp: "193 hp", torque: "280 Nm", profileId: "m52tub28-e38-728i" } // Double Vanos
+  "BMW-7 Series-E38 (1994-2001)-728i/iL": [
+    { "code": "M52B28", "hp": "193 hp", "torque": "280 Nm", "profileId": "m52b28-e38-728-sv" },
+    { "code": "M52TUB28", "hp": "193 hp", "torque": "280 Nm", "profileId": "m52tub28-e38-728-dv" }
   ],
-  "BMW-7 Series-E38 (1994-2001)-728iL": [
-    { code: "M52B28", hp: "193 hp", torque: "280 Nm", profileId: "m52b28-e38-728i" },
-    { code: "M52TUB28", hp: "193 hp", torque: "280 Nm", profileId: "m52tub28-e38-728i" } // Double Vanos
+  "BMW-7 Series-E38 (1994-2001)-730i/iL": [
+    { "code": "M60B30", "hp": "218 hp", "torque": "290 Nm", "profileId": "m60b30-e38-730" }
   ],
-  "BMW-7 Series-E38 (1994-2001)-730i": [
-    { code: "M60B30", hp: "218 hp", torque: "290 Nm", profileId: "m60b30-e38-730i" }
+  "BMW-7 Series-E38 (1994-2001)-735i/iL": [
+    { "code": "M62B35", "hp": "235 hp", "torque": "320 Nm", "profileId": "m62b35-e38-735-nv" },
+    { "code": "M62TUB35", "hp": "238 hp", "torque": "345 Nm", "profileId": "m62tub35-e38-735-tu" }
   ],
-  "BMW-7 Series-E38 (1994-2001)-730iL": [
-    { code: "M60B30", hp: "218 hp", torque: "290 Nm", profileId: "m60b30-e38-730i" },
-    { code: "M60TUB30", hp: "218 hp", torque: "290 Nm", profileId: "m60tub30-e38-730i" } // Double Vanos
+  "BMW-7 Series-E38 (1994-2001)-740i/iL": [
+    { "code": "M60B40", "hp": "286 hp", "torque": "400 Nm", "profileId": "m60b40-e38-740-4.0" },
+    { "code": "M62B44", "hp": "286 hp", "torque": "420 Nm", "profileId": "m62b44-e38-740-nv" },
+    { "code": "M62TUB44", "hp": "286 hp", "torque": "440 Nm", "profileId": "m62tub44-e38-740-tu" }
   ],
-  "BMW-7 Series-E38 (1994-2001)-735i": [ // Hozzáadva: 3.5L V8
-    { code: "M62B35", hp: "235 hp", torque: "320 Nm", profileId: "m62b35-e38-735i" },
-    { code: "M62TUB35", hp: "238 hp", torque: "345 Nm", profileId: "m62tub35-e38-735i" } // Vanos
+  "BMW-7 Series-E38 (1994-2001)-750i/iL/L7": [
+    { "code": "M73B54", "hp": "326 hp", "torque": "490 Nm", "profileId": "m73b54-e38-750-early" },
+    { "code": "M73TUB54", "hp": "326 hp", "torque": "490 Nm", "profileId": "m73tub54-e38-750-tu" }
   ],
-  "BMW-7 Series-E38 (1994-2001)-735iL": [
-    { code: "M62B35", hp: "235 hp", torque: "320 Nm", profileId: "m62b35-e38-735i" },
-    { code: "M62TUB35", hp: "238 hp", torque: "345 Nm", profileId: "m62tub35-e38-735i" } // Vanos
-  ],
-  "BMW-7 Series-E38 (1994-2001)-740i": [
-    { code: "M60B40", hp: "286 hp", torque: "400 Nm", profileId: "m60b40-e38-740i" },     // 4.0L
-    { code: "M62B44", hp: "286 hp", torque: "420 Nm", profileId: "m62b44-e38-740i" },     // 4.4L
-    { code: "M62TUB44", hp: "286 hp", torque: "440 Nm", profileId: "m62tub44-e38-740i" }  // 4.4L Vanos
-  ],
-  "BMW-7 Series-E38 (1994-2001)-740iL": [
-    { code: "M60B40", hp: "286 hp", torque: "400 Nm", profileId: "m60b40-e38-740i" },
-    { code: "M62TUB44", hp: "286 hp", torque: "440 Nm", profileId: "m62tub44-e38-740i" } // Double Vanos
-  ],
-  "BMW-7 Series-E38 (1994-2001)-750i": [
-    { code: "M73B54", hp: "326 hp", torque: "490 Nm", profileId: "m73b54-e38-750i" }
-  ],
-  "BMW-7 Series-E38 (1994-2001)-750iL": [
-    { code: "M73B54", hp: "326 hp", torque: "490 Nm", profileId: "m73b54-e38-750i" },
-    { code: "M73TUB54", hp: "326 hp", torque: "490 Nm", profileId: "m73tub54-e38-750i" } // Double Vanos
-  ],
-  "BMW-7 Series-E38 (1994-2001)-725tds": [ // Hozzáadva: Belépő dízel
-    { code: "M51D25", hp: "143 hp", torque: "280 Nm", profileId: "m51d25-e38-725tds" }
+  "BMW-7 Series-E38 (1994-2001)-725tds": [
+    { "code": "M51D25TU", "hp": "143 hp", "torque": "280 Nm", "profileId": "m51d25-e38-725tds" }
   ],
   "BMW-7 Series-E38 (1994-2001)-730d": [
-    { code: "M57D30", hp: "184 hp", torque: "390 Nm", profileId: "m57d30-e38-730d" },
-    { code: "M57D30", hp: "193 hp", torque: "410 Nm", profileId: "m57d30-e38-730d-upd" } // Update
+    { "code": "M57D30", "hp": "184 hp", "torque": "390 Nm", "profileId": "m57d30-e38-730d-184" },
+    { "code": "M57D30", "hp": "193 hp", "torque": "410 Nm", "profileId": "m57d30-e38-730d-193" }
   ],
-  "BMW-7 Series-E38 (1994-2001)-740d": [ // Hozzáadva: Ritka V8 dízel
-    { code: "M67D39", hp: "245 hp", torque: "560 Nm", profileId: "m67d39-e38-740d" }
+  "BMW-7 Series-E38 (1994-2001)-740d": [
+    { "code": "M67D39", "hp": "245 hp", "torque": "560 Nm", "profileId": "m67d39-e38-740d" }
   ],
 
   // --- E65/E66 (2001-2008) ---
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-730i": [
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-e65-730i" }, // Pre-LCI
-    { code: "N52B30", hp: "258 hp", torque: "300 Nm", profileId: "n52b30-e65-730i" } // LCI
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-730i/Li": [
+    { "code": "M54B30", "hp": "231 hp", "torque": "300 Nm", "profileId": "m54b30-e65-730i" },
+    { "code": "N52B30O0", "hp": "258 hp", "torque": "300 Nm", "profileId": "n52b30o0-e65-730i-updated" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-730Li": [
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-e65-730i" }, // Pre-LCI
-    { code: "N52B30", hp: "258 hp", torque: "300 Nm", profileId: "n52b30-e65-730i" } // LCI
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-735i/Li": [
+    { "code": "N62B36O0", "hp": "272 hp", "torque": "360 Nm", "profileId": "n62b36o0-e65-735i" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-735i": [ // Hozzáadva: 3.6L V8 (Pre-LCI)
-    { code: "N62B36", hp: "272 hp", torque: "360 Nm", profileId: "n62b36-e65-735i" }
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-740i/Li": [
+    { "code": "N62B40O1", "hp": "306 hp", "torque": "390 Nm", "profileId": "n62b40o1-e65-740i" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-735Li": [
-    { code: "N62B36", hp: "272 hp", torque: "360 Nm", profileId: "n62b36-e65-735i" },
-    { code: "N62TUB36", hp: "272 hp", torque: "360 Nm", profileId: "n62tub36-e65-735i" } // Double Vanos
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-745i/Li": [
+    { "code": "N62B44O0", "hp": "333 hp", "torque": "450 Nm", "profileId": "n62b44o0-e65-745i" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-740i": [ // Hozzáadva: 4.0L V8 (LCI)
-    { code: "N62B40", hp: "306 hp", torque: "390 Nm", profileId: "n62b40-e65-740i" }
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-750i/Li": [
+    { "code": "N62B48O1", "hp": "367 hp", "torque": "490 Nm", "profileId": "n62b48o1-e65-750i" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-740Li": [
-    { code: "N62B40", hp: "306 hp", torque: "390 Nm", profileId: "n62b40-e65-740i" },
-    { code: "N62TUB40", hp: "306 hp", torque: "390 Nm", profileId: "n62tub40-e65-740i" } // Double Vanos
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-760i/Li": [
+    { "code": "N73B60O0", "hp": "445 hp", "torque": "600 Nm", "profileId": "n73b60o0-e65-760i" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-745i": [
-    { code: "N62B44", hp: "333 hp", torque: "450 Nm", profileId: "n62b44-e65-745i" }
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-Alpina B7": [
+    { "code": "H1", "hp": "500 hp", "torque": "700 Nm", "profileId": "h1-e65-alpina-b7" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-745Li": [
-    { code: "N62B44", hp: "333 hp", torque: "450 Nm", profileId: "n62b44-e65-745i" },
-    { code: "N62TUB44", hp: "333 hp", torque: "450 Nm", profileId: "n62tub44-e65-745i" } // Double Vanos
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-730d/Ld": [
+    { "code": "M57D30TU", "hp": "218 hp", "torque": "500 Nm", "profileId": "m57d30tu-e65-730d" },
+    { "code": "M57D30TU2", "hp": "231 hp", "torque": "520 Nm", "profileId": "m57d30tu2-e65-730d-updated" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-750i": [
-    { code: "N62B48", hp: "367 hp", torque: "490 Nm", profileId: "n62b48-e65-750i" }
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-740d": [
+    { "code": "M67D39TU", "hp": "258 hp", "torque": "600 Nm", "profileId": "m67d39tu-e65-740d" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-750Li": [
-    { code: "N62B48", hp: "367 hp", torque: "490 Nm", profileId: "n62b48-e65-750i" },
-    { code: "N62TUB48", hp: "367 hp", torque: "490 Nm", profileId: "n62tub48-e65-750i" } // Double Vanos
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-745d": [
+    { "code": "M67D44O1", "hp": "300 hp", "torque": "700 Nm", "profileId": "m67d44o1-e65-745d" },
+    { "code": "M67D44O2", "hp": "330 hp", "torque": "750 Nm", "profileId": "m67d44o2-e65-745d-updated" }
   ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-760i": [
-    { code: "N73B60", hp: "445 hp", torque: "600 Nm", profileId: "n73b60-e65-760i" } // V12 Direct Injection
-  ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-760Li": [
-    { code: "N73B60", hp: "445 hp", torque: "600 Nm", profileId: "n73b60-e65-760i" },
-    { code: "N73TUB60", hp: "445 hp", torque: "600 Nm", profileId: "n73tub60-e65-760i" } // Double Vanos
-  ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-730d": [
-    { code: "M57D30TU", hp: "218 hp", torque: "500 Nm", profileId: "m57d30tu-e65-730d" },
-    { code: "M57D30TU2", hp: "231 hp", torque: "520 Nm", profileId: "m57d30tu2-e65-730d" } // LCI
-  ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-740d": [ // Hozzáadva: V8 Dízel
-    { code: "M67D39TU", hp: "258 hp", torque: "600 Nm", profileId: "m67d39tu-e65-740d" }
-  ],
-  "BMW-7 Series-E65/66/67/68 (2001-2008)-745d": [ // Hozzáadva: V8 Dízel LCI
-    { code: "M67D44", hp: "330 hp", torque: "750 Nm", profileId: "m67d44-e65-745d" }
+  "BMW-7 Series-E65/66/67/68 (2001-2008)-Hydrogen 7": [
+    { "code": "N73B60O0", "hp": "260 hp", "torque": "390 Nm", "profileId": "n73b60o0-e68-h7" }
   ],
 
   // --- F01/F02 (2008-2015) ---
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-730i": [
-    { code: "N52B30", hp: "258 hp", torque: "310 Nm", profileId: "n52b30-f01-730i" }
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-730i/Li": [
+    { "code": "N52B30AF", "hp": "258 hp", "torque": "310 Nm", "profileId": "n52b30af-f01-730i" },
+    { "code": "N52B30BF", "hp": "272 hp", "torque": "315 Nm", "profileId": "n52b30bf-f01-730i-global" }
   ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-730Li": [
-    { code: "N52B30", hp: "258 hp", torque: "310 Nm", profileId: "n52b30-f01-730i" },
-    { code: "N52TUB30", hp: "258 hp", torque: "310 Nm", profileId: "n52tub30-f01-730i" } // Double Vanos
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-740i/Li": [
+    { "code": "N54B30A", "hp": "326 hp", "torque": "450 Nm", "profileId": "n54b30a-f01-740i" },
+    { "code": "N55B30A", "hp": "320 hp", "torque": "450 Nm", "profileId": "n55b30a-f01-740i-tu" }
   ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-740i": [
-    { code: "N54B30O0", hp: "326 hp", torque: "450 Nm", profileId: "n54b30o0-f01-740i" }, // Twin Turbo
-    { code: "N55B30M0", hp: "320 hp", torque: "450 Nm", profileId: "n55b30m0-f01-740i" }  // Single Turbo (LCI)
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-750i/Li": [
+    { "code": "N63B44A", "hp": "408 hp", "torque": "600 Nm", "profileId": "n63b44a-f01-750i" },
+    { "code": "N63B44B", "hp": "450 hp", "torque": "650 Nm", "profileId": "n63b44b-f01-750i-tu" }
   ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-740Li": [
-    { code: "N54B30", hp: "326 hp", torque: "450 Nm", profileId: "n54b30-f01-740i" }, // Twin Turbo
-    { code: "N55B30", hp: "320 hp", torque: "450 Nm", profileId: "n55b30-f01-740i" },  // Single Turbo (LCI)
-    { code: "N52TUB30", hp: "258 hp", torque: "310 Nm", profileId: "n52tub30-f01-740i" } // Double Vanos
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-760i/Li": [
+    { "code": "N74B60A", "hp": "544 hp", "torque": "750 Nm", "profileId": "n74b60a-f01-760i" }
   ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-750i": [
-    { code: "N63B44", hp: "408 hp", torque: "600 Nm", profileId: "n63b44-f01-750i" },
-    { code: "N63B44TU", hp: "450 hp", torque: "650 Nm", profileId: "n63b44tu-f01-750i" } // LCI
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-ActiveHybrid 7": [
+    { "code": "N63B44A-HB", "hp": "465 hp", "torque": "700 Nm", "profileId": "n63b44a-f04-ah7" },
+    { "code": "N55B30A-HB", "hp": "354 hp", "torque": "500 Nm", "profileId": "n55b30a-f04-ah7-tu" }
   ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-750Li": [
-    { code: "N63B44", hp: "408 hp", torque: "600 Nm", profileId: "n63b44-f01-750i" },
-    { code: "N63B44TU", hp: "450 hp", torque: "650 Nm", profileId: "n63b44tu-f01-750i" }, // LCI
-    { code: "N63TUB44", hp: "408 hp", torque: "600 Nm", profileId: "n63tub44-f01-750i" } // Double Vanos
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-Alpina B7": [
+    { "code": "N63B44M1", "hp": "507 hp", "torque": "700 Nm", "profileId": "n63b44m1-f01-b7" },
+    { "code": "N63B44O1", "hp": "540 hp", "torque": "730 Nm", "profileId": "n63b44o1-f01-b7-tu" }
   ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-760i": [ // Hozzáadva: V12 Twin Turbo
-    { code: "N74B60", hp: "544 hp", torque: "750 Nm", profileId: "n74b60-f01-760i" }
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-730d/Ld": [
+    { "code": "N57D30A", "hp": "245 hp", "torque": "540 Nm", "profileId": "n57d30a-f01-730d" },
+    { "code": "N57D30O1", "hp": "258 hp", "torque": "560 Nm", "profileId": "n57d30o1-f01-730d-tu" }
   ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-760Li": [
-    { code: "N74B60", hp: "544 hp", torque: "750 Nm", profileId: "n74b60-f01-760i" },
-    { code: "N74TUB60", hp: "544 hp", torque: "750 Nm", profileId: "n74tub60-f01-760i" } // Double Vanos
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-740d/Ld": [
+    { "code": "N57D30B", "hp": "306 hp", "torque": "600 Nm", "profileId": "n57d30b-f01-740d" },
+    { "code": "N57D30T1", "hp": "313 hp", "torque": "630 Nm", "profileId": "n57d30t1-f01-740d-tu" }
   ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-ActiveHybrid 7": [ // Hozzáadva
-    { code: "N63B44 Hybrid", hp: "465 hp", torque: "700 Nm", profileId: "n63b44-f01-ah7" }, // Pre-LCI (V8)
-    { code: "N55B30 Hybrid", hp: "354 hp", torque: "500 Nm", profileId: "n55b30-f01-ah7-lci" } // LCI (I6)
-  ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-730d": [
-    { code: "N57D30", hp: "245 hp", torque: "540 Nm", profileId: "n57d30-f01-730d" },
-    { code: "N57D30O1", hp: "258 hp", torque: "560 Nm", profileId: "n57d30o1-f01-730d" } // LCI
-  ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-740d": [
-    { code: "N57D30T0", hp: "306 hp", torque: "600 Nm", profileId: "n57d30t0-f01-740d" },
-    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f01-740d" } // LCI
-  ],
-  "BMW-7 Series-F01/02/03/04 (2008-2015)-750d": [ // Hozzáadva: Tri-Turbo dízel
-    { code: "N57D30S1", hp: "381 hp", torque: "740 Nm", profileId: "n57d30s1-f01-750d" }
+  "BMW-7 Series-F01/02/03/04 (2008-2015)-750d/Ld": [
+    { "code": "N57D30C", "hp": "381 hp", "torque": "740 Nm", "profileId": "n57d30c-f01-750d" }
   ],
 
   // --- G11/G12 (2015-2022) ---
-  "BMW-7 Series-G11/12 (2015-2022)-730i": [
-    { code: "B48B20B", hp: "258 hp", torque: "400 Nm", profileId: "b48b20b-g11-730i" }
+  "BMW-7 Series-G11/12 (2015-2022)-725i/Li": [
+    { "code": "B48B20A", "hp": "197 hp", "torque": "320 Nm", "profileId": "b48b20a-g11-725i" },
+    { "code": "B48B20C", "hp": "197 hp", "torque": "320 Nm", "profileId": "b48b20c-g11-725i-facelift" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-730Li": [
-    { code: "B48B20B", hp: "258 hp", torque: "400 Nm", profileId: "b48b20b-g11-730i" },
-    { code: "B48TUB20", hp: "258 hp", torque: "400 Nm", profileId: "b48tub20-g11-730i" } // Double Vanos
+  "BMW-7 Series-G11/12 (2015-2022)-730i/Li": [
+    { "code": "B48B20B", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20b-g11-730i" },
+    { "code": "B48B20D", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20d-g11-730i-tu" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-740i": [
-    { code: "B58B30M0", hp: "326 hp", torque: "450 Nm", profileId: "b58b30m0-g11-740i" },
-    { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g11-740i-lci" } // LCI
+  "BMW-7 Series-G11/12 (2015-2022)-740i/Li": [
+    { "code": "B58B30M0", "hp": "326 hp", "torque": "450 Nm", "profileId": "b58b30m0-g11-740i" },
+    { "code": "B58B30C", "hp": "340 hp", "torque": "450 Nm", "profileId": "b58b30c-g11-740i-tu" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-740Li": [
-    { code: "B58B30M0", hp: "326 hp", torque: "450 Nm", profileId: "b58b30m0-g11-740i" },
-    { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g11-740i-lci" }, // LCI
-    { code: "B58TUB30", hp: "326 hp", torque: "450 Nm", profileId: "b58tub30-g11-740i" } // Double Vanos
+  "BMW-7 Series-G11/12 (2015-2022)-740e/Le": [
+    { "code": "B48B20O1 Pre-Lci", "hp": "326 hp", "torque": "500 Nm", "profileId": "b48b20o1-g11-740e" },
+    { "code": "B48B20O1 Lci", "hp": "326 hp", "torque": "500 Nm", "profileId": "b48b20o1-g11-740e-lci" },
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-740e": [
-    { code: "B48B20O1", hp: "326 hp", torque: "500 Nm", profileId: "b48b20o1-g11-740e" }],
-  "BMW-7 Series-G11/12 (2015-2022)-740Le": [{code: "B48B20O1", hp: "326 hp", torque: "500 Nm", profileId: "b48b20o1-g11-740e" }, ],
-  "BMW-7 Series-G11/12 (2015-2022)-745Le": [{code: "B58B30C", hp: "394 hp", torque: "600 Nm", profileId: "b58b30c-g11-745e" },],
-
-  "BMW-7 Series-G11/12 (2015-2022)-750i": [
-    { code: "N63B44O1", hp: "450 hp", torque: "650 Nm", profileId: "n63b44o1-g11-750i" },
-    { code: "N63B44T3", hp: "530 hp", torque: "750 Nm", profileId: "n63b44t3-g11-750i-lci" }, { code: "N63TUB44", hp: "450 hp", torque: "650 Nm", profileId: "n63tub44-g11-750i" } // LCI
+  "BMW-7 Series-G11/12 (2015-2022)-745e/Le": [
+    { "code": "B58B30C Pre-Lci", "hp": "394 hp", "torque": "600 Nm", "profileId": "b58b30c-g11-745e" },
+    { "code": "B58B30C Lci", "hp": "394 hp", "torque": "600 Nm", "profileId": "b58b30c-g11-745e-lci" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-750Li": [
-    { code: "N63B44O2", hp: "450 hp", torque: "650 Nm", profileId: "n63b44o2-g11-750i" },
-    { code: "N63B44T3", hp: "530 hp", torque: "750 Nm", profileId: "n63b44t3-g11-750i-lci" }, // LCI
-    { code: "N63TUB44", hp: "450 hp", torque: "650 Nm", profileId: "n63tub44-g11-750i" } // Double Vanos
+  "BMW-7 Series-G11/12 (2015-2022)-750i/Li": [
+    { "code": "N63B44O2", "hp": "450 hp", "torque": "650 Nm", "profileId": "n63b44o2-g11-750i" },
+    { "code": "N63B44T3", "hp": "530 hp", "torque": "750 Nm", "profileId": "n63b44t3-g11-750i-tu" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-M760Li": [ // Hozzáadva
-    { code: "N74B66", hp: "610 hp", torque: "800 Nm", profileId: "n74b66-g12-m760li" }, // Pre-GPF
-    { code: "N74B66", hp: "585 hp", torque: "850 Nm", profileId: "n74b66-g12-m760li-gpf" } // With GPF
+  "BMW-7 Series-G11/12 (2015-2022)-M760i/Li": [
+    { "code": "N74B66B", "hp": "610 hp", "torque": "800 Nm", "profileId": "n74b66b-g12-m760li" },
+    { "code": "N74B66C", "hp": "585 hp", "torque": "850 Nm", "profileId": "n74b66c-g12-m760li-gpf" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-745e": [ // Hozzáadva: Hibrid 6-hengeres (LCI)
-    { code: "B58B30C", hp: "394 hp", torque: "600 Nm", profileId: "b58b30c-g11-745e" }
+  "BMW-7 Series-G11/12 (2015-2022)-Alpina B7": [
+    { "code": "N63B44O2", "hp": "608 hp", "torque": "800 Nm", "profileId": "n63b44o2-g12-b7" },
+    { "code": "N63B44T3", "hp": "608 hp", "torque": "800 Nm", "profileId": "n63b44t3-g12-b7-tu" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-730d": [
-    { code: "B57D30O0", hp: "265 hp", torque: "620 Nm", profileId: "b57d30o0-g11-730d" },
-    { code: "B57D30B", hp: "286 hp", torque: "650 Nm", profileId: "b57d30b-g11-730d-mh" } // Mild Hybrid
+  "BMW-7 Series-G11/12 (2015-2022)-725d/Ld": [
+    { "code": "B47D20B", "hp": "231 hp", "torque": "500 Nm", "profileId": "b47d20b-g11-725d" },
+    { "code": "B47D20D", "hp": "231 hp", "torque": "500 Nm", "profileId": "b47d20d-g11-725d-facelift" },
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-730Ld": [
-    { code: "B57D30O0", hp: "265 hp", torque: "620 Nm", profileId: "b57d30o0-g11-730d" },
-    { code: "B57D30B", hp: "286 hp", torque: "650 Nm", profileId: "b57d30b-g11-730d-mh" }, // Mild Hybrid
+  "BMW-7 Series-G11/12 (2015-2022)-730d/Ld": [
+    { "code": "B57D30O0", "hp": "265 hp", "torque": "620 Nm", "profileId": "b57d30o0-g11-730d" },
+    { "code": "B57D30B", "hp": "286 hp", "torque": "650 Nm", "profileId": "b57d30b-g11-730d-mh" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-740d": [
-    { code: "B57D30T0", hp: "320 hp", torque: "680 Nm", profileId: "b57d30t0-g11-740d" },
-    { code: "B57D30T0", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g11-740d-mh" } // Mild Hybrid
+  "BMW-7 Series-G11/12 (2015-2022)-740d/Ld": [
+    { "code": "B57D30T0", "hp": "320 hp", "torque": "680 Nm", "profileId": "b57d30t0-g11-740d" },
+    { "code": "B57D30T2", "hp": "340 hp", "torque": "700 Nm", "profileId": "b57d30t2-g11-740d-mh" }
   ],
-  "BMW-7 Series-G11/12 (2015-2022)-740Ld": [
-    { code: "B57D30T0", hp: "320 hp", torque: "680 Nm", profileId: "b57d30t0-g11-740d" },
-    { code: "B57D30T0", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g11-740d-mh" }, // Mild Hybrid // Double Vanos
-  ],
-  "BMW-7 Series-G11/12 (2015-2022)-750d": [
-    { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g11-750d" } // Quad-Turbo
-  ],
-  "BMW-7 Series-G11/12 (2015-2022)-750Ld": [
-    { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g11-750d" }, // Quad-Turbo // Double Vanos
+  "BMW-7 Series-G11/12 (2015-2022)-750d/Ld": [
+    { "code": "B57D30S0", "hp": "400 hp", "torque": "760 Nm", "profileId": "b57d30s0-g11-750d" }
   ],
 
   // --- G70 (2022-present) ---
