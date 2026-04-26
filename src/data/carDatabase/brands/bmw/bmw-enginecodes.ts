@@ -1415,241 +1415,387 @@ export const bmwEngineCodes = {
   ],
 
   // --- G70 (2022-present) ---
-  "BMW-7 Series-G70 (2022-present)-735": [ // Hozzáadva: Egyes piacokon
-    { code: "B58B30", hp: "286 hp", torque: "425 Nm", profileId: "b58b30-g70-735" }
+  "BMW-7 Series-G70 (2022-present)-735i": [
+    { "code": "B58B30U2", "hp": "286 hp", "torque": "425 Nm", "profileId": "b58b30u2-g70-735" }
   ],
   "BMW-7 Series-G70 (2022-present)-740i": [
-    { code: "B58B30", hp: "380 hp", torque: "540 Nm", profileId: "b58b30-g70-740i" }
+    { "code": "B58B30O2", "hp": "380 hp", "torque": "540 Nm", "profileId": "b58b30o2-g70-740i" }
   ],
   "BMW-7 Series-G70 (2022-present)-760i": [
-    { code: "S68B44", hp: "544 hp", torque: "750 Nm", profileId: "s68b44-g70-760i" } // New V8
+    { "code": "S68B44A", "hp": "544 hp", "torque": "750 Nm", "profileId": "s68b44a-g70-760i" }
   ],
-  "BMW-7 Series-G70 (2022-present)-750e": [ // Hozzáadva: PHEV
-    { code: "B58B30", hp: "490 hp", torque: "700 Nm", profileId: "b58b30-g70-750e" }
+  "BMW-7 Series-G70 (2022-present)-750e": [
+    { "code": "B58B30M2", "hp": "490 hp", "torque": "700 Nm", "profileId": "b58b30m2-g70-750e" }
   ],
-  "BMW-7 Series-G70 (2022-present)-M760e": [ // Hozzáadva: M Performance PHEV
-    { code: "B58B30", hp: "571 hp", torque: "800 Nm", profileId: "b58b30-g70-m760e" }
+  "BMW-7 Series-G70 (2022-present)-M760e": [
+    { "code": "B58B30O2", "hp": "571 hp", "torque": "800 Nm", "profileId": "b58b30o2-g70-m760e" }
   ],
   "BMW-7 Series-G70 (2022-present)-740d": [
-    { code: "B57D30", hp: "300 hp", torque: "670 Nm", profileId: "b57d30-g70-740d" }
+    { "code": "B57D30B", "hp": "300 hp", "torque": "670 Nm", "profileId": "b57d30b-g70-740d" }
   ],
 
     // --- BMW 8 SERIES ---
-    "BMW-8 Series-E31 (1990-1999)-840ci": [ // Hozzáadva: A modellnév általában 840Ci volt
-    { code: "M60B40", hp: "286 hp", torque: "400 Nm", profileId: "m60b40-e31-840ci" }, // 4.0L V8 (1993-1995)
-    { code: "M62B44", hp: "286 hp", torque: "420 Nm", profileId: "m62b44-e31-840ci" }  // 4.4L V8 (1995-1999) - Nagyobb nyomaték
+   "BMW-8 Series-E31 (1990-1999)-840Ci": [
+    { "code": "M60B40", "hp": "286 hp", "torque": "400 Nm", "profileId": "m60b40-e31-840ci" },
+    { "code": "M62B44", "hp": "286 hp", "torque": "420 Nm", "profileId": "m62b44-e31-840ci" }
   ],
   "BMW-8 Series-E31 (1990-1999)-850i": [
-    { code: "M70B50", hp: "300 hp", torque: "450 Nm", profileId: "m70b50-e31-850i" } // Korai V12
+    { "code": "M70B50", "hp": "300 hp", "torque": "450 Nm", "profileId": "m70b50-e31-850i" }
   ],
-  "BMW-8 Series-E31 (1990-1999)-850ci": [ // Hozzáadva: A frissített V12-es modell
-    { code: "M70B50", hp: "300 hp", torque: "450 Nm", profileId: "m70b50-e31-850ci" }, // 1994-ig
-    { code: "M73B54", hp: "326 hp", torque: "490 Nm", profileId: "m73b54-e31-850ci" }  // 5.4L V12 (1994-1999)
+  "BMW-8 Series-E31 (1990-1999)-850Ci": [
+    { "code": "M70B50", "hp": "300 hp", "torque": "450 Nm", "profileId": "m70b50-e31-850ci" },
+    { "code": "M73B54", "hp": "326 hp", "torque": "490 Nm", "profileId": "m73b54-e31-850ci" }
   ],
-  "BMW-8 Series-E31 (1990-1999)-850csi": [
-    { code: "S70B56", hp: "380 hp", torque: "550 Nm", profileId: "s70b56-e31-850csi" } // M8 prototípus "lite" verziója
+  "BMW-8 Series-E31 (1990-1999)-850CSi": [
+    { "code": "S70B56", "hp": "380 hp", "torque": "550 Nm", "profileId": "s70b56-e31-850csi" }
+  ],
+  "BMW-8 Series-E31 (1990-1999)-Alpina B12": [
+    { "code": "D1", "hp": "350 hp", "torque": "470 Nm", "profileId": "alpina-d1-e31-b12-5.0" },
+    { "code": "D2", "hp": "416 hp", "torque": "570 Nm", "profileId": "alpina-d2-e31-b12-5.7" }
   ],
 
   // --- G14/G15/G16 (2018-present) ---
   "BMW-8 Series-G14/15/16 (2018-present)-840i": [
-    { code: "B58B30C", hp: "340 hp", torque: "500 Nm", profileId: "b58b30c-g15-840i" }
+    { "code": "B58B30C", "hp": "340 hp", "torque": "500 Nm", "profileId": "b58b30c-g15-840i" },
+    { "code": "B58B30O1", "hp": "333 hp", "torque": "500 Nm", "profileId": "b58b30o1-g15-840i-tu" }
   ],
   "BMW-8 Series-G14/15/16 (2018-present)-M850i": [
-    { code: "N63B44", hp: "530 hp", torque: "750 Nm", profileId: "n63b44-g15-m850i" }
+    { "code": "N63B44T3", "hp": "530 hp", "torque": "750 Nm", "profileId": "n63b44t3-g15-m850i" }
   ],
   "BMW-8 Series-G14/15/16 (2018-present)-840d": [
-    { code: "B57D30", hp: "320 hp", torque: "680 Nm", profileId: "b57d30-g15-840d" },
-    { code: "B57D30", hp: "340 hp", torque: "700 Nm", profileId: "b57d30-g15-840d-mh" } // Hozzáadva: Mild Hybrid (2020+)
+    { "code": "B57D30T0", "hp": "320 hp", "torque": "680 Nm", "profileId": "b57d30t0-g15-840d" },
+    { "code": "B57D30T2", "hp": "340 hp", "torque": "700 Nm", "profileId": "b57d30t2-g15-840d-mh" }
+  ],
+  "BMW-8 Series-G14/15/16 (2018-present)-Alpina B8": [
+    { "code": "N63B44T3", "hp": "621 hp", "torque": "800 Nm", "profileId": "n63b44t3-g16-alpina-b8" }
   ],
 
   // --- F91/F92/F93 M8 (2019-present) ---
   // Az M8 hivatalosan F kódos alvázzal fut a G széria alatt
   "BMW-8 Series-F91/92/93 (2019-present)-M8": [
-    { code: "S63B44", hp: "600 hp", torque: "750 Nm", profileId: "s63b44-f92-m8" }
+    { "code": "S63B44T4", "hp": "600 hp", "torque": "750 Nm", "profileId": "s63b44t4-f92-m8" }
   ],
-  "BMW-8 Series-F91/92/93 (2019-present)-M8 Competition": [ // Hozzáadva: Competition modell
-    { code: "S63B44", hp: "625 hp", torque: "750 Nm", profileId: "s63b44-f92-m8comp" }
+  "BMW-8 Series-F91/92/93 (2019-present)-M8 Competition": [
+    { "code": "S63B44T4", "hp": "625 hp", "torque": "750 Nm", "profileId": "s63b44t4-f92-m8comp" }
   ],
 
    // --- BMW X SERIES ---
    // --- X1 E84 (2009-2015) ---
-   "BMW-X1 Series-E84 (2009-2015)-16i": [
-    { code: "N20B16", hp: "143 hp", torque: "220 Nm", profileId: "n20b16-e84-16i" }
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-18i": [
-    { code: "N46B20", hp: "150 hp", torque: "200 Nm", profileId: "n46b20-e84-18i" }, // Szívó benzin
-    { code: "N20B20", hp: "184 hp", torque: "270 Nm", profileId: "n20b20-e84-18i-turbo" } // Facelift (Ritka)
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-20i": [
-    { code: "N20B20", hp: "184 hp", torque: "270 Nm", profileId: "n20b20-e84-20i" }
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-25i": [ // Hozzáadva: Sorhatos szívó (USA/Ázsia)
-    { code: "N52B30", hp: "218 hp", torque: "277 Nm", profileId: "n52b30-e84-25i" }
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-28i": [ // Hozzáadva: Sorhat vs Turbó négyhengeres
-    { code: "N52B30", hp: "258 hp", torque: "310 Nm", profileId: "n52b30-e84-28i" }, // Pre-LCI (I6)
-    { code: "N20B20", hp: "245 hp", torque: "350 Nm", profileId: "n20b20-e84-28i" }  // LCI (I4 Turbo)
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-16d": [
-    { code: "N47D20", hp: "116 hp", torque: "260 Nm", profileId: "n47d20-e84-16d" }
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-18d": [
-    { code: "N47D20", hp: "143 hp", torque: "320 Nm", profileId: "n47d20-e84-18d" }
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-20d": [
-    { code: "N47D20", hp: "177 hp", torque: "350 Nm", profileId: "n47d20-e84-20d" },
-    { code: "N47D20", hp: "184 hp", torque: "380 Nm", profileId: "n47d20-e84-20d-ed" } // EfficientDynamics
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-23d": [ // Hozzáadva: Biturbo
-    { code: "N47D20T0", hp: "204 hp", torque: "400 Nm", profileId: "n47d20t0-e84-23d" }
-  ],
-  "BMW-X1 Series-E84 (2009-2015)-25d": [ // Hozzáadva: Biturbo frissítés
-    { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-e84-25d" }
-  ],
+    "BMW-X1 Series-E84 (2009-2015)-16i": [
+      { "code": "N20B16U0", "hp": "143 hp", "torque": "220 Nm", "profileId": "n20b16u0-e84-16i" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-18i": [
+      { "code": "N46B20O2", "hp": "150 hp", "torque": "200 Nm", "profileId": "n46b20o2-e84-18i" },
+      { "code": "N20B20U0", "hp": "156 hp", "torque": "240 Nm", "profileId": "n20b20u0-e84-18i-china" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-20i": [
+      { "code": "N20B20U0", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20u0-e84-20i" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-25i": [
+      { "code": "N52B30U1", "hp": "218 hp", "torque": "277 Nm", "profileId": "n52b30u1-e84-25i" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-28i": [
+      { "code": "N52B30O1", "hp": "258 hp", "torque": "310 Nm", "profileId": "n52b30o1-e84-28i" },
+      { "code": "N20B20O0", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20o0-e84-28i-l4" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-35i": [
+      { "code": "N55B30M0", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30m0-e84-35i" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-16d": [
+      { "code": "N47D20K1", "hp": "116 hp", "torque": "260 Nm", "profileId": "n47d20k1-e84-16d" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-18d": [
+      { "code": "N47D20U0", "hp": "143 hp", "torque": "320 Nm", "profileId": "n47d20u0-e84-18d" },
+      { "code": "N47D20U1", "hp": "143 hp", "torque": "320 Nm", "profileId": "n47d20u1-e84-18d-tu" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-20d": [
+      { "code": "N47D20O0", "hp": "177 hp", "torque": "350 Nm", "profileId": "n47d20o0-e84-20d" },
+      { "code": "N47D20O1", "hp": "184 hp", "torque": "380 Nm", "profileId": "n47d20o1-e84-20d-tu" },
+      { "code": "N47T", "hp": "184 hp", "torque": "380 Nm", "profileId": "n47t-e84-20d-indonesia" },
+      { "code": "N47D20O1", "hp": "163 hp", "torque": "380 Nm", "profileId": "n47d20o1-e84-20d-ed" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-23d": [
+      { "code": "N47D20T0", "hp": "204 hp", "torque": "400 Nm", "profileId": "n47d20t0-e84-23d" }
+    ],
+    "BMW-X1 Series-E84 (2009-2015)-25d": [
+      { "code": "N47D20T1", "hp": "218 hp", "torque": "450 Nm", "profileId": "n47d20t1-e84-25d" }
+    ],
+
 
   // --- X1 F48 (2015-2022) ---
-  "BMW-X1 Series-F48/49 (2015-2022)-18i": [
-    { code: "B38A15", hp: "136 hp", torque: "220 Nm", profileId: "b38a15-f48-18i" }, // Pre-LCI
-    { code: "B38A15M1", hp: "140 hp", torque: "220 Nm", profileId: "b38a15m1-f48-18i" } // LCI
-  ],
-  "BMW-X1 Series-F48/49 (2015-2022)-20i": [
-    { code: "B48A20", hp: "192 hp", torque: "280 Nm", profileId: "b48a20-f48-20i" }, // Pre-LCI
-    { code: "B48A20M1", hp: "178 hp", torque: "280 Nm", profileId: "b48a20m1-f48-20i" } // LCI (GPF)
-  ],
-  "BMW-X1 Series-F48/49 (2015-2022)-25i": [ // Hozzáadva: Csúcs benzin
-    { code: "B48A20", hp: "231 hp", torque: "350 Nm", profileId: "b48a20-f48-25i" }
-  ],
-  "BMW-X1 Series-F48/49 (2015-2022)-18d": [
-    { code: "B47C20", hp: "150 hp", torque: "330 Nm", profileId: "b47c20-f48-18d" }
-  ],
-  "BMW-X1 Series-F48/49 (2015-2022)-20d": [
-    { code: "B47C20", hp: "190 hp", torque: "400 Nm", profileId: "b47c20-f48-20d" }
-  ],
-  "BMW-X1 Series-F48/49 (2015-2022)-25d": [ // Hozzáadva: Biturbo
-    { code: "B47C20T0", hp: "231 hp", torque: "450 Nm", profileId: "b47c20t0-f48-25d" }
-  ],
+    "BMW-X1 Series-F48/49 (2015-2022)-16i": [
+      { "code": "B38A15A", "hp": "136 hp", "torque": "220 Nm", "profileId": "b38a15a-f48-16i" },
+      { "code": "B38A15U0", "hp": "136 hp", "torque": "220 Nm", "profileId": "b38a15u0-f48-16i" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-18i": [
+      { "code": "B38A15M0", "hp": "136 hp", "torque": "220 Nm", "profileId": "b38a15m0-f48-18i" },
+      { "code": "B38A15M1", "hp": "140 hp", "torque": "220 Nm", "profileId": "b38a15m1-f48-18i-tu" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-20i": [
+      { "code": "B48A20M0", "hp": "192 hp", "torque": "280 Nm", "profileId": "b48a20m0-f48-20i" },
+      { "code": "B48A20M1", "hp": "178 hp", "torque": "280 Nm", "profileId": "b48a20m1-f48-20i-gpf" },
+      { "code": "B48A20U1", "hp": "178 hp", "torque": "280 Nm", "profileId": "b48a20u1-f48-20i-tu" },
+      { "code": "B48A20C", "hp": "192 hp", "torque": "280 Nm", "profileId": "b48a20c-f49-20i-china" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-25i": [
+      { "code": "B48A20O0", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20o0-f48-25i" },
+      { "code": "B48A20O1", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20o1-f48-25i-tu" },
+      { "code": "B48A20D", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20d-f49-25i-china" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-28i": [
+      { "code": "B48A20O0", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20o0-f48-28i-us" },
+      { "code": "B48A20O1", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20o1-f48-28i-us-tu" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-25e": [
+      { "code": "B38A15M0", "hp": "220 hp", "torque": "385 Nm", "profileId": "b38a15m0-f48-25e-lci" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-16d": [
+      { "code": "B37C15U0", "hp": "116 hp", "torque": "270 Nm", "profileId": "b37c15u0-f48-16d" },
+      { "code": "B37C15K1", "hp": "116 hp", "torque": "270 Nm", "profileId": "b37c15k1-f48-16d-tu" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-18d": [
+      { "code": "B47C20A", "hp": "150 hp", "torque": "330 Nm", "profileId": "b47c20a-f48-18d" },
+      { "code": "B47C20U0", "hp": "150 hp", "torque": "330 Nm", "profileId": "b47c20u0-f48-18d" },
+      { "code": "B47C20U1", "hp": "150 hp", "torque": "350 Nm", "profileId": "b47c20u1-f48-18d-tu" },
+      { "code": "B47C20U1", "hp": "136 hp", "torque": "330 Nm", "profileId": "b47c20u1-f48-18d-fleet" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-20d": [
+      { "code": "B47C20O0", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47c20o0-f48-20d" },
+      { "code": "B47C20O1", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47c20o1-f48-20d-tu" },
+      { "code": "B47C20O1", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47c20o1-f48-20d-fleet" },
+      { "code": "B47C20O1", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47c20o1-f48-20d-ed" }
+    ],
+    "BMW-X1 Series-F48/49 (2015-2022)-25d": [
+      { "code": "B47C20T0", "hp": "231 hp", "torque": "450 Nm", "profileId": "b47c20t0-f48-25d" },
+      { "code": "B47C20T1", "hp": "231 hp", "torque": "450 Nm", "profileId": "b47c20t1-f48-25d-tu" }
+    ],
 
   // --- X1 U11 (2022-present) ---
-  "BMW-X1 Series-U11/12 (2022-present)-18": [
-    { code: "B38A15P", hp: "136 hp", torque: "230 Nm", profileId: "b38a15p-u11-18" }
+  "BMW-X1 Series-U11/12 (2022-present)-18i": [
+    { "code": "B38A15P", "hp": "136 hp", "torque": "230 Nm", "profileId": "b38a15p-u11-18i" },
+    { "code": "B38A15P", "hp": "156 hp", "torque": "240 Nm", "profileId": "b38a15p-u11-18i-china" }
   ],
-  "BMW-X1 Series-U11/12 (2022-present)-20": [
-    { code: "B38A15P", hp: "170 hp", torque: "280 Nm", profileId: "b38a15p-u11-20" } // Mild Hybrid
+  "BMW-X1 Series-U11/12 (2022-present)-20i": [
+    { "code": "B38A15P", "hp": "170 hp", "torque": "280 Nm", "profileId": "b38a15p-u11-20i-mhev" },
+    { "code": "B48A20P", "hp": "204 hp", "torque": "300 Nm", "profileId": "b48a20p-u11-20i-int" }
   ],
-  "BMW-X1 Series-U11/12 (2022-present)-23": [
-    { code: "B48A20P", hp: "218 hp", torque: "360 Nm", profileId: "b48a20p-u11-23" } // Mild Hybrid
+  "BMW-X1 Series-U11/12 (2022-present)-23i": [
+    { "code": "B48A20P", "hp": "218 hp", "torque": "360 Nm", "profileId": "b48a20p-u11-23i-mhev" }
   ],
-  "BMW-X1 Series-U11/12 (2022-present)-25": [
-    { code: "B48A20P", hp: "245 hp", torque: "400 Nm", profileId: "b48a20p-u11-25" } // Non-EU
+  "BMW-X1 Series-U11/12 (2022-present)-28i": [
+    { "code": "B48A20P", "hp": "241 hp", "torque": "400 Nm", "profileId": "b48a20p-u11-28i-us" }
+  ],
+  "BMW-X1 Series-U11/12 (2022-present)-M35i": [
+    { "code": "B48A20H", "hp": "300 hp", "torque": "400 Nm", "profileId": "b48a20h-u11-m35i-eu" },
+    { "code": "B48A20H", "hp": "317 hp", "torque": "400 Nm", "profileId": "b48a20h-u11-m35i-us" }
   ],
   "BMW-X1 Series-U11/12 (2022-present)-25e": [
-    { code: "B38A15", hp: "245 hp", torque: "477 Nm", profileId: "b38a15-u11-25e" }
-  ],
-  "BMW-X1 Series-U11/12 (2022-present)-28": [
-    { code: "B48A20P", hp: "245 hp", torque: "400 Nm", profileId: "b48a20p-u11-28" } // USA Spec
+    { "code": "B38A15P", "hp": "245 hp", "torque": "477 Nm", "profileId": "b38a15p-u11-25e-phev" }
   ],
   "BMW-X1 Series-U11/12 (2022-present)-30e": [
-    { code: "B38A15", hp: "326 hp", torque: "477 Nm", profileId: "b38a15-u11-30e" }
+    { "code": "B38A15P", "hp": "326 hp", "torque": "477 Nm", "profileId": "b38a15p-u11-30e-phev" }
   ],
-  "BMW-X1 Series-U11/12 (2022-present)-M35": [
-    { code: "B48A20H", hp: "300 hp", torque: "400 Nm", profileId: "b48a20h-u11-m35" } // 317hp in US
-  ],
-  "BMW-X1 Series-U11/12 (2022-present)-18d": [ // Hozzáadva
-    { code: "B47C20B", hp: "150 hp", torque: "360 Nm", profileId: "b47c20b-u11-18d" }
+  "BMW-X1 Series-U11/12 (2022-present)-18d": [
+    { "code": "B47C20B", "hp": "150 hp", "torque": "360 Nm", "profileId": "b47c20b-u11-18d" },
+    { "code": "B47C20B", "hp": "136 hp", "torque": "360 Nm", "profileId": "b47c20b-u11-18d-fleet" }
   ],
   "BMW-X1 Series-U11/12 (2022-present)-20d": [
-    { code: "B47C20B", hp: "163 hp", torque: "400 Nm", profileId: "b47c20b-u11-20d" } // Mild Hybrid
+    { "code": "B47C20B", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47c20b-u11-20d-mhev" },
+    { "code": "B47C20B", "hp": "150 hp", "torque": "360 Nm", "profileId": "b47c20b-u11-20d-fleet" }
   ],
-  "BMW-X1 Series-U11/12 (2022-present)-23d": [ // Hozzáadva
-    { code: "B47C20B", hp: "211 hp", torque: "400 Nm", profileId: "b47c20b-u11-23d" } // Mild Hybrid
+  "BMW-X1 Series-U11/12 (2022-present)-23d": [
+    { "code": "B47C20B", "hp": "211 hp", "torque": "400 Nm", "profileId": "b47c20b-u11-23d-mhev" }
   ],
 
   // --- X2 F39 (2017-2023) ---
-  "BMW-X2 Series-F39 (2017-2023)-18i": [ // Hozzáadva
-    { code: "B38A15", hp: "140 hp", torque: "220 Nm", profileId: "b38a15-f39-18i" }
+  "BMW-X2 Series-F39 (2017-2023)-18i": [
+    { "code": "B38A15A", "hp": "140 hp", "torque": "220 Nm", "profileId": "b38a15a-f39-18i" },
+    { "code": "B38A15M0", "hp": "140 hp", "torque": "220 Nm", "profileId": "b38a15m0-f39-18i" },
+    { "code": "B38A15M1", "hp": "136 hp", "torque": "220 Nm", "profileId": "b38a15m1-f39-18i-tu" },
+    { "code": "B38A15C", "hp": "136 hp", "torque": "220 Nm", "profileId": "b38a15c-f39-18i-lci" }
   ],
   "BMW-X2 Series-F39 (2017-2023)-20i": [
-    { code: "B48A20", hp: "192 hp", torque: "280 Nm", profileId: "b48a20-f39-20i" }
+    { "code": "B48A20A", "hp": "192 hp", "torque": "280 Nm", "profileId": "b48a20a-f39-20i" },
+    { "code": "B48A20M0", "hp": "192 hp", "torque": "280 Nm", "profileId": "b48a20m0-f39-20i" },
+    { "code": "B48A20M1", "hp": "178 hp", "torque": "280 Nm", "profileId": "b48a20m1-f39-20i-gpf" },
+    { "code": "B48A20F", "hp": "178 hp", "torque": "280 Nm", "profileId": "b48a20f-f39-20i-tu" }
+  ],
+  "BMW-X2 Series-F39 (2017-2023)-25i": [
+    { "code": "B48A20O1", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20o1-f39-25i" },
+    { "code": "B48A20D", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20d-f39-25i-china" }
+  ],
+  "BMW-X2 Series-F39 (2017-2023)-28i": [
+    { "code": "B48A20O0", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20o0-f39-28i-us" },
+    { "code": "B48A20B", "hp": "231 hp", "torque": "350 Nm", "profileId": "b48a20b-f39-28i" }
   ],
   "BMW-X2 Series-F39 (2017-2023)-M35i": [
-    { code: "B48A20E", hp: "306 hp", torque: "450 Nm", profileId: "b48a20e-f39-m35i" }
+    { "code": "B48A20T1 Pre-LCI", "hp": "306 hp", "torque": "450 Nm", "profileId": "b48a20t1-f39-m35i" },
+    { "code": "B48A20T1 LCI", "hp": "306 hp", "torque": "450 Nm", "profileId": "b48a20t1-f39-m35i-lci" }
   ],
-  "BMW-X2 Series-F39 (2017-2023)-18d": [ // Hozzáadva
-    { code: "B47C20", hp: "150 hp", torque: "350 Nm", profileId: "b47c20-f39-18d" }
+  "BMW-X2 Series-F39 (2017-2023)-25e": [
+    { "code": "B38A15M0", "hp": "220 hp", "torque": "385 Nm", "profileId": "b38a15m0-f39-25e" }
   ],
-  "BMW-X2 Series-F39 (2017-2023)-20d": [ // Hozzáadva
-    { code: "B47C20", hp: "190 hp", torque: "400 Nm", profileId: "b47c20-f39-20d" }
+  "BMW-X2 Series-F39 (2017-2023)-16d": [
+    { "code": "B37C15U0", "hp": "116 hp", "torque": "270 Nm", "profileId": "b37c15u0-f39-16d" },
+    { "code": "B37C15K1", "hp": "116 hp", "torque": "270 Nm", "profileId": "b37c15k1-f39-16d-tu" }
+  ],
+  "BMW-X2 Series-F39 (2017-2023)-18d": [
+    { "code": "B47C20A", "hp": "150 hp", "torque": "350 Nm", "profileId": "b47c20a-f39-18d" },
+    { "code": "B47C20U0", "hp": "150 hp", "torque": "350 Nm", "profileId": "b47c20u0-f39-18d" },
+    { "code": "B47C20U1", "hp": "150 hp", "torque": "350 Nm", "profileId": "b47c20u1-f39-18d-tu" },
+    { "code": "B47C20U1", "hp": "136 hp", "torque": "330 Nm", "profileId": "b47c20u1-f39-18d-fleet" }
+  ],
+  "BMW-X2 Series-F39 (2017-2023)-20d": [
+    { "code": "B47C20O0", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47c20o0-f39-20d" },
+    { "code": "B47C20O1", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47c20o1-f39-20d-tu" },
+    { "code": "B47C20O1", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47c20o1-f39-20d-fleet" }
+  ],
+  "BMW-X2 Series-F39 (2017-2023)-25d": [
+    { "code": "B47C20T0", "hp": "231 hp", "torque": "450 Nm", "profileId": "b47c20t0-f39-25d" },
+    { "code": "B47C20T1", "hp": "231 hp", "torque": "450 Nm", "profileId": "b47c20t1-f39-25d-tu" }
   ],
 
   // --- X2 U10 (2023-present) ---
-  "BMW-X2 Series-U10 (2023-present)-20": [ // Hozzáadva
-    { code: "B38A15P", hp: "170 hp", torque: "280 Nm", profileId: "b38a15p-u10-20" } // Mild Hybrid
-  ],
-  "BMW-X2 Series-U10 (2023-present)-28": [
-    { code: "B48A20P", hp: "245 hp", torque: "400 Nm", profileId: "b48a20p-u10-28" } // USA Spec
-  ],
-  "BMW-X2 Series-U10 (2023-present)-M35": [
-    { code: "B48A20H", hp: "300 hp", torque: "400 Nm", profileId: "b48a20h-u10-m35" }
-  ],
-  "BMW-X2 Series-U10 (2023-present)-18d": [
-    { code: "B47C20B", hp: "150 hp", torque: "360 Nm", profileId: "b47c20b-u10-18d" }
-  ],
+    "BMW-X2 Series-U10 (2023-present)-16i": [
+      { "code": "B38A15P", "hp": "136 hp", "torque": "230 Nm", "profileId": "b38a15p-u10-16i" }
+    ],
+    "BMW-X2 Series-U10 (2023-present)-18i": [
+      { "code": "B38A15P", "hp": "156 hp", "torque": "230 Nm", "profileId": "b38a15p-u10-18i" }
+    ],  
+    "BMW-X2 Series-U10 (2023-present)-20i": [
+      { "code": "B38A15P", "hp": "170 hp", "torque": "280 Nm", "profileId": "b38a15p-u10-20i-mhev" },
+      { "code": "B48A20P", "hp": "204 hp", "torque": "300 Nm", "profileId": "b48a20p-u10-20i-int" }
+    ],
+    "BMW-X2 Series-U10 (2023-present)-25i": [
+      { "code": "B48A20P", "hp": "218 hp", "torque": "360 Nm", "profileId": "b48a20p-u10-25i" }
+    ],
+    "BMW-X2 Series-U10 (2023-present)-28i": [
+      { "code": "B48A20P", "hp": "241 hp", "torque": "400 Nm", "profileId": "b48a20p-u10-28i-us" }
+    ],
+    "BMW-X2 Series-U10 (2023-present)-M35i": [
+      { "code": "B48A20H1", "hp": "300 hp", "torque": "400 Nm", "profileId": "b48a20h1-u10-m35i-eu" },
+      { "code": "B48A20H1", "hp": "312 hp", "torque": "400 Nm", "profileId": "b48a20h1-u10-m35i-us" }
+    ],
+    "BMW-X2 Series-U10 (2023-present)-25e": [
+      { "code": "B38A15P", "hp": "245 hp", "torque": "477 Nm", "profileId": "b38a15p-u10-25e-phev" }
+    ],
+    "BMW-X2 Series-U10 (2023-present)-18d": [
+      { "code": "B47C20B", "hp": "150 hp", "torque": "360 Nm", "profileId": "b47c20b-u10-18d" },
+      { "code": "B47C20B", "hp": "136 hp", "torque": "360 Nm", "profileId": "b47c20b-u10-18d-fleet" }
+    ],
+    "BMW-X2 Series-U10 (2023-present)-20d": [
+      { "code": "B47C20B", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47c20b-u10-20d-mhev" }
+    ],
+    "BMW-X2 Series-U10 (2023-present)-23d": [
+      { "code": "B47C20B", "hp": "211 hp", "torque": "450 Nm", "profileId": "b47c20b-u10-23d-mhev" }
+    ],
 
   // --- X3 E83 (2003-2010) ---
-  "BMW-X3 Series-E83 (2003-2010)-2.0i": [ // Hozzáadva: Hiányzott a benzines
-    { code: "N46B20", hp: "150 hp", torque: "200 Nm", profileId: "n46b20-e83-20i" }
+ "BMW-X3 Series-E83 (2003-2010)-2.0i": [
+    { "code": "N46B20A", "hp": "150 hp", "torque": "200 Nm", "profileId": "n46b20a-e83-20i" },
+    { "code": "N46B20B", "hp": "150 hp", "torque": "200 Nm", "profileId": "n46b20b-e83-20i" },
+    { "code": "N46B20O0", "hp": "150 hp", "torque": "200 Nm", "profileId": "n46b20o0-e83-20i" },
+    { "code": "N46B20BD", "hp": "150 hp", "torque": "200 Nm", "profileId": "n46b20bd-e83-20i" }
   ],
-  "BMW-X3 Series-E83 (2003-2010)-2.5i": [ // Hozzáadva: M54 vs N52
-    { code: "M54B25", hp: "192 hp", torque: "245 Nm", profileId: "m54b25-e83-25i" }, // Pre-LCI
-    { code: "N52B25", hp: "218 hp", torque: "250 Nm", profileId: "n52b25-e83-25si" } // LCI (2.5si)
+  "BMW-X3 Series-E83 (2003-2010)-2.5i": [
+    { "code": "M54B25", "hp": "192 hp", "torque": "245 Nm", "profileId": "m54b25-e83-25i" },
+    { "code": "N52B25A", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25a-e83-25i" },
+    { "code": "N52B25O1", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25o1-e83-25i" }
   ],
   "BMW-X3 Series-E83 (2003-2010)-2.5si": [
-    { code: "N52B25", hp: "218 hp", torque: "250 Nm", profileId: "n52b25-e83-25si" }
+    { "code": "N52B25AF", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25af-e83-25si" },
+    { "code": "N52B25BF", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25bf-e83-25si" }
   ],
-  "BMW-X3 Series-E83 (2003-2010)-3.0i": [ // Hozzáadva: M54 vs N52
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-e83-30i" }, // Pre-LCI
-    { code: "N52B30", hp: "272 hp", torque: "315 Nm", profileId: "n52b30-e83-30si" } // LCI (3.0si)
+  "BMW-X3 Series-E83 (2003-2010)-3.0i": [
+    { "code": "M54B30", "hp": "231 hp", "torque": "300 Nm", "profileId": "m54b30-e83-30i" },
+    { "code": "N52B30O1", "hp": "272 hp", "torque": "315 Nm", "profileId": "n52b30o1-e83-30i-si" },
+    { "code": "N52B30U1", "hp": "215 hp", "torque": "300 Nm", "profileId": "n52b30u1-e83-30i-us" }
   ],
   "BMW-X3 Series-E83 (2003-2010)-3.0si": [
-    { code: "N52B30", hp: "272 hp", torque: "315 Nm", profileId: "n52b30-e83-30si" }
+    { "code": "N52B30AF", "hp": "272 hp", "torque": "315 Nm", "profileId": "n52b30af-e83-30si" },
+    { "code": "N52B30BF", "hp": "272 hp", "torque": "315 Nm", "profileId": "n52b30bf-e83-30si" }
+  ],
+  "BMW-X3 Series-E83 (2003-2010)-1.8d": [
+    { "code": "N47D20U0", "hp": "143 hp", "torque": "350 Nm", "profileId": "n47d20u0-e83-18d" }
   ],
   "BMW-X3 Series-E83 (2003-2010)-2.0d": [
-    { code: "M47D20TU", hp: "150 hp", torque: "330 Nm", profileId: "m47d20tu-e83-20d" }, // Pre-LCI (Iron Block)
-    { code: "N47D20", hp: "177 hp", torque: "350 Nm", profileId: "n47d20-e83-20d" }     // LCI (Alloy Block)
+    { "code": "M47D20TU", "hp": "150 hp", "torque": "330 Nm", "profileId": "m47d20tu-e83-20d" },
+    { "code": "N47D20A", "hp": "177 hp", "torque": "350 Nm", "profileId": "n47d20a-e83-20d" },
+    { "code": "N47D20C", "hp": "177 hp", "torque": "350 Nm", "profileId": "n47d20c-e83-20d" },
+    { "code": "N47D20C", "hp": "163 hp", "torque": "350 Nm", "profileId": "n47d20c-e83-20d-ed" }
   ],
   "BMW-X3 Series-E83 (2003-2010)-3.0d": [
-    { code: "M57D30TU", hp: "204 hp", torque: "410 Nm", profileId: "m57d30tu-e83-30d" },  // Pre-LCI
-    { code: "M57D30TU2", hp: "218 hp", torque: "500 Nm", profileId: "m57d30tu2-e83-30d" } // LCI
+    { "code": "M57D30TU", "hp": "204 hp", "torque": "410 Nm", "profileId": "m57d30tu-e83-30d" },
+    { "code": "M57D30TU2", "hp": "218 hp", "torque": "500 Nm", "profileId": "m57d30tu2-e83-30d" },
+    { "code": "M57D30TU2", "hp": "211 hp", "torque": "500 Nm", "profileId": "m57d30tu2-e83-30d-fleet" }
   ],
-  "BMW-X3 Series-E83 (2003-2010)-3.0sd": [ // Hozzáadva: Az első biturbo dízel X3
-    { code: "M57D30T2", hp: "286 hp", torque: "580 Nm", profileId: "m57d30t2-e83-30sd" } // Később xDrive35d néven
+  "BMW-X3 Series-E83 (2003-2010)-3.0sd": [
+    { "code": "M57D30T2", "hp": "286 hp", "torque": "580 Nm", "profileId": "m57d30t2-e83-30sd" }
+  ],
+  "BMW-X3 Series-E83 (2003-2010)-xDrive35d": [
+    { "code": "M57D30T2", "hp": "286 hp", "torque": "580 Nm", "profileId": "m57d30t2-e83-35d" }
   ],
 
   // --- X3 F25 (2010-2017) ---
-  "BMW-X3 Series-F25 (2010-2017)-20i": [ // Hozzáadva: Hiányzott a benzines
-    { code: "N20B20B", hp: "184 hp", torque: "270 Nm", profileId: "n20b20b-f25-20i" }
-  ],
-  "BMW-X3 Series-F25 (2010-2017)-28i": [ // Hozzáadva: Sorhat vs Turbo négyhengeres
-    { code: "N52B30", hp: "258 hp", torque: "310 Nm", profileId: "n52b30-f25-28i" }, // Pre-LCI
-    { code: "N20B20A", hp: "245 hp", torque: "350 Nm", profileId: "n20b20a-f25-28i" }  // LCI
-  ],
-  "BMW-X3 Series-F25 (2010-2017)-35i": [ // Hozzáadva: Turbo Sorhat
-    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f25-35i" }
-  ],
-  "BMW-X3 Series-F25 (2010-2017)-18d": [ // Hozzáadva: RWD dízel
-    { code: "N47D20", hp: "143 hp", torque: "360 Nm", profileId: "n47d20-f25-18d" },
-    { code: "B47D20", hp: "150 hp", torque: "360 Nm", profileId: "b47d20-f25-18d" }
-  ],
-  "BMW-X3 Series-F25 (2010-2017)-20d": [
-    { code: "N47D20", hp: "184 hp", torque: "380 Nm", profileId: "n47d20-f25-20d" }, // Láncos N47
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-f25-20d" }  // LCI (B47)
-  ],
-  "BMW-X3 Series-F25 (2010-2017)-30d": [
-    { code: "N57D30", hp: "258 hp", torque: "560 Nm", profileId: "n57d30-f25-30d" }
-  ],
-  "BMW-X3 Series-F25 (2010-2017)-35d": [ // Hozzáadva: Biturbo
-    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f25-35d" }
-  ],
+    "BMW-X3 Series-F25 (2010-2017)-18i": [
+      { "code": "N20B20U0", "hp": "170 hp", "torque": "250 Nm", "profileId": "n20b20u0-f25-18i-lci" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-20i": [
+      { "code": "N20B20A Pre-LCI", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20a-f25-20i-prelci" },
+      { "code": "N20B20A LCI", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20a-f25-20i-lci" },
+      { "code": "N20B20B Pre-LCI", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20b-f25-20i-prelci" },
+      { "code": "N20B20B LCI", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20b-f25-20i-lci" },
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-25i": [
+      { "code": "N52B30O1", "hp": "218 hp", "torque": "270 Nm", "profileId": "n52b30o1-f25-25i" },
+      { "code": "N20B20A", "hp": "218 hp", "torque": "310 Nm", "profileId": "n20b20a-f25-25i-china" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-28i": [
+      { "code": "N52B30A", "hp": "258 hp", "torque": "310 Nm", "profileId": "n52b30a-f25-28i" },
+      { "code": "N20B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20a-f25-28i" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-30i": [
+      { "code": "N52B30A", "hp": "258 hp", "torque": "310 Nm", "profileId": "n52b30a-f25-30i" },
+      { "code": "N20B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20a-f25-30i-int" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-35i": [
+      { "code": "N55B30A Pre-LCI", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30a-f25-35i" },
+      { "code": "N55B30A LCI", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30a-f25-35i-lci" },
+      { "code": "N55B30M0 Pre-LCI", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30m0-f25-35i" },
+      { "code": "N55B30M0 LCI", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30m0-f25-35i" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-16d": [
+      { "code": "B47D20A", "hp": "116 hp", "torque": "260 Nm", "profileId": "b47d20a-f25-16d-fleet" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-18d": [
+      { "code": "N47D20C", "hp": "143 hp", "torque": "360 Nm", "profileId": "n47d20c-f25-18d" },
+      { "code": "B47D20A", "hp": "150 hp", "torque": "360 Nm", "profileId": "b47d20a-f25-18d" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-20d": [
+      { "code": "N47D20C", "hp": "184 hp", "torque": "380 Nm", "profileId": "n47d20c-f25-20d" },
+      { "code": "N47D20C", "hp": "163 hp", "torque": "380 Nm", "profileId": "n47d20c-f25-20d-fleet" },
+      { "code": "B47D20A", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20a-f25-20d" },
+      { "code": "B47D20A", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47d20a-f25-20d-fleet" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-28d": [
+      { "code": "N47D20O1", "hp": "180 hp", "torque": "380 Nm", "profileId": "n47d20o1-f25-28d-us" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-30d": [
+      { "code": "N57D30O1 Pre-LCI", "hp": "258 hp", "torque": "560 Nm", "profileId": "n57d30o1-f25-30d" },
+      { "code": "N57D30O1 LCI", "hp": "258 hp", "torque": "560 Nm", "profileId": "n57d30o1-f25-30d-lci" },
+      { "code": "N57D30O1 Pre-LCI", "hp": "211 hp", "torque": "560 Nm", "profileId": "n57d30o1-f25-30d-fleet" },
+      { "code": "N57D30O1 LCI", "hp": "211 hp", "torque": "560 Nm", "profileId": "n57d30o1-f25-30d-fleet" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-35d": [
+      { "code": "N57D30T1 Pre-LCI", "hp": "313 hp", "torque": "630 Nm", "profileId": "n57d30t1-f25-35d" },
+      { "code": "N57D30T1 LCI", "hp": "313 hp", "torque": "630 Nm", "profileId": "n57d30t1-f25-35d-lci" }
+    ],
+    "BMW-X3 Series-F25 (2010-2017)-Alpina-XD3": [
+      { "code": "N57D30T1 Pre-LCI", "hp": "350 hp", "torque": "700 Nm", "profileId": "n57d30top-f25-alpina" },
+      { "code": "N57D30T1 LCI", "hp": "350 hp", "torque": "700 Nm", "profileId": "n57d30top-f25-alpina-lci" }
+    ],
+
+
   "BMW-X3 Series-F97 (2019-2024)-X3 M": [
     { code: "S58B30O0", hp: "480 hp", torque: "600 Nm", profileId: "s58b30o0-g01-x3m" }
   ],
@@ -1658,47 +1804,84 @@ export const bmwEngineCodes = {
   ],
 
   // --- X3 G01 (2017-2024) ---
-  "BMW-X3 Series-G01/08 (2017-2024)-20i": [
-    { code: "B48B20A", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g01-20i" }
-  ],
-  "BMW-X3 Series-G01/08 (2017-2024)-30i": [ // Hozzáadva: Erősebb 2.0 benzin
-    { code: "B48B20", hp: "252 hp", torque: "350 Nm", profileId: "b48b20-g01-30i" }
-  ],
-  "BMW-X3 Series-G01/08 (2017-2024)-30e": [
-    { code: "B48B20A", hp: "292 hp", torque: "420 Nm", profileId: "b48b20a-g01-30e" }
-  ],
-  "BMW-X3 Series-G01/08 (2017-2024)-M40i": [
-    { code: "B58B30M0", hp: "360 hp", torque: "500 Nm", profileId: "b58b30m0-g01-m40i" },
-    { code: "B58B30O1", hp: "382 hp", torque: "500 Nm", profileId: "b58b30o1-g01-m40i-us" }
-  ],
-  "BMW-X3 Series-G01/08 (2017-2024)-20d": [
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g01-20d" }
-  ],
-  "BMW-X3 Series-G01/08 (2017-2024)-30d": [ // Hozzáadva
-    { code: "B57D30", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g01-30d" },
-    { code: "B57D30", hp: "286 hp", torque: "650 Nm", profileId: "b57d30-g01-30d-mh" } // Mild Hybrid
-  ],
-  "BMW-X3 Series-G01/08 (2017-2024)-M40d": [ // Hozzáadva
-    { code: "B57D30T0", hp: "326 hp", torque: "680 Nm", profileId: "b57d30t0-g01-m40d" },
-    { code: "B57D30T0", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g01-m40d-mh" } // Mild Hybrid
-  ],
+    "BMW-X3 Series-G01 (2017-2024)-18d": [
+      { "code": "B47D20A", "hp": "150 hp", "torque": "350 Nm", "profileId": "b47d20a-g01-18d" },
+      { "code": "B47D20A", "hp": "136 hp", "torque": "350 Nm", "profileId": "b47d20a-g01-18d-fleet" },
+      { "code": "B47D20B", "hp": "150 hp", "torque": "350 Nm", "profileId": "b47d20b-g01-18d-mhev", "note": "LCI (2020-2024). Mild Hybrid (MHEV), increased injection pressure and revised EGR for Euro 6d." },
+      { "code": "B47D20B", "hp": "136 hp", "torque": "350 Nm", "profileId": "b47d20b-g01-18d-fleet-mhev", "note": "LCI (2020-2024) Fleet. MHEV, increased injection pressure and revised EGR for Euro 6d." }
+    ],
+    "BMW-X3 Series-G01 (2017-2024)-20d": [
+      { "code": "B47D20A", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20a-g01-20d", "note": "Pre-LCI, non-MHEV" },
+      { "code": "B47D20B", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20b-g01-20d-mhev", "note": "LCI. MHEV, increased injection pressure and revised EGR for Euro 6d." },
+      { "code": "B47D20A", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47d20a-g01-20d-fleet", "note": "Pre-LCI Fleet, non-MHEV" },
+      { "code": "B47D20B", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47d20b-g01-20d-fleet-mhev", "note": "LCI & Fleet. MHEV, increased injection pressure and revised EGR for Euro 6d." }
+    ],
+    "BMW-X3 Series-G01 (2017-2024)-25d": [
+      { "code": "B47D20B", "hp": "231 hp", "torque": "500 Nm", "profileId": "b47d20b-g01-25d-prelci" }
+    ],
+    "BMW-X3 Series-G01 (2017-2024)-30d": [
+      { "code": "B57D30O0", "hp": "265 hp", "torque": "620 Nm", "profileId": "b57d30o0-g01-30d-prelci" },
+      { "code": "B57D30O1", "hp": "286 hp", "torque": "650 Nm", "profileId": "b57d30o1-g01-30d-mhev-lci" },
+      { "code": "B57D30O1", "hp": "249 hp", "torque": "620 Nm", "profileId": "b57d30o1-g01-30d-int-lci" },
+      { "code": "B57D30O0", "hp": "211 hp", "torque": "620 Nm", "profileId": "b57d30o0-g01-30d-fleet-prelci" },
+    ],
+    "BMW-X3 Series-G01 (2017-2024)-M40d": [
+      { "code": "B57D30T0", "hp": "326 hp", "torque": "680 Nm", "profileId": "b57d30t0-g01-m40d" },
+      { "code": "B57D30T2", "hp": "340 hp", "torque": "700 Nm", "profileId": "b57d30t2-g01-m40d-mhev" }
+    ],
+    "BMW-X3 Series-G01 (2017-2024)-Alpina XD3": [
+      { "code": "B57D30S0", "hp": "388 hp", "torque": "770 Nm", "profileId": "b57d30s0-g01-xd3-quad-turbo", "note": "Pre-LCI, Quad-Turbo (LHD)" },
+      { "code": "B57D30T1", "hp": "355 hp", "torque": "730 Nm", "profileId": "b57d30t1-g01-xd3-biturbo-mhev", "note": "LCI, Bi-Turbo Mild Hybrid" },
+      { "code": "B57D30S0", "hp": "394 hp", "torque": "800 Nm", "profileId": "b57d30s0-g01-xd3-lci-quad", "note": "LCI, Quad-Turbo (LHD)" }
+    ],  
+    "BMW-X3 Series-G01 (2017-2024)-20i": [
+      { "code": "B48B20A", "hp": "184 hp", "torque": "290 Nm", "profileId": "b48b20a-g01-20i-prelci" },
+      { "code": "B48B20B", "hp": "184 hp", "torque": "300 Nm", "profileId": "b48b20b-g01-20i-mhev" },
+      { "code": "B48B20A", "hp": "170 hp", "torque": "250 Nm", "profileId": "b48b20b-g01-20i-fleet-prelci" }
+    ],
+    "BMW-X3 Series-G01 (2017-2024)-30i": [
+      { "code": "B48B20B", "hp": "252 hp", "torque": "350 Nm", "profileId": "b48b20b-g01-30i" },
+      { "code": "B48B20B", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20b-g01-30i-258" },
+      { "code": "B48B20O1", "hp": "245 hp", "torque": "350 Nm", "profileId": "b48b20o1-g01-30i-mhev", "note": "LCI (2021-2024). Mild Hybrid (MHEV), updated TU engine for Euro 6d-ISC-FCM." },
+      { "code": "B46B20O0", "hp": "252 hp", "torque": "350 Nm", "profileId": "b46b20o0-g01-30i-us", "note": "US Market (SULEV version).pre-lci. Technically similar to B48 but with extra emission hardware." }
+    ],
+    "BMW-X3 Series-G01 (2017-2024)-30e": [
+      { "code": "B48B20A", "hp": "292 hp", "torque": "420 Nm", "profileId": "b48b20a-g01-30e" },
+      { "code": "B46B20O0", "hp": "292 hp", "torque": "420 Nm", "profileId": "b46b20o0-g01-30e-us", "note": "US Market PHEV (SULEV). System output with B46 engine base." }
+    ],
+    "BMW-X3 Series-G01 (2017-2024)-M40i": [
+      { "code": "B58B30M0", "hp": "360 hp", "torque": "500 Nm", "profileId": "b58b30m0-g01-m40i-withoutopf" },
+      { "code": "B58B30O1", "hp": "382 hp", "torque": "500 Nm", "profileId": "b58b30o1-g01-m40i-noneu" },
+      { "code": "B58B30C", "hp": "360 hp", "torque": "500 Nm", "profileId": "b58b30c-g01-m40i-mhev" }
+    ],
 
   // --- X3 G45 (2024-present) ---
-  "BMW-X3 Series-G45 (2024-present)-20": [ // Hozzáadva: Az új alapmodell ("i" nélkül)
-    { code: "B48B20P", hp: "208 hp", torque: "330 Nm", profileId: "b48b20p-g45-20" }
-  ],
-  "BMW-X3 Series-G45 (2024-present)-30": [
-    { code: "B48B20", hp: "258 hp", torque: "400 Nm", profileId: "b48b20-g45-30" }
-  ],
-  "BMW-X3 Series-G45 (2024-present)-30e": [
-    { code: "B48B20", hp: "299 hp", torque: "450 Nm", profileId: "b48b20-g45-30e" }
-  ],
-  "BMW-X3 Series-G45 (2024-present)-M50": [ // Hozzáadva: M40i utódja
-    { code: "B58B30M2", hp: "398 hp", torque: "580 Nm", profileId: "b58b30m2-g45-m50" }
-  ],
-  "BMW-X3 Series-G45 (2024-present)-20d": [ // Hozzáadva
-    { code: "B47D20B", hp: "197 hp", torque: "400 Nm", profileId: "b47d20b-g45-20d" }
-  ],
+    "BMW-X3 Series-G45 (2024-present)-20": [
+      { "code": "B48B20P", "hp": "208 hp", "torque": "330 Nm", "profileId": "b48b20p-g45-20-mhev", "note": "Global version. System output with 48V Mild Hybrid." },
+      { "code": "B48B20P", "hp": "170 hp", "torque": "280 Nm", "profileId": "b48b20p-g45-20-fleet", "note": "Reduced power version for specific tax markets (e.g. Turkey/Asia)." }
+    ],
+    "BMW-X3 Series-G45 (2024-present)-30": [
+      { "code": "B48B20O2", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20o2-g45-30-us", "note": "US/North American version. High output B48TU2." },
+      { "code": "B48B20O2", "hp": "245 hp", "torque": "400 Nm", "profileId": "b48b20o2-g45-30-eu", "note": "EU/International version. Optimized for emissions." },
+      { "code": "B46B20O2", "hp": "258 hp", "torque": "400 Nm", "profileId": "b46b20o2-g45-30-us-sulev", "note": "US Market SULEV version. Technically identical output to B48B20O2." }
+    ],
+    "BMW-X3 Series-G45 (2024-present)-30e": [
+      { "code": "B48B20P", "hp": "299 hp", "torque": "450 Nm", "profileId": "b48b20p-g45-30e-phev", "note": "Plug-in Hybrid. System output: 190hp engine + 184hp electric motor." }
+    ],
+    "BMW-X3 Series-G45 (2024-present)-M50": [
+      { "code": "B58B30P", "hp": "398 hp", "torque": "580 Nm", "profileId": "b58b30p-g45-m50-mhev", "note": "M Performance. System output: 381hp engine + 18hp MHEV boost. Torque: 540Nm (engine) / 580Nm (system)." }
+    ],
+    "BMW-X3 Series-G45 (2024-present)-20d": [
+      { "code": "B47D20B", "hp": "197 hp", "torque": "400 Nm", "profileId": "b47d20b-g45-20d-mhev", "note": "Mild Hybrid diesel. 197hp system output." },
+      { "code": "B47D20B", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47d20b-g45-20d-fleet", "note": "Fleet/Tax reduced version (e.g. Belgium). 163hp system output, MHEV." },
+    ],
+    "BMW-X3 Series-G45 (2024-present)-30d": [
+      { "code": "B57D30O2", "hp": "298 hp", "torque": "670 Nm", "profileId": "b57d30o2-g45-30d-mhev", "note": "Available from Summer 2025. System output: 286hp engine + MHEV boost." },
+      { "code": "B57D30O2", "hp": "249 hp", "torque": "620 Nm", "profileId": "b57d30o2-g45-30d-fleet", "note": "Reduced power for specific tax markets (e.g. Italy/Belgium), MHEV." },
+    ],
+    "BMW-X3 Series-G45 (2024-present)-40d": [ 
+      { "code": "B57D30T2", "hp": "340 hp", "torque": "720 Nm", "profileId": "b57d30t2-g45-40d-mhev", "note": "High-performance Biturbo diesel. Mild Hybrid (MHEV) system output." } 
+    ],
 
   // --- X4 F26 (2014-2018) ---
   "BMW-X4 Series-F26 (2014-2018)-20i": [

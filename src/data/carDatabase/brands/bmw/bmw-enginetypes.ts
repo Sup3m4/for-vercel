@@ -469,14 +469,14 @@ export const bmwEngineTypes =
         { name: "745e/Le", hp: "394 hp" },
         { name: "750i/Li", hp: "530 hp" },
         { name: "Alpina B7", hp: "608 hp" },
-        { name: "M760Li", hp: "585-610 hp" },
+        { name: "M760i/Li", hp: "585-610 hp" },
         { name: "725d/Ld", hp: "231 hp" },
         { name: "730d/Ld", hp: "265 hp" },
         { name: "740d/Ld", hp: "320 hp" },
         { name: "750d/Ld", hp: "400 hp" },
       ],
       "BMW-7 Series-G70 (2022-present)": [
-        { name: "735", hp: "286 hp" },
+        { name: "735i", hp: "286 hp" },
         { name: "740i", hp: "380 hp" },
         { name: "750e", hp: "490 hp" },
         { name: "760i", hp: "544 hp" },
@@ -486,11 +486,11 @@ export const bmwEngineTypes =
   
       // BMW 8 Series
       "BMW-8 Series-E31 (1990-1999)": [
-        { name: "840i", hp: "286 hp" },
-        { name: "840ci", hp: "286 hp" },
+        { name: "840Ci", hp: "286 hp" },
         { name: "850i", hp: "300 hp" },
-        { name: "850ci", hp: "326 hp" },
-        { name: "850csi", hp: "380 hp" }
+        { name: "850Ci", hp: "326 hp" },
+        { name: "850CSi", hp: "380 hp" },
+        { name: "Alpina B12", hp: "350-416 hp" },
       ],
       "BMW-8 Series-F91/92/93 (2019-present)": [
         { name: "M8", hp: "600 hp" },
@@ -499,7 +499,8 @@ export const bmwEngineTypes =
       "BMW-8 Series-G14/15/16 (2018-present)": [
         { name: "840i", hp: "340 hp" },
         { name: "M850i", hp: "530 hp" },
-        { name: "840d", hp: "320 hp" }
+        { name: "840d", hp: "320 hp" },
+        { name: "Alpina B8", hp: "621 hp" }
       ],
   
       // BMW X1 Series
@@ -509,6 +510,7 @@ export const bmwEngineTypes =
         { name: "20i", hp: "184 hp" },
         { name: "25i", hp: "218 hp" },
         { name: "28i", hp: "245 hp" },
+        { name: "35i", hp: "306 hp", },
         { name: "16d", hp: "116 hp" },
         { name: "18d", hp: "143 hp" },
         { name: "20d", hp: "184 hp" },
@@ -516,6 +518,7 @@ export const bmwEngineTypes =
         { name: "25d", hp: "218 hp" }
       ],
       "BMW-X1 Series-F48/49 (2015-2022)": [
+        { name: "16i", hp: "136 hp" },
         { name: "18i", hp: "140 hp" },
         { name: "20i", hp: "192 hp" },
         { name: "25i", hp: "231 hp" },
@@ -527,12 +530,11 @@ export const bmwEngineTypes =
         { name: "25d", hp: "231 hp" }
       ],
       "BMW-X1 Series-U11/12 (2022-present)": [
-        { name: "18", hp: "136 hp" },
-        { name: "20", hp: "170 hp" },
-        { name: "23", hp: "218 hp" },
-        { name: "25", hp: "245 hp" },
-        { name: "28", hp: "245 hp" },
-        { name: "M35", hp: "300 hp" },
+        { name: "18i", hp: "136 hp" },
+        { name: "20i", hp: "170 hp" },
+        { name: "23i", hp: "218 hp" },
+        { name: "28i", hp: "245 hp" },
+        { name: "M35i", hp: "300 hp" },
         { name: "25e", hp: "245 hp" },
         { name: "30e", hp: "326 hp" },
         { name: "18d", hp: "150 hp" },
@@ -554,10 +556,16 @@ export const bmwEngineTypes =
         { name: "25d", hp: "231 hp" }
       ],
       "BMW-X2 Series-U10 (2023-present)": [
-        { name: "20", hp: "170 hp" },
-        { name: "28", hp: "245 hp" },
-        { name: "M35", hp: "300 hp" },
-        { name: "18d", hp: "150 hp" }
+        { name: "16i", hp: "136 hp" },
+        { name: "18i", hp: "156 hp" },
+        { name: "20i", hp: "170-204 hp" },
+        { name: "25i", hp: "218 hp" },
+        { name: "28i", hp: "241 hp" },
+        { name: "M35i", hp: "300-312 hp" },
+        { name: "25e", hp: "245 hp" },
+        { name: "18d", hp: "136-150 hp" },
+        { name: "20d", hp: "163 hp" },
+        { name: "23d", hp: "211 hp" },
       ],
   
       // BMW X3 Series
@@ -567,16 +575,24 @@ export const bmwEngineTypes =
         { name: "2.5si", hp: "218 hp" },
         { name: "3.0i", hp: "231 hp" },
         { name: "3.0si", hp: "272 hp" },
+        { name: "1.8d", hp:" 143 hp" },
         { name: "2.0d", hp: "150-177 hp" },
         { name: "3.0d", hp: "218 hp" },
-        { name: "3.0sd", hp: "286 hp" }
+        { name: "3.0sd", hp: "286 hp" },
+        { name: "xDrive35d", hp: "286 hp" },
       ],
       "BMW-X3 Series-F25 (2010-2017)": [
+        { name: "18i", hp: "170 hp" },
         { name: "20i", hp: "184 hp" },
+        { name: "25i", hp: "218 hp" },
         { name: "28i", hp: "245 hp" },
+        { name: "30i", hp: "245-258 hp" },
         { name: "35i", hp: "306 hp" },
+        { name: "Alpina-XD3", hp: "350 hp" },
+        { name: "16d", hp: "116 hp" },
         { name: "18d", hp: "150 hp" },
         { name: "20d", hp: "190 hp" },
+        { name: "28d", hp: "180 hp" },
         { name: "30d", hp: "258 hp" },
         { name: "35d", hp: "313 hp" }
       ],
@@ -584,22 +600,27 @@ export const bmwEngineTypes =
         { name: "X3 M", hp: "480 hp" },
         { name: "X3 M Competition", hp: "510 hp" }
       ],
-      "BMW-X3 Series-G01/08 (2017-2024)": [
+      "BMW-X3 Series-G01 (2017-2024)": [
         { name: "20i", hp: "184 hp" },
         { name: "30i", hp: "252 hp" },
+        { name: "30e", hp: "252 hp" },
         { name: "M40i", hp: "360 hp" },
         { name: "30e", hp: "292 hp" },
         { name: "18d", hp: "150 hp" },
         { name: "20d", hp: "190 hp" },
+        { name: "25d", hp: "190 hp" },
         { name: "30d", hp: "265 hp" },
-        { name: "M40d", hp: "326 hp" }
+        { name: "M40d", hp: "326 hp" },
+        { name: "Alpina XD3", hp: "265 hp" },
       ],
       "BMW-X3 Series-G45 (2024-present)": [
         { name: "20", hp: "208 hp" },
         { name: "30", hp: "258 hp" },
-        { name: "M50", hp: "398 hp" },
         { name: "30e", hp: "299 hp" },
-        { name: "20d", hp: "197 hp" }
+        { name: "M50", hp: "398 hp" },
+        { name: "20d", hp: "197 hp" },
+        { name: "30d", hp: "197 hp" },
+        { name: "40d", hp: "197 hp" }
       ],
   
       // BMW X4 Series

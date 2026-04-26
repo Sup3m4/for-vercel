@@ -8,6 +8,10 @@ import { fifthtof10Profiles } from "./5seriestof10";
 import { fifthfromf07Profiles } from "./5seriesfromf07";
 import { sixthProfiles } from "./6series";
 import { seventhProfiles } from "./7series";
+import { eighthProfiles } from "./8series";
+import { x1Profiles } from "./x1series";
+import { x2Profiles } from "./x2series";
+import { x3Profiles } from "./x3series";
 
 
 
@@ -22,6 +26,10 @@ export const bmwEngineProfiles: EngineProfile[] = [
 ...fifthfromf07Profiles,
 ...sixthProfiles,
 ...seventhProfiles,
+...eighthProfiles,
+...x1Profiles,
+...x2Profiles,
+...x3Profiles,
 
 
 

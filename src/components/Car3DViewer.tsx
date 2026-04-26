@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Suspense, useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useGLTF, Html, useProgress, OrbitControls, ContactShadows, MeshReflectorMaterial, Environment, SpotLight } from '@react-three/drei';
+import { useGLTF, Html, useProgress, useAnimations, OrbitControls, ContactShadows, MeshReflectorMaterial, Environment, SpotLight } from '@react-three/drei';
 import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRight, Sun, Moon, Lightbulb, LightbulbOff } from 'lucide-react';
 import * as THREE from 'three'; 
 import { Center } from '@react-three/drei';
@@ -420,11 +420,42 @@ function ViewerStatus({ message }: { message: string }) {
 
 // --- MODELL KOMPONENS ---
 function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, isHeadlightOn = true, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
-  const { scene } = useGLTF(path, '/draco/') as any;
+  const { scene, animations } = useGLTF(path, '/draco/') as any;
   const modelRef = useRef<THREE.Group>(null);
   const [smartHotspots, setSmartHotspots] = useState<Hotspot3D[]>([]);
   const [modelRadiusState, setModelRadiusState] = useState(4);
   
+  // 1. Betöltjük az animációkat a Blenderből
+  const { actions } = useAnimations(animations, modelRef);
+  const { invalidate } = useThree();
+
+  useFrame(() => {
+    const action = actions['Headlightopen'];
+    // Ha az animáció éppen játszódik (running), kérünk egy frissítést a Canvastól
+    if (action && action.isRunning()) {
+      invalidate();
+    }
+  });
+
+  useEffect(() => {
+    const action = actions['Headlightopen'];
+    if (action) {
+      if (isHeadlightOn) {
+        action.reset().fadeIn(0.2).play();
+        action.clampWhenFinished = true;
+        action.setLoop(THREE.LoopOnce, 1);
+        action.timeScale = 1;
+      } else {
+        action.paused = false;
+        action.timeScale = -1;
+        action.setLoop(THREE.LoopOnce, 1);
+        action.play();
+      }
+      // Az első képkockát manuálisan is meglökjük
+      invalidate();
+    }
+  }, [isHeadlightOn, actions, invalidate]);
+
   useMemo(() => {
     if (!scene) return;
     

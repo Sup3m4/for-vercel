@@ -57,6 +57,7 @@ export interface EngineProfile {
   mechanicVerdict: string;
   drivingExperience: string;
   model3DScale?: number;
+  popupAnimationName?: string;
   model3DPath?: string;
   model3DRotation?: [number, number, number];
   engineBayImageUrl?: string;
