@@ -12,6 +12,9 @@ import { eighthProfiles } from "./8series";
 import { x1Profiles } from "./x1series";
 import { x2Profiles } from "./x2series";
 import { x3Profiles } from "./x3series";
+import { x4Profiles } from "./x4series";
+import { x5Profiles } from "./x5series";
+import { x6Profiles } from "./x6series";
 
 
 
@@ -30,6 +33,9 @@ export const bmwEngineProfiles: EngineProfile[] = [
 ...x1Profiles,
 ...x2Profiles,
 ...x3Profiles,
+...x4Profiles,
+...x5Profiles,
+...x6Profiles,
 
 
 

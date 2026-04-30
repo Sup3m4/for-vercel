@@ -631,9 +631,9 @@ export const bmwEngineTypes =
         { name: "M40i", hp: "360 hp" },
         { name: "20d", hp: "190 hp" },
         { name: "30d", hp: "258 hp" },
-        { name: "35d", hp: "313 hp" }
+        { name: "35d", hp: "313 hp" },
       ],
-      "BMW-X4 Series-F98 (2019-present)": [
+      "BMW-X4 Series-F98 (2019-2025)": [
         { name: "X4 M", hp: "480 hp" },
         { name: "X4 M Competition", hp: "510 hp" }
       ],
@@ -644,7 +644,8 @@ export const bmwEngineTypes =
         { name: "20d", hp: "190 hp" },
         { name: "25d", hp: "231 hp" },
         { name: "30d", hp: "265 hp" },
-        { name: "M40d", hp: "326 hp" }
+        { name: "M40d", hp: "326 hp" },
+        { name: "Alpina-XD4", hp: "394 hp" },
       ],
   
       // BMW X5 Series
@@ -653,21 +654,22 @@ export const bmwEngineTypes =
         { name: "4.4i", hp: "286-320 hp" },
         { name: "4.6is", hp: "347 hp" },
         { name: "4.8is", hp: "360 hp" },
-        { name: "3.0d", hp: "184-218 hp" }
+        { name: "3.0d", hp: "184-218 hp" },
+        { name: "Alpina X5", hp: "360 hp" },
       ],
       "BMW-X5 Series-E70 (2006-2013)": [
         { name: "3.0si", hp: "272 hp" },
         { name: "35i", hp: "306 hp" },
-        { name: "48i", hp: "355 hp" },
+        { name: "4.8i", hp: "355 hp" },
         { name: "50i", hp: "408 hp" },
         { name: "X5 M", hp: "555 hp" },
         { name: "30d", hp: "235-245 hp" },
+        { name: "30sd", hp: "286 hp" },
         { name: "35d", hp: "286 hp" },
         { name: "40d", hp: "306 hp" },
         { name: "M50d", hp: "381 hp" }
       ],
       "BMW-X5 Series-F15 (2014-2018)": [
-        { name: "28i", hp: "245 hp" },
         { name: "35i", hp: "306 hp" },
         { name: "50i", hp: "450 hp" },
         { name: "40e", hp: "313 hp" },
@@ -676,11 +678,10 @@ export const bmwEngineTypes =
         { name: "40d", hp: "313 hp" },
         { name: "M50d", hp: "381 hp" }
       ],
-      "BMW-X5 Series-F85 (2015-2018)": [
+      "BMW-X5 Series-F85 (2014-2018)": [
         { name: "X5 M", hp: "575 hp" }
       ],
       "BMW-X5 Series-G05/18 (2018-present)": [
-        { name: "25i", hp: "231 hp" },
         { name: "30i", hp: "265 hp" },
         { name: "40i", hp: "340 hp" },
         { name: "45e", hp: "394 hp" },
@@ -699,17 +700,15 @@ export const bmwEngineTypes =
       ],
   
       // BMW X6 Series
-      "BMW-X6 Series-E71 (2008-2014)": [
+      "BMW-X6 Series-E71/E72 (2008-2014)": [
         { name: "35i", hp: "306 hp" },
         { name: "50i", hp: "408 hp" },
+        { name: "ActiveHybrid X6", hp: "547-555 hp" },
         { name: "X6 M", hp: "555 hp" },
         { name: "30d", hp: "235-245 hp" },
         { name: "35d", hp: "286 hp" },
         { name: "40d", hp: "306 hp" },
         { name: "M50d", hp: "381 hp" }
-      ],
-      "BMW-X6 Series-E72 (2010-2015)": [
-        { name: "ActiveHybrid X6", hp: "485 hp" }
       ],
       "BMW-X6 Series-F16 (2014-2019)": [
         { name: "28i", hp: "245 hp" },

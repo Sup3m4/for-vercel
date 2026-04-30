@@ -1885,246 +1885,363 @@ export const bmwEngineCodes = {
 
   // --- X4 F26 (2014-2018) ---
   "BMW-X4 Series-F26 (2014-2018)-20i": [
-    { code: "N20B20", hp: "184 hp", torque: "270 Nm", profileId: "n20b20-f26-20i" }
+    { "code": "N20B20A", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20a-f26-20i" },
+    { "code": "N20B20B", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20b-f26-20i" },
+    { "code": "B48B20A", "hp": "184 hp", "torque": "290 Nm", "profileId": "b48b20a-f26-20i-late" },
+    { "code": "B48B20A", "hp": "184 hp", "torque": "290 Nm", "profileId": "b48b20a-f26-20i-flexfuel" },
+    { "code": "B46B20A", "hp": "184 hp", "torque": "290 Nm", "profileId": "b46b20a-f26-20i-sulev-usa" }
   ],
-  "BMW-X4 Series-F26 (2014-2018)-28i": [ // Hozzáadva
-    { code: "N20B20", hp: "245 hp", torque: "350 Nm", profileId: "n20b20-f26-28i" }
+  "BMW-X4 Series-F26 (2014-2018)-28i": [
+    { "code": "N20B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20a-f26-28i" },
+    { "code": "N20B20A", "hp": "249 hp", "torque": "350 Nm", "profileId": "n20b20a-f26-28i-ru" },
+    { "code": "N26B20A", "hp": "245 hp", "torque": "350 Nm", "profileId": "n26b20a-f26-28i-sulev" },
+    { "code": "B48B20B", "hp": "245 hp", "torque": "350 Nm", "profileId": "b48b20b-f26-28i-late" },
+    { "code": "B46B20B", "hp": "245 hp", "torque": "350 Nm", "profileId": "b46b20b-f26-28i-sulev-usa" }
   ],
-  "BMW-X4 Series-F26 (2014-2018)-35i": [ // Hozzáadva
-    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f26-35i" }
+  "BMW-X4 Series-F26 (2014-2018)-35i": [
+    { "code": "N55B30A", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30a-f26-35i" },
+    { "code": "N55B30M0", "hp": "306 hp", "torque": "400 Nm", "profileId": "n55b30m0-f26-35i" },
+    { "code": "N55B30M0", "hp": "326 hp", "torque": "450 Nm", "profileId": "n55b30m0-f26-35i-mppk" }
   ],
   "BMW-X4 Series-F26 (2014-2018)-M40i": [
-    { code: "N55B30T0", hp: "360 hp", torque: "465 Nm", profileId: "n55b30t0-f26-m40i" } // Erősített N55
+    { "code": "N55B30T0", "hp": "360 hp", "torque": "465 Nm", "profileId": "n55b30t0-f26-m40i" }
   ],
-  "BMW-X4 Series-F26 (2014-2018)-20d": [ // Hozzáadva
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-f26-20d" }
+  "BMW-X4 Series-F26 (2014-2018)-20d": [
+    { "code": "B47D20A", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20a-f26-20d" },
+    { "code": "B47D20A", "hp": "163 hp", "torque": "400 Nm", "profileId": "b47d20a-f26-20d-fleet" },
+    { "code": "B47D20A", "hp": "150 hp", "torque": "360 Nm", "profileId": "b47d20a-f26-20d-110kw" },
+    { "code": "B47D20A", "hp": "136 hp", "torque": "360 Nm", "profileId": "b47d20a-f26-20d-100kw" },
+    { "code": "B47D20B", "hp": "190 hp", "torque": "400 Nm", "profileId": "b47d20b-f26-20d-tu1" },
+    { "code": "N47D20C", "hp": "184 hp", "torque": "380 Nm", "profileId": "n47d20c-f26-20d-early" }
   ],
-  "BMW-X4 Series-F26 (2014-2018)-30d": [ // Hozzáadva
-    { code: "N57D30", hp: "258 hp", torque: "560 Nm", profileId: "n57d30-f26-30d" }
+  "BMW-X4 Series-F26 (2014-2018)-30d": [
+    { "code": "N57D30O1", "hp": "258 hp", "torque": "560 Nm", "profileId": "n57d30o1-f26-30d" },
+    { "code": "N57D30O1", "hp": "249 hp", "torque": "560 Nm", "profileId": "n57d30o1-f26-30d-tax" },
+    { "code": "N57D30O1", "hp": "211 hp", "torque": "560 Nm", "profileId": "n57d30o1-f26-30d-fleet" },
+    { "code": "N57D30A", "hp": "211 hp", "torque": "560 Nm", "profileId": "n57d30a-f26-30d-early-fleet" }
   ],
-  "BMW-X4 Series-F26 (2014-2018)-35d": [ // Hozzáadva
-    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f26-35d" }
+  "BMW-X4 Series-F26 (2014-2018)-35d": [
+    { "code": "N57D30T1", "hp": "313 hp", "torque": "630 Nm", "profileId": "n57d30t1-f26-35d" }
   ],
-"BMW-X4 Series-F98 (2019-present)-X4 M": [
-  { code: "S58B30O0", hp: "480 hp", torque: "600 Nm", profileId: "s58b30o0-g02-x4m" }],
-  "BMW-X4 Series-F98 (2019-present)-X4 M Competition": [
-  { code: "S58B30T0", hp: "510 hp", torque: "650 Nm", profileId: "s58b30t0-g02-x4mcomp" }],
+
+
+"BMW-X4 Series-F98 (2019-2025)-X4 M": [
+  { code: "S58B30O0 Pre-LCI", hp: "480 hp", torque: "600 Nm", profileId: "s58b30o0-g02-x4m" },
+  { code: "S58B30O0 LCI", hp: "480 hp", torque: "620 Nm", profileId: "s58b30o0-g02-x4m-lci" },
+],
+"BMW-X4 Series-F98 (2019-2025)-X4 M Competition": [
+  { code: "S58B30T0 Pre-LCI", hp: "510 hp", torque: "600 Nm", profileId: "s58b30t0-g02-x4mcomp" },
+  { code: "S58B30T0 LCI", hp: "510 hp", torque: "650 Nm", profileId: "s58b30t0-g02-x4mcomp-lci" },
+],
 
   // --- X4 G02 (2018-present) ---
-  "BMW-X4 Series-G02 (2018-present)-20i": [ // Hozzáadva
-    { code: "B48B20A", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g02-20i" }
+  "BMW-X4 Series-G02 (2018-present)-20i": [
+    { code: "B48B20A Pre-LCI", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g02-20i" },
+    { code: "B48B20A LCI", hp: "184 hp", torque: "300 Nm", profileId: "b48b20a-g02-20i-lci" }, //48V-os Mild Hybrid rásegítés (MHEV), integrált kipufogó-leömlő és kettős befecskendezési rendszer (TU2).
+    { code: "B48B20A", hp: "170 hp", torque: "250 Nm", profileId: "b48b20a-g02-20i-fleet" } // Egyes piacokon (pl. Kína/Törökország) adókedvezményes vagy fleet verzió
   ],
-  "BMW-X4 Series-G02 (2018-present)-30i": [ // Hozzáadva
-    { code: "B48B20", hp: "252 hp", torque: "350 Nm", profileId: "b48b20-g02-30i" }
+  "BMW-X4 Series-G02 (2018-present)-30i": [
+    { code: "B48B20B", hp: "252 hp", torque: "350 Nm", profileId: "b48b20b-g02-30i" }, // Pre-LCI globális
+    { code: "B48B20B", hp: "245 hp", torque: "350 Nm", profileId: "b48b20b-g02-30i-lci" }, // LCI (2021+) EU emisszió-fojtott verzió
+    { code: "B48B20B", hp: "248 hp", torque: "350 Nm", profileId: "b48b20b-g02-30i-us" }  // Észak-amerikai specifikáció
   ],
   "BMW-X4 Series-G02 (2018-present)-M40i": [
-    { code: "B58B30M0", hp: "360 hp", torque: "500 Nm", profileId: "b58b30m0-g02-m40i" },
-    { code: "B58B30O1", hp: "382 hp", torque: "500 Nm", profileId: "b58b30o1-g02-m40i-us" }
+    { code: "B58B30M0", hp: "354 hp", torque: "500 Nm", profileId: "b58b30m0-g02-m40i-br" }, // Brazil/Egyes piacok specifikációja
+    { code: "B58B30M0", hp: "360 hp", torque: "500 Nm", profileId: "b58b30m0-g02-m40i-eu" }, // EU Pre-LCI (OPF nélkül/korai)
+    { code: "B58B30O1", hp: "382 hp", torque: "500 Nm", profileId: "b58b30o1-g02-m40i-us" }, // USA/Non-EU (OPF nélkül, szoftveresen nyitott)
+    { code: "B58B30O1", hp: "374 hp", torque: "500 Nm", profileId: "b58b30o1-g02-m40i-lci" }  // EU LCI (2021+) MHEV rendszerrel
   ],
-  "BMW-X4 Series-G02 (2018-present)-20d": [ // Hozzáadva
-    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g02-20d" }
+  "BMW-X4 Series-G02 (2018-present)-20d": [
+    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g02-20d" },
+    { code: "B47D20", hp: "163 hp", torque: "400 Nm", profileId: "b47d20-g02-20d-fleet" }, // Belga/Fleet "EfficientDynamics" fojtott verzió
+    { code: "B47D20", hp: "190 hp", torque: "400 Nm", profileId: "b47d20-g02-20d-lci" }  // LCI MHEV (szoftveresen finomított karakterisztika)
   ],
-  "BMW-X4 Series-G02 (2018-present)-30d": [ // Hozzáadva
-    { code: "B57D30", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g02-30d" }
+  "BMW-X4 Series-G02 (2018-present)-25d": [
+    { code: "B47D20T0", hp: "231 hp", torque: "500 Nm", profileId: "b47d20-g02-25d" }
   ],
-  "BMW-X4 Series-G02 (2018-present)-M40d": [ // Hozzáadva
-    { code: "B57D30T0", hp: "326 hp", torque: "680 Nm", profileId: "b57d30t0-g02-m40d" }
+  "BMW-X4 Series-G02 (2018-present)-30d": [
+    { code: "B57D30M0", hp: "265 hp", torque: "620 Nm", profileId: "b57d30m0-g02-30d" },
+    { code: "B57D30M0", hp: "211 hp", torque: "620 Nm", profileId: "b57d30m0-g02-30d-fleet" }, // Fojtott adókedvezményes verzió (pl. Belgium)
+    { code: "B57D30O1", hp: "286 hp", torque: "650 Nm", profileId: "b57d30o1-g02-30d-lci" }  // LCI MHEV
+  ],
+  "BMW-X4 Series-G02 (2018-present)-M40d": [
+    { code: "B57D30T0", hp: "326 hp", torque: "680 Nm", profileId: "b57d30t0-g02-m40d" },
+    { code: "B57D30T2", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t2-g02-m40d-lci" }
+  ],
+  "BMW-X4 Series-G02 (2018-present)-Alpina-XD4": [
+    { code: "B57D30S0", hp: "388 hp", torque: "770 Nm", profileId: "b57d30s0-g02-xd4-pre" }, // Quad-Turbo Pre-LCI
+    { code: "B57D30S0", hp: "394 hp", torque: "800 Nm", profileId: "b57d30s0-g02-xd4-lci" }  // Quad-Turbo LCI
   ],
 
   // --- X5 E53 (1999-2006) ---
-  "BMW-X5 Series-E53 (1999-2006)-3.0i": [ // Hozzáadva
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-e53-30i" }
+  "BMW-X5 Series-E53 (1999-2006)-3.0i": [
+    { "code": "M54B30", "hp": "231 hp", "torque": "300 Nm", "profileId": "m54b30-e53-30i" },
+    { "code": "M54B30", "hp": "225 hp", "torque": "290 Nm", "profileId": "m54b30-e53-30i-us", "note": "USA specifikáció" }
   ],
   "BMW-X5 Series-E53 (1999-2006)-4.4i": [
-    { code: "M62B44", hp: "286 hp", torque: "440 Nm", profileId: "m62b44-e53-44i" },    // Pre-LCI
-    { code: "N62B44", hp: "320 hp", torque: "440 Nm", profileId: "n62b44-e53-44i-fl" }  // LCI
+    { "code": "M62B44", "hp": "286 hp", "torque": "440 Nm", "profileId": "m62b44-e53-44i" },
+    { "code": "N62B44", "hp": "320 hp", "torque": "440 Nm", "profileId": "n62b44-e53-44i-fl" },
+    { "code": "M62B44", "hp": "282 hp", "torque": "440 Nm", "profileId": "m62b44-e53-44i-us", "note": "USA specifikáció" },
   ],
   "BMW-X5 Series-E53 (1999-2006)-4.6is": [
-    { code: "M62B46", hp: "347 hp", torque: "480 Nm", profileId: "m62b46-e53-46is" }
+    { "code": "M62B46", "hp": "347 hp", "torque": "480 Nm", "profileId": "m62b46-e53-46is" }
   ],
   "BMW-X5 Series-E53 (1999-2006)-4.8is": [
-    { code: "N62B48", hp: "360 hp", torque: "500 Nm", profileId: "n62b48-e53-48is" }
+    { "code": "N62B48", "hp": "360 hp", "torque": "500 Nm", "profileId": "n62b48-e53-48is" }
   ],
   "BMW-X5 Series-E53 (1999-2006)-3.0d": [
-    { code: "M57D30", hp: "184 hp", torque: "410 Nm", profileId: "m57d30-e53-30d" },    // Pre-LCI (5 seb.)
-    { code: "M57D30TU", hp: "218 hp", torque: "500 Nm", profileId: "m57d30tu-e53-30d" } // LCI (6 seb.)
+    { "code": "M57D30", "hp": "184 hp", "torque": "410 Nm", "profileId": "m57d30-e53-30d" },
+    { "code": "M57D30", "hp": "163 hp", "torque": "390 Nm", "profileId": "m57d30-e53-30d-fleet", "note": "Fleet Edition - szoftveresen fojtott (pl. Belgium)" },
+    { "code": "M57D30TU", "hp": "218 hp", "torque": "500 Nm", "profileId": "m57d30tu-e53-30d" },
+    { "code": "M57D30TU", "hp": "211 hp", "torque": "500 Nm", "profileId": "m57d30tu-e53-30d-fleet", "note": "LCI Fleet Edition - szoftveresen fojtott" }
+  ],
+  "BMW-X5 Series-E53 (1999-2006)-Alpina X5": [
+    { "code": "F5", "hp": "347 hp", "torque": "480 Nm", "profileId": "alpina-v8-roadster-e53", "note": "Alpina V8 Roadster motor (4.6), megegyezik a 4.6is alapjaival" }
   ],
 
   // --- X5 E70 (2006-2013) ---
-  "BMW-X5 Series-E70 (2006-2013)-3.0si": [ // Hozzáadva
-    { code: "N52B30", hp: "272 hp", torque: "315 Nm", profileId: "n52b30-e70-30si" }
+  "BMW-X5 Series-E70 (2006-2013)-3.0si": [
+    { code: "N52B30O1", hp: "272 hp", torque: "315 Nm", profileId: "n52b30-e70-30si" },
+    { code: "N51B30", hp: "233 hp", torque: "271 Nm", profileId: "n51b30-e70-sulev" },     
+    { code: "N52B30U1", hp: "218 hp", torque: "270 Nm", profileId: "n52b30-e70-30si-detuned" },
+    { code: "N52B30", hp: "265 hp", torque: "310 Nm", profileId: "n52b30-e70-30si-265" },
+    { code: "N52B30", hp: "260 hp", torque: "305 Nm", profileId: "n52b30-e70-30si-us" }    // US Spec Pre-LCI
   ],
-  "BMW-X5 Series-E70 (2006-2013)-35i": [ // Hozzáadva
-    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-e70-35i" }
+  "BMW-X5 Series-E70 (2006-2013)-35i": [
+    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-e70-35i" },
+    { code: "N55B30", hp: "320 hp", torque: "450 Nm", profileId: "n55b30-e70-35i-ppk" }    // M Performance Power Kit
   ],
-  "BMW-X5 Series-E70 (2006-2013)-4.8i": [ // Hozzáadva
+  "BMW-X5 Series-E70 (2006-2013)-4.8i": [
     { code: "N62B48", hp: "355 hp", torque: "475 Nm", profileId: "n62b48-e70-48i" }
   ],
-  "BMW-X5 Series-E70 (2006-2013)-50i": [ // Hozzáadva
-    { code: "N63B44", hp: "408 hp", torque: "600 Nm", profileId: "n63b44-e70-50i" }
+  "BMW-X5 Series-E70 (2006-2013)-50i": [
+    { code: "N63B44O0", hp: "408 hp", torque: "600 Nm", profileId: "n63b44-e70-50i" }
   ],
-  "BMW-X5 Series-E70 (2006-2013)-X5 M": [ // Hozzáadva
+  "BMW-X5 Series-E70 (2006-2013)-X5 M": [
     { code: "S63B44O0", hp: "555 hp", torque: "680 Nm", profileId: "s63b44o0-e70-x5m" }
   ],
   "BMW-X5 Series-E70 (2006-2013)-30d": [
-    { code: "M57D30TU2", hp: "235 hp", torque: "520 Nm", profileId: "m57d30tu2-e70-30d" }, // Pre-LCI
-    { code: "N57D30", hp: "245 hp", torque: "540 Nm", profileId: "n57d30-e70-30d" }        // LCI
+    { code: "M57D30TU2", hp: "235 hp", torque: "520 Nm", profileId: "m57d30tu2-e70-30d" },
+    { code: "M57D30TU2", hp: "231 hp", torque: "500 Nm", profileId: "m57d30tu2-e70-30d-231" },
+    { code: "M57D30TU2", hp: "211 hp", torque: "500 Nm", profileId: "m57d30tu2-e70-30d-fleet" },
+    { code: "N57D30OL", hp: "245 hp", torque: "540 Nm", profileId: "n57d30-e70-30d" },
+    { code: "N57D30", hp: "211 hp", torque: "540 Nm", profileId: "n57d30-e70-30d-fleet" },
+    { code: "N57D30", hp: "204 hp", torque: "450 Nm", profileId: "n57d30-e70-30d-204" }
+  ],
+  "BMW-X5 Series-E70 (2006-2013)-3.0sd": [
+    { code: "M57D30T2", hp: "286 hp", torque: "580 Nm", profileId: "m57d30t2-e70-30sd" }
   ],
   "BMW-X5 Series-E70 (2006-2013)-35d": [
-    { code: "M57D30T2", hp: "286 hp", torque: "580 Nm", profileId: "m57d30t2-e70-35d" }     // Biturbo (3.0sd)
+    { code: "M57D30T2", hp: "286 hp", torque: "580 Nm", profileId: "m57d30t2-e70-35d" },
+    { code: "M57D30TU2", hp: "265 hp", torque: "576 Nm", profileId: "m57d30tu2-e70-35d-us" } // US Spec SCR/AdBlue
   ],
-  "BMW-X5 Series-E70 (2006-2013)-40d": [ // Hozzáadva
-    { code: "N57D30T0", hp: "306 hp", torque: "600 Nm", profileId: "n57d30t0-e70-40d" }     // LCI Biturbo
+  "BMW-X5 Series-E70 (2006-2013)-40d": [
+    { code: "N57D30TOP", hp: "306 hp", torque: "600 Nm", profileId: "n57d30t0-e70-40d" }
   ],
+  "BMW-X5 Series-E70 (2006-2013)-M50d": [
+    { code: "N57D30S1", hp: "381 hp", torque: "740 Nm", profileId: "n57d30s1-e70-m50d" }
+  ],
+
 
   // --- X5 F15 (2013-2018) ---
-  "BMW-X5 Series-F15 (2014-2018)-35i": [ // Hozzáadva
-    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f15-35i" }
+  "BMW-X5 Series-F15 (2014-2018)-35i": [
+    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f15-35i" },
+    { code: "N55B30M0", hp: "326 hp", torque: "450 Nm", profileId: "n55b30m0-f15-35i-ppk" }, // M Performance Power Kit
+    { code: "N55B30", hp: "300 hp", torque: "407 Nm", profileId: "n55b30-f15-35i-us" }      // US Spec
   ],
-  "BMW-X5 Series-F15 (2014-2018)-50i": [ // Hozzáadva
-    { code: "N63B44O1", hp: "450 hp", torque: "650 Nm", profileId: "n63b44o1-f15-50i" }
+  "BMW-X5 Series-F15 (2014-2018)-50i": [
+    { code: "N63B44O1", hp: "450 hp", torque: "650 Nm", profileId: "n63b44o1-f15-50i" },
+    { code: "N63B44", hp: "445 hp", torque: "650 Nm", profileId: "n63b44-f15-50i-us" }      // US Spec (N63TU)
   ],
-  "BMW-X5 Series-F15 (2014-2018)-25d": [ // Hozzáadva: sDrive és xDrive
-    { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-f15-25d" }, // Korai
-    { code: "B47D20T0", hp: "231 hp", torque: "500 Nm", profileId: "b47d20t0-f15-25d" }     // Későbbi
+  "BMW-X5 Series-F15 (2014-2018)-25d": [
+    { code: "N47D20T1", hp: "218 hp", torque: "450 Nm", profileId: "n47d20t1-f15-25d" },
+    { code: "B47D20T0", hp: "231 hp", torque: "500 Nm", profileId: "b47d20t0-f15-25d" },
+    { code: "B47D20", hp: "211 hp", torque: "450 Nm", profileId: "b47d20-f15-25d-fleet" }    // Belga/Flotta fojtott
   ],
   "BMW-X5 Series-F15 (2014-2018)-30d": [
-    { code: "N57D30O1", hp: "258 hp", torque: "560 Nm", profileId: "n57d30o1-f15-30d" }
+    { code: "N57D30O1", hp: "258 hp", torque: "560 Nm", profileId: "n57d30o1-f15-30d" },
+    { code: "N57D30O1", hp: "211 hp", torque: "560 Nm", profileId: "n57d30o1-f15-30d-fleet" }, // "Fleet" fojtott (211 LE)
+    { code: "N57D30O1", hp: "249 hp", torque: "560 Nm", profileId: "n57d30o1-f15-30d-it" },    // Olasz adózási (249 LE)
+    { code: "N57D30O1", hp: "277 hp", torque: "585 Nm", profileId: "n57d30o1-f15-30d-ppk" },   // M Performance Power Kit
+    { code: "N57D30O1", hp: "255 hp", torque: "560 Nm", profileId: "n57d30o1-f15-30d-us" }    // US Spec (xDrive35d néven fut kint)
   ],
-  "BMW-X5 Series-F15 (2014-2018)-40d": [ // Hozzáadva
-    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f15-40d" }
-  ],
-  "BMW-X5 Series-F15 (2014-2018)-40e": [
-    { code: "N20B20", hp: "313 hp", torque: "450 Nm", profileId: "n20b20-f15-40e" }
+  "BMW-X5 Series-F15 (2014-2018)-40d": [
+    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f15-40d" },
+    { code: "N57D30TOP", hp: "306 hp", torque: "600 Nm", profileId: "n57d30-f15-40d-early" } // Ritka, korai átmeneti széria
   ],
   "BMW-X5 Series-F15 (2014-2018)-M50d": [
-    { code: "N57D30S1", hp: "381 hp", torque: "740 Nm", profileId: "n57d30s1-f15-m50d" } // Tri-Turbo
+    { code: "N57D30S1", hp: "381 hp", torque: "740 Nm", profileId: "n57d30s1-f15-m50d" },
+    { code: "N57D30S1", hp: "400 hp", torque: "760 Nm", profileId: "n57d30s1-f15-m50d-tuned" } // Bizonyos kései szoftveres revíziók
+  ],
+  "BMW-X5 Series-F15 (2014-2018)-40e": [
+    { code: "N20B20O0", hp: "313 hp", torque: "450 Nm", profileId: "n20b20-f15-40e" },
   ],
 
-  "BMW-X5 Series-F85 (2015-2018)-X5 M": [
-    { code: "S63B44T2", hp: "575 hp", torque: "750 Nm", profileId: "s63b44t2-f85-x5m" }
+  //X5 F85
+  "BMW-X5 Series-F85 (2014-2018)-X5 M": [
+    { code: "S63B44T2", hp: "575 hp", torque: "750 Nm", profileId: "s63b44t2-f85-x5m" },
+    { code: "S63B44T2", hp: "567 hp", torque: "750 Nm", profileId: "s63b44t2-f85-x5m-us" }, // US Spec (SAE mérés)
+    { code: "S63B44T2", hp: "600 hp", torque: "750 Nm", profileId: "s63b44t2-f85-x5m-tuned" } // Kései gyári/revíziós szoftveres szint
   ],
 
   // --- X5 G05 (2018-present) ---
-  "BMW-X5 Series-G05/18 (2018-present)-25i": [ // Kínai/Ázsiai piac
-     { code: "B48B20", hp: "231 hp", torque: "300 Nm", profileId: "b48b20-g05-25i" }
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-30i": [ // USA/Ázsia piac
-     { code: "B48B20", hp: "265 hp", torque: "400 Nm", profileId: "b48b20-g05-30i" }
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-40i": [
-    { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g05-40i" },
-    { code: "B58B30M2", hp: "381 hp", torque: "540 Nm", profileId: "b58b30m2-g05-40i-lci" } // LCI
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-50i": [ // Hozzáadva: Pre-M50i
-    { code: "N63B44O2", hp: "462 hp", torque: "650 Nm", profileId: "n63b44o2-g05-50i" }
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-M50i": [ // Hozzáadva
-    { code: "N63B44T3", hp: "530 hp", torque: "750 Nm", profileId: "n63b44t3-g05-m50i" }
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-M60i": [ // Hozzáadva: LCI (S68 motor)
-    { code: "S68B44", hp: "530 hp", torque: "750 Nm", profileId: "s68b44-g05-m60i" }
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-45e": [ // Hozzáadva: Hibrid
-    { code: "B58B30C", hp: "394 hp", torque: "600 Nm", profileId: "b58b30c-g05-45e" }
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-50e": [
-    { code: "B58B30M2", hp: "489 hp", torque: "700 Nm", profileId: "b58b30m2-g05-50e" }
-  ],
+ "BMW-X5 Series-G05/18 (2018-present)-30i": [
+    { code: "B48B20O1", hp: "265 hp", torque: "400 Nm", profileId: "b48b20-g05-30i" },
+    { code: "B48B20", hp: "258 hp", torque: "400 Nm", profileId: "b48b20-g05-30i-us" },
+    { code: "B48B20O2", hp: "258 hp", torque: "400 Nm", profileId: "b48b20-g05-30i-lci" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-40i": [
+   { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g05-40i" },
+   { code: "B58B30M1", hp: "333 hp", torque: "450 Nm", profileId: "b58b30m1-g05-40i-mhev" },
+   { code: "B58B30O1", hp: "381 hp", torque: "520 Nm", profileId: "b58b30o1-g05-40i-us" },
+   { code: "B58B30M2", hp: "381 hp", torque: "540 Nm", profileId: "b58b30m2-g05-40i-lci" },
+   { code: "B58B30M2", hp: "375 hp", torque: "520 Nm", profileId: "b58b30m2-g05-40i-lci-us" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-50i": [
+   { code: "N63B44O2", hp: "462 hp", torque: "650 Nm", profileId: "n63b44o2-g05-50i" },
+   { code: "N63B44M3", hp: "456 hp", torque: "650 Nm", profileId: "n63b44m3-g05-50i-us" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-M50i": [
+   { code: "N63B44T3", hp: "530 hp", torque: "750 Nm", profileId: "n63b44t3-g05-m50i" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-M60i": [
+   { code: "S68B44T0", hp: "530 hp", torque: "750 Nm", profileId: "s68b44-g05-m60i" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-25d": [
+   { code: "B47D20", hp: "231 hp", torque: "450 Nm", profileId: "b47d20-g05-25d" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-30d": [
+   { code: "B57D30O0", hp: "265 hp", torque: "620 Nm", profileId: "b57d30o0-g05-30d" },
+   { code: "B57D30M1", hp: "286 hp", torque: "650 Nm", profileId: "b57d30m1-g05-30d-mhev" },
+   { code: "B57D30O2", hp: "298 hp", torque: "670 Nm", profileId: "b57d30o2-g05-30d-lci" },
+   { code: "B57D30", hp: "211 hp", torque: "620 Nm", profileId: "b57d30-g05-30d-fleet" },
+   { code: "B57D30", hp: "249 hp", torque: "620 Nm", profileId: "b57d30-g05-30d-it" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-40d": [
+   { code: "B57D30T2", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t2-g05-40d" },
+   { code: "B57D30T2", hp: "352 hp", torque: "720 Nm", profileId: "b57d30t2-g05-40d-lci" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-M50d": [
+   { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g05-m50d" }
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-45e": [
+   { code: "B58B30M1", hp: "394 hp", torque: "600 Nm", profileId: "b58b30-g05-45e-sys" },
+ ],
+ "BMW-X5 Series-G05/18 (2018-present)-50e": [
+   { code: "B58B30M2", hp: "489 hp", torque: "700 Nm", profileId: "b58b30-g05-50e-sys" },
+ ],
+
+
+
+  //X5 F95
   "BMW-X5 Series-F95 (2019-present)-X5 M": [
-    { code: "S63B44", hp: "600 hp", torque: "750 Nm", profileId: "s63b44-g05-x5m" },
-    { code: "S63B44", hp: "625 hp", torque: "750 Nm", profileId: "s63b44-g05-x5mcomp" },
-    { code: "S68B44 Hybrid", hp: "625 hp", torque: "750 Nm", profileId: "s68b44-g05-x5m-lci" } // LCI
+    { code: "S63B44T4", hp: "600 hp", torque: "750 Nm", profileId: "s63b44t4-f95-x5m" },
   ],
-  "BMW-X5 Series-G05/18 (2018-present)-25d": [
-    { code: "B47D20", hp: "231 hp", torque: "450 Nm", profileId: "b47d20-g05-25d" }
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-30d": [ // Hozzáadva
-    { code: "B57D30", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g05-30d" },
-    { code: "B57D30", hp: "298 hp", torque: "670 Nm", profileId: "b57d30-g05-30d-lci" } // LCI
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-40d": [ // Hozzáadva
-    { code: "B57D30T0", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g05-40d" }
-  ],
-  "BMW-X5 Series-G05/18 (2018-present)-M50d": [ // Hozzáadva: Quad-Turbo
-    { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g05-m50d" }
+  "BMW-X5 Series-F95 (2019-present)-X5 M Competition": [
+    { code: "S68B44T0", hp: "625 hp", torque: "750 Nm", profileId: "s68b44t0-f95-x5m-lci-mhev" },
+    { code: "S63B44T4", hp: "625 hp", torque: "750 Nm", profileId: "s63b44t4-f95-x5m-comp" },
   ],
 
   // --- X6 E71 (2008-2014) ---
-  "BMW-X6 Series-E71 (2008-2014)-35i": [
-    { code: "N54B30O0", hp: "306 hp", torque: "400 Nm", profileId: "n54b30o0-e71-35i" }, // Twin Turbo
-    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-e71-35i-lci" } // LCI (Single Turbo)
-  ],
-  "BMW-X6 Series-E71 (2008-2014)-50i": [ // Hozzáadva
-    { code: "N63B44", hp: "408 hp", torque: "600 Nm", profileId: "n63b44-e71-50i" }
-  ],
-  "BMW-X6 Series-E71 (2008-2014)-X6 M": [
-    { code: "S63B44", hp: "555 hp", torque: "680 Nm", profileId: "s63b44-e71-x6m" }
-  ],
-  "BMW-X6 Series-E71 (2008-2014)-30d": [ // Hozzáadva
+  "BMW-X6 Series-E71/E72 (2008-2014)-30d": [
     { code: "M57D30TU2", hp: "235 hp", torque: "520 Nm", profileId: "m57d30tu2-e71-30d" },
-    { code: "N57D30", hp: "245 hp", torque: "540 Nm", profileId: "n57d30-e71-30d-lci" }
+    { code: "M57D30TU2", hp: "211 hp", torque: "520 Nm", profileId: "m57d30tu2-e71-30d-211" }, // Hiányzott
+    { code: "N57D30O0", hp: "245 hp", torque: "540 Nm", profileId: "n57d30-e71-30d-lci" },
+    { code: "N57D30O0", hp: "211 hp", torque: "540 Nm", profileId: "n57d30-e71-30d-211" }
   ],
-  "BMW-X6 Series-E71 (2008-2014)-35d": [ // Hozzáadva
-    { code: "M57D30T2", hp: "286 hp", torque: "580 Nm", profileId: "m57d30t2-e71-35d" }
+  "BMW-X6 Series-E71/E72 (2008-2014)-35d": [
+    { code: "M57D30T2", hp: "286 hp", torque: "580 Nm", profileId: "m57d30t2-e71-35d" },
+    { code: "M57D30T2", hp: "265 hp", torque: "576 Nm", profileId: "m57d30t2-e71-35d-us" }
   ],
-  "BMW-X6 Series-E71 (2008-2014)-40d": [ // Hozzáadva
-    { code: "N57D30T0", hp: "306 hp", torque: "600 Nm", profileId: "n57d30t0-e71-40d" }
+  "BMW-X6 Series-E71/E72 (2008-2014)-40d": [
+    { code: "N57D30T0", hp: "306 hp", torque: "600 Nm", profileId: "n57d30t0-e71-40d" },
+    { code: "N57D30T0", hp: "286 hp", torque: "600 Nm", profileId: "n57d30t0-e71-40d-286" } 
   ],
-  "BMW-X6 Series-E71 (2008-2014)-M50d": [ // Hozzáadva
+  "BMW-X6 Series-E71/E72 (2012-2014)-M50d": [
     { code: "N57D30S1", hp: "381 hp", torque: "740 Nm", profileId: "n57d30s1-e71-m50d" }
   ],
-  "BMW-X6 Series-E72 (2010-2015)-ActiveHybrid X6": [
-    { code: "N63B44 Hybrid", hp: "485 hp", torque: "780 Nm", profileId: "n63b44-e72-ahx6" }
+  "BMW-X6 Series-E71/E72 (2008-2014)-35i": [
+    { code: "N54B30O0", hp: "306 hp", torque: "400 Nm", profileId: "n54b30o0-e71-35i" },
+    { code: "N54B30O0", hp: "326 hp", torque: "450 Nm", profileId: "n54b30o0-e71-35i-ppk" }, // N54 Performance Power Kit
+    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-e71-35i-lci" },
+    { code: "N54B30O0", hp: "300 hp", torque: "407 Nm", profileId: "n54b30o0-e71-35i-us" }, // Új
+    { code: "N55B30M0", hp: "282 hp", torque: "400 Nm", profileId: "n55b30m0-e71-35i-cn" }, // Új
+    { code: "N55B30M0", hp: "326 hp", torque: "450 Nm", profileId: "n55b30m0-e71-35i-ppk" } // Power Kit
+  ],
+  "BMW-X6 Series-E71/E72 (2008-2014)-50i": [
+    { code: "N63B44O0", hp: "408 hp", torque: "600 Nm", profileId: "n63b44-e71-50i" },
+    { code: "N63B44O0", hp: "349 hp", torque: "600 Nm", profileId: "n63b44-e71-50i-cn" },
+    { code: "N63B44O0", hp: "400 hp", torque: "610 Nm", profileId: "n63b44-e71-50i-us" }, // Új
+    { code: "N63B44O0", hp: "440 hp", torque: "650 Nm", profileId: "n63b44-e71-50i-ppk" } // Power Kit
+  ],
+  "BMW-X6 Series-E71/E72 (2008-2014)-X6 M": [
+    { code: "S63B44O0", hp: "555 hp", torque: "680 Nm", profileId: "s63b44-e71-x6m" },
+    { code: "S63B44O0", hp: "547 hp", torque: "680 Nm", profileId: "s63b44-e71-x6m-usa" } // USA SAE specifikáció
+  ],
+  "BMW-X6 Series-E72/E72 (2010-2011)-ActiveHybrid X6": [
+    { code: "N63B44O0 Hybrid", hp: "485 hp", torque: "780 Nm", profileId: "n63b44-e72-ahx6-sys" }
   ],
 
   // --- X6 F16 (2014-2019) ---
-  "BMW-X6 Series-F16 (2014-2019)-35i": [ // Hozzáadva
-    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f16-35i" }
+  "BMW-X6 Series-F16 (2014-2019)-35i": [
+    { code: "N55B30M0", hp: "306 hp", torque: "400 Nm", profileId: "n55b30m0-f16-35i" },
+    { code: "N55B30M0", hp: "300 hp", torque: "407 Nm", profileId: "n55b30m0-f16-35i-usa" }, // Észak-amerikai specifikáció (xDrive & sDrive)
+    { code: "N55B30M0", hp: "326 hp", torque: "450 Nm", profileId: "n55b30m0-f16-35i-mppk" } // M Performance Power Kit
   ],
-  "BMW-X6 Series-F16 (2014-2019)-50i": [ // Hozzáadva
-    { code: "N63B44TU", hp: "450 hp", torque: "650 Nm", profileId: "n63b44tu-f16-50i" }
+  "BMW-X6 Series-F16 (2014-2019)-50i": [
+    { code: "N63B44O1", hp: "450 hp", torque: "650 Nm", profileId: "n63b44o1-f16-50i" }, // N63TU hivatalos kódja
+    { code: "N63B44O1", hp: "445 hp", torque: "650 Nm", profileId: "n63b44o1-f16-50i-usa" }, // Észak-amerikai SAE mérés szerint
+    { code: "N63B40A", hp: "408 hp", torque: "600 Nm", profileId: "n63b40a-f16-50i" } // Kínai piac (4.0L V8)
   ],
   "BMW-X6 Series-F16 (2014-2019)-30d": [
-    { code: "N57D30", hp: "258 hp", torque: "560 Nm", profileId: "n57d30-f16-30d" }
+    { code: "N57D30O1", hp: "258 hp", torque: "560 Nm", profileId: "n57d30o1-f16-30d" },
+    { code: "N57D30O1", hp: "211 hp", torque: "560 Nm", profileId: "n57d30o1-f16-30d-fleet" }, // Belga/Fleet fojtott
+    { code: "N57D30O1", hp: "249 hp", torque: "560 Nm", profileId: "n57d30o1-f16-30d-russia" } // Orosz adócsökkentett
   ],
-  "BMW-X6 Series-F16 (2014-2019)-40d": [ // Hozzáadva
-    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f16-40d" }
+  "BMW-X6 Series-F16 (2014-2019)-40d": [
+    { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f16-40d" },
+    { code: "N57D30T1", hp: "249 hp", torque: "630 Nm", profileId: "n57d30t1-f16-40d-russia" } // Ritkább orosz 40d fojtás
   ],
-  "BMW-X6 Series-F16 (2014-2019)-M50d": [ // Hozzáadva
+  "BMW-X6 Series-F16 (2014-2019)-M50d": [
     { code: "N57D30S1", hp: "381 hp", torque: "740 Nm", profileId: "n57d30s1-f16-m50d" }
   ],
 
+  // F86
   "BMW-X6 Series-F86 (2014-2019)-X6 M": [
-    { code: "S63B44T2", hp: "575 hp", torque: "750 Nm", profileId: "s63b44t2-f86-x6m" }
+    { code: "S63B44T2", hp: "575 hp", torque: "750 Nm", profileId: "s63b44t2-f86-x6m" },
+    { code: "S63B44T2", hp: "567 hp", torque: "750 Nm", profileId: "s63b44t2-f86-x6m-usa" } // Észak-amerikai SAE mérés
   ],
 
   // --- X6 G06 (2019-present) ---
-  "BMW-X6 Series-G06 (2019-present)-40i": [ // Hozzáadva
+  "BMW-X6 Series-G06 (2019-present)-40i": [
     { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g06-40i" },
-    { code: "B58B30M2", hp: "381 hp", torque: "540 Nm", profileId: "b58b30m2-g06-40i-lci" }
+    { code: "B58B30C", hp: "335 hp", torque: "450 Nm", profileId: "b58b30c-g06-40i-usa" }, // USA/SAE specifikáció
+    { code: "B58B30M2", hp: "381 hp", torque: "540 Nm", profileId: "b58b30m2-g06-40i-lci" },
+    { code: "B58B30M2", hp: "375 hp", torque: "540 Nm", profileId: "b58b30m2-g06-40i-lci-usa" } // USA LCI specifikáció
   ],
   "BMW-X6 Series-G06 (2019-present)-M50i": [
-    { code: "N63B44T3", hp: "530 hp", torque: "750 Nm", profileId: "n63b44t3-g06-m50i" }
+    { code: "N63B44T3", hp: "530 hp", torque: "750 Nm", profileId: "n63b44t3-g06-m50i" },
+    { code: "N63B44T3", hp: "523 hp", torque: "750 Nm", profileId: "n63b44t3-g06-m50i-usa" } // USA SAE specifikáció
   ],
-  "BMW-X6 Series-G06 (2019-present)-M60i": [ // Hozzáadva: LCI
-    { code: "S68B44", hp: "530 hp", torque: "750 Nm", profileId: "s68b44-g06-m60i" }
+  "BMW-X6 Series-G06 (2019-present)-M60i": [
+    { code: "S68B44T0", hp: "530 hp", torque: "750 Nm", profileId: "s68b44-g06-m60i" } // Mild Hybrid V8
   ],
-  "BMW-X6 Series-G06 (2019-present)-X6 M": [ // Hozzáadva
-    { code: "S63B44", hp: "600 hp", torque: "750 Nm", profileId: "s63b44-g06-x6m" },
-    { code: "S63B44", hp: "625 hp", torque: "750 Nm", profileId: "s63b44-g06-x6mcomp" }
+  "BMW-X6 Series-G06 (2019-present)-30d": [
+    { code: "B57D30O0", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g06-30d" },
+    { code: "B57D30O0", hp: "211 hp", torque: "620 Nm", profileId: "b57d30-g06-30d-fleet" }, // Belga/Adócsökkentett fojtott
+    { code: "B57D30O0", hp: "249 hp", torque: "620 Nm", profileId: "b57d30-g06-30d-russia" }, // Orosz adócsökkentett
+    { code: "B57D30M0", hp: "286 hp", torque: "650 Nm", profileId: "b57d30-g06-30d-mh" }, // Mild Hybrid (2020+)
+    { code: "B57D30M2", hp: "298 hp", torque: "670 Nm", profileId: "b57d30-g06-30d-lci" }
   ],
-  "BMW-X6 Series-G06 (2019-present)-30d": [ // Hozzáadva
-    { code: "B57D30", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g06-30d" },
-    { code: "B57D30", hp: "298 hp", torque: "670 Nm", profileId: "b57d30-g06-30d-lci" }
+  "BMW-X6 Series-G06 (2019-present)-40d": [
+    { code: "B57D30T2", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t2-g06-40d" },
+    { code: "B57D30T2", hp: "352 hp", torque: "720 Nm", profileId: "b57d30t2-g06-40d-lci" } // LCI Mild Hybrid emelt nyomaték
   ],
-  "BMW-X6 Series-G06 (2019-present)-40d": [ // Hozzáadva
-    { code: "B57D30T0", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g06-40d" }
-  ],
-  "BMW-X6 Series-G06 (2019-present)-M50d": [ // EZ HIÁNYZOTT!
-    { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g06-m50d" } // Quad-Turbo dízel
+  "BMW-X6 Series-G06 (2019-present)-M50d": [
+    { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g06-m50d" }
   ],
 
+  //F96
   "BMW-X6 Series-F96 (2019-2023)-X6 M": [
     { code: "S63B44T4", hp: "600 hp", torque: "750 Nm", profileId: "s63b44t4-f96-x6m" }
   ],
