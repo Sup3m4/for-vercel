@@ -44,8 +44,11 @@ export const mercedesGenerations = {
       "W222 (2013-2020)",
       "W223 (2020-present)",
       "C217/A217 (2014-2020)",
-
     ],
+    "Mercedes-Benz-S-Class-Maybach": [
+  "X222 (2015-2020)",
+  "Z223 (2021-present)"
+],
     "Mercedes-Benz-Maybach": [
       "57/62 (W240) (2002-2012)" // Az önálló márka korszaka
       // A modern Maybach-ok az S-osztály alatt vannak (X222, Z223)
@@ -103,6 +106,10 @@ export const mercedesGenerations = {
       "X253 (2015-2022)",
       "X254 (2022-present)"
     ],
+    "Mercedes-Benz-GLC-Coupe": [
+  "C253 (2016-2023)",
+  "C254 (2023-present)"
+],
     "Mercedes-Benz-ML-Class": [
       "W163 (1997-2005)",
       "W164 (2005-2011)",
@@ -112,6 +119,10 @@ export const mercedesGenerations = {
       "W166 (2015-2019)", // ML Facelift új néven
       "V167 (2019-present)"
     ],
+    "Mercedes-Benz-GLE-Coupe": [
+  "C292 (2015-2019)",
+  "C167 (2019-present)"
+],
     "Mercedes-Benz-GL-Class": [
       "X164 (2006-2012)",
       "X166 (2012-2015)"

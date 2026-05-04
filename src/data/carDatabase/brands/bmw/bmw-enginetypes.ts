@@ -711,7 +711,6 @@ export const bmwEngineTypes =
         { name: "M50d", hp: "381 hp" }
       ],
       "BMW-X6 Series-F16 (2014-2019)": [
-        { name: "28i", hp: "245 hp" },
         { name: "35i", hp: "306 hp" },
         { name: "50i", hp: "450 hp" },
         { name: "30d", hp: "258 hp" },
@@ -719,10 +718,10 @@ export const bmwEngineTypes =
         { name: "M50d", hp: "381 hp" }
       ],
       "BMW-X6 Series-F86 (2014-2019)": [
-        { name: "X6 M", hp: "575 hp" }
+        { name: "X6 M", hp: "575 hp" },
+        { name: "X6 M Competition", hp: "575 hp" }
       ],
       "BMW-X6 Series-G06 (2019-present)": [
-        { name: "30i", hp: "265 hp" },
         { name: "40i", hp: "340 hp" },
         { name: "M50i", hp: "530 hp" },
         { name: "M60i", hp: "530 hp" },
@@ -730,7 +729,7 @@ export const bmwEngineTypes =
         { name: "40d", hp: "340 hp" },
         { name: "M50d", hp: "400 hp" }
       ],
-      "BMW-X6 Series-F96 (2019-2023)": [
+      "BMW-X6 Series-F96 (2019-present)": [
         { name: "X6 M", hp: "600 hp" },
         { name: "X6 M Competition", hp: "625 hp" }
       ],
@@ -741,9 +740,10 @@ export const bmwEngineTypes =
         { name: "50i", hp: "462 hp" },
         { name: "M50i", hp: "530 hp" },
         { name: "M60i", hp: "530 hp" },
+        { name: "Alpina XB7", hp: "340 hp" },
         { name: "30d", hp: "265-286 hp" },
         { name: "40d", hp: "340 hp" },
-        { name: "M50d", hp: "400 hp" }
+        { name: "M50d", hp: "400 hp" },
       ],
   
       // BMW XM Series
@@ -754,10 +754,8 @@ export const bmwEngineTypes =
       ],
   
       // BMW Z Series
-      "BMW-Z Series-Z1 (1989-1991)": [
-        { name: "2.5", hp: "170 hp" }
-      ],
-      "BMW-Z Series-Z3 (1995-2002)": [
+
+      "BMW-Z Series-Z3 E36/7/8 (1995-2002)": [
         { name: "1.8", hp: "115 hp" },
         { name: "1.9", hp: "118-140 hp" },
         { name: "2.0", hp: "150 hp" },
@@ -767,8 +765,9 @@ export const bmwEngineTypes =
         { name: "3.0i", hp: "231 hp" },
         { name: "M 3.2", hp: "240-325 hp" }
       ],
-      "BMW-Z Series-Z8 E52 (2000-2003)": [
-        { name: "5.0 V8", hp: "400 hp" }
+      "BMW-Z Series-Z8 E52 (1999-2003)": [
+        { name: "5.0 V8", hp: "400 hp" },
+        { name: "Alpina Roadster V8", hp: "381 hp" },
       ],
       "BMW-Z Series-Z4 E85/86 (2002-2008)": [
         { name: "2.0i", hp: "150 hp" },

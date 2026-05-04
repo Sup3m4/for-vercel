@@ -2196,7 +2196,8 @@ export const bmwEngineCodes = {
   "BMW-X6 Series-F16 (2014-2019)-30d": [
     { code: "N57D30O1", hp: "258 hp", torque: "560 Nm", profileId: "n57d30o1-f16-30d" },
     { code: "N57D30O1", hp: "211 hp", torque: "560 Nm", profileId: "n57d30o1-f16-30d-fleet" }, // Belga/Fleet fojtott
-    { code: "N57D30O1", hp: "249 hp", torque: "560 Nm", profileId: "n57d30o1-f16-30d-russia" } // Orosz adócsökkentett
+    { code: "N57D30O1", hp: "249 hp", torque: "560 Nm", profileId: "n57d30o1-f16-30d-russia" }, // Orosz adócsökkentett
+    { code: "N57D30O1", "hp": "255 hp", "torque": "560 Nm", "profileId": "n57d30o1-f16-35d-usa" }
   ],
   "BMW-X6 Series-F16 (2014-2019)-40d": [
     { code: "N57D30T1", hp: "313 hp", torque: "630 Nm", profileId: "n57d30t1-f16-40d" },
@@ -2211,12 +2212,16 @@ export const bmwEngineCodes = {
     { code: "S63B44T2", hp: "575 hp", torque: "750 Nm", profileId: "s63b44t2-f86-x6m" },
     { code: "S63B44T2", hp: "567 hp", torque: "750 Nm", profileId: "s63b44t2-f86-x6m-usa" } // Észak-amerikai SAE mérés
   ],
+  "BMW-X6 Series-F86 (2014-2019)-X6 M Competition": [
+    { "code": "S63B44T2", "hp": "575 hp", "torque": "750 Nm", "profileId": "s63b44t2-f86-x6m-competition", "note": "Gyári S7MA Competition csomag (futómű, kipufogó, 21 colos felnik), motorerő változatlan" } 
+  ],
 
   // --- X6 G06 (2019-present) ---
   "BMW-X6 Series-G06 (2019-present)-40i": [
     { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g06-40i" },
     { code: "B58B30C", hp: "335 hp", torque: "450 Nm", profileId: "b58b30c-g06-40i-usa" }, // USA/SAE specifikáció
     { code: "B58B30M2", hp: "381 hp", torque: "540 Nm", profileId: "b58b30m2-g06-40i-lci" },
+    { code: "B58B30C", hp: "333 hp", torque: "450 Nm", profileId: "b58b30c-g06-40i-mh-eu" }, // Az EU-s 333 LE-s változat a Mild Hybrid bevezetésekor (2020-2023) PRE-LCI
     { code: "B58B30M2", hp: "375 hp", torque: "540 Nm", profileId: "b58b30m2-g06-40i-lci-usa" } // USA LCI specifikáció
   ],
   "BMW-X6 Series-G06 (2019-present)-M50i": [
@@ -2224,7 +2229,8 @@ export const bmwEngineCodes = {
     { code: "N63B44T3", hp: "523 hp", torque: "750 Nm", profileId: "n63b44t3-g06-m50i-usa" } // USA SAE specifikáció
   ],
   "BMW-X6 Series-G06 (2019-present)-M60i": [
-    { code: "S68B44T0", hp: "530 hp", torque: "750 Nm", profileId: "s68b44-g06-m60i" } // Mild Hybrid V8
+    { code: "S68B44T0", hp: "530 hp", torque: "750 Nm", profileId: "s68b44-g06-m60i" }, // Mild Hybrid V8
+    { code: "S68B44T0", hp: "523 hp", torque: "750 Nm", profileId: "s68b44-g06-m60i-usa" }
   ],
   "BMW-X6 Series-G06 (2019-present)-30d": [
     { code: "B57D30O0", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g06-30d" },
@@ -2235,155 +2241,191 @@ export const bmwEngineCodes = {
   ],
   "BMW-X6 Series-G06 (2019-present)-40d": [
     { code: "B57D30T2", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t2-g06-40d" },
-    { code: "B57D30T2", hp: "352 hp", torque: "720 Nm", profileId: "b57d30t2-g06-40d-lci" } // LCI Mild Hybrid emelt nyomaték
+    { code: "B57D30T3", hp: "352 hp", torque: "720 Nm", profileId: "b57d30t2-g06-40d-lci" } // LCI Mild Hybrid emelt nyomaték
   ],
   "BMW-X6 Series-G06 (2019-present)-M50d": [
     { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g06-m50d" }
   ],
 
   //F96
-  "BMW-X6 Series-F96 (2019-2023)-X6 M": [
-    { code: "S63B44T4", hp: "600 hp", torque: "750 Nm", profileId: "s63b44t4-f96-x6m" }
+  "BMW-X6 Series-F96 (2019-present)-X6 M": [
+    { "code": "S63B44T4", "hp": "600 hp", "torque": "750 Nm", "profileId": "s63b44t4-f96-x6m" },
+    { "code": "S63B44T4", "hp": "591 hp", "torque": "750 Nm", "profileId": "s63b44t4-f96-x6m-usa" }
   ],
-  "BMW-X6 Series-F96 (2019-2023)-X6 M Competition": [
-    { code: "S63B44T4", hp: "625 hp", torque: "750 Nm", profileId: "s63b44t4-f96-x6mcomp" }
+  "BMW-X6 Series-F96 (2019-present)-X6 M Competition": [
+    { "code": "S63B44T4", "hp": "625 hp", "torque": "750 Nm", "profileId": "s63b44t4-f96-x6m-comp" },
+    { "code": "S63B44T4", "hp": "617 hp", "torque": "750 Nm", "profileId": "s63b44t4-f96-x6m-comp-usa" },
+    { "code": "S68B44T0", "hp": "625 hp", "torque": "750 Nm", "profileId": "s68b44-f96-x6m-comp-lci", "note": "Mild Hybrid (2023+)" },
+    { "code": "S68B44T0", "hp": "617 hp", "torque": "750 Nm", "profileId": "s68b44-f96-x6m-comp-lci-usa" }
   ],
 
   // --- X7 G07 (2018-present) ---
   "BMW-X7 Series-G07 (2018-present)-40i": [
-    { code: "B58B30C", hp: "340 hp", torque: "450 Nm", profileId: "b58b30c-g07-40i" },
-    { code: "B58B30M2", hp: "381 hp", torque: "540 Nm", profileId: "b58b30m2-g07-40i-lci" } // LCI
+    { "code": "B58B30C", "hp": "340 hp", "torque": "450 Nm", "profileId": "b58b30c-g07-40i" },
+    { "code": "B58B30C", "hp": "333 hp", "torque": "450 Nm", "profileId": "b58b30c-g07-40i-mh", "note": "Pre-LCI Mild Hybrid (2020-2022)" },
+    { "code": "B58B30M2", "hp": "381 hp", "torque": "540 Nm", "profileId": "b58b30m2-g07-40i-lci" },
+    { "code": "B58B30O1", "hp": "335 hp", "torque": "450 Nm", "profileId": "b58b30o1-g07-40i-usa" },
+    { "code": "B58B30M2", "hp": "375 hp", "torque": "540 Nm", "profileId": "b58b30m2-g07-40i-lci-usa" }
   ],
-  "BMW-X7 Series-G07 (2018-present)-50i": [ // Hozzáadva: Korai modellek
-    { code: "N63B44O2", hp: "462 hp", torque: "650 Nm", profileId: "n63b44o2-g07-50i" }
+  "BMW-X7 Series-G07 (2018-present)-50i": [
+    { "code": "N63B44M3", "hp": "462 hp", "torque": "650 Nm", "profileId": "n63b44m3-g07-50i" },
+    { "code": "N63B44M3", "hp": "456 hp", "torque": "650 Nm", "profileId": "n63b44m3-g07-50i-usa" }
   ],
   "BMW-X7 Series-G07 (2018-present)-M50i": [
-    { code: "N63B44T3", hp: "530 hp", torque: "750 Nm", profileId: "n63b44t3-g07-m50i" }
+    { "code": "N63B44T3", "hp": "530 hp", "torque": "750 Nm", "profileId": "n63b44t3-g07-m50i" },
+    { "code": "N63B44T3", "hp": "523 hp", "torque": "750 Nm", "profileId": "n63b44t3-g07-m50i-usa" }
   ],
-  "BMW-X7 Series-G07 (2018-present)-M60i": [ // Hozzáadva: LCI
-    { code: "S68B44", hp: "530 hp", torque: "750 Nm", profileId: "s68b44-g07-m60i" }
+  "BMW-X7 Series-G07 (2018-present)-M60i": [
+    { "code": "S68B44T0", "hp": "530 hp", "torque": "750 Nm", "profileId": "s68b44-g07-m60i" },
+    { "code": "S68B44T0", "hp": "523 hp", "torque": "750 Nm", "profileId": "s68b44-g07-m60i-usa" }
   ],
   "BMW-X7 Series-G07 (2018-present)-30d": [
-    { code: "B57D30", hp: "265 hp", torque: "620 Nm", profileId: "b57d30-g07-30d" } // Pre-LCI csak 265hp volt
+    { "code": "B57D30O0", "hp": "265 hp", "torque": "620 Nm", "profileId": "b57d30-g07-30d" },
+    { "code": "B57D30M0", "hp": "286 hp", "torque": "650 Nm", "profileId": "b57d30-g07-30d-mh", "note": "Pre-LCI Mild Hybrid (2020-2022)" },
+    { "code": "B57D30M2", "hp": "298 hp", "torque": "670 Nm", "profileId": "b57d30-g07-30d-lci" }
   ],
-  "BMW-X7 Series-G07 (2018-present)-40d": [ // Hozzáadva
-    { code: "B57D30T0", hp: "340 hp", torque: "700 Nm", profileId: "b57d30t0-g07-40d" },
-    { code: "B57D30T0", hp: "352 hp", torque: "720 Nm", profileId: "b57d30t0-g07-40d-lci" }
+  "BMW-X7 Series-G07 (2018-present)-40d": [
+    { "code": "B57D30T2", "hp": "340 hp", "torque": "700 Nm", "profileId": "b57d30t2-g07-40d" },
+    { "code": "B57D30T3", "hp": "352 hp", "torque": "720 Nm", "profileId": "b57d30t3-g07-40d-lci" }
   ],
   "BMW-X7 Series-G07 (2018-present)-M50d": [ // Hozzáadva: Quad-Turbo
     { code: "B57D30S0", hp: "400 hp", torque: "760 Nm", profileId: "b57d30s0-g07-m50d" }
   ],
+  "BMW-X7 Series-G07 (2018-present)-Alpina XB7": [
+    { "code": "N63B44T3", "hp": "621 hp", "torque": "800 Nm", "profileId": "n63-g07-xb7", "note": "Pre-LCI Alpina" },
+    { "code": "S68B44T0", "hp": "630 hp", "torque": "800 Nm", "profileId": "s68-g07-xb7-lci", "note": "LCI Alpina" },
+    { "code": "S68B44T0", "hp": "631 hp", "torque": "800 Nm", "profileId": "s68-g07-xb7-lci-usa", "note": "LCI Alpina USA" },
+    { "code": "N63B44T3", "hp": "612 hp", "torque": "800 Nm", "profileId": "n63-g07-xb7-usa", "note": "Pre-LCI Alpina USA" }
+  ],
 
   // --- XM G09 (2022-present) ---
   "BMW-XM Series-G09 (2022-present)-XM": [
-    { code: "S68B44 Hybrid", hp: "653 hp", torque: "800 Nm", profileId: "s68b44-g09-xm" }
-  ],
-  "BMW-XM Series-G09 (2022-present)-XM Label": [ // Hozzáadva
-    { code: "S68B44 Hybrid", hp: "748 hp", torque: "1000 Nm", profileId: "s68b44-g09-xm-label" }
-  ],
-  "BMW-XM Series-G09 (2022-present)-50e": [ // Hozzáadva: Belépő sorhatos hibrid
-    { code: "B58B30 Hybrid", hp: "475 hp", torque: "700 Nm", profileId: "b58b30-g09-xm50e" }
-  ],
+    { "code": "S68B44T0", "hp": "653 hp", "torque": "800 Nm", "profileId": "s68b44-g09-xm" },
+    { "code": "S68B44T0", "hp": "644 hp", "torque": "800 Nm", "profileId": "s68b44-g09-xm-usa" }
+],
+"BMW-XM Series-G09 (2022-present)-XM Label": [
+    { "code": "S68B44T0", "hp": "748 hp", "torque": "1000 Nm", "profileId": "s68b44-g09-xm-label" },
+    { "code": "S68B44T0", "hp": "738 hp", "torque": "1000 Nm", "profileId": "s68b44-g09-xm-label-usa" },
+    { "code": "S68B44T0", "hp": "748 hp", "torque": "1000 Nm", "profileId": "s68b44-g09-xm-label-red", "note": "Label Red Edition (Limitált 500 darabos széria, egyedi színekkel)" }
+],
+"BMW-XM Series-G09 (2022-present)-50e": [
+    { "code": "B58B30M2", "hp": "475 hp", "torque": "700 Nm", "profileId": "b58b30-g09-xm50e" }
+],
 
     // --- BMW Z SERIES ---
-    // Z3
-   // --- Z1 (1989-1991) ---
-  "BMW-Z Series-Z1 (1989-1991)-2.5": [ // Hozzáadva: A különleges ajtós roadster
-    { code: "M20B25", hp: "170 hp", torque: "222 Nm", profileId: "m20b25-z1" }
-  ],
 
   // --- Z3 E36/7, E36/8 (1995-2002) ---
-  "BMW-Z Series-Z3 (1995-2002)-1.8": [ // Hozzáadva
-    { code: "M43B18", hp: "115 hp", torque: "168 Nm", profileId: "m43b18-z3-1.8" }
-  ],
-  "BMW-Z Series-Z3 (1995-2002)-1.9": [
-    { code: "M43B19", hp: "118 hp", torque: "180 Nm", profileId: "m43b19-z3-1.9i" }, // 8-szelep (Facelift)
-    { code: "M44B19", hp: "140 hp", torque: "180 Nm", profileId: "m44b19-z3-1.9" }  // 16-szelep (Pre-facelift)
-  ],
-  "BMW-Z Series-Z3 (1995-2002)-2.0": [ // Hozzáadva: Kis sorhatos
-    { code: "M52TUB20", hp: "150 hp", torque: "190 Nm", profileId: "m52tub20-z3-2.0" }
-  ],
-  "BMW-Z Series-Z3 (1995-2002)-2.2i": [ // Hozzáadva
-    { code: "M54B22", hp: "170 hp", torque: "210 Nm", profileId: "m54b22-z3-2.2i" }
-  ],
-  "BMW-Z Series-Z3 (1995-2002)-2.5": [
-    { "code": "M52TUB25", "hp": "170 hp", "torque": "245 Nm", "profileId": "m52tub25-z3-23" },
+  "BMW-Z Series-Z3 E36/7/8 (1995-2002)-1.8": [
+    { "code": "M43B18", "hp": "115 hp", "torque": "168 Nm", "profileId": "m43b18-z3-1.8" }
+],
+"BMW-Z Series-Z3 E36/7/8 (1995-2002)-1.9": [
+    { "code": "M44B19", "hp": "140 hp", "torque": "180 Nm", "profileId": "m44b19-z3-1.9", "note": "16V Pre-facelift" },
+    { "code": "M43B19", "hp": "118 hp", "torque": "180 Nm", "profileId": "m43b19-z3-1.9i", "note": "8V Facelift (Z3 1.9i)" },
+    { "code": "M43B19", "hp": "116 hp", "torque": "175 Nm", "profileId": "m43b19-z3-1.9-detuned", "note": "Fojtott változat bizonyos piacokra" }
+],
+"BMW-Z Series-Z3 E36/7/8 (1995-2002)-2.0": [
+    { "code": "M52TUB20", "hp": "150 hp", "torque": "190 Nm", "profileId": "m52tub20-z3-2.0" }
+],
+"BMW-Z Series-Z3 E36/7/8 (1995-2002)-2.2i": [
+    { "code": "M54B22", "hp": "170 hp", "torque": "210 Nm", "profileId": "m54b22-z3-2.2i" }
+],
+"BMW-Z Series-Z3 E36/7/8 (1995-2002)-2.5": [
+    { "code": "M52TUB25", "hp": "170 hp", "torque": "245 Nm", "profileId": "m52tub25-z3-23", "note": "USA piac, Z3 2.3 néven árulták" },
+    { "code": "M54B25", "hp": "184 hp", "torque": "237 Nm", "profileId": "m54b25-z3-25i-usa", "note": "USA specifikáció (Z3 2.5i)" },
     { "code": "M54B25", "hp": "192 hp", "torque": "245 Nm", "profileId": "m54b25-z3-25i" }
-  ],
-  "BMW-Z Series-Z3 (1995-2002)-2.8": [
-    { code: "M52B28", hp: "192 hp", torque: "275 Nm", profileId: "m52b28-z3-2.8" },      // Single Vanos
-    { code: "M52TUB28", hp: "193 hp", torque: "280 Nm", profileId: "m52tub28-z3-2.8-tu" } // Double Vanos
-  ],
-  "BMW-Z Series-Z3 (1995-2002)-3.0i": [ // Hozzáadva: A legerősebb nem-M
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-z3-3.0i" }
-  ],
-  "BMW-Z Series-Z3 (1995-2002)-M 3.2": [
-    { code: "S50B32", hp: "321 hp", torque: "350 Nm", profileId: "s50b32-z3m-euro" }, // Euro Spec
-    { code: "S52B32", hp: "240 hp", torque: "320 Nm", profileId: "s52b32-z3m-us" },   // US Spec
-    { code: "S54B32", hp: "325 hp", torque: "350 Nm", profileId: "s54b32-z3m-late" }  // Late models (S54)
-  ],
+],
+"BMW-Z Series-Z3 E36/7/8 (1995-2002)-2.8": [
+    { "code": "M52B28", "hp": "192 hp", "torque": "275 Nm", "profileId": "m52b28-z3-2.8", "note": "Single VANOS" },
+    { "code": "M52B28", "hp": "189 hp", "torque": "275 Nm", "profileId": "m52b28-z3-2.8-usa", "note": "USA Spec Single VANOS" },
+    { "code": "M52TUB28", "hp": "193 hp", "torque": "280 Nm", "profileId": "m52tub28-z3-2.8-tu", "note": "Double VANOS" }
+],
+"BMW-Z Series-Z3 E36/7/8 (1995-2002)-3.0i": [
+    { "code": "M54B30", "hp": "231 hp", "torque": "300 Nm", "profileId": "m54b30-z3-3.0i" },
+    { "code": "M54B30", "hp": "225 hp", "torque": "290 Nm", "profileId": "m54b30-z3-3.0i-usa", "note": "USA specifikáció" }
+],
+"BMW-Z Series-Z3 E36/7/8 (1995-2002)-M 3.2": [
+    { "code": "S50B32", "hp": "321 hp", "torque": "350 Nm", "profileId": "s50b32-z3m-euro", "note": "Euro Spec (1997-2000)" },
+    { "code": "S52B32", "hp": "240 hp", "torque": "320 Nm", "profileId": "s52b32-z3m-us", "note": "US Spec (1997-2000)" },
+    { "code": "S54B32", "hp": "325 hp", "torque": "350 Nm", "profileId": "s54b32-z3m-late", "note": "Euro Spec LCI (2001-2002)" },
+    { "code": "S54B32", "hp": "315 hp", "torque": "341 Nm", "profileId": "s54b32-z3m-late-usa", "note": "US Spec LCI (2001-2002) - fojtott kipufogórendszer" }
+],
 
   // --- Z8 E52 (2000-2003) ---
-  "BMW-Z Series-Z8 E52 (2000-2003)-5.0 V8": [ // Hozzáadva: A James Bond autó
-    { code: "S62B50", hp: "400 hp", torque: "500 Nm", profileId: "s62b50-z8-5.0-v8" }
-  ],
+  "BMW-Z Series-Z8 E52 (1999-2003)-5.0 V8": [
+    { "code": "S62B50", "hp": "400 hp", "torque": "500 Nm", "profileId": "s62b50-z8-5.0-v8", "note": "Standard BMW version (M5 engine)" }
+],
+"BMW-Z Series-Z8 E52 (19999-2003)-Alpina Roadster V8": [
+    { "code": "M62B48", "hp": "381 hp", "torque": "520 Nm", "profileId": "m62b48-z8-alpina", "note": "Alpina version (Switch-Tronic)" }
+],
 
   // --- Z4 E85/E86 (2002-2008) ---
-  "BMW-Z Series-Z4 E85/86 (2002-2008)-2.0i": [ // Hozzáadva: 4-hengeres
-    { code: "N46B20", hp: "150 hp", torque: "200 Nm", profileId: "n46b20-z4-e85-20i" }
-  ],
-  "BMW-Z Series-Z4 E85/86 (2002-2008)-2.2i": [ // Hozzáadva
-    { code: "M54B22", hp: "170 hp", torque: "210 Nm", profileId: "m54b22-z4-e85-22i" }
-  ],
-  "BMW-Z Series-Z4 E85/86 (2002-2008)-2.5i": [
-    { code: "M54B25", hp: "192 hp", torque: "245 Nm", profileId: "m54b25-z4-e85-25i" }, // Pre-LCI
-    { code: "N52B25", hp: "177 hp", torque: "230 Nm", profileId: "n52b25-z4-e85-25i-fl" } // LCI (218hp version exists as 2.5si)
-  ],
-  "BMW-Z Series-Z4 E85/86 (2002-2008)-2.5si": [
-    { code: "N52B25", hp: "218 hp", torque: "250 Nm", profileId: "n52b25-z4-e85-25si" }
-  ],
-  "BMW-Z Series-Z4 E85/86 (2002-2008)-3.0i": [ // Hozzáadva: Pre-LCI csúcsmodell
-    { code: "M54B30", hp: "231 hp", torque: "300 Nm", profileId: "m54b30-z4-e85-30i" }
-  ],
-  "BMW-Z Series-Z4 E85/86 (2002-2008)-3.0si": [
-    { code: "N52B30", hp: "265 hp", torque: "315 Nm", profileId: "n52b30-z4-e85-30si" }
-  ],
-  "BMW-Z Series-Z4 E85/86 (2002-2008)-M 3.2": [ // Hozzáadva: Z4 M Roadster/Coupe
-    { code: "S54B32", hp: "343 hp", torque: "365 Nm", profileId: "s54b32-z4m-e85" }
-  ],
+ "BMW-Z Series-Z4 E85/86 (2002-2008)-2.0i": [
+    { "code": "N46B20", "hp": "150 hp", "torque": "200 Nm", "profileId": "n46b20-z4-e85-20i" }
+],
+"BMW-Z Series-Z4 E85/86 (2002-2008)-2.2i": [
+    { "code": "M54B22", "hp": "170 hp", "torque": "210 Nm", "profileId": "m54b22-z4-e85-22i" }
+],
+"BMW-Z Series-Z4 E85/86 (2002-2008)-2.5i": [
+    { "code": "M54B25", "hp": "192 hp", "torque": "245 Nm", "profileId": "m54b25-z4-e85-25i" },
+    { "code": "M54B25", "hp": "184 hp", "torque": "237 Nm", "profileId": "m54b25-z4-e85-25i-usa" },
+    { "code": "N52B25", "hp": "177 hp", "torque": "230 Nm", "profileId": "n52b25-z4-e85-25i-n52" }
+],
+"BMW-Z Series-Z4 E85/86 (2002-2008)-2.5si": [
+    { "code": "N52B25", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e85-25si" },
+    { "code": "N52B30", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e85-25si-asia/australia" }
+],
+"BMW-Z Series-Z4 E85/86 (2002-2008)-3.0i": [
+    { "code": "M54B30", "hp": "231 hp", "torque": "300 Nm", "profileId": "m54b30-z4-e85-30i" },
+    { "code": "M54B30", "hp": "225 hp", "torque": "290 Nm", "profileId": "m54b30-z4-e85-30i-usa" },
+    { "code": "N52B30", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b30-z4-e85-30i-usa-n52", "note": "Fojtott N52 az USA piacra" }
+],
+"BMW-Z Series-Z4 E85/86 (2002-2008)-3.0si": [
+    { "code": "N52B30", "hp": "265 hp", "torque": "315 Nm", "profileId": "n52b30-z4-e85-30si" },
+    { "code": "N52B30", "hp": "255 hp", "torque": "300 Nm", "profileId": "n52b30-z4-e85-30si-usa" }
+],
+"BMW-Z Series-Z4 E85/86 (2002-2008)-M 3.2": [
+    { "code": "S54B32", "hp": "343 hp", "torque": "365 Nm", "profileId": "s54b32-z4m-e85" },
+    { "code": "S54B32", "hp": "330 hp", "torque": "355 Nm", "profileId": "s54b32-z4m-e85-usa" }
+],
 
   // --- Z4 E89 (2009-2016) ---
-  "BMW-Z Series-Z4 E89 (2009-2016)-18i": [ // Hozzáadva: Belépő modell
-    { code: "N20B20", hp: "156 hp", torque: "240 Nm", profileId: "n20b20-z4-e89-18i" }
-  ],
-  "BMW-Z Series-Z4 E89 (2009-2016)-20i": [
-    { code: "N20B20", hp: "184 hp", torque: "270 Nm", profileId: "n20b20-z4-e89-20i" }
-  ],
-  "BMW-Z Series-Z4 E89 (2009-2016)-23i": [ // Hozzáadva: Utolsó szívó sorhatosok egyike
-    { code: "N52B25", hp: "204 hp", torque: "250 Nm", profileId: "n52b25-z4-e89-23i" }
-  ],
-  "BMW-Z Series-Z4 E89 (2009-2016)-28i": [ // Hozzáadva: 2.0 Turbo
-    { code: "N20B20", hp: "245 hp", torque: "350 Nm", profileId: "n20b20-z4-e89-28i" }
-  ],
-  "BMW-Z Series-Z4 E89 (2009-2016)-30i": [ // Hozzáadva: 3.0 Szívó
-    { code: "N52B30", hp: "258 hp", torque: "310 Nm", profileId: "n52b30-z4-e89-30i" }
-  ],
-  "BMW-Z Series-Z4 E89 (2009-2016)-35i": [ // Hozzáadva: N54 Twin Turbo
-    { code: "N54B30", hp: "306 hp", torque: "400 Nm", profileId: "n54b30-z4-e89-35i" }
-  ],
-  "BMW-Z Series-Z4 E89 (2009-2016)-35is": [
-    { code: "N54B30", hp: "340 hp", torque: "450 Nm", profileId: "n54b30-z4-e89-35is" } // Overboost to 500Nm
-  ],
+  "BMW-Z Series-Z4 E89 (2009-2016)-18i": [
+    { "code": "N20B20", "hp": "156 hp", "torque": "240 Nm", "profileId": "n20b20-z4-e89-18i" }
+],
+"BMW-Z Series-Z4 E89 (2009-2016)-20i": [
+    { "code": "N20B20", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20-z4-e89-20i" }
+],
+"BMW-Z Series-Z4 E89 (2009-2016)-23i": [
+    { "code": "N52B25", "hp": "204 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e89-23i" }
+],
+"BMW-Z Series-Z4 E89 (2009-2016)-28i": [
+    { "code": "N20B20", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20-z4-e89-28i" },
+    { "code": "N20B20", "hp": "243 hp", "torque": "350 Nm", "profileId": "n20b20-z4-e89-28i-usa", "note": "USA Spec" }
+],
+"BMW-Z Series-Z4 E89 (2009-2016)-30i": [
+    { "code": "N52B30", "hp": "258 hp", "torque": "310 Nm", "profileId": "n52b30-z4-e89-30i" },
+    { "code": "N52B30", "hp": "258 hp", "torque": "300 Nm", "profileId": "n52b30-z4-e89-30i-usa", "note": "USA Spec sDrive30i" }
+],
+"BMW-Z Series-Z4 E89 (2009-2016)-35i": [
+    { "code": "N54B30", "hp": "306 hp", "torque": "400 Nm", "profileId": "n54b30-z4-e89-35i" },
+    { "code": "N54B30", "hp": "302 hp", "torque": "407 Nm", "profileId": "n54b30-z4-e89-35i-usa", "note": "USA Spec sDrive35i" }
+],
+"BMW-Z Series-Z4 E89 (2009-2016)-35is": [
+    { "code": "N54B30", "hp": "340 hp", "torque": "450 Nm", "profileId": "n54b30-z4-e89-35is", "note": "Overboost: 500 Nm" },
+    { "code": "N54B30", "hp": "340 hp", "torque": "450 Nm", "profileId": "n54b30-z4-e89-35is-usa", "note": "USA Spec (335 hp / 450 Nm standard)" }
+],
 
   // --- Z4 G29 (2018-present) ---
   "BMW-Z Series-Z4 G29 (2018-present)-20i": [
-    { code: "B48B20A", hp: "197 hp", torque: "320 Nm", profileId: "b48b20a-z4-g29-20i" }
-  ],
-  "BMW-Z Series-Z4 G29 (2018-present)-30i": [ // Hozzáadva: Erősebb 2.0 Turbo
-    { code: "B48B20B", hp: "258 hp", torque: "400 Nm", profileId: "b48b20b-z4-g29-30i" }
-  ],
-  "BMW-Z Series-Z4 G29 (2018-present)-M40i": [
-    { code: "B58B30C", hp: "340 hp", torque: "500 Nm", profileId: "b58b30c-z4-g29-m40i" },    // Euro Spec (Early)
-    { code: "B58B30O1", hp: "382 hp", torque: "500 Nm", profileId: "b58b30o1-z4-g29-m40i-us" } // US/Later Euro Spec
-  ]
+    { "code": "B48B20A", "hp": "197 hp", "torque": "320 Nm", "profileId": "b48b20a-z4-g29-20i" }
+],
+"BMW-Z Series-Z4 G29 (2018-present)-30i": [
+    { "code": "B48B20B", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20b-z4-g29-30i" },
+    { "code": "B48B20B", "hp": "255 hp", "torque": "400 Nm", "profileId": "b48b20b-z4-g29-30i-usa", "note": "USA Spec" }
+],
+"BMW-Z Series-Z4 G29 (2018-present)-M40i": [
+    { "code": "B58B30C", "hp": "340 hp", "torque": "500 Nm", "profileId": "b58b30c-z4-g29-m40i", "note": "Euro Spec (with OPF filter)" },
+    { "code": "B58B30O1", "hp": "382 hp", "torque": "500 Nm", "profileId": "b58b30o1-z4-g29-m40i-us", "note": "USA / Non-EU Spec" },
+    { "code": "B58B30O1", "hp": "340 hp", "torque": "500 Nm", "profileId": "b58b30o1-z4-g29-m40i-lci", "note": "LCI Euro Spec (Handschalter / Manual update)" }
+]
 }
