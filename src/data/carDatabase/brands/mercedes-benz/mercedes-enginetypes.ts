@@ -21,7 +21,7 @@ export const mercedesEngineTypes = {
       { name: "A 180 CDI", hp: "109 hp" },
       { name: "A 200 CDI", hp: "140 hp" }
     ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)": [
+    "Mercedes-Benz-A-Class-W176 (2012-2018)": [
       { name: "A 180", hp: "122 hp" },
       { name: "A 200", hp: "156 hp" },
       { name: "A 250", hp: "211 hp" },

@@ -15,6 +15,7 @@ import { x3Profiles } from "./x3series";
 import { x4Profiles } from "./x4series";
 import { x5Profiles } from "./x5series";
 import { x6Profiles } from "./x6series";
+import { xmtozProfiles } from "./xm-z-profiles";
 
 
 
@@ -36,6 +37,7 @@ export const bmwEngineProfiles: EngineProfile[] = [
 ...x4Profiles,
 ...x5Profiles,
 ...x6Profiles,
+...xmtozProfiles,
 
 
 

@@ -82,7 +82,7 @@ import { mercedesModels } from "./carDatabase/brands/mercedes-benz/mercedes-mode
 import { mercedesGenerations } from "./carDatabase/brands/mercedes-benz/mercedes-generations";
 import { mercedesEngineTypes } from "./carDatabase/brands/mercedes-benz/mercedes-enginetypes";
 import { mercedesEngineCodes } from "./carDatabase/brands/mercedes-benz/mercedes-enginecodes";
-import { mercedesEngineProfiles } from "./carDatabase/brands/mercedes-benz/mercedes-engineprofiles";
+import { mercedesEngineProfiles } from "./carDatabase/brands/mercedes-benz/engineprofiles";
 
 import { volkswagenModels } from "./carDatabase/brands/volkswagen/volkswagen-models";
 import { volkswagenGenerations } from "./carDatabase/brands/volkswagen/volkswagen-generations";

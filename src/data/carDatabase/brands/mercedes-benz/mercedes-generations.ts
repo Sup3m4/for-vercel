@@ -3,7 +3,7 @@ export const mercedesGenerations = {
     "Mercedes-Benz-A-Class": [
       "W168 (1997-2004)",
       "W169 (2004-2012)",
-      "W176 (2013-2018)",
+      "W176 (2012-2018)",
       "W177 (2018-present)"
     ],
     "Mercedes-Benz-B-Class": [

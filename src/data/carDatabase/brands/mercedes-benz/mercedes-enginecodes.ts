@@ -5,25 +5,26 @@ export const mercedesEngineCodes = {
   
     // --- A-Class W168 (1997-2004) ---
     "Mercedes-Benz-A-Class-W168 (1997-2004)-A 140": [
-      { code: "M 166 E 14", hp: "82 hp", torque: "130 Nm", profileId: "m166e14-a140" },
-      { code: "M 166 E 16 red.", hp: "82 hp", torque: "130 Nm", profileId: "m166e16red-a140" } // 2001 utáni 1.6-os lefojtott verzió
+      { code: "M 166.940", hp: "82 hp", torque: "130 Nm", profileId: "m166.940-a140" },
+      { code: "M 166.960", hp: "82 hp", torque: "130 Nm", profileId: "m166.960red-a140" } // 1.6-os motor fojtva
     ],
     "Mercedes-Benz-A-Class-W168 (1997-2004)-A 160": [
-      { code: "M 166 E 16", hp: "102 hp", torque: "150 Nm", profileId: "m166e16-a160" }
+      { code: "M 166.960", hp: "102 hp", torque: "150 Nm", profileId: "m166.960-a160" },
+      { code: "M 166.960", hp: "75 hp", torque: "130 Nm", profileId: "m166.960red-be-a160" } // Belga/Görög fojtott
     ],
     "Mercedes-Benz-A-Class-W168 (1997-2004)-A 190": [
-      { code: "M 166 E 19", hp: "125 hp", torque: "180 Nm", profileId: "m166e19-a190" }
+      { code: "M 166.990", hp: "125 hp", torque: "180 Nm", profileId: "m166.990-a190" }
     ],
     "Mercedes-Benz-A-Class-W168 (1997-2004)-A 210 Evolution": [
-      { code: "M 166 E 21", hp: "140 hp", torque: "205 Nm", profileId: "m166e21-a210" }
+      { code: "M 166.995", hp: "140 hp", torque: "205 Nm", profileId: "m166.995-a210" }
     ],
     "Mercedes-Benz-A-Class-W168 (1997-2004)-A 160 CDI": [
-      { code: "OM 668 DE 17 A", hp: "60 hp", torque: "160 Nm", profileId: "om668de17a-a160cdi" },
-      { code: "OM 668 DE 17 LA", hp: "75 hp", torque: "160 Nm", profileId: "om668de17la-a160cdi" } // Facelift után
+      { code: "OM 668.941", hp: "60 hp", torque: "160 Nm", profileId: "om668.941-a160cdi" }, // Nincs intercooler
+      { code: "OM 668.940", hp: "75 hp", torque: "160 Nm", profileId: "om668.940-75hp-a160cdi" } // Facelift utáni variáns
     ],
     "Mercedes-Benz-A-Class-W168 (1997-2004)-A 170 CDI": [
-      { code: "OM 668 DE 17 LA", hp: "90 hp", torque: "180 Nm", profileId: "om668de17la-a170cdi" },
-      { code: "OM 668 DE 17 LA", hp: "95 hp", torque: "180 Nm", profileId: "om668de17la-95hp-a170cdi" } // Facelift után
+      { code: "OM 668.940", hp: "90 hp", torque: "180 Nm", profileId: "om668.940-a170cdi" },
+      { code: "OM 668.942", hp: "95 hp", torque: "200 Nm", profileId: "om668.942-a170cdi" } // Facelift variáns
     ],
   
     // --- A-Class W169 (2004-2012) ---

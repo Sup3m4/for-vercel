@@ -2315,13 +2315,14 @@ export const bmwEngineCodes = {
     // --- BMW Z SERIES ---
 
   // --- Z3 E36/7, E36/8 (1995-2002) ---
-  "BMW-Z Series-Z3 E36/7/8 (1995-2002)-1.8": [
+"BMW-Z Series-Z3 E36/7/8 (1995-2002)-1.8": [
     { "code": "M43B18", "hp": "115 hp", "torque": "168 Nm", "profileId": "m43b18-z3-1.8" }
 ],
 "BMW-Z Series-Z3 E36/7/8 (1995-2002)-1.9": [
     { "code": "M44B19", "hp": "140 hp", "torque": "180 Nm", "profileId": "m44b19-z3-1.9", "note": "16V Pre-facelift" },
     { "code": "M43B19", "hp": "118 hp", "torque": "180 Nm", "profileId": "m43b19-z3-1.9i", "note": "8V Facelift (Z3 1.9i)" },
-    { "code": "M43B19", "hp": "116 hp", "torque": "175 Nm", "profileId": "m43b19-z3-1.9-detuned", "note": "Fojtott változat bizonyos piacokra" }
+    { "code": "M43B19", "hp": "116 hp", "torque": "175 Nm", "profileId": "m43b19-z3-1.9-detuned", "note": "Fojtott változat bizonyos piacokra" },
+    { "code": "M43B19", "hp": "114 hp", "torque": "180 Nm", "profileId": "m43b19-z3-1.9-tax", "note": "Belga adócsökkentett (84 kW) változat" }
 ],
 "BMW-Z Series-Z3 E36/7/8 (1995-2002)-2.0": [
     { "code": "M52TUB20", "hp": "150 hp", "torque": "190 Nm", "profileId": "m52tub20-z3-2.0" }
@@ -2360,32 +2361,42 @@ export const bmwEngineCodes = {
 
   // --- Z4 E85/E86 (2002-2008) ---
  "BMW-Z Series-Z4 E85/86 (2002-2008)-2.0i": [
-    { "code": "N46B20", "hp": "150 hp", "torque": "200 Nm", "profileId": "n46b20-z4-e85-20i" }
+    { "code": "N46B20", "hp": "150 hp", "torque": "200 Nm", "profileId": "n46b20-z4-e85-20i" },
+    { "code": "N46B20", "hp": "143 hp", "torque": "200 Nm", "profileId": "n46b20-z4-e85-20i-detuned", "note": "Bizonyos európai piacokon használt 105 kW-os alapváltozat" }
 ],
 "BMW-Z Series-Z4 E85/86 (2002-2008)-2.2i": [
-    { "code": "M54B22", "hp": "170 hp", "torque": "210 Nm", "profileId": "m54b22-z4-e85-22i" }
+    { "code": "M54B22", "hp": "170 hp", "torque": "210 Nm", "profileId": "m54b22-z4-e85-22i" },
+    { "code": "M54B22", "hp": "163 hp", "torque": "210 Nm", "profileId": "m54b22-z4-e85-22i-tax", "note": "Belga/Francia adócsökkentett (120 kW) változat" }
 ],
 "BMW-Z Series-Z4 E85/86 (2002-2008)-2.5i": [
     { "code": "M54B25", "hp": "192 hp", "torque": "245 Nm", "profileId": "m54b25-z4-e85-25i" },
     { "code": "M54B25", "hp": "184 hp", "torque": "237 Nm", "profileId": "m54b25-z4-e85-25i-usa" },
-    { "code": "N52B25", "hp": "177 hp", "torque": "230 Nm", "profileId": "n52b25-z4-e85-25i-n52" }
+    { "code": "N52B25", "hp": "177 hp", "torque": "230 Nm", "profileId": "n52b25-z4-e85-25i-n52" },
+    { "code": "N52B25", "hp": "163 hp", "torque": "230 Nm", "profileId": "n52b25-z4-e85-25i-tax", "note": "Belga/Francia adócsökkentett (120 kW) változat" }
 ],
 "BMW-Z Series-Z4 E85/86 (2002-2008)-2.5si": [
     { "code": "N52B25", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e85-25si" },
-    { "code": "N52B30", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e85-25si-asia/australia" }
+    { "code": "N52B30", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e85-25si-asia-australia" }
 ],
 "BMW-Z Series-Z4 E85/86 (2002-2008)-3.0i": [
     { "code": "M54B30", "hp": "231 hp", "torque": "300 Nm", "profileId": "m54b30-z4-e85-30i" },
+    { "code": "N51B30", "hp": "215 hp", "torque": "250 Nm", "profileId": "n51b30-z4-e85-30i-sulev", "note": "USA SULEV (Super Ultra Low Emission Vehicle) kivitel" },
     { "code": "M54B30", "hp": "225 hp", "torque": "290 Nm", "profileId": "m54b30-z4-e85-30i-usa" },
+    { "code": "N52B30", "hp": "211 hp", "torque": "250 Nm", "profileId": "n52b30-z4-e85-30i-tax", "note": "Adócsökkentett (155 kW) kivitel bizonyos piacokra" },
+    { "code": "N52B30", "hp": "215 hp", "torque": "250 Nm", "profileId": "n52b30-z4-e85-30i-usa-215", "note": "Észak-amerikai szoftveresen fojtott (160 kW) változat" },
     { "code": "N52B30", "hp": "218 hp", "torque": "250 Nm", "profileId": "n52b30-z4-e85-30i-usa-n52", "note": "Fojtott N52 az USA piacra" }
 ],
 "BMW-Z Series-Z4 E85/86 (2002-2008)-3.0si": [
     { "code": "N52B30", "hp": "265 hp", "torque": "315 Nm", "profileId": "n52b30-z4-e85-30si" },
-    { "code": "N52B30", "hp": "255 hp", "torque": "300 Nm", "profileId": "n52b30-z4-e85-30si-usa" }
+    { "code": "N52B30", "hp": "255 hp", "torque": "300 Nm", "profileId": "n52b30-z4-e85-30si-usa" },
+    { "code": "N52B30", "hp": "258 hp", "torque": "310 Nm", "profileId": "n52b30-z4-e85-30si-asia", "note": "Ázsiai/Kínai piacra szánt (190 kW) specifikáció" }
 ],
 "BMW-Z Series-Z4 E85/86 (2002-2008)-M 3.2": [
     { "code": "S54B32", "hp": "343 hp", "torque": "365 Nm", "profileId": "s54b32-z4m-e85" },
     { "code": "S54B32", "hp": "330 hp", "torque": "355 Nm", "profileId": "s54b32-z4m-e85-usa" }
+],
+"BMW-Z Series-Z4 E85/86 (2002-2008)-Alpina Roadster S": [
+    { "code": "E5/2", "hp": "300 hp", "torque": "362 Nm", "profileId": "e52-z4-alpina-s", "note": "Alpina egyedi 3.4L motor (S52 alapokon)" }
 ],
 
   // --- Z4 E89 (2009-2016) ---
@@ -2393,10 +2404,13 @@ export const bmwEngineCodes = {
     { "code": "N20B20", "hp": "156 hp", "torque": "240 Nm", "profileId": "n20b20-z4-e89-18i" }
 ],
 "BMW-Z Series-Z4 E89 (2009-2016)-20i": [
-    { "code": "N20B20", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20-z4-e89-20i" }
+    { "code": "N20B20", "hp": "184 hp", "torque": "270 Nm", "profileId": "n20b20-z4-e89-20i" },
+    { "code": "N20B20", "hp": "163 hp", "torque": "270 Nm", "profileId": "n20b20-z4-e89-20i-fleet", "note": "Belga/Francia adócsökkentett változat" },
+    { "code": "N20B20", "hp": "181 hp", "torque": "270 Nm", "profileId": "n20b20-z4-e89-20i-usa", "note": "North American spec (SAE)" }
 ],
 "BMW-Z Series-Z4 E89 (2009-2016)-23i": [
-    { "code": "N52B25", "hp": "204 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e89-23i" }
+    { "code": "N52B25", "hp": "204 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e89-23i" },
+    { "code": "N52B25", "hp": "163 hp", "torque": "250 Nm", "profileId": "n52b25-z4-e89-23i-tax", "note": "Fleet/Tax detuned version" }
 ],
 "BMW-Z Series-Z4 E89 (2009-2016)-28i": [
     { "code": "N20B20", "hp": "245 hp", "torque": "350 Nm", "profileId": "n20b20-z4-e89-28i" },
@@ -2404,10 +2418,12 @@ export const bmwEngineCodes = {
 ],
 "BMW-Z Series-Z4 E89 (2009-2016)-30i": [
     { "code": "N52B30", "hp": "258 hp", "torque": "310 Nm", "profileId": "n52b30-z4-e89-30i" },
+    { "code": "N51B30A", "hp": "233 hp", "torque": "270 Nm", "profileId": "n51b30a-z4-e89-30i-sulev", "note": "US SULEV (Super Ultra Low Emission) kivitel" },
     { "code": "N52B30", "hp": "258 hp", "torque": "300 Nm", "profileId": "n52b30-z4-e89-30i-usa", "note": "USA Spec sDrive30i" }
 ],
 "BMW-Z Series-Z4 E89 (2009-2016)-35i": [
     { "code": "N54B30", "hp": "306 hp", "torque": "400 Nm", "profileId": "n54b30-z4-e89-35i" },
+    { "code": "N54B30", "hp": "326 hp", "torque": "450 Nm", "profileId": "n54b30-z4-e89-35i-ppk", "note": "M Performance Power Kit" },
     { "code": "N54B30", "hp": "302 hp", "torque": "407 Nm", "profileId": "n54b30-z4-e89-35i-usa", "note": "USA Spec sDrive35i" }
 ],
 "BMW-Z Series-Z4 E89 (2009-2016)-35is": [
@@ -2417,7 +2433,9 @@ export const bmwEngineCodes = {
 
   // --- Z4 G29 (2018-present) ---
   "BMW-Z Series-Z4 G29 (2018-present)-20i": [
-    { "code": "B48B20A", "hp": "197 hp", "torque": "320 Nm", "profileId": "b48b20a-z4-g29-20i" }
+    { "code": "B48B20A", "hp": "197 hp", "torque": "320 Nm", "profileId": "b48b20a-z4-g29-20i" },
+    { "code": "B48B20A", "hp": "163 hp", "torque": "300 Nm", "profileId": "b48b20a-z4-g29-20i-tax", "note": "Belga/Fleet adócsökkentett változat" },
+    { "code": "B48B20A", "hp": "189 hp", "torque": "320 Nm", "profileId": "b48b20a-z4-g29-20i-asia", "note": "Oceania / Asia markets" }
 ],
 "BMW-Z Series-Z4 G29 (2018-present)-30i": [
     { "code": "B48B20B", "hp": "258 hp", "torque": "400 Nm", "profileId": "b48b20b-z4-g29-30i" },
@@ -2426,6 +2444,7 @@ export const bmwEngineCodes = {
 "BMW-Z Series-Z4 G29 (2018-present)-M40i": [
     { "code": "B58B30C", "hp": "340 hp", "torque": "500 Nm", "profileId": "b58b30c-z4-g29-m40i", "note": "Euro Spec (with OPF filter)" },
     { "code": "B58B30O1", "hp": "382 hp", "torque": "500 Nm", "profileId": "b58b30o1-z4-g29-m40i-us", "note": "USA / Non-EU Spec" },
+    { "code": "B58B30O1", "hp": "340 hp", "torque": "500 Nm", "profileId": "b58b30o1-z4-g29-m40i-lci", "note": "LCI Euro Spec (Standard)" },
     { "code": "B58B30O1", "hp": "340 hp", "torque": "500 Nm", "profileId": "b58b30o1-z4-g29-m40i-lci", "note": "LCI Euro Spec (Handschalter / Manual update)" }
 ]
 }

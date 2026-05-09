@@ -9,6 +9,7 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { CAR_MODEL_CONFIGS } from '../configs/carModels';
 import { audiEngineProfiles } from '../data/carDatabase/brands/audi/engineprofiles';
 import { bmwEngineProfiles } from '@/data/carDatabase/brands/bmw/engineprofiles';
+import { mercedesEngineProfiles } from '@/data/carDatabase/brands/mercedes-benz/engineprofiles';
 
 function Loader() {
   const { progress } = useProgress();
@@ -918,7 +919,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
     if (incomingProfile) return incomingProfile;
   
     // Összefűzzük az Audi és BMW listákat egy közös keresőfelületté
-    const allProfiles = [...audiEngineProfiles, ...bmwEngineProfiles];
+    const allProfiles = [...audiEngineProfiles, ...bmwEngineProfiles, ...mercedesEngineProfiles];
   
     return allProfiles.find(p => {
       const dbFileName = p.model3DPath?.split('/').pop()?.toLowerCase();

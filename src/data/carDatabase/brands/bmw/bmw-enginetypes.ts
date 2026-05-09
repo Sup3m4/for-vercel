@@ -776,7 +776,8 @@ export const bmwEngineTypes =
         { name: "2.5si", hp: "218 hp" },
         { name: "3.0i", hp: "231 hp" },
         { name: "3.0si", hp: "265 hp" },
-        { name: "M 3.2", hp: "343 hp" }
+        { name: "M 3.2", hp: "343 hp" },
+        { name: "Alpina Roadster S", hp: "343 hp" },
       ],
       "BMW-Z Series-Z4 E89 (2009-2016)": [
         { name: "18i", hp: "156 hp" },
