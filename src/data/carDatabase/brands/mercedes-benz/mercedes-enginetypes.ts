@@ -22,17 +22,16 @@ export const mercedesEngineTypes = {
       { name: "A 200 CDI", hp: "140 hp" }
     ],
     "Mercedes-Benz-A-Class-W176 (2012-2018)": [
+      { name: "A 160", hp: "122 hp" },
       { name: "A 180", hp: "122 hp" },
       { name: "A 200", hp: "156 hp" },
+      { name: "A 220", hp: "156 hp" },
       { name: "A 250", hp: "211 hp" },
       { name: "A 45 AMG", hp: "360-381 hp" },
-      { name: "A 160 CDI", hp: "90 hp" },
-      { name: "A 180 CDI", hp: "109 hp" },
-      { name: "A 180 d", hp: "109 hp" },
-      { name: "A 200 CDI", hp: "136 hp" },
-      { name: "A 200 d", hp: "136 hp" },
-      { name: "A 220 CDI", hp: "170-177 hp" },
-      { name: "A 220 d", hp: "170-177 hp" }
+      { name: "A 160 CDI / d", hp: "90 hp" },
+      { name: "A 180 CDI / d", hp: "109 hp" },
+      { name: "A 200 CDI / d", hp: "136 hp" },
+      { name: "A 220 CDI / d", hp: "170-177 hp" },
     ],
     "Mercedes-Benz-A-Class-W177 (2018-present)": [
       { name: "A 180", hp: "136 hp" },

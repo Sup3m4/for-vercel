@@ -28,72 +28,85 @@ export const mercedesEngineCodes = {
     ],
   
     // --- A-Class W169 (2004-2012) ---
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 150": [
-      { code: "M 266 E 15", hp: "95 hp", torque: "140 Nm", profileId: "m266e15-a150" }
-    ],
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 160": [
-      { code: "M 266 E 15", hp: "95 hp", torque: "140 Nm", profileId: "m266e15-a160" } // BlueEfficiency Start/Stop
-    ],
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 170": [
-      { code: "M 266 E 17", hp: "116 hp", torque: "155 Nm", profileId: "m266e17-a170" }
-    ],
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 180": [
-      { code: "M 266 E 17", hp: "116 hp", torque: "155 Nm", profileId: "m266e17-a180" } // BlueEfficiency
-    ],
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 200": [
-      { code: "M 266 E 20", hp: "136 hp", torque: "185 Nm", profileId: "m266e20-a200" }
-    ],
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 200 Turbo": [
-      { code: "M 266 E 20 AL", hp: "193 hp", torque: "280 Nm", profileId: "m266e20al-a200t" }
-    ],
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 160 CDI": [
-      { code: "OM 640 DE 20 LA", hp: "82 hp", torque: "180 Nm", profileId: "om640de20la-a160cdi" }
-    ],
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 180 CDI": [
-      { code: "OM 640 DE 20 LA", hp: "109 hp", torque: "250 Nm", profileId: "om640de20la-a180cdi" }
-    ],
-    "Mercedes-Benz-A-Class-W169 (2004-2012)-A 200 CDI": [
-      { code: "OM 640 DE 20 LA", hp: "140 hp", torque: "300 Nm", profileId: "om640de20la-a200cdi" }
-    ],
-  
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 150": [
+  { "code": "M 266.920", "hp": "95 hp", "torque": "140 Nm", "profileId": "m266920-a150" },
+  { "code": "M 266.920", "hp": "95 hp", "torque": "140 Nm", "profileId": "m266920-a150-be", "note": "BlueEfficiency (2008-tól)" }
+],
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 160": [
+  { "code": "M 266.920", "hp": "95 hp", "torque": "140 Nm", "profileId": "m266920-a160" },
+  { "code": "M 266.920", "hp": "82 hp", "torque": "130 Nm", "profileId": "m266920-a160-detuned", "note": "Egyéb piacok - fojtott szoftveres verzió" }
+],
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 170": [
+  { "code": "M 266.940", "hp": "116 hp", "torque": "155 Nm", "profileId": "m266940-a170" }
+],
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 180": [
+  { "code": "M 266.940", "hp": "116 hp", "torque": "155 Nm", "profileId": "m266940-a180" },
+  { "code": "M 266.940", "hp": "116 hp", "torque": "155 Nm", "profileId": "m266940-a180-be", "note": "BlueEfficiency" }
+],
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 200": [
+  { "code": "M 266.960", "hp": "136 hp", "torque": "185 Nm", "profileId": "m266960-a200" }
+],
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 200 Turbo": [
+  { "code": "M 266.980", "hp": "193 hp", "torque": "280 Nm", "profileId": "m266980-a200t" }
+],
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 160 CDI": [
+  { "code": "OM 640.942", "hp": "82 hp", "torque": "180 Nm", "profileId": "om640942-a160cdi" },
+  { "code": "OM 640.942", "hp": "82 hp", "torque": "200 Nm", "profileId": "om640942-a160cdi-be", "note": "BlueEfficiency emelt nyomatékkal" }
+],
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 180 CDI": [
+  { "code": "OM 640.940", "hp": "109 hp", "torque": "250 Nm", "profileId": "om640940-a180cdi" },
+  { "code": "OM 640.940", "hp": "109 hp", "torque": "250 Nm", "profileId": "om640940-a180cdi-be" } //blueefficiency
+],
+"Mercedes-Benz-A-Class-W169 (2004-2012)-A 200 CDI": [
+  { "code": "OM 640.941", "hp": "140 hp", "torque": "300 Nm", "profileId": "om640941-a200cdi" },
+  { "code": "OM 640.941", "hp": "140 hp", "torque": "300 Nm", "profileId": "om640941-a200cdi-be" }, //blueeffieiency
+  { "code": "OM 640.941", "hp": "136 hp", "torque": "300 Nm", "profileId": "om640941-a200cdi-tax", "note": "Belga/Francia piac (100kW limit)" }
+],
+
+
+
     // --- A-Class W176 (2013-2018) ---
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 180": [
-      { code: "M 270 DE 16 AL", hp: "122 hp", torque: "200 Nm", profileId: "m270de16al-a180" }
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 200": [
-      { code: "M 270 DE 16 AL", hp: "156 hp", torque: "250 Nm", profileId: "m270de16al-a200" }
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 250": [
-      { code: "M 270 DE 20 AL", hp: "211 hp", torque: "350 Nm", profileId: "m270de20al-a250" },
-      { code: "M 270 DE 20 AL", hp: "218 hp", torque: "350 Nm", profileId: "m270de20al-fl-a250" } // Facelift Sport
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 45 AMG": [
-      { code: "M 133 DE 20 AL", hp: "360 hp", torque: "450 Nm", profileId: "m133de20al-a45" },
-      { code: "M 133 DE 20 AL", hp: "381 hp", torque: "475 Nm", profileId: "m133de20al-fl-a45" } // Facelift
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 160 CDI": [
-      { code: "OM 607 DE 15 LA", hp: "90 hp", torque: "220 Nm", profileId: "om607de15la-a160cdi" } // Renault motor
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 180 CDI": [
-      { code: "OM 651 DE 18 LA", hp: "109 hp", torque: "250 Nm", profileId: "om651de18la-a180cdi" }, // Mercedes motor (DCT váltóhoz)
-      { code: "OM 607 DE 15 LA", hp: "109 hp", torque: "260 Nm", profileId: "om607de15la-a180cdi" }  // Renault motor (Kézi/Későbbi DCT)
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 180 d": [
-      { code: "OM 607 DE 15 LA", hp: "109 hp", torque: "260 Nm", profileId: "om607de15la-a180d" }
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 200 CDI": [
-      { code: "OM 651 DE 18 LA", hp: "136 hp", torque: "300 Nm", profileId: "om651de18la-a200cdi" }, // 1.8L (Korai)
-      { code: "OM 651 DE 22 LA", hp: "136 hp", torque: "300 Nm", profileId: "om651de22la-a200cdi" }  // 2.1L (Későbbi)
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 200 d": [
-      { code: "OM 651 DE 22 LA", hp: "136 hp", torque: "300 Nm", profileId: "om651de22la-a200d" }
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 220 CDI": [
-      { code: "OM 651 DE 22 LA", hp: "170 hp", torque: "350 Nm", profileId: "om651de22la-a220cdi" }
-    ],
-    "Mercedes-Benz-A-Class-W176 (2013-2018)-A 220 d": [
-      { code: "OM 651 DE 22 LA", hp: "177 hp", torque: "350 Nm", profileId: "om651de22la-a220d" }
-    ],
+   "Mercedes-Benz-A-Class-W176 (2012-2018)-A 160": [
+  { "code": "M 270.910", "hp": "102 hp", "torque": "180 Nm", "profileId": "m270910-a160", "note": "Facelift utáni alapmodell (1.6L)" }
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 180": [
+  { "code": "M 270.910", "hp": "122 hp", "torque": "200 Nm", "profileId": "m270910-a180" },
+  { "code": "M 270.910", "hp": "122 hp", "torque": "200 Nm", "profileId": "m270910-a180-be", "note": "BlueEfficiency Edition (alacsonyabb fogyasztásra optimalizálva)" }
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 200": [
+  { "code": "M 270.910", "hp": "156 hp", "torque": "250 Nm", "profileId": "m270910-a200", "note": "1.6L Turbo" },
+  { "code": "M 270.910", "hp": "156 hp", "torque": "270 Nm", "profileId": "m270910-a200-ngd", "note": "A 200 Natural Gas Drive (Földgázüzemű kivitel)" }
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 220": [
+  { "code": "M 270.920", "hp": "184 hp", "torque": "300 Nm", "profileId": "m270920-a220", "note": "2.0L Turbo, kizárólag összkerékhajtással" }
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 250": [
+  { "code": "M 270.920", "hp": "211 hp", "torque": "350 Nm", "profileId": "m270920-a250" },
+  { "code": "M 270.920", "hp": "218 hp", "torque": "350 Nm", "profileId": "m270920-a250-sport", "note": "A 250 Sport / Sport 4MATIC (Facelift)" }
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 45 AMG": [
+  { "code": "M 133.980", "hp": "360 hp", "torque": "450 Nm", "profileId": "m133980-a45" },
+  { "code": "M 133.980", "hp": "381 hp", "torque": "475 Nm", "profileId": "m133980-fl-a45", "note": "Facelift utáni emelt teljesítmény" }
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 160 CDI / d": [
+  { "code": "OM 607.951", "hp": "90 hp", "torque": "220 Nm", "profileId": "om607951-a160cdi", "note": "1.5L Renault blokk" },
+  { "code": "OM 607.951", "hp": "90 hp", "torque": "220 Nm", "profileId": "om607951-a160cdi", "note": "euro6, better 7g-dct" }
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 180 CDI / d": [
+  { "code": "OM 651.901", "hp": "109 hp", "torque": "250 Nm", "profileId": "om651901-a180cdi", "note": "1.8L Mercedes motor (7G-DCT váltóhoz, 2012-2013)" },
+  { "code": "OM 607.951", "hp": "109 hp", "torque": "260 Nm", "profileId": "om607951-a180d", "note": "1.5L Renault motor (Kézi váltóhoz és 2013 utáni DCT-hez)" },
+  { "code": "OM 607.951", "hp": "109 hp", "torque": "260 Nm", "profileId": "om607951-a180d-be", "note": "BlueEfficiency Edition (a legtakarékosabb dízel, 3.2L/100km)" }
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 200 CDI / d": [
+  { "code": "OM 651.901", "hp": "136 hp", "torque": "300 Nm", "profileId": "om651901-a200cdi", "note": "1.8L Mercedes motor (2012-2014)" },
+  { "code": "OM 651.930", "hp": "136 hp", "torque": "300 Nm", "profileId": "om651930-a200d", "note": "2.1L Mercedes motor (2014-2018)" },
+  { "code": "OM 651.930", "hp": "136 hp", "torque": "300 Nm", "profileId": "om651930-a200d-tax", "note": "Belgium/Luxemburg adózási szoftver (sima 2.1L)"}
+],
+"Mercedes-Benz-A-Class-W176 (2012-2018)-A 220 CDI / d": [
+  { "code": "OM 651.930", "hp": "170 hp", "torque": "350 Nm", "profileId": "om651930-a220cdi", "note": "2.1L Mercedes motor (Euro 6 előtt)" },
+  { "code": "OM 651.930", "hp": "177 hp", "torque": "350 Nm", "profileId": "om651930-fl-a220d", "note": "Facelift (Euro 6)" },
+  { "code": "OM 651.930", "hp": "163 hp", "torque": "350 Nm", "profileId": "om651930-a220d-tax", "note": "Belga/Francia piac (120kW fojtott adózási verzió)" },
+],
   
     // --- A-Class W177 (2018-present) ---
     "Mercedes-Benz-A-Class-W177 (2018-present)-A 180": [

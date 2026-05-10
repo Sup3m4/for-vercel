@@ -7460,7 +7460,8 @@ export const x6Profiles: EngineProfile[] = [
         ],
         tuningGraphData: { stock: { hp: 617, nm: 750 }, stage1: { hp: 750, nm: 950 }, stage2: { hp: 820, nm: 1000 }, stage3: { hp: 1000, nm: 1150 } },
         riskRating: 4,
-        model3DPath: "/images/brands/bmw/x6/G06/lcig06.glb", model3DScale: 0.14, model3DRotation: [0,0,0], manualLightPositions: { headlights: { x: 0.19, y: 0.02, z: 0.58 } }, lightSettings: { headlightAngle: 0.25, headlightIntensity: 100, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 28, meshGlowTaillight: 6, meshGlowDrl: 15, useBloom: true }, hotspotSettings: {distanceFactor:1}, model3DHotspots: [
+        model3DPath: "/images/brands/bmw/x6/G06/lcig06.glb", model3DScale: 0.14, model3DRotation: [0,0,0], 
+        manualLightPositions: { headlights: { x: 0.19, y: 0.02, z: 0.58 } }, lightSettings: { headlightAngle: 0.25, headlightIntensity: 100, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 28, meshGlowTaillight: 6, meshGlowDrl: 15, useBloom: true }, hotspotSettings: {distanceFactor:1}, model3DHotspots: [
           { label: "Plastic OFH & Heat Management", x: 0.01, y: 0.08, z: 0.48, critical: true, details: "CRITICAL VULNERABILITY: Under the hood. The fragile plastic Oil Filter Housing WILL eventually crack and mix fluids. The Heat Management Module is also prone to slow coolant leaks." },
           { label: "eVANOS & PCV Diaphragm", x: 0.01, y: 0.09, z: 0.33, critical: true, details: "CRITICAL VULNERABILITY: Near the firewall. The integrated PCV diaphragm frequently tears, causing vacuum leaks. The new electronic VANOS actuators can also suffer electrical faults." },
           { label: "Front Suspension & Thrust Arms", x: -0.25, y: -0.12, z: 0.43, critical: false, details: "VULNERABILITY: The incredibly heavy F96 chassis and 48V battery weight place immense stress on the front suspension components, destroying thrust arm bushings." },
@@ -10016,6 +10017,714 @@ export const x6Profiles: EngineProfile[] = [
         drivingExperience: "The US-Spec Alpina XB7 is the absolute pinnacle of high-performance luxury, transforming the already massive X7 into a 612-horsepower (SAE), physics-defying land yacht. The heavily modified N63TU3 4.4L Twin-Turbo V8 features enlarged 54mm turbos and sophisticated cooling systems, delivering an astonishing 590 lb-ft of torque that shoves you into the lavish Lavalina leather seats with the ferocity of a supercar. Alpina's bespoke suspension calibration is a masterpiece; it offers a magic-carpet ride in Comfort mode, completely isolating the cabin, but lowers the massive chassis by 1.6 inches in Sport+, providing shocking agility and body control. The ZF 8-speed transmission, featuring Alpina's proprietary Switch-Tronic software, executes gear changes with imperceptible smoothness or lightning-fast aggression depending on your mood. The bespoke Alpina stainless steel exhaust provides a deep, sonorous V8 burble that perfectly matches the vehicle's sophisticated yet menacing character.",
         mechanicVerdict: "The N63B44T3 engine inside the US-Spec pre-facelift Alpina XB7 is a breathtaking feat of engineering, but it is fundamentally a high-strung, thermally stressed powerhouse that earns a 6/10 risk rating. Alpina took BMW's already potent N63TU3 and heavily modified it with enlarged 54mm twin-scroll turbochargers, additional water coolers, and a dedicated transmission cooler to handle the staggering 612 horsepower and 590 lb-ft of torque. While the closed-deck block and wire-arc sprayed cylinder liners are incredibly robust, the sheer violence of this powertrain is entirely bottlenecked by its peripheral plastic components. The revolutionary 'Hot-V' configuration places those massive glowing turbos directly between the cylinder banks, creating an inescapable thermal nightmare. This extreme heat systematically bakes every piece of plastic and rubber under the hood into brittle dust over thousands of heat cycles. The most critical vulnerability involves the fragile plastic turbo cooling lines and 'T-fittings' located directly above the blazing exhaust manifolds. These lines will inevitably crack, suddenly dumping engine coolant and creating a terrifying engine bay fire hazard. Upgrading these factory cooling lines to aftermarket billet aluminum fittings and braided hoses is an absolute, non-negotiable mandatory fix. Furthermore, despite material upgrades, the valve stem seals will eventually harden at high mileage, leading to excessive oil consumption and blue smoke. The immense heat also accelerates wear on the ignition coils, spark plugs, and the complex PCV crankcase ventilation hoses, which will crack and cause severe vacuum leaks. The sophisticated Alpina-calibrated air suspension system is another very expensive wear item; the massive X7 weight eventually causes the rubber air springs to stretch and leak, which will burn out the compressor if ignored. Because this engine is strictly direct-injected, carbon buildup on the intake valves is unavoidable, meaning you must budget for a professional Walnut Blasting service. You must strictly ignore BMW's factory long-life intervals and change the fully synthetic oil every 5,000 miles to protect the highly sensitive Valvetronic system and turbocharger bearings. If you are prepared to proactively bulletproof the cooling system and maintain a substantial emergency fund, the XB7 delivers an intoxicating, unrivaled high-performance driving experience reserved for a very exclusive club.",
         repairCostEstimate: "$3,000 - $5,000+ / year (The Alpina XB7 is a financial heavyweight with bespoke parts. While the engine core is strong, you must budget $2,500-$3,500 for Valve Stem Seals using AGA tools when it eventually starts blowing blue smoke. You MUST proactively replace the Hot-V Coolant Lines ($400) with billet upgrades to prevent fires. You will need a new 105Ah AGM Battery ($300) almost yearly due to the cooling fans. The heavy V8 destroys Front Thrust Arm Bushings ($350) and the bespoke Alpina Air Suspension Struts are extremely expensive to replace. Any Oil Filter Housing Gasket leak ($400) must be fixed instantly to prevent fatal belt ingestion. Do not buy this car without a massive emergency fund.)"
+      },
+      {
+        id: "m270920-a250-sport",
+        brand: "Mercedes-Benz",
+        model: "A 250 Sport",
+        generation: "W176 (2015-2018) - Facelift",
+        engineCode: "M 270.920",
+        profileId: "m270920-a250-sport",
+        displacement: "1,991 cc",
+        power: "218 hp (160 kW)",
+        torque: "350 Nm",
+        fuelType: "Petrol",
+        cylinders: 4,
+        valves: 16,
+        compression: "9.8:1",
+        yearRange: "2015-2018",
+        timingType: "Chain (Located at the FRONT of the engine block. The M 270.920 utilizes a silent-type timing chain. While it avoids catastrophic stretching, it suffers from a highly documented and critical flaw regarding its Variable Valve Timing (VVT) system. The internal locking pins inside the intake and exhaust camshaft adjusters (phasers) wear out prematurely. This leads to a distinct, loud metallic rattling noise lasting 2-3 seconds upon cold startup as the slack phasers clatter before oil pressure builds. If this rattle is ignored, the loose phasers will physically wear down the camshafts, trigger timing correlation fault codes (P052E), and eventually cause engine failure. Replacing these adjusters is a mandatory, expensive repair for almost all M270 owners. Because the A 250 Sport is often driven aggressively, this failure can manifest earlier than in base models.)",
+        injectionType: "Direct Injection (Features a highly sophisticated Bosch high-pressure direct injection system utilizing precise Piezo fuel injectors operating at up to 200 bar. This ensures excellent fuel atomization, supporting the potent 218hp output. However, the intake valves are completely bypassed by the fuel spray. Consequently, oil vapor from the PCV system bakes directly onto the hot intake valve stems, creating a thick, restrictive layer of carbon sludge. A professional Walnut Blasting service is absolutely required every 80,000 to 100,000 kilometers to restore factory airflow, cure rough cold idling, and prevent dangerous cylinder misfires under heavy boost. The high-pressure fuel pump (HPFP) can also occasionally leak raw fuel internally past its shaft seal, diluting the engine oil.)",
+        engineLifespan: "200,000 - 250,000+ km (The mechanical core of the M 270.920 is incredibly robust. Built with a thick open-deck aluminum block and cast-iron cylinder liners, the 2.0-liter rotating assembly easily handles the stress of intense turbocharged driving. The vehicle's actual lifespan is almost entirely dictated by the maintenance of its expensive auxiliary systems: the fragile plastic cooling system, the VVT camshaft adjusters, and the 7G-DCT dual-clutch transmission. Because the A 250 Sport is engineered and marketed specifically for aggressive driving, models are frequently abused. If the DCT fluid is neglected, the clutch packs will burn out under the stress of repeated 350 Nm launches.)",
+        turboType: "Turbocharged (Intercooled. Equipped with a highly responsive, fixed-geometry IHI turbocharger integrated directly into the exhaust manifold casting. It utilizes an electronic wastegate actuator for incredibly precise boost control. The 218hp A 250 Sport pushes this factory turbocharger quite hard, utilizing an aggressive factory map to deliver peak 350Nm torque very early. However, the mechanical linkage rod connecting the electronic wastegate actuator to the wastegate flap wears out over time. This causes a highly annoying metallic rattling sound during deceleration and cold starts. If the flap fails to seal properly, the ECU will throw the car into Limp Mode. Extreme heat soak from aggressive driving can also warp the exhaust manifold over high mileages.)",
+        ecuType: "Bosch MED 17.7.2 (A highly complex, standalone engine management system that meticulously oversees the direct injection, electronic boost control, and the twin VVT system. The ECU in the A 250 Sport features an aggressive factory map tailored for spirited driving, including pops and bangs on the overrun. The ECU is incredibly receptive to OBD2 flashing, allowing tuners to instantly and safely unlock an additional 40+ horsepower by further optimizing boost and ignition timing, pushing the 2.0L engine to its true mechanical limits without immediately requiring upgraded hardware.)",
+        euroStandard: "Euro 6",
+        maxPowerStockInternals: "260 - 280 hp (The stock internals handle 260 horsepower effortlessly without breaking a sweat. A Stage 1 tune is an incredibly common modification, completely transforming the A 250 Sport into a terrifyingly fast hot hatch. Pushing beyond 280hp requires a larger hybrid turbocharger, an upgraded intercooler to combat severe heat soak, and a high-flow downpipe. At this point, the 7G-DCT transmission's internal wet clutch packs become the primary, fragile limiting factor, and the open-deck block design begins to reach its thermal limits.)",
+        fuelConsumption: {
+          city: "8.5 - 10.0 L/100km",
+          highway: "6.0 - 7.0 L/100km",
+          mixed: "7.0 - 8.0 L/100km",
+          sporty: "12.0+ L/100km"
+        },
+        oilSpecification: "5W-40 Synthetic (MB 229.5)",
+        commonIssues: [
+          "VVT Camshaft Adjuster Rattle: The most notorious M270 flaw. Internal locking pins fail, causing a loud 2-3 second metallic rattle on startup. Requires replacing both adjusters before camshaft destruction occurs.",
+          "Thermostat Failure (Labor Intensive): The electronically controlled thermostat is made of brittle plastic and frequently fails. It usually sticks open or suffers an electrical failure. Located inconveniently under the intake manifold, making replacement a frustrating 3-4 hour labor job.",
+          "Water Pump Leaks: The plastic housing of the mechanical water pump is highly prone to cracking and weeping coolant around the 100k km mark.",
+          "PCV Valve Assembly Failure: The internal rubber membrane of the oil separator tears, causing excessive oil consumption, rough idling, and whistling noises.",
+          "Intake Valve Carbon Buildup: Due strictly to Direct Injection, thick carbon sludge accumulates heavily on the intake valves, requiring professional Walnut Blasting every 80k-100k km.",
+          "7G-DCT Transmission Judder: If the dual-clutch transmission is not serviced strictly every 60k km (both internal and external filters), the valve body solenoids contaminate, resulting in harsh, dangerous juddering shifts."
+        ],
+        vulnerabilities: [
+          "Timing System Damage (Ignored VVT Rattle): If the cold-start rattle of the camshaft adjusters is ignored, the loose phasers will wear down the camshaft lobes and potentially allow the timing chain to jump a tooth, leading to catastrophic piston-to-valve contact.",
+          "Coolant Loss / Overheating (Thermostat/Pump): Heavy reliance on plastic for critical cooling components makes the M270 vulnerable to sudden coolant leaks. Ignoring a low coolant warning will quickly warp the aluminum cylinder head.",
+          "Economic Loss (DCT Mechatronic Failure): Neglecting the 7G-DCT fluid changes will destroy the internal dual-clutch pack and the sensitive Mechatronic control unit, costing upwards of 2,500 EUR to rebuild.",
+          "Drivability Loss (Carbon Choking): Severe carbon buildup on the intake valves will eventually restrict airflow so heavily that the engine suffers from random misfires, poor acceleration, and Limp Mode under load.",
+          "Fuel Dilution (HPFP Leak): The high-pressure fuel pump can leak raw fuel internally past its shaft seal, diluting the engine oil and wiping out the main engine bearings."
+        ],
+        oemPlusUpgrades: [
+          {
+            name: "Stage 1 ECU Flash",
+            description: "Flashing the Bosch MED17 ECU via OBD2 to optimize boost pressure and ignition timing.",
+            benefit: "Safely unlocks 40+ horsepower, completely transforming the A 250 Sport into a genuinely aggressive, highly capable hot hatchback."
+          },
+          {
+            name: "Intake Manifold Walnut Blasting",
+            description: "Removing the intake manifold to physically blast the baked-on carbon sludge off the intake valves using crushed walnut shells.",
+            benefit: "CRITICAL MAINTENANCE. Restores factory airflow, smooths out rough cold idling, eliminates hesitation, and prevents misfires."
+          },
+          {
+            name: "Aluminum Thermostat Housing",
+            description: "Replacing the brittle factory plastic thermostat housing with an upgraded aluminum aftermarket variant.",
+            benefit: "Prevents future cracking and sudden catastrophic coolant dumps, avoiding the 4-hour labor charge of removing the intake manifold again."
+          },
+          {
+            name: "7G-DCT Premium Fluid Flush",
+            description: "Performing a complete fluid and dual-filter replacement on the dual-clutch transmission.",
+            benefit: "Cures low-speed shifting judder, smooths out reverse engagement, and protects the highly expensive Mechatronic unit from premature failure under hard launches."
+          }
+        ],
+        transmission: {
+          manual: {
+            name: "6-Speed Manual",
+            torqueLimit: "350 Nm",
+            oilType: "75W-80",
+            note: "A robust 6-speed gearbox. It avoids DCT maintenance costs, but the Dual Mass Flywheel (DMF) will wear out quickly under the massive 350 Nm of torque, causing severe clutch judder."
+          },
+          automatics: [
+            {
+              name: "7G-DCT (724.0 Dual-Clutch)",
+              torqueLimit: "350 Nm",
+              oilType: "MB 236.21 DCT Fluid",
+              note: "A fast-shifting wet dual-clutch transmission. It operates near its maximum engineering torque limit with the A 250 Sport. It absolutely MUST have its fluid and BOTH internal and external cartridge filters changed strictly every 60,000 km, or aggressive driving will burn the clutches rapidly."
+            }
+          ]
+        },
+        fluidCapacities: [
+          { system: "Engine Oil", capacity: "5.6 Liters", spec: "5W-40 Synthetic (MB 229.5)" },
+          { system: "Engine Coolant", capacity: "7.5 Liters", spec: "MB 325.0 Blue/Green" },
+          { system: "Manual Transmission", capacity: "1.8 Liters", spec: "75W-80 API GL-4" },
+          { system: "7G-DCT Automatic", capacity: "5.5 Liters", spec: "MB 236.21 DCT Specific Fluid" },
+          { system: "Brake Fluid", capacity: "1.0 Liter", spec: "DOT 4 LV" },
+          { system: "Power Steering", capacity: "0.0 Liters", spec: "Electric Power Steering (EPS) - No Fluid" },
+          { system: "Windshield Washer", capacity: "4.0 Liters", spec: "Standard Anti-Freeze" },
+          { system: "A/C Refrigerant", capacity: "650 Grams", spec: "R134a" },
+          { system: "A/C Compressor Oil", capacity: "120 ml", spec: "PAG 46" },
+          { system: "Clutch Hydraulic Fluid", capacity: "0.5 Liters", spec: "DOT 4 LV" }
+        ],
+        torqueSpecs: [
+          { part: "Engine Oil Drain Plug", value: "30 Nm", note: "Always use a new copper crush washer." },
+          { part: "Spark Plugs", value: "23 Nm", note: "Requires a special thin-walled 14mm 12-point socket to prevent cracking." },
+          { part: "Wheel Bolts", value: "130 Nm", note: "Apply sequentially in a crisscross pattern." },
+          { part: "Valve Cover Bolts", value: "9 Nm", note: "Tighten evenly in a strict crisscross sequence." },
+          { part: "Oil Filter Housing Cap", value: "25 Nm", note: "Do not overtighten the fragile plastic cap." },
+          { part: "Camshaft Adjuster Central Valve", value: "130 Nm", note: "CRITICAL: Left-hand thread on some models; verify carefully before turning." },
+          { part: "7G-DCT Transmission Pan", value: "8 Nm", note: "Use new aluminum bolts; they are single-use stretch bolts." },
+          { part: "Front Strut Top Nut", value: "60 Nm", note: "Use a pass-through socket." },
+          { part: "Water Pump Bolts", value: "9 Nm", note: "Tighten gently into the soft aluminum block." },
+          { part: "Turbocharger Mounting Nuts", value: "30 Nm", note: "Use high-temp anti-seize; prone to snapping from heat." }
+        ],
+        engineeringData: {
+          blockDesign: "Inline-4, Open-deck die-cast aluminum block with cast-iron cylinder liners. The M270 2.0L utilizes a larger bore and stroke than the 1.6L variant. Mounted transversely in the MFA platform. The open-deck design provides excellent cooling but is inherently less rigid than a closed-deck block, limiting its absolute maximum tuning potential under extreme boost pressures.",
+          crankshaft: "Hollow-cast steel, supported by 5 main bearings, equipped with dual Lanchester balance shafts located in the oil pan for extreme, premium-level smoothness.",
+          pistonSpeed: "15.6 m/s @ 6000 RPM.",
+          alternator: "150A Valeo/Bosch (Easily accessible at the front/top of the engine).",
+          rotatingAssembly: {
+            pistonConstruction: "Cast aluminum alloy with short skirts and anti-friction coating.",
+            wristPinDiameter: "22 mm.",
+            connectingRodLength: "140 mm.",
+            rodBoltSize: "M8.",
+            crankMainJournal: "50.0 mm.",
+            crankRodJournal: "45.0 mm.",
+            rodRatio: "1.52."
+          },
+          cylinderHead: {
+            combustionChamberVol: "Pent-roof combustion chamber designed specifically for central direct injection.",
+            intakePortFlow: "16-valve DOHC design. Features continuously variable valve timing (VVT) on both the intake and exhaust camshafts to broaden the torque curve, though the phasers are a notoriously weak point.",
+            valveSizes: "Intake: 31.5 mm / Exhaust: 28.0 mm.",
+            valveStemDiameter: "5.0 mm.",
+            camshaftDuration: "Highly variable on BOTH sides via problematic hydraulic phasers.",
+            lifterType: "Hydraulic bucket tappets.",
+            specialFeature: "Piezo direct injectors mounted centrally, directly adjacent to the spark plug for optimal stratified charge combustion."
+          },
+          oilAndCooling: {
+            oilSquirters: "Yes, dedicated high-pressure under-piston cooling jets.",
+            oilPumpType: "Chain-driven variable displacement vane pump.",
+            thermostatOpening: "103°C Electronic map-controlled thermostat (Highly prone to plastic failure).",
+            oilCooler: "Standard water-to-oil heat exchanger mounted to the oil filter housing."
+          },
+          fuelSystem: {
+            systemType: "Bosch High Precision Direct Injection.",
+            maxPressure: "200 Bar (Fuel Rail).",
+            injectors: "4x Bosch Piezo Injectors."
+          },
+          tuningLimits: {
+            maxSafeTorqueStock: "420 Nm",
+            maxSafePowerStock: "270 hp",
+            maxSafeRPM: "6500 RPM",
+            weakestLink: "7G-DCT Transmission Clutch Packs, Camshaft Adjusters, Plastic Thermostat Housing."
+          },
+          electrical: {
+            coils: "4x Individual Ignition Coils.",
+            ecu: "Bosch MED 17.7.2 (Pushes the M270 2.0L to its factory peak, maximizing boost mapping)."
+          }
+        },
+        recommendedParts: {
+          description: "Crucial maintenance parts to prevent the common M270 failures.",
+          parts: [
+            { category: "Camshaft Adjusters (VVT)", brand: "Mercedes Genuine / INA", note: "CRITICAL: Replace immediately if cold-start rattling occurs to save the camshafts." },
+            { category: "Thermostat Assembly", brand: "BorgWarner / Wahler", note: "CRITICAL: Replace if P0128 code appears or engine runs cold. Highly labor intensive." },
+            { category: "Water Pump", brand: "Pierburg / Saleri", note: "Replace if weeping coolant; plastic housing cracks easily." },
+            { category: "7G-DCT Fluid & Filters", brand: "Fuchs / MB Genuine", note: "CRITICAL: Must change internal cartridge filter, pan filter, and fluid strictly every 60k km." },
+            { category: "Spark Plugs", brand: "NGK SILZKFR8E7S", note: "Direct injection turbo engines require strict 60k km plug replacements." },
+            { category: "Ignition Coils", brand: "Bosch / Eldor", note: "Replace proactively to cure under-load misfires." },
+            { category: "PCV Valve / Breather", brand: "Vaico / MB Genuine", note: "Replace if engine consumes oil or whistles at idle." },
+            { category: "Turbo Control Solenoid", brand: "Pierburg", note: "Replace if experiencing erratic boost behavior." }
+          ]
+        },
+        maintenanceSchedule: {
+          fluidsAndDrivetrain: [
+            { interval: "60,000 km", timeLimit: "5 years", task: "7G-DCT Transmission Fluid & Dual Filters", details: "CRITICAL: Drain fluid, replace the plastic oil pan/filter assembly, AND replace the external cartridge filter on top of the gearbox. Neglect leads to Mechatronic death, especially under 218hp abuse.", parts: ["5.5L MB 236.21 DCT Fluid", "Internal Pan Filter", "External Cartridge Filter"], importance: "Critical", laborDifficulty: "Intermediate", estimatedCost: "250 EUR" },
+            { interval: "80,000 km", timeLimit: "8 years", task: "Manual Transmission Fluid", details: "Drain and refill the 6-speed manual gearbox.", parts: ["1.8L 75W-80"], importance: "Medium", laborDifficulty: "Easy", estimatedCost: "60 EUR" },
+            { interval: "2 Years", timeLimit: "2 years", task: "Brake Fluid Flush", details: "Flush DOT 4 LV fluid.", parts: ["1.0L DOT 4 LV"], importance: "High", laborDifficulty: "Intermediate", estimatedCost: "60 EUR" },
+            { interval: "80,000 km", timeLimit: "5 years", task: "Engine Coolant Flush", details: "Flush the cooling system to protect the fragile plastic thermostat and water pump.", parts: ["7.5L MB 325.0 Blue"], importance: "High", laborDifficulty: "Easy", estimatedCost: "70 EUR" }
+          ],
+          oilAndFilters: [
+            { interval: "10,000 km", timeLimit: "1 year", task: "Engine Oil & Filter Change", details: "CRITICAL: Regular oil changes are the absolute only way to protect the fragile VVT camshaft adjusters and turbo bearings from the high heat of the A 250 Sport.", parts: ["5.6L 5W-40 Synthetic", "Mann Oil Filter"], importance: "Critical", laborDifficulty: "Easy", estimatedCost: "80 EUR" },
+            { interval: "30,000 km", timeLimit: "3 years", task: "Engine Air Filter", details: "Replace the panel filter to allow the turbo to breathe.", parts: ["Mann Air Filter"], importance: "High", laborDifficulty: "Easy", estimatedCost: "25 EUR" },
+            { interval: "30,000 km", timeLimit: "2 years", task: "Cabin Microfilter", details: "Replace interior HVAC filter.", parts: ["Mahle Cabin Filter"], importance: "Low", laborDifficulty: "Easy", estimatedCost: "30 EUR" }
+          ],
+          ignitionAndEngine: [
+            { interval: "60,000 km", timeLimit: "5 years", task: "Spark Plug Replacement", details: "CRITICAL: Turbo DI engines eat spark plugs. Requires special 14mm 12-point thin-wall socket.", parts: ["4x NGK Plugs"], importance: "High", laborDifficulty: "Intermediate", estimatedCost: "90 EUR" },
+            { interval: "100,000 km", timeLimit: "8 years", task: "Ignition Coil Replacement", details: "Replace proactively to cure under-load misfires and hesitation.", parts: ["4x Bosch Coils"], importance: "Medium", laborDifficulty: "Easy", estimatedCost: "160 EUR" },
+            { interval: "80,000 - 100,000 km", timeLimit: "Unlimited", task: "Intake Manifold Walnut Blasting", details: "CRITICAL: Remove the intake manifold and blast the thick carbon sludge off the intake valves caused by Direct Injection.", parts: ["Intake Gaskets", "Labor"], importance: "High", laborDifficulty: "Advanced", estimatedCost: "350 EUR" },
+            { interval: "As Needed", timeLimit: "Unlimited", task: "Camshaft Adjuster Replacement", details: "If the engine rattles loudly for 2 seconds on cold start, replace the VVT phasers immediately before total camshaft damage occurs.", parts: ["Intake & Exhaust Adjusters"], importance: "Critical", laborDifficulty: "Expert", estimatedCost: "800+ EUR" },
+            { interval: "As Needed", timeLimit: "Unlimited", task: "Thermostat Replacement", details: "If the engine runs cold or throws a P0128 code, the plastic thermostat has failed. Requires removing the intake manifold.", parts: ["BorgWarner Thermostat"], importance: "Medium", laborDifficulty: "Advanced", estimatedCost: "300 EUR" }
+          ],
+          preventiveAndSuspension: [
+            { interval: "100,000 km", timeLimit: "6 years", task: "Serpentine Belt & Tensioner", details: "Replace drive system. Excellent access compared to the older W169.", parts: ["INA Kit", "Continental Belt"], importance: "High", laborDifficulty: "Easy", estimatedCost: "100 EUR" },
+            { interval: "100,000 km", timeLimit: "10 years", task: "Front Control Arm Bushings", details: "Replace lower control arms to cure vague steering.", parts: ["Lemförder Control Arms"], importance: "Medium", laborDifficulty: "Intermediate", estimatedCost: "200 EUR" }
+          ],
+          coolingAndHvac: [
+            { interval: "4 Years", timeLimit: "4 years", task: "A/C System Service", details: "Recharge A/C refrigerant.", parts: ["650g R134a"], importance: "Medium", laborDifficulty: "Intermediate", estimatedCost: "80 EUR" }
+          ],
+          engineMechanical: [
+            { interval: "5 Years", timeLimit: "5 years", task: "AGM Battery Replacement", details: "Replace main battery to prevent ECU crashing and voltage drops affecting the 7G-DCT.", parts: ["70Ah AGM Battery"], importance: "High", laborDifficulty: "Easy", estimatedCost: "180 EUR" }
+          ]
+        },
+        crossReferenceParts: [
+          { partName: "Cam Adjuster", category: "Engine", oem: { brand: "MB Genuine", code: "2700501147", approxPrice: "450 EUR" }, crossRef: { brand: "INA", code: "427 1017 10", approxPrice: "250 EUR", source: "OEM", autodoclink: "", advanceautopartslink: "" }, note: "Fixes cold-start rattle." },
+          { partName: "Thermostat", category: "Cooling", oem: { brand: "MB Genuine", code: "2702000615", approxPrice: "180 EUR" }, crossRef: { brand: "BorgWarner", code: "410212.103D", approxPrice: "90 EUR", source: "OEM", autodoclink: "", advanceautopartslink: "" }, note: "Labor intensive." },
+          { partName: "Water Pump", category: "Cooling", oem: { brand: "MB Genuine", code: "2702000800", approxPrice: "150 EUR" }, crossRef: { brand: "Pierburg", code: "7.07152.02.0", approxPrice: "80 EUR", source: "OEM", autodoclink: "", advanceautopartslink: "" }, note: "Prone to cracking." },
+          { partName: "7G-DCT Ext. Filter", category: "Transmission", oem: { brand: "MB Genuine", code: "2463772300", approxPrice: "35 EUR" }, crossRef: { brand: "Vaico", code: "V30-2268", approxPrice: "18 EUR", source: "Premium Upgrade", autodoclink: "", advanceautopartslink: "" }, note: "Change every 60k km." },
+          { partName: "Spark Plugs", category: "Ignition", oem: { brand: "MB Genuine", code: "0041595803", approxPrice: "22 EUR" }, crossRef: { brand: "NGK", code: "SILZKFR8E7S", approxPrice: "12 EUR", source: "OEM", autodoclink: "", advanceautopartslink: "" }, note: "14mm thin-wall." },
+          { partName: "Ignition Coil", category: "Ignition", oem: { brand: "MB Genuine", code: "2709060500", approxPrice: "75 EUR" }, crossRef: { brand: "Bosch", code: "0221504800", approxPrice: "40 EUR", source: "OEM", autodoclink: "", advanceautopartslink: "" }, note: "Requires 4." },
+          { partName: "PCV Valve", category: "Engine", oem: { brand: "MB Genuine", code: "2700100113", approxPrice: "90 EUR" }, crossRef: { brand: "Vaico", code: "V30-2580", approxPrice: "45 EUR", source: "Premium Upgrade", autodoclink: "", advanceautopartslink: "" }, note: "Fixes whistling idle." },
+          { partName: "Oil Filter", category: "Filters", oem: { brand: "MB Genuine", code: "2701800109", approxPrice: "18 EUR" }, crossRef: { brand: "Mann Filter", code: "HU 711/6 z", approxPrice: "10 EUR", source: "OEM", autodoclink: "", advanceautopartslink: "" }, note: "Cartridge style." },
+          { partName: "Air Filter", category: "Filters", oem: { brand: "MB Genuine", code: "2700940004", approxPrice: "30 EUR" }, crossRef: { brand: "Mann Filter", code: "C 27 004", approxPrice: "16 EUR", source: "OEM", autodoclink: "", advanceautopartslink: "" }, note: "Panel filter." },
+          { partName: "7G-DCT Fluid", category: "Fluids", oem: { brand: "MB Genuine", code: "0019898503", approxPrice: "28 EUR / L" }, crossRef: { brand: "Fuchs", code: "TITAN FFL-3", approxPrice: "15 EUR / L", source: "OEM", autodoclink: "", advanceautopartslink: "" }, note: "Requires 5.5 L." }
+        ],
+        sisterModels: [
+          { name: "Mercedes-Benz CLA 250 Sport (C117)", note: "The CLA sedan shares the identical chassis, engine, and interior. Often found in 4MATIC configuration." },
+          { name: "Mercedes-Benz B 250 (W246)", note: "The B-Class MPV is built on the exact same MFA platform and uses the identical 2.0L M 270 engine and 7G-DCT transmission." },
+          { name: "Mercedes-Benz GLA 250 (X156)", note: "The compact SUV variant features the identical drivetrain and engine layout." }
+        ],
+        tuningPotential: [
+          { stage: "Stage 1 (Software Flash)", power: "255 - 265 hp", notes: "A highly popular upgrade. A Stage 1 tune safely optimizes boost pressure and ignition timing to provide a massive 40-50 horsepower gain. It sharpens throttle response incredibly and turns the A 250 Sport into a terrifyingly fast front-wheel-drive car that will constantly fight for traction through the first three gears.", zeroToHundred: "5.7s", hundredToTwoHundred: "14.8s" },
+          { stage: "Stage 2 (Downpipe & Tune)", power: "275 - 285 hp", notes: "Requires a high-flow downpipe (de-cat or sports cat), an upgraded intercooler, and a custom retune. The stock IHI turbocharger reaches its absolute maximum safe flow efficiency here. FWD models will suffer from immense torque steer.", zeroToHundred: "5.4s", hundredToTwoHundred: "13.8s" },
+          { stage: "Stage 3 (Hybrid Turbo)", power: "320 - 340 hp", notes: "Requires a larger hybrid turbocharger, high-pressure fuel pump upgrades, and a fully custom tune. At this level, the 7G-DCT transmission clutch packs will slip and require upgrading. The open-deck engine block is pushed to its absolute thermal limit.", zeroToHundred: "4.8s", hundredToTwoHundred: "11.5s" }
+        ],
+        tuningGraphData: { stock: { hp: 218, nm: 350 }, stage1: { hp: 260, nm: 400 }, stage2: { hp: 280, nm: 420 }, stage3: { hp: 335, nm: 480 } },
+        riskRating: 6,
+        model3DPath: "/images/brands/mercedes/A-Class/W176/w1762.glb",
+        model3DScale: 0.08,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.17, y: -0.01, z: 0.48 } },
+        lightSettings: { headlightAngle: 0.25, headlightIntensity: 100, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 28, meshGlowTaillight: 6, meshGlowDrl: 15, useBloom: true },
+        hotspotSettings: { distanceFactor: 1 },
+        model3DHotspots: [
+          { label: "VVT Camshaft Adjusters (Phasers)", x: -0.10, y: 0.08, z: 0.34, critical: true, details: "CRITICAL VULNERABILITY: Located at the top of the engine under the valve cover. The internal locking pins in the intake and exhaust cam phasers wear out rapidly, causing a loud metallic rattling noise on cold startups. They must be replaced immediately before they destroy the camshafts." },
+          { label: "Plastic Thermostat Housing", x: 0.00, y: 0.02, z: 0.32, critical: true, details: "MAINTENANCE NIGHTMARE: Buried deep underneath the intake manifold. The plastic housing frequently cracks or the electronic thermostat sticks open, causing the engine to run cold. Replacing it is highly labor-intensive, requiring full removal of the intake tract." },
+          { label: "Turbocharger & Electronic Wastegate", x: 0.05, y: 0.04, z: 0.26, critical: false, details: "VULNERABILITY: Tucked tightly against the firewall. While the IHI turbocharger itself is generally reliable, the electronic wastegate actuator linkage wears out over time, causing a distinct metallic rattle on deceleration and potential underboost limp mode." },
+          { label: "7G-DCT Transmission & Mechatronic", x: 0.12, y: -0.06, z: 0.30, critical: true, details: "CRITICAL VULNERABILITY: Mounted lower down on the driver's side. The dual-clutch transmission is incredibly sensitive to fluid degradation. If the dual filters and fluid are not changed strictly every 60k km, the internal solenoids clog, destroying the highly expensive Mechatronic unit." },
+          { label: "Intake Valves (Carbon Buildup)", x: 0.00, y: 0.07, z: 0.33, critical: true, details: "MAINTENANCE POINT: Located inside the cylinder head. Because the M 270 is a direct-injected engine, fuel does not wash the intake valves. Thick, sticky carbon sludge accumulates heavily here, requiring professional Walnut Blasting every 80k-100k km to prevent misfires and hesitation." }
+        ],
+        customLightNames: { headlights: ["headlights"], taillights: ["taillights1", "taillights2"], drllight: ["drls"] },
+        author: ".",
+        popupAnimationName: "",
+        drivingExperience: "The A 250 Sport is the definitive hot hatch of the standard W176 lineup, sitting just below the maniacal A45 AMG. With 218 horsepower and a massive 350 Nm of torque available almost instantly, the driving experience is aggressive, frantic, and highly engaging. If equipped with front-wheel-drive, it will violently scramble for traction through the first three gears, causing significant and entertaining torque steer. The 2.0-liter turbocharged engine sounds aggressive, spooling quickly with a noticeable rush of boost, and the exhaust produces satisfying pops and bangs on the overrun, a hallmark of the 'Sport' designation. The W176 platform offers a low, sporty seating position and highly direct steering, making it an absolute joy to hustle down backroads. The suspension is notably stiffer than lesser models, sacrificing some urban comfort for flat cornering. When paired with the 7G-DCT, shifts are lightning-fast, and the exhaust lets out a satisfying 'dsg-fart' on upshifts. It is a genuinely fast, thrilling daily driver that demands respect.",
+        mechanicVerdict: "The M 270.920 engine in the A 250 Sport is an exceptionally solid 2.0L block, earning a highly respectable 6/10 risk rating. The MFA platform is a mechanic's dream compared to the older A-Classes; the catastrophic 'sandwich floor' is dead, meaning normal maintenance is finally normal again. The 2.0L block handles massive boost perfectly, making it a massive favorite among tuners. However, because it is a dedicated performance model, examples are frequently abused and driven extremely hard. The Variable Valve Timing (VVT) camshaft adjusters frequently rattle on startup and MUST be replaced before wiping out the camshafts entirely. The plastic thermostat housing fails regularly and is infuriating to replace due to its location under the intake manifold. Being a modern direct-injected engine, the intake valves will inevitably choke with thick carbon sludge, necessitating professional Walnut Blasting every 100k km. Finally, the 7G-DCT transmission is brilliant but inherently fragile under 350 Nm of torque and aggressive launches; it absolutely must be serviced with new fluid and BOTH filters every 60k km, or the internal clutches will burn out rapidly. Flashing the ECU unlocks 40+ horsepower instantly, making it a terrifyingly fast sleeper, provided you keep up with the rigorous maintenance schedule.",
+        repairCostEstimate: "$800 - $1,500+ / year (Labor costs are drastically lower than the older W169, but parts remain premium Mercedes items. If the VVT camshaft adjusters begin to rattle, budget 800+ EUR for immediate replacement. A failed thermostat costs 300-400 EUR due entirely to the intake manifold removal labor. A 7G-DCT fluid service is 250 EUR, but replacing a failed DCT Mechatronic unit or a burnt clutch pack is 2,500+ EUR. Direct injection Walnut Blasting is required around 100k km, costing 350 EUR.)"
+      },
+      {
+        id: "m133980-a45",
+        brand: "Mercedes-AMG",
+        model: "A 45 4MATIC",
+        generation: "W176 (2013-2015) - Pre-facelift",
+        engineCode: "M 133.980",
+        profileId: "m133980-a45",
+        displacement: "1,991 cc",
+        power: "360 hp (265 kW)",
+        torque: "450 Nm",
+        fuelType: "Petrol",
+        cylinders: 4,
+        valves: 16,
+        compression: "8.6:1",
+        yearRange: "2013-2015",
+        timingType: "Chain (Located at the REAR of the engine block, situated between the engine and the transmission. The M 133 is a bespoke AMG engine, not a tuned M 270. It utilizes a highly robust simplex roller timing chain. Because this engine was, at the time, the most powerful production 4-cylinder in the world, the timing components are massively over-engineered. Catastrophic chain snapping is virtually unheard of. However, if the chain guides or tensioner ever require replacement at very high mileages, the rear-mounted location dictates that the entire engine and transmission assembly must be physically removed from the vehicle. This turns any timing-related service into an astronomical, multi-day labor nightmare.)",
+        injectionType: "Direct Injection (Features a highly specialized, ultra-high-pressure direct injection system utilizing Piezo fuel injectors. Operating at extreme pressures, it delivers multiple injection events per combustion cycle to manage the immense 360hp output. Like all direct-injected engines, it suffers from severe intake valve carbon buildup. However, because the M 133 is driven so aggressively and operates at such extreme temperatures, the carbon bakes onto the valves even harder than standard models. A professional Walnut Blasting service is absolutely mandatory every 60,000 kilometers to prevent severe high-RPM misfires, power loss, and potentially catastrophic detonation under full boost.)",
+        engineLifespan: "150,000 - 200,000 km (The M 133 is a hand-built, highly stressed race engine shoehorned into a hatchback. While the closed-deck block and forged internals are incredibly strong, the engine operates at the absolute physical limits of 2.0-liter thermal and structural dynamics. The lifespan is entirely dependent on meticulous, obsessive maintenance and how the car is driven. The extreme heat generated by the massive twin-scroll turbocharger absolutely cooks the engine bay, rapidly degrading all plastic coolant lines, vacuum hoses, and wiring harnesses. The AMG Speedshift DCT and the 4MATIC PTU clutch packs are highly vulnerable to abuse from repeated Launch Control uses. It is a high-maintenance supercar engine, not a daily commuter.)",
+        turboType: "Turbocharged (Intercooled. Equipped with a massive, highly specialized BorgWarner twin-scroll turbocharger. To produce 360hp from 2.0 liters, it runs an astonishing 1.8 bar (26.1 psi) of factory boost pressure. This turbocharger is the heart of the A 45, delivering explosive, violent acceleration once spooled. However, turbo lag below 2,500 RPM is very noticeable. The turbo operates at extreme temperatures; if the owner does not strictly adhere to cooling down the engine before shutting it off, the oil feed lines will coke up, leading to catastrophic turbo bearing failure. The turbo is located at the front of the engine (unlike the M270) for optimal cooling, but replacement remains highly expensive.)",
+        ecuType: "Bosch MED 17.7.2 (A highly sophisticated, bespoke AMG engine management system. It meticulously controls the massive boost pressure, direct injection, and interfaces perfectly with the AMG Speedshift DCT to execute violent, lightning-fast gear changes and aggressive rev-matching exhaust pops. Despite already producing 360hp, the M 133 is incredibly receptive to aftermarket tuning. A simple Stage 1 OBD2 flash easily pushes the engine past 400 horsepower. However, tuning an engine already operating at this level of thermal stress requires extreme caution and high-octane fuel to prevent catastrophic detonation and piston melting.)",
+        euroStandard: "Euro 6",
+        maxPowerStockInternals: "400 - 430 hp (The M 133 features a closed-deck aluminum block, forged crankshaft, and forged pistons directly from the factory. The internals are phenomenally strong and can handle 420+ horsepower. A Stage 1 tune is very common, unlocking 400hp with just software. Pushing beyond 430hp requires an upgraded downpipe, a high-performance intercooler, and often upgraded high-pressure fuel pumps. The ultimate limiting factor is not the engine block, but rather the immense heat soak, the flow limit of the factory turbocharger, and the physical torque limits of the 7-speed AMG DCT clutches.)",
+        fuelConsumption: {
+          city: "12.0 - 15.0 L/100km",
+          highway: "7.5 - 9.0 L/100km",
+          mixed: "9.0 - 11.0 L/100km",
+          sporty: "18.0+ L/100km"
+        },
+        oilSpecification: "0W-40 Synthetic (MB 229.5) - STRICTLY Premium Brands Only",
+        commonIssues: [
+          "Turbocharger Heat Soak & Failure: The massive BorgWarner turbo operates at extreme temperatures. Oil feed lines coke up if the engine isn't properly cooled down after hard driving, leading to premature turbo bearing failure.",
+          "AMG Speedshift DCT Jerkiness & Clutch Wear: The highly stressed 7-speed dual-clutch transmission is notorious for harsh, jerky shifts at low speeds. Frequent use of Launch Control rapidly burns out the internal wet clutch packs, requiring a highly expensive rebuild.",
+          "4MATIC PTU / Rear Differential Failure: The Power Transfer Unit (PTU) and the rear differential clutch packs are subjected to immense stress during AWD launches. Neglecting fluid changes causes the clutches to burn and the gears to whine, costing thousands to replace.",
+          "Plastic Coolant Line Embrittlement: The extreme heat of the engine bay literally bakes every plastic coolant flange, vent line, and the thermostat housing. They become incredibly brittle and snap, causing sudden, catastrophic coolant dumps.",
+          "Intake Valve Carbon Buildup: Direct Injection combined with immense PCV blow-by under 26 psi of boost causes severe carbon sludge on the intake valves, requiring Walnut Blasting strictly every 60k km.",
+          "Spark Plug & Ignition Coil Failure: Running extreme boost pressures destroys spark plugs rapidly. Plugs MUST be changed every 30,000 km to prevent spark blowout and dangerous high-RPM misfires."
+        ],
+        vulnerabilities: [
+          "Catastrophic Engine Failure (Detonation/Misfire): Pushing a 2.0L engine to 360+ hp requires absolute perfection from the fuel and ignition systems. A failing spark plug, a clogged injector, or bad fuel under full boost will cause instant detonation, melting a piston or cracking the block.",
+          "Drivetrain Destruction (Launch Control Abuse): The A 45's party trick is its violent Launch Control. Repeated back-to-back launches will overheat and permanently destroy the DCT clutch packs and the 4MATIC rear differential.",
+          "Coolant Loss / Overheating: The heavy reliance on plastic for critical cooling components makes the M 133 vulnerable to sudden coolant leaks. Ignoring a low coolant warning will instantly warp the expensive AMG cylinder head.",
+          "Economic Loss (Turbo/Transmission): The cost of replacing the BorgWarner turbocharger or rebuilding the AMG Speedshift DCT routinely exceeds 4,000 EUR. If a used A 45 was abused by a previous owner and these components fail, it represents a massive financial disaster."
+        ],
+        oemPlusUpgrades: [
+          {
+            name: "Stage 1 ECU Flash",
+            description: "Flashing the Bosch ECU via OBD2 to increase boost pressure and optimize ignition timing for premium fuel.",
+            benefit: "Instantly unlocks 400+ horsepower, turning the A 45 into a ballistic missile that out-accelerates many supercars off the line."
+          },
+          {
+            name: "Upgraded Heat Exchanger / Intercooler",
+            description: "Replacing the factory air-to-water intercooler radiator with a significantly larger, higher-capacity unit.",
+            benefit: "CRITICAL UPGRADE for tuned cars. Combats severe heat soak, keeping intake temperatures low and preventing the ECU from cutting power after multiple hard pulls."
+          },
+          {
+            name: "Intake Manifold Walnut Blasting",
+            description: "Removing the intake manifold to physically blast the baked-on carbon sludge off the intake valves.",
+            benefit: "CRITICAL MAINTENANCE. Restores factory airflow, prevents dangerous high-RPM misfires, and ensures the engine can breathe properly under extreme boost."
+          },
+          {
+            name: "High-Flow Downpipe (Sports Cat / De-cat)",
+            description: "Replacing the highly restrictive factory catalytic converter with a high-flow variant.",
+            benefit: "Massively reduces exhaust backpressure, lowers turbocharger temperatures, increases power, and drastically amplifies the AMG exhaust pops and bangs."
+          }
+        ],
+        transmission: {
+          manual: {
+            name: "Not Available",
+            torqueLimit: "N/A",
+            oilType: "N/A",
+            note: "The A 45 AMG is exclusively paired with the 7-speed AMG Speedshift DCT."
+          },
+          automatics: [
+            {
+              name: "AMG Speedshift DCT 7-Speed",
+              torqueLimit: "500 Nm",
+              oilType: "MB 236.21 DCT Fluid",
+              note: "A highly aggressive, fast-shifting wet dual-clutch transmission integrated with the 4MATIC PTU. Features Launch Control (Race Start). It is highly sensitive to abuse and fluid quality. It absolutely MUST have its fluid and filters changed strictly every 40,000 km to survive."
+            }
+          ]
+        },
+        fluidCapacities: [
+          { system: "Engine Oil", capacity: "5.5 Liters", spec: "0W-40 Synthetic (MB 229.5) - Premium Only" },
+          { system: "Engine Coolant", capacity: "8.5 Liters", spec: "MB 325.0 Blue/Green" },
+          { system: "AMG Speedshift DCT", capacity: "5.5 Liters", spec: "MB 236.21 DCT Specific Fluid" },
+          { system: "4MATIC Transfer Case / PTU", capacity: "0.7 Liters", spec: "MB 236.21 (Dedicated Chamber)" },
+          { system: "Rear Differential", capacity: "0.8 Liters", spec: "75W-85 API GL-5" },
+          { system: "Brake Fluid", capacity: "1.0 Liter", spec: "DOT 4 LV" },
+          { system: "Power Steering", capacity: "0.0 Liters", spec: "Electric Power Steering (EPS) - No Fluid" },
+          { system: "Windshield Washer", capacity: "4.0 Liters", spec: "Standard Anti-Freeze" },
+          { system: "A/C Refrigerant", capacity: "650 Grams", spec: "R134a" },
+          { system: "A/C Compressor Oil", capacity: "120 ml", spec: "PAG 46" }
+        ],
+        torqueSpecs: [
+          { part: "Engine Oil Drain Plug", value: "30 Nm", note: "Always use a new copper crush washer." },
+          { part: "Spark Plugs", value: "23 Nm", note: "Requires a special thin-walled 14mm 12-point socket. CRITICAL: Do not over-torque." },
+          { part: "Wheel Bolts", value: "130 Nm", note: "Apply sequentially in a crisscross pattern." },
+          { part: "Valve Cover Bolts", value: "9 Nm", note: "Tighten evenly in a strict crisscross sequence." },
+          { part: "Oil Filter Housing Cap", value: "25 Nm", note: "Do not overtighten the fragile plastic cap." },
+          { part: "Turbocharger Mounting Nuts", value: "30 Nm", note: "CRITICAL: Use high-temp anti-seize; hardware frequently snaps from extreme heat." },
+          { part: "7G-DCT Transmission Pan", value: "8 Nm", note: "Use new aluminum bolts; they are single-use stretch bolts." },
+          { part: "Rear Differential Fill/Drain", value: "40 Nm", note: "Always loosen the fill plug before the drain plug." },
+          { part: "Front Strut Top Nut", value: "60 Nm", note: "Use a pass-through socket." },
+          { part: "Water Pump Bolts", value: "9 Nm", note: "Tighten gently into the soft aluminum block." }
+        ],
+        engineeringData: {
+          blockDesign: "Inline-4, Closed-deck die-cast aluminum block with Nanoslide cylinder wall coating. Unlike the open-deck M270, the M133 is a bespoke, hand-built AMG engine utilizing a closed-deck design for maximum structural rigidity to handle the immense 1.8 bar of boost pressure. The engine is mounted transversely.",
+          crankshaft: "Forged Steel, supported by 5 main bearings, highly balanced for high-RPM operation.",
+          pistonSpeed: "18.3 m/s @ 6000 RPM (Extremely high for a production engine).",
+          alternator: "150A Valeo/Bosch.",
+          rotatingAssembly: {
+            pistonConstruction: "Forged aluminum alloy with optimized cooling channels to withstand extreme EGTs.",
+            wristPinDiameter: "22 mm.",
+            connectingRodLength: "140 mm.",
+            rodBoltSize: "M9.",
+            crankMainJournal: "50.0 mm.",
+            crankRodJournal: "45.0 mm.",
+            rodRatio: "1.52."
+          },
+          cylinderHead: {
+            combustionChamberVol: "Pent-roof combustion chamber specifically designed for massive forced induction.",
+            intakePortFlow: "16-valve DOHC design. Features continuously variable valve timing (VVT) on both the intake and exhaust camshafts. The flow characteristics are entirely optimized for high-RPM power delivery.",
+            valveSizes: "Intake: 31.5 mm / Exhaust: 28.0 mm.",
+            valveStemDiameter: "5.0 mm.",
+            camshaftDuration: "Aggressive AMG profile optimized for high-end power.",
+            lifterType: "Hydraulic bucket tappets.",
+            specialFeature: "Piezo direct injectors capable of multiple injections per cycle for detonation control."
+          },
+          oilAndCooling: {
+            oilSquirters: "Yes, dedicated high-capacity under-piston cooling jets.",
+            oilPumpType: "Chain-driven variable displacement vane pump.",
+            thermostatOpening: "103°C Electronic map-controlled thermostat.",
+            oilCooler: "Massive, highly upgraded water-to-oil heat exchanger."
+          },
+          fuelSystem: {
+            systemType: "Bosch High Precision Direct Injection.",
+            maxPressure: "200 Bar (Fuel Rail).",
+            injectors: "4x High-Flow Bosch Piezo Injectors."
+          },
+          tuningLimits: {
+            maxSafeTorqueStock: "500 Nm",
+            maxSafePowerStock: "430 hp",
+            maxSafeRPM: "6700 RPM",
+            weakestLink: "AMG Speedshift DCT Clutch Packs, 4MATIC PTU Gearbox, Extreme Turbo Heat Soak."
+          },
+          electrical: {
+            coils: "4x High-Output Individual Ignition Coils.",
+            ecu: "Bosch MED 17.7.2 (Bespoke AMG mapping)."
+          }
+        },
+        recommendedParts: {
+          description: "Crucial maintenance parts to prevent catastrophic failure of the M133.",
+          parts: [
+            { category: "Spark Plugs", brand: "NGK Laser Iridium", note: "CRITICAL: Replace strictly every 30k km to prevent misfires under extreme boost." },
+            { category: "Ignition Coils", brand: "Bosch / Eldor", note: "Replace proactively; extreme engine bay heat destroys coil packs rapidly." },
+            { category: "AMG DCT Fluid & Filters", brand: "Fuchs / MB Genuine", note: "CRITICAL: Must change internal filter, external filter, and fluid strictly every 40k km." },
+            { category: "Rear Differential Fluid", brand: "Fuchs / MB Genuine", note: "Change every 40k km to protect the 4MATIC clutch packs from Launch Control wear." },
+            { category: "Thermostat Assembly", brand: "BorgWarner / Wahler", note: "CRITICAL: Replace if P0128 code appears or engine runs cold. Highly labor intensive." },
+            { category: "PCV Valve / Breather", brand: "Vaico / MB Genuine", note: "Replace if engine consumes oil or whistles at idle; under immense strain from boost." },
+            { category: "Turbo Inlet Hose", brand: "MB Genuine", note: "Replace if split to cure sudden massive boost leaks." },
+            { category: "Coolant Expansion Tank Vent Line", brand: "MB Genuine", note: "CRITICAL: The thin plastic line snaps from heat embrittlement, dumping all coolant instantly." }
+          ]
+        },
+        maintenanceSchedule: {
+          fluidsAndDrivetrain: [
+            { interval: "40,000 km", timeLimit: "4 years", task: "AMG DCT Transmission Fluid & Dual Filters", details: "CRITICAL: Drain fluid, replace the plastic oil pan/filter assembly, AND replace the external cartridge filter. Neglect or Launch Control abuse leads to immediate Mechatronic and clutch death.", parts: ["5.5L MB 236.21 DCT Fluid", "Internal Pan Filter", "External Cartridge Filter"], importance: "Critical", laborDifficulty: "Intermediate", estimatedCost: "350 EUR" },
+            { interval: "40,000 km", timeLimit: "4 years", task: "4MATIC Rear Differential & PTU Fluid", details: "CRITICAL: Drain and refill the rear differential and the front Power Transfer Unit to protect the AWD multi-plate clutches from failing under aggressive launches.", parts: ["75W-85 GL-5", "MB 236.21"], importance: "Critical", laborDifficulty: "Intermediate", estimatedCost: "150 EUR" },
+            { interval: "2 Years", timeLimit: "2 years", task: "Brake Fluid Flush", details: "Flush DOT 4 LV fluid. Highly critical for track use or aggressive driving.", parts: ["1.0L DOT 4 LV Racing Fluid"], importance: "High", laborDifficulty: "Intermediate", estimatedCost: "80 EUR" },
+            { interval: "60,000 km", timeLimit: "4 years", task: "Engine Coolant Flush", details: "Flush the cooling system to protect the fragile plastic thermostat and massive turbocharger cooling circuit.", parts: ["8.5L MB 325.0 Blue"], importance: "High", laborDifficulty: "Easy", estimatedCost: "80 EUR" }
+          ],
+          oilAndFilters: [
+            { interval: "10,000 km", timeLimit: "1 year", task: "Engine Oil & Filter Change", details: "CRITICAL: The massive turbocharger relies on pristine, premium 0W-40 oil to survive the extreme heat soak. Never exceed 10k km.", parts: ["5.5L 0W-40 Synthetic", "Mann Oil Filter"], importance: "Critical", laborDifficulty: "Easy", estimatedCost: "120 EUR" },
+            { interval: "20,000 km", timeLimit: "2 years", task: "Engine Air Filter", details: "Replace the panel filter to ensure the massive turbo breathes freely.", parts: ["Mann Air Filter / BMC High Flow"], importance: "High", laborDifficulty: "Easy", estimatedCost: "40 EUR" },
+            { interval: "30,000 km", timeLimit: "2 years", task: "Cabin Microfilter", details: "Replace interior HVAC filter.", parts: ["Mahle Cabin Filter"], importance: "Low", laborDifficulty: "Easy", estimatedCost: "30 EUR" }
+          ],
+          ignitionAndEngine: [
+            { interval: "30,000 km", timeLimit: "3 years", task: "Spark Plug Replacement", details: "CRITICAL: The M133 operates at 1.8 bar of boost. Spark plugs erode incredibly fast. Failing to replace them guarantees misfires and potential engine damage.", parts: ["4x NGK Laser Iridium"], importance: "Critical", laborDifficulty: "Intermediate", estimatedCost: "120 EUR" },
+            { interval: "60,000 km", timeLimit: "5 years", task: "Ignition Coil Replacement", details: "Replace proactively. Extreme engine bay heat destroys the coil packs rapidly, leading to high-RPM misfires.", parts: ["4x Bosch Coils"], importance: "High", laborDifficulty: "Easy", estimatedCost: "180 EUR" },
+            { interval: "60,000 km", timeLimit: "Unlimited", task: "Intake Manifold Walnut Blasting", details: "CRITICAL: Remove the intake manifold and blast the thick carbon sludge off the intake valves caused by Direct Injection and extreme PCV blow-by.", parts: ["Intake Gaskets", "Labor"], importance: "High", laborDifficulty: "Advanced", estimatedCost: "400 EUR" },
+            { interval: "60,000 km", timeLimit: "Unlimited", task: "Serpentine Belt & Tensioner", details: "Replace drive system.", parts: ["INA Kit", "Continental Belt"], importance: "Medium", laborDifficulty: "Intermediate", estimatedCost: "120 EUR" }
+          ],
+          preventiveAndSuspension: [
+            { interval: "100,000 km", timeLimit: "Unlimited", task: "Front Strut Mounts", details: "Replace mounts to cure loud clunking noises caused by the heavy engine and extremely stiff AMG suspension.", parts: ["Lemförder Mounts"], importance: "High", laborDifficulty: "Intermediate", estimatedCost: "150 EUR" },
+            { interval: "100,000 km", timeLimit: "10 years", task: "Front Control Arm Bushings", details: "Replace lower control arms to cure vague steering.", parts: ["Lemförder Control Arms"], importance: "Medium", laborDifficulty: "Intermediate", estimatedCost: "250 EUR" }
+          ],
+          coolingAndHvac: [
+            { interval: "4 Years", timeLimit: "4 years", task: "A/C System Service", details: "Recharge A/C refrigerant.", parts: ["650g R134a"], importance: "Medium", laborDifficulty: "Intermediate", estimatedCost: "80 EUR" }
+          ],
+          engineMechanical: [
+            { interval: "5 Years", timeLimit: "5 years", task: "AGM Battery Replacement", details: "Replace main battery to prevent ECU crashing and voltage drops affecting the highly complex DCT.", parts: ["70Ah AGM Battery"], importance: "High", laborDifficulty: "Easy", estimatedCost: "180 EUR" }
+          ]
+        },
+        crossReferenceParts: [
+          { partName: "Spark Plugs", category: "Ignition", oem: { brand: "MB Genuine", code: "0041598103", approxPrice: "30 EUR" }, crossRef: { brand: "NGK", code: "SILZKFR8E7S", approxPrice: "18 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=0041598103", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=0041598103" }, note: "CRITICAL: Replace strictly every 30k km." },
+          { partName: "Ignition Coil", category: "Ignition", oem: { brand: "MB Genuine", code: "2709060500", approxPrice: "75 EUR" }, crossRef: { brand: "Bosch", code: "0221504800", approxPrice: "40 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2709060500", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2709060500" }, note: "Requires 4 units. Prone to heat soak failure." },
+          { partName: "7G-DCT External Filter", category: "Transmission", oem: { brand: "MB Genuine", code: "2463772300", approxPrice: "35 EUR" }, crossRef: { brand: "Vaico", code: "V30-2268", approxPrice: "18 EUR", source: "Premium Upgrade", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2463772300", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2463772300" }, note: "CRITICAL: Change every 40k km alongside internal filter." },
+          { partName: "Thermostat Assembly", category: "Cooling", oem: { brand: "MB Genuine", code: "2702000615", approxPrice: "180 EUR" }, crossRef: { brand: "BorgWarner", code: "410212.103D", approxPrice: "90 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2702000615", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2702000615" }, note: "Labor intensive to replace." },
+          { partName: "Water Pump", category: "Cooling", oem: { brand: "MB Genuine", code: "2702000800", approxPrice: "150 EUR" }, crossRef: { brand: "Pierburg", code: "7.07152.02.0", approxPrice: "80 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2702000800", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2702000800" }, note: "Plastic housing prone to cracking." },
+          { partName: "PCV Valve / Breather", category: "Engine", oem: { brand: "MB Genuine", code: "2700100113", approxPrice: "90 EUR" }, crossRef: { brand: "Vaico", code: "V30-2580", approxPrice: "45 EUR", source: "Premium Upgrade", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2700100113", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2700100113" }, note: "Under immense strain from boost." },
+          { partName: "Oil Filter", category: "Filters", oem: { brand: "MB Genuine", code: "2701800109", approxPrice: "18 EUR" }, crossRef: { brand: "Mann Filter", code: "HU 711/6 z", approxPrice: "10 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2701800109", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2701800109" }, note: "Cartridge style filter." },
+          { partName: "Engine Air Filter", category: "Filters", oem: { brand: "MB Genuine", code: "1330940104", approxPrice: "40 EUR" }, crossRef: { brand: "BMC", code: "FB754/20", approxPrice: "80 EUR", source: "Performance Upgrade", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=1330940104", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=1330940104" }, note: "High-flow panel filter recommended." },
+          { partName: "7G-DCT Fluid (MB 236.21)", category: "Fluids", oem: { brand: "MB Genuine", code: "0019898503", approxPrice: "28 EUR / L" }, crossRef: { brand: "Fuchs", code: "TITAN FFL-3", approxPrice: "15 EUR / L", source: "OEM Supplier", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=0019898503", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=0019898503" }, note: "Requires ~5.5 Liters." },
+          { partName: "Turbocharger Assembly", category: "Engine", oem: { brand: "MB Genuine", code: "1330900180", approxPrice: "2,500 EUR" }, crossRef: { brand: "BorgWarner", code: "53049880194", approxPrice: "1,400 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=1330900180", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=1330900180" }, note: "WARNING: Massive labor cost to replace." }
+        ],
+        sisterModels: [
+          { name: "Mercedes-Benz CLA 45 AMG (C117)", note: "The CLA sedan shares the identical chassis, hand-built M133 engine, and highly stressed 4MATIC drivetrain." },
+          { name: "Mercedes-Benz GLA 45 AMG (X156)", note: "The compact SUV variant features the identical violent drivetrain, slightly tuned for the heavier chassis." }
+        ],
+        tuningPotential: [
+          { stage: "Stage 1 (Software Flash)", power: "400 - 410 hp", notes: "A highly popular upgrade. A Stage 1 tune safely optimizes the already immense boost pressure and ignition timing to provide a massive 40-50 horsepower gain. It sharpens throttle response incredibly and turns the A 45 into a terrifyingly fast hyper-hatch that rivals dedicated sports cars off the line. Requires strict adherence to premium 98+ RON fuel.", zeroToHundred: "4.1s", hundredToTwoHundred: "10.5s" },
+          { stage: "Stage 2 (Downpipe, Intercooler & Tune)", power: "420 - 430 hp", notes: "Requires a high-flow downpipe (sports cat or de-cat), a significantly upgraded air-to-water intercooler heat exchanger to combat the extreme heat soak, and a custom retune. The factory BorgWarner turbocharger reaches its absolute maximum safe flow efficiency here. The DCT clutches begin to slip if abused continuously.", zeroToHundred: "3.9s", hundredToTwoHundred: "9.8s" },
+          { stage: "Stage 3 (Hybrid Turbo & Fueling)", power: "480 - 500+ hp", notes: "Requires a larger hybrid turbocharger, high-pressure fuel pump upgrades, water/meth injection for cooling, and a fully custom tune. At this level, the AMG Speedshift DCT transmission clutch packs WILL slip and absolutely require an expensive aftermarket upgrade. The 4MATIC PTU is also at severe risk of catastrophic failure.", zeroToHundred: "3.5s", hundredToTwoHundred: "8.5s" }
+        ],
+        tuningGraphData: { stock: { hp: 360, nm: 450 }, stage1: { hp: 405, nm: 520 }, stage2: { hp: 425, nm: 550 }, stage3: { hp: 490, nm: 600 } },
+        riskRating: 8,
+        model3DPath: "/images/brands/mercedes/A-Class/W176/w1762.glb",
+        model3DScale: 0.08,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.17, y: -0.01, z: 0.48 } },
+        lightSettings: { headlightAngle: 0.25, headlightIntensity: 100, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 28, meshGlowTaillight: 6, meshGlowDrl: 15, useBloom: true },
+        hotspotSettings: { distanceFactor: 1 },
+        model3DHotspots: [
+          { label: "BorgWarner Twin-Scroll Turbocharger", x: 0.05, y: 0.04, z: 0.26, critical: true, details: "CRITICAL VULNERABILITY: Located at the front of the engine, highly visible. Produces 26 psi of boost and incredible heat. The oil feed lines coke up if the engine isn't cooled down properly before shutoff, leading to catastrophic bearing failure." },
+          { label: "AMG Speedshift DCT & 4MATIC PTU", x: 0.12, y: -0.06, z: 0.30, critical: true, details: "CRITICAL VULNERABILITY: Mounted low on the driver's side. The dual-clutch transmission and integrated Power Transfer Unit are subjected to immense stress during Launch Control. They absolutely MUST be serviced strictly every 40k km or they will destroy themselves." },
+          { label: "Intake Valves (Carbon Buildup)", x: 0.00, y: 0.07, z: 0.33, critical: true, details: "MAINTENANCE POINT: Inside the cylinder head. Because of Direct Injection and extreme PCV blow-by under high boost, thick carbon sludge accumulates heavily here, requiring Walnut Blasting every 60k km to prevent high-RPM misfires." },
+          { label: "Plastic Coolant Vent Lines", x: 0.02, y: 0.08, z: 0.30, critical: true, details: "CRITICAL VULNERABILITY: Running across the top of the engine. The extreme ambient heat of the M133 literally bakes these thin plastic lines. They become incredibly brittle and snap unexpectedly, dumping all coolant and instantly overheating the engine." },
+          { label: "Rear Timing Chain Location", x: 0.00, y: -0.05, z: 0.15, critical: false, details: "MAINTENANCE NIGHTMARE: The timing chain is located at the REAR of the engine, between the block and the transmission. If timing service is ever required, the entire engine and transmission assembly must be removed from the car." }
+        ],
+        customLightNames: { headlights: ["headlights"], taillights: ["taillights1", "taillights2"], drllight: ["drls"] },
+        author: ".",
+        popupAnimationName: "",
+        drivingExperience: "The A 45 AMG is an absolutely ballistic, violent, and intoxicating hyper-hatch. The driving experience is completely dominated by the hand-built M133 engine. Below 2,500 RPM, there is noticeable turbo lag, but once the massive BorgWarner turbocharger spools up, all 360 horsepower and 450 Nm of torque hit with the subtlety of a sledgehammer. The acceleration is explosive and relentless, pinning you into the heavily bolstered AMG performance seats. The 4MATIC all-wheel-drive system ensures zero wheelspin, launching the car off the line with terrifying efficiency via the Race Start (Launch Control) function. The steering is heavy and hyper-direct, and the incredibly stiff AMG suspension provides physics-defying grip in corners, though it is punishingly harsh on broken city streets. The 7-speed AMG Speedshift DCT cracks off lightning-fast upshifts accompanied by loud, aggressive exhaust bangs that sound like gunfire. It is a car that demands your full attention; it is raw, highly strung, and feels like a genuine rally car disguised as a premium hatchback.",
+        mechanicVerdict: "The M 133.980 engine in the pre-facelift A 45 AMG is a phenomenal feat of engineering, but it earns a highly cautious 8/10 risk rating because it is essentially a highly-stressed race engine shoehorned into a hatchback. Mechanically, the closed-deck block and forged internals are virtually indestructible and handle tuning beautifully. However, the extreme performance extracts a heavy toll on everything else. The heat generated in the engine bay is immense, literally baking all plastic coolant lines, vacuum hoses, and the ignition coils, causing them to become brittle and fail prematurely. You MUST replace spark plugs every 30,000 km, or you risk spark blowout under 26 psi of boost, which can instantly melt a piston. Direct injection combined with extreme PCV blow-by guarantees that the intake valves will choke with carbon, making frequent Walnut Blasting mandatory. Finally, the AMG Speedshift DCT and the 4MATIC PTU are incredibly vulnerable to abuse. If a previous owner repeatedly spammed Launch Control without strictly adhering to 40k km fluid changes, the clutch packs are likely burned out, and a rebuild will cost over 4,000 EUR. If you buy a used A 45, you are not buying a standard A-Class; you are buying a high-maintenance supercar that demands obsessive, expensive upkeep to prevent catastrophic financial ruin.",
+        repairCostEstimate: "$1,500 - $3,500+ / year (Maintenance costs are astronomical compared to standard models. Standard A/B services are very expensive. Replacing the frequent spark plugs and ignition coils costs 300+ EUR. The mandatory 40k km DCT and 4MATIC fluid services cost 500+ EUR. Walnut Blasting is 400 EUR. If the plastic coolant lines snap, towing and repair is 300 EUR. If the turbocharger fails, budget 2,500+ EUR. If the DCT clutches burn out from Launch Control abuse, expect a 4,000+ EUR rebuild bill.)"
+      },
+      {
+        id: "m133980-fl-a45",
+        brand: "Mercedes-AMG",
+        model: "A 45 4MATIC",
+        generation: "W176 (2015-2018) - Facelift",
+        engineCode: "M 133.980",
+        profileId: "m133980-fl-a45",
+        displacement: "1,991 cc",
+        power: "381 hp (280 kW)",
+        torque: "475 Nm",
+        fuelType: "Petrol",
+        cylinders: 4,
+        valves: 16,
+        compression: "8.6:1",
+        yearRange: "2015-2018",
+        timingType: "Chain (Located at the REAR of the engine block, situated between the engine and the transmission. The M 133 utilizes a highly robust simplex roller timing chain. Because this engine is the most powerful production 4-cylinder in the world, the timing components are massively over-engineered. Catastrophic chain snapping is virtually unheard of. However, if the chain guides or tensioner ever require replacement at very high mileages, the rear-mounted location dictates that the entire engine and transmission assembly must be physically removed from the vehicle. This turns any timing-related service into an astronomical, multi-day labor nightmare.)",
+        injectionType: "Direct Injection (Features a highly specialized, ultra-high-pressure direct injection system utilizing Piezo fuel injectors. Operating at extreme pressures, it delivers multiple injection events per combustion cycle to manage the immense 381hp output. Like all direct-injected engines, it suffers from severe intake valve carbon buildup. However, because the M 133 is driven so aggressively and operates at such extreme temperatures, the carbon bakes onto the valves even harder than standard models. A professional Walnut Blasting service is absolutely mandatory every 60,000 kilometers to prevent severe high-RPM misfires, power loss, and potentially catastrophic detonation under full boost.)",
+        engineLifespan: "150,000 - 200,000 km (The M 133 is a hand-built, highly stressed race engine shoehorned into a hatchback. While the closed-deck block and forged internals are incredibly strong, the engine operates at the absolute physical limits of 2.0-liter thermal and structural dynamics. The lifespan is entirely dependent on meticulous, obsessive maintenance and how the car is driven. The extreme heat generated by the massive twin-scroll turbocharger absolutely cooks the engine bay, rapidly degrading all plastic coolant lines, vacuum hoses, and wiring harnesses. The AMG Speedshift DCT and the 4MATIC PTU clutch packs are highly vulnerable to abuse from repeated Launch Control uses. It is a high-maintenance supercar engine, not a daily commuter.)",
+        turboType: "Turbocharged (Intercooled. Equipped with a massive, highly specialized BorgWarner twin-scroll turbocharger. To produce 381hp from 2.0 liters, it runs an astonishing 1.8 bar (26.1 psi) of factory boost pressure. This turbocharger is the heart of the A 45, delivering explosive, violent acceleration once spooled. In the facelift model, Mercedes revised the turbo exhaust cam profile and the ECU mapping to drastically reduce the turbo lag felt in the pre-facelift model, making it much punchier in the mid-range. The turbo operates at extreme temperatures; if the owner does not strictly adhere to cooling down the engine before shutting it off, the oil feed lines will coke up, leading to catastrophic turbo bearing failure.)",
+        ecuType: "Bosch MED 17.7.2 (A highly sophisticated, bespoke AMG engine management system. It meticulously controls the massive boost pressure, direct injection, and interfaces perfectly with the AMG Speedshift DCT. For the facelift, the ECU was entirely remapped to deliver 381hp and 475 Nm, significantly improving mid-range response and revising the transmission logic for faster, smoother shifts. Despite already producing 381hp, the M 133 is incredibly receptive to aftermarket tuning. A simple Stage 1 OBD2 flash easily pushes the engine past 420 horsepower. However, tuning an engine already operating at this level of thermal stress requires extreme caution and high-octane fuel to prevent catastrophic detonation.)",
+        euroStandard: "Euro 6",
+        maxPowerStockInternals: "420 - 450 hp (The M 133 features a closed-deck aluminum block, forged crankshaft, and forged pistons directly from the factory. The internals are phenomenally strong and can handle 440+ horsepower. A Stage 1 tune is very common, unlocking 420hp with just software. Pushing beyond 450hp requires an upgraded downpipe, a high-performance intercooler, and often upgraded high-pressure fuel pumps. The ultimate limiting factor is not the engine block, but rather the immense heat soak, the flow limit of the factory turbocharger, and the physical torque limits of the 7-speed AMG DCT clutches.)",
+        fuelConsumption: {
+          city: "12.0 - 15.0 L/100km",
+          highway: "7.5 - 9.0 L/100km",
+          mixed: "9.0 - 11.0 L/100km",
+          sporty: "18.0+ L/100km"
+        },
+        oilSpecification: "0W-40 Synthetic (MB 229.5) - STRICTLY Premium Brands Only",
+        commonIssues: [
+          "Turbocharger Heat Soak & Failure: The massive BorgWarner turbo operates at extreme temperatures. Oil feed lines coke up if the engine isn't properly cooled down after hard driving, leading to premature turbo bearing failure.",
+          "AMG Speedshift DCT Jerkiness & Clutch Wear: While improved in the facelift, the highly stressed 7-speed dual-clutch transmission can still be jerky at low speeds. Frequent use of Launch Control rapidly burns out the internal wet clutch packs, requiring a highly expensive rebuild.",
+          "4MATIC PTU / Rear Differential Failure: The Power Transfer Unit (PTU) and the rear differential clutch packs are subjected to immense stress during AWD launches. Neglecting fluid changes causes the clutches to burn and the gears to whine, costing thousands to replace.",
+          "Plastic Coolant Line Embrittlement: The extreme heat of the engine bay literally bakes every plastic coolant flange, vent line, and the thermostat housing. They become incredibly brittle and snap, causing sudden, catastrophic coolant dumps.",
+          "Intake Valve Carbon Buildup: Direct Injection combined with immense PCV blow-by under 26 psi of boost causes severe carbon sludge on the intake valves, requiring Walnut Blasting strictly every 60k km.",
+          "Spark Plug & Ignition Coil Failure: Running extreme boost pressures destroys spark plugs rapidly. Plugs MUST be changed every 30,000 km to prevent spark blowout and dangerous high-RPM misfires."
+        ],
+        vulnerabilities: [
+          "Catastrophic Engine Failure (Detonation/Misfire): Pushing a 2.0L engine to 381+ hp requires absolute perfection from the fuel and ignition systems. A failing spark plug, a clogged injector, or bad fuel under full boost will cause instant detonation, melting a piston or cracking the block.",
+          "Drivetrain Destruction (Launch Control Abuse): The A 45's party trick is its violent Launch Control. Repeated back-to-back launches will overheat and permanently destroy the DCT clutch packs and the 4MATIC rear differential.",
+          "Coolant Loss / Overheating: The heavy reliance on plastic for critical cooling components makes the M 133 vulnerable to sudden coolant leaks. Ignoring a low coolant warning will instantly warp the expensive AMG cylinder head.",
+          "Economic Loss (Turbo/Transmission): The cost of replacing the BorgWarner turbocharger or rebuilding the AMG Speedshift DCT routinely exceeds 4,000 EUR. If a used A 45 was abused by a previous owner and these components fail, it represents a massive financial disaster."
+        ],
+        oemPlusUpgrades: [
+          {
+            name: "Stage 1 ECU Flash",
+            description: "Flashing the Bosch ECU via OBD2 to increase boost pressure and optimize ignition timing for premium fuel.",
+            benefit: "Instantly unlocks 420+ horsepower, turning the A 45 into a ballistic missile that out-accelerates many supercars off the line."
+          },
+          {
+            name: "Upgraded Heat Exchanger / Intercooler",
+            description: "Replacing the factory air-to-water intercooler radiator with a significantly larger, higher-capacity unit.",
+            benefit: "CRITICAL UPGRADE for tuned cars. Combats severe heat soak, keeping intake temperatures low and preventing the ECU from cutting power after multiple hard pulls."
+          },
+          {
+            name: "Intake Manifold Walnut Blasting",
+            description: "Removing the intake manifold to physically blast the baked-on carbon sludge off the intake valves.",
+            benefit: "CRITICAL MAINTENANCE. Restores factory airflow, prevents dangerous high-RPM misfires, and ensures the engine can breathe properly under extreme boost."
+          },
+          {
+            name: "High-Flow Downpipe (Sports Cat / De-cat)",
+            description: "Replacing the highly restrictive factory catalytic converter with a high-flow variant.",
+            benefit: "Massively reduces exhaust backpressure, lowers turbocharger temperatures, increases power, and drastically amplifies the AMG exhaust pops and bangs."
+          }
+        ],
+        transmission: {
+          manual: {
+            name: "Not Available",
+            torqueLimit: "N/A",
+            oilType: "N/A",
+            note: "The A 45 AMG is exclusively paired with the 7-speed AMG Speedshift DCT."
+          },
+          automatics: [
+            {
+              name: "AMG Speedshift DCT 7-Speed (Revised)",
+              torqueLimit: "500 Nm",
+              oilType: "MB 236.21 DCT Fluid",
+              note: "A highly aggressive, fast-shifting wet dual-clutch transmission integrated with the 4MATIC PTU. For the facelift, Mercedes shortened gears 3-7 for significantly faster acceleration. It absolutely MUST have its fluid and filters changed strictly every 40,000 km to survive."
+            }
+          ]
+        },
+        fluidCapacities: [
+          { system: "Engine Oil", capacity: "5.5 Liters", spec: "0W-40 Synthetic (MB 229.5) - Premium Only" },
+          { system: "Engine Coolant", capacity: "8.5 Liters", spec: "MB 325.0 Blue/Green" },
+          { system: "AMG Speedshift DCT", capacity: "5.5 Liters", spec: "MB 236.21 DCT Specific Fluid" },
+          { system: "4MATIC Transfer Case / PTU", capacity: "0.7 Liters", spec: "MB 236.21 (Dedicated Chamber)" },
+          { system: "Rear Differential", capacity: "0.8 Liters", spec: "75W-85 API GL-5" },
+          { system: "Brake Fluid", capacity: "1.0 Liter", spec: "DOT 4 LV" },
+          { system: "Power Steering", capacity: "0.0 Liters", spec: "Electric Power Steering (EPS) - No Fluid" },
+          { system: "Windshield Washer", capacity: "4.0 Liters", spec: "Standard Anti-Freeze" },
+          { system: "A/C Refrigerant", capacity: "650 Grams", spec: "R134a" },
+          { system: "A/C Compressor Oil", capacity: "120 ml", spec: "PAG 46" }
+        ],
+        torqueSpecs: [
+          { part: "Engine Oil Drain Plug", value: "30 Nm", note: "Always use a new copper crush washer." },
+          { part: "Spark Plugs", value: "23 Nm", note: "Requires a special thin-walled 14mm 12-point socket. CRITICAL: Do not over-torque." },
+          { part: "Wheel Bolts", value: "130 Nm", note: "Apply sequentially in a crisscross pattern." },
+          { part: "Valve Cover Bolts", value: "9 Nm", note: "Tighten evenly in a strict crisscross sequence." },
+          { part: "Oil Filter Housing Cap", value: "25 Nm", note: "Do not overtighten the fragile plastic cap." },
+          { part: "Turbocharger Mounting Nuts", value: "30 Nm", note: "CRITICAL: Use high-temp anti-seize; hardware frequently snaps from extreme heat." },
+          { part: "7G-DCT Transmission Pan", value: "8 Nm", note: "Use new aluminum bolts; they are single-use stretch bolts." },
+          { part: "Rear Differential Fill/Drain", value: "40 Nm", note: "Always loosen the fill plug before the drain plug." },
+          { part: "Front Strut Top Nut", value: "60 Nm", note: "Use a pass-through socket." },
+          { part: "Water Pump Bolts", value: "9 Nm", note: "Tighten gently into the soft aluminum block." }
+        ],
+        engineeringData: {
+          blockDesign: "Inline-4, Closed-deck die-cast aluminum block with Nanoslide cylinder wall coating. Unlike the open-deck M270, the M133 is a bespoke, hand-built AMG engine utilizing a closed-deck design for maximum structural rigidity to handle the immense 1.8 bar of boost pressure. The engine is mounted transversely.",
+          crankshaft: "Forged Steel, supported by 5 main bearings, highly balanced for high-RPM operation.",
+          pistonSpeed: "18.3 m/s @ 6000 RPM (Extremely high for a production engine).",
+          alternator: "150A Valeo/Bosch.",
+          rotatingAssembly: {
+            pistonConstruction: "Forged aluminum alloy with optimized cooling channels to withstand extreme EGTs.",
+            wristPinDiameter: "22 mm.",
+            connectingRodLength: "140 mm.",
+            rodBoltSize: "M9.",
+            crankMainJournal: "50.0 mm.",
+            crankRodJournal: "45.0 mm.",
+            rodRatio: "1.52."
+          },
+          cylinderHead: {
+            combustionChamberVol: "Pent-roof combustion chamber specifically designed for massive forced induction.",
+            intakePortFlow: "16-valve DOHC design. Features continuously variable valve timing (VVT) on both the intake and exhaust camshafts. The flow characteristics are entirely optimized for high-RPM power delivery.",
+            valveSizes: "Intake: 31.5 mm / Exhaust: 28.0 mm.",
+            valveStemDiameter: "5.0 mm.",
+            camshaftDuration: "Aggressive AMG profile optimized for high-end power. Revised on the facelift for better mid-range.",
+            lifterType: "Hydraulic bucket tappets.",
+            specialFeature: "Piezo direct injectors capable of multiple injections per cycle for detonation control."
+          },
+          oilAndCooling: {
+            oilSquirters: "Yes, dedicated high-capacity under-piston cooling jets.",
+            oilPumpType: "Chain-driven variable displacement vane pump.",
+            thermostatOpening: "103°C Electronic map-controlled thermostat.",
+            oilCooler: "Massive, highly upgraded water-to-oil heat exchanger."
+          },
+          fuelSystem: {
+            systemType: "Bosch High Precision Direct Injection.",
+            maxPressure: "200 Bar (Fuel Rail).",
+            injectors: "4x High-Flow Bosch Piezo Injectors."
+          },
+          tuningLimits: {
+            maxSafeTorqueStock: "500 Nm",
+            maxSafePowerStock: "440 hp",
+            maxSafeRPM: "6700 RPM",
+            weakestLink: "AMG Speedshift DCT Clutch Packs, 4MATIC PTU Gearbox, Extreme Turbo Heat Soak."
+          },
+          electrical: {
+            coils: "4x High-Output Individual Ignition Coils.",
+            ecu: "Bosch MED 17.7.2 (Bespoke AMG mapping, heavily revised for the facelift)."
+          }
+        },
+        recommendedParts: {
+          description: "Crucial maintenance parts to prevent catastrophic failure of the M133.",
+          parts: [
+            { category: "Spark Plugs", brand: "NGK Laser Iridium", note: "CRITICAL: Replace strictly every 30k km to prevent misfires under extreme boost." },
+            { category: "Ignition Coils", brand: "Bosch / Eldor", note: "Replace proactively; extreme engine bay heat destroys coil packs rapidly." },
+            { category: "AMG DCT Fluid & Filters", brand: "Fuchs / MB Genuine", note: "CRITICAL: Must change internal filter, external filter, and fluid strictly every 40k km." },
+            { category: "Rear Differential Fluid", brand: "Fuchs / MB Genuine", note: "Change every 40k km to protect the 4MATIC clutch packs from Launch Control wear." },
+            { category: "Thermostat Assembly", brand: "BorgWarner / Wahler", note: "CRITICAL: Replace if P0128 code appears or engine runs cold. Highly labor intensive." },
+            { category: "PCV Valve / Breather", brand: "Vaico / MB Genuine", note: "Replace if engine consumes oil or whistles at idle; under immense strain from boost." },
+            { category: "Turbo Inlet Hose", brand: "MB Genuine", note: "Replace if split to cure sudden massive boost leaks." },
+            { category: "Coolant Expansion Tank Vent Line", brand: "MB Genuine", note: "CRITICAL: The thin plastic line snaps from heat embrittlement, dumping all coolant instantly." }
+          ]
+        },
+        maintenanceSchedule: {
+          fluidsAndDrivetrain: [
+            { interval: "40,000 km", timeLimit: "4 years", task: "AMG DCT Transmission Fluid & Dual Filters", details: "CRITICAL: Drain fluid, replace the plastic oil pan/filter assembly, AND replace the external cartridge filter. Neglect or Launch Control abuse leads to immediate Mechatronic and clutch death.", parts: ["5.5L MB 236.21 DCT Fluid", "Internal Pan Filter", "External Cartridge Filter"], importance: "Critical", laborDifficulty: "Intermediate", estimatedCost: "350 EUR" },
+            { interval: "40,000 km", timeLimit: "4 years", task: "4MATIC Rear Differential & PTU Fluid", details: "CRITICAL: Drain and refill the rear differential and the front Power Transfer Unit to protect the AWD multi-plate clutches from failing under aggressive launches.", parts: ["75W-85 GL-5", "MB 236.21"], importance: "Critical", laborDifficulty: "Intermediate", estimatedCost: "150 EUR" },
+            { interval: "2 Years", timeLimit: "2 years", task: "Brake Fluid Flush", details: "Flush DOT 4 LV fluid. Highly critical for track use or aggressive driving.", parts: ["1.0L DOT 4 LV Racing Fluid"], importance: "High", laborDifficulty: "Intermediate", estimatedCost: "80 EUR" },
+            { interval: "60,000 km", timeLimit: "4 years", task: "Engine Coolant Flush", details: "Flush the cooling system to protect the fragile plastic thermostat and massive turbocharger cooling circuit.", parts: ["8.5L MB 325.0 Blue"], importance: "High", laborDifficulty: "Easy", estimatedCost: "80 EUR" }
+          ],
+          oilAndFilters: [
+            { interval: "10,000 km", timeLimit: "1 year", task: "Engine Oil & Filter Change", details: "CRITICAL: The massive turbocharger relies on pristine, premium 0W-40 oil to survive the extreme heat soak. Never exceed 10k km.", parts: ["5.5L 0W-40 Synthetic", "Mann Oil Filter"], importance: "Critical", laborDifficulty: "Easy", estimatedCost: "120 EUR" },
+            { interval: "20,000 km", timeLimit: "2 years", task: "Engine Air Filter", details: "Replace the panel filter to ensure the massive turbo breathes freely.", parts: ["Mann Air Filter / BMC High Flow"], importance: "High", laborDifficulty: "Easy", estimatedCost: "40 EUR" },
+            { interval: "30,000 km", timeLimit: "2 years", task: "Cabin Microfilter", details: "Replace interior HVAC filter.", parts: ["Mahle Cabin Filter"], importance: "Low", laborDifficulty: "Easy", estimatedCost: "30 EUR" }
+          ],
+          ignitionAndEngine: [
+            { interval: "30,000 km", timeLimit: "3 years", task: "Spark Plug Replacement", details: "CRITICAL: The M133 operates at 1.8 bar of boost. Spark plugs erode incredibly fast. Failing to replace them guarantees misfires and potential engine damage.", parts: ["4x NGK Laser Iridium"], importance: "Critical", laborDifficulty: "Intermediate", estimatedCost: "120 EUR" },
+            { interval: "60,000 km", timeLimit: "5 years", task: "Ignition Coil Replacement", details: "Replace proactively. Extreme engine bay heat destroys the coil packs rapidly, leading to high-RPM misfires.", parts: ["4x Bosch Coils"], importance: "High", laborDifficulty: "Easy", estimatedCost: "180 EUR" },
+            { interval: "60,000 km", timeLimit: "Unlimited", task: "Intake Manifold Walnut Blasting", details: "CRITICAL: Remove the intake manifold and blast the thick carbon sludge off the intake valves caused by Direct Injection and extreme PCV blow-by.", parts: ["Intake Gaskets", "Labor"], importance: "High", laborDifficulty: "Advanced", estimatedCost: "400 EUR" },
+            { interval: "60,000 km", timeLimit: "Unlimited", task: "Serpentine Belt & Tensioner", details: "Replace drive system.", parts: ["INA Kit", "Continental Belt"], importance: "Medium", laborDifficulty: "Intermediate", estimatedCost: "120 EUR" }
+          ],
+          preventiveAndSuspension: [
+            { interval: "100,000 km", timeLimit: "Unlimited", task: "Front Strut Mounts", details: "Replace mounts to cure loud clunking noises caused by the heavy engine and extremely stiff AMG suspension.", parts: ["Lemförder Mounts"], importance: "High", laborDifficulty: "Intermediate", estimatedCost: "150 EUR" },
+            { interval: "100,000 km", timeLimit: "10 years", task: "Front Control Arm Bushings", details: "Replace lower control arms to cure vague steering.", parts: ["Lemförder Control Arms"], importance: "Medium", laborDifficulty: "Intermediate", estimatedCost: "250 EUR" }
+          ],
+          coolingAndHvac: [
+            { interval: "4 Years", timeLimit: "4 years", task: "A/C System Service", details: "Recharge A/C refrigerant.", parts: ["650g R134a"], importance: "Medium", laborDifficulty: "Intermediate", estimatedCost: "80 EUR" }
+          ],
+          engineMechanical: [
+            { interval: "5 Years", timeLimit: "5 years", task: "AGM Battery Replacement", details: "Replace main battery to prevent ECU crashing and voltage drops affecting the highly complex DCT.", parts: ["70Ah AGM Battery"], importance: "High", laborDifficulty: "Easy", estimatedCost: "180 EUR" }
+          ]
+        },
+        crossReferenceParts: [
+          { partName: "Spark Plugs", category: "Ignition", oem: { brand: "MB Genuine", code: "0041598103", approxPrice: "30 EUR" }, crossRef: { brand: "NGK", code: "SILZKFR8E7S", approxPrice: "18 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=0041598103", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=0041598103" }, note: "CRITICAL: Replace strictly every 30k km." },
+          { partName: "Ignition Coil", category: "Ignition", oem: { brand: "MB Genuine", code: "2709060500", approxPrice: "75 EUR" }, crossRef: { brand: "Bosch", code: "0221504800", approxPrice: "40 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2709060500", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2709060500" }, note: "Requires 4 units. Prone to heat soak failure." },
+          { partName: "7G-DCT External Filter", category: "Transmission", oem: { brand: "MB Genuine", code: "2463772300", approxPrice: "35 EUR" }, crossRef: { brand: "Vaico", code: "V30-2268", approxPrice: "18 EUR", source: "Premium Upgrade", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2463772300", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2463772300" }, note: "CRITICAL: Change every 40k km alongside internal filter." },
+          { partName: "Thermostat Assembly", category: "Cooling", oem: { brand: "MB Genuine", code: "2702000615", approxPrice: "180 EUR" }, crossRef: { brand: "BorgWarner", code: "410212.103D", approxPrice: "90 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2702000615", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2702000615" }, note: "Labor intensive to replace." },
+          { partName: "Water Pump", category: "Cooling", oem: { brand: "MB Genuine", code: "2702000800", approxPrice: "150 EUR" }, crossRef: { brand: "Pierburg", code: "7.07152.02.0", approxPrice: "80 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2702000800", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2702000800" }, note: "Plastic housing prone to cracking." },
+          { partName: "PCV Valve / Breather", category: "Engine", oem: { brand: "MB Genuine", code: "2700100113", approxPrice: "90 EUR" }, crossRef: { brand: "Vaico", code: "V30-2580", approxPrice: "45 EUR", source: "Premium Upgrade", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2700100113", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2700100113" }, note: "Under immense strain from boost." },
+          { partName: "Oil Filter", category: "Filters", oem: { brand: "MB Genuine", code: "2701800109", approxPrice: "18 EUR" }, crossRef: { brand: "Mann Filter", code: "HU 711/6 z", approxPrice: "10 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=2701800109", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=2701800109" }, note: "Cartridge style filter." },
+          { partName: "Engine Air Filter", category: "Filters", oem: { brand: "MB Genuine", code: "1330940104", approxPrice: "40 EUR" }, crossRef: { brand: "BMC", code: "FB754/20", approxPrice: "80 EUR", source: "Performance Upgrade", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=1330940104", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=1330940104" }, note: "High-flow panel filter recommended." },
+          { partName: "7G-DCT Fluid (MB 236.21)", category: "Fluids", oem: { brand: "MB Genuine", code: "0019898503", approxPrice: "28 EUR / L" }, crossRef: { brand: "Fuchs", code: "TITAN FFL-3", approxPrice: "15 EUR / L", source: "OEM Supplier", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=0019898503", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=0019898503" }, note: "Requires ~5.5 Liters." },
+          { partName: "Turbocharger Assembly", category: "Engine", oem: { brand: "MB Genuine", code: "1330900180", approxPrice: "2,500 EUR" }, crossRef: { brand: "BorgWarner", code: "53049880194", approxPrice: "1,400 EUR", source: "OEM Manufacturer", autodoclink: "https://www.autodoc.co.uk/spares-search?keyword=1330900180", advanceautopartslink: "https://shop.advanceautoparts.com/web/SearchResults?searchTerm=1330900180" }, note: "WARNING: Massive labor cost to replace." }
+        ],
+        sisterModels: [
+          { name: "Mercedes-Benz CLA 45 AMG (C117)", note: "The CLA sedan shares the identical chassis, hand-built M133 engine, and highly stressed 4MATIC drivetrain." },
+          { name: "Mercedes-Benz GLA 45 AMG (X156)", note: "The compact SUV variant features the identical violent drivetrain, slightly tuned for the heavier chassis." }
+        ],
+        tuningPotential: [
+          { stage: "Stage 1 (Software Flash)", power: "420 - 430 hp", notes: "A highly popular upgrade. A Stage 1 tune safely optimizes the already immense boost pressure and ignition timing to provide a massive 40-50 horsepower gain. It sharpens throttle response incredibly and turns the A 45 into a terrifyingly fast hyper-hatch that rivals dedicated sports cars off the line. Requires strict adherence to premium 98+ RON fuel.", zeroToHundred: "3.9s", hundredToTwoHundred: "10.0s" },
+          { stage: "Stage 2 (Downpipe, Intercooler & Tune)", power: "440 - 450 hp", notes: "Requires a high-flow downpipe (sports cat or de-cat), a significantly upgraded air-to-water intercooler heat exchanger to combat the extreme heat soak, and a custom retune. The factory BorgWarner turbocharger reaches its absolute maximum safe flow efficiency here. The DCT clutches begin to slip if abused continuously.", zeroToHundred: "3.7s", hundredToTwoHundred: "9.2s" },
+          { stage: "Stage 3 (Hybrid Turbo & Fueling)", power: "500 - 520+ hp", notes: "Requires a larger hybrid turbocharger, high-pressure fuel pump upgrades, water/meth injection for cooling, and a fully custom tune. At this level, the AMG Speedshift DCT transmission clutch packs WILL slip and absolutely require an expensive aftermarket upgrade. The 4MATIC PTU is also at severe risk of catastrophic failure.", zeroToHundred: "3.3s", hundredToTwoHundred: "8.0s" }
+        ],
+        tuningGraphData: { stock: { hp: 381, nm: 475 }, stage1: { hp: 425, nm: 540 }, stage2: { hp: 445, nm: 570 }, stage3: { hp: 510, nm: 620 } },
+        riskRating: 8,
+        model3DPath: "/images/brands/mercedes/A-Class/W176/w1762.glb",
+        model3DScale: 0.08,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.17, y: -0.01, z: 0.48 } },
+        lightSettings: { headlightAngle: 0.25, headlightIntensity: 100, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 28, meshGlowTaillight: 6, meshGlowDrl: 15, useBloom: true },
+        hotspotSettings: { distanceFactor: 1 },
+        model3DHotspots: [
+          { label: "BorgWarner Twin-Scroll Turbocharger", x: 0.05, y: 0.04, z: 0.26, critical: true, details: "CRITICAL VULNERABILITY: Located at the front of the engine, highly visible. Produces 26 psi of boost and incredible heat. The oil feed lines coke up if the engine isn't cooled down properly before shutoff, leading to catastrophic bearing failure." },
+          { label: "AMG Speedshift DCT & 4MATIC PTU", x: 0.12, y: -0.06, z: 0.30, critical: true, details: "CRITICAL VULNERABILITY: Mounted low on the driver's side. The dual-clutch transmission and integrated Power Transfer Unit are subjected to immense stress during Launch Control. They absolutely MUST be serviced strictly every 40k km or they will destroy themselves." },
+          { label: "Intake Valves (Carbon Buildup)", x: 0.00, y: 0.07, z: 0.33, critical: true, details: "MAINTENANCE POINT: Inside the cylinder head. Because of Direct Injection and extreme PCV blow-by under high boost, thick carbon sludge accumulates heavily here, requiring Walnut Blasting every 60k km to prevent high-RPM misfires." },
+          { label: "Plastic Coolant Vent Lines", x: 0.02, y: 0.08, z: 0.30, critical: true, details: "CRITICAL VULNERABILITY: Running across the top of the engine. The extreme ambient heat of the M133 literally bakes these thin plastic lines. They become incredibly brittle and snap unexpectedly, dumping all coolant and instantly overheating the engine." },
+          { label: "Rear Timing Chain Location", x: 0.00, y: -0.05, z: 0.15, critical: false, details: "MAINTENANCE NIGHTMARE: The timing chain is located at the REAR of the engine, between the block and the transmission. If timing service is ever required, the entire engine and transmission assembly must be removed from the car." }
+        ],
+        customLightNames: { headlights: ["headlights"], taillights: ["taillights1", "taillights2"], drllight: ["drls"] },
+        author: ".",
+        popupAnimationName: "",
+        drivingExperience: "The facelifted A 45 AMG is an absolutely ballistic, violent, and intoxicating hyper-hatch that irons out the flaws of the pre-facelift model. The driving experience is completely dominated by the hand-built M133 engine, now pushing 381hp. Mercedes significantly revised the transmission gear ratios and ECU mapping, drastically reducing the turbo lag that plagued the earlier cars. Once the massive BorgWarner turbocharger spools up, all 381 horsepower and 475 Nm of torque hit with the subtlety of a sledgehammer. The acceleration is explosive and relentless, pinning you into the heavily bolstered AMG performance seats. The 4MATIC all-wheel-drive system ensures zero wheelspin, launching the car off the line with terrifying efficiency via the Race Start function. The steering is heavy and hyper-direct, and the incredibly stiff AMG suspension provides physics-defying grip in corners. The 7-speed AMG Speedshift DCT cracks off lightning-fast upshifts accompanied by loud, aggressive exhaust bangs that sound like gunfire. It is a car that demands your full attention; it is raw, highly strung, and feels like a genuine rally car disguised as a premium hatchback.",
+        mechanicVerdict: "The revised M 133.980 engine in the facelift A 45 AMG is a phenomenal feat of engineering, but it earns a highly cautious 8/10 risk rating because it remains a highly-stressed race engine shoehorned into a hatchback. Mechanically, the closed-deck block and forged internals are virtually indestructible and handle tuning beautifully. However, the extreme performance extracts a heavy toll on everything else. The heat generated in the engine bay is immense, literally baking all plastic coolant lines, vacuum hoses, and the ignition coils, causing them to become brittle and fail prematurely. You MUST replace spark plugs every 30,000 km, or you risk spark blowout under 26 psi of boost, which can instantly melt a piston. Direct injection combined with extreme PCV blow-by guarantees that the intake valves will choke with carbon, making frequent Walnut Blasting mandatory. Finally, the AMG Speedshift DCT and the 4MATIC PTU are incredibly vulnerable to abuse. If a previous owner repeatedly spammed Launch Control without strictly adhering to 40k km fluid changes, the clutch packs are likely burned out, and a rebuild will cost over 4,000 EUR. If you buy a used A 45, you are not buying a standard A-Class; you are buying a high-maintenance supercar that demands obsessive, expensive upkeep to prevent catastrophic financial ruin.",
+        repairCostEstimate: "$1,500 - $3,500+ / year (Maintenance costs are astronomical compared to standard models. Standard A/B services are very expensive. Replacing the frequent spark plugs and ignition coils costs 300+ EUR. The mandatory 40k km DCT and 4MATIC fluid services cost 500+ EUR. Walnut Blasting is 400 EUR. If the plastic coolant lines snap, towing and repair is 300 EUR. If the turbocharger fails, budget 2,500+ EUR. If the DCT clutches burn out from Launch Control abuse, expect a 4,000+ EUR rebuild bill.)"
       },
 
 
