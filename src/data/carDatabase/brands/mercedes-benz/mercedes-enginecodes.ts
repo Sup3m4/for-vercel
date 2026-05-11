@@ -109,63 +109,98 @@ export const mercedesEngineCodes = {
 ],
   
     // --- A-Class W177 (2018-present) ---
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 180": [
-      { code: "M 282 DE 14 AL", hp: "136 hp", torque: "200 Nm", profileId: "m282de14al-a180" }
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 200": [
-      { code: "M 282 DE 14 AL", hp: "163 hp", torque: "250 Nm", profileId: "m282de14al-a200" }
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 220": [
-      { code: "M 260 DE 20 AL", hp: "190 hp", torque: "300 Nm", profileId: "m260de20al-a220" }
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 250": [
-      { code: "M 260 DE 20 AL", hp: "224 hp", torque: "350 Nm", profileId: "m260de20al-a250" }
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 35 AMG": [
-      { code: "M 260 DE 20 AL", hp: "306 hp", torque: "400 Nm", profileId: "m260de20al-a35" }
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 45 S AMG": [
-      { code: "M 139", hp: "421 hp", torque: "500 Nm", profileId: "m139-a45s" }
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 180 d": [
-      { code: "OM 608 DE 15 SCR", hp: "116 hp", torque: "260 Nm", profileId: "om608de15scr-a180d" }, // 1.5L
-      { code: "OM 654q DE 20 SCR", hp: "116 hp", torque: "280 Nm", profileId: "om654qde20scr-a180d" } // 2.0L (2020 után)
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 200 d": [
-      { code: "OM 654q DE 20 SCR", hp: "150 hp", torque: "320 Nm", profileId: "om654qde20scr-a200d" }
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 220 d": [
-      { code: "OM 654q DE 20 SCR", hp: "190 hp", torque: "400 Nm", profileId: "om654qde20scr-a220d" }
-    ],
-    "Mercedes-Benz-A-Class-W177 (2018-present)-A 250 e": [
-      { code: "M 282 DE 14 AL Hybrid", hp: "218 hp", torque: "450 Nm", profileId: "m282de14al-hybrid-a250e" }
-    ],
+       // --- BENZIN MOTOROK (M = Motortyp) ---
+       "Mercedes-Benz-A-Class-W177 (2018-present)-A 160": [
+        { code: "M 282.914", hp: "109 hp", torque: "180 Nm", profileId: "m282914-a160" } //pre-lci 
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 180": [
+        { code: "M 282.914", hp: "136 hp", torque: "200 Nm", profileId: "m282914-a180" },
+        { code: "M 282.814", hp: "136 hp + 14 hp", torque: "230 Nm", profileId: "m282814-a180-mhev" },
+        { code: "M 282.914", hp: "136 hp", torque: "200 Nm", profileId: "m282914-a180-na", note: "North America / Mexico Spec" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 200": [
+        { code: "M 282.914", hp: "163 hp", torque: "250 Nm", profileId: "m282914-a200" },
+        { code: "M 282.814", hp: "163 hp + 14 hp", torque: "270 Nm", profileId: "m282814-a200-mhev" },
+        { code: "M 282.914", hp: "150 hp", torque: "240 Nm", profileId: "m282914-a200-fleet", note: "Flotta/Adóoptimalizált" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 220": [
+        { code: "M 260.920", hp: "190 hp", torque: "300 Nm", profileId: "m260920-a220" },
+        { code: "M 264.920", hp: "190 hp", torque: "300 Nm", profileId: "m264920-a220-market", note: "Korai/Piacspecifikus" },
+        { code: "M 260.820", hp: "190 hp + 14 hp", torque: "300 Nm", profileId: "m260820-a220-mhev" },
+        { code: "M 260.920", hp: "188 hp", torque: "300 Nm", profileId: "m260920-a220-usa", note: "USA Specifikáció (SAE)" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 250": [
+        { code: "M 260.920", hp: "224 hp", torque: "350 Nm", profileId: "m260920-a250" },
+        { code: "M 264.920", hp: "224 hp", torque: "350 Nm", profileId: "m264920-a250-market", note: "Távol-keleti piacok" },
+        { code: "M 260.820", hp: "224 hp + 14 hp", torque: "350 Nm", profileId: "m260820-a250-mhev" },
+        { code: "M 260.920", hp: "221 hp", torque: "350 Nm", profileId: "m260920-a250-usa", note: "USA Specifikáció (SAE)" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 250 e": [
+        { code: "M 282.914", hp: "218 hp", torque: "450 Nm", profileId: "m282914-phev-a250e" },
+        { code: "M 282.914", hp: "218 hp", torque: "450 Nm", profileId: "m282914-phev-a250e-lci", note: "Facelift (80 kW villanymotor)" }
+      ],
+  
+      // --- AMG MODELLEK ---
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 35 AMG": [
+        { code: "M 260.920", hp: "306 hp", torque: "400 Nm", profileId: "m260920-a35" },
+        { code: "M 260.820", hp: "306 hp + 14 hp", torque: "400 Nm", profileId: "m260820-a35-mhev" },
+        { code: "M 260.920", hp: "302 hp", torque: "400 Nm", profileId: "m260920-a35-usa", note: "USA Spec (SAE)" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 45 AMG": [
+        { code: "M 139.980", hp: "387 hp", torque: "480 Nm", profileId: "m139980-a45" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 45 S AMG": [
+        { code: "M 139.980", hp: "421 hp", torque: "500 Nm", profileId: "m139980-a45s" }
+      ],
+  
+      // --- DÍZEL MOTOROK (OM = Oelmotortyp) ---
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 160 d": [
+        { code: "OM 608.915", hp: "95 hp", torque: "240 Nm", profileId: "om608915-a160d", note: "Pre-facelift (2019-2020)" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 180 d": [
+        { code: "OM 608.915", hp: "116 hp", torque: "260 Nm", profileId: "om608915-a180d", note: "1.5L motor" },
+        { code: "OM 654.920", hp: "116 hp", torque: "280 Nm", profileId: "om654920-a180d", note: "2.0L motor" },
+        { code: "OM 608.915", hp: "109 hp", torque: "260 Nm", profileId: "om608915-a180d-fleet", note: "Adócsökkentett flotta változat" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 200 d": [
+        { code: "OM 654.920", hp: "150 hp", torque: "320 Nm", profileId: "om654920-a200d" },
+        { code: "OM 654.920", hp: "136 hp", torque: "300 Nm", profileId: "om654920-a200d-fleet", note: "Adóoptimalizált" }
+      ],
+      "Mercedes-Benz-A-Class-W177 (2018-present)-A 220 d": [
+        { code: "OM 654.920", hp: "190 hp", torque: "400 Nm", profileId: "om654920-a220d" }
+      ],
   
     // --- B-Class W245 (2005-2011) ---
-    "Mercedes-Benz-B-Class-W245 (2005-2011)-B 150": [
-      { code: "M 266 E 15", hp: "95 hp", torque: "140 Nm", profileId: "m266e15-b150" }
-    ],
-    "Mercedes-Benz-B-Class-W245 (2005-2011)-B 160": [
-      { code: "M 266 E 15", hp: "95 hp", torque: "140 Nm", profileId: "m266e15-b160" } // BlueEfficiency
-    ],
-    "Mercedes-Benz-B-Class-W245 (2005-2011)-B 170": [
-      { code: "M 266 E 17", hp: "116 hp", torque: "155 Nm", profileId: "m266e17-b170" }
-    ],
-    "Mercedes-Benz-B-Class-W245 (2005-2011)-B 180": [
-      { code: "M 266 E 17", hp: "116 hp", torque: "155 Nm", profileId: "m266e17-b180" }
-    ],
-    "Mercedes-Benz-B-Class-W245 (2005-2011)-B 200": [
-      { code: "M 266 E 20", hp: "136 hp", torque: "185 Nm", profileId: "m266e20-b200" }
-    ],
-    "Mercedes-Benz-B-Class-W245 (2005-2011)-B 200 Turbo": [
-      { code: "M 266 E 20 AL", hp: "193 hp", torque: "280 Nm", profileId: "m266e20al-b200t" }
-    ],
-    "Mercedes-Benz-B-Class-W245 (2005-2011)-B 180 CDI": [
-      { code: "OM 640 DE 20 LA", hp: "109 hp", torque: "250 Nm", profileId: "om640de20la-b180cdi" }
-    ],
-    "Mercedes-Benz-B-Class-W245 (2005-2011)-B 200 CDI": [
-      { code: "OM 640 DE 20 LA", hp: "140 hp", torque: "300 Nm", profileId: "om640de20la-b200cdi" }
-    ],
+"Mercedes-Benz-B-Class-W245 (2005-2011)-B 150": [
+    { "code": "M 266.920", "hp": "95 hp", "torque": "140 Nm", "profileId": "m266920-b150" } //prefacelift
+  ],
+  "Mercedes-Benz-B-Class-W245 (2005-2011)-B 160": [
+    { "code": "M 266.920", "hp": "95 hp", "torque": "140 Nm", "profileId": "m266920-b160", "note": "BlueEfficiency version" }, //facelift
+  ],
+  "Mercedes-Benz-B-Class-W245 (2005-2011)-B 170": [
+    { "code": "M 266.940", "hp": "116 hp", "torque": "155 Nm", "profileId": "m266940-b170" }, //prefacelift
+    { "code": "M 266.960", "hp": "116 hp", "torque": "165 Nm", "profileId": "m266960-b170ngt", "note": "Natural Gas Technology (2.0L detuned block)" } //prefacelift
+  ],
+  "Mercedes-Benz-B-Class-W245 (2005-2011)-B 180": [
+    { "code": "M 266.940", "hp": "116 hp", "torque": "155 Nm", "profileId": "m266940-b180" }, //facelift
+    { "code": "M 266.960", "hp": "116 hp", "torque": "165 Nm", "profileId": "m266960-b180ngt", "note": "Natural Gas Technology (2.0L detuned block)" } //facelift
+  ],
+  "Mercedes-Benz-B-Class-W245 (2005-2011)-B 200": [
+    { "code": "M 266.960", "hp": "136 hp", "torque": "185 Nm", "profileId": "m266960-b200" }
+  ],
+  "Mercedes-Benz-B-Class-W245 (2005-2011)-B 200 Turbo": [
+    { "code": "M 266.980", "hp": "193 hp", "torque": "280 Nm", "profileId": "m266980-b200t" }
+  ],
+  "Mercedes-Benz-B-Class-W245 (2005-2011)-B 180 CDI": [
+    { "code": "OM 640.940", "hp": "109 hp", "torque": "250 Nm", "profileId": "om640940-b180cdi" },
+    { "code": "OM 640.940", "hp": "102 hp", "torque": "250 Nm", "profileId": "om640940-b180cdi-fleet", "note": "Fleet detuned version" },
+    { "code": "OM 640.940", "hp": "82 hp", "torque": "200 Nm", "profileId": "om640940-b180cdi-detuned", "note": "Special/Instructional version" }
+  ],
+  "Mercedes-Benz-B-Class-W245 (2005-2011)-B 200 CDI": [
+    { "code": "OM 640.941", "hp": "140 hp", "torque": "300 Nm", "profileId": "om640941-b200cdi" },
+    { "code": "OM 640.941", "hp": "136 hp", "torque": "300 Nm", "profileId": "om640941-b200cdi-tax", "note": "Benelux market detuned" },
+    { "code": "OM 640.941", "hp": "120 hp", "torque": "280 Nm", "profileId": "om640941-b200cdi-fleet" }
+  ],
   
     // --- B-Class W246 (2011-2019) ---
     "Mercedes-Benz-B-Class-W246 (2011-2019)-B 180": [

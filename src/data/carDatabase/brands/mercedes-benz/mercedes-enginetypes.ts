@@ -34,16 +34,19 @@ export const mercedesEngineTypes = {
       { name: "A 220 CDI / d", hp: "170-177 hp" },
     ],
     "Mercedes-Benz-A-Class-W177 (2018-present)": [
+      { name: "A 160", hp: "136 hp" },
       { name: "A 180", hp: "136 hp" },
       { name: "A 200", hp: "163 hp" },
       { name: "A 220", hp: "190 hp" },
       { name: "A 250", hp: "224 hp" },
+      { name: "A 250 e", hp: "218 hp" },
       { name: "A 35 AMG", hp: "306 hp" },
+      { name: "A 45 AMG", hp: "421 hp" },
       { name: "A 45 S AMG", hp: "421 hp" },
+      { name: "A 160 d", hp: "116 hp" },
       { name: "A 180 d", hp: "116 hp" },
       { name: "A 200 d", hp: "150 hp" },
       { name: "A 220 d", hp: "190 hp" },
-      { name: "A 250 e", hp: "218 hp" }
     ],
   
     // B-Class
