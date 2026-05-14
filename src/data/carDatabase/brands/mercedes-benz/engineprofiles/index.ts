@@ -1,5 +1,6 @@
 import type { EngineProfile } from "@/data/carDatabase";
 import { abclassProfiles } from "./abclass";
+import { cclassProfiles } from "./cclass";
 
 
 
@@ -8,7 +9,8 @@ import { abclassProfiles } from "./abclass";
 
 export const mercedesEngineProfiles: EngineProfile[] = [
 
-...abclassProfiles
+...abclassProfiles,
+...cclassProfiles,
 
 
 

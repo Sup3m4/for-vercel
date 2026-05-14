@@ -61,25 +61,27 @@ export const mercedesEngineTypes = {
       { name: "B 200 CDI", hp: "140 hp" }
     ],
     "Mercedes-Benz-B-Class-W246 (2011-2019)": [
+      { name: "B 160", hp: "122 hp" },
       { name: "B 180", hp: "122 hp" },
       { name: "B 200", hp: "156 hp" },
       { name: "B 220", hp: "184 hp" },
       { name: "B 250", hp: "211 hp" },
-      { name: "B 180 CDI", hp: "109 hp" },
-      { name: "B 180 d", hp: "109 hp" },
-      { name: "B 200 CDI", hp: "136 hp" },
-      { name: "B 200 d", hp: "136 hp" },
-      { name: "B 220 CDI", hp: "170-177 hp" },
-      { name: "B 220 d", hp: "170-177 hp" }
+      { name: "B 160 CDI / d", hp: "109 hp" },
+      { name: "B 180 CDI / d", hp: "109 hp" },
+      { name: "B 200 CDI / d", hp: "109 hp" },
+      { name: "B 220 CDI / d", hp: "109 hp" },
     ],
     "Mercedes-Benz-B-Class-W247 (2019-present)": [
+      { name: "B 160", hp: "136 hp" },
       { name: "B 180", hp: "136 hp" },
       { name: "B 200", hp: "163 hp" },
+      { name: "B 220", hp: "163 hp" },
       { name: "B 250", hp: "224 hp" },
+      { name: "B 250 e", hp: "218 hp" },
+      { name: "B 160 d", hp: "116 hp" },
       { name: "B 180 d", hp: "116 hp" },
       { name: "B 200 d", hp: "150 hp" },
       { name: "B 220 d", hp: "190 hp" },
-      { name: "B 250 e", hp: "218 hp" }
     ],
   
     // CLA
@@ -121,25 +123,41 @@ export const mercedesEngineTypes = {
     "Mercedes-Benz-C-Class-W202 (1993-2000)": [
       { name: "C 180", hp: "122 hp" },
       { name: "C 200", hp: "136 hp" },
+      { name: "C 200 Kompressor", hp: "136 hp" },
+      { name: "C 220", hp: "136 hp" },
+      { name: "C 230", hp: "136 hp" },
       { name: "C 230 Kompressor", hp: "193 hp" },
+      { name: "C 240", hp: "136 hp" },
       { name: "C 280", hp: "193-197 hp" },
       { name: "C 36 AMG", hp: "280 hp" },
       { name: "C 43 AMG", hp: "306 hp" },
+      { name: "C 55 AMG", hp: "280 hp" },
+      { name: "C 200 Diesel", hp: "102 hp" },
       { name: "C 200 CDI", hp: "102 hp" },
+      { name: "C 220 Diesel", hp: "102 hp" },
       { name: "C 220 CDI", hp: "125 hp" },
+      { name: "C 250 Diesel", hp: "102 hp" },
       { name: "C 250 Turbodiesel", hp: "150 hp" }
     ],
     "Mercedes-Benz-C-Class-W203 (2000-2007)": [
+      { name: "C 160 Kompressor", hp: "143 hp" },
+      { name: "C 180", hp: "170 hp" },
       { name: "C 180 Kompressor", hp: "143 hp" },
       { name: "C 200 Kompressor", hp: "163 hp" },
+      { name: "C 200 CGI", hp: "170 hp" },
+      { name: "C 230 Kompressor", hp: "163 hp" },
+      { name: "C 230 V6", hp: "163 hp" },
       { name: "C 240", hp: "170 hp" },
+      { name: "C 280", hp: "170 hp" },
       { name: "C 320", hp: "218 hp" },
+      { name: "C 350", hp: "218 hp" },
       { name: "C 32 AMG", hp: "354 hp" },
       { name: "C 55 AMG", hp: "367 hp" },
       { name: "C 200 CDI", hp: "122 hp" },
       { name: "C 220 CDI", hp: "143-150 hp" },
       { name: "C 270 CDI", hp: "170 hp" },
-      { name: "C 320 CDI", hp: "224 hp" }
+      { name: "C 320 CDI", hp: "224 hp" },
+      { name: "C 30 CDI AMG", hp: "300 hp" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)": [
       { name: "C 180 Kompressor", hp: "156 hp" },
