@@ -443,116 +443,162 @@ export const mercedesEngineCodes = {
   
     // --- C-Class W204 (2007-2014) ---
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 180": [
-      { "code": "M271.946", "hp": "143 hp", "torque": "220 Nm", "profileId": "m271946-c180" },
-      { "code": "M271.952", "hp": "156 hp", "torque": "230 Nm", "profileId": "m271952-c180" },
-      { "code": "M271.910", "hp": "156 hp", "torque": "230 Nm", "profileId": "m271910-c180-blue" },
+      { "code": "M 271.946", "hp": "143 hp", "torque": "220 Nm", "profileId": "m271946-c180" },
+      { "code": "M 271.952", "hp": "156 hp", "torque": "230 Nm", "profileId": "m271952-c180" },
+      { "code": "M 271.910", "hp": "156 hp", "torque": "230 Nm", "profileId": "m271910-c180-blue" },
+      { "code": "M 271.910", "hp": "156 hp", "torque": "220 Nm", "profileId": "m271910-c180-1.6l-kompressor" } // 1.6 literes Kompressor (nem BlueEFFICIENCY változat)
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 180 Kompressor": [
-      { "code": "M271.952", "hp": "156 hp", "torque": "230 Nm", "profileId": "m271952-c180k" },
-      { "code": "M271.910", "hp": "156 hp", "torque": "230 Nm", "profileId": "m271910-c180k-blue" } // BlueEFFICIENCY 1.6L Kompressor
+      { "code": "M 271.952", "hp": "156 hp", "torque": "230 Nm", "profileId": "m271952-c180k" },
+      { "code": "M 271.910", "hp": "156 hp", "torque": "230 Nm", "profileId": "m271910-c180k-blue" } // BlueEFFICIENCY 1.6L Kompressor
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 180 CGI": [
-      { "code": "M271.820", "hp": "156 hp", "torque": "250 Nm", "profileId": "m271820-c180cgi" },
-      { "code": "M274.910", "hp": "156 hp", "torque": "250 Nm", "profileId": "m274910-c180cgi" }
+      { "code": "M 271.820", "hp": "156 hp", "torque": "250 Nm", "profileId": "m271820-c180cgi" },
+      { "code": "M 274.910", "hp": "156 hp", "torque": "250 Nm", "profileId": "m274910-c180cgi" },
+      { "code": "M 271.820", "hp": "156 hp", "torque": "250 Nm", "profileId": "m271820-c180-1.6l-cgi" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 200 Kompressor": [
-      { "code": "M271.956", "hp": "184 hp", "torque": "250 Nm", "profileId": "m271956-c200k" }
+      { "code": "M 271.956", "hp": "184 hp", "torque": "250 Nm", "profileId": "m271956-c200k" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 200 CGI": [
-      { "code": "M271.860", "hp": "184 hp", "torque": "270 Nm", "profileId": "m271860-c200cgi" }
+      { "code": "M 271.860", "hp": "184 hp", "torque": "270 Nm", "profileId": "m271860-c200cgi" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 230": [
-      { "code": "M272.921", "hp": "204 hp", "torque": "245 Nm", "profileId": "m272921-c230" }
+      { "code": "M 272.921", "hp": "204 hp", "torque": "245 Nm", "profileId": "m272921-c230" }
+    ],
+    "Mercedes-Benz-C-Class-W204 (2007-2014)-C 250": [
+      { "code": "M 271.861", "hp": "204 hp", "torque": "310 Nm", "profileId": "m271861-c250-us-turbo" }, // Észak-Amerikai piacra szánt 1.8L Turbo (nem CGI megnevezéssel)
+      { "code": "M 272.921", "hp": "204 hp", "torque": "245 Nm", "profileId": "m272921-c250-na-v6", "note": "Észak-amerikai és ázsiai piacra szánt szívó V6 változat" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 250 CGI": [
-      { "code": "M271.860", "hp": "204 hp", "torque": "310 Nm", "profileId": "m271860-c250cgi" }
+      { "code": "M 271.860", "hp": "204 hp", "torque": "310 Nm", "profileId": "m271860-c250cgi" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 280": [
-      { "code": "M272.947", "hp": "231 hp", "torque": "300 Nm", "profileId": "m272947-c280" }
+      { "code": "M 272.947", "hp": "231 hp", "torque": "300 Nm", "profileId": "m272947-c280" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 300": [
-      { "code": "M272.947", "hp": "231 hp", "torque": "300 Nm", "profileId": "m272947-c300" },
-      { "code": "M276.957", "hp": "252 hp", "torque": "340 Nm", "profileId": "m276957-c300-facelift" } // Ritka szoftveresen fojtott 3.5L Facelift V6
+      { "code": "M 272.947", "hp": "231 hp", "torque": "300 Nm", "profileId": "m272947-c300" },
+      { "code": "M 272.941", "hp": "231 hp", "torque": "300 Nm", "profileId": "m272941-c300-us-flexfuel" }, // Észak-Amerikai piac, Ethanol/E85 Flex-Fuel kompatibilis szívó V6
+      { "code": "M 276.957", "hp": "252 hp", "torque": "340 Nm", "profileId": "m276957-c300-facelift" } // Ritka szoftveresen fojtott 3.5L Facelift V6
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 350": [
-      { "code": "M272.961", "hp": "272 hp", "torque": "350 Nm", "profileId": "m272961-c350" },
-      { "code": "M272.982", "hp": "292 hp", "torque": "365 Nm", "profileId": "m272982-c350-cgi" }, // Korai CGI közvetlen befecskendezős V6
-      { "code": "M276.957", "hp": "306 hp", "torque": "370 Nm", "profileId": "m276957-c350" }
+      { "code": "M 272.961", "hp": "272 hp", "torque": "350 Nm", "profileId": "m272961-c350" },
+      { "code": "M 272.982", "hp": "292 hp", "torque": "365 Nm", "profileId": "m272982-c350-cgi" }, // Korai CGI közvetlen befecskendezős V6
+      { "code": "M 276.957", "hp": "306 hp", "torque": "370 Nm", "profileId": "m276957-c350" },
+      { "code": "M 272.971", "hp": "272 hp", "torque": "350 Nm", "profileId": "m272971-c350-us-prefacelift" } // Észak-Amerikai piac, hagyományos szívócső-befecskendezős korai V6
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 63 AMG": [
-      { "code": "M156.985", "hp": "457 hp", "torque": "600 Nm", "profileId": "m156985-c63amg" },
-      { "code": "M156.985", "hp": "487 hp", "torque": "600 Nm", "profileId": "m156985-ppp-c63amg" }, // Performance Package Plus
-      { "code": "M156.985", "hp": "507 hp", "torque": "610 Nm", "profileId": "m156985-edition507" }, // Edition 507 szoftver/kovácsolt belső
-      { "code": "M156.985", "hp": "517 hp", "torque": "620 Nm", "profileId": "m156985-blackseries" } // Black Series kivitel
+      { "code": "M 156.985", "hp": "457 hp", "torque": "600 Nm", "profileId": "m156985-c63amg" },
+      { "code": "M 156.985", "hp": "487 hp", "torque": "600 Nm", "profileId": "m156985-ppp-c63amg" }, // Performance Package Plus
+      { "code": "M 156.985", "hp": "507 hp", "torque": "610 Nm", "profileId": "m156985-edition507" }, // Edition 507 szoftver/kovácsolt belső
+      { "code": "M 156.985", "hp": "517 hp", "torque": "620 Nm", "profileId": "m156985-blackseries" }, // Black Series kivitel
+      { "code": "M 156.985", "hp": "520 hp", "torque": "650 Nm", "profileId": "m156985-dr520", "note": "UK limited edition DR 520 variant" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 180 CDI": [
-      { "code": "OM651.913", "hp": "120 hp", "torque": "300 Nm", "profileId": "om651913-c180cdi" } // Belga adócsökkentett / Flotta alapmodell
+      { "code": "OM 651.913", "hp": "120 hp", "torque": "300 Nm", "profileId": "om651913-c180cdi" } // Belga adócsökkentett / Flotta alapmodell
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 200 CDI": [
-      { "code": "OM646.811", "hp": "136 hp", "torque": "270 Nm", "profileId": "om646811-c200cdi" },
-      { "code": "OM646.811", "hp": "131 hp", "torque": "250 Nm", "profileId": "om646811-c200cdi-fleet" }, // Korai OM646 fojtott flotta
-      { "code": "OM651.913", "hp": "136 hp", "torque": "360 Nm", "profileId": "om651913-c200cdi" },
-      { "code": "OM651.913", "hp": "131 hp", "torque": "360 Nm", "profileId": "om651913-c200cdi-fleet" } // Szoftveresen fojtott Fleet (Flotta) verzió
+      { "code": "OM 646.811", "hp": "136 hp", "torque": "270 Nm", "profileId": "om646811-c200cdi" },
+      { "code": "OM 646.811", "hp": "131 hp", "torque": "250 Nm", "profileId": "om646811-c200cdi-fleet" }, // Korai OM646 fojtott flotta
+      { "code": "OM 651.913", "hp": "136 hp", "torque": "360 Nm", "profileId": "om651913-c200cdi" },
+      { "code": "OM 651.913", "hp": "131 hp", "torque": "360 Nm", "profileId": "om651913-c200cdi-fleet" } // Szoftveresen fojtott Fleet (Flotta) verzió
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 220 CDI": [
-      { "code": "OM646.811", "hp": "170 hp", "torque": "400 Nm", "profileId": "om646811-c220cdi" },
-      { "code": "OM646.811", "hp": "163 hp", "torque": "400 Nm", "profileId": "om646811-c220cdi-belgium" }, // Belga piacos adócsökkentett változat
-      { "code": "OM651.911", "hp": "170 hp", "torque": "400 Nm", "profileId": "om651911-c220cdi" },
-      { "code": "OM651.911", "hp": "163 hp", "torque": "360 Nm", "profileId": "om651911-c220cdi-blue-edition" }, // Ritka BlueEFFICIENCY Edition csökkentett nyomatékkal
-      { "code": "OM651.911", "hp": "163 hp", "torque": "400 Nm", "profileId": "om651911-c220cdi-fleet" } // Flotta / Belga szoftveres fojtás
+      { "code": "OM 646.811", "hp": "170 hp", "torque": "400 Nm", "profileId": "om646811-c220cdi" },
+      { "code": "OM 646.812", "hp": "170 hp", "torque": "400 Nm", "profileId": "om646812-c220cdi-early" }, // Legelső gyártási hónapok specifikus motorkód-variánsa
+      { "code": "OM 646.811", "hp": "163 hp", "torque": "400 Nm", "profileId": "om646811-c220cdi-belgium" }, // Belga piacos adócsökkentett változat
+      { "code": "OM 651.911", "hp": "170 hp", "torque": "400 Nm", "profileId": "om651911-c220cdi" },
+      { "code": "OM 651.911", "hp": "163 hp", "torque": "360 Nm", "profileId": "om651911-c220cdi-blue-edition" }, // Ritka BlueEFFICIENCY Edition csökkentett nyomatékkal
+      { "code": "OM 651.911", "hp": "163 hp", "torque": "400 Nm", "profileId": "om651911-c220cdi-fleet" } // Flotta / Belga szoftveres fojtás
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 250 CDI": [
-      { "code": "OM651.911", "hp": "204 hp", "torque": "500 Nm", "profileId": "om651911-c250cdi" },
-      { "code": "OM651.911", "hp": "163 hp", "torque": "400 Nm", "profileId": "om651911-c250cdi-fleet" } // Szoftveresen fojtott flotta 250 CDI
+      { "code": "OM 651.911", "hp": "204 hp", "torque": "500 Nm", "profileId": "om651911-c250cdi" },
+      { "code": "OM 651.911", "hp": "163 hp", "torque": "400 Nm", "profileId": "om651911-c250cdi-fleet" } // Szoftveresen fojtott flotta 250 CDI
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 300 CDI": [
-      { "code": "OM642.832", "hp": "231 hp", "torque": "540 Nm", "profileId": "om642832-c300cdi" } // Csak 4MATIC hajtással elérhető kivitel
+      { "code": "OM 642.832", "hp": "231 hp", "torque": "540 Nm", "profileId": "om642832-c300cdi" } // Csak 4MATIC hajtással elérhető kivitel
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 320 CDI": [
-      { "code": "OM642.961", "hp": "224 hp", "torque": "510 Nm", "profileId": "om642961-c320cdi" }
+      { "code": "OM 642.961", "hp": "224 hp", "torque": "510 Nm", "profileId": "om642961-c320cdi" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)-C 350 CDI": [
-      { "code": "OM642.961", "hp": "224 hp", "torque": "510 Nm", "profileId": "om642961-c350cdi-early" }, // Korai átmeneti modell
-      { "code": "OM642.832", "hp": "231 hp", "torque": "540 Nm", "profileId": "om642832-c350cdi" },
-      { "code": "OM642.832", "hp": "252 hp", "torque": "620 Nm", "profileId": "om642832-c350cdi-mid" }, // Átmeneti 252 LE Facelift változat
-      { "code": "OM642.832", "hp": "265 hp", "torque": "620 Nm", "profileId": "om642832-c350cdi-ls" }
+      { "code": "OM 642.961", "hp": "224 hp", "torque": "510 Nm", "profileId": "om642961-c350cdi-early" }, // Korai átmeneti modell
+      { "code": "OM 642.832", "hp": "231 hp", "torque": "540 Nm", "profileId": "om642832-c350cdi" },
+      { "code": "OM 642.832", "hp": "252 hp", "torque": "620 Nm", "profileId": "om642832-c350cdi-mid" }, // Átmeneti 252 LE Facelift változat
+      { "code": "OM 642.832", "hp": "265 hp", "torque": "620 Nm", "profileId": "om642832-c350cdi-ls" }
     ],
   
     // --- C-Class W205 (2014-2021) ---
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 160": [
+      { "code": "M 274.910", "hp": "129 hp", "torque": "210 Nm", "profileId": "m274910-c160" }
+    ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 180": [
-      { code: "M 274 DE 16 AL", hp: "156 hp", torque: "250 Nm", profileId: "m274de16al-c180" }
+      { "code": "M 274.910", "hp": "156 hp", "torque": "250 Nm", "profileId": "m274910-c180" },
+      { "code": "M 264.915", "hp": "156 hp", "torque": "250 Nm", "profileId": "m264915-c180-1.5l" }
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 200": [
-      { code: "M 274 DE 20 AL", hp: "184 hp", torque: "300 Nm", profileId: "m274de20al-c200" }, // Pre-facelift
-      { code: "M 264 E 15 DE AL", hp: "184 hp", torque: "280 Nm", profileId: "m264e15-c200" }  // Facelift (EQ Boost)
+      { "code": "M 274.920", "hp": "184 hp", "torque": "300 Nm", "profileId": "m274920-c200-prefacelift" },
+      { "code": "M 264.915", "hp": "184 hp", "torque": "280 Nm", "profileId": "m264915-c200-eq" },
+      { "code": "M 264.920", "hp": "197 hp", "torque": "320 Nm", "profileId": "m264920-c200-2.0l-fl" } // Kései Facelift (2020+) 2.0L-es változata a C 200-nak (EQ Boost)
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 250": [
-      { code: "M 274 DE 20 AL", hp: "211 hp", torque: "350 Nm", profileId: "m274de20al-c250" }
+      { "code": "M 274.920", "hp": "211 hp", "torque": "350 Nm", "profileId": "m274920-c250" }
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 300": [
-      { code: "M 274 DE 20 AL", hp: "245 hp", torque: "370 Nm", profileId: "m274de20al-c300" },
-      { code: "M 264 DE 20 AL", hp: "258 hp", torque: "370 Nm", profileId: "m264de20al-c300" } // Facelift
+      { "code": "M 274.920", "hp": "245 hp", "torque": "370 Nm", "profileId": "m274920-c300" },
+      { "code": "M 274.920", "hp": "241 hp", "torque": "370 Nm", "profileId": "m274920-c300-us" },
+      { "code": "M 264.920", "hp": "258 hp", "torque": "370 Nm", "profileId": "m264920-c300-facelift" }
+    ],
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 350 e": [
+      { "code": "M 274.920", "hp": "211 hp", "torque": "350 Nm", "profileId": "m274920-c350e" }
+    ],
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 300 e": [
+      { "code": "M 274.920", "hp": "211 hp", "torque": "350 Nm", "profileId": "m274920-c300e-facelift" }
+    ],
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 400": [
+      { "code": "M 276.823", "hp": "333 hp", "torque": "480 Nm", "profileId": "m276823-c400" }
+    ],
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 450 AMG": [
+      { "code": "M 276.823", "hp": "367 hp", "torque": "520 Nm", "profileId": "m276823-c450amg" }
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 43 AMG": [
-      { code: "M 276 DE 30 AL", hp: "367 hp", torque: "520 Nm", profileId: "m276de30al-c43amg" },
-      { code: "M 276 DE 30 AL", hp: "390 hp", torque: "520 Nm", profileId: "m276de30al-fl-c43amg" }
+      { "code": "M 276.823", "hp": "390 hp", "torque": "520 Nm", "profileId": "m276823-c43-facelift" },
+      { "code": "M 276.823", "hp": "367 hp", "torque": "520 Nm", "profileId": "m276823-c43-prefacelift" } // Ez maradt ki a C 43 AMG-nél a 390 lóerős Facelift mellől
+    ],
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 63 AMG": [
+      { "code": "M 177.980", "hp": "476 hp", "torque": "650 Nm", "profileId": "m177980-c63" }
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 63 S AMG": [
-      { code: "M 177 DE 40 AL", hp: "510 hp", torque: "700 Nm", profileId: "m177de40al-c63samg" }
+      { "code": "M 177.980", "hp": "510 hp", "torque": "700 Nm", "profileId": "m177980-c63s" }
+    ],
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 180 d": [
+      { "code": "OM 626.951", "hp": "116 hp", "torque": "280 Nm", "profileId": "om626951-c180d-renault" },
+      { "code": "OM 654.916", "hp": "122 hp", "torque": "300 Nm", "profileId": "om654916-c180d-facelift" }
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 200 d": [
-      { code: "OM 651 DE 22 LA", hp: "136 hp", torque: "300 Nm", profileId: "om651de22la-c200d" },
-      { code: "OM 654 DE 16", hp: "160 hp", torque: "360 Nm", profileId: "om654de16-c200d" } // Facelift
+      { "code": "OM 626.951", "hp": "136 hp", "torque": "300 Nm", "profileId": "om626951-c200d-renault" },
+      { "code": "OM 651.921", "hp": "136 hp", "torque": "360 Nm", "profileId": "om651921-c200d-2.1l" },
+      { "code": "OM 654.916", "hp": "160 hp", "torque": "360 Nm", "profileId": "om654916-c200d-1.6l-fl" },
+      { "code": "OM 654.920", "hp": "150 hp", "torque": "360 Nm", "profileId": "om654920-c200d-2.0l-fl" }
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 220 d": [
-      { code: "OM 651 DE 22 LA", hp: "170 hp", torque: "400 Nm", profileId: "om651de22la-c220d" },
-      { code: "OM 654 DE 20", hp: "194 hp", torque: "400 Nm", profileId: "om654de20-c220d" } // Facelift
+      { "code": "OM 651.921", "hp": "170 hp", "torque": "400 Nm", "profileId": "om651921-c220d",  note: "Standard európai Euro 6 BlueTEC alapmodell, teljes AdBlue (SCR) rendszerrel és NOx szenzorokkal szerelve." },
+      { "code": "OM 651.921", "hp": "163 hp", "torque": "400 Nm", "profileId": "om651921-c220d-blue" },
+      { "code": "OM 654.920", "hp": "194 hp", "torque": "400 Nm", "profileId": "om654920-c220d-facelift" },
+      { "code": "OM 651.921", "hp": "170 hp", "torque": "400 Nm", "profileId": "om651921-c220d-euro5", note: "Korai Euro 5-ös változat: Gyártás eleji vagy EU-n kívüli piacokra szánt kivitel. Hardveresen nem tartalmaz AdBlue (SCR) kört, tartályt és NOx szenzorokat, így a kipufogórendszere egyszerűbb." }, // Korai Euro 5-ös környezetvédelmi besorolású hardverváltozat
+      { "code": "OM 651.921", "hp": "170 hp", "torque": "400 Nm", "profileId": "om651921-c220d-euro6" }  // Euro 6-os kiadás BlueTEC (AdBlue) rendszerrel szerelve
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 250 d": [
-      { code: "OM 651 DE 22 LA", hp: "204 hp", torque: "500 Nm", profileId: "om651de22la-c250d" }
+      { "code": "OM 651.921", "hp": "204 hp", "torque": "500 Nm", "profileId": "om651921-c250d" }
+    ],
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 300 d": [
+      { "code": "OM 654.921", "hp": "245 hp", "torque": "500 Nm", "profileId": "om654921-c300d-biturbo" }
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)-C 300 h": [
-      { code: "OM 651 DE 22 LA Hybrid", hp: "231 hp", torque: "500 Nm", profileId: "om651de22la-hybrid-c300h" }
+      { "code": "OM 651.921", "hp": "204 hp", "torque": "500 Nm", "profileId": "om651921-c300h" }
+    ],
+    "Mercedes-Benz-C-Class-W205 (2014-2021)-C 300 de": [
+      { "code": "OM 654.920", "hp": "194 hp", "torque": "400 Nm", "profileId": "om654920-c300de" }
     ],
   
     // --- C-Class W206 (2021-present) ---

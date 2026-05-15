@@ -160,6 +160,7 @@ export const mercedesEngineTypes = {
       { name: "C 30 CDI AMG", hp: "300 hp" }
     ],
     "Mercedes-Benz-C-Class-W204 (2007-2014)": [
+      { name: "C 180", hp: "156 hp" },
       { name: "C 180 Kompressor", hp: "156 hp" },
       { name: "C 180 CGI", hp: "156 hp" },
       { name: "C 200 Kompressor", hp: "184 hp" },
@@ -175,15 +176,24 @@ export const mercedesEngineTypes = {
       { name: "C 350 CDI", hp: "224-265 hp" }
     ],
     "Mercedes-Benz-C-Class-W205 (2014-2021)": [
+      { name: "C 160", hp: "156 hp" },
       { name: "C 180", hp: "156 hp" },
       { name: "C 200", hp: "184 hp" },
       { name: "C 250", hp: "211 hp" },
       { name: "C 300", hp: "245-258 hp" },
+      { name: "C 300 e", hp: "245-258 hp" },
+      { name: "C 350 e", hp: "245-258 hp" },
+      { name: "C 400", hp: "245-258 hp" },
+      { name: "C 450 AMG", hp: "245-258 hp" },
       { name: "C 43 AMG", hp: "367-390 hp" },
+      { name: "C 63 AMG", hp: "510 hp" },
       { name: "C 63 S AMG", hp: "510 hp" },
+      { name: "C 180 d", hp: "136 hp" },
       { name: "C 200 d", hp: "136 hp" },
       { name: "C 220 d", hp: "170-194 hp" },
       { name: "C 250 d", hp: "204 hp" },
+      { name: "C 300 d", hp: "136 hp" },
+      { name: "C 300 de", hp: "136 hp" },
       { name: "C 300 h", hp: "231 hp" }
     ],
     "Mercedes-Benz-C-Class-W206 (2021-present)": [
