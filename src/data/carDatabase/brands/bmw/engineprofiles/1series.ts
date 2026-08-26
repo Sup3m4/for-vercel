@@ -2590,8 +2590,90 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "270 - 290 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. Pushing past 280hp stresses the factory cast connecting rods; proceeding beyond this point requires forged engine internals.", zeroToHundred: "5.7s", hundredToTwoHundred: "14.5s" }
   ],
   tuningGraphData: { stock: { hp: 102, nm: 180 }, stage1: { hp: 215, nm: 310 }, stage2: { hp: 235, nm: 330 }, stage3: { hp: 280, nm: 380 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 7, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb", model3DScale: 0.04, model3DRotation: [0, 0, 0], manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } }, riskRating: 7, 
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 100, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 9, meshGlowTaillight: 14, meshGlowDrl: 15, useBloom: true }, hotspotSettings: { distanceFactor: 0.6 }, model3DHotspots: 
+[
+    {
+        label: "N13 Oil Filter Housing & Cooler Gasket Leaks",
+        x: 0.05,
+        y: 0.03,
+        z: 0.32,
+        critical: true,
+        details: "CRITICAL VULNERABILITY: The plastic oil filter housing and oil cooler seals harden and crack under engine heat, causing severe oil and coolant mixing or external leaks."
+    },
+    {
+        label: "High-Pressure Fuel Pump (HPFP)",
+        x: -0.05,
+        y: 0.07,
+        z: 0.28,
+        critical: true,
+        details: "CRITICAL COMPONENT: Mechanical fuel pump driven by the camshaft. Prone to internal wear, leading to extended crank times, long-term fuel trim faults, and sudden high-pressure failure."
+    },
+    {
+        label: "VANOS Solenoids & Actuators",
+        x: 0.02,
+        y: 0.06,
+        z: 0.35,
+        critical: false,
+        details: "COMMON FAULT: Intake and exhaust VANOS solenoids clog with carbon varnish, causing rough idling, engine stutter, and Vanos adjustment fault codes."
+    },
+    {
+        label: "Turbocharger Oil & Coolant Feed Lines",
+        x: 0.12,
+        y: -0.02,
+        z: 0.20,
+        critical: true,
+        details: "CRITICAL FAILURE POINT: Turbo oil feed and return lines bake from exhaust proximity, leading to heavy oil leaks onto the exhaust downpipe and risk of fire if neglected."
+    },
+    {
+        label: "Rear-Mounted Timing Chain & Guide Rails",
+        x: 0,
+        y: 0.05,
+        z: 0.25,
+        critical: true,
+        details: "CRITICAL VULNERABILITY: Plastic timing chain guides near the firewall shatter prematurely on early N13 engines, requiring a major service to prevent catastrophic engine failure."
+    },
+    {
+        label: "Thermostat Housing & Coolant Flange",
+        x: -0.08,
+        y: 0.0,
+        z: 0.33,
+        critical: true,
+        details: "CRITICAL VULNERABILITY: The plastic thermostat housing cracks easily under thermal cycling, causing sudden coolant dumps and overheating."
+    },
+    {
+        label: "Front Right Control Arm Hydro-Bushings",
+        x: -0.20,
+        y: -0.09,
+        z: 0.33,
+        critical: false,
+        details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking and sloppy handling."
+    },
+    {
+        label: "Rear Subframe Differential Bushings",
+        x: 0.0,
+        y: -0.09,
+        z: -0.32,
+        critical: false,
+        details: "COMMON FAULT: Soft rubber subframe and differential mount bushings degrade, creating a loud clunking noise when shifting gears or applying throttle."
+    },
+    {
+        label: "Rear Right ABS Wheel Speed Sensor",
+        x: -0.23,
+        y: -0.1,
+        z: -0.34,
+        critical: false,
+        details: "COMMON FAULT: Rust accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, disabling ABS, DSC, and cruise control."
+    },
+    {
+        label: "Exhaust Downpipe Flex Joint & Wastegate",
+        x: 0.13,
+        y: -0.11,
+        z: -0.45,
+        critical: false,
+        details: "MAINTENANCE POINT: The flexible mesh section of the downpipe cracks over time, causing exhaust leaks and cabin fumes, alongside internal turbo wastegate rattling."
+    }
+], customLightNames: { headlights: ["headlightstry1.001", "headlightstry2"], taillights: ["taillights1", "taillights2", "taillights3", "taillights4"], drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"] }, author: ".",
   drivingExperience: "In factory form, the 102hp 114i is painfully, aggressively slow. It struggles to overtake on the highway and feels completely mismatched to the brilliant rear-wheel-drive F20 chassis. However, it handles beautifully, with sharp turn-in and excellent weight distribution. The ZF 8-Speed automatic (if equipped) masks some of the sluggishness. The true driving experience of the 114i only begins after a Stage 1 tune. Once flashed to 210hp, it becomes an absolute riot—a lightweight, punchy, rear-drive hot hatch that can break traction and pull hard to the redline.",
   mechanicVerdict: "The N13 engine is a double-edged sword. On one hand, buying a 114i and flashing it to 118i power levels is the best horsepower-per-euro bargain in the entire automotive industry. On the other hand, the engine inherited awful reliability traits from its Peugeot/Citroen lineage. You MUST proactively change the timing chain before 100k km. You MUST replace the plastic coolant flanges before they crack. You MUST walnut blast the intake valves. If you buy a 114i, immediately upgrade the charge pipe, flash it to Stage 1, and stay hyper-vigilant on maintenance. It's a bargain rocket, but not a maintenance-free one.",
   repairCostEstimate: "$1,000 - $2,000 / year (The N13 is notoriously needy. A timing chain replacement will cost 800 EUR. A failing High-Pressure Fuel Pump is 400 EUR. Walnut blasting is 350 EUR. You must also factor in the mandatory aluminum charge pipe upgrade before tuning. High maintenance costs, but massive tuning rewards)."
@@ -2678,10 +2760,113 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "210 - 220 hp", notes: "An incredible tuning platform. Because the 136hp 116i is mechanically identical (same block, same turbo, same injectors) to the 170hp 118i, a simple Stage 1 flash safely unlocks ~80 horsepower, completely transforming the car from a commuter hatch into a fast daily driver.", zeroToHundred: "6.7s", hundredToTwoHundred: "20.5s" },
     { stage: "Stage 2", power: "230 - 240 hp", notes: "Requires a high-flow catless downpipe, aluminum charge pipe, and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds, but pushes the small Garrett turbo to its absolute absolute limits.", zeroToHundred: "6.3s", hundredToTwoHundred: "18.0s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "270 - 290 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. Pushing past 280hp stresses the factory cast connecting rods; proceeding beyond this point requires forged engine internals.", zeroToHundred: "5.6s", hundredToTwoHundred: "14.2s" }
-  ],
+  ],riskRating: 7, 
   tuningGraphData: { stock: { hp: 136, nm: 220 }, stage1: { hp: 215, nm: 310 }, stage2: { hp: 235, nm: 330 }, stage3: { hp: 280, nm: 380 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 7, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+  model3DScale: 0.04,
+  model3DRotation: [0, 0, 0],
+  manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+  customLightNames: {
+      headlights: ["headlightstry1.001", "headlightstry2"],
+      taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+      drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+  },
+  author: ".",
+  lightSettings: {
+      headlightAngle: 0.25,
+      headlightIntensity: 100,
+      headlightOpacity: 0.5,
+      headlightRadiusTop: 0.02,
+      headlightTargetDistance: 4.5,
+      headlightPenumbra: 0.1,
+      meshGlowHeadlight: 9,
+      meshGlowTaillight: 14,
+      meshGlowDrl: 15,
+      useBloom: true
+  },
+  hotspotSettings: { distanceFactor: 0.6 },
+  model3DHotspots: [
+      {
+          label: "N13 Oil Filter Housing & Cooler Gasket Leaks",
+          x: 0.05,
+          y: 0.03,
+          z: 0.32,
+          critical: true,
+          details: "CRITICAL VULNERABILITY: The plastic oil filter housing and oil cooler seals harden and crack under engine heat, causing severe oil and coolant mixing or external leaks."
+      },
+      {
+          label: "High-Pressure Fuel Pump (HPFP)",
+          x: -0.05,
+          y: 0.07,
+          z: 0.28,
+          critical: true,
+          details: "CRITICAL COMPONENT: Mechanical fuel pump driven by the camshaft. Prone to internal wear, leading to extended crank times, long-term fuel trim faults, and sudden high-pressure failure."
+      },
+      {
+          label: "VANOS Solenoids & Actuators",
+          x: 0.02,
+          y: 0.06,
+          z: 0.35,
+          critical: false,
+          details: "COMMON FAULT: Intake and exhaust VANOS solenoids clog with carbon varnish, causing rough idling, engine stutter, and Vanos adjustment fault codes."
+      },
+      {
+          label: "Turbocharger Oil & Coolant Feed Lines",
+          x: 0.12,
+          y: -0.02,
+          z: 0.20,
+          critical: true,
+          details: "CRITICAL FAILURE POINT: Turbo oil feed and return lines bake from exhaust proximity, leading to heavy oil leaks onto the exhaust downpipe and risk of fire if neglected."
+      },
+      {
+          label: "Rear-Mounted Timing Chain & Guide Rails",
+          x: 0,
+          y: 0.05,
+          z: 0.25,
+          critical: true,
+          details: "CRITICAL VULNERABILITY: Plastic timing chain guides near the firewall shatter prematurely on early N13 engines, requiring a major service to prevent catastrophic engine failure."
+      },
+      {
+          label: "Thermostat Housing & Coolant Flange",
+          x: -0.08,
+          y: 0.0,
+          z: 0.33,
+          critical: true,
+          details: "CRITICAL VULNERABILITY: The plastic thermostat housing cracks easily under thermal cycling, causing sudden coolant dumps and overheating."
+      },
+      {
+          label: "Front Right Control Arm Hydro-Bushings",
+          x: -0.20,
+          y: -0.09,
+          z: 0.33,
+          critical: false,
+          details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking and sloppy handling."
+      },
+      {
+          label: "Rear Subframe Differential Bushings",
+          x: 0.0,
+          y: -0.09,
+          z: -0.32,
+          critical: false,
+          details: "COMMON FAULT: Soft rubber subframe and differential mount bushings degrade, creating a loud clunking noise when shifting gears or applying throttle."
+      },
+      {
+          label: "Rear Right ABS Wheel Speed Sensor",
+          x: -0.23,
+          y: -0.1,
+          z: -0.34,
+          critical: false,
+          details: "COMMON FAULT: Rust accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, disabling ABS, DSC, and cruise control."
+      },
+      {
+          label: "Exhaust Downpipe Flex Joint & Wastegate",
+          x: 0.13,
+          y: -0.11,
+          z: -0.45,
+          critical: false,
+          details: "MAINTENANCE POINT: The flexible mesh section of the downpipe cracks over time, causing exhaust leaks and cabin fumes, alongside internal turbo wastegate rattling."
+      }
+  ],
   drivingExperience: "The 136hp 116i provides very capable, punchy performance in factory form. The Twin-Scroll turbocharger delivers peak torque at extremely low RPMs, making city driving and merging effortless. The rear-wheel-drive F20 chassis handles beautifully, with sharp turn-in and excellent weight distribution. Mated to the brilliant ZF 8-Speed automatic, it is a smooth, highly refined hatch. However, the true driving experience is unlocked with a Stage 1 tune. Once flashed to 210+ hp, it becomes a genuinely aggressive hot hatch that can effortlessly break rear traction.",
   mechanicVerdict: "The N13 engine is a double-edged sword. On one hand, buying a 116i and flashing it to 118i+ power levels is a phenomenal horsepower-per-euro bargain. On the other hand, the engine inherited awful reliability traits from its Peugeot/Citroen lineage. You MUST proactively change the timing chain before 100k km. You MUST replace the plastic coolant flanges before they crack. You MUST walnut blast the intake valves. If you buy a 116i, immediately upgrade the charge pipe, flash it to Stage 1, and stay hyper-vigilant on maintenance. It's a bargain rocket, but not a maintenance-free one.",
   repairCostEstimate: "$1,000 - $2,000 / year (The N13 is notoriously needy. A timing chain replacement will cost 800 EUR. A failing High-Pressure Fuel Pump is 400 EUR. Walnut blasting is 350 EUR. You must also factor in the mandatory aluminum charge pipe upgrade before tuning. High maintenance costs, but massive tuning rewards)."
@@ -2766,10 +2951,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "165 - 175 hp", notes: "The B38 responds extremely well to software tuning. A simple ECU flash adds over 60 horsepower, transforming the 116i from a lethargic city car into a genuinely brisk, torque-rich daily driver.", zeroToHundred: "7.5s", hundredToTwoHundred: "23.5s" },
     { stage: "Stage 2", power: "185 - 195 hp", notes: "Requires a high-flow catless downpipe, aluminum charge pipe, and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds, pushing the 3-cylinder to its safe limits.", zeroToHundred: "7.1s", hundredToTwoHundred: "21.0s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "220 - 240 hp", notes: "Requires a hybrid turbocharger and custom tuning. While physically possible, pushing past 200hp on the B38 is generally not recommended, as the cost outweighs the benefits compared to simply swapping to a 4-cylinder B48 model.", zeroToHundred: "6.5s", hundredToTwoHundred: "17.5s" }
-  ],
+  ], riskRating: 4, 
   tuningGraphData: { stock: { hp: 109, nm: 190 }, stage1: { hp: 170, nm: 280 }, stage2: { hp: 190, nm: 310 }, stage3: { hp: 230, nm: 350 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "B38 Integrated Exhaust Manifold & Turbo",
+                x: 0.10,
+                y: 0.05,
+                z: 0.28,
+                critical: false,
+                details: "ENGINEERING DESIGN: The turbocharger is integrated directly into the cylinder head exhaust casting for rapid warm-up and packaging efficiency."
+            },
+            {
+                label: "Front-Mounted Timing Chain & Tensioner",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "MAINTENANCE POINT: Unlike the N13, the B38 timing chain is at the front of the block and exhibits exceptional long-term durability when serviced regularly."
+            },
+            {
+                label: "Electronic Water Pump & Control Valve",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "COMMON FAULT: The map-controlled electric cooling system can log thermostat or valve actuator codes if coolant grade or bleeding procedures are neglected."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Cam-driven high-pressure pump delivers fuel to the multi-hole direct injectors."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking and sloppy handling."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe and differential mount bushings degrade over time, creating a clunking noise when applying throttle."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Rust accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, disabling ABS and DSC."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: The flexible braided mesh section of the exhaust downpipe can fray or crack from 3-cylinder exhaust vibration cycles."
+            }
+        ],
   drivingExperience: "The 109hp B38-equipped 116i provides surprisingly punchy performance in the city despite its low horsepower figure. The Twin-Scroll turbocharger delivers peak torque instantly at 1,250 RPM, meaning you rarely have to rev the engine out to keep up with traffic. The 3-cylinder configuration has a unique, almost half-six-cylinder thrum to it, which sounds surprisingly sporty. The rear-wheel-drive F20 chassis handles beautifully, and the ZF 8-Speed automatic is flawless. However, on the highway, it runs out of breath quickly. Flashing the ECU to 170hp completely cures this, making it an incredibly balanced, fun, and efficient daily driver.",
   mechanicVerdict: "The B38 1.5L 3-cylinder is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N13 it replaced. The B-series modular engines feature incredibly robust timing chains, reliable direct injection, and solid internals. Your primary concerns are minor in comparison: the plastic water pump housing will eventually crack and leak coolant, and the engine mounts wear out quickly due to the 3-cylinder vibrations. If you are buying a 2015 manual model, you MUST verify if the crankshaft thrust bearing recall was performed. Otherwise, keep the intake valves clean with walnut blasting, fix the coolant leaks, and enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N13. Standard maintenance is highly predictable. Replacing cracked engine mounts (250 EUR) and a leaking water pump housing (250 EUR) are the most common moderate bills. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a BMW)."
@@ -2855,10 +3127,113 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "210 - 220 hp", notes: "Because the 170hp 118i already utilizes the upper limits of the factory boost curve, Stage 1 tuning yields lower percentage gains than the 114i/116i. However, a flash safely unlocks an additional 40+ horsepower, completely maximizing the tiny Twin-Scroll turbo.", zeroToHundred: "6.6s", hundredToTwoHundred: "20.5s" },
     { stage: "Stage 2", power: "230 - 240 hp", notes: "Requires a high-flow catless downpipe, aluminum charge pipe, and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds, but pushes the small Garrett turbo to its absolute absolute limits.", zeroToHundred: "6.3s", hundredToTwoHundred: "18.0s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "270 - 290 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. Pushing past 280hp stresses the factory cast connecting rods; proceeding beyond this point requires forged engine internals.", zeroToHundred: "5.6s", hundredToTwoHundred: "14.2s" }
-  ],
+  ], riskRating: 7, 
   tuningGraphData: { stock: { hp: 170, nm: 250 }, stage1: { hp: 215, nm: 310 }, stage2: { hp: 235, nm: 330 }, stage3: { hp: 280, nm: 380 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 7, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N13 Oil Filter Housing & Cooler Gasket Leaks",
+                x: 0.05,
+                y: 0.03,
+                z: 0.32,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The plastic oil filter housing and oil cooler seals harden and crack under engine heat, causing severe oil and coolant mixing or external leaks."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: true,
+                details: "CRITICAL COMPONENT: Mechanical fuel pump driven by the camshaft. Prone to internal wear, leading to extended crank times, long-term fuel trim faults, and sudden high-pressure failure."
+            },
+            {
+                label: "VANOS Solenoids & Actuators",
+                x: 0.02,
+                y: 0.06,
+                z: 0.35,
+                critical: false,
+                details: "COMMON FAULT: Intake and exhaust VANOS solenoids clog with carbon varnish, causing rough idling, engine stutter, and Vanos adjustment fault codes."
+            },
+            {
+                label: "Turbocharger Oil & Coolant Feed Lines",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Turbo oil feed and return lines bake from exhaust proximity, leading to heavy oil leaks onto the exhaust downpipe and risk of fire if neglected."
+            },
+            {
+                label: "Rear-Mounted Timing Chain & Guide Rails",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Plastic timing chain guides near the firewall shatter prematurely on early N13 engines, requiring a major service to prevent catastrophic engine failure."
+            },
+            {
+                label: "Thermostat Housing & Coolant Flange",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The plastic thermostat housing cracks easily under thermal cycling, causing sudden coolant dumps and overheating."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking and sloppy handling."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe and differential mount bushings degrade, creating a loud clunking noise when shifting gears or applying throttle."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Rust accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, disabling ABS, DSC, and cruise control."
+            },
+            {
+                label: "Exhaust Downpipe Flex Joint & Wastegate",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: The flexible mesh section of the downpipe cracks over time, causing exhaust leaks and cabin fumes, alongside internal turbo wastegate rattling."
+            }
+        ],
   drivingExperience: "The 170hp 118i is the sweet spot of the pre-LCI F20 4-cylinder lineup. It provides genuinely fast, punchy performance right out of the box. The Twin-Scroll turbocharger delivers peak torque instantly, making city driving and overtaking effortless. The rear-wheel-drive F20 chassis handles beautifully, with sharp turn-in and excellent weight distribution. Mated to the brilliant ZF 8-Speed automatic, it is a smooth, highly refined hot hatch. Unlike the heavily restricted 114i/116i, the 118i feels complete from the factory, though a Stage 1 tune turns it into a miniature rocket.",
   mechanicVerdict: "The N13 engine is a double-edged sword. On one hand, it delivers fantastic performance and fuel economy. On the other hand, the engine inherited awful reliability traits from its Peugeot/Citroen lineage. You MUST proactively change the timing chain before 100k km. You MUST replace the plastic coolant flanges before they crack. You MUST walnut blast the intake valves. If you buy a 118i, immediately upgrade the charge pipe to aluminum, stay hyper-vigilant on maintenance, and it will be a fantastic daily driver. It's a brilliant performer, but absolutely not a maintenance-free one.",
   repairCostEstimate: "$1,000 - $2,000 / year (The N13 is notoriously needy. A timing chain replacement will cost 800 EUR. A failing High-Pressure Fuel Pump is 400 EUR. Walnut blasting is 350 EUR. You must also factor in the mandatory aluminum charge pipe upgrade before tuning. High maintenance costs, but massive driving rewards)."
@@ -2945,10 +3320,113 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "210 - 220 hp", notes: "An incredible tuning platform. Because this early LCI 136hp 118i is mechanically identical (same block, same turbo, same injectors) to the older 170hp models, a simple Stage 1 flash safely unlocks ~80 horsepower, completely transforming the car from a commuter hatch into a fast daily driver.", zeroToHundred: "6.7s", hundredToTwoHundred: "20.5s" },
     { stage: "Stage 2", power: "230 - 240 hp", notes: "Requires a high-flow catless downpipe, aluminum charge pipe, and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds, but pushes the small Garrett turbo to its absolute absolute limits.", zeroToHundred: "6.3s", hundredToTwoHundred: "18.0s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "270 - 290 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. Pushing past 280hp stresses the factory cast connecting rods; proceeding beyond this point requires forged engine internals.", zeroToHundred: "5.6s", hundredToTwoHundred: "14.2s" }
-  ],
+  ], riskRating: 7, 
   tuningGraphData: { stock: { hp: 136, nm: 220 }, stage1: { hp: 215, nm: 310 }, stage2: { hp: 235, nm: 330 }, stage3: { hp: 280, nm: 380 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 7, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N13 Oil Filter Housing & Cooler Gasket Leaks",
+                x: 0.05,
+                y: 0.03,
+                z: 0.32,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The plastic oil filter housing and oil cooler seals harden and crack under engine heat, causing severe oil and coolant mixing or external leaks."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: true,
+                details: "CRITICAL COMPONENT: Mechanical fuel pump driven by the camshaft. Prone to internal wear, leading to extended crank times, long-term fuel trim faults, and sudden high-pressure failure."
+            },
+            {
+                label: "VANOS Solenoids & Actuators",
+                x: 0.02,
+                y: 0.06,
+                z: 0.35,
+                critical: false,
+                details: "COMMON FAULT: Intake and exhaust VANOS solenoids clog with carbon varnish, causing rough idling, engine stutter, and Vanos adjustment fault codes."
+            },
+            {
+                label: "Turbocharger Oil & Coolant Feed Lines",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Turbo oil feed and return lines bake from exhaust proximity, leading to heavy oil leaks onto the exhaust downpipe and risk of fire if neglected."
+            },
+            {
+                label: "Rear-Mounted Timing Chain & Guide Rails",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Plastic timing chain guides near the firewall shatter prematurely on early N13 engines, requiring a major service to prevent catastrophic engine failure."
+            },
+            {
+                label: "Thermostat Housing & Coolant Flange",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The plastic thermostat housing cracks easily under thermal cycling, causing sudden coolant dumps and overheating."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking and sloppy handling."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe and differential mount bushings degrade, creating a loud clunking noise when shifting gears or applying throttle."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Rust accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, disabling ABS, DSC, and cruise control."
+            },
+            {
+                label: "Exhaust Downpipe Flex Joint & Wastegate",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: The flexible mesh section of the downpipe cracks over time, causing exhaust leaks and cabin fumes, alongside internal turbo wastegate rattling."
+            }
+        ],
   drivingExperience: "During the brief early LCI period, BMW rebranded the 136hp N13 from the 116i to the 118i. In factory form, it provides capable, punchy performance for city driving. The Twin-Scroll turbocharger delivers peak torque instantly at extremely low RPMs. The rear-wheel-drive F20 chassis handles beautifully, with sharp turn-in and excellent weight distribution. Mated to the brilliant ZF 8-Speed automatic, it is a smooth, highly refined hatch. However, the true driving experience is unlocked with a Stage 1 tune. Once flashed to 210+ hp, it becomes a genuinely aggressive hot hatch that can effortlessly break rear traction.",
   mechanicVerdict: "The N13 engine is a double-edged sword. On one hand, buying this 136hp 118i and flashing it to 210+ hp levels is a phenomenal horsepower-per-euro bargain. On the other hand, the engine inherited awful reliability traits from its Peugeot/Citroen lineage. You MUST proactively change the timing chain before 100k km. You MUST replace the plastic coolant flanges before they crack. You MUST walnut blast the intake valves. If you buy this car, immediately upgrade the charge pipe, flash it to Stage 1, and stay hyper-vigilant on maintenance. It's a bargain rocket, but not a maintenance-free one.",
   repairCostEstimate: "$1,000 - $2,000 / year (The N13 is notoriously needy. A timing chain replacement will cost 800 EUR. A failing High-Pressure Fuel Pump is 400 EUR. Walnut blasting is 350 EUR. You must also factor in the mandatory aluminum charge pipe upgrade before tuning. High maintenance costs, but massive tuning rewards)."
@@ -3035,8 +3513,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "220 - 240 hp", notes: "Requires a hybrid turbocharger and custom tuning. While physically possible, pushing past 200hp on the B38 is generally not recommended, as the cost outweighs the benefits compared to simply swapping to a 4-cylinder B48 model.", zeroToHundred: "6.5s", hundredToTwoHundred: "17.5s" }
   ],
   tuningGraphData: { stock: { hp: 136, nm: 220 }, stage1: { hp: 170, nm: 280 }, stage2: { hp: 190, nm: 310 }, stage3: { hp: 230, nm: 350 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  riskRating: 4,
+        model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        
+        model3DHotspots: [
+            {
+                label: "B38 Integrated Exhaust Manifold & Turbo",
+                x: 0.10,
+                y: 0.05,
+                z: 0.28,
+                critical: false,
+                details: "ENGINEERING DESIGN: The turbocharger is integrated directly into the cylinder head exhaust casting for rapid warm-up and packaging efficiency."
+            },
+            {
+                label: "Front-Mounted Timing Chain & Tensioner",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "MAINTENANCE POINT: Unlike the N13, the B38 timing chain is at the front of the block and exhibits exceptional long-term durability when serviced regularly."
+            },
+            {
+                label: "Electronic Water Pump & Control Valve",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "COMMON FAULT: The map-controlled electric cooling system can log thermostat or valve actuator codes if coolant grade or bleeding procedures are neglected."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Cam-driven high-pressure pump delivers fuel to the multi-hole direct injectors."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking and sloppy handling."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe and differential mount bushings degrade over time, creating a clunking noise when applying throttle."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Rust accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, disabling ABS and DSC."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: The flexible braided mesh section of the exhaust downpipe can fray or crack from 3-cylinder exhaust vibration cycles."
+            }
+        ],
   drivingExperience: "The 136hp B38-equipped 118i is the refined sweet spot for a daily driven 1 Series. The Twin-Scroll turbocharger delivers peak torque instantly at 1,250 RPM, meaning it feels incredibly punchy and responsive in city traffic. The 3-cylinder configuration has a unique, almost half-six-cylinder thrum to it, which sounds surprisingly sporty under load. The rear-wheel-drive F20 chassis handles beautifully, and the ZF 8-Speed automatic is absolutely flawless, keeping the engine in its optimal powerband. Flashing the ECU to 170hp completely wakes the car up, making it an incredibly balanced, fun, and highly efficient daily driver.",
   mechanicVerdict: "The B38 1.5L 3-cylinder is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N13 it replaced. The B-series modular engines feature incredibly robust timing chains, reliable direct injection, and solid internals. Your primary concerns are minor in comparison: the plastic water pump housing will eventually crack and leak coolant, and the engine mounts wear out quickly due to the 3-cylinder vibrations. If you are buying an early 2015 manual model, you MUST verify if the crankshaft thrust bearing recall was performed. Otherwise, keep the intake valves clean with walnut blasting, fix the coolant leaks, and enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N13. Standard maintenance is highly predictable. Replacing cracked engine mounts (250 EUR) and a leaking water pump housing (250 EUR) are the most common moderate bills. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a BMW)."
@@ -3123,10 +3690,113 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "210 - 220 hp", notes: "Because the 177hp 120i already utilizes the upper limits of the factory boost curve, Stage 1 tuning yields lower percentage gains than the 114i/116i. However, a flash safely unlocks an additional 40+ horsepower, completely maximizing the tiny Twin-Scroll turbo.", zeroToHundred: "6.6s", hundredToTwoHundred: "20.5s" },
     { stage: "Stage 2", power: "230 - 240 hp", notes: "Requires a high-flow catless downpipe, aluminum charge pipe, and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds, but pushes the small Garrett turbo to its absolute absolute limits.", zeroToHundred: "6.3s", hundredToTwoHundred: "18.0s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "270 - 290 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. Pushing past 280hp stresses the factory cast connecting rods; proceeding beyond this point requires forged engine internals.", zeroToHundred: "5.6s", hundredToTwoHundred: "14.2s" }
-  ],
+  ], riskRating: 7, 
   tuningGraphData: { stock: { hp: 177, nm: 250 }, stage1: { hp: 215, nm: 310 }, stage2: { hp: 235, nm: 330 }, stage3: { hp: 280, nm: 380 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 7, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N13 Oil Filter Housing & Cooler Gasket Leaks",
+                x: 0.05,
+                y: 0.03,
+                z: 0.32,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The plastic oil filter housing and oil cooler seals harden and crack under engine heat, causing severe oil and coolant mixing or external leaks."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: true,
+                details: "CRITICAL COMPONENT: Mechanical fuel pump driven by the camshaft. Prone to internal wear under higher 120i boost maps, leading to extended crank times and low fuel rail pressure."
+            },
+            {
+                label: "VANOS Solenoids & Actuators",
+                x: 0.02,
+                y: 0.06,
+                z: 0.35,
+                critical: false,
+                details: "COMMON FAULT: Intake and exhaust VANOS solenoids clog with carbon varnish, causing rough idling, engine stutter, and Vanos adjustment fault codes."
+            },
+            {
+                label: "Turbocharger Oil & Coolant Feed Lines",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Turbo oil feed and return lines bake from exhaust proximity under higher 177hp output, leading to heavy oil leaks onto the downpipe."
+            },
+            {
+                label: "Rear-Mounted Timing Chain & Guide Rails",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Plastic timing chain guides near the firewall shatter prematurely on high-output N13 engines, requiring a major service."
+            },
+            {
+                label: "Thermostat Housing & Coolant Flange",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The plastic thermostat housing cracks easily under high thermal cycling, causing sudden coolant dumps and overheating."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking and sloppy handling."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe and differential mount bushings degrade, creating a loud clunking noise when shifting gears or applying throttle."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Rust accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, disabling ABS, DSC, and cruise control."
+            },
+            {
+                label: "Exhaust Downpipe Flex Joint & Wastegate",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: The flexible mesh section of the downpipe cracks over time, causing exhaust leaks and cabin fumes, alongside internal turbo wastegate rattling."
+            }
+        ],
   drivingExperience: "The 177hp 120i is the sweet spot of the pre-LCI F20 4-cylinder lineup. It provides genuinely fast, punchy performance right out of the box. The Twin-Scroll turbocharger delivers peak torque instantly, making city driving and overtaking effortless. The rear-wheel-drive F20 chassis handles beautifully, with sharp turn-in and excellent weight distribution. Mated to the brilliant ZF 8-Speed automatic, it is a smooth, highly refined hot hatch. Unlike the heavily restricted 114i/116i, the 120i feels complete from the factory, though a Stage 1 tune turns it into a miniature rocket.",
   mechanicVerdict: "The N13 engine is a double-edged sword. On one hand, it delivers fantastic performance and fuel economy. On the other hand, the engine inherited awful reliability traits from its Peugeot/Citroen lineage. You MUST proactively change the timing chain before 100k km. You MUST replace the plastic coolant flanges before they crack. You MUST walnut blast the intake valves. If you buy a 120i, immediately upgrade the charge pipe to aluminum, stay hyper-vigilant on maintenance, and it will be a fantastic daily driver. It's a brilliant performer, but absolutely not a maintenance-free one.",
   repairCostEstimate: "$1,000 - $2,000 / year (The N13 is notoriously needy. A timing chain replacement will cost 800 EUR. A failing High-Pressure Fuel Pump is 400 EUR. Walnut blasting is 350 EUR. You must also factor in the mandatory aluminum charge pipe upgrade before tuning. High maintenance costs, but massive driving rewards)."
@@ -3213,10 +3883,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "250 - 260 hp", notes: "The B48 responds incredibly well to software tuning. A simple ECU flash adds over 70 horsepower, transforming the 120i into a genuinely fast, torque-rich hot hatch. The Twin-Scroll turbo handles this increase effortlessly, but due to the high 11.0:1 compression ratio, high-quality premium fuel (98 RON) is strictly required to prevent detonation.", zeroToHundred: "6.2s", hundredToTwoHundred: "15.8s" },
     { stage: "Stage 2", power: "270 - 280 hp", notes: "Requires a high-flow catless downpipe, aluminum charge pipe, and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds. Because the '20A' block uses slightly weaker pistons than the '20B' 125i block, pushing beyond 280hp on pump gas is heavily discouraged by tuners.", zeroToHundred: "5.9s", hundredToTwoHundred: "14.5s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "320 - 340 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. Pushing past 300hp on the '20A' high-compression block is highly risky for the factory pistons. If you want 350+ hp reliably, you should start with a 125i/140i instead.", zeroToHundred: "5.2s", hundredToTwoHundred: "12.0s" }
-  ],
+  ], riskRating: 4, 
   tuningGraphData: { stock: { hp: 184, nm: 270 }, stage1: { hp: 255, nm: 400 }, stage2: { hp: 275, nm: 420 }, stage3: { hp: 330, nm: 480 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "B48 Integrated Exhaust Manifold & Turbo",
+                x: 0.10,
+                y: 0.05,
+                z: 0.28,
+                critical: false,
+                details: "ENGINEERING DESIGN: The turbocharger is integrated directly into the cylinder head exhaust casting for rapid warm-up and packaging efficiency."
+            },
+            {
+                label: "Front-Mounted Timing Chain & Tensioner",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "MAINTENANCE POINT: Front-timing chain layout on the modular B48 architecture exhibits exceptional long-term durability when serviced regularly."
+            },
+            {
+                label: "Electronic Water Pump & Control Valve",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "COMMON FAULT: The map-controlled electric cooling system can log thermostat or valve actuator codes if coolant grade or bleeding procedures are neglected."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Cam-driven high-pressure pump delivers fuel efficiently to the direct injection rail."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking and sloppy handling."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe and differential mount bushings degrade over time, creating a clunking noise when applying throttle."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Rust accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, disabling ABS and DSC."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: The flexible braided mesh section of the exhaust downpipe can fray or crack from exhaust vibration cycles."
+            }
+        ],
   drivingExperience: "The 184hp B48-equipped 120i is arguably the perfect balance of power, efficiency, and reliability in the F20 lineup. The 2.0-liter engine feels vastly smoother and more refined than the older N13. The Twin-Scroll turbocharger delivers peak torque instantly at 1,350 RPM, meaning it feels incredibly punchy and responsive in all situations. The rear-wheel-drive F20 chassis handles beautifully, and the ZF 8-Speed automatic is absolutely flawless, keeping the engine in its optimal powerband. Flashing the ECU to 260hp completely wakes the car up, turning it into a brilliant, highly capable rear-wheel-drive sports hatch.",
   mechanicVerdict: "The B48 2.0L 4-cylinder is a massive, highly welcome step up in reliability from the catastrophic N13 it replaced. The B-series modular engines feature incredibly robust timing chains, reliable direct injection, and closed-deck blocks. Your primary concerns are minor in comparison, but still important: the plastic coolant vent line WILL snap and must be replaced with silicone. The plastic water pump housing will eventually crack and leak coolant. If you tune it, you MUST upgrade the charge pipe to aluminum. Otherwise, keep the intake valves clean with walnut blasting, fix the minor coolant leaks, and enjoy a highly dependable, remarkably smooth engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N13. Standard maintenance is highly predictable. Proactively replacing the coolant vent line (50 EUR) saves the engine. A leaking water pump housing (300 EUR) is the most common moderate bill. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a modern BMW)."
@@ -3302,10 +4059,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "260 - 270 hp", notes: "The 125i is a phenomenal tuning platform. Because it utilizes the N20 block, a simple Stage 1 flash safely pushes it to 260+ hp and 400+ Nm of torque. It transforms the car into a deeply aggressive hot hatch, provided the timing chain has been updated.", zeroToHundred: "5.8s", hundredToTwoHundred: "15.0s" },
     { stage: "Stage 2", power: "280 - 295 hp", notes: "Requires a high-flow catless downpipe, aluminum charge pipe, and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds. Tuning must be precise to avoid extreme low-RPM torque spikes that can bend the factory connecting rods.", zeroToHundred: "5.4s", hundredToTwoHundred: "13.5s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "320 - 340 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. Pushing past 300hp on the N20 block is risky for the factory connecting rods; proceeding beyond this point requires forged engine internals to ensure longevity.", zeroToHundred: "4.9s", hundredToTwoHundred: "11.5s" }
-  ],
+  ], riskRating: 7,
   tuningGraphData: { stock: { hp: 218, nm: 310 }, stage1: { hp: 265, nm: 410 }, stage2: { hp: 290, nm: 430 }, stage3: { hp: 330, nm: 460 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 7, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N20 Front Timing Chain Guide Failure",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The infamous N20 plastic timing chain guides (especially on early models) crack and disintegrate, dropping plastic shrapnel into the oil pan and risking catastrophic engine seizure."
+            },
+            {
+                label: "Oil Filter Housing & Cooler Gasket Leaks",
+                x: 0.05,
+                y: 0.03,
+                z: 0.32,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Plastic oil filter housing cracks or seals degrade, leading to external oil and coolant leaks."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Cam-driven mechanical fuel pump supplying high pressure to the direct injectors."
+            },
+            {
+                label: "Turbocharger Oil Feed & Return Lines",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Rubber O-rings on turbo oil feed lines harden from high heat, causing significant oil leaks onto the exhaust side."
+            },
+            {
+                label: "VANOS Solenoids",
+                x: 0.02,
+                y: 0.06,
+                z: 0.35,
+                critical: false,
+                details: "COMMON FAULT: Solenoids accumulate metallic debris from failing timing chain guides or varnish, causing rough idle and VANOS fault codes."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid, causing steering shimmy under braking."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Rubber subframe bushings soften and crack over time, creating clunking noises."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages wheel speed sensors, disabling DSC and ABS."
+            },
+            {
+                label: "Exhaust Downpipe Flex Joint",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh section cracks over time, causing exhaust leaks."
+            }
+        ],
   drivingExperience: "The 218hp N20-equipped 125i provides extremely fast, punchy performance that completely replaced the smooth, linear feel of the old naturally aspirated 3.0L N52. The Twin-Scroll turbocharger delivers peak torque instantly at 1,350 RPM, making city driving and overtaking brutally effective. The rear-wheel-drive F20 chassis handles beautifully, with sharp turn-in and excellent weight distribution. Mated to the brilliant ZF 8-Speed automatic, it is a smooth, highly refined hot hatch that pushes you back into your seat with a wave of turbocharged torque.",
   mechanicVerdict: "The N20 engine provides fantastic power and efficiency, but it carries a fatal, highly publicized flaw: the timing chain and oil pump chain drive. The factory plastic guides shatter, and the chain stretches, causing a loud, RPM-dependent whining noise. If you buy a 125i, you MUST immediately check if the timing chain has been replaced with the updated BMW revision. If it hasn't, budget 1,200 EUR to do it proactively, or the engine will eventually destroy itself. You must also replace the plastic charge pipe, water pump, and walnut blast the intake valves. If the chain is fixed, it is an incredible performer.",
   repairCostEstimate: "$1,200 - $2,500 / year (The N20 is needy and expensive to bulletproof. A preventative timing chain replacement will cost 1,200+ EUR. A failing electric water pump is 550 EUR. Walnut blasting is 350 EUR. You must also factor in the mandatory aluminum charge pipe upgrade before tuning. Fix the chain, and running costs drop to manageable levels)."
@@ -3392,10 +4244,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "280 - 295 hp", notes: "The B48 125i is a phenomenal tuning platform. Because it utilizes the 10.2:1 compression ratio variant, it safely handles huge boost increases. A simple ECU flash adds over 60 horsepower, transforming the 125i into a genuinely fast, torque-rich hot hatch capable of keeping up with the 6-cylinder M135i.", zeroToHundred: "5.4s", hundredToTwoHundred: "13.5s" },
     { stage: "Stage 2", power: "300 - 315 hp", notes: "Requires a high-flow catless downpipe, aluminum charge pipe, and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds. The B48 block easily handles this output with flawless reliability.", zeroToHundred: "5.1s", hundredToTwoHundred: "12.2s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "360 - 400 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. Pushing near 400hp is perfectly achievable on the 10.2:1 B48 block, making it one of the most capable 4-cylinder engines BMW has ever built.", zeroToHundred: "4.6s", hundredToTwoHundred: "10.0s" }
-  ],
+  ], riskRating: 4, 
   tuningGraphData: { stock: { hp: 224, nm: 310 }, stage1: { hp: 290, nm: 430 }, stage2: { hp: 310, nm: 450 }, stage3: { hp: 380, nm: 520 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "B48 Integrated Exhaust Manifold & Turbo",
+                x: 0.10,
+                y: 0.05,
+                z: 0.28,
+                critical: false,
+                details: "ENGINEERING DESIGN: High-output B48 integrated turbocharger casting engineered for rapid thermal response and high boost reliability."
+            },
+            {
+                label: "Front-Mounted Timing Chain & Tensioner",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "MAINTENANCE POINT: Robust front-timing chain layout solving the reliability issues of the older N20 engine."
+            },
+            {
+                label: "Electronic Water Pump & Control Valve",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "COMMON FAULT: Map-controlled electronic cooling pump system requires proper coolant service and vacuum bleeding."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Direct injection high-pressure fuel pump."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out, causing steering vibration."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe and differential mounts degrade, creating clunking noises under power."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages the wheel speed sensor."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible exhaust downpipe mesh section can crack."
+            }
+        ],
   drivingExperience: "The 224hp B48-equipped 125i is arguably the perfect balance of massive power, efficiency, and reliability in the F20 lineup. The 2.0-liter engine feels incredibly refined, yet brutally fast when pushed. The Twin-Scroll turbocharger delivers peak torque instantly at 1,350 RPM, meaning it feels punchy and violently responsive in all situations. The rear-wheel-drive F20 chassis handles beautifully, and the ZF 8-Speed automatic is absolutely flawless, keeping the engine in its optimal powerband. Flashing the ECU to near 300hp completely wakes the car up, turning it into a brilliant, highly capable hot hatch that rivals the legendary M-Lite models in daily driving situations.",
   mechanicVerdict: "The B48 2.0L 4-cylinder is a massive, highly welcome step up in reliability from the catastrophic N20 it replaced. The B-series modular engines feature incredibly robust timing chains, reliable direct injection, and closed-deck blocks that can handle immense power. Your primary concerns are minor in comparison, but absolutely critical to address: the plastic coolant vent line WILL snap and must be replaced with silicone immediately. The plastic water pump housing will eventually crack and leak coolant. If you tune it, you MUST upgrade the charge pipe to aluminum. Otherwise, keep the intake valves clean with walnut blasting, fix the minor coolant leaks, and enjoy a highly dependable, remarkably smooth engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N20. Standard maintenance is highly predictable. Proactively replacing the coolant vent line (50 EUR) saves the engine from sudden death. A leaking water pump housing (300 EUR) is the most common moderate bill. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a high-output modern BMW)."
@@ -3481,10 +4420,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "360 - 370 hp", notes: "A simple software flash (MHD/Bootmod3) completely transforms the M135i. Without a single hardware modification (aside from the mandatory aluminum charge pipe), the engine safely generates an additional 40-50 horsepower, maximizing the efficiency of the twin-scroll turbo.", zeroToHundred: "4.4s", hundredToTwoHundred: "10.5s" },
     { stage: "Stage 2", power: "390 - 410 hp", notes: "Requires a high-flow catless downpipe, a 5-inch upgraded intercooler, and a high-flow charge pipe. This removes exhaust restrictions, drops intake temperatures, and provides a massive surge of mid-range torque. Pushes the stock turbo to its limit.", zeroToHundred: "4.1s", hundredToTwoHundred: "9.5s" },
     { stage: "Stage 3 (Upgraded Turbo)", power: "450 - 520 hp", notes: "Requires an upgraded Pure Turbo (Stage 2) or similar bolt-on unit. While the N55 spool is incredible, the factory high-pressure fuel pump and cast pistons limit safe tuning to around 500hp. Pushing further requires Port Injection and built internals.", zeroToHundred: "3.6s", hundredToTwoHundred: "7.8s" }
-  ],
+  ], riskRating: 8,
   tuningGraphData: { stock: { hp: 320, nm: 450 }, stage1: { hp: 365, nm: 520 }, stage2: { hp: 400, nm: 560 }, stage3: { hp: 500, nm: 650 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 8, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "Plastic Charge Pipe Failure",
+                x: 0.08,
+                y: 0.06,
+                z: 0.30,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The factory plastic charge pipe on the N55 engine frequently cracks or shatters under increased boost pressure, causing sudden loss of boost and limp mode."
+            },
+            {
+                label: "Electric Water Pump & Thermostat",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: N55 auxiliary electric water pump and thermostat assembly prone to sudden electronic failure, leading to rapid engine overheating."
+            },
+            {
+                label: "Oil Filter Housing Gasket Leaks",
+                x: 0.05,
+                y: 0.03,
+                z: 0.32,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Plastic housing or gasket seals degrade, causing external oil leaks or oil mixing into the cooling system."
+            },
+            {
+                label: "Turbocharger Oil & Coolant Feed Lines",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: High radiant exhaust heat bakes the rubber seals on oil and coolant feed lines, causing heavy oil leaks."
+            },
+            {
+                label: "Valvetronic Actuator Motor & Eccentric Shaft",
+                x: 0.02,
+                y: 0.08,
+                z: 0.25,
+                critical: false,
+                details: "COMMON FAULT: Valvetronic motor wear or eccentric shaft gear wear can cause erratic idling and fault codes."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid under heavy M135i braking loads."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe mounts degrade under 450 Nm torque, creating a clunking noise."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages the wheel speed sensor, disabling DSC."
+            },
+            {
+                label: "Exhaust Downpipe Flex Joint",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible exhaust mesh section cracks from high performance exhaust cycling."
+            }
+        ],
   drivingExperience: "The 320hp M135i is a violent, hilarious, and profoundly capable machine. The transition from the older N54 to the single twin-scroll N55 with Valvetronic drastically improved throttle response; the engine feels instantly awake and builds boost with virtually zero lag. The power delivery is incredibly smooth and linear, yet brutal enough to overwhelm the rear tires at will. The massive upgrade for this generation was the introduction of the ZF 8-Speed automatic transmission, which snaps through gears with teleportation speed, turning the compact F20 chassis into an incredibly capable, modern-feeling sports hatch.",
   mechanicVerdict: "The N55 3.0L is a massive step forward in reliability compared to the N54. By ditching the fragile Piezo injectors for standard Bosch solenoids and simplifying the turbo setup, BMW removed the worst financial headaches of owning a turbo inline-6. The 'O0' variant features an incredibly strong rotating assembly. However, it is not flawless. You MUST replace the plastic charge pipe immediately, or it will explode. The electric water pump will inevitably fail, and the intake valves still require walnut blasting. The most critical, fatal flaw of the N55 is its extreme sensitivity to oil starvation: if you replace the oil filter housing gasket and fail to properly prime the oil circuit via ISTA software before starting the engine, it will instantly destroy the rod bearings. Follow the procedures, and it is a phenomenal daily driver.",
   repairCostEstimate: "$1,500 - $3,000 / year (While drastically cheaper to maintain than an N54 due to reliable injectors, the 'M Performance Tax' still applies. A proactive water pump replacement is 550 EUR, fixing oil leaks is 500+ EUR, and walnut blasting is 350 EUR. An aluminum charge pipe is a mandatory 250 EUR upgrade)."
@@ -3571,10 +4605,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "370 - 380 hp", notes: "The LCI M135i benefits massively from the Electronic Wastegate (EWG). A simple software flash (MHD/Bootmod3) completely transforms the car, generating an additional 50+ horsepower and, crucially, holding peak boost all the way to the redline much better than the older PWG models.", zeroToHundred: "4.3s", hundredToTwoHundred: "10.2s" },
     { stage: "Stage 2", power: "400 - 420 hp", notes: "Requires a high-flow catless downpipe, a 5-inch upgraded intercooler, and a high-flow charge pipe. This removes exhaust restrictions, drops intake temperatures, and provides a massive surge of mid-range torque. The EWG turbo reaches its maximum safe operating speed here.", zeroToHundred: "4.0s", hundredToTwoHundred: "9.1s" },
     { stage: "Stage 3 (Upgraded Turbo)", power: "460 - 530 hp", notes: "Requires an upgraded Pure Turbo (Stage 2) or similar bolt-on unit. While the N55 spool is incredible, the factory high-pressure fuel pump and cast pistons limit safe tuning to around 500hp. Pushing further requires Port Injection and built internals.", zeroToHundred: "3.5s", hundredToTwoHundred: "7.6s" }
-  ],
+  ], riskRating: 8, 
   tuningGraphData: { stock: { hp: 326, nm: 450 }, stage1: { hp: 375, nm: 530 }, stage2: { hp: 410, nm: 570 }, stage3: { hp: 510, nm: 660 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 8, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "Plastic Charge Pipe Failure",
+                x: 0.08,
+                y: 0.06,
+                z: 0.30,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Factory plastic charge pipe prone to cracking under the 326 hp LCI boost profile."
+            },
+            {
+                label: "Electric Water Pump & Thermostat",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: High-output N55 electric cooling pump prone to unexpected electronic failure."
+            },
+            {
+                label: "Oil Filter Housing Gasket Leaks",
+                x: 0.05,
+                y: 0.03,
+                z: 0.32,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Oil filter housing seals degrade and leak oil or coolant."
+            },
+            {
+                label: "Turbocharger Oil & Coolant Feed Lines",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Turbo feed lines bake from exhaust heat proximity."
+            },
+            {
+                label: "Valvetronic Actuator Motor",
+                x: 0.02,
+                y: 0.08,
+                z: 0.25,
+                critical: false,
+                details: "COMMON FAULT: Valvetronic motor wear can cause rough idle."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade under high torque load."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Downpipe Flex Joint",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section cracks over time."
+            }
+        ],
   drivingExperience: "The 326hp LCI M135i is a violent, hilarious, and profoundly capable machine. The switch to the Electronic Wastegate (EWG) turbo means the engine feels even more alert and holds its breathtaking top-end rush longer than the pre-facelift models. The power delivery is incredibly smooth and linear, yet brutal enough to overwhelm the rear tires at will. The massive upgrade for this generation was the highly refined ZF 8-Speed automatic transmission, which snaps through gears with teleportation speed, turning the compact F20 chassis into an incredibly capable, modern-feeling sports hatch.",
   mechanicVerdict: "The LCI M135i is the ultimate refinement of the N55 era before the transition to the B58. The EWG turbo is fantastic, and by ditching the fragile Piezo injectors of the N54 for standard Bosch solenoids, BMW removed the worst financial headaches of owning a turbo inline-6. The 'O0' variant features an incredibly strong rotating assembly. However, it is not flawless. You MUST replace the plastic charge pipe immediately, or it will explode. The electric water pump will inevitably fail, and the intake valves still require walnut blasting. The most critical, fatal flaw of the N55 is its extreme sensitivity to oil starvation: if you replace the oil filter housing gasket and fail to properly prime the oil circuit via ISTA software before starting the engine, it will instantly destroy the rod bearings. Follow the procedures, and it is a phenomenal daily driver.",
   repairCostEstimate: "$1,500 - $3,000 / year (While drastically cheaper to maintain than an N54 due to reliable injectors, the 'M Performance Tax' still applies. A proactive water pump replacement is 550 EUR, fixing oil leaks is 500+ EUR, and walnut blasting is 350 EUR. An aluminum charge pipe is a mandatory 250 EUR upgrade)."
@@ -3660,10 +4789,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "410 - 430 hp", notes: "The B58 is the undisputed king of modern tuning. A simple software flash (MHD/Bootmod3) completely transforms the M140i. Without a single hardware modification, the engine safely generates an additional 80+ horsepower and massive torque, maximizing the efficiency of the twin-scroll turbo.", zeroToHundred: "4.0s", hundredToTwoHundred: "9.2s" },
     { stage: "Stage 2", power: "450 - 480 hp", notes: "Requires a high-flow catless downpipe. This removes exhaust restrictions, drops intake temperatures, and provides a violent surge of mid-range torque. The factory high-pressure fuel pump (HPFP) reaches its absolute maximum flow limit here.", zeroToHundred: "3.7s", hundredToTwoHundred: "8.1s" },
     { stage: "Stage 3 (Upgraded Turbo & HPFP)", power: "550 - 650+ hp", notes: "Requires a B58TU (Supra) HPFP or Dorch Engineering HPFP upgrade, plus a Pure Turbos or Vargas hybrid turbocharger. The factory closed-deck B58 block will easily and reliably hold 600+ horsepower all day long. A TCU tune (xHP) is strictly required to prevent transmission slip.", zeroToHundred: "3.2s", hundredToTwoHundred: "6.5s" }
-  ],
+  ], riskRating: 3, 
   tuningGraphData: { stock: { hp: 340, nm: 500 }, stage1: { hp: 420, nm: 580 }, stage2: { hp: 460, nm: 620 }, stage3: { hp: 600, nm: 750 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 3, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "Coolant Expansion Tank & Cap Leaks",
+                x: -0.10,
+                y: 0.05,
+                z: 0.35,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: B58 cooling system quirk where the main coolant expansion tank cap leaks or the tank micro-fractures, leading to low coolant level warnings."
+            },
+            {
+                label: "B58 Integrated Water-to-Air Intercooler",
+                x: 0.05,
+                y: 0.06,
+                z: 0.31,
+                critical: true,
+                details: "CRITICAL COMPONENT: The intake manifold integrates a water-to-air intercooler core. Internal leaks can cause coolant consumption and hydraulic lock if neglected."
+            },
+            {
+                label: "Front-Mounted Timing Chain & Drive",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "MAINTENANCE POINT: Highly robust front-timing chain setup on the B58, vastly superior to the older N55/N20 designs."
+            },
+            {
+                label: "High-Pressure Fuel Pump (HPFP)",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Cam-driven high pressure fuel pump feeding the direct injectors."
+            },
+            {
+                label: "Electronic Coolant Control Module",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: false,
+                details: "COMMON FAULT: Thermal management module valves can throw diagnostic codes if coolant bleeding isn't executed correctly."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear rapidly under the massive 500 Nm output of the M140i."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts experience heavy wear under high torque loads."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion disables ABS/DSC."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section subject to high thermal cycles."
+            }
+        ],
   drivingExperience: "The 340hp B58-equipped M140i is an absolute masterpiece and arguably the greatest modern BMW hot hatch. The B58 engine provides a flawless blend of supreme refinement and utterly brutal acceleration. The Twin-Scroll turbocharger delivers peak torque instantly at 1,520 RPM, meaning it feels violently responsive in all situations. The power delivery is incredibly smooth, pulling relentlessly to the redline with a deeply intoxicating inline-6 howl. The rear-wheel-drive F20 chassis handles beautifully, and the ZF 8-Speed automatic is absolutely flawless, snapping through gears with aggression. Flashing the ECU to 420+ hp turns it into a genuine supercar slayer disguised as a practical hatchback.",
   mechanicVerdict: "The B58 3.0L is a massive, generational leap in reliability over the older N54/N55 engines. The closed-deck block is virtually indestructible, the timing chain is incredibly robust, and the direct injection is highly reliable. It is the premier tuning platform of its era. However, you MUST stay on top of the known B58 quirks. The PCV diaphragm will tear (causing whistling); upgrade to a billet cap immediately. It will slowly lose coolant; check the expansion tank cap and radiator. NEVER use cheap oil filters, as they will disintegrate and destroy the engine. Upgrade the charge pipe, keep it serviced, and enjoy one of the greatest engines BMW has ever built.",
   repairCostEstimate: "$800 - $1,500 / year (Vastly more reliable than its predecessors, but 'M Performance Tax' still applies. Replacing a torn PCV diaphragm with a billet kit is cheap (50 EUR). Unexplained coolant loss is usually a cheap cap fix. Walnut blasting is rarely needed before 100k km. Running costs are remarkably low given the immense performance, provided you don't break the gearbox with excessive torque)."
@@ -3750,10 +4974,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "140 - 150 hp", notes: "The ultimate cheat code for the entry-level 114d. Because it is physically identical to the 116d (116hp) and is artificially restricted by software for tax and insurance brackets, a simple ECU flash safely unlocks an absolutely massive ~50hp gain. It completely transforms the car into a highly potent, efficient daily driver.", zeroToHundred: "8.5s", hundredToTwoHundred: "N/A" },
     { stage: "Stage 2", power: "155 - 165 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while eliminating the expensive DPF clogging risk. The tiny factory turbo is the limiting factor here.", zeroToHundred: "8.2s", hundredToTwoHundred: "N/A" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "190 - 210 hp", notes: "Requires upgrading to a hybrid turbo kit (e.g., from the 120d) and a larger intercooler. Pushes near 400 Nm of torque. Highly recommended to upgrade the clutch/DMF to handle the massive low-end torque spike.", zeroToHundred: "7.0s", hundredToTwoHundred: "19.5s" }
-  ],
+  ], riskRating: 8,
   tuningGraphData: { stock: { hp: 95, nm: 235 }, stage1: { hp: 145, nm: 320 }, stage2: { hp: 160, nm: 340 }, stage3: { hp: 200, nm: 400 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 8, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N47 Rear-Mounted Timing Chain Failure",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The infamous N47 rear-mounted timing chain is prone to premature guide wear, stretching, and snapping, resulting in catastrophic engine destruction if ignored."
+            },
+            {
+                label: "EGR Cooler & Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Exhaust Gas Recirculation cooler clogs with soot and can leak coolant internally, creating severe fire risks and triggering BMW recall campaigns."
+            },
+            {
+                label: "Crankshaft Pulley Harmonic Balancer",
+                x: -0.06,
+                y: -0.02,
+                z: 0.40,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Rubber damper element in the crankshaft pulley degrades and separates, causing loss of alternator charging and power steering assistance."
+            },
+            {
+                label: "Intake Manifold Swirl Flap Carbon Sticking",
+                x: 0.0,
+                y: 0.08,
+                z: 0.27,
+                critical: false,
+                details: "COMMON FAULT: Soot and oil vapor buildup from the EGR causes intake swirl flaps to stick, bind, or break off into the cylinders."
+            },
+            {
+                label: "Turbocharger Actuator & Oil Feed",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: false,
+                details: "MAINTENANCE POINT: Variable geometry turbocharger actuator mechanism can stick from carbon buildup."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Rubber subframe mounts degrade over time."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section cracks from diesel vibration cycles."
+            }
+        ],
   drivingExperience: "In factory form, the 95hp N47-equipped 114d is painfully, aggressively slow. Designed strictly for maximum fuel economy and low CO2 tax brackets, it struggles to overtake on the highway and feels completely mismatched to the brilliant rear-wheel-drive F20 chassis. However, it handles beautifully, and the ZF 8-Speed automatic (if equipped) masks some of the lethargy. The true driving experience of the 114d only begins after a Stage 1 tune. Once flashed to 145+ hp, it becomes a genuinely punchy, highly efficient diesel hatch that can actually utilize its excellent chassis dynamics.",
   mechanicVerdict: "The N47 1.6L diesel is a highly controversial engine. From a tuning perspective, it is a brilliant bargain: because the 114d is mechanically identical to the 116d, you can safely unlock massive power with a simple software flash. However, you MUST be aware of the catastrophic rear timing chain issue. If the chain snaps, the engine is dead. If you are buying a 114d, either ensure the chain has been recently replaced with receipts, or immediately budget 1,500 EUR to have the engine removed and the chains replaced proactively. Clean the EGR, maintain the DPF, and fix the chain, and it will be an incredibly economical daily driver.",
   repairCostEstimate: "$800 - $2,000 / year (Standard maintenance is cheap, but the 'N47 Tax' is real. A proactive timing chain replacement requires engine removal and costs around 1,500 EUR. A clogged DPF or failing HPFP will also result in massive, multi-thousand-euro bills. Address the timing chain proactively and running costs drop significantly)."
@@ -3840,10 +5159,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "130 - 145 hp", notes: "The B37 responds extremely well to software tuning. A simple ECU flash adds over 40 horsepower, transforming the 114d from a lethargic city car into a genuinely brisk, torque-rich daily driver. The turbo handles this increase effortlessly.", zeroToHundred: "8.5s", hundredToTwoHundred: "N/A" },
     { stage: "Stage 2", power: "150 - 160 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while eliminating the expensive DPF clogging risk. The tiny factory turbo is the limiting factor here.", zeroToHundred: "8.2s", hundredToTwoHundred: "N/A" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "180 - 195 hp", notes: "Requires a hybrid turbocharger and custom tuning. While physically possible, pushing past 170hp on the B37 is generally not recommended, as the cost outweighs the benefits compared to simply swapping to a 4-cylinder B47 model.", zeroToHundred: "7.0s", hundredToTwoHundred: "N/A" }
-  ],
+  ], riskRating: 4,
   tuningGraphData: { stock: { hp: 95, nm: 235 }, stage1: { hp: 140, nm: 310 }, stage2: { hp: 155, nm: 330 }, stage3: { hp: 190, nm: 380 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "Front-Mounted Timing Chain & Reliability",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "ENGINEERING DESIGN: Unlike the problematic N47 rear-chain layout, the modular B37 diesel features a front-mounted timing chain with vastly superior long-term reliability."
+            },
+            {
+                label: "EGR Cooler & Emission Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Modern diesel EGR systems are susceptible to carbon accumulation and coolant weeping over high mileage."
+            },
+            {
+                label: "Electronic Water Pump & Cooling Valve",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Map-controlled cooling components require correct fluid maintenance."
+            },
+            {
+                label: "High-Pressure Common Rail Fuel Pump",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Bosch high-pressure fuel pump supplying the common rail injectors."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade over time, creating clunking noises."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section can fray from 3-cylinder diesel vibrations."
+            }
+        ],
   drivingExperience: "In factory form, the 95hp B37-equipped 114d is designed strictly for maximum fuel economy and low CO2 tax brackets. It struggles significantly to overtake on the highway. However, the Variable Geometry Turbocharger delivers peak torque instantly at 1,750 RPM, meaning it feels quite punchy in stop-and-go city traffic. The 3-cylinder diesel has a unique, somewhat clattery idle, but it smooths out nicely under load. The rear-wheel-drive F20 chassis handles beautifully, and the ZF 8-Speed automatic (if equipped) masks a lot of the lethargy. Once flashed to 140+ hp, it becomes a genuinely punchy, highly efficient diesel hatch that can actually utilize its excellent chassis dynamics.",
   mechanicVerdict: "The B37 1.5L 3-cylinder diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. Your primary concerns are minor in comparison: the EGR cooler MUST be checked for leaks (fire hazard), and the engine mounts wear out quickly due to the 3-cylinder vibrations. If you are buying a 2015 manual model, you MUST verify if the crankshaft thrust bearing recall was performed. Otherwise, keep the intake clean, service the DPF, and enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard maintenance is highly predictable. Replacing cracked engine mounts (250 EUR) is the most common moderate bill. Crucially, you avoid the 1,500 EUR timing chain tax of the older generation. If the EGR cooler is covered under recall, running costs are remarkably low)."
@@ -3929,10 +5335,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "140 - 150 hp", notes: "The N47D16 responds beautifully to tuning. A simple ECU flash safely unlocks ~35 horsepower. It completely transforms the car, making highway overtaking safe and effortless without compromising fuel economy.", zeroToHundred: "8.5s", hundredToTwoHundred: "N/A" },
     { stage: "Stage 2", power: "155 - 165 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while eliminating the expensive DPF clogging risk. The tiny factory turbo is the limiting factor here.", zeroToHundred: "8.2s", hundredToTwoHundred: "N/A" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "190 - 210 hp", notes: "Requires upgrading to a hybrid turbo kit and a larger intercooler. Pushes near 400 Nm of torque. Highly recommended to upgrade the clutch/DMF to handle the massive low-end torque spike.", zeroToHundred: "7.0s", hundredToTwoHundred: "19.5s" }
-  ],
+  ], riskRating: 8, 
   tuningGraphData: { stock: { hp: 116, nm: 260 }, stage1: { hp: 145, nm: 320 }, stage2: { hp: 160, nm: 340 }, stage3: { hp: 200, nm: 400 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 8, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N47 Rear-Mounted Timing Chain Failure",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The infamous N47 rear-mounted timing chain is prone to premature guide wear, stretching, and snapping, resulting in catastrophic engine destruction if ignored."
+            },
+            {
+                label: "EGR Cooler & Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Exhaust Gas Recirculation cooler clogs with soot and can leak coolant internally, creating severe fire risks and triggering BMW recall campaigns."
+            },
+            {
+                label: "Crankshaft Pulley Harmonic Balancer",
+                x: -0.06,
+                y: -0.02,
+                z: 0.40,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Rubber damper element in the crankshaft pulley degrades and separates, causing loss of alternator charging and power steering assistance."
+            },
+            {
+                label: "Intake Manifold Swirl Flap Carbon Sticking",
+                x: 0.0,
+                y: 0.08,
+                z: 0.27,
+                critical: false,
+                details: "COMMON FAULT: Soot and oil vapor buildup from the EGR causes intake swirl flaps to stick, bind, or break off into the cylinders."
+            },
+            {
+                label: "Turbocharger Actuator & Oil Feed",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: false,
+                details: "MAINTENANCE POINT: Variable geometry turbocharger actuator mechanism can stick from carbon buildup."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings tear and leak fluid."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Rubber subframe mounts degrade over time."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section cracks from diesel vibration cycles."
+            }
+        ],
   drivingExperience: "In factory form, the 116hp 1.6L N47 is designed strictly for maximum fuel economy and low CO2 tax brackets. While not fast, the 260Nm of torque makes it adequately punchy for city driving. It handles beautifully, and the ZF 8-Speed automatic (if equipped) masks some of the lethargy by keeping the engine in its narrow torque band. The true driving experience of the 116d only begins after a Stage 1 tune. Once flashed to 145+ hp, it becomes a genuinely punchy, highly efficient diesel hatch that can actually utilize its excellent chassis dynamics.",
   mechanicVerdict: "The N47 1.6L diesel carries the exact same fatal flaws as the infamous 2.0L variant. You MUST be aware of the catastrophic rear timing chain issue. If the chain snaps, the engine is dead. If you are buying a 116d, either ensure the chain has been recently replaced with receipts, or immediately budget 1,500 EUR to have the engine removed and the chains replaced proactively. Clean the EGR, maintain the DPF, and fix the chain, and it will be an incredibly economical daily driver.",
   repairCostEstimate: "$800 - $2,000 / year (Standard maintenance is cheap, but the 'N47 Tax' is real. A proactive timing chain replacement requires engine removal and costs around 1,500 EUR. A clogged DPF or failing HPFP will also result in massive, multi-thousand-euro bills. Address the timing chain proactively and running costs drop significantly)."
@@ -4019,10 +5520,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "180 - 190 hp", notes: "The ultimate cheat code. Because the 2.0L 116d is physically identical to the 143hp and 177hp models but heavily restricted by software for corporate tax purposes, a simple ECU flash safely unlocks an absolutely massive ~70hp gain. It completely transforms the car into a highly potent, efficient daily driver.", zeroToHundred: "7.8s", hundredToTwoHundred: "24.0s" },
     { stage: "Stage 2", power: "195 - 205 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while eliminating the expensive DPF clogging risk.", zeroToHundred: "7.5s", hundredToTwoHundred: "22.5s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "230 - 250 hp", notes: "Requires upgrading to a hybrid turbo kit (e.g., from the 123d) and a larger intercooler. Pushes over 450 Nm of torque, easily out-accelerating most petrol hot hatches. Highly recommended to upgrade the clutch/DMF.", zeroToHundred: "6.5s", hundredToTwoHundred: "16.5s" }
-  ],
+  ], riskRating: 8, 
   tuningGraphData: { stock: { hp: 116, nm: 260 }, stage1: { hp: 185, nm: 380 }, stage2: { hp: 200, nm: 400 }, stage3: { hp: 240, nm: 480 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 8, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N47 Rear-Mounted Timing Chain Failure",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Rear-mounted timing chain and plastic guides prone to premature wear and failure."
+            },
+            {
+                label: "EGR Cooler & Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Exhaust Gas Recirculation cooler clogs with soot and can leak coolant internally."
+            },
+            {
+                label: "Crankshaft Pulley Harmonic Balancer",
+                x: -0.06,
+                y: -0.02,
+                z: 0.40,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Rubber damper element in the crankshaft pulley degrades and separates."
+            },
+            {
+                label: "Intake Manifold Swirl Flap Carbon Sticking",
+                x: 0.0,
+                y: 0.08,
+                z: 0.27,
+                critical: false,
+                details: "COMMON FAULT: Swirl flaps stick or bind due to soot buildup."
+            },
+            {
+                label: "Turbocharger Actuator & Oil Feed",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: false,
+                details: "MAINTENANCE POINT: VGT turbocharger actuator mechanism can stick from carbon buildup."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade over time."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section cracks."
+            }
+        ],
   drivingExperience: "The 116hp 2.0L 'Fleet Edition' 116d is a highly economical daily driver, designed specifically to meet corporate emission and tax brackets. While artificially restricted from the standard 143hp/177hp output, the 260Nm of torque still provides a decent mid-range shove. The lightweight aluminum engine block makes the nose feel agile and eager to turn in. The F20 chassis handles beautifully, and the ZF 8-Speed automatic masks some of the lethargy. Once the factory software restriction is removed via a Stage 1 tune, it completely transforms into a genuinely fast, punchy hot hatch while returning phenomenal fuel economy.",
   mechanicVerdict: "The N47 2.0L diesel is a highly controversial engine. From a tuning perspective, it is brilliant: because the 2.0L 116d is mechanically identical to the 177hp variants, you can safely unlock a massive 70hp with a simple software flash. However, you MUST be aware of the catastrophic rear timing chain issue. If the chain snaps, the engine is dead. If you are buying an N47, either ensure the chain has been recently replaced with receipts, or immediately budget 1,500 EUR to have the engine removed and the chains replaced proactively. Clean the EGR, maintain the DPF, and fix the chain, and it will be an incredibly economical, punchy daily driver.",
   repairCostEstimate: "$800 - $2,000 / year (Standard maintenance is cheap, but the 'N47 Tax' is real. A proactive timing chain replacement requires engine removal and costs around 1,500 EUR. A clogged DPF or failing HPFP will also result in massive, multi-thousand-euro bills. Address the timing chain proactively and running costs drop significantly)."
@@ -4109,10 +5705,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "145 - 155 hp", notes: "The B37 responds extremely well to software tuning. A simple ECU flash adds over 30 horsepower, transforming the 116d from a lethargic city car into a genuinely brisk, torque-rich daily driver. The turbo handles this increase effortlessly.", zeroToHundred: "8.2s", hundredToTwoHundred: "N/A" },
     { stage: "Stage 2", power: "160 - 170 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while eliminating the expensive DPF clogging risk. The tiny factory turbo is the limiting factor here.", zeroToHundred: "7.9s", hundredToTwoHundred: "N/A" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "190 - 210 hp", notes: "Requires a hybrid turbocharger and custom tuning. While physically possible, pushing past 170hp on the B37 is generally not recommended, as the cost outweighs the benefits compared to simply swapping to a 4-cylinder B47 model.", zeroToHundred: "6.8s", hundredToTwoHundred: "N/A" }
-  ],
+  ], riskRating: 4, 
   tuningGraphData: { stock: { hp: 116, nm: 270 }, stage1: { hp: 150, nm: 330 }, stage2: { hp: 165, nm: 350 }, stage3: { hp: 200, nm: 400 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "Front-Mounted Timing Chain & Reliability",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "ENGINEERING DESIGN: Unlike the problematic N47 rear-chain layout, the modular B37 diesel features a front-mounted timing chain with vastly superior long-term reliability."
+            },
+            {
+                label: "EGR Cooler & Emission Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Modern diesel EGR systems are susceptible to carbon accumulation and coolant weeping over high mileage."
+            },
+            {
+                label: "Electronic Water Pump & Cooling Valve",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Map-controlled cooling components require correct fluid maintenance."
+            },
+            {
+                label: "High-Pressure Common Rail Fuel Pump",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Bosch high-pressure fuel pump supplying common rail injectors."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade over time."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section can fray from diesel vibrations."
+            }
+        ],
   drivingExperience: "In factory form, the 116hp B37-equipped 116d is designed strictly for maximum fuel economy and low CO2 tax brackets. However, the Variable Geometry Turbocharger delivers peak torque instantly at 1,750 RPM, meaning it feels quite punchy in stop-and-go city traffic. The 3-cylinder diesel has a unique, somewhat clattery idle, but it smooths out nicely under load. The rear-wheel-drive F20 chassis handles beautifully, and the ZF 8-Speed automatic (if equipped) is a masterpiece. Once flashed to 150+ hp, it becomes a genuinely punchy, highly efficient diesel hatch that can actually utilize its excellent chassis dynamics.",
   mechanicVerdict: "The B37 1.5L 3-cylinder diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. Your primary concerns are minor in comparison: the EGR cooler MUST be checked for leaks (fire hazard), and the engine mounts wear out quickly due to the 3-cylinder vibrations. If you are buying an early 2015 manual model, you MUST verify if the crankshaft thrust bearing recall was performed. Otherwise, keep the intake clean, service the DPF, and enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard maintenance is highly predictable. Replacing cracked engine mounts (250 EUR) is the most common moderate bill. Crucially, you avoid the 1,500 EUR timing chain tax of the older generation. If the EGR cooler is covered under recall, running costs are remarkably low)."
@@ -4196,10 +5879,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "180 - 190 hp", notes: "The ultimate cheat code. Because the 118d is physically identical to the 184hp 120d model but heavily restricted by software for corporate tax purposes, a simple ECU flash safely unlocks an absolutely massive ~45hp gain. It completely transforms the car into a highly potent, efficient daily driver.", zeroToHundred: "7.6s", hundredToTwoHundred: "23.5s" },
     { stage: "Stage 2", power: "195 - 205 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while eliminating the expensive DPF clogging risk.", zeroToHundred: "7.3s", hundredToTwoHundred: "22.0s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "230 - 250 hp", notes: "Requires upgrading to a hybrid turbo kit (e.g., from the 123d) and a larger intercooler. Pushes over 450 Nm of torque, easily out-accelerating most petrol hot hatches. Highly recommended to upgrade the clutch/DMF to handle the massive torque.", zeroToHundred: "6.4s", hundredToTwoHundred: "16.0s" }
-  ],
+  ], riskRating: 4, 
   tuningGraphData: { stock: { hp: 143, nm: 320 }, stage1: { hp: 185, nm: 400 }, stage2: { hp: 200, nm: 420 }, stage3: { hp: 240, nm: 480 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N47 Rear-Mounted Timing Chain Failure",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Rear timing chain wear is accelerated under the higher 143hp/320Nm output of the 118d N47D20 engine."
+            },
+            {
+                label: "EGR Cooler & Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: EGR cooler soot accumulation and internal coolant leaks."
+            },
+            {
+                label: "Crankshaft Pulley Harmonic Balancer",
+                x: -0.06,
+                y: -0.02,
+                z: 0.40,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Rubber damper element in the crankshaft pulley degrades."
+            },
+            {
+                label: "Intake Manifold Swirl Flap Carbon Sticking",
+                x: 0.0,
+                y: 0.08,
+                z: 0.27,
+                critical: false,
+                details: "COMMON FAULT: Swirl flaps bind or stick due to carbon and oil buildup."
+            },
+            {
+                label: "Turbocharger Actuator & Oil Feed",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: false,
+                details: "MAINTENANCE POINT: Turbocharger actuator mechanism can stick."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade over time."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section cracks."
+            }
+        ],
   drivingExperience: "The 143hp N47-equipped 118d is a sturdy, highly economical daily driver. The 320Nm of torque provides a strong mid-range shove, making it an excellent highway cruiser that effortlessly climbs to higher speeds. The lightweight aluminum engine block makes the nose feel agile and eager to turn in. The F20 chassis handles beautifully, and the ZF 8-Speed automatic masks any diesel lethargy by keeping the engine in its optimal torque band. Once the factory software restriction is removed via a Stage 1 tune, it completely transforms into a genuinely fast, punchy hot hatch while returning phenomenal fuel economy.",
   mechanicVerdict: "The N47 2.0L diesel is a highly controversial engine. From a tuning perspective, it is brilliant: because the 118d is mechanically identical to the 184hp variants, you can safely unlock a massive 40+ horsepower with a simple software flash. However, you MUST be aware of the catastrophic rear timing chain issue. If the chain snaps, the engine is dead. If you are buying an N47, either ensure the chain has been recently replaced with receipts, or immediately budget 1,500 EUR to have the engine removed and the chains replaced proactively. Clean the EGR, maintain the DPF, and fix the chain, and it will be an incredibly economical, punchy daily driver.",
   repairCostEstimate: "$800 - $2,000 / year (Standard maintenance is cheap, but the 'N47 Tax' is real. A proactive timing chain replacement requires engine removal and costs around 1,500 EUR. A clogged DPF or failing HPFP will also result in massive, multi-thousand-euro bills. Address the timing chain proactively and running costs drop significantly)."
@@ -4284,10 +6062,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "185 - 195 hp", notes: "The B47 responds beautifully to software tuning. A simple ECU flash safely unlocks an additional ~40 horsepower, as the 150hp variant is physically identical to the 190hp 120d model but heavily restricted by software. It completely transforms the car into a highly potent, efficient daily driver.", zeroToHundred: "7.4s", hundredToTwoHundred: "23.0s" },
     { stage: "Stage 2", power: "205 - 215 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while completely eliminating the massive EGR fire and DPF clogging risks.", zeroToHundred: "7.0s", hundredToTwoHundred: "21.5s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "240 - 260 hp", notes: "Requires upgrading to a hybrid turbo kit and a larger intercooler. Pushes over 450 Nm of torque, easily out-accelerating most petrol hot hatches. Highly recommended to upgrade the clutch/DMF to handle the massive low-end torque spike.", zeroToHundred: "6.2s", hundredToTwoHundred: "16.0s" }
-  ],
+  ], riskRating: 4,
   tuningGraphData: { stock: { hp: 150, nm: 320 }, stage1: { hp: 190, nm: 400 }, stage2: { hp: 210, nm: 420 }, stage3: { hp: 250, nm: 480 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "Front-Mounted Timing Chain & Reliability",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "ENGINEERING DESIGN: The modular B47 diesel engine features a front-mounted timing chain layout, solving the severe rear-chain reliability issues of the older N47."
+            },
+            {
+                label: "EGR Cooler & Thermal Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Modern diesel EGR components remain susceptible to carbon buildup and occasional thermal valve sticking over high mileage."
+            },
+            {
+                label: "Electronic Water Pump & Thermostat",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Electronic cooling components require proper coolant service and vacuum bleeding."
+            },
+            {
+                label: "High-Pressure Common Rail Fuel Pump",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Bosch high-pressure common rail fuel pump."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out under heavy use."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade over time."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section can fray."
+            }
+        ],
   drivingExperience: "The 150hp B47-equipped 118d is a phenomenal daily driver. The 320Nm of torque provides a strong mid-range shove, making it an excellent highway cruiser that effortlessly climbs to higher speeds, while running noticeably smoother and quieter than the older N47. The lightweight aluminum engine block makes the nose feel agile. The F20 chassis handles beautifully, and the ZF 8-Speed automatic masks any diesel lethargy by keeping the engine in its optimal torque band. Once the factory software restriction is removed via a Stage 1 tune, it completely transforms into a genuinely fast, punchy hot hatch while returning incredible fuel economy.",
   mechanicVerdict: "The B47 2.0L diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. The B47 is practically bulletproof, with one major exception: the EGR cooler. You MUST ensure the EGR cooler recall has been performed by BMW, as internal leaks can cause the intake manifold to melt and catch fire. If the EGR is solid, keep the intake clean, service the DPF with regular highway driving, and enjoy one of the most dependable diesel engines BMW has ever made.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard maintenance is highly predictable. Replacing cracked engine mounts or cleaning a clogged intake manifold are the most common moderate bills. Crucially, you completely avoid the 1,500 EUR timing chain tax of the older generation. If the EGR cooler is covered under recall, running costs are remarkably low)."
@@ -4373,10 +6238,105 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "220 - 230 hp", notes: "The N47 responds beautifully to tuning. A simple ECU flash pushes power from 184hp to over 220hp and torque to a massive 450+ Nm. It completely transforms the car into a highly potent hot hatch while retaining excellent fuel economy.", zeroToHundred: "6.5s", hundredToTwoHundred: "19.5s" },
     { stage: "Stage 2", power: "235 - 245 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while eliminating the expensive DPF clogging risk.", zeroToHundred: "6.3s", hundredToTwoHundred: "18.0s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "270 - 290 hp", notes: "Requires upgrading to a hybrid turbo kit (e.g., from the 123d) and a larger intercooler. Pushes over 500 Nm of torque, easily out-accelerating most petrol hot hatches. Highly recommended to upgrade the clutch/DMF to handle the massive low-end torque spike.", zeroToHundred: "5.8s", hundredToTwoHundred: "14.5s" }
-  ],
+  ], riskRating: 8, 
   tuningGraphData: { stock: { hp: 184, nm: 380 }, stage1: { hp: 225, nm: 450 }, stage2: { hp: 240, nm: 470 }, stage3: { hp: 285, nm: 520 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 8, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "N47 Rear-Mounted Timing Chain Failure",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Rear timing chain wear is heavily accelerated under the high 380 Nm torque output of the 120d N47D20 engine, risking sudden guide failure."
+            },
+            {
+                label: "EGR Cooler & Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Exhaust Gas Recirculation cooler clogs with soot and can leak coolant internally, triggering recall actions."
+            },
+            {
+                label: "Crankshaft Pulley Harmonic Balancer",
+                x: -0.06,
+                y: -0.02,
+                z: 0.40,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Rubber damper element in the crankshaft pulley degrades and separates under high diesel torsional vibrations."
+            },
+            {
+                label: "Intake Manifold Swirl Flap Carbon Sticking",
+                x: 0.0,
+                y: 0.08,
+                z: 0.27,
+                critical: false,
+                details: "COMMON FAULT: Swirl flaps bind or stick due to heavy soot and oil buildup."
+            },
+            {
+                label: "Turbocharger Actuator & Oil Feed",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: false,
+                details: "MAINTENANCE POINT: Variable geometry turbocharger actuator mechanism can stick from carbon buildup."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade over time."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section cracks."
+            }
+        ],
   drivingExperience: "The 184hp N47-equipped 120d is a phenomenally capable daily driver and arguably the best overall engine choice for the pre-facelift 1 Series in terms of balance. The 380Nm of torque provides a massive mid-range shove, making it an excellent highway cruiser and shockingly fast off the line. The lightweight aluminum engine block makes the nose feel agile and eager to turn in. The heavy, hydraulic power steering and solid rear-wheel-drive F20 chassis make it feel planted and secure. When tuned to 220+ hp, it becomes a genuine hot hatch that can effortlessly outpace many petrol sports cars while returning over 50 mpg on the highway.",
   mechanicVerdict: "The N47 2.0L diesel is a highly controversial engine. From a performance and efficiency standpoint, it is brilliant. The 184hp revision slightly improved the block and timing guides over the early 177hp units, but it did not cure the fundamental flaw. You MUST be aware of the catastrophic rear timing chain issue. If the chain snaps, the engine is dead. If you are buying an N47, either ensure the chain has been recently replaced with receipts, or immediately budget 1,500 EUR to have the engine removed and the chains replaced proactively. Clean the EGR, maintain the DPF, and fix the chain, and it will be an incredibly economical, punchy daily driver.",
   repairCostEstimate: "$800 - $2,000 / year (Standard maintenance is cheap, but the 'N47 Tax' is real. A proactive timing chain replacement requires engine removal and costs around 1,500 EUR. A clogged DPF or failing HPFP will also result in massive, multi-thousand-euro bills. Address the timing chain proactively and running costs drop significantly)."
@@ -4463,10 +6423,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "220 - 230 hp", notes: "The B47 responds beautifully to software tuning. A simple ECU flash safely unlocks an additional ~40 horsepower. It completely transforms the car into a highly potent, efficient daily driver with a massive mid-range punch.", zeroToHundred: "6.6s", hundredToTwoHundred: "21.0s" },
     { stage: "Stage 2", power: "235 - 245 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while completely eliminating the massive EGR fire and DPF clogging risks.", zeroToHundred: "6.3s", hundredToTwoHundred: "19.5s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "270 - 290 hp", notes: "Requires upgrading to a hybrid turbo kit and a larger intercooler. Pushes over 500 Nm of torque, easily out-accelerating most petrol hot hatches. Highly recommended to upgrade the clutch/DMF to handle the massive low-end torque spike.", zeroToHundred: "5.7s", hundredToTwoHundred: "14.8s" }
-  ],
+  ], riskRating: 4, 
   tuningGraphData: { stock: { hp: 190, nm: 400 }, stage1: { hp: 225, nm: 460 }, stage2: { hp: 240, nm: 480 }, stage3: { hp: 285, nm: 540 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "Front-Mounted Timing Chain & Reliability",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "ENGINEERING DESIGN: The modular B47 diesel engine features a front-mounted timing chain layout, solving the severe rear-chain reliability issues of the older N47."
+            },
+            {
+                label: "EGR Cooler & Thermal Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Modern diesel EGR components remain susceptible to carbon accumulation and occasional thermal valve sticking over high mileage."
+            },
+            {
+                label: "Electronic Water Pump & Thermostat",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Electronic cooling components require proper coolant service and vacuum bleeding."
+            },
+            {
+                label: "High-Pressure Common Rail Fuel Pump",
+                x: -0.05,
+                y: 0.07,
+                z: 0.28,
+                critical: false,
+                details: "MAINTENANCE POINT: Bosch high-pressure common rail fuel pump supplying the 400 Nm output."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out under heavy use."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade over time."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section can fray."
+            }
+        ],
   drivingExperience: "The 190hp B47-equipped 120d is a phenomenal daily driver and widely considered the perfect diesel choice for the F20. The massive 400Nm of torque provides a tremendous mid-range shove, making it an excellent highway cruiser that effortlessly climbs to higher speeds, while running noticeably smoother and quieter than the older N47. The lightweight aluminum engine block makes the nose feel agile. The F20 chassis handles beautifully, and the ZF 8-Speed automatic masks any diesel lethargy by keeping the engine perfectly in its optimal torque band. Once the ECU is flashed to 220+ hp, it becomes a genuinely fast, punchy hot hatch while returning incredible fuel economy.",
   mechanicVerdict: "The B47 2.0L diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. The B47 is practically bulletproof, with one major exception: the EGR cooler. You MUST ensure the EGR cooler recall has been performed by BMW, as internal leaks can cause the intake manifold to melt and catch fire. If the EGR is solid, keep the intake clean, service the DPF with regular highway driving, and enjoy one of the most dependable diesel engines BMW has ever made.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard maintenance is highly predictable. Replacing a clogged intake manifold or a worn vibration damper are the most common moderate bills. Crucially, you completely avoid the 1,500 EUR timing chain tax of the older generation. If the EGR cooler is covered under recall, running costs are remarkably low)."
@@ -4553,10 +6600,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "260 - 270 hp", notes: "The N47 Twin-Turbo responds phenomenally well to tuning. A simple ECU flash pushes power from 218hp to over 260hp and torque to a massive 500+ Nm. It completely transforms the 125d into a terrifyingly fast hot hatch that effortlessly pulls past much larger engines.", zeroToHundred: "6.0s", hundredToTwoHundred: "15.5s" },
     { stage: "Stage 2", power: "275 - 285 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and allows the twin turbos to spool even faster while eliminating the expensive DPF clogging risk.", zeroToHundred: "5.8s", hundredToTwoHundred: "14.2s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "300 - 320 hp", notes: "Requires upgrading both turbos to hybrid units, a massive intercooler, and an upgraded high-pressure fuel pump. Pushes near 600 Nm of torque. A heavy-duty clutch/DMF upgrade is absolutely mandatory to handle the massive low-end torque spike.", zeroToHundred: "5.4s", hundredToTwoHundred: "12.5s" }
-  ],
+  ], riskRating: 8,
   tuningGraphData: { stock: { hp: 218, nm: 450 }, stage1: { hp: 265, nm: 510 }, stage2: { hp: 280, nm: 530 }, stage3: { hp: 315, nm: 600 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 8, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "Sequential Twin-Turbo Actuators & Boost Leaks",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: The 125d N47D20T1 features a complex sequential twin-turbo setup (small high-pressure and large low-pressure turbos). Vacuum lines and boost control actuators frequently fail, causing underboost."
+            },
+            {
+                label: "N47 Rear-Mounted Timing Chain Failure",
+                x: 0,
+                y: 0.05,
+                z: 0.25,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Rear timing chain and plastic guides face extreme thermal and mechanical fatigue under the high 218 hp / 450 Nm output."
+            },
+            {
+                label: "EGR Cooler & Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Exhaust Gas Recirculation cooler clogs with soot and can leak coolant internally."
+            },
+            {
+                label: "Crankshaft Pulley Harmonic Balancer",
+                x: -0.06,
+                y: -0.02,
+                z: 0.40,
+                critical: true,
+                details: "CRITICAL FAILURE POINT: Rubber damper element in the crankshaft pulley degrades under high torque stress."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade under 450 Nm load."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section cracks over time."
+            }
+        ],
   drivingExperience: "The 218hp N47-equipped 125d is an absolute masterpiece of diesel engineering. The sequential twin-turbo setup completely eliminates traditional diesel lag; the small turbo provides an immediate surge of torque from 1,500 RPM, seamlessly handing off to the large turbo that pulls violently all the way past 4,500 RPM. It feels much more like a high-displacement naturally aspirated petrol engine than a 4-cylinder diesel. The hydraulic power steering and perfect 50:50 weight distribution make the rear-wheel-drive F20 chassis incredibly fun on twisty backroads. When tuned to 260+ hp, it becomes a genuinely terrifying hot hatch that humiliates sports cars while returning 50 mpg.",
   mechanicVerdict: "The twin-turbo N47 2.0L diesel is a brilliant piece of engineering wrapped in a highly flawed maintenance package. From a performance and efficiency standpoint, it is unmatched in its class. However, you MUST be aware of the catastrophic rear timing chain issue, which is exacerbated by the immense torque of the twin-turbos. If the chain snaps, the engine is dead. If you are buying a 125d, either ensure the chain has been recently replaced with receipts, or immediately budget 1,500 EUR to have the engine removed and the chains replaced proactively. Keep the twin turbos healthy with strict oil changes, maintain the DPF, and fix the chain, and you will own one of the most unique and capable diesels ever made.",
   repairCostEstimate: "$1,000 - $2,500 / year (Standard maintenance is cheap, but the 'N47 Tax' is real, and the 125d has the added complexity of twin turbos and Piezo injectors. A proactive timing chain replacement requires engine removal and costs around 1,500 EUR. A clogged DPF or failing HPFP will also result in massive bills. Address the timing chain proactively and running costs drop significantly, but always budget for turbo actuator issues)."
@@ -4643,10 +6777,97 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "260 - 270 hp", notes: "The B47 Twin-Turbo responds beautifully to software tuning. A simple ECU flash safely unlocks an additional ~40 horsepower. It completely transforms the car into a highly potent, efficient daily driver with a massive mid-range punch and relentless top-end pull.", zeroToHundred: "5.8s", hundredToTwoHundred: "15.0s" },
     { stage: "Stage 2", power: "280 - 290 hp", notes: "Requires a DPF-delete downpipe (where legal for track use) and EGR blanking. Noticeably widens the torque band, lowers exhaust gas temperatures, and improves fuel economy while completely eliminating the massive EGR fire and DPF clogging risks. Allows the twin turbos to spool incredibly fast.", zeroToHundred: "5.5s", hundredToTwoHundred: "13.8s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "310 - 330 hp", notes: "Requires upgrading both turbochargers to hybrid units and installing a larger intercooler. Pushes over 600 Nm of torque, easily out-accelerating almost any hot hatch on the highway. Highly recommended to upgrade the clutch/DMF to handle the massive low-end torque spike.", zeroToHundred: "5.1s", hundredToTwoHundred: "11.5s" }
-  ],
+  ], riskRating: 4, 
   tuningGraphData: { stock: { hp: 224, nm: 450 }, stage1: { hp: 265, nm: 510 }, stage2: { hp: 285, nm: 530 }, stage3: { hp: 320, nm: 600 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F20/f20.glb",
+        model3DScale: 0.04,
+        model3DRotation: [0, 0, 0],
+        manualLightPositions: { headlights: { x: 0.15, y: -0.02, z: 0.5 } },
+        customLightNames: {
+            headlights: ["headlightstry1.001", "headlightstry2"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillights4"],
+            drllight: ["drlsfix1", "drls2", "drlsfix2", "drls4"]
+        },
+        author: ".",
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 9,
+            meshGlowTaillight: 14,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        model3DHotspots: [
+            {
+                label: "B47 Sequential Twin-Turbo System & Plumbing",
+                x: 0.12,
+                y: -0.02,
+                z: 0.20,
+                critical: true,
+                details: "CRITICAL COMPONENT: The 224 hp B47 twin-turbo setup delivers exceptional punch but features complex control plumbing and actuators that require periodic inspection for boost leaks."
+            },
+            {
+                label: "Front-Mounted Timing Chain & Reliability",
+                x: -0.04,
+                y: 0.04,
+                z: 0.38,
+                critical: false,
+                details: "ENGINEERING DESIGN: Front-mounted timing chain layout provides far greater durability than the older N47 twin-turbo layout."
+            },
+            {
+                label: "EGR Cooler & Thermal Valve Clogging",
+                x: 0.10,
+                y: 0.02,
+                z: 0.22,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Modern diesel EGR components remain susceptible to carbon accumulation and occasional thermal valve sticking over high mileage."
+            },
+            {
+                label: "Electronic Water Pump & Thermostat",
+                x: -0.08,
+                y: 0.0,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Electronic cooling components require proper coolant service."
+            },
+            {
+                label: "Front Right Control Arm Hydro-Bushings",
+                x: -0.20,
+                y: -0.09,
+                z: 0.33,
+                critical: false,
+                details: "MAINTENANCE POINT: Hydraulic front tension strut bushings wear out."
+            },
+            {
+                label: "Rear Subframe Differential Bushings",
+                x: 0.0,
+                y: -0.09,
+                z: -0.32,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts degrade under 450 Nm load."
+            },
+            {
+                label: "Rear Right ABS Wheel Speed Sensor",
+                x: -0.23,
+                y: -0.1,
+                z: -0.34,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion damages speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe Section",
+                x: 0.13,
+                y: -0.11,
+                z: -0.45,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section can fray."
+            }
+        ],
   drivingExperience: "The 224hp B47-equipped 125d is an absolute masterpiece of diesel engineering and the ultimate daily driver. The sequential twin-turbo setup completely eliminates traditional diesel lag; the small turbo provides an immediate surge of torque from 1,500 RPM, seamlessly handing off to the large turbo that pulls violently all the way past 4,500 RPM. It feels incredibly refined, running noticeably smoother and quieter than the older N47 twin-turbo. The F20 chassis handles beautifully, and the ZF 8-Speed automatic masks any diesel lethargy by keeping the engine perfectly in its massive torque band. Once the ECU is flashed to 260+ hp, it becomes a genuinely terrifying hot hatch that humiliates sports cars while returning 50 mpg.",
   mechanicVerdict: "The B47 2.0L Twin-Turbo diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. The B47 is practically bulletproof, with one major exception: the EGR cooler. You MUST ensure the EGR cooler recall has been performed by BMW, as internal leaks can cause the intake manifold to melt and catch fire. If the EGR is solid, keep the intake clean, service the DPF with regular highway driving, and enjoy one of the most dependable, brutally fast diesel engines BMW has ever made.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard maintenance is highly predictable. Replacing a clogged intake manifold or a worn vibration damper are the most common moderate bills. Crucially, you completely avoid the 1,500 EUR timing chain tax of the older generation. However, it still carries the complexity of twin turbos and Piezo injectors, so unexpected failures can be costly. If the EGR cooler is covered under recall, running costs are remarkably low for the performance)."
@@ -4736,7 +6957,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 109, nm: 190 }, stage1: { hp: 165, nm: 280 }, stage2: { hp: 185, nm: 310 }, stage3: { hp: 220, nm: 350 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The shift to the F40 generation brought a massive paradigm change: Front-Wheel Drive. In factory form, the 109hp B38-equipped 116i is a highly refined but ultimately slow city commuter. The Twin-Scroll turbocharger delivers peak torque instantly at 1,300 RPM, meaning it feels punchy at traffic lights, but it runs out of breath quickly on the highway. The 3-cylinder configuration has a unique thrum, and the 7-Speed Dual Clutch automatic provides rapid, seamless shifts. The front-wheel-drive chassis is safe and predictable, losing the iconic tail-happy nature of the older F20, but gaining significant interior space. Flashing the ECU to 170hp completely cures the lethargy, making it an incredibly balanced and fun daily driver.",
   mechanicVerdict: "The B38 1.5L 3-cylinder is a massive, highly welcome step up in engine reliability from the older 4-cylinder N13. The B-series modular engines feature incredibly robust timing chains, reliable direct injection, and solid internals. However, the transverse mounting in the F40 chassis makes certain repairs tighter. Your primary concerns are minor in comparison to older BMWs: the plastic water pump housing will eventually crack and leak coolant, and the engine mounts wear out rapidly due to the inherent 3-cylinder vibrations. Keep the intake valves clean with walnut blasting, fix the coolant leaks, and you will enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard maintenance is highly predictable and significantly cheaper than older generations. Replacing cracked engine mounts (250 EUR) and a leaking water pump housing (300 EUR) are the most common moderate bills. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a modern BMW)."
@@ -4825,7 +7046,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 140, nm: 220 }, stage1: { hp: 175, nm: 290 }, stage2: { hp: 190, nm: 320 }, stage3: { hp: 230, nm: 360 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The shift to the F40 generation brought a massive paradigm change: Front-Wheel Drive. In factory form, the 140hp B38-equipped 118i is a highly refined city commuter. The Twin-Scroll turbocharger delivers peak torque instantly at 1,480 RPM, meaning it feels punchy at traffic lights. The 3-cylinder configuration has a unique, almost half-six-cylinder thrum to it, and the 7-Speed Dual Clutch automatic provides rapid, seamless shifts. The front-wheel-drive chassis is safe and predictable, losing the iconic tail-happy nature of the older F20, but gaining significant interior space. Flashing the ECU to 175hp wakes the car up considerably, making it a very balanced and fun daily driver.",
   mechanicVerdict: "The B38 1.5L 3-cylinder is a massive, highly welcome step up in engine reliability from the older 4-cylinder N13. The B-series modular engines feature incredibly robust timing chains, reliable direct injection, and solid internals. However, the transverse mounting in the F40 chassis makes certain repairs tighter. Your primary concerns are minor in comparison to older BMWs: the plastic water pump housing will eventually crack and leak coolant, and the engine mounts wear out rapidly due to the inherent 3-cylinder vibrations. Keep the intake valves clean with walnut blasting, fix the coolant leaks, and you will enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard maintenance is highly predictable and significantly cheaper than older generations. Replacing cracked engine mounts (250 EUR) and a leaking water pump housing (300 EUR) are the most common moderate bills. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a modern BMW)."
@@ -4915,7 +7136,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 136, nm: 220 }, stage1: { hp: 170, nm: 280 }, stage2: { hp: 185, nm: 310 }, stage3: { hp: 220, nm: 350 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels), Catalytic Converter, and OPF (on newer petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels), Catalytic Converter, and OPF (on newer petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The shift to the F40 generation brought a massive paradigm change: Front-Wheel Drive. In factory form, the 136hp B38-equipped 118i is a highly refined city commuter. The Twin-Scroll turbocharger delivers peak torque instantly at 1,480 RPM, meaning it feels punchy at traffic lights. The 3-cylinder configuration has a unique, almost half-six-cylinder thrum to it, and the 7-Speed Dual Clutch automatic provides rapid, seamless shifts. The front-wheel-drive chassis is safe and predictable, losing the iconic tail-happy nature of the older F20, but gaining significant interior space. Flashing the ECU to 175hp wakes the car up considerably, making it a very balanced and fun daily driver.",
   mechanicVerdict: "The B38 1.5L 3-cylinder is a massive, highly welcome step up in engine reliability from the older 4-cylinder N13. The B-series modular engines feature incredibly robust timing chains, reliable direct injection, and solid internals. The 'F' variant signifies the addition of the OPF, which can be sensitive to short urban commutes. The transverse mounting in the F40 chassis makes certain repairs tighter. Your primary concerns are minor in comparison to older BMWs: the plastic water pump housing will eventually crack and leak coolant, and the engine mounts wear out rapidly due to the inherent 3-cylinder vibrations. Keep the intake valves clean with walnut blasting, fix the coolant leaks, and you will enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard maintenance is highly predictable and significantly cheaper than older generations. Replacing cracked engine mounts (250 EUR) and a leaking water pump housing (300 EUR) are the most common moderate bills. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a modern BMW, though replacing a clogged OPF filter can be incredibly expensive if the car isn't driven hard occasionally)."
@@ -5010,7 +7231,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 178, nm: 280 }, stage1: { hp: 255, nm: 400 }, stage2: { hp: 275, nm: 420 }, stage3: { hp: 330, nm: 480 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The shift to the F40 generation brought Front-Wheel Drive, fundamentally altering the 1 Series' character. However, the 178hp B48-equipped 120i remains a remarkably fast and refined hot hatch. The Twin-Scroll turbocharger delivers peak torque instantly at 1,350 RPM, meaning it feels incredibly punchy and responsive in all situations. The 4-cylinder engine feels vastly smoother than the 3-cylinder models, and the 7-Speed Dual Clutch automatic is absolutely flawless, keeping the engine in its optimal powerband. While it lacks the tail-happy oversteer of the older F20, the chassis is highly competent, safe, and grips incredibly well. Flashing the ECU to 260hp completely wakes the car up, turning it into a brilliant, highly capable FWD sports hatch.",
   mechanicVerdict: "The B48 2.0L 4-cylinder is a massive, highly welcome step up in reliability from the older N13 and N20 engines. The B-series modular engines feature incredibly robust timing chains, reliable direct injection, and closed-deck blocks. Your primary concerns are minor in comparison, but still important: the plastic coolant vent line WILL snap and must be replaced with silicone. The plastic water pump housing will eventually crack and leak coolant. If you tune it, you MUST upgrade the charge pipe to aluminum to prevent it from shattering. Otherwise, keep the intake valves clean with walnut blasting, fix the minor coolant leaks, and enjoy a highly dependable, remarkably smooth engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard maintenance is highly predictable and significantly cheaper than previous generations. Proactively replacing the coolant vent line (50 EUR) saves the engine from sudden death. A leaking water pump housing (300 EUR) is the most common moderate bill. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a modern BMW, though replacing a clogged OPF filter can be expensive)."
@@ -5099,7 +7320,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 265, nm: 400 }, stage1: { hp: 315, nm: 460 }, stage2: { hp: 340, nm: 480 }, stage3: { hp: 410, nm: 550 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The 128ti is BMW's first-ever front-wheel-drive hot hatch, aimed squarely at the VW Golf GTI. Equipped with the high-output 265hp B48 engine, it is incredibly fast and punchy. The Twin-Scroll turbocharger delivers peak torque instantly, making it highly responsive. Crucially, the 128ti utilizes a Torsen mechanical limited-slip differential on the front axle, allowing it to corner with immense grip and drag itself out of tight bends. The bespoke suspension tuning and specifically calibrated Aisin 8-speed automatic make it feel sharper and more engaging on twisty roads than the heavier, AWD M135i. It is a brilliant, highly capable modern FWD hot hatch.",
   mechanicVerdict: "The high-output B48 2.0L is a phenomenal engine. Built like a tank with a closed-deck block and lower compression ratio, it handles immense power with complete reliability. The B-series modular engines feature incredibly robust timing chains, eliminating the N20's worst nightmare. Your primary concerns are minor in comparison: the plastic coolant vent line WILL snap and must be replaced with silicone. The plastic water pump housing will eventually crack and leak coolant. If you tune it, you MUST upgrade the charge pipe to aluminum to prevent it from shattering. Change the Torsen diff fluid, service the Aisin transmission, and enjoy a remarkably dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard maintenance is highly predictable and significantly cheaper than previous generations. Proactively replacing the coolant vent line (50 EUR) saves the engine from sudden death. A leaking water pump housing (300 EUR) is the most common moderate bill. Factor in walnut blasting every 80k km. Overall, running costs are remarkably low for a modern, high-performance BMW, though replacing a clogged OPF filter can be expensive)."
@@ -5189,7 +7410,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 306, nm: 450 }, stage1: { hp: 360, nm: 520 }, stage2: { hp: 390, nm: 550 }, stage3: { hp: 480, nm: 620 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels), Catalytic Converter, and OPF (on newer petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels), Catalytic Converter, and OPF (on newer petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The F40 M135i represents a massive paradigm shift from its rear-wheel-drive, inline-6 predecessors. It utilizes the incredibly potent 306hp B48 4-cylinder engine mounted transversely, mated to a front-biased xDrive All-Wheel Drive system. While purists lament the loss of the inline-6, the performance is undeniable. The Twin-Scroll turbocharger delivers a brutal 450Nm of torque instantly, and the xDrive system claws the car out of corners with astonishing grip. The Aisin 8-speed automatic is aggressively tuned, snapping through gears with fierce efficiency. It may not dance sideways like the old F20 M140i, but it covers ground at a terrifying, relentless pace in any weather condition.",
   mechanicVerdict: "The high-output B48 2.0L is a phenomenal engine. Built like an absolute tank with a closed-deck block, reinforced crankshaft, and lower compression ratio, it handles immense power with complete reliability. The B-series modular engines feature incredibly robust timing chains, eliminating the N20's worst nightmare. Your primary concerns are minor in comparison: the plastic coolant vent line WILL snap and must be replaced with silicone. The plastic water pump housing will eventually crack and leak coolant. If you tune it, you MUST upgrade the charge pipe to aluminum. CRITICALLY: You must service the Haldex AWD pump filter every 60k km, or the xDrive system will fail. Change the fluids, and enjoy a remarkably dependable hyper-hatch.",
   repairCostEstimate: "$800 - $1,500 / year (Standard maintenance is highly predictable and significantly cheaper than previous 6-cylinder generations. Proactively replacing the coolant vent line (50 EUR) saves the engine from sudden death. A leaking water pump housing (300 EUR) is the most common moderate bill. Servicing the Haldex clutch is mandatory. Overall, running costs are remarkably low for a 300+ hp modern BMW, though replacing a clogged OPF filter can be expensive)."
@@ -5279,7 +7500,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 116, nm: 270 }, stage1: { hp: 150, nm: 330 }, stage2: { hp: 165, nm: 350 }, stage3: { hp: 200, nm: 400 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The shift to the F40 generation brought Front-Wheel Drive to the 1 Series. In factory form, the 116hp B37-equipped 116d is designed strictly for maximum fuel economy and low CO2 tax brackets. However, the Variable Geometry Turbocharger delivers peak torque instantly at 1,750 RPM, meaning it feels quite punchy in stop-and-go city traffic. The 3-cylinder diesel has a unique, somewhat clattery idle, but it smooths out nicely under load. The front-wheel-drive chassis is safe and predictable, and the 7-Speed Dual Clutch automatic provides rapid, seamless shifts. Once flashed to 150+ hp, it becomes a genuinely punchy, highly efficient diesel hatch that can actually utilize its excellent chassis dynamics.",
   mechanicVerdict: "The B37 1.5L 3-cylinder diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. The transverse mounting in the F40 chassis makes certain repairs tighter. Your primary concerns are minor in comparison to older BMWs: the EGR cooler MUST be checked for leaks (fire hazard), and the engine mounts wear out rapidly due to the 3-cylinder vibrations. Keep the intake clean, service the DPF with regular highway driving, and you will enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the older N47. Standard maintenance is highly predictable. Replacing cracked engine mounts (250 EUR) is the most common moderate bill. Crucially, you avoid the 1,500 EUR timing chain tax of the older generation. If the EGR cooler is covered under recall, running costs are remarkably low for a modern BMW)."
@@ -5368,7 +7589,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 150, nm: 350 }, stage1: { hp: 190, nm: 400 }, stage2: { hp: 210, nm: 420 }, stage3: { hp: 250, nm: 480 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The shift to the F40 generation brought a massive paradigm change: Front-Wheel Drive. In factory form, the 150hp B47-equipped 118d is a phenomenal daily driver. The 350Nm of torque provides a strong mid-range shove, making it an excellent highway cruiser that effortlessly climbs to higher speeds, while running noticeably smoother and quieter than the older N47. The front-wheel-drive chassis is safe and predictable, losing the iconic tail-happy nature of the older F20, but gaining significant interior space. Once the factory software restriction is removed via a Stage 1 tune, it completely transforms into a genuinely fast, punchy hot hatch while returning incredible fuel economy.",
   mechanicVerdict: "The B47 2.0L diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. The transverse mounting in the F40 chassis makes certain repairs tighter. The B47 is practically bulletproof, with one major exception: the EGR cooler. You MUST ensure the EGR cooler recall has been performed by BMW, as internal leaks can cause the intake manifold to melt and catch fire. If the EGR is solid, keep the intake clean, service the DPF with regular highway driving, and enjoy one of the most dependable diesel engines BMW has ever made.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard maintenance is highly predictable. Replacing a clogged intake manifold or worn engine mounts are the most common moderate bills. Crucially, you completely avoid the 1,500 EUR timing chain tax of the older generation. If the EGR cooler is covered under recall, running costs are remarkably low)."
@@ -5458,7 +7679,7 @@ export const firstseriesProfiles: EngineProfile[] = [
   ],
   tuningGraphData: { stock: { hp: 190, nm: 400 }, stage1: { hp: 230, nm: 460 }, stage2: { hp: 245, nm: 480 }, stage3: { hp: 290, nm: 530 } },
   model3DPath: "/images/brands/bmw/1series/F40/f40edited.glb", model3DScale: 0.25, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.2 , y: 0, z: 0.52 } }, riskRating: 4, 
-  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 200, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 200, meshGlowTaillight: 4, meshGlowDrl: 8, useBloom: true }, hotspotSettings: {}, model3DHotspots: [ { label: "Engine Core & Charge Pipe", x: 0.01, y: 0.07, z: 0.44, critical: true, details: "CRITICAL VULNERABILITY: The front and top of the engine bay house critical components like the fragile plastic charge pipe (which explodes under boost), the oil filter housing, and plastic coolant flanges/water pumps. Frequent inspections here are mandatory." }, { label: "Rear Engine & Timing Chain", x: 0.02, y: 0.08, z: 0.28, critical: true, details: "CRITICAL VULNERABILITY: Located right against the firewall. On N47, B38, and B48 engines, this is where the timing chain resides. It also houses the PCV valve and Valvetronic sensors, which are highly prone to failure and oil leaks due to excessive heat." }, { label: "Front Suspension & Control Arms", x: 0.26, y: -0.11, z: 0.38, critical: false, details: "VULNERABILITY: The fluid-filled thrust arm bushings tear prematurely under the weight and torque of the engine, causing sloppy steering and braking vibration. Polyurethane replacements are a highly recommended upgrade." }, { label: "Rear Suspension & Subframe", x: 0.26, y: -0.11, z: -0.4, critical: false, details: "VULNERABILITY: The multi-link rear suspension handles power brilliantly, but the rear subframe bushings are quite soft from the factory. Upgrading them massively improves chassis stability and prevents wheel hop during hard cornering." }, { label: "Exhaust System & Emissions", x: 0.17, y: -0.13, z: -0.57, critical: false, details: "VULNERABILITY: Houses the DPF (on diesels) or the Catalytic Converter (on petrols). Prone to clogging with ash/soot on short commutes, or melting due to severe engine misfires. The exhaust flap vacuum actuator can also rattle or seize." } ], customLightNames: { headlights: ["headlights"], taillights: ["taillights"], drllight: ["drlfix"] }, author: "Bmw Serie 1 F40 (https://skfb.ly/oMJxW) by Paradax001 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).",
   drivingExperience: "The shift to the F40 generation brought a massive paradigm change: Front-Wheel Drive (and xDrive AWD). In factory form, the 190hp B47-equipped 120d is a phenomenal daily driver and widely considered the perfect diesel choice for the F40. The massive 400Nm of torque provides a tremendous mid-range shove, making it an excellent highway cruiser that effortlessly climbs to higher speeds, while running noticeably smoother and quieter than older diesels. The front-wheel-drive/AWD chassis is safe and predictable, losing the iconic tail-happy nature of the older F20, but gaining significant interior space. Once the ECU is flashed to 230+ hp, it becomes a genuinely fast, punchy hot hatch while returning incredible fuel economy.",
   mechanicVerdict: "The B47 2.0L diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. The transverse mounting in the F40 chassis makes certain repairs tighter. The B47 is practically bulletproof, with one major exception: the EGR cooler. You MUST ensure the EGR cooler recall has been performed by BMW, as internal leaks can cause the intake manifold to melt and catch fire. If the EGR is solid, keep the intake clean, service the DPF with regular highway driving, and enjoy one of the most dependable diesel engines BMW has ever made.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard maintenance is highly predictable. Replacing a clogged intake manifold or worn engine mounts are the most common moderate bills. Crucially, you completely avoid the 1,500 EUR timing chain tax of the older generation. If the EGR cooler is covered under recall, running costs are remarkably low)."
@@ -5546,8 +7767,57 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "210 - 230 hp", notes: "Requires a hybrid turbocharger and custom tuning. While physically possible, pushing past 200hp on the B38 is generally not recommended, as the financial cost vastly outweighs the benefits compared to simply purchasing a 4-cylinder B48-equipped 120 model.", zeroToHundred: "6.8s", hundredToTwoHundred: "18.5s" }
   ],
   tuningGraphData: { stock: { hp: 122, nm: 230 }, stage1: { hp: 160, nm: 290 }, stage2: { hp: 180, nm: 310 }, stage3: { hp: 220, nm: 350 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F70/f70.glb", model3DScale: 0.2, model3DRotation: [0, 3.14, 0], manualLightPositions: { headlights: { x: 0.13, y: 0, z: 0.4 } }, riskRating: 4, 
+  lightSettings: { headlightAngle: 0.25, headlightIntensity: 100, headlightOpacity: 0.5, headlightRadiusTop: 0.02, headlightTargetDistance: 4.5, headlightPenumbra: 0.1, meshGlowHeadlight: 10, meshGlowTaillight:120, meshGlowDrl: 15, useBloom: true }, hotspotSettings: { distanceFactor: 0.6 }, model3DHotspots: [
+    {
+        label: "Front Control Arm Hydraulic Bushings",
+        x: -0.19,
+        y: -0.08,
+        z: 0.29,
+        critical: false,
+        details: "FREQUENT WEAR POINT: Front tension strut hydro-bushings tear over high mileage, leaking fluid and causing steering wheel vibration or shimmy under braking."
+    },
+    {
+        label: "Rear ABS Wheel Speed Sensor & Reluctor Ring",
+        x: -0.19,
+        y: -0.09,
+        z: -0.3,
+        critical: false,
+        details: "COMMON FAULT: Rust scale accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, triggering ABS, DSC, and traction control system faults."
+    },
+    {
+        label: "Exhaust Flex Pipe & GPF Thermal Stress",
+        x: -0.11,
+        y: -0.1,
+        z: -0.43,
+        critical: false,
+        details: "MAINTENANCE POINT: Flexible mesh downpipe section and Gasoline Particulate Filter (GPF) mounting brackets prone to thermal fatigue, cracking, and exhaust leaks."
+    },
+    {
+        label: "Rear Subframe & Differential Mount Bushings",
+        x: 0.19,
+        y: -0.09,
+        z: -0.31,
+        critical: false,
+        details: "COMMON FAULT: Soft rubber subframe mount bushings degrade over time, leading to a noticeable clunking noise when transitioning between acceleration and deceleration."
+    },
+    {
+        label: "Coolant Flange & Heater Hose Connectors",
+        x: 0,
+        y: 0.05,
+        z: 0.23,
+        critical: true,
+        details: "CRITICAL VULNERABILITY: Firewall-adjacent plastic coolant lines and quick-release heater core flanges become brittle under thermal cycling, leading to sudden coolant leaks."
+    },
+    {
+        label: "B38 Electronic Water Pump & Thermostat Housing",
+        x: 0,
+        y: 0.05,
+        z: 0.33,
+        critical: true,
+        details: "CRITICAL COMPONENT: Map-controlled electric water pump and thermostat assembly prone to electronic failure or coolant weeping, risking engine overheating if ignored."
+    }
+],  customLightNames: { headlights: ["headlights"], taillights: ["taillights1", "taillights2", "taillights3", "taillightsfix4"], drllight: ["drls", "drls2", "drls3"] }, author: ".",
   drivingExperience: "The F70 generation drops the 'i' suffix, but the 122hp 116 remains a highly refined, entry-level city commuter. The integration of dual injection in the TU2 engine provides incredibly smooth idle characteristics, and the Twin-Scroll turbocharger delivers peak torque instantly at 1,500 RPM, meaning it feels punchy and eager at traffic lights. The 3-cylinder configuration has a unique, almost half-six-cylinder thrum to it, and the 7-Speed Dual Clutch automatic provides rapid, seamless shifts. The front-wheel-drive chassis is safe, highly predictable, and features brilliant interior technology. Flashing the ECU to 160hp completely wakes the car up, making it a very balanced and fun daily driver for highway use.",
   mechanicVerdict: "The B38 1.5L 3-cylinder in its TU2 configuration is a masterpiece of modern engineering. The addition of dual injection (port and direct) is a massive victory for long-term reliability, as it virtually eliminates the notorious intake valve carbon buildup that plagued older direct-injection engines. The timing chain is incredibly robust. Your primary concerns are minor in comparison to older BMWs: the plastic water pump housing will eventually crack and leak coolant, and the engine mounts wear out rapidly due to the inherent 3-cylinder vibrations. Change the oil strictly, fix any minor coolant leaks, and you will enjoy a highly dependable, ultra-efficient engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard maintenance is highly predictable and significantly cheaper than older generations. Replacing cracked engine mounts (250 EUR) and a leaking water pump housing (300 EUR) are the most common moderate bills. Thanks to dual injection, you save on the 350 EUR walnut blasting service. Overall, running costs are remarkably low for a modern BMW, though OPF sensor replacements can be pricey)."
@@ -5634,10 +7904,82 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 1", power: "165 - 175 hp", notes: "The B38 TU2 responds extremely well to software tuning, though the incredibly restrictive Euro 6e OPF exhaust system limits peak numbers compared to earlier generations. A simple ECU flash adds roughly 35-40 horsepower, transforming the 118 from a basic city commuter into a genuinely brisk, torque-rich daily driver.", zeroToHundred: "7.7s", hundredToTwoHundred: "23.0s" },
     { stage: "Stage 2", power: "185 - 195 hp", notes: "Requires a high-flow OPF-delete downpipe (where legal) and an upgraded intercooler. Provides a massive surge of torque and aggressive turbo spool sounds, pushing the 3-cylinder to its safe thermal limits. Removing the OPF drastically lowers exhaust gas temperatures.", zeroToHundred: "7.2s", hundredToTwoHundred: "21.5s" },
     { stage: "Stage 3 (Hybrid Turbo)", power: "220 - 240 hp", notes: "Requires a hybrid turbocharger and custom tuning. While physically possible, pushing past 200hp on the B38 is generally not recommended, as the financial cost vastly outweighs the benefits compared to simply purchasing a 4-cylinder B48-equipped 120 model.", zeroToHundred: "6.5s", hundredToTwoHundred: "17.8s" }
-  ],
+  ], riskRating: 4, 
   tuningGraphData: { stock: { hp: 136, nm: 230 }, stage1: { hp: 170, nm: 300 }, stage2: { hp: 190, nm: 320 }, stage3: { hp: 230, nm: 360 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F70/f70.glb",
+        model3DScale: 0.2,
+        model3DRotation: [0, 3.14, 0],
+        manualLightPositions: { headlights: { x: 0.13, y: 0, z: 0.4 } },
+        
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 10,
+            meshGlowTaillight: 120,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        customLightNames: {
+            headlights: ["headlights"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillightsfix4"],
+            drllight: ["drls", "drls2", "drls3"]
+        },
+        author: ".",
+        model3DHotspots: [
+            {
+                label: "Front Control Arm Hydraulic Bushings",
+                x: -0.19,
+                y: -0.08,
+                z: 0.29,
+                critical: false,
+                details: "FREQUENT WEAR POINT: Front tension strut hydro-bushings tear over high mileage, leaking fluid and causing steering wheel vibration or shimmy under braking."
+            },
+            {
+                label: "Rear ABS Wheel Speed Sensor & Reluctor Ring",
+                x: -0.19,
+                y: -0.09,
+                z: -0.3,
+                critical: false,
+                details: "COMMON FAULT: Rust scale accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, triggering ABS, DSC, and traction control system faults."
+            },
+            {
+                label: "Exhaust Flex Pipe & GPF Thermal Stress",
+                x: -0.11,
+                y: -0.1,
+                z: -0.43,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section and Gasoline Particulate Filter (GPF) mounting brackets prone to thermal fatigue, cracking, and exhaust leaks."
+            },
+            {
+                label: "Rear Subframe & Differential Mount Bushings",
+                x: 0.19,
+                y: -0.09,
+                z: -0.31,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe mount bushings degrade over time, leading to a noticeable clunking noise when transitioning between acceleration and deceleration."
+            },
+            {
+                label: "Coolant Flange & Heater Hose Connectors",
+                x: 0,
+                y: 0.05,
+                z: 0.23,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Firewall-adjacent plastic coolant lines and quick-release heater core flanges become brittle under thermal cycling, leading to sudden coolant leaks."
+            },
+            {
+                label: "B38 Electronic Water Pump & Thermostat Housing",
+                x: 0,
+                y: 0.05,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: Map-controlled electric water pump and thermostat assembly prone to electronic failure or coolant weeping, risking engine overheating if ignored."
+            }
+        ],
   drivingExperience: "The F70 generation 118 (dropping the 'i' suffix) is a highly refined city commuter. The integration of dual injection in the TU2 engine provides incredibly smooth idle characteristics, and the Twin-Scroll turbocharger delivers peak torque instantly at 1,500 RPM, meaning it feels punchy and eager at traffic lights. The 3-cylinder configuration has a unique thrum to it, and the 7-Speed Dual Clutch automatic provides rapid, seamless shifts. The front-wheel-drive chassis is safe, highly predictable, and features brilliant interior technology. Flashing the ECU to 175hp completely wakes the car up, making it a very balanced and fun daily driver for highway use.",
   mechanicVerdict: "The B38 1.5L 3-cylinder in its TU2 configuration is a masterpiece of modern engineering. The addition of dual injection (port and direct) is a massive victory for long-term reliability, as it virtually eliminates the notorious intake valve carbon buildup that plagued older direct-injection engines. The timing chain is incredibly robust. Your primary concerns are minor in comparison to older BMWs: the plastic water pump housing will eventually crack and leak coolant, and the engine mounts wear out rapidly due to the inherent 3-cylinder vibrations. Change the oil strictly, fix any minor coolant leaks, and you will enjoy a highly dependable, ultra-efficient engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard maintenance is highly predictable and significantly cheaper than older generations. Replacing cracked engine mounts (250 EUR) and a leaking water pump housing (300 EUR) are the most common moderate bills. Thanks to dual injection, you save on the 350 EUR walnut blasting service. Overall, running costs are remarkably low for a modern BMW, though OPF sensor replacements can be pricey)."
@@ -5726,8 +8068,80 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "240 - 260 hp", notes: "Requires a hybrid turbocharger and custom tuning. While physically possible, pushing past 220hp on the B38 is generally not recommended, as the financial cost vastly outweighs the benefits, and the 48V MHEV integration makes custom tuning highly complex.", zeroToHundred: "6.2s", hundredToTwoHundred: "17.0s" }
   ],
   tuningGraphData: { stock: { hp: 170, nm: 280 }, stage1: { hp: 195, nm: 320 }, stage2: { hp: 210, nm: 340 }, stage3: { hp: 250, nm: 380 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F70/f70.glb",
+        model3DScale: 0.2,
+        model3DRotation: [0, 3.14, 0],
+        manualLightPositions: { headlights: { x: 0.13, y: 0, z: 0.4 } },
+        riskRating: 4,
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 10,
+            meshGlowTaillight: 120,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        customLightNames: {
+            headlights: ["headlights"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillightsfix4"],
+            drllight: ["drls", "drls2", "drls3"]
+        },
+        author: ".",
+        model3DHotspots: [
+            {
+                label: "Front Control Arm Hydraulic Bushings",
+                x: -0.19,
+                y: -0.08,
+                z: 0.29,
+                critical: false,
+                details: "FREQUENT WEAR POINT: Higher output 170 hp variant puts increased load on front tension strut hydro-bushings, causing premature tearing."
+            },
+            {
+                label: "Rear ABS Wheel Speed Sensor & Reluctor Ring",
+                x: -0.19,
+                y: -0.09,
+                z: -0.3,
+                critical: false,
+                details: "COMMON FAULT: Rust scale accumulation on the rear axle reluctor ring expands and damages the wheel speed sensor, triggering ABS and DSC faults."
+            },
+            {
+                label: "Exhaust Flex Pipe & GPF Thermal Stress",
+                x: -0.11,
+                y: -0.1,
+                z: -0.43,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section subject to higher exhaust gas temperatures under 280 Nm load."
+            },
+            {
+                label: "Rear Subframe & Differential Mount Bushings",
+                x: 0.19,
+                y: -0.09,
+                z: -0.31,
+                critical: false,
+                details: "COMMON FAULT: Rubber subframe mount bushings experience increased flex under higher torque output."
+            },
+            {
+                label: "Coolant Flange & Heater Hose Connectors",
+                x: 0,
+                y: 0.05,
+                z: 0.23,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Firewall-adjacent plastic cooling lines and quick-release fittings degrade under thermal cycles."
+            },
+            {
+                label: "B38 High-Output Turbocharger & Cooling Module",
+                x: 0,
+                y: 0.05,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: Higher boost map increases thermal stress on the integrated exhaust manifold turbocharger and electronic cooling pump."
+            }
+        ],
   drivingExperience: "The F70 generation 120 (dropping the 'i' suffix) represents the pinnacle of 3-cylinder engineering. The integration of dual injection provides incredibly smooth idle characteristics, while the 48V Mild Hybrid (MHEV) system provides instantaneous torque fill at low RPMs. This completely masks any turbo lag, making the 170hp 120 feel significantly faster and punchier in the city than its horsepower figures suggest. The 7-Speed Dual Clutch automatic provides rapid, seamless shifts, and the transition between electric coasting and engine power is imperceptible. Flashing the ECU to 200hp makes it a remarkably capable and highly efficient premium daily driver.",
   mechanicVerdict: "The B38 1.5L 3-cylinder in its TU2 configuration is a masterpiece of modern engineering. The addition of dual injection (port and direct) is a massive victory for long-term reliability, as it virtually eliminates the notorious intake valve carbon buildup that plagued older direct-injection engines. However, the 120 introduces the 48V Mild Hybrid system, adding significant electrical complexity. If the ISG (Integrated Starter-Generator) fails, it will be an expensive repair. Mechanically, your primary concerns remain minor: the plastic water pump housing will eventually crack, and the engine mounts wear out rapidly due to the 3-cylinder vibrations. Keep up with fluid changes, and it will be a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard mechanical maintenance is highly predictable and cheaper than older generations. Replacing cracked engine mounts (250 EUR) and a leaking water pump housing (300 EUR) are the most common moderate bills. Thanks to dual injection, you save on the 350 EUR walnut blasting service. However, any failures related to the 48V MHEV system or the highly sensitive Euro 6e OPF sensors can result in suddenly high repair bills)."
@@ -5815,8 +8229,80 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "340 - 360 hp", notes: "Requires a hybrid turbocharger and custom tuning. Pushing past 300hp on the high 11.0:1 compression ratio block is risky for the cast pistons. The financial cost vastly outweighs the benefits, and the 48V MHEV integration makes custom tuning highly complex.", zeroToHundred: "5.2s", hundredToTwoHundred: "12.0s" }
   ],
   tuningGraphData: { stock: { hp: 218, nm: 360 }, stage1: { hp: 270, nm: 440 }, stage2: { hp: 300, nm: 460 }, stage3: { hp: 350, nm: 500 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F70/f70.glb",
+        model3DScale: 0.2,
+        model3DRotation: [0, 3.14, 0],
+        manualLightPositions: { headlights: { x: 0.13, y: 0, z: 0.4 } },
+        riskRating: 4,
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 10,
+            meshGlowTaillight: 120,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        customLightNames: {
+            headlights: ["headlights"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillightsfix4"],
+            drllight: ["drls", "drls2", "drls3"]
+        },
+        author: ".",
+        model3DHotspots: [
+            {
+                label: "Front Control Arm Hydro-Bushings & 48V Weight Load",
+                x: -0.19,
+                y: -0.08,
+                z: 0.29,
+                critical: false,
+                details: "FREQUENT WEAR POINT: Additional weight of the 48V mild-hybrid system accelerates wear on front suspension hydro-bushings."
+            },
+            {
+                label: "Rear ABS Wheel Speed Sensor & Reluctor Ring",
+                x: -0.19,
+                y: -0.09,
+                z: -0.3,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion and debris buildup causing erratic speed sensor readings and traction control warnings."
+            },
+            {
+                label: "Exhaust Flex Pipe & GPF Thermal Stress",
+                x: -0.11,
+                y: -0.1,
+                z: -0.43,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section handles high exhaust temperatures from the 218 hp B48 engine."
+            },
+            {
+                label: "Rear Subframe & Differential Mount Bushings",
+                x: 0.19,
+                y: -0.09,
+                z: -0.31,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts experience accelerated fatigue under 360 Nm torque delivery."
+            },
+            {
+                label: "Coolant Expansion Tank & Auxiliary Lines",
+                x: 0,
+                y: 0.05,
+                z: 0.23,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: B48 split cooling architecture includes plastic firewall lines prone to weeping under high thermal loads."
+            },
+            {
+                label: "B48 Integrated Turbocharger & Water-to-Air Intercooler",
+                x: 0,
+                y: 0.05,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: Core powertrain packaging housing the integrated intercooler and turbocharger oil/coolant feed lines."
+            }
+        ],
   drivingExperience: "The F70 generation 123 (dropping the 'i' suffix) represents the modern evolution of the 2.0L 4-cylinder. The integration of dual injection provides incredibly smooth idle characteristics, while the 48V Mild Hybrid (MHEV) system provides instantaneous torque fill at low RPMs. This completely masks any turbo lag, making the 218hp 123 feel significantly faster and punchier in the city than its horsepower figures suggest. The 7-Speed Dual Clutch automatic provides rapid, seamless shifts, and the transition between electric coasting and engine power is imperceptible. Flashing the ECU to 280hp makes it a remarkably capable and highly efficient premium daily driver.",
   mechanicVerdict: "The B48 2.0L 4-cylinder in its TU2 configuration is a masterpiece of modern engineering. The addition of dual injection (port and direct) is a massive victory for long-term reliability, as it virtually eliminates the notorious intake valve carbon buildup that plagued older direct-injection engines. However, the 123 introduces the 48V Mild Hybrid system, adding significant electrical complexity. If the ISG (Integrated Starter-Generator) fails, it will be an expensive repair. Mechanically, your primary concerns remain minor: the plastic coolant vent line WILL snap, and the engine mounts wear out rapidly due to the transverse torque loads. Keep up with fluid changes, and it will be a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Standard mechanical maintenance is highly predictable and cheaper than older generations. Proactively replacing the coolant vent line (50 EUR) saves the engine from sudden death. Thanks to dual injection, you save on the 350 EUR walnut blasting service. However, any failures related to the 48V MHEV system or the highly sensitive Euro 6e OPF sensors can result in suddenly high repair bills)."
@@ -5905,8 +8391,80 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "450 - 500 hp", notes: "Requires a hybrid turbocharger, upgraded high-pressure fuel pump, and custom tuning. The 'H' high-output block with its lower compression ratio handles massive boost with incredible durability. This turns the M135 into a hypercar-slaying pocket rocket, though the DCT gearbox will require custom software to prevent slip.", zeroToHundred: "3.4s", hundredToTwoHundred: "7.8s" }
   ],
   tuningGraphData: { stock: { hp: 300, nm: 400 }, stage1: { hp: 360, nm: 500 }, stage2: { hp: 390, nm: 530 }, stage3: { hp: 480, nm: 600 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F70/f70.glb",
+        model3DScale: 0.2,
+        model3DRotation: [0, 3.14, 0],
+        manualLightPositions: { headlights: { x: 0.13, y: 0, z: 0.4 } },
+        riskRating: 5,
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 10,
+            meshGlowTaillight: 120,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        customLightNames: {
+            headlights: ["headlights"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillightsfix4"],
+            drllight: ["drls", "drls2", "drls3"]
+        },
+        author: ".",
+        model3DHotspots: [
+            {
+                label: "M-Performance Front Suspension Bushings & Ball Joints",
+                x: -0.19,
+                y: -0.08,
+                z: 0.29,
+                critical: false,
+                details: "FREQUENT WEAR POINT: Stiffened M-Performance front suspension geometry causes faster wear on control arm bushings and ball joints under aggressive cornering."
+            },
+            {
+                label: "Rear ABS Wheel Speed Sensor & Reluctor Ring",
+                x: -0.19,
+                y: -0.09,
+                z: -0.3,
+                critical: false,
+                details: "COMMON FAULT: Rust scale accumulation on the rear axle reluctor ring damages wheel speed sensors, disabling DSC and AWD systems."
+            },
+            {
+                label: "Exhaust Downpipe Flex Joint & Sport Exhaust Mounts",
+                x: -0.11,
+                y: -0.1,
+                z: -0.43,
+                critical: false,
+                details: "MAINTENANCE POINT: High-flow exhaust system and downpipe mesh section subject to severe thermal fatigue and high backpressure vibrations."
+            },
+            {
+                label: "Rear Subframe & Differential Mount Bushings",
+                x: 0.19,
+                y: -0.09,
+                z: -0.31,
+                critical: false,
+                details: "COMMON FAULT: Differential mounts experience heavy mechanical stress under 400 Nm torque loads and launch maneuvers."
+            },
+            {
+                label: "High-Pressure Cooling Lines & Firewall Connectors",
+                x: 0,
+                y: 0.05,
+                z: 0.23,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: High-performance cooling demand puts immense stress on plastic firewall coolant flanges and quick-disconnect fittings."
+            },
+            {
+                label: "High-Output B48 Turbocharger & Thermal Management",
+                x: 0,
+                y: 0.05,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: 300 hp high-boost B48 engine core. Prone to heat soak, oil feed line weeping, and high thermal stress on electronic water management."
+            }
+        ],
   drivingExperience: "The F70 generation M135 (dropping the 'i') represents a highly refined evolution of the front-biased xDrive hot hatch. It utilizes the potent 300hp B48 4-cylinder engine with the new TU2 dual injection system. While power is slightly down on paper compared to the older F40 due to massive Euro 6e OPF restrictions, the real-world performance is undeniable. The Twin-Scroll turbocharger delivers a brutal 400Nm of torque instantly, and the xDrive system claws the car out of corners with astonishing grip. The switch to a 7-speed DCT provides incredibly aggressive, lightning-fast shifts. It covers ground at a terrifying, relentless pace, though the factory exhaust note is heavily subdued by the particulate filters.",
   mechanicVerdict: "The high-output B48 2.0L TU2 is a phenomenal engine. Built like an absolute tank with a closed-deck block, reinforced crankshaft, and lower compression ratio, it handles immense power with complete reliability. The addition of dual injection is a massive win, finally curing the direct injection carbon buildup issue. The B-series modular engines feature incredibly robust timing chains. Your primary concerns are minor in comparison to older models: the plastic coolant vent line WILL snap and must be replaced with silicone. If you tune it, you MUST upgrade the charge pipe to aluminum. CRITICALLY: You must service the Haldex AWD pump filter every 60k km, or the xDrive system will fail. Change the fluids, and enjoy a remarkably dependable hyper-hatch.",
   repairCostEstimate: "$800 - $1,500 / year (Standard maintenance is highly predictable and significantly cheaper than previous 6-cylinder generations. Proactively replacing the coolant vent line (50 EUR) saves the engine from sudden death. A leaking water pump housing (300 EUR) is the most common moderate bill. Servicing the Haldex clutch is mandatory. Thanks to dual injection, you save on the 350 EUR walnut blasting service. Overall, running costs are remarkably low for a 300hp modern BMW, though replacing a clogged OPF filter can be expensive)."
@@ -5995,8 +8553,80 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "240 - 260 hp", notes: "Requires upgrading to a hybrid turbo kit and a larger intercooler. Pushes over 450 Nm of torque, easily out-accelerating most petrol hot hatches. The 7-speed DCT gearbox will require custom software to handle the massive low-end torque spike safely.", zeroToHundred: "6.2s", hundredToTwoHundred: "16.0s" }
   ],
   tuningGraphData: { stock: { hp: 150, nm: 360 }, stage1: { hp: 190, nm: 420 }, stage2: { hp: 210, nm: 440 }, stage3: { hp: 250, nm: 480 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F70/f70.glb",
+        model3DScale: 0.2,
+        model3DRotation: [0, 3.14, 0],
+        manualLightPositions: { headlights: { x: 0.13, y: 0, z: 0.4 } },
+        riskRating: 4,
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 10,
+            meshGlowTaillight: 120,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        customLightNames: {
+            headlights: ["headlights"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillightsfix4"],
+            drllight: ["drls", "drls2", "drls3"]
+        },
+        author: ".",
+        model3DHotspots: [
+            {
+                label: "Front Control Arm Hydro-Bushings & 48V Weight",
+                x: -0.19,
+                y: -0.08,
+                z: 0.29,
+                critical: false,
+                details: "FREQUENT WEAR POINT: Added weight of the 48V mild-hybrid diesel components increases load on front tension strut hydro-bushings."
+            },
+            {
+                label: "Rear ABS Wheel Speed Sensor & Reluctor Ring",
+                x: -0.19,
+                y: -0.09,
+                z: -0.3,
+                critical: false,
+                details: "COMMON FAULT: Rust scale accumulation on the rear axle reluctor ring damages wheel speed sensors, triggering stability control faults."
+            },
+            {
+                label: "Exhaust Flex Pipe & DPF/SCR Thermal Stress",
+                x: -0.11,
+                y: -0.1,
+                z: -0.43,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section subject to high thermal cycling from Diesel Particulate Filter (DPF) and AdBlue SCR regeneration cycles."
+            },
+            {
+                label: "Rear Subframe & Differential Mount Bushings",
+                x: 0.19,
+                y: -0.09,
+                z: -0.31,
+                critical: false,
+                details: "COMMON FAULT: Soft rubber subframe mount bushings degrade over time under diesel torque and chassis load."
+            },
+            {
+                label: "EGR Cooler & Thermal Valve Clogging",
+                x: 0,
+                y: 0.05,
+                z: 0.23,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Modern diesel EGR system components are prone to carbon accumulation and internal coolant weeping over high mileage."
+            },
+            {
+                label: "B47 Diesel Engine Core & 48V Starter-Generator",
+                x: 0,
+                y: 0.05,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: 2.0L B47 diesel powertrain core featuring the 48V mild-hybrid belt-driven starter-generator unit and high-pressure common rail fuel system."
+            }
+        ],
   drivingExperience: "The F70 generation 118d represents a highly refined evolution of the modern diesel hatchback. In factory form, the 150hp B47 is a phenomenal daily driver. The integration of the 48V Mild Hybrid (MHEV) system is the game-changer here; it provides instantaneous electric torque fill at low RPMs, completely masking any diesel turbo lag. This means the 360Nm of torque hits immediately, making it an excellent highway cruiser that effortlessly climbs to higher speeds, while running noticeably smoother and quieter than older diesels. The 7-Speed Dual Clutch automatic provides rapid, seamless shifts, and the transition between electric coasting and engine power is practically imperceptible. Once flashed to 190hp, it becomes a genuinely fast, punchy hot hatch while returning incredible fuel economy.",
   mechanicVerdict: "The B47 2.0L diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. However, the 118d introduces the 48V Mild Hybrid system, adding significant electrical complexity. If the ISG (Integrated Starter-Generator) fails, it will be an expensive repair. Mechanically, the B47 is practically bulletproof, with one major exception: the EGR cooler. You MUST ensure the EGR cooler recall has been performed by BMW, as internal leaks can cause the intake manifold to melt and catch fire. If the EGR is solid, keep the intake clean, service the DPF with regular highway driving, and enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard mechanical maintenance is highly predictable. Replacing a clogged intake manifold or worn engine mounts are the most common moderate bills. Crucially, you completely avoid the 1,500 EUR timing chain tax of the older generation. However, any failures related to the 48V MHEV system or the highly sensitive Euro 6e SCR/AdBlue sensors can result in suddenly high repair bills)."
@@ -6084,8 +8714,80 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "260 - 280 hp", notes: "Requires upgrading to a hybrid turbo kit and a larger intercooler. Pushes over 480 Nm of torque, easily out-accelerating most petrol hot hatches. The 7-speed DCT gearbox will require custom software to handle the massive low-end torque spike safely.", zeroToHundred: "6.0s", hundredToTwoHundred: "15.0s" }
   ],
   tuningGraphData: { stock: { hp: 163, nm: 400 }, stage1: { hp: 210, nm: 460 }, stage2: { hp: 230, nm: 480 }, stage3: { hp: 270, nm: 520 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F70/f70.glb",
+        model3DScale: 0.2,
+        model3DRotation: [0, 3.14, 0],
+        manualLightPositions: { headlights: { x: 0.13, y: 0, z: 0.4 } },
+        riskRating: 4,
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 10,
+            meshGlowTaillight: 120,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        customLightNames: {
+            headlights: ["headlights"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillightsfix4"],
+            drllight: ["drls", "drls2", "drls3"]
+        },
+        author: ".",
+        model3DHotspots: [
+            {
+                label: "Front Control Arm Hydro-Bushings & 48V Weight",
+                x: -0.19,
+                y: -0.08,
+                z: 0.29,
+                critical: false,
+                details: "FREQUENT WEAR POINT: Mild-hybrid diesel front weight distribution accelerates wear on tension strut hydro-bushings."
+            },
+            {
+                label: "Rear ABS Wheel Speed Sensor & Reluctor Ring",
+                x: -0.19,
+                y: -0.09,
+                z: -0.3,
+                critical: false,
+                details: "COMMON FAULT: Reluctor ring corrosion causes erratic speed sensor readings and traction control warnings."
+            },
+            {
+                label: "Exhaust Flex Pipe & DPF/SCR Thermal Stress",
+                x: -0.11,
+                y: -0.1,
+                z: -0.43,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section handles high exhaust loads from the 400 Nm diesel tune."
+            },
+            {
+                label: "Rear Subframe & Differential Mount Bushings",
+                x: 0.19,
+                y: -0.09,
+                z: -0.31,
+                critical: false,
+                details: "COMMON FAULT: Subframe mount bushings experience increased flex under 400 Nm torque delivery."
+            },
+            {
+                label: "EGR Cooler & Thermal Valve Clogging",
+                x: 0,
+                y: 0.05,
+                z: 0.23,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: Higher output diesel EGR cooler prone to soot buildup and thermal valve wear."
+            },
+            {
+                label: "B47 High-Output Diesel & 48V Hybrid Module",
+                x: 0,
+                y: 0.05,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: 163 hp B47 diesel core coupled with the 48V mild-hybrid starter-generator system."
+            }
+        ],
   drivingExperience: "The F70 generation 120d represents a highly refined evolution of the modern diesel hatchback. In factory form, the 163hp B47 is a phenomenal, highly efficient daily driver. The integration of the 48V Mild Hybrid (MHEV) system is the game-changer here; it provides instantaneous electric torque fill at low RPMs, completely masking any diesel turbo lag. This means the massive 400Nm of torque hits immediately, making it an excellent highway cruiser that effortlessly climbs to higher speeds, while running noticeably smoother and quieter than older diesels. The 7-Speed Dual Clutch automatic provides rapid, seamless shifts, and the transition between electric coasting and engine power is practically imperceptible. Once flashed to 210hp, it becomes a genuinely fast, punchy hot hatch while returning incredible fuel economy.",
   mechanicVerdict: "The B47 2.0L diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. However, the F70 120d introduces the 48V Mild Hybrid system, adding significant electrical complexity. If the ISG (Integrated Starter-Generator) fails, it will be an expensive repair. Mechanically, the B47 is practically bulletproof, with one major exception: the EGR cooler. You MUST ensure the EGR cooler recall has been performed by BMW, as internal leaks can cause the intake manifold to melt and catch fire. If the EGR is solid, keep the intake clean, service the DPF with regular highway driving, and enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard mechanical maintenance is highly predictable. Replacing a clogged intake manifold or worn engine mounts are the most common moderate bills. Crucially, you completely avoid the 1,500 EUR timing chain tax of the older generation. However, any failures related to the 48V MHEV system or the highly sensitive Euro 6e SCR/AdBlue sensors can result in suddenly high repair bills)."
@@ -6174,8 +8876,80 @@ export const firstseriesProfiles: EngineProfile[] = [
     { stage: "Stage 3 (Hybrid Turbo)", power: "290 - 310 hp", notes: "Requires upgrading both turbochargers to hybrid units and installing a larger intercooler. Pushes over 520 Nm of torque, easily out-accelerating most petrol hot hatches. The 7-speed DCT gearbox will require custom software to handle the massive low-end torque spike safely.", zeroToHundred: "5.5s", hundredToTwoHundred: "14.0s" }
   ],
   tuningGraphData: { stock: { hp: 197, nm: 400 }, stage1: { hp: 245, nm: 480 }, stage2: { hp: 265, nm: 500 }, stage3: { hp: 300, nm: 550 } },
-  model3DPath: "", model3DScale: 0, model3DRotation: [0, 0, 0], manualLightPositions: {}, riskRating: 4, 
-  lightSettings: {}, hotspotSettings: {}, model3DHotspots: [], customLightNames: {}, author: "",
+  model3DPath: "/images/brands/bmw/1series/F70/f70.glb",
+        model3DScale: 0.2,
+        model3DRotation: [0, 3.14, 0],
+        manualLightPositions: { headlights: { x: 0.13, y: 0, z: 0.4 } },
+        riskRating: 5,
+        lightSettings: {
+            headlightAngle: 0.25,
+            headlightIntensity: 100,
+            headlightOpacity: 0.5,
+            headlightRadiusTop: 0.02,
+            headlightTargetDistance: 4.5,
+            headlightPenumbra: 0.1,
+            meshGlowHeadlight: 10,
+            meshGlowTaillight: 120,
+            meshGlowDrl: 15,
+            useBloom: true
+        },
+        hotspotSettings: { distanceFactor: 0.6 },
+        customLightNames: {
+            headlights: ["headlights"],
+            taillights: ["taillights1", "taillights2", "taillights3", "taillightsfix4"],
+            drllight: ["drls", "drls2", "drls3"]
+        },
+        author: ".",
+        model3DHotspots: [
+            {
+                label: "Front Control Arm Hydro-Bushings & 48V Weight",
+                x: -0.19,
+                y: -0.08,
+                z: 0.29,
+                critical: false,
+                details: "FREQUENT WEAR POINT: High-performance diesel setup increases mechanical load on front suspension bushings."
+            },
+            {
+                label: "Rear ABS Wheel Speed Sensor & Reluctor Ring",
+                x: -0.19,
+                y: -0.09,
+                z: -0.3,
+                critical: false,
+                details: "COMMON FAULT: Rust scale accumulation on the rear axle reluctor ring damages wheel speed sensors."
+            },
+            {
+                label: "Exhaust Flex Pipe & DPF/SCR Thermal Stress",
+                x: -0.11,
+                y: -0.1,
+                z: -0.43,
+                critical: false,
+                details: "MAINTENANCE POINT: Flexible mesh downpipe section subject to intense thermal stress from high-output twin-turbo diesel operation."
+            },
+            {
+                label: "Rear Subframe & Differential Mount Bushings",
+                x: 0.19,
+                y: -0.09,
+                z: -0.31,
+                critical: false,
+                details: "COMMON FAULT: Subframe mounts experience heavy wear under high torque loads and aggressive acceleration."
+            },
+            {
+                label: "EGR Cooler & Thermal Valve Clogging",
+                x: 0,
+                y: 0.05,
+                z: 0.23,
+                critical: true,
+                details: "CRITICAL VULNERABILITY: High-output diesel EGR system requires rigorous maintenance to prevent carbon clogging."
+            },
+            {
+                label: "B47 Twin-Turbo Diesel & 48V Hybrid Core",
+                x: 0,
+                y: 0.05,
+                z: 0.33,
+                critical: true,
+                details: "CRITICAL COMPONENT: 197 hp high-output twin-turbo B47 diesel core combined with the 48V mild-hybrid system, requiring careful thermal and fluid monitoring."
+            }
+        ],
   drivingExperience: "The F70 generation 123d represents the absolute pinnacle of the modern diesel hatchback. In factory form, the 197hp B47 twin-turbo is a phenomenal daily driver. The integration of the 48V Mild Hybrid (MHEV) system is the game-changer here; combined with the small sequential turbo, it provides instantaneous electric torque fill at low RPMs, completely masking any diesel turbo lag. This means the massive 400Nm of torque hits immediately, making it an incredible highway cruiser that effortlessly climbs to high speeds, while running noticeably smoother and quieter than older diesels. The 7-Speed Dual Clutch automatic provides rapid, seamless shifts. Once flashed to 240hp, it becomes a genuinely fast, punchy hot hatch while returning incredible fuel economy.",
   mechanicVerdict: "The B47 2.0L Twin-Turbo diesel is a massive, highly welcome step up in reliability from the catastrophic 4-cylinder N47 it replaced. The B-series modular engines feature incredibly robust timing chains, curing the absolute worst nightmare of BMW ownership. However, the F70 123d introduces the 48V Mild Hybrid system, adding significant electrical complexity. If the ISG (Integrated Starter-Generator) fails, it will be an expensive repair. Mechanically, the B47 is practically bulletproof, with one major exception: the EGR cooler. You MUST ensure the EGR cooler recall has been performed by BMW, as internal leaks can cause the intake manifold to melt and catch fire. Keep the intake clean, service the DPF with regular highway driving, and enjoy a highly dependable engine.",
   repairCostEstimate: "$600 - $1,200 / year (Vastly cheaper to maintain than the N47. Standard mechanical maintenance is highly predictable. Replacing a clogged intake manifold or worn engine mounts are the most common moderate bills. Crucially, you completely avoid the 1,500 EUR timing chain tax of the older generation. However, any failures related to the 48V MHEV system, the twin turbos, or the highly sensitive Euro 6e SCR/AdBlue sensors can result in suddenly high repair bills)."

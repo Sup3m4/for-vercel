@@ -36,6 +36,7 @@ const BrandLogo = ({ brand }: { brand: string }) => {
 // =============================================================================
 interface QuickSearchProps {
   onEngineCodeFound: (brand: string, model: string, generation: string, engineType: string, engineCode: string, profileId?: string) => void;
+  onSelectVehicleConfig?: (brand: string, model: string, generation: string, engineType: string) => void;
 }
 
 interface MatchResult {
@@ -54,7 +55,7 @@ interface MatchResult {
 // =============================================================================
 // MAIN COMPONENT
 // =============================================================================
-export function QuickSearch({ onEngineCodeFound }: QuickSearchProps) {
+export function QuickSearch({ onEngineCodeFound, onSelectVehicleConfig }: QuickSearchProps) {
   const [searchType, setSearchType] = useState<"vin" | "code">("code");
   const [searchValue, setSearchValue] = useState("");
   const [suggestions, setSuggestions] = useState<MatchResult[]>([]);
@@ -150,7 +151,23 @@ export function QuickSearch({ onEngineCodeFound }: QuickSearchProps) {
   const selectSuggestion = (match: MatchResult) => {
     setSearchValue(match.code);
     setShowSuggestions(false);
-    onEngineCodeFound(match.brand, match.model, match.generation, match.engineType, match.code);
+    
+    const configKey = `${match.brand}-${match.model}-${match.generation}-${match.engineType}`;
+    const variants = carDatabase.engineCodes[configKey] || [];
+    
+    // Megszámoljuk, hány darab variáns van PONTOSAN ezzel a motorkóddal
+    const sameCodeVariants = variants.filter((v: any) => {
+      const vCode = typeof v === "string" ? v : (v.code || v.engineCode);
+      return vCode && vCode.toUpperCase() === match.code.toUpperCase();
+    });
+
+    // Ha több lóerős/teljesítményű variáns is tartozik ugyanahhoz a kódhoz, akkor kell a szelektor
+    if (sameCodeVariants.length > 1 && onSelectVehicleConfig) {
+      onSelectVehicleConfig(match.brand, match.model, match.generation, match.engineType);
+    } else {
+      // Ha csak egyetlen egy van belőle (mint az N55B30-nál), ugrunk egyből a profilra!
+      onEngineCodeFound(match.brand, match.model, match.generation, match.engineType, match.code, match.profileId);
+    }
   };
 
   // --- HTML LETÖLTŐ ---
@@ -229,21 +246,34 @@ export function QuickSearch({ onEngineCodeFound }: QuickSearchProps) {
     setFoundMatches([]);
     setShowSmartSelector(false);
 
-    // A) MOTORKÓD KERESÉS
-    if (searchType === "code") {
-      const matches = flatDb.filter(i => i.code.replace(/\s/g,'') === rawTerm);
-      if (matches.length === 0) {
-        setError(`Code "${rawTerm}" not found.`);
-      } else if (matches.length === 1) {
-        const m = matches[0];
+   // A) MOTORKÓD KERESÉS
+   if (searchType === "code") {
+    const matches = flatDb.filter(i => i.code.replace(/\s/g,'') === rawTerm);
+    if (matches.length === 0) {
+      setError(`Code "${rawTerm}" not found.`);
+    } else if (matches.length === 1) {
+      const m = matches[0];
+      
+      const configKey = `${m.brand}-${m.model}-${m.generation}-${m.engineType}`;
+      const variants = carDatabase.engineCodes[configKey] || [];
+      
+      const sameCodeVariants = variants.filter((v: any) => {
+        const vCode = typeof v === "string" ? v : (v.code || v.engineCode);
+        return vCode && vCode.toUpperCase() === m.code.toUpperCase();
+      });
+
+      if (sameCodeVariants.length > 1 && onSelectVehicleConfig) {
+        onSelectVehicleConfig(m.brand, m.model, m.generation, m.engineType);
+      } else {
         onEngineCodeFound(m.brand, m.model, m.generation, m.engineType, m.code, m.profileId);
-     } else {
-        setFoundMatches(matches);
-        setShowSmartSelector(true);
       }
-      setIsSearching(false);
-      return;
-    } 
+    } else {
+      setFoundMatches(matches);
+      setShowSmartSelector(true);
+    }
+    setIsSearching(false);
+    return;
+  }
     
     // B) VIN KERESÉS
     if (rawTerm.length !== 17) {
@@ -697,7 +727,12 @@ return (
                   {foundMatches.map((m, i) => (
                       <button 
                       key={i} 
-                      onClick={() => { setShowSmartSelector(false); onEngineCodeFound(m.brand, m.model, m.generation, m.engineType, m.code, m.profileId) }} 
+                      onClick={() => { 
+                        setShowSmartSelector(false); 
+                        if (onSelectVehicleConfig) {
+                          onSelectVehicleConfig(m.brand, m.model, m.generation, m.engineType);
+                        } else {
+                          onEngineCodeFound(m.brand, m.model, m.generation, m.engineType, m.code, m.profileId); }} }
                       className="w-full text-left p-4 rounded-xl border border-border bg-card hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all flex items-center justify-between group"
                   >
                           <div className="flex items-center gap-5">

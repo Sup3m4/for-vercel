@@ -78,7 +78,8 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
     const doPreload = () => {
       if (cancelled) return;
-      (useGLTF as any).preload?.(profile.model3DPath, "/draco/");
+      const secureUrl = profile.model3DPath.replace(/\.glb$/i, ".dat");
+      fetch(secureUrl).catch(() => {}); 
     };
 
     // If user is already on the 3D tab, preload right away (still async fetch/parse).

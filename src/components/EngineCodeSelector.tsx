@@ -5,6 +5,8 @@ import { carDatabase } from "@/data/carDatabase";
 import { cn } from "@/lib/utils";
 import { useGLTF} from "@react-three/drei"; 
 import { audiEngineProfiles } from "@/data/carDatabase/brands/audi/engineprofiles";
+import { bmwEngineProfiles } from "@/data/carDatabase/brands/bmw/engineprofiles";
+import { mercedesEngineProfiles } from "@/data/carDatabase/brands/mercedes-benz/engineprofiles";
 
 interface EngineCodeSelectorProps {
   brand: string;

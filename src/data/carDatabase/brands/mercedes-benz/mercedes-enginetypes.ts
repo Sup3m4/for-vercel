@@ -85,31 +85,36 @@ export const mercedesEngineTypes = {
     ],
   
     // CLA
-    "Mercedes-Benz-CLA-C117 (2013-2019)": [
+    "Mercedes-Benz-CLA-Class-C117 (2013-2019)": [
       { name: "CLA 180", hp: "122 hp" },
       { name: "CLA 200", hp: "156 hp" },
+      { name: "CLA 220 4MATIC", hp: "156 hp" },
       { name: "CLA 250", hp: "211 hp" },
       { name: "CLA 45 AMG", hp: "360-381 hp" },
-      { name: "CLA 200 CDI", hp: "136 hp" },
-      { name: "CLA 200 d", hp: "136 hp" },
-      { name: "CLA 220 CDI", hp: "170-177 hp" },
-      { name: "CLA 220 d", hp: "170-177 hp" }
+      { name: "CLA 180 CDI / d", hp: "136 hp" },
+      { name: "CLA 200 CDI / d", hp: "136 hp" },
+      { name: "CLA 220 CDI / d", hp: "170-177 hp" },
     ],
-    "Mercedes-Benz-CLA-C118 (2019-present)": [
+    "Mercedes-Benz-CLA-Class-C118 (2019-present)": [
       { name: "CLA 180", hp: "136 hp" },
       { name: "CLA 200", hp: "163 hp" },
+      { name: "CLA 220", hp: "163 hp" },
       { name: "CLA 250", hp: "224 hp" },
+      { name: "CLA 250 e", hp: "218 hp" },
       { name: "CLA 35 AMG", hp: "306 hp" },
+      { name: "CLA 45 AMG", hp: "306 hp" },
       { name: "CLA 45 S AMG", hp: "421 hp" },
+      { name: "CLA 180 d", hp: "150 hp" },
       { name: "CLA 200 d", hp: "150 hp" },
       { name: "CLA 220 d", hp: "190 hp" },
-      { name: "CLA 250 e", hp: "218 hp" }
     ],
   
     // CLC
     "Mercedes-Benz-CLC-Class-CL203 (2008-2011)": [
+      { name: "CLC 160", hp: "204 hp" },
       { name: "CLC 180 Kompressor", hp: "143 hp" },
       { name: "CLC 200 Kompressor", hp: "184 hp" },
+      { name: "CLC 200 CGI", hp: "204 hp" },
       { name: "CLC 230", hp: "204 hp" },
       { name: "CLC 250", hp: "204 hp" },
       { name: "CLC 350", hp: "272 hp" },
@@ -165,13 +170,18 @@ export const mercedesEngineTypes = {
       { name: "C 180 CGI", hp: "156 hp" },
       { name: "C 200 Kompressor", hp: "184 hp" },
       { name: "C 200 CGI", hp: "184 hp" },
+      { name: "C 230", hp: "204 hp" },
+      { name: "C 250", hp: "204 hp" },
       { name: "C 250 CGI", hp: "204 hp" },
+      { name: "C 280", hp: "204 hp" },
       { name: "C 300", hp: "231-306 hp" },
       { name: "C 350", hp: "231-306 hp" },
       { name: "C 63 AMG", hp: "457-487 hp" },
+      { name: "C 180 CDI", hp: "136 hp" },
       { name: "C 200 CDI", hp: "136 hp" },
       { name: "C 220 CDI", hp: "170 hp" },
       { name: "C 250 CDI", hp: "204 hp" },
+      { name: "C 300 CDI", hp: "136 hp" },
       { name: "C 320 CDI", hp: "224-265 hp" },
       { name: "C 350 CDI", hp: "224-265 hp" }
     ],
@@ -200,12 +210,16 @@ export const mercedesEngineTypes = {
       { name: "C 180", hp: "170 hp" },
       { name: "C 200", hp: "204 hp" },
       { name: "C 300", hp: "258 hp" },
+      { name: "C 300 e", hp: "313 hp" },
+      { name: "C 350 e", hp: "313 hp" },
+      { name: "C 400 e", hp: "313 hp" },
       { name: "C 43 AMG", hp: "408 hp" },
       { name: "C 63 S E Performance", hp: "680 hp" },
+      { name: "C 180 d", hp: "163 hp" },
       { name: "C 200 d", hp: "163 hp" },
       { name: "C 220 d", hp: "200 hp" },
       { name: "C 300 d", hp: "265 hp" },
-      { name: "C 300 e", hp: "313 hp" }
+      { name: "C 300 de", hp: "265 hp" },
     ],
   
     // E-Class
@@ -213,88 +227,152 @@ export const mercedesEngineTypes = {
       { name: "E 200", hp: "136 hp" },
       { name: "E 220", hp: "150 hp" },
       { name: "E 280", hp: "193 hp" },
+      { name: "E 300", hp: "193 hp" },
       { name: "E 320", hp: "220 hp" },
       { name: "E 420", hp: "279 hp" },
       { name: "E 500", hp: "320 hp" },
+      { name: "E 300 AMG 3.4", hp: "320 hp" },
+      { name: "E 36 AMG", hp: "279 hp" },
+      { name: "E 60 AMG", hp: "279 hp" },
+      { name: "E 200 Diesel", hp: "113 hp" },
       { name: "E 250 Diesel", hp: "113 hp" },
-      { name: "E 300 Turbodiesel", hp: "147 hp" }
+      { name: "E 250 Turbodiesel", hp: "147 hp" },
+      { name: "E 300 Diesel", hp: "113 hp" },
+      { name: "E 300 Turbodiesel", hp: "147 hp" },
     ],
     "Mercedes-Benz-E-Class-W210 (1995-2002)": [
       { name: "E 200", hp: "136 hp" },
+      { name: "E 200 Kompressor", hp: "136 hp" },
+      { name: "E 230", hp: "136 hp" },
       { name: "E 240", hp: "170 hp" },
+      { name: "E 280", hp: "136 hp" },
       { name: "E 320", hp: "224 hp" },
+      { name: "E 420", hp: "136 hp" },
       { name: "E 430", hp: "279 hp" },
+      { name: "E 36 AMG", hp: "354 hp" },
+      { name: "E 50 AMG", hp: "354 hp" },
       { name: "E 55 AMG", hp: "354 hp" },
+      { name: "E 60 AMG", hp: "354 hp" },
+      { name: "E 200 Diesel", hp: "354 hp" },
+      { name: "E 200 CDI", hp: "143 hp" },
+      { name: "E 220 Diesel", hp: "354 hp" },
       { name: "E 220 CDI", hp: "143 hp" },
+      { name: "E 250 Diesel", hp: "354 hp" },
+      { name: "E 250 Turbodiesel", hp: "354 hp" },
       { name: "E 270 CDI", hp: "170 hp" },
+      { name: "E 290 Turbodiesel", hp: "354 hp" },
+      { name: "E 300 Diesel", hp: "354 hp" },
+      { name: "E 300 Turbodiesel", hp: "354 hp" },
       { name: "E 320 CDI", hp: "197 hp" }
     ],
     "Mercedes-Benz-E-Class-W211 (2002-2009)": [
       { name: "E 200 Kompressor", hp: "163-184 hp" },
+      { name: "E 200 NGT BlueEFFICIENCY", hp: "177 hp" },
+      { name: "E 230", hp: "177 hp" },
       { name: "E 240", hp: "177 hp" },
+      { name: "E 280", hp: "177 hp" },
       { name: "E 320", hp: "224 hp" },
       { name: "E 350", hp: "272 hp" },
+      { name: "E 350 CGI", hp: "272 hp" },
       { name: "E 500", hp: "306-388 hp" },
       { name: "E 55 AMG", hp: "476 hp" },
       { name: "E 63 AMG", hp: "514 hp" },
+      { name: "E 200 CDI", hp: "150-170 hp" },
       { name: "E 220 CDI", hp: "150-170 hp" },
       { name: "E 270 CDI", hp: "177 hp" },
-      { name: "E 320 CDI", hp: "204-224 hp" }
+      { name: "E 280 CDI", hp: "150-170 hp" },
+      { name: "E 300/320 BlueTEC", hp: "150-170 hp" },
+      { name: "E 320 CDI", hp: "204-224 hp" },
+      { name: "E 400 CDI", hp: "204-224 hp" },
+      { name: "E 420 CDI", hp: "204-224 hp" },
     ],
     "Mercedes-Benz-E-Class-W212 (2009-2016)": [
+      { name: "E 180", hp: "184 hp" },
       { name: "E 200", hp: "184 hp" },
+      { name: "E 200 NGT BlueEFFICIENCY", hp: "184 hp" },
       { name: "E 250", hp: "204 hp" },
+      { name: "E 300", hp: "204 hp" },
       { name: "E 350", hp: "292-306 hp" },
+      { name: "E 400", hp: "204 hp" },
+      { name: "E 400 Hybrid", hp: "204 hp" },
       { name: "E 500", hp: "388-408 hp" },
+      { name: "E 63 AMG", hp: "585 hp" },
       { name: "E 63 AMG S", hp: "585 hp" },
-      { name: "E 200 CDI", hp: "136 hp" },
-      { name: "E 220 CDI", hp: "170 hp" },
-      { name: "E 250 CDI", hp: "204 hp" },
-      { name: "E 350 CDI", hp: "231-265 hp" },
-      { name: "E 350 BlueTEC", hp: "231-265 hp" }
+      { name: "E 200 CDI / BlueTEC", hp: "136 hp" },
+      { name: "E 220 CDI / BlueTEC", hp: "170 hp" },
+      { name: "E 250 CDI / BlueTEC", hp: "204 hp" },
+      { name: "E 300 BlueTEC HYBRID", hp: "136 hp" },
+      { name: "E 300 CDI / BlueTEC", hp: "231-265 hp" },
+      { name: "E 350 CDI BlueEfficiency", hp: "231-265 hp" },
+      { name: "E 350 BlueTEC", hp: "292-306 hp" },
     ],
     "Mercedes-Benz-E-Class-W213 (2016-2023)": [
+      { name: "E 180", hp: "184-197 hp" },
       { name: "E 200", hp: "184-197 hp" },
+      { name: "E 250", hp: "184-197 hp" },
       { name: "E 300", hp: "245-258 hp" },
+      { name: "E 300 e", hp: "245-258 hp" },
+      { name: "E 350", hp: "245-258 hp" },
+      { name: "E 350 e", hp: "245-258 hp" },
       { name: "E 400", hp: "333-367 hp" },
       { name: "E 450", hp: "333-367 hp" },
       { name: "E 43 AMG", hp: "401 hp" },
       { name: "E 53 AMG", hp: "435 hp" },
       { name: "E 63 S AMG", hp: "612 hp" },
+      { name: "E 200 d", hp: "194 hp" },
       { name: "E 220 d", hp: "194 hp" },
+      { name: "E 300 d", hp: "194 hp" },
+      { name: "E 300 de", hp: "194 hp" },
       { name: "E 350 d", hp: "258-286 hp" },
       { name: "E 400 d", hp: "340 hp" },
-      { name: "E 300 e", hp: "320 hp" }
     ],
     "Mercedes-Benz-E-Class-W214 (2023-present)": [
       { name: "E 200", hp: "204 hp" },
+      { name: "E 300", hp: "204 hp" },
       { name: "E 300 e", hp: "313 hp" },
+      { name: "E 350", hp: "204 hp" },
       { name: "E 400 e", hp: "381 hp" },
       { name: "E 450", hp: "381 hp" },
+      { name: "E 53 AMG Hybrid", hp: "204 hp" },
+      { name: "E 200 d", hp: "197 hp" },
       { name: "E 220 d", hp: "197 hp" },
+      { name: "E 300 d", hp: "197 hp" },
+      { name: "E 300 de", hp: "197 hp" },
       { name: "E 450 d", hp: "367 hp" }
     ],
     "Mercedes-Benz-E-Class-C207/A207 (2009-2017)": [
       { name: "E 200 CGI", hp: "184 hp" },
+      { name: "E 200", hp: "184 hp" },
       { name: "E 250 CGI", hp: "204 hp" },
+      { name: "E 250", hp: "184 hp" },
+      { name: "E 300", hp: "184 hp" },
       { name: "E 350 CGI", hp: "292 hp" },
+      { name: "E 400", hp: "388-408 hp" },
       { name: "E 500", hp: "388-408 hp" },
+      { name: "E 550", hp: "388-408 hp" },
       { name: "E 220 CDI", hp: "170 hp" },
       { name: "E 250 CDI", hp: "204 hp" },
-      { name: "E 350 CDI", hp: "231-265 hp" }
+      { name: "E 250 BlueTEC", hp: "204 hp" },
+      { name: "E 350 CDI", hp: "231-265 hp" },
+      { name: "E 350 BlueTEC", hp: "204 hp" },
     ],
     "Mercedes-Benz-E-Class-C238/A238 (2017-2023)": [
       { name: "E 200", hp: "184 hp" },
       { name: "E 300", hp: "245 hp" },
+      { name: "E 350", hp: "245 hp" },
       { name: "E 400", hp: "333-367 hp" },
       { name: "E 450", hp: "333-367 hp" },
       { name: "E 53 AMG", hp: "435 hp" },
+      { name: "E 200 d", hp: "194 hp" },
       { name: "E 220 d", hp: "194 hp" },
+      { name: "E 300 d", hp: "194 hp" },
+      { name: "E 350 d", hp: "194 hp" },
       { name: "E 400 d", hp: "340 hp" }
     ],
   
     // S-Class
     "Mercedes-Benz-S-Class-W140 (1991-1998)": [
+      { name: "S 280", hp: "231 hp" },
       { name: "S 320", hp: "231 hp" },
       { name: "S 420", hp: "279 hp" },
       { name: "S 500", hp: "320 hp" },
@@ -303,52 +381,67 @@ export const mercedesEngineTypes = {
       { name: "S 350 Turbodiesel", hp: "150 hp" }
     ],
     "Mercedes-Benz-S-Class-W220 (1998-2005)": [
+      { name: "S 280", hp: "231 hp" },
       { name: "S 320", hp: "224 hp" },
+      { name: "S 350", hp: "224 hp" },
       { name: "S 430", hp: "279 hp" },
       { name: "S 500", hp: "306 hp" },
       { name: "S 600", hp: "367-500 hp" },
       { name: "S 55 AMG", hp: "360-500 hp" },
+      { name: "S 65 AMG", hp: "360-500 hp" },
       { name: "S 320 CDI", hp: "197-204 hp" },
       { name: "S 400 CDI", hp: "250-260 hp" }
     ],
     "Mercedes-Benz-S-Class-W221 (2005-2013)": [
+      { name: "S 280", hp: "231 hp" },
+      { name: "S 300", hp: "231 hp" },
       { name: "S 350", hp: "272-306 hp" },
+      { name: "S 400 Hybrid", hp: "231 hp" },
+      { name: "S 450", hp: "388-435 hp" },
       { name: "S 500", hp: "388-435 hp" },
       { name: "S 600", hp: "517 hp" },
       { name: "S 63 AMG", hp: "525-544 hp" },
       { name: "S 65 AMG", hp: "612 hp" },
+      { name: "S 250 CDI", hp: "235-258 hp" },
       { name: "S 320 CDI", hp: "235-258 hp" },
       { name: "S 350 CDI", hp: "235-258 hp" },
-      { name: "S 420 CDI", hp: "320 hp" }
+      { name: "S 420 CDI", hp: "320 hp" },
+      { name: "S 450 CDI", hp: "320 hp" },
     ],
     "Mercedes-Benz-S-Class-W222 (2013-2020)": [
       { name: "S 400", hp: "333-367 hp" },
+      { name: "S 400 Hybrid", hp: "333-367 hp" },
       { name: "S 450", hp: "333-367 hp" },
       { name: "S 500", hp: "455-469 hp" },
+      { name: "S 500 e", hp: "455-469 hp" },
       { name: "S 560", hp: "455-469 hp" },
+      { name: "S 560 e", hp: "455-469 hp" },
       { name: "S 600", hp: "530 hp" },
       { name: "S 63 AMG", hp: "585-612 hp" },
       { name: "S 65 AMG", hp: "630 hp" },
+      { name: "S 300 h", hp: "258-286 hp" },
       { name: "S 350 d", hp: "258-286 hp" },
       { name: "S 400 d", hp: "340 hp" },
-      { name: "S 500 e", hp: "442 hp" }
     ],
     "Mercedes-Benz-S-Class-W223 (2020-present)": [
       { name: "S 450", hp: "367 hp" },
+      { name: "S 450 e", hp: "367 hp" },
       { name: "S 500", hp: "435 hp" },
       { name: "S 580", hp: "503 hp" },
+      { name: "S 580 e", hp: "510 hp" },
       { name: "S 680 Maybach", hp: "612 hp" },
       { name: "S 63 E Performance", hp: "802 hp" },
       { name: "S 350 d", hp: "286 hp" },
       { name: "S 400 d", hp: "330 hp" },
       { name: "S 450 d", hp: "367 hp" },
-      { name: "S 580 e", hp: "510 hp" }
     ],
     "Mercedes-Benz-S-Class-C217/A217 (2014-2020)": [
-      { name: "S 500 Coupe", hp: "455-469 hp" },
-      { name: "S 560 Coupe", hp: "455-469 hp" },
-      { name: "S 63 AMG Coupe", hp: "585-612 hp" },
-      { name: "S 65 AMG Coupe", hp: "630 hp" }
+      { name: "S 400", hp: "455-469 hp" },
+      { name: "S 450", hp: "455-469 hp" },
+      { name: "S 500", hp: "455-469 hp" },
+      { name: "S 560", hp: "455-469 hp" },
+      { name: "S 63 AMG", hp: "585-612 hp" },
+      { name: "S 65 AMG", hp: "630 hp" }
     ],
   
     // Maybach
@@ -366,7 +459,10 @@ export const mercedesEngineTypes = {
     "Mercedes-Benz-CL-Class-C140 (1992-1998)": [
       { name: "CL 420", hp: "279 hp" },
       { name: "CL 500", hp: "320 hp" },
-      { name: "CL 600", hp: "394 hp" }
+      { name: "CL 600", hp: "394 hp" },
+      { name: "CL 60 AMG", hp: "394 hp" },
+      { name: "CL 70 AMG", hp: "394 hp" },
+      { name: "CL 73 AMG", hp: "394 hp" },
     ],
     "Mercedes-Benz-CL-Class-C215 (1999-2006)": [
       { name: "CL 500", hp: "306 hp" },
@@ -383,29 +479,33 @@ export const mercedesEngineTypes = {
   
     // CLK
     "Mercedes-Benz-CLK-Class-C208/A208 (1997-2003)": [
+      { name: "CLK 200", hp: "218 hp" },
       { name: "CLK 200 Kompressor", hp: "163-192 hp" },
       { name: "CLK 230 Kompressor", hp: "193-197 hp" },
       { name: "CLK 320", hp: "218 hp" },
       { name: "CLK 430", hp: "279 hp" },
-      { name: "CLK 55 AMG", hp: "347 hp" }
+      { name: "CLK 55 AMG", hp: "347 hp" },
+      { name: "CLK GTR", hp: "279 hp" },
     ],
-    "Mercedes-Benz-CLK-Class-C209/A209 (2002-2010)": [
+    "Mercedes-Benz-CLK-Class-C209/A209 (2002-2009)": [
       { name: "CLK 200 Kompressor", hp: "163-184 hp" },
+      { name: "CLK 200 CGI", hp: "163-184 hp" },
       { name: "CLK 240", hp: "170 hp" },
       { name: "CLK 280", hp: "231 hp" },
-      { name: "CLK 300", hp: "231 hp" },
       { name: "CLK 320", hp: "218 hp" },
       { name: "CLK 350", hp: "272 hp" },
       { name: "CLK 500", hp: "306-388 hp" },
       { name: "CLK 55 AMG", hp: "367 hp" },
       { name: "CLK 63 AMG", hp: "481 hp" },
+      { name: "CLK DTM AMG", hp: "481 hp" },
       { name: "CLK 220 CDI", hp: "150 hp" },
       { name: "CLK 270 CDI", hp: "170 hp" },
       { name: "CLK 320 CDI", hp: "224 hp" }
     ],
   
     // CLS
-    "Mercedes-Benz-CLS-C219 (2004-2010)": [
+    "Mercedes-Benz-CLS-Class-C219 (2004-2010)": [
+      { name: "CLS 280", hp: "272-292 hp" },
       { name: "CLS 350", hp: "272-292 hp" },
       { name: "CLS 500", hp: "306-388 hp" },
       { name: "CLS 55 AMG", hp: "476 hp" },
@@ -413,30 +513,34 @@ export const mercedesEngineTypes = {
       { name: "CLS 320 CDI", hp: "224 hp" },
       { name: "CLS 350 CDI", hp: "224 hp" },
     ],
-    "Mercedes-Benz-CLS-C218 (2011-2018)": [
+    "Mercedes-Benz-CLS-Class-C218 (2011-2018)": [
       { name: "CLS 350", hp: "306 hp" },
       { name: "CLS 400", hp: "333 hp" },
       { name: "CLS 500", hp: "408 hp" },
-      { name: "CLS 63 AMG S", hp: "585 hp" },
-      { name: "CLS 250 CDI", hp: "204 hp" },
-      { name: "CLS 250 d", hp: "204 hp" },
-      { name: "CLS 350 CDI", hp: "265 hp" },
-      { name: "CLS 350 d", hp: "265 hp" }
+      { name: "CLS 63 AMG", hp: "585 hp" },
+      { name: "CLS 220 d", hp: "408 hp" },
+      { name: "CLS 250 CDI / d", hp: "204 hp" },
+      { name: "CLS 350 CDI / d", hp: "265 hp" },
     ],
-    "Mercedes-Benz-CLS-C257 (2018-present)": [
+    "Mercedes-Benz-CLS-Class-C257 (2018-present)": [
       { name: "CLS 350", hp: "299 hp" },
       { name: "CLS 450", hp: "367 hp" },
       { name: "CLS 53 AMG", hp: "435 hp" },
+      { name: "CLS 220 d", hp: "340 hp" },
       { name: "CLS 300 d", hp: "245-265 hp" },
+      { name: "CLS 350 d", hp: "340 hp" },
       { name: "CLS 400 d", hp: "340 hp" }
     ],
   
     // CLE
     "Mercedes-Benz-CLE-Class-C236 (2023-present)": [
+      { name: "CLE 180", hp: "204 hp" },
       { name: "CLE 200", hp: "204 hp" },
       { name: "CLE 300", hp: "258 hp" },
+      { name: "CLE 300 e", hp: "258 hp" },
       { name: "CLE 450", hp: "381 hp" },
       { name: "CLE 53 AMG", hp: "449 hp" },
+      { name: "CLE 63 S E Performance", hp: "200 hp" },
       { name: "CLE 220 d", hp: "200 hp" }
     ],
   
@@ -503,15 +607,23 @@ export const mercedesEngineTypes = {
   
     // G-Class
     "Mercedes-Benz-G-Class-W463 (1990-2018)": [
-      { name: "G 320", hp: "210-215 hp" },
-      { name: "G 500", hp: "296-422 hp" },
-      { name: "G 55 AMG", hp: "354-507 hp" },
-      { name: "G 63 AMG", hp: "544-571 hp" },
-      { name: "G 65 AMG", hp: "612-630 hp" },
-      { name: "G 270 CDI", hp: "156 hp" },
-      { name: "G 320 CDI", hp: "224 hp" },
-      { name: "G 350 d", hp: "245 hp" },
-      { name: "G 400 CDI", hp: "250 hp" }
+      { "name": "230 GE / G 230", "hp": "122-126 hp" },
+      { "name": "300 GE / G 300", "hp": "170-174 hp" },
+      { "name": "320 GE / G 320", "hp": "210 hp" },
+      { "name": "G 320 V6", "hp": "211-215 hp" },
+      { "name": "500 GE", "hp": "241 hp" },
+      { "name": "G 500 V8 M113", "hp": "292-296 hp" },
+      { "name": "G 500 / G 550 M273 & M176", "hp": "382-422 hp" },
+      { "name": "G 55 AMG", "hp": "349-507 hp" },
+      { "name": "G 63 AMG", "hp": "544-571 hp" },
+      { "name": "G 65 AMG", "hp": "612-630 hp" },
+      { "name": "250 GD", "hp": "84-94 hp" },
+      { "name": "300 GD / G 300 Diesel", "hp": "113-177 hp" },
+      { "name": "G 270 CDI", "hp": "143-156 hp" },
+      { "name": "G 300 CDI", "hp": "184-190 hp" },
+      { "name": "G 320 CDI / G 350 CDI / G 350 d", "hp": "211-245 hp" },
+      { "name": "G 400 CDI", "hp": "241-250 hp" },
+      { "name": "G 400 d", "hp": "330 hp" }
     ],
     "Mercedes-Benz-G-Class-W463 2nd Gen (2018-present)": [
       { name: "G 500", hp: "422 hp" },
@@ -525,28 +637,32 @@ export const mercedesEngineTypes = {
     "Mercedes-Benz-GLA-X156 (2013-2020)": [
       { name: "GLA 180", hp: "122 hp" },
       { name: "GLA 200", hp: "156 hp" },
+      { name: "GLA 220", hp: "156 hp" },
       { name: "GLA 250", hp: "211 hp" },
       { name: "GLA 45 AMG", hp: "360-381 hp" },
-      { name: "GLA 200 CDI", hp: "136 hp" },
-      { name: "GLA 200 d", hp: "136 hp" },
-      { name: "GLA 220 CDI", hp: "170-177 hp" },
-      { name: "GLA 220 d", hp: "170-177 hp" }
+      { name: "GLA 180 CDI / d", hp: "136 hp" },
+      { name: "GLA 200 CDI / d", hp: "136 hp" },
+      { name: "GLA 220 CDI / d", hp: "170-177 hp" },
     ],
     "Mercedes-Benz-GLA-H247 (2020-present)": [
       { name: "GLA 180", hp: "136 hp" },
       { name: "GLA 200", hp: "163 hp" },
+      { name: "GLA 220", hp: "163 hp" },
       { name: "GLA 250", hp: "224 hp" },
+      { name: "GLA 250 e", hp: "218 hp" },
       { name: "GLA 35 AMG", hp: "306 hp" },
+      { name: "GLA 45 AMG", hp: "421 hp" },
       { name: "GLA 45 S AMG", hp: "421 hp" },
+      { name: "GLA 180 d", hp: "150 hp" },
       { name: "GLA 200 d", hp: "150 hp" },
       { name: "GLA 220 d", hp: "190 hp" },
-      { name: "GLA 250 e", hp: "218 hp" }
     ],
   
     // GLB
-    "Mercedes-Benz-GLB-X247 (2019-present)": [
+    "Mercedes-Benz-GLB-X247 (2019-2025)": [
       { name: "GLB 180", hp: "136 hp" },
       { name: "GLB 200", hp: "163 hp" },
+      { name: "GLB 220", hp: "163 hp" },
       { name: "GLB 250", hp: "224 hp" },
       { name: "GLB 35 AMG", hp: "306 hp" },
       { name: "GLB 180 d", hp: "116 hp" },
@@ -556,14 +672,16 @@ export const mercedesEngineTypes = {
   
     // GLK
     "Mercedes-Benz-GLK-Class-X204 (2008-2015)": [
+      { name: "GLK 200", hp: "231 hp" },
+      { name: "GLK 250", hp: "231 hp" },
       { name: "GLK 280", hp: "231 hp" },
       { name: "GLK 300", hp: "231 hp" },
       { name: "GLK 350", hp: "272-306 hp" },
       { name: "GLK 200 CDI", hp: "143 hp" },
       { name: "GLK 220 CDI", hp: "170 hp" },
-      { name: "GLK 250 CDI", hp: "204 hp" },
+      { name: "GLK 250 BlueTEC", hp: "204 hp" },
       { name: "GLK 320 CDI", hp: "224-265 hp" },
-      { name: "GLK 350 CDI", hp: "224-265 hp" }
+      { name: "GLK 350 BlueTEC", hp: "224-265 hp" }
     ],
   
     // GLC
@@ -571,26 +689,38 @@ export const mercedesEngineTypes = {
       { name: "GLC 200", hp: "184-197 hp" },
       { name: "GLC 250", hp: "211 hp" },
       { name: "GLC 300", hp: "245-258 hp" },
+      { name: "GLC 300 e", hp: "320 hp" },
+      { name: "GLC 350 e", hp: "320 hp" },
       { name: "GLC 43 AMG", hp: "367-390 hp" },
+      { name: "GLC 63 AMG", hp: "510 hp" },
       { name: "GLC 63 S AMG", hp: "510 hp" },
+      { name: "GLC 200 d", hp: "170-194 hp" },
       { name: "GLC 220 d", hp: "170-194 hp" },
       { name: "GLC 250 d", hp: "204 hp" },
+      { name: "GLC 300 d", hp: "170-194 hp" },
+      { name: "GLC 300 de", hp: "170-194 hp" },
       { name: "GLC 350 d", hp: "258 hp" },
-      { name: "GLC 300 e", hp: "320 hp" }
+      { name: "GLC 400 d", hp: "258 hp" },
+      
     ],
     "Mercedes-Benz-GLC-X254 (2022-present)": [
       { name: "GLC 200", hp: "204 hp" },
       { name: "GLC 300", hp: "258 hp" },
+      { name: "GLC 300 e", hp: "313 hp" },
+      { name: "GLC 350 e", hp: "313 hp" },
+      { name: "GLC 400 e", hp: "313 hp" },
       { name: "GLC 43 AMG", hp: "421 hp" },
       { name: "GLC 63 S E Performance", hp: "680 hp" },
+      { name: "GLC 200 d", hp: "197 hp" },
       { name: "GLC 220 d", hp: "197 hp" },
       { name: "GLC 300 d", hp: "269 hp" },
+      { name: "GLC 300 de", hp: "269 hp" },
       { name: "GLC 450 d", hp: "367 hp" },
-      { name: "GLC 300 e", hp: "313 hp" }
     ],
   
     // ML / GLE
     "Mercedes-Benz-ML-Class-W163 (1997-2005)": [
+      { name: "ML 230", hp: "218 hp" },
       { name: "ML 320", hp: "218 hp" },
       { name: "ML 350", hp: "235 hp" },
       { name: "ML 430", hp: "272 hp" },
@@ -601,6 +731,7 @@ export const mercedesEngineTypes = {
     ],
     "Mercedes-Benz-ML-Class-W164 (2005-2011)": [
       { name: "ML 350", hp: "272 hp" },
+      { name: "ML 450 Hybrid", hp: "272 hp" },
       { name: "ML 500", hp: "306-388 hp" },
       { name: "ML 63 AMG", hp: "510 hp" },
       { name: "ML 280 CDI", hp: "190 hp" },
@@ -612,30 +743,40 @@ export const mercedesEngineTypes = {
     ],
     "Mercedes-Benz-ML-Class-W166 (2011-2015)": [
       { name: "ML 350", hp: "306 hp" },
+      { name: "ML 400", hp: "306 hp" },
       { name: "ML 500", hp: "408 hp" },
       { name: "ML 63 AMG", hp: "525-557 hp" },
-      { name: "ML 250 CDI", hp: "204 hp" },
-      { name: "ML 350 CDI", hp: "258 hp" }
+      { name: "ML 250 BlueTEC", hp: "204 hp" },
+      { name: "ML 300 BlueTEC", hp: "204 hp" },
+      { name: "ML 350 BlueTEC", hp: "204 hp" },
     ],
+
+
     "Mercedes-Benz-GLE-W166 (2015-2019)": [
+      { name: "GLE 350", hp: "333 hp" },
       { name: "GLE 400", hp: "333 hp" },
+      { name: "GLE 450 AMG", hp: "333 hp" },
       { name: "GLE 500", hp: "435 hp" },
+      { name: "GLE 500 e", hp: "442 hp" },
       { name: "GLE 43 AMG", hp: "367-390 hp" },
+      { name: "GLE 63 AMG", hp: "585 hp" },
       { name: "GLE 63 S AMG", hp: "585 hp" },
       { name: "GLE 250 d", hp: "204 hp" },
       { name: "GLE 350 d", hp: "258 hp" },
-      { name: "GLE 500 e", hp: "442 hp" }
     ],
     "Mercedes-Benz-GLE-V167 (2019-present)": [
+      { name: "GLE 350", hp: "367 hp" },
+      { name: "GLE 350 e", hp: "320 hp" },
       { name: "GLE 450", hp: "367 hp" },
       { name: "GLE 580", hp: "489 hp" },
       { name: "GLE 53 AMG", hp: "435 hp" },
+      { name: "GLE 63 AMG", hp: "612 hp" },
       { name: "GLE 63 S AMG", hp: "612 hp" },
       { name: "GLE 300 d", hp: "245-269 hp" },
       { name: "GLE 350 d", hp: "272 hp" },
+      { name: "GLE 350 de", hp: "320 hp" },
       { name: "GLE 400 d", hp: "330 hp" }, // Javítva
       { name: "GLE 450 d", hp: "367 hp" },
-      { name: "GLE 350 de", hp: "320 hp" }
     ],
   
     // GL / GLS
@@ -648,13 +789,17 @@ export const mercedesEngineTypes = {
       { name: "GL 450 CDI", hp: "306 hp" }
     ],
     "Mercedes-Benz-GL-Class-X166 (2012-2015)": [
+      { name: "GL 400", hp: "435 hp" },
+      { name: "GL 450", hp: "435 hp" },
       { name: "GL 500", hp: "435 hp" },
       { name: "GL 63 AMG", hp: "557 hp" },
-      { name: "GL 350 CDI", hp: "258 hp" }
+      { name: "GL 350 BlueTEC", hp: "258 hp" }
     ],
     "Mercedes-Benz-GLS-X166 (2016-2019)": [
       { name: "GLS 400", hp: "333 hp" },
+      { name: "GLS 450", hp: "333 hp" },
       { name: "GLS 500", hp: "455 hp" },
+      { name: "GLS 550", hp: "333 hp" },
       { name: "GLS 63 AMG", hp: "585 hp" },
       { name: "GLS 350 d", hp: "258 hp" }
     ],
@@ -680,13 +825,16 @@ export const mercedesEngineTypes = {
     "Mercedes-Benz-AMG GT-X290 (4-Door) (2018-present)": [
       { name: "GT 43", hp: "367 hp" },
       { name: "GT 53", hp: "435 hp" },
+      { name: "GT 63", hp: "435 hp" },
       { name: "GT 63 S", hp: "639 hp" },
       { name: "GT 63 S E Performance", hp: "843 hp" }
     ],
     "Mercedes-Benz-AMG GT-C192 (2023-present)": [
+      { name: "GT 43 AMG (I4)", hp: "421 hp" },
       { name: "GT 55 AMG", hp: "476 hp" },
       { name: "GT 63 AMG", hp: "585 hp" },
-      { name: "GT 43 AMG (I4)", hp: "421 hp" }
+      { name: "GT 63 PRO AMG", hp: "585 hp" },
+      { name: "GT 63 S E Performance", hp: "585 hp" },
     ],
     "Mercedes-Benz-SLR McLaren-C199 (2003-2010)": [
       { name: "SLR McLaren", hp: "626 hp" },

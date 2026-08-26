@@ -76,8 +76,8 @@ export function CatalogSearcher({ onSearch }: CatalogSearcherProps) {
 
   // Dízel detektálás (bővített listával a biztonság kedvéért)
   const isDiesel = (name: string) => {
-    if (name.includes("Hybrid") || name.includes("TFSI")) return false
-    const dieselIndicators = ["TDI", "CDI", "d", "D-4D","sd", "i-CTDi", "i-DTEC", "BlueTEC", "Turbodiesel", "dCi", "HDi", "CDTI", "Diesel", "TD", "D", "MultiJet" , "JDTM", "JTD"];
+    if (name.includes("Hybrid") || name.includes("TFSI") || name.includes("Maybach")) return false
+    const dieselIndicators = ["TDI", "CDI", "d", "D-4D","sd", "de", "h", "i-CTDi", "i-DTEC", "BlueTEC", "Turbodiesel", "dCi", "HDi", "CDTI", "Diesel", "TD", "D", "MultiJet" , "JDTM", "JTD"];
     return dieselIndicators.some(indicator => {
       // Speciális ellenőrzés a sima "d" betűre (hogy csak szó végén vagy szám után számítson)
       if (indicator === "d") {

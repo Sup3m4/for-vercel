@@ -5,11 +5,15 @@ import { useGLTF, Html, useProgress, useAnimations, OrbitControls, ContactShadow
 import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRight, Sun, Moon, Lightbulb, LightbulbOff } from 'lucide-react';
 import * as THREE from 'three'; 
 import { Center } from '@react-three/drei';
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { CAR_MODEL_CONFIGS } from '../configs/carModels';
 import { audiEngineProfiles } from '../data/carDatabase/brands/audi/engineprofiles';
 import { bmwEngineProfiles } from '@/data/carDatabase/brands/bmw/engineprofiles';
 import { mercedesEngineProfiles } from '@/data/carDatabase/brands/mercedes-benz/engineprofiles';
+
+const XOR_KEY = 0xAA;
 
 function Loader() {
   const { progress } = useProgress();
@@ -421,10 +425,71 @@ function ViewerStatus({ message }: { message: string }) {
 
 // --- MODELL KOMPONENS ---
 function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, isHeadlightOn = true, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
-  const { scene, animations } = useGLTF(path, '/draco/') as any;
+  
+  const [scene, setScene] = useState<THREE.Group | null>(null);
+  const [animations, setAnimations] = useState<THREE.AnimationClip[]>([]);
+
+  useEffect(() => {
+    if (!path) return;
+    let isMounted = true;
+
+    async function loadSecureModel() {
+      try {
+        const secureUrl = path.replace(/\.glb$/i, ".dat");
+
+        const response = await fetch(secureUrl);
+        
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("text/html") || !response.ok) {
+          console.error(`❌ A titkosított modell nem található vagy érvénytelen: ${secureUrl}`);
+          return;
+        }
+
+        const arrayBuffer = await response.arrayBuffer();
+
+        // 3. XOR Visszafejtés (Dekódolás a memóriában)
+        const bytes = new Uint8Array(arrayBuffer);
+        for (let i = 0; i < bytes.length; i++) {
+          bytes[i] = bytes[i] ^ XOR_KEY;
+        }
+
+        // 4. Loader és Draco beállítása
+        const loader = new GLTFLoader();
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath('/draco/'); // Itt olvassa ki a dekompresszort
+        loader.setDRACOLoader(dracoLoader);
+
+        // 5. Parsolás
+        loader.parse(
+          bytes.buffer, 
+          "", 
+          (gltf) => {
+            if (isMounted) {
+              setScene(gltf.scene);
+              setAnimations(gltf.animations || []);
+            }
+          },
+          (error) => {
+            console.error("❌ GLTF Parse hiba:", error);
+          }
+        );
+      } catch (err) {
+        console.error("Biztonsági betöltési hiba:", err);
+      }
+    }
+
+    loadSecureModel();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [path]);
+
   const modelRef = useRef<THREE.Group>(null);
   const [smartHotspots, setSmartHotspots] = useState<Hotspot3D[]>([]);
   const [modelRadiusState, setModelRadiusState] = useState(4);
+
+  
   
   // 1. Betöltjük az animációkat a Blenderből
   const { actions } = useAnimations(animations, modelRef);
@@ -787,41 +852,40 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
   const handlePrev = (e: any) => { e.stopPropagation(); if (!smartHotspots.length) return; const count = smartHotspots.length; setActiveSpot(activeSpot === null ? 0 : (activeSpot - 1 + count) % count); };
   const handleNext = (e: any) => { e.stopPropagation(); if (!smartHotspots.length) return; const count = smartHotspots.length; setActiveSpot(activeSpot === null ? 0 : (activeSpot + 1) % count); };
 
+  if (!scene) return null;
+
   return (
     <group>
       <Center>
-      <primitive 
-    ref={modelRef} 
-    object={scene} 
-    scale={scale} 
-    rotation={rotation}
-    setDetectedHeadlights={setDetectedHeadlights} // <-- ÚJ
-    setDetectedTaillights={setDetectedTaillights} // <-- ÚJ
-    setDetectedRdllight={setDetectedDrllight}
-    onClick={(e: any) => {
-      e.stopPropagation(); // Megakadályozza, hogy a kamera elforogjon kattintáskor
-      
-      // A koordináták kinyerése és kerekítése 2 tizedesjegyre
-      const { x, y, z } = e.point;
-      const formattedX = Number(x.toFixed(2));
-      const formattedY = Number(y.toFixed(2));
-      const formattedZ = Number(z.toFixed(2));
-    
-      // Olyan formátum, amit egyből beilleszthetsz a kódba
-      const clipboardString = `{ x: ${formattedX}, y: ${formattedY}, z: ${formattedZ} }`;
-    
-      // MÁSOLÁS VÁGÓLAPRA
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(clipboardString)
-          .then(() => {
-            console.log("✅ Vágólapra másolva:", clipboardString);
-            // Opcionális: Feldobhatsz egy kis értesítést is a usernek a konzolon kívül
-          })
-          .catch(err => {
-            console.error("❌ Hiba a másolásnál:", err);
-          });
-      }
-    }}
+      {scene && (
+          <primitive 
+            ref={modelRef} 
+            object={scene} 
+            scale={scale} 
+            rotation={rotation}
+            setDetectedHeadlights={setDetectedHeadlights}
+            setDetectedTaillights={setDetectedTaillights}
+            setDetectedRdllight={setDetectedDrllight}
+            onClick={(e: any) => {
+              e.stopPropagation();
+              
+              const { x, y, z } = e.point;
+              const formattedX = Number(x.toFixed(2));
+              const formattedY = Number(y.toFixed(2));
+              const formattedZ = Number(z.toFixed(2));
+            
+              const clipboardString = `{ x: ${formattedX}, y: ${formattedY}, z: ${formattedZ} }`;
+            
+              if (navigator.clipboard) {
+                navigator.clipboard.writeText(clipboardString)
+                  .then(() => {
+                    console.log("✅ Vágólapra másolva:", clipboardString);
+                  })
+                  .catch(err => {
+                    console.error("❌ Hiba a másolásnál:", err);
+                  });
+              }
+            }}
 >
             {showHotspots && smartHotspots.map((spot: Hotspot3D, index: number) => {
                 const isTop = spot.y > 0.3;
@@ -889,6 +953,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
                 )
             })}
         </primitive>
+        )}
         </Center>
       <CameraController activeSpot={activeSpot} hotspots={smartHotspots} modelRadius={modelRadiusState} modelRef={modelRef} />
     </group>
@@ -918,17 +983,21 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   const activeProfile = useMemo(() => {
     if (incomingProfile) return incomingProfile;
   
-    // Összefűzzük az Audi és BMW listákat egy közös keresőfelületté
-    const allProfiles = [...audiEngineProfiles, ...bmwEngineProfiles, ...mercedesEngineProfiles];
-  
+    // 1. Összefűzzük, majd azonnal kiszűrjük az érvénytelen (undefined/null) elemeket
+    const allProfiles = [
+      ...audiEngineProfiles, 
+      ...bmwEngineProfiles, 
+      ...mercedesEngineProfiles
+    ].filter(p => p !== undefined && p !== null); // <--- EZ A JAVÍTÁS
+   
+    // 2. Most már biztosan csak valid objektumok vannak a tömbben
     return allProfiles.find(p => {
       const dbFileName = p.model3DPath?.split('/').pop()?.toLowerCase();
       const currentFileName = modelPath.split('/').pop()?.toLowerCase();
       
-      // Marad az eredeti szigorú feltétel: név egyezés ÉS author megléte
       return dbFileName === currentFileName && p.author; 
     });
-  }, [incomingProfile, modelPath]);
+  }, [incomingProfile, modelPath, audiEngineProfiles, bmwEngineProfiles, mercedesEngineProfiles]);
 
   const authorCredit = activeProfile?.author
   const activeForwardDir = modelForwardDir ?? activeProfile?.modelForwardDir ?? 1;

@@ -11,7 +11,7 @@ export const mercedesGenerations = {
       "W246 (2011-2019)",
       "W247 (2019-present)"
     ],
-    "Mercedes-Benz-CLA": [
+    "Mercedes-Benz-CLA-Class": [
       "C117 (2013-2019)",
       "C118 (2019-present)"
     ],
@@ -62,9 +62,9 @@ export const mercedesGenerations = {
     ],
     "Mercedes-Benz-CLK-Class": [
       "C208/A208 (1997-2003)",
-      "C209/A209 (2002-2010)"
+      "C209/A209 (2002-2009)"
     ],
-    "Mercedes-Benz-CLS": [
+    "Mercedes-Benz-CLS-Class": [
       "C219 (2004-2010)",
       "C218 (2011-2018)",
       "C257 (2018-present)"
@@ -97,7 +97,7 @@ export const mercedesGenerations = {
       "H247 (2020-present)"
     ],
     "Mercedes-Benz-GLB": [
-      "X247 (2019-present)"
+      "X247 (2019-2025)"
     ],
     "Mercedes-Benz-GLK-Class": [
       "X204 (2008-2015)"

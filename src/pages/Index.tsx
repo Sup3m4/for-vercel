@@ -37,7 +37,8 @@ const Index = () => {
   // --- 1. URL MONITORING & PROFILE LOADING ---
   useEffect(() => {
     if (engineId) {
-      const profile = engineProfiles.find(p => p.id === engineId);
+      // p?.id-ra javítva, így ha a tömbben undefined van, nem száll el a React
+      const profile = engineProfiles.find(p => p?.id === engineId);
       if (profile) {
         setSelectedProfile(profile);
         setViewState("profile");
@@ -75,9 +76,10 @@ const Index = () => {
     specificTorque?: string,
     profileId?: string
   ) => {
+    // A p?. biztosítja, hogy ha a p undefined, ne omoljon össze, hanem ugorjon a következőre
     const baseProfile = profileId 
-      ? engineProfiles.find(p => p.id === profileId)
-      : engineProfiles.find(p => p.engineCode === engineCode);
+      ? engineProfiles.find(p => p?.id === profileId)
+      : engineProfiles.find(p => p?.engineCode === engineCode);
   
     if (baseProfile) {
       navigate(`/engine/${baseProfile.id}`);
@@ -92,29 +94,31 @@ const Index = () => {
 
     let profile;
     
-    // 1. TÖKÉLETES EGYEZÉS: Ha kaptunk egyedi ID-t a gombból, azt tölti be!
+    // Normalizáljuk a keresett motorkódot (kiszedjük a szóközöket, kötőjeleket, nagybetűsítjük)
+    const cleanSearchCode = engineCode.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
+    
+    // 1. TÖKÉLETES EGYEZÉS ID ALAPJÁN
     if (profileId) {
-      profile = engineProfiles.find(p => p.id === profileId || p.profileId === profileId);
+      profile = engineProfiles.find(p => p?.id === profileId || p?.profileId === profileId);
     }
     
-    // 2. OKOS TARTALÉK: Csak akkor, ha eleve nem volt profileId
-    if (!profile && !profileId) {
-      profile = engineProfiles.find(p => 
-        p.engineCode === engineCode && 
-        model.includes(p.model)
-      );
+    // 2. RUGALMAS KERESÉS MOTORKÓD ALAPJÁN (szóközök és írásjelek nélkül)
+    if (!profile) {
+      profile = engineProfiles.find(p => {
+        if (!p?.engineCode) return false;
+        const cleanProfileCode = p.engineCode.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
+        return cleanProfileCode === cleanSearchCode;
+      });
     }
 
-    // FIGYELEM: A régi, "ha minden kötél szakad, tölts be egy random AEB-t" keresést KITÖRÖLTEM!
-
+    // Ha megvan a profil, azonnal megnyitjuk!
     if (profile) {
       navigate(`/engine/${profile.id}`);
       setSelectedProfile(profile);
       setViewState("profile");
     } else {
-      // EZT A HIBÁT FOGOD LÁTNI, HA AZ ADATBÁZISBÓL HIÁNYZIK AZ AUTÓ!
-      console.error(`Profil nem található: ${profileId || engineCode}`);
-      alert(`Hiba! A rendszer kereste az '${profileId}' azonosítójú autót, de nem találja a carDatabase.ts-ben!\n\nBiztos, hogy importáltad az a6c4-a6c9.ts fájlt a carDatabase-be?`);
+      // Csak akkor dob át a szelektorra, ha tényleg nincs 3D profil a rendszerben
+      console.warn(`3D profil nem található ehhez a motorkódhoz: ${engineCode}`);
       setViewState("engine-code");
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -174,11 +178,20 @@ const Index = () => {
 
           {/* 2. SEARCH TOOLS (Quick & Catalog) */}
           <section className="py-8 md:py-12">
-            <div className="container mx-auto px-4">
-              <QuickSearch onEngineCodeFound={handleQuickSearch} />
-              <CatalogSearcher onSearch={handleSearchEngineType} />
-            </div>
-          </section>
+  <div className="container mx-auto px-4">
+    <QuickSearch 
+      onEngineCodeFound={handleQuickSearch} 
+      onSelectVehicleConfig={(brand, model, generation, engineType) => {
+        // Beállítjuk a jármű adatait a state-be
+        setVehicleSelection({ brand, model, generation, engineType });
+        // Átjövünk a kézi motorkód-választó nézetre
+        setViewState("engine-code");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
+    />
+    <CatalogSearcher onSearch={handleSearchEngineType} />
+  </div>
+</section>
 
           {/* --- ENGINE COMPARATOR SECTION --- */}
 <section className="py-20 border-y border-slate-100 bg-white">
