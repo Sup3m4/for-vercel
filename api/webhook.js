@@ -1,10 +1,10 @@
-const Stripe = require('stripe');
-const { createClerkClient } = require('@clerk/backend');
+import Stripe from 'stripe';
+import { createClerkClient } from '@clerk/backend';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY });
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).end();
   }
@@ -33,4 +33,4 @@ module.exports = async function handler(req, res) {
   }
 
   return res.status(200).json({ received: true });
-};
+}

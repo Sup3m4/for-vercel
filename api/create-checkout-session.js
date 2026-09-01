@@ -1,8 +1,8 @@
-const Stripe = require('stripe');
+import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -39,4 +39,4 @@ module.exports = async function handler(req, res) {
     console.error('Stripe hiba:', err);
     return res.status(500).json({ error: err.message });
   }
-};
+}
