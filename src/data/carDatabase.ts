@@ -269,15 +269,15 @@ export interface EngineTypeEntry {
 
 export const carDatabase = {
   brands: [
-    "BMW", "Mercedes-Benz", "Audi", "Volkswagen", "Porsche", 
-    "Toyota", "Honda", "Nissan", "Ford", "Chevrolet",
-    "Mazda", "Subaru", "Lexus", "Jaguar", "Land Rover",
-    "Alfa Romeo", "Maserati", "Ferrari", "Lamborghini", "McLaren",
-    "Volvo", "Saab", "Mini", "Fiat", "Peugeot",
-    "Renault", "Citroen", "Opel", "Skoda", "Seat", 
-    "Suzuki", "Hyundai", "Kia", "Dacia", "Mitsubishi", "Jeep", 
-    "Lancia", "Smart", "Dodge", "Cadillac", "Chrysler", "MG", 
-  ],
+    "Audi", "BMW",  "Mercedes-Benz", 
+  ], //"Volkswagen", "Porsche", "Toyota", "Honda", "Nissan", "Ford", "Chevrolet",  "Mazda", "Subaru", "Lexus", "Jaguar", "Land Rover",
+  //"Alfa Romeo", "Maserati", "Ferrari", "Lamborghini", "McLaren",
+  //"Volvo", "Saab", "Mini", "Fiat", "Peugeot",
+  //"Renault", "Citroen", "Opel", "Skoda", "Seat",  
+  //"Suzuki", "Hyundai", "Kia", "Dacia", "Mitsubishi", "Jeep", 
+  //"Lancia", "Smart", "Dodge", "Cadillac", "Chrysler", "MG", 
+ 
+  
   
   models: {
     "BMW": bmwModels,

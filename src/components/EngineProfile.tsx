@@ -1086,7 +1086,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                     modelPath={profile.model3DPath} 
                     hotspots={profile.model3DHotspots}
                     scale={profile.model3DScale}
-                    rotation={profile.model3DRotation}
+                    rotation={profile.model3DRotation as [number, number, number]}
                     isPremium={isPremiumUnlocked}
                     onUnlock={unlockPremium}
                   />
