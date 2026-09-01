@@ -1,15 +1,14 @@
-import Stripe from 'stripe';
+const Stripe = require('stripe');
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   const { clerkUserId, productType } = req.body;
 
-  // Itt a Stripe Dashboardon létrehozott termékeid ár azonosítói (Price IDs) szerepelnek
   const priceMapping = {
     audi: process.env.STRIPE_AUDI_PRICE_ID,
     bmw: process.env.STRIPE_BMW_PRICE_ID,
@@ -30,7 +29,7 @@ export default async function handler(req, res) {
       success_url: `${req.headers.origin}/?success=true`,
       cancel_url: `${req.headers.origin}/`,
       metadata: {
-        clerkUserId: clerkUserId, // <-- ITT TÁROLJUK A CLERK ID-T A STRIPE-BAN!
+        clerkUserId: clerkUserId,
         productType: productType,
       },
     });
@@ -40,4 +39,4 @@ export default async function handler(req, res) {
     console.error('Stripe hiba:', err);
     return res.status(500).json({ error: err.message });
   }
-}
+};
