@@ -9,13 +9,14 @@ import {
 
 export function Features() {
   return (
-    <section id="features" className="py-24 bg-secondary/30">
+    // Átlátszó háttér, hogy látszódjon a DNS
+    <section id="features" className="py-24 bg-transparent relative z-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Intelligence That Matters
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Every CarDNA profile contains actionable data compiled from manufacturer
             documentation, workshop manuals, and real-world experience.
           </p>
@@ -68,12 +69,13 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="glass-card rounded-2xl p-6 hover-lift">
-      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+    // Sötét, elegáns üvegkártya fehér szöveggel
+    <div className="bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover-lift text-white shadow-2xl">
+      <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center mb-4">
         <Icon className="w-6 h-6 text-primary" />
       </div>
-      <h3 className="text-lg font-semibold text-foreground mb-2">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
+      <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+      <p className="text-slate-300 text-sm leading-relaxed">{description}</p>
     </div>
   );
 }

@@ -28,3 +28,5 @@ vin_cache.json
 "proxy-server.js" 
 "list-models.js" 
 ".env" 
+.vercel
+.env*

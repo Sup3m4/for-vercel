@@ -626,12 +626,11 @@ export function QuickSearch({ onEngineCodeFound, onSelectVehicleConfig }: QuickS
 return (
   <>
     <div className="w-full max-w-2xl mx-auto mb-8 relative z-50" ref={wrapperRef}>
-      {/* FONTOS: 'overflow-visible' kell, különben levágja a listát! */}
-      <div className="glass-card rounded-2xl p-4 md:p-6 relative overflow-visible transition-all">
+      <div className="bg-slate-900/70 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 md:p-6 relative overflow-visible transition-all shadow-2xl text-white">
         
-        <div className="flex items-center justify-center gap-2 mb-4">
+      <div className="flex items-center justify-center gap-2 mb-4">
           <Search className="w-5 h-5 text-primary" />
-          <h3 className="text-lg font-semibold text-foreground">Quick Search</h3>
+          <h3 className="text-lg font-semibold text-white">Quick Search</h3>
         </div>
 
         <div className="flex justify-center gap-2 mb-4">
@@ -648,8 +647,7 @@ return (
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                 onFocus={() => searchType === "code" && updateSearch(searchValue)} // ITT IS
                 placeholder={searchType === "code" ? "Type code (e.g. B58, BAM...)" : "Enter 17-digit VIN"}
-                className="w-full h-12 px-4 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/50 uppercase font-mono"
-                maxLength={searchType === "vin" ? 17 : 20}
+                className="w-full h-12 px-4 rounded-lg bg-slate-950/80 border border-white/20 text-white focus:ring-2 focus:ring-primary/50 uppercase font-mono placeholder:text-slate-400"                maxLength={searchType === "vin" ? 17 : 20}
               />
             
             {/* LEGÖRDÜLŐ LISTA */}

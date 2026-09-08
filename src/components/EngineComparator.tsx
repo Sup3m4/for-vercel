@@ -110,13 +110,13 @@ const EngineSearchField = ({ onSelect, placeholder }: { onSelect: (e: EngineMatc
           onChange={(e) => updateSearch(e.target.value)}
           onFocus={() => updateSearch(searchValue)}
           placeholder={placeholder}
-          className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-300 bg-white focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none font-mono uppercase text-lg shadow-sm transition-all"
+         className="w-full h-14 pl-12 pr-4 rounded-xl border border-border/50 bg-background/60 backdrop-blur-md focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none font-mono uppercase text-lg shadow-sm transition-all text-foreground"
         />
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-400" />
       </div>
 
       {showSuggestions && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-2xl z-[100] overflow-hidden max-h-[350px] overflow-y-auto custom-scrollbar ring-1 ring-black/5">
+       <div className="absolute top-full left-0 right-0 mt-2 bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl shadow-2xl z-[100] overflow-hidden max-h-[350px] overflow-y-auto custom-scrollbar">
           {suggestions.length > 0 ? (
             suggestions.map((s, i) => (
               <button 
@@ -166,8 +166,7 @@ const EngineDisplay = ({ engine, onReset, side }: { engine: EngineMatch, onReset
 
   return (
     <div className="animate-in fade-in zoom-in-95 duration-300 h-full w-full">
-      <div className="rounded-2xl p-6 relative overflow-hidden bg-slate-900 text-white shadow-2xl border border-white/10 h-full flex flex-col min-h-[400px]">
-        
+<div className="rounded-2xl p-6 relative overflow-hidden bg-slate-900/60 backdrop-blur-xl text-white shadow-2xl border border-white/10 h-full flex flex-col min-h-[400px]">        
         {/* Háttér ikon */}
         {!hasImage && (
           <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
@@ -756,10 +755,8 @@ export const EngineComparator = () => {
   return (
     <div className="w-full max-w-7xl mx-auto py-12 px-4 md:px-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 relative items-stretch mb-16">
-        <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white text-slate-950 rounded-full items-center justify-center font-black z-30 border-8 border-slate-50 shadow-2xl italic text-xl">VS</div>
-        
-        <div className={cn("min-h-[300px] transition-all", !engineA && "bg-slate-50/50 rounded-3xl p-8 border-2 border-dashed border-slate-200 flex flex-col items-center justify-center")}>
-          {engineA ? <EngineDisplay engine={engineA} onReset={() => setEngineA(null)} side="A" /> : (
+      <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-background/80 backdrop-blur-xl text-foreground rounded-full items-center justify-center font-black z-30 border-8 border-border/50 shadow-2xl italic text-xl">VS</div>        
+        <div className={cn("min-h-[300px] transition-all", !engineA && "bg-card/40 backdrop-blur-md rounded-3xl p-8 border-2 border-dashed border-border/50 flex flex-col items-center justify-center")}>          {engineA ? <EngineDisplay engine={engineA} onReset={() => setEngineA(null)} side="A" /> : (
             <div className="w-full max-w-md space-y-6 text-center">
               <div className="w-20 h-20 bg-blue-100/50 text-blue-600 rounded-3xl flex items-center justify-center mx-auto rotate-3 shadow-sm border border-blue-200/50">
                 <Car size={40} />
@@ -773,8 +770,7 @@ export const EngineComparator = () => {
           )}
         </div>
 
-        <div className={cn("min-h-[300px] transition-all", !engineB && "bg-slate-50/50 rounded-3xl p-8 border-2 border-dashed border-slate-200 flex flex-col items-center justify-center")}>
-          {engineB ? <EngineDisplay engine={engineB} onReset={() => setEngineB(null)} side="B" /> : (
+        <div className={cn("min-h-[300px] transition-all", !engineB && "bg-card/40 backdrop-blur-md rounded-3xl p-8 border-2 border-dashed border-border/50 flex flex-col items-center justify-center")}>          {engineB ? <EngineDisplay engine={engineB} onReset={() => setEngineB(null)} side="B" /> : (
             <div className="w-full max-w-md space-y-6 text-center">
               <div className="w-20 h-20 bg-red-100/50 text-red-600 rounded-3xl flex items-center justify-center mx-auto -rotate-3 shadow-sm border border-red-200/50">
                 <Car size={40} />
@@ -792,10 +788,8 @@ export const EngineComparator = () => {
       {/* ÖSSZEHASONLÍTÓ TÁBLÁZAT */}
       {engineA && engineB && (
         <div className="animate-in slide-in-from-bottom-10 duration-700">
-          <Card className="overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] border-0 rounded-3xl bg-white">
-            
-            <div className="grid grid-cols-3 text-center py-8 bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-40">
-               <div className="font-black text-2xl md:text-4xl px-4">{engineA.code}</div>
+<Card className="overflow-hidden shadow-2xl border border-border/50 rounded-3xl bg-card/30 backdrop-blur-2xl">            
+<div className="grid grid-cols-3 text-center py-8 bg-secondary/80 backdrop-blur-xl text-foreground border-b border-border/50 sticky top-0 z-40 shadow-sm">               <div className="font-black text-2xl md:text-4xl px-4">{engineA.code}</div>
                <div className="text-[10px] font-bold text-slate-400 self-center uppercase tracking-widest hidden md:block">Comparison Data</div>
                <div className="block md:hidden text-[10px] font-bold text-slate-400 self-center uppercase tracking-widest">VS</div>
                <div className="font-black text-2xl md:text-4xl px-4">{engineB.code}</div>

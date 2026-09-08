@@ -2,7 +2,9 @@ import { Dna } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="py-12 border-t border-border bg-secondary/20">
+    // A bg-secondary/20 helyett a glass-card-subtle osztályt kapja, 
+    // a keret pedig félhomályos lesz (border-border/50), akárcsak a header[cite: 29, 30].
+    <footer className="py-12 border-t border-border/50 glass-card-subtle">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}

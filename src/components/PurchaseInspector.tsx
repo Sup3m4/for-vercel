@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { BackgroundDNA } from "@/components/BackgroundDNA";
 import { ArrowLeft, ShieldCheck, Wrench, ChevronRight, AlertTriangle, RefreshCcw, Copy, Check, Undo2, SkipForward, AlertOctagon, Gauge, FileText, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -314,10 +315,12 @@ export default function PurchaseInspector() {
   const minorItems = allIssues.filter(item => item.severity === 'MEDIUM' || item.severity === 'LOW');
   const currentQuestion = activeProfile?.InspectionChecklist?.[currentStep];
 
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 animate-in fade-in duration-500">
-      
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    return (
+      <div className="min-h-screen bg-transparent text-foreground relative overflow-hidden animate-in fade-in duration-500">
+        
+        <BackgroundDNA />
+  
+        <header className="glass-card-subtle border-b border-border/50 sticky top-0 z-50">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <Button variant="ghost" onClick={() => navigate("/")} className="text-gray-500 hover:text-black hover:bg-gray-100 -ml-4">
@@ -342,12 +345,11 @@ export default function PurchaseInspector() {
               <p className="text-xl text-gray-500 font-light max-w-2xl mx-auto">Select the exact engine code to load the specific failure list.</p>
             </div>
 
-            <div className="bg-white p-8 lg:p-12 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 relative">
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-end">
+            <div className="glass-card p-8 lg:p-12 rounded-3xl shadow-2xl border border-border/50 relative backdrop-blur-xl">              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-end">
                 {/* 1. BRAND */}
                 <div className="space-y-3 w-full">
                   <label className="text-sm font-bold uppercase tracking-wide ml-1">1. Brand</label>
-                  <select className="w-full h-16 px-5 bg-gray-50 border-2 border-transparent hover:border-gray-200 focus:border-blue-500 focus:bg-white rounded-xl text-lg font-medium transition-all" value={brand} onChange={(e) => setBrand(e.target.value)}>
+                  <select className="w-full h-16 px-5 bg-background/60 backdrop-blur-md border border-border focus:border-primary rounded-xl text-lg font-medium text-foreground transition-all" value={brand} onChange={(e) => setBrand(e.target.value)}>
                     <option value="" disabled>Select Make</option>
                     {Object.keys(carDatabase.models).map((b) => <option key={b} value={b}>{b}</option>)}
                   </select>
@@ -355,7 +357,7 @@ export default function PurchaseInspector() {
                 {/* 2. MODEL */}
                 <div className="space-y-3 w-full">
                   <label className="text-sm font-bold uppercase tracking-wide ml-1">2. Model</label>
-                  <select className="w-full h-16 px-5 bg-gray-50 border-2 border-transparent hover:border-gray-200 focus:border-blue-500 rounded-xl text-lg font-medium" value={model} onChange={(e) => setModel(e.target.value)} disabled={!brand}>
+                  <select className="w-full h-16 px-5 bg-background/60 backdrop-blur-md border border-border focus:border-primary rounded-xl text-lg font-medium text-foreground transition-all" value={model} onChange={(e) => setModel(e.target.value)} disabled={!brand}>
                     <option value="" disabled>Select Model</option>
                     {models.map((m) => <option key={m} value={m}>{m}</option>)}
                   </select>
@@ -363,7 +365,7 @@ export default function PurchaseInspector() {
                 {/* 3. GENERATION */}
                 <div className="space-y-3 w-full">
                   <label className="text-sm font-bold uppercase tracking-wide ml-1">3. Generation</label>
-                  <select className="w-full h-16 px-5 bg-gray-50 border-2 border-transparent hover:border-gray-200 focus:border-blue-500 rounded-xl text-lg font-medium" value={generation} onChange={(e) => setGeneration(e.target.value)} disabled={!model}>
+                  <select className="w-full h-16 px-5 bg-background/60 backdrop-blur-md border border-border focus:border-primary rounded-xl text-lg font-medium text-foreground transition-all" value={generation} onChange={(e) => setGeneration(e.target.value)} disabled={!model}>
                     <option value="" disabled>Year / Gen</option>
                     {generations.map((g) => <option key={g} value={g}>{g}</option>)}
                   </select>
@@ -371,7 +373,7 @@ export default function PurchaseInspector() {
                 {/* 4. ENGINE TYPE */}
                 <div className="space-y-3 w-full">
                   <label className="text-sm font-bold uppercase tracking-wide ml-1">4. Engine Type</label>
-                  <select className="w-full h-16 px-5 bg-gray-50 border-2 border-transparent hover:border-gray-200 focus:border-blue-500 rounded-xl text-lg font-medium" value={engineType} onChange={(e) => setEngineType(e.target.value)} disabled={!generation}>
+                  <select className="w-full h-16 px-5 bg-background/60 backdrop-blur-md border border-border focus:border-primary rounded-xl text-lg font-medium text-foreground transition-all" value={engineType} onChange={(e) => setEngineType(e.target.value)} disabled={!generation}>
                     <option value="" disabled>Select Engine</option>
                     {petrolEngines.length > 0 && <optgroup label="⛽ Petrol">{petrolEngines.map((opt) => <option key={getEngineName(opt)} value={getEngineName(opt)}>{getEngineName(opt)}</option>)}</optgroup>}
                     {dieselEngines.length > 0 && <optgroup label="🛢️ Diesel">{dieselEngines.map((opt) => <option key={getEngineName(opt)} value={getEngineName(opt)}>{getEngineName(opt)}</option>)}</optgroup>}
@@ -380,7 +382,7 @@ export default function PurchaseInspector() {
                 {/* 5. ENGINE CODE */}
                 <div className="space-y-3 w-full">
                   <label className="text-sm font-bold uppercase tracking-wide ml-1">5. Engine Code</label>
-                  <select className="w-full h-16 px-5 bg-gray-50 border-2 border-transparent hover:border-gray-200 focus:border-blue-500 rounded-xl text-lg font-medium" value={engineCode} onChange={(e) => setEngineCode(e.target.value)} disabled={!engineType || availableCodes.length === 0}>
+                  <select className="w-full h-16 px-5 bg-background/60 backdrop-blur-md border border-border focus:border-primary rounded-xl text-lg font-medium text-foreground transition-all" value={engineCode} onChange={(e) => setEngineCode(e.target.value)} disabled={!engineType || availableCodes.length === 0}>
                     <option value="" disabled>Select Code</option>
                     {availableCodes.map((code) => <option key={code} value={code}>{code}</option>)}
                   </select>
@@ -453,8 +455,7 @@ export default function PurchaseInspector() {
 
                 <div className="flex-1">
                   {!activeProfile?.InspectionChecklist ? (
-                      <div className="bg-white rounded-[3rem] border border-gray-100 p-10 shadow-2xl h-full flex flex-col justify-center items-center text-center">
-                          <AlertTriangle className="w-20 h-20 text-yellow-500 mb-6"/>
+                    <div className="glass-card rounded-[3rem] border border-border/50 p-10 shadow-2xl h-full flex flex-col justify-center items-center text-center backdrop-blur-xl">                          <AlertTriangle className="w-20 h-20 text-yellow-500 mb-6"/>
                           <h3 className="text-3xl font-bold text-gray-900 mb-2">Checklist Not Found</h3>
                           <p className="text-gray-500 text-xl">We don't have specific data for {engineCode}.</p>
                       </div>
@@ -472,8 +473,7 @@ export default function PurchaseInspector() {
                   ) : (
                       
                       /* B: KÉRDÉS KÁRTYA */
-                      <div className="bg-white rounded-[3rem] border border-gray-100 p-12 md:p-16 shadow-2xl h-full min-h-[500px] flex flex-col justify-between animate-in slide-in-from-bottom-4 duration-500 relative">
-                          
+<div className="glass-card rounded-[3rem] border border-border/50 p-12 md:p-16 shadow-2xl h-full min-h-[500px] flex flex-col justify-between animate-in slide-in-from-bottom-4 duration-500 relative backdrop-blur-xl">                          
                           {currentStep > 0 && (
                               <button onClick={handlePrevious} className="absolute top-8 left-10 p-3 text-gray-300 hover:text-gray-600 transition-colors rounded-full hover:bg-gray-50" title="Previous">
                                   <Undo2 className="w-6 h-6" />

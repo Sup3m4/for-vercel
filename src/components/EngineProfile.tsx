@@ -10,6 +10,7 @@ import {
     Copy,
     TrendingUp,
     Lock,
+    Sparkles,
     ChevronRight,
     ShoppingCart,
     ArrowUpCircle,
@@ -40,6 +41,8 @@ import {
     ChevronUp
   } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useUser, useClerk } from "@clerk/clerk-react";
+import { createPortal } from "react-dom";
 import { EngineProfile as EngineProfileType } from "@/data/carDatabase";
 import { cn } from "@/lib/utils";
 import Car3DViewer from './Car3DViewer'
@@ -50,24 +53,106 @@ interface EngineProfileProps {
 }
 
 export function EngineProfile({ profile }: EngineProfileProps) {
-  const [isPremiumUnlocked, setIsPremiumUnlocked] = useState(false);
   const [activeViewIndex, setActiveViewIndex] = useState(0);
   const [activeHotspot, setActiveHotspot] = useState<any>(null);
   const [isSpecsExpanded, setIsSpecsExpanded] = useState(false);
   const [isCrossRefExpanded, setIsCrossRefExpanded] = useState(false);
   const [activeVisualTab, setActiveVisualTab] = useState<'3d' | 'tuning'>(profile.model3DPath ? '3d' : 'tuning');
   const [isMaintenanceExpanded, setIsMaintenanceExpanded] = useState(false);
+  const [loadingProduct, setLoadingProduct] = useState<string | null>(null);
   const [graphStage, setGraphStage] = useState(0); 
   const baseHp = parseInt(profile.power) || 300;
   const baseNm = parseInt(profile.torque) || 400;
-  const unlockPremium = () => setIsPremiumUnlocked(true);
 
   const hardwareConcurrency = typeof navigator !== "undefined" ? navigator.hardwareConcurrency ?? 8 : 8;
   const deviceMemory = typeof navigator !== "undefined" ? ((navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8) : 8;
   const isLowEndDevice = hardwareConcurrency <= 6 || deviceMemory <= 4;
 
+  
+
+  const { user, isSignedIn } = useUser();
+  const { openSignIn } = useClerk();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLocallyUnlocked, setIsLocallyUnlocked] = useState(false); // Teszteléshez/kézi feloldáshoz
+
+  // Lekérdezzük a Clerk metaadatokat
+  const userMetadata = user?.publicMetadata as { isPremium?: boolean; passType?: string } | undefined;
+  const passType = userMetadata?.passType; // pl. 'bundle', 'audi', 'bmw', 'mercedes'
+
+  // Eldöntjük, hogy ki van-e nyitva a tartalom:
+  const isPremiumUnlocked = useMemo(() => {
+    // 1. Ha kézzel feloldotta lokálisan (pl. tesztelés gombbal)
+    if (isLocallyUnlocked) return true;
+    
+    // 2. Ha nincs bejelentkezve vagy nincs pass-a
+    if (!passType) return false;
+
+    // 3. Ha a Pro Bundle-t vette meg, minden márkához hozzáfér
+    if (passType === 'bundle') return true;
+
+    // 4. Ha márkajellegű pass-a van, ellenőrizzük, hogy megegyezik-e az aktuális motor márkájával
+    return passType.toLowerCase() === profile.brand.toLowerCase();
+  }, [passType, profile.brand, isLocallyUnlocked]);
+
+  const unlockPremium = () => {
+    setIsModalOpen(true);
+  };
+  // Vagy ha azt akarod, hogy a gombra kattintva a Pricing oldalra / fizetésre dobja:
+  // const unlockPremium = () => { window.location.href = '/#pricing'; };
+
   // Preload 3D model without blocking initial page interactivity.
   // Parsing large GLBs can jank the whole UI if done immediately.
+
+  // Fizetési kérés indítása Stripe-hoz
+  const handleCheckout = async (productType: string) => {
+    if (!isSignedIn) {
+      openSignIn();
+      return;
+    }
+  
+    setLoadingProduct(productType); // Betöltés bekapcsolása ehhez a termékhez
+  
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          clerkUserId: user.id,
+          productType: productType,
+        }),
+      });
+  
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (err) {
+      console.error("Hiba a fizetés indításakor:", err);
+      setLoadingProduct(null); // Hiba esetén visszakapcsoljuk
+    }
+  };
+
+  // Meghatározzuk az aktuális márka kulcsát a fizetéshez (pl. 'bmw', 'audi', 'mercedes')
+  const brandKey = profile.brand.toLowerCase();
+
+  useEffect(() => {
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) {
+        setLoadingProduct(null);
+      }
+    };
+
+    window.addEventListener('pageshow', handlePageShow);
+    // Biztos ami biztos, ablak fókusz visszanyerésekor is töröljük
+    const handleFocus = () => setLoadingProduct(null);
+    window.addEventListener('focus', handleFocus);
+
+    return () => {
+      window.removeEventListener('pageshow', handlePageShow);
+      window.removeEventListener('focus', handleFocus);
+    };
+  }, []);
+
   useEffect(() => {
     if (!profile.model3DPath) return;
     if (isLowEndDevice) return;
@@ -268,7 +353,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                   {/* TARTALOM: Enyhébb blur, jobban látszik a szöveg */}
                   <div className={cn(
                       "flex flex-col h-full transition-all duration-500", 
-                      !isPremiumUnlocked && "opacity-60 select-none pointer-events-none grayscale-[0.5]"
+                      !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                   )}>
                      <div className="text-xs font-bold text-muted-foreground uppercase mb-1">Manual Gearbox</div>
                      <div className="text-lg font-bold text-foreground mb-3">{profile.transmission.manual.name}</div>
@@ -298,7 +383,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                   {/* TARTALOM: Enyhébb blur itt is */}
                   <div className={cn(
                       "flex flex-col h-full transition-all duration-500", 
-                      !isPremiumUnlocked && "opacity-60 select-none pointer-events-none grayscale-[0.5]"
+                      !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                   )}>
                      <div className="text-xs font-bold text-accent uppercase mb-1">Automatic Option {idx + 1 > 1 ? idx + 1 : ""}</div>
                      <div className="text-lg font-bold text-foreground mb-3">{auto.name}</div>
@@ -407,15 +492,15 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
             {/* --- FUEL CONSUMPTION (BLURRED IF LOCKED) --- */}
             <div className="mt-6 pt-4 border-t border-border/50">
-              <div className="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                <Gauge className="w-4 h-4" />
-                <span>Fuel Consumption Estimates</span>
-              </div>
+            <div className="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              <Gauge className="w-4 h-4" />
+              <span>Fuel Consumption Estimates</span>
+            </div>
               
               {/* Ha nincs feloldva: erős homályosítás (blur-[6px]) és kattintás tiltás */}
               <div className={cn(
-                  "grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-500", 
-                  !isPremiumUnlocked && "opacity-50 select-none pointer-events-none grayscale-[0.5]"
+                "grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-500", 
+                !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
               )}>
                 <div className="bg-secondary/50 rounded-lg p-4 border-l-4 border-amber-500">
                   <span className="block text-[10px] uppercase text-muted-foreground mb-1">City</span>
@@ -636,9 +721,9 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                  {/* VISSZATÉRTÜNK AZ EREDETIHEZ: 
                     Nincs max-h, nincs overflow-hidden. A teljes lista látszik elmosva.
                  */}
-                 <div className={cn(
+                <div className={cn(
                      "grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500", 
-                     !isPremiumUnlocked && "opacity-45 select-none pointer-events-none grayscale-[0.8]"
+                     !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                  )}>
                     {profile.recommendedParts.parts.slice(2).map((part, idx) => (
                       <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-primary/5 border border-primary/10">
@@ -683,7 +768,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                  {/* TARTALOM (BLUR HA ZÁRVA VAN) */}
                  <div className={cn(
                     "grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500",
-                    !isPremiumUnlocked && "opacity-45 select-none pointer-events-none grayscale-[0.8]"
+                    !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                  )}>
                     {profile.oemPlusUpgrades.map((upgrade, idx) => (
                       <div key={idx} className="p-5 rounded-xl bg-gradient-to-br from-blue-50/50 to-white border border-blue-100/60 shadow-sm hover:shadow-md transition-all group">
@@ -933,9 +1018,8 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
                         {/* 3. Okos (Olcsó) Opció - EZT HOMÁLYOSÍTJUK EL */}
                         <div className={cn(
-                            "w-full md:w-1/4 bg-emerald-50/50 p-3 rounded-lg md:bg-transparent md:p-0 border border-emerald-100 md:border-none pl-4 transition-all duration-500",
-                            // HA LE VAN ZÁRVA: Blur + Opacity + Select tiltás
-                            !isPremiumUnlocked && "opacity-35 select-none pointer-events-none grayscale-[0.5]"
+                           "w-full md:w-1/4 bg-emerald-50/50 p-3 rounded-lg md:bg-transparent md:p-0 border border-emerald-100 md:border-none pl-4 transition-all duration-500",
+                            !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                         )}>
                           <div className="text-[10px] md:hidden font-bold text-emerald-600 uppercase mb-1">Smart Choice</div>
                           <div className="font-mono text-sm font-bold text-slate-700">{item.crossRef.code}</div>
@@ -1104,7 +1188,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                     {/* TARTALOM WRAPPER: Ez kapja a homályosítást */}
                     <div className={cn(
                         "flex flex-col gap-0 transition-all duration-500",
-                        !isPremiumUnlocked && "opacity-35 select-none pointer-events-none grayscale-[0.8]"
+                        !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                     )}>
                         
                         {/* FELSŐ RÉSZ: GRAFIKON ÉS VEZÉRLŐK */}
@@ -1300,7 +1384,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
             <div className="px-6 pb-6 pt-11 flex-grow">
               <p className={cn(
                 "text-lg text-slate-300 italic leading-relaxed transition-all duration-500", 
-                !isPremiumUnlocked && "opacity-45 select-none pointer-events-none"
+                !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
               )}>
                 "{profile.drivingExperience}"
               </p>
@@ -1332,14 +1416,9 @@ export function EngineProfile({ profile }: EngineProfileProps) {
             
             {/* Relatív konténer min-height-tel, hogy a nagy gomb biztosan elférjen */}
             <div className="relative min-h-[180px] flex flex-col justify-center">
-                
-                {/* A VÉLEMÉNY SZÖVEGE: 
-                    - blur-[3px]: Enyhébb, jobban látszanak a betűk
-                    - opacity-70: Kevésbé halvány
-                */}
                 <p className={cn(
                   "text-lg text-foreground/90 italic leading-relaxed transition-all duration-500",
-                  !isPremiumUnlocked && "opacity-60 select-none pointer-events-none grayscale-[0.5]"
+                  !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                 )}>
                   "{profile.mechanicVerdict}"
                 </p>
@@ -1371,8 +1450,8 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                 {/* Relatív konténer a lakat miatt */}
                 <div className="relative">
                     <div className={cn(
-                        "text-3xl font-bold text-foreground transition-all duration-500",
-                        !isPremiumUnlocked && "opacity-45 select-none pointer-events-none grayscale"
+                       "text-3xl font-bold text-foreground transition-all duration-500",
+                        !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                     )}>
                          {/* Levágjuk a '/ year' részt az adatról, hogy ne legyen duplázás */}
                         {profile.repairCostEstimate ? profile.repairCostEstimate.replace(/\/ year/i, '').trim() : "N/A"}
@@ -1423,8 +1502,8 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                    A kártyák látszani fognak elmosva, mert a gomb NEM takarja ki őket teljesen.
                 */}
                 <div className={cn(
-                  "grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500",
-                  !isPremiumUnlocked && "opacity-45 select-none pointer-events-none grayscale-[0.8]"
+                 "grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500",
+                  !isPremiumUnlocked && "blur-[6px] opacity-35 select-none pointer-events-none grayscale"
                 )}>
                   {profile.sisterModels.map((model, idx) => (
                     <div key={idx} className="flex flex-col p-4 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
@@ -1461,6 +1540,82 @@ export function EngineProfile({ profile }: EngineProfileProps) {
               </div>
             </div>
           )}
+
+{isModalOpen && createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-md p-4 animate-in fade-in duration-300">
+          <div className="bg-slate-900 border border-white/10 rounded-3xl p-6 md:p-8 max-w-md w-full relative shadow-2xl text-white">
+            
+            {/* Bezárás gomb */}
+            <button 
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Címsor */}
+            <div className="text-center mb-6">
+              <div className="w-12 h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-3 border border-primary/30 shadow-inner">
+                <Lock className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold mb-1">Unlock {profile.brand} & More</h3>
+              <p className="text-slate-400 text-sm">Choose an option below to get instant, lifetime access.</p>
+            </div>
+
+            {/* Opciók listája */}
+            <div className="space-y-4">
+              
+              {/* 1. Adott Márka Pass (pl. BMW Pass) - Opcionálisan ide is beletettük a loadingot */}
+              <div 
+                onClick={() => loadingProduct !== brandKey && handleCheckout(brandKey)}
+                className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 cursor-pointer transition-all hover:bg-white/10 group flex items-center justify-between"
+              >
+                <div>
+                  <div className="font-bold text-lg group-hover:text-primary transition-colors">{profile.brand} Pass</div>
+                  <div className="text-xs text-slate-400">Lifetime access to all {profile.brand} 3D models</div>
+                </div>
+                <div className="text-right">
+                  {loadingProduct === brandKey ? (
+                    <div className="text-sm font-bold text-primary animate-pulse">Redirecting...</div>
+                  ) : (
+                    <>
+                      <div className="text-lg font-extrabold text-primary">€2.99</div>
+                      <div className="text-[10px] text-slate-400 uppercase font-semibold">Buy Now</div>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* 2. Pro Garage Bundle (EZ AZ A RÉSZ, AMIT KÜLDTÉL) */}
+              <div 
+                onClick={() => loadingProduct !== 'bundle' && handleCheckout('bundle')}
+                className="p-4 rounded-2xl bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/40 hover:border-primary cursor-pointer transition-all hover:scale-[1.02] group flex items-center justify-between shadow-lg"
+              >
+                <div>
+                  <div className="flex items-center gap-1.5 font-bold text-lg text-white">
+                    <Sparkles className="w-4 h-4 text-primary" />
+                    Pro Garage Bundle
+                  </div>
+                  <div className="text-xs text-slate-300">All brands (Audi, BMW, Mercedes)</div>
+                </div>
+                <div className="text-right">
+                  {loadingProduct === 'bundle' ? (
+                    <div className="text-sm font-bold text-primary animate-pulse">Redirecting...</div>
+                  ) : (
+                    <>
+                      <div className="text-lg font-extrabold text-white">€5.99</div>
+                      <div className="text-[10px] text-primary uppercase font-bold">Best Value 🔥</div>
+                    </>
+                  )}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>,
+        document.body
+      )}
 
         </div>
       )}
@@ -1969,7 +2124,10 @@ function MaintenanceCategory({
                   </div>
               </div>
           </div>
+    
+     
       )}
     </div>
+    
   );
 }

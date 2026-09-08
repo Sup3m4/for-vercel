@@ -93,12 +93,12 @@ export function CatalogSearcher({ onSearch }: CatalogSearcherProps) {
 
   return (
     <div id="search" className="w-full max-w-6xl mx-auto">
-      <div className="glass-card rounded-2xl p-6 md:p-8">
-        <div className="text-center mb-6">
-          <h2 className="text-lg font-semibold text-foreground mb-1">
+      <div className="bg-slate-900/70 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl text-white">
+      <div className="text-center mb-6">
+          <h2 className="text-lg font-semibold text-white mb-1">
             Vehicle Identification
           </h2>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-slate-300">
             Select your vehicle specifications to access its DNA profile
           </p>
         </div>
@@ -130,33 +130,32 @@ export function CatalogSearcher({ onSearch }: CatalogSearcherProps) {
           
           {/* --- ENGINE TYPE SELECTOR --- */}
           <div className="space-y-2">
-            <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+          <label className="text-xs font-medium text-slate-300 uppercase tracking-wider">
               Engine Type
             </label>
             <div className="relative">
-              <select
+            <select
                 value={engineType}
                 onChange={(e) => setEngineType(e.target.value)}
                 disabled={!generation}
                 className={cn(
                   "w-full h-12 px-4 pr-10 rounded-lg appearance-none",
-                  "bg-background border border-border",
-                  "text-foreground font-medium",
+                  "bg-slate-950/80 border border-white/20",
+                  "text-white font-medium",
                   "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary",
                   "transition-all duration-200",
                   "disabled:opacity-50 disabled:cursor-not-allowed",
-                  !engineType && "text-muted-foreground"
+                  !engineType && "text-slate-400"
                 )}
               >
-                <option value="">Select Engine</option>
+                <option value="" className="bg-slate-900 text-slate-400">Select Engine</option>
                 
-                {/* CSAK AKKOR JELENIK MEG A PETROL CSOPORT, HA VAN BENNE ELEM */}
                 {petrolEngines.length > 0 && (
-                  <optgroup label="⛽ Petrol">
+                  <optgroup label="⛽ Petrol" className="bg-slate-900 text-slate-300">
                     {petrolEngines.map((option) => {
                       const name = getEngineName(option);
                       return (
-                        <option key={name} value={name} className="text-foreground bg-background">
+                        <option key={name} value={name} className="bg-slate-900 text-white">
                           {name}
                         </option>
                       );
@@ -164,25 +163,18 @@ export function CatalogSearcher({ onSearch }: CatalogSearcherProps) {
                   </optgroup>
                 )}
 
-                {/* CSAK AKKOR JELENIK MEG A DIESEL CSOPORT, HA VAN BENNE ELEM */}
                 {dieselEngines.length > 0 && (
-                  <optgroup label="🛢️ Diesel">
+                  <optgroup label="🛢️ Diesel" className="bg-slate-900 text-slate-300">
                     {dieselEngines.map((option) => {
                       const name = getEngineName(option);
                       return (
-                        <option key={name} value={name} className="text-foreground bg-background">
+                        <option key={name} value={name} className="bg-slate-900 text-white">
                           {name}
                         </option>
                       );
                     })}
                   </optgroup>
                 )}
-                
-                {/* Ha esetleg üres lenne a lista (pl. hiba miatt), ne legyen teljesen üres a select */}
-                {engineTypes.length === 0 && generation && (
-                   <option disabled>No engines found</option>
-                )}
-
               </select>
               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
             </div>
@@ -229,7 +221,7 @@ interface SelectFieldProps {
 function SelectField({ label, value, onChange, options, placeholder, disabled }: SelectFieldProps) {
   return (
     <div className="space-y-2">
-      <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+      <label className="text-xs font-medium text-slate-300 uppercase tracking-wider">
         {label}
       </label>
       <div className="relative">
@@ -239,22 +231,22 @@ function SelectField({ label, value, onChange, options, placeholder, disabled }:
           disabled={disabled}
           className={cn(
             "w-full h-12 px-4 pr-10 rounded-lg appearance-none",
-            "bg-background border border-border",
-            "text-foreground font-medium",
+            "bg-slate-950/80 border border-white/20",
+            "text-white font-medium",
             "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary",
             "transition-all duration-200",
             "disabled:opacity-50 disabled:cursor-not-allowed",
-            !value && "text-muted-foreground"
+            !value && "text-slate-400"
           )}
         >
-          <option value="">{placeholder}</option>
+          <option value="" className="bg-slate-900 text-slate-400">{placeholder}</option>
           {options.map((option) => (
-            <option key={option} value={option} className="text-foreground bg-background">
+            <option key={option} value={option} className="bg-slate-900 text-white">
               {option}
             </option>
           ))}
         </select>
-        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
+        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
       </div>
     </div>
   );
