@@ -3,6 +3,7 @@ import {
     Gauge,
     Zap,
     Fuel,
+    ChevronLeft,
     Calendar,
     AlertTriangle,
     GitBranch,
@@ -279,58 +280,29 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
       
 
-      {/* Free Section - Common Issues */}
-      <div className="glass-card rounded-2xl p-6">
-        <div className="flex items-center gap-2 mb-4">
-          <AlertTriangle className="w-5 h-5 text-yellow-500" />
-          <h2 className="text-xl font-bold text-foreground">Common Issues</h2>
-        </div>
-        <ul className="space-y-2">
-          {/* SLICE: Ha nincs prémium, csak az első 2 elem (index 0 és 1) jelenik meg */}
-          {profile.commonIssues.slice(0, isPremiumUnlocked ? undefined : 2).map((issue, index) => (
-            <li key={index} className="flex items-start gap-2">
-              <ChevronRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-              <span className="text-muted-foreground">{issue}</span>
-            </li>
-          ))}
-        </ul>
+      {/* 3D Széles Carousel: Issues & Vulnerabilities */}
+      <div className="space-y-6">
+        <WideStackedCarousel
+          title="Common Issues"
+          icon={AlertTriangle}
+          iconColor="text-yellow-500"
+          items={profile.commonIssues.slice(0, isPremiumUnlocked ? undefined : 2)}
+          totalCount={profile.commonIssues.length}
+          isPremiumUnlocked={isPremiumUnlocked}
+          unlockLabel="issues"
+          onUnlock={unlockPremium}
+        />
 
-        {/* EGYSÉGES UNLOCK GOMB */}
-        {!isPremiumUnlocked && (
-           <ModernUnlock 
-             label="issues" 
-             // Kiszámoljuk: Teljes hossz MÍNUSZ 2 (mert annyi látszik)
-             count={Math.max(0, profile.commonIssues.length - 2)} 
-             onClick={unlockPremium} 
-           />
-        )}
-      </div>
-
-      {/* Vulnerabilities */}
-      <div className="glass-card rounded-2xl p-6">
-        <div className="flex items-center gap-2 mb-4">
-          <Shield className="w-5 h-5 text-destructive" />
-          <h2 className="text-xl font-bold text-foreground">Known Vulnerabilities</h2>
-        </div>
-        <ul className="space-y-3">
-          {/* SLICE: Csak az első 2 elem */}
-          {profile.vulnerabilities.slice(0, isPremiumUnlocked ? undefined : 2).map((vuln, index) => (
-            <li key={index} className="flex items-start gap-2 p-3 bg-destructive/5 rounded-lg border border-destructive/20">
-              <AlertTriangle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-              <span className="text-foreground">{vuln}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* EGYSÉGES UNLOCK GOMB */}
-        {!isPremiumUnlocked && (
-   <ModernUnlock 
-   label="critical faults" 
-   // Kiszámoljuk: Teljes hossz MÍNUSZ 2
-   count={Math.max(0, profile.vulnerabilities.length - 2)} 
-   onClick={unlockPremium} 
- />
-)}
+        <WideStackedCarousel
+          title="Known Vulnerabilities"
+          icon={Shield}
+          iconColor="text-destructive"
+          items={profile.vulnerabilities.slice(0, isPremiumUnlocked ? undefined : 2)}
+          totalCount={profile.vulnerabilities.length}
+          isPremiumUnlocked={isPremiumUnlocked}
+          unlockLabel="critical faults"
+          onUnlock={unlockPremium}
+        />
       </div>
           
 
@@ -1916,6 +1888,163 @@ function RigotechDynoGraph({ data, activeStage }: { data: {hp: number, nm: numbe
     </div>
   );
 }
+
+function WideStackedCarousel({
+  title,
+  icon: Icon,
+  items,
+  iconColor,
+  isPremiumUnlocked,
+  totalCount,
+  unlockLabel,
+  onUnlock
+}: {
+  title: string;
+  icon: any;
+  items: string[];
+  iconColor: string;
+  isPremiumUnlocked: boolean;
+  totalCount: number;
+  unlockLabel: string;
+  onUnlock: () => void;
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    if (currentIndex < items.length - 1) setCurrentIndex((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) setCurrentIndex((prev) => prev - 1);
+  };
+
+  const lockedCount = Math.max(0, totalCount - items.length);
+
+  return (
+    <div className="glass-card rounded-2xl p-6 md:p-8 flex flex-col hover-lift relative overflow-hidden">
+      {/* Fejléc */}
+      <div className="flex items-center gap-2 mb-6">
+        <Icon className={cn("w-6 h-6", iconColor)} />
+        <h2 className="text-2xl font-bold text-foreground">{title}</h2>
+      </div>
+
+      {/* Széles, 3D Stack Konténer */}
+      {/* Kicsit nagyobb magasságot hagyunk, hogy a hosszú szövegek is elférjenek */}
+      <div className="relative h-[220px] md:h-[190px] w-full perspective-1000 mb-6">
+        {items.map((item, idx) => {
+          const offset = idx - currentIndex;
+          const isPast = offset < 0;
+
+          let translateX = 0;
+          let translateY = 0;
+          let scale = 1;
+          let opacity = 1;
+          let zIndex = 40 - Math.abs(offset);
+
+          if (isPast) {
+            // Ha már balra lapoztuk
+            translateX = -40;
+            opacity = 0;
+            scale = 0.95;
+          } else {
+            // Hátrébb lévő kártyák (JOBBAN LÁTSZÓDNAK)
+            translateX = 0;
+            translateY = offset * 18;    // 12 helyett 18: Jobban lecsúsznak, jobban kilóg az aljuk
+            scale = 1 - (offset * 0.05); // 0.03 helyett 0.05: Kicsit jobban összemennek, így a szélük is látszik
+            opacity = 1 - (offset * 0.15); // 0.25 helyett 0.15: Kevésbé halványodnak el, fényesebbek maradnak
+          }
+
+          // A 4. kártyánál távolabbiakat rejtjük csak el (eddig 3 volt)
+          if (offset > 3) opacity = 0;
+
+          return (
+            <div
+              key={idx}
+              className={cn(
+                "absolute top-0 left-0 w-full p-5 md:p-6 rounded-xl transition-all duration-500 ease-out border shadow-2xl",
+                isPast ? "pointer-events-none" : "cursor-pointer"
+              )}
+              onClick={() => {
+                if (offset > 0) setCurrentIndex(idx);
+              }}
+              style={{
+                transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`,
+                opacity: opacity,
+                zIndex: zIndex,
+                backgroundColor: "rgba(15, 23, 42, 0.95)", // Mély, sötét kártyaszín
+                borderColor: offset === 0 ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.05)",
+                visibility: opacity <= 0 ? "hidden" : "visible"
+              }}
+            >
+              <div className="flex items-start gap-4 h-full">
+                <ChevronRight className={cn("w-5 h-5 mt-0.5 flex-shrink-0", iconColor)} />
+                <p className="text-sm md:text-base text-slate-200 leading-relaxed">
+                  {item}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Navigációs Kontroll (Nyilak + Pöttyök) */}
+      <div className="flex items-center justify-center gap-6 relative z-50 mt-auto">
+        <button
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+          className="p-2 rounded-full text-slate-400 hover:text-white hover:bg-white/10 disabled:opacity-20 disabled:hover:bg-transparent transition-all"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+
+        <div className="flex items-center gap-3">
+          {items.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={cn(
+                "h-2 rounded-full transition-all duration-300",
+                currentIndex === idx ? "w-8 bg-primary shadow-[0_0_8px_rgba(59,130,246,0.8)]" : "w-2 bg-slate-600 hover:bg-slate-400"
+              )}
+            />
+          ))}
+          
+          {/* Lakat ikon a pöttyök végén */}
+          {!isPremiumUnlocked && lockedCount > 0 && (
+            <div 
+              className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700 ml-2 cursor-pointer hover:bg-slate-700 transition-colors" 
+              title={`${lockedCount} locked items`}
+              onClick={onUnlock}
+            >
+              <Lock className="w-3 h-3 text-slate-400" />
+            </div>
+          )}
+        </div>
+
+        <button
+          onClick={handleNext}
+          disabled={currentIndex === items.length - 1}
+          className="p-2 rounded-full text-slate-400 hover:text-white hover:bg-white/10 disabled:opacity-20 disabled:hover:bg-transparent transition-all"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* Zárt prémium sáv */}
+      {!isPremiumUnlocked && lockedCount > 0 && (
+        <div className="mt-8 pt-6 border-t border-white/10 relative z-50">
+          <ModernUnlock
+            label={unlockLabel}
+            count={lockedCount}
+            onClick={onUnlock}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+
 
 function ModernUnlock({ 
   label, 

@@ -9,6 +9,7 @@ import PurchaseInspector from "./components/PurchaseInspector";
 import ComparatorPage from "./pages/ComparatorPage";
 import SavedPage from "./pages/SavedPage";
 import ProfilePage from "./pages/ProfilePage";
+import { EngineProfile } from "./components/EngineProfile";
 <Route path="/profile" element={<ProfilePage />} />
 
 const queryClient = new QueryClient();
@@ -23,7 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/inspector" element={<PurchaseInspector/>} />
-          <Route path="/engine/:engineId" element={<Index />} /> 
+          <Route path="/engine/:engineId" element={<Index />} />
           <Route path="/comparator" element={<ComparatorPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />

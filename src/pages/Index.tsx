@@ -6,7 +6,6 @@ import { QuickSearch } from "@/components/QuickSearch";
 import { CatalogSearcher } from "@/components/CatalogSearcher";
 import { BackgroundDNA } from "@/components/BackgroundDNA";
 import { EngineCodeSelector } from "@/components/EngineCodeSelector";
-import { TurboViewer } from "@/components/BackgroundDNA"; // Vagy ahova elmentetted a TurboViewert
 import { EngineComparator } from "@/components/EngineComparator";
 import { EngineProfile } from "@/components/EngineProfile";
 import { Features } from "@/components/Features";
@@ -144,7 +143,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative bg-transparent">
-      <BackgroundDNA />
+      {viewState !== "profile" && <BackgroundDNA />}
       <div className="relative z-10 flex flex-col min-h-screen">
       <Header />
 
@@ -197,15 +196,7 @@ const Index = () => {
   </div>
 </section>
 
-<section className="py-12 relative z-10">
-            <div className="max-w-6xl mx-auto px-4">  
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-white mb-2">Interactive X-Ray Architecture</h2>
-                <p className="text-slate-300">Explore the core anatomy of high-performance forced induction.</p>
-              </div>
-              <TurboViewer />
-            </div>
-          </section>
+
 
           {/* --- ENGINE COMPARATOR SECTION --- */}
           <section className="py-20 bg-transparent relative z-10">
@@ -264,7 +255,7 @@ const Index = () => {
         </>
       )}
 
-      <Footer />
+      <Footer /> 
       </div>
     </div>
   );

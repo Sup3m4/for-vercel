@@ -1,7 +1,9 @@
 import { useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, Center, OrbitControls } from '@react-three/drei';
+import { useGLTF, Center, OrbitControls, Sparkles } from '@react-three/drei';
 import * as THREE from 'three';
+
+
 
 function ScrollDrivenDNA() {
   const modelRef = useRef<THREE.Group>(null);
@@ -53,41 +55,119 @@ function ScrollDrivenDNA() {
   );
 }
 
-function TurboMesh() {
+function SideBackgroundTurbo() {
+  const modelRef = useRef<THREE.Group>(null);
   const { scene } = useGLTF('/models/turbo.glb');
-  
+  const scrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      scrollY.current = window.scrollY;
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useFrame(() => {
+    if (modelRef.current) {
+      const targetRotationY = scrollY.current * 0.002;
+      modelRef.current.rotation.y = THREE.MathUtils.lerp(
+        modelRef.current.rotation.y, 
+        targetRotationY, 
+        0.05
+      );
+    }
+  });
+
   return (
-    <Center>
-      <primitive object={scene} scale={2} />
-    </Center>
+    // X: -5.5 (mégjebb balra tolva), Scale: 0.4 (nagyon kicsi, diszkrét méret)
+    <group ref={modelRef} position={[-8.5, 0, -2]}>
+      <Center>
+        <primitive object={scene} scale={0.3} />
+      </Center>
+    </group>
   );
 }
 
-// 3. A fő háttér konténer
+function SideBackgroundPiston() {
+  const modelRef = useRef<THREE.Group>(null);
+  const { scene } = useGLTF('/models/piston.glb');
+  const scrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      scrollY.current = window.scrollY;
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useFrame(() => {
+    if (modelRef.current) {
+      const targetRotationY = scrollY.current * 0.002;
+      modelRef.current.rotation.y = THREE.MathUtils.lerp(
+        modelRef.current.rotation.y, 
+        targetRotationY, 
+        0.05
+      );
+    }
+  });
+
+  return (
+    <group ref={modelRef} position={[8.5, 0, -2]}>
+      <Center>
+        <primitive object={scene} scale={0.4} />
+      </Center>
+    </group>
+  );
+}
+
+
+// 4. A fő háttér konténer mindhárom elemmel
 export function BackgroundDNA() {
     return (
       <div className="fixed inset-0 pointer-events-none z-0">
         
-        {/* 1. RÉTEG: Az új sötétkék háttérkép (legalsó réteg) */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/background.jpg')" }}
         />
         
-        {/* 2. RÉTEG: A 3D DNS modell (áttetszően a kép felett) */}
-        <div className="absolute inset-0 opacity-60">
-          <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
-            <ambientLight intensity={1.5} />
-            {/* A fények maradhatnak, szépen megvilágítják a DNS-t a sötét háttér előtt */}
-            <directionalLight position={[10, 10, 10]} intensity={2.5} color="#4f46e5" /> 
-            <directionalLight position={[-10, -10, -10]} intensity={1} color="#e11d48" />
+        <div className="absolute inset-0 opacity-80">
+        <Canvas 
+  camera={{ position: [0, 0, 10], fov: 50 }} 
+  dpr={[1, 1]} // Levesszük 1-re a felbontási szorzót (mobilokon/laptopokon ez éles elég, de sokkal gyorsabb)
+  gl={{ 
+    antialias: false, // Kikapcsoljuk az élek szoftveres simítását (ez hozza a legtöbb FPS-t háttérnél)
+    powerPreference: "high-performance", // Arra kényszeríti a gépet, hogy a dedikált videokártyát használja
+    alpha: true 
+  }}
+>
+            <ambientLight intensity={2} />
+            <directionalLight position={[10, 10, 10]} intensity={3} color="#60a5fa" /> 
+            <directionalLight position={[-10, -10, -10]} intensity={1.5} color="#3b82f6" />
+
+            <group position={[-1, 0, 0]}>
+  <Sparkles 
+    count={250}      
+    scale={15}       
+    size={8}         
+    speed={0.5}      
+    color="#ffffff"  
+  />
+</group>
+            
             <ScrollDrivenDNA />
+            <SideBackgroundTurbo />
+            <SideBackgroundPiston />
           </Canvas>
         </div>
         
       </div>
     );
-  }
+}
+
+
 
   export function TurboViewer() {
     return (
@@ -97,12 +177,20 @@ export function BackgroundDNA() {
           Live 3D X-Ray Model
         </div>
   
-        <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
+        <Canvas 
+  camera={{ position: [0, 0, 10], fov: 50 }} 
+  dpr={[1, 1]} // Levesszük 1-re a felbontási szorzót (mobilokon/laptopokon ez éles elég, de sokkal gyorsabb)
+  gl={{ 
+    antialias: false, // Kikapcsoljuk az élek szoftveres simítását (ez hozza a legtöbb FPS-t háttérnél)
+    powerPreference: "high-performance", // Arra kényszeríti a gépet, hogy a dedikált videokártyát használja
+    alpha: true 
+  }}
+>
           <ambientLight intensity={2} />
           <directionalLight position={[10, 10, 10]} intensity={3} color="#60a5fa" />
           <directionalLight position={[-10, -10, -10]} intensity={1.5} color="#3b82f6" />
           
-          <TurboMesh />
+          <SideBackgroundTurbo />
   
           {/* Az OrbitControls engedi, hogy a felhasználó az egerével forgassa és zoomolja a turbót! */}
           <OrbitControls enableZoom={true} autoRotate autoRotateSpeed={1.5} />
@@ -114,3 +202,4 @@ export function BackgroundDNA() {
 // Előtöltjük a 3D modellt, hogy azonnal ott legyen az oldal megnyitásakor
 useGLTF.preload('/models/dna.glb');
 useGLTF.preload('/models/turbo.glb');
+useGLTF.preload('/models/piston.glb');
