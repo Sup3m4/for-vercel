@@ -1092,7 +1092,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
       className={`w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden relative border shadow-2xl group touch-none transition-colors duration-1000 ${isNightMode ? 'bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-black to-black border-slate-800' : 'bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 via-gray-200 to-gray-300 border-slate-200'}`}
     >
       <div className="absolute top-6 left-6 pointer-events-none z-10 select-none">
-         <h1 className={`font-black text-6xl md:text-8xl tracking-tighter uppercase absolute -top-4 -left-2 mix-blend-overlay transition-colors duration-1000 ${isNightMode ? 'text-white/10' : 'text-black/5'}`}>Audi</h1>
+         <h1 className={`font-black text-6xl md:text-8xl tracking-tighter uppercase absolute -top-4 -left-2 mix-blend-overlay transition-colors duration-1000 ${isNightMode ? 'text-white/10' : 'text-black/5'}`}></h1>
          <div className="relative">
             <h2 className={`font-black text-2xl md:text-3xl tracking-tighter uppercase transition-colors duration-1000 ${isNightMode ? 'text-white' : 'text-slate-800'}`}>3D <span className="text-blue-500">View</span></h2>
             <p className="text-blue-400/60 text-[10px] font-mono tracking-[0.2em] mt-1">INTERACTIVE MODEL</p>

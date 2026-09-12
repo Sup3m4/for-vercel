@@ -28,7 +28,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-            Access detailed technical profiles, known vulnerabilities, maintenance schedules,
+            Access detailed technical profiles, 3D models, known vulnerabilities, maintenance schedules,
             and tuning potential for thousands of automotive engines. Make informed decisions
             backed by real engineering data.
           </p>

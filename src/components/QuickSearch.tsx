@@ -646,7 +646,7 @@ return (
                 onChange={(e) => updateSearch(e.target.value)} // ITT A VÁLTOZÁS
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                 onFocus={() => searchType === "code" && updateSearch(searchValue)} // ITT IS
-                placeholder={searchType === "code" ? "Type code (e.g. B58, BAM...)" : "Enter 17-digit VIN"}
+                placeholder={searchType === "code" ? "Type engine code (e.g. B58, CAPA...)" : "Enter 17-digit VIN"}
                 className="w-full h-12 px-4 rounded-lg bg-slate-950/80 border border-white/20 text-white focus:ring-2 focus:ring-primary/50 uppercase font-mono placeholder:text-slate-400"                maxLength={searchType === "vin" ? 17 : 20}
               />
             

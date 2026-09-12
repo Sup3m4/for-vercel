@@ -18,6 +18,7 @@ import {
     CheckCircle2,
     Shield,
     Scan,
+    Star,
     Timer,
     Move3d,
     Search,
@@ -133,6 +134,8 @@ export function EngineProfile({ profile }: EngineProfileProps) {
     }
   };
 
+  
+
   // Meghatározzuk az aktuális márka kulcsát a fizetéshez (pl. 'bmw', 'audi', 'mercedes')
   const brandKey = profile.brand.toLowerCase();
 
@@ -198,7 +201,8 @@ export function EngineProfile({ profile }: EngineProfileProps) {
   }, [profile.tuningGraphData, baseHp, baseNm]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6 animate-slide-up">
+    <div id="basic-specs" className="w-full max-w-6xl mx-auto space-y-6 animate-slide-up relative">
+      <PageNavigator />
       {/* Header Card */}
       <div className="glass-card rounded-2xl p-6 md:p-8">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
@@ -281,7 +285,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
       
 
       {/* 3D Széles Carousel: Issues & Vulnerabilities */}
-      <div className="space-y-6">
+      <div id="section-issues" className="space-y-6">
         <WideStackedCarousel
           title="Common Issues"
           icon={AlertTriangle}
@@ -308,7 +312,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
        {/* --- Transmission Info Section (LIGHTER BLUR) --- */}
       {profile.transmission && (
-        <div className="glass-card rounded-2xl p-6">
+        <div id="section-transmission" className="glass-card rounded-2xl p-6">
           <div className="flex items-center gap-2 mb-6">
             <Cpu className="w-5 h-5 text-purple-400" />
             <h2 className="text-xl font-bold text-foreground">Transmission Options</h2>
@@ -397,7 +401,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
       )}
 
           {/* --- TECHNICAL SPECIFICATIONS CARD --- */}
-          <div className="glass-card rounded-2xl p-6">
+          <div id="section-specs" className="glass-card rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-6 border-b border-border/50 pb-4">
               <Settings className="w-5 h-5 text-primary" />
               <h2 className="text-xl font-bold text-foreground">Technical Specifications</h2>
@@ -667,7 +671,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
           {/* --- Recommended Brands Section (FULL BLUR, FIXED BUTTON) --- */}
           {profile.recommendedParts && (
-            <div className="glass-card rounded-2xl p-6">
+            <div id="section-recommended" className="glass-card rounded-2xl p-6 md:p-8 hover-lift">
               <div className="flex items-center gap-2 mb-4">
                 <ShoppingCart className="w-5 h-5 text-primary" />
                 <h2 className="text-xl font-bold text-foreground">Recommended Brands (OEM+)</h2>
@@ -725,7 +729,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
           {/* --- OEM+ Upgrades (Big Brother Mods) --- */}
           {profile.oemPlusUpgrades && (
-            <div className="glass-card rounded-2xl p-6 mb-8">
+            <div id="section-oem-upgrades" className="glass-card rounded-2xl p-6 mb-8">
               <div className="flex items-center gap-2 mb-6">
                 <div className="p-2 bg-blue-100 rounded-lg">
                    <ArrowUpCircle className="w-5 h-5 text-blue-600" />
@@ -788,7 +792,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
           {/* --- ÚJ HELY: EXPANDABLE MAINTENANCE SCHEDULE --- */}
           {profile.maintenanceSchedule && (
-            <div className="mb-8 animate-fade-in">
+            <div id="section-maintenance" className="mb-8 animate-fade-in">
               <button 
                 onClick={() => setIsMaintenanceExpanded(!isMaintenanceExpanded)}
                 className="w-full glass-card rounded-2xl p-6 flex items-center justify-between hover:bg-slate-50/50 transition-all group"
@@ -895,7 +899,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
           {/* --- SMART PARTS BINNING (CROSS REFERENCE) --- */}
           {profile.crossReferenceParts && (
-            <div className="mb-8 animate-fade-in">
+            <div id="section-crossref" className="mb-8 animate-fade-in">
               <button 
                 onClick={() => setIsCrossRefExpanded(!isCrossRefExpanded)}
                 className="w-full glass-card rounded-2xl p-6 flex items-center justify-between hover:bg-emerald-50/50 transition-all group"
@@ -1078,7 +1082,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
 
           {/* --- ÚJ RÉSZ: INTERAKTÍV NÉZET FÜLEKKEL --- */}
           {/* Levettük a globális feltételt, a szekció most már MINDIG megjelenik! */}
-          <div className="mt-12 mb-16 animate-fade-in">
+          <div id="section-interactive" className="mt-12 mb-16 animate-fade-in">
               
               {/* Felső sáv: Cím és Gombok */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
@@ -1341,7 +1345,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
           
 
           {/* --- Behind the Wheel (SPACING FIX) --- */}
-          <div className="relative rounded-2xl bg-slate-900 text-white shadow-lg overflow-hidden min-h-[300px] flex flex-col">
+          <div  id="section-wheel" className="relative rounded-2xl bg-slate-900 text-white shadow-lg overflow-hidden min-h-[300px] flex flex-col">
             
             {/* 1. FEJLÉC */}
             <div className="relative z-20 p-6 pb-2 flex items-center gap-2">
@@ -1378,7 +1382,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
           </div>
 
           {/* Mechanic Verdict (MODERN UNLOCK + LIGHTER BLUR) */}
-          <div className="glass-card rounded-2xl p-6 bg-primary/5">
+          <div id="section-verdict" className="glass-card rounded-2xl p-6 bg-primary/5">
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2 bg-primary/10 rounded-full">
                 <Stethoscope className="w-6 h-6 text-primary" />
@@ -1411,7 +1415,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
           </div>
 
           {/* Repair Cost Estimate (SAME STYLE, PARTIAL BLUR) */}
-          <div className="glass-card rounded-2xl p-6">
+          <div id="section-costs" className="glass-card rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-4">
               <DollarSign className="w-5 h-5 text-yellow-500" />
               <h2 className="text-xl font-bold text-foreground">Repair Cost Estimate</h2>
@@ -1458,7 +1462,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
           {/* --- Platform & Engine Family Section (FIXED VISIBILITY & STYLE) --- */}
           {profile.sisterModels && (
             // JAVÍTÁS: Sima "glass-card", levettük a border-dashed és bg-slate-50 osztályokat
-            <div className="glass-card rounded-2xl p-6">
+            <div id="section-platform" className="glass-card rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <div className="p-2 bg-slate-200 rounded-full">
                   <GitBranch className="w-5 h-5 text-slate-600" />
@@ -2044,7 +2048,92 @@ function WideStackedCarousel({
   );
 }
 
+function PageNavigator() {
+  const [activeId, setActiveId] = useState('');
 
+  const navItems = [
+    { id: 'basic-specs', label: 'Basic Specs' },
+    { id: 'section-issues', label: 'Common Issues & Vulnerabilities' },
+    { id: 'section-transmission', label: 'Transmission Options' },
+    { id: 'section-specs', label: 'Technical Specifications' },
+    { id: 'section-recommended', label: 'Recommended Brands' },
+    { id: 'section-oem-upgrades', label: 'OEM+ Upgrades' },
+    { id: 'section-crossref', label: 'Smart Parts Binning' },
+    { id: 'section-maintenance', label: 'Maintenance Schedule' },
+    { id: 'section-interactive', label: '3D & Tuning Lab' },
+    { id: 'section-wheel', label: 'Behind the Wheel' },
+    { id: 'section-verdict', label: "Mechanic's Verdict" },
+    { id: 'section-costs', label: 'Repair Cost Estimate' },
+    { id: 'section-platform', label: 'Platform & Family' },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveId(navItems[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 100; // Ennyivel "lökjük" lejjebb, hogy a header ne takarja ki
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // ITT A LÉNYEG: createPortal-t használunk, ami kilöki a böngészőablak szélére!
+  return createPortal(
+    <nav className="fixed right-4 xl:right-8 top-1/2 -translate-y-1/2 z-[9999] hidden lg:flex flex-col gap-2.5 p-2 bg-slate-900/90 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl pointer-events-auto">
+      {navItems.map((item) => {
+        const isActive = activeId === item.id;
+        return (
+          <button
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            className="group relative flex items-center justify-end py-1.5 px-2 rounded-lg transition-all text-right cursor-pointer"
+            title={item.label}
+          >
+            {/* Lebegő címke */}
+            <span className={`absolute right-9 px-2.5 py-1 rounded-md text-xs font-semibold whitespace-nowrap transition-all duration-300 pointer-events-none shadow-lg ${
+              isActive 
+                ? 'bg-primary text-white opacity-100 translate-x-0' 
+                : 'bg-slate-900/95 text-slate-300 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 border border-white/10'
+            }`}>
+              {item.label}
+            </span>
+
+            {/* Pötty / Vonal jelölő */}
+            <div className={`transition-all duration-300 rounded-full ${
+              isActive 
+                ? 'w-6 h-2 bg-primary shadow-[0_0_10px_rgba(59,130,246,0.8)]' 
+                : 'w-2 h-2 bg-slate-600 group-hover:bg-slate-400 group-hover:scale-125'
+            }`} />
+          </button>
+        );
+      })}
+    </nav>,
+    document.body // <-- Ez a sor biztosítja, hogy kikerüljön a fehér, üres margóra!
+  );
+}
 
 function ModernUnlock({ 
   label, 

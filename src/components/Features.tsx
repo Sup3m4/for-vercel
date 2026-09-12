@@ -4,6 +4,7 @@ import {
   Clock,
   FileText,
   Search,
+  Move3d,
   Shield
 } from "lucide-react";
 
@@ -49,10 +50,10 @@ export function Features() {
             description="Complete engine specifications including compression ratios, valve counts, and displacement details."
           />
           <FeatureCard
-            icon={Search}
-            title="Engine Code Lookup"
-            description="Find the exact engine variant in your vehicle with our comprehensive engine code database."
-          />
+            icon={Move3d}
+            title="Interactive 3D Models"
+            description="Explore models in full 360° 3D with an immersive night view aesthetic, interactive hotspots, and detailed physical architecture."
+            />
         </div>
       </div>
     </section>

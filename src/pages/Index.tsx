@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { cn } from "@/lib/utils";
+import { Star } from "lucide-react";
 import { QuickSearch } from "@/components/QuickSearch";
 import { CatalogSearcher } from "@/components/CatalogSearcher";
 import { BackgroundDNA } from "@/components/BackgroundDNA";
 import { EngineCodeSelector } from "@/components/EngineCodeSelector";
-import { EngineComparator } from "@/components/EngineComparator";
 import { EngineProfile } from "@/components/EngineProfile";
 import { Features } from "@/components/Features";
 import { Pricing } from "@/components/Pricing";
@@ -89,6 +90,33 @@ const Index = () => {
     }
   };
 
+  const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    if (selectedProfile) {
+      const savedEngines = JSON.parse(localStorage.getItem('car_dna_saved_engines') || '[]');
+      setIsSaved(savedEngines.includes(selectedProfile.id));
+    }
+  }, [selectedProfile]);
+
+  const handleToggleSave = () => {
+    if (!selectedProfile) return;
+    
+    // Ellenőrzés, hogy be van-e jelentkezve (ha használod a Clerk hookot az Indexben is)
+    // Megjegyzés: Ha a Clerk useUser-t itt is be akarod hívni, importáld be a @clerk/clerk-react-ből.
+    
+    const savedEngines = JSON.parse(localStorage.getItem('car_dna_saved_engines') || '[]');
+    let updated;
+    if (isSaved) {
+      updated = savedEngines.filter((id: string) => id !== selectedProfile.id);
+      setIsSaved(false);
+    } else {
+      updated = [...savedEngines, selectedProfile.id];
+      setIsSaved(true);
+    }
+    localStorage.setItem('car_dna_saved_engines', JSON.stringify(updated));
+  };
+
   // --- 4. QUICK SEARCH HANDLER ---
   const handleQuickSearch = (brand: string, model: string, generation: string, engineType: string, engineCode: string, profileId?: string) => {
     setVehicleSelection({ brand, model, generation, engineType });
@@ -145,117 +173,106 @@ const Index = () => {
     <div className="min-h-screen relative bg-transparent">
       {viewState !== "profile" && <BackgroundDNA />}
       <div className="relative z-10 flex flex-col min-h-screen">
-      <Header />
+        <Header />
 
-      {viewState === "profile" && selectedProfile ? (
-        <main className="pt-24 pb-16">
-          <div className="container mx-auto px-4">
-            <Button
-              variant="ghost"
-              onClick={handleBackToEngineCode}
-              className="mb-6 gap-2"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Engine Code Selection
-            </Button>
-            <EngineProfile profile={selectedProfile} />
-          </div>
-        </main>
-      ) : viewState === "engine-code" && vehicleSelection ? (
-        <main className="pt-24 pb-16">
-          <div className="container mx-auto px-4">
-            <EngineCodeSelector
-              brand={vehicleSelection.brand}
-              model={vehicleSelection.model}
-              generation={vehicleSelection.generation}
-              engineType={vehicleSelection.engineType}
-              onSelect={handleSelectEngineCode}
-              onBack={handleBackToSearch}
-            />
-          </div>
-        </main>
-      ) : (
-        <>
-          {/* 1. HERO SECTION */}
-          <Hero />
-
-          {/* 2. SEARCH TOOLS (Quick & Catalog) */}
-          <section className="py-8 md:py-12">
-  <div className="container mx-auto px-4">
-    <QuickSearch 
-      onEngineCodeFound={handleQuickSearch} 
-      onSelectVehicleConfig={(brand, model, generation, engineType) => {
-        // Beállítjuk a jármű adatait a state-be
-        setVehicleSelection({ brand, model, generation, engineType });
-        // Átjövünk a kézi motorkód-választó nézetre
-        setViewState("engine-code");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }}
-    />
-    <CatalogSearcher onSearch={handleSearchEngineType} />
-  </div>
-</section>
-
-
-
-          {/* --- ENGINE COMPARATOR SECTION --- */}
-          <section className="py-20 bg-transparent relative z-10">
-  <div className="container mx-auto px-4 text-center">
-    <div className="max-w-3xl mx-auto space-y-8">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-white">
-        Engine DNA Comparator
-      </h2>
-      <p className="text-lg text-slate-300">
-        Deep-dive into technical architectures. Select two engines to compare their physical "hardware" and reliability.
-      </p>
-      <Button 
-        onClick={() => navigate("/comparator")} 
-        size="lg"
-        className="bg-blue-600 text-white hover:bg-blue-700 px-10 py-7 rounded-full font-bold text-xl shadow-xl transition-all hover:scale-105"
-      >
-        Launch Comparator Tool
-        <ArrowRight className="w-6 h-6 ml-2" />
-      </Button>
-    </div>
-  </div>
-</section>
-
-          {/* 3. PRE-PURCHASE INSPECTOR CTA (Now below search!) */}
-          <section className="py-16 bg-transparent relative z-10">
-                     <div className="container mx-auto px-4 text-center">
-              <div className="max-w-3xl mx-auto space-y-6">
-                
-                {/* Fehér cím */}
-                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-                  Buying a used car? Don't gamble.
-                </h2>
-                
-                {/* Világos szürke alcím */}
-                <p className="text-lg text-slate-300 max-w-xl mx-auto">
-                  Use our interactive checklist to find hidden faults and estimate repair costs before you pay.
-                </p>
-                
-                {/* A gomb stílusa igazítva az oldalhoz */}
-                <Button 
-                  onClick={() => navigate("/inspector")} 
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 px-8 rounded-full shadow-lg transition-all hover:scale-105 group text-lg mt-6"
+        {viewState === "profile" && selectedProfile ? (
+          <main className="pt-24 pb-16 min-h-screen">
+            <div className="container mx-auto px-4">
+              <div className="flex items-center justify-between mb-6">
+                <Button
+                  variant="ghost"
+                  onClick={handleBackToEngineCode}
+                  className="gap-2 text-slate-300 hover:text-white hover:bg-white/10"
                 >
-                  <ShieldCheck className="w-5 h-5 mr-2" />
-                  Start Pre-Purchase Inspection
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to Engine Code Selection
                 </Button>
 
+                <button
+                  onClick={handleToggleSave}
+                  className={cn(
+                    "flex items-center gap-2 px-4 py-2 rounded-xl border text-xs font-bold transition-all duration-300 shadow-lg cursor-pointer hover:scale-105 active:scale-95 backdrop-blur-md",
+                    isSaved 
+                      ? "bg-amber-500/20 text-amber-400 border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.3)]" 
+                      : "bg-slate-900/80 text-slate-300 border-white/10 hover:text-white hover:bg-slate-800"
+                  )}
+                >
+                  <Star className={cn("w-4 h-4 transition-transform", isSaved && "fill-amber-400 scale-110 text-amber-400")} />
+                  <span>{isSaved ? "Saved in Garage" : "Save Engine Profile"}</span>
+                </button>
               </div>
+
+              <EngineProfile profile={selectedProfile} />
             </div>
-          </section>
+          </main>
+        ) : viewState === "engine-code" && vehicleSelection ? (
+          <main className="pt-24 pb-16 min-h-screen">
+            <div className="container mx-auto px-4">
+              <Button
+                variant="ghost"
+                onClick={() => setViewState("search")}
+                className="gap-2 mb-6 text-slate-300 hover:text-white hover:bg-white/10"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Search
+              </Button>
+              
+              <EngineCodeSelector 
+                brand={vehicleSelection.brand}
+                model={vehicleSelection.model}
+                generation={vehicleSelection.generation}
+                engineType={vehicleSelection.engineType}
+                onSelect={handleSelectEngineCode}
+                onBack={() => setViewState("search")}
+              />
+            </div>
+          </main>
+        ) : (
+          <>
+            <Hero />
+            <section className="py-8 md:py-12">
+              <div className="container mx-auto px-4">
+                <QuickSearch 
+                  onEngineCodeFound={handleQuickSearch} 
+                  onSelectVehicleConfig={(brand, model, generation, engineType) => {
+                    setVehicleSelection({ brand, model, generation, engineType });
+                    setViewState("engine-code");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                />
+                <CatalogSearcher onSearch={handleSearchEngineType} />
+              </div>
+            </section>
 
-          {/* 4. FEATURES & PRICING */}
-          <Features />
-          <Pricing />
-        </>
-      )}
+            
 
-      <Footer /> 
+            <section className="py-16 bg-transparent relative z-10">
+              <div className="container mx-auto px-4 text-center">
+                <div className="max-w-3xl mx-auto space-y-6">
+                  <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                    Buying a used car? Don't gamble.
+                  </h2>
+                  <p className="text-lg text-slate-300 max-w-xl mx-auto">
+                    Use our interactive checklist to find hidden faults and estimate repair costs before you pay.
+                  </p>
+                  <Button 
+                    onClick={() => navigate("/inspector")} 
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 px-8 rounded-full shadow-lg transition-all hover:scale-105 group text-lg mt-6"
+                  >
+                    <ShieldCheck className="w-5 h-5 mr-2" />
+                    Start Pre-Purchase Inspection
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              </div>
+            </section>
+
+            <Features />
+            <Pricing />
+          </>
+        )}
+
+        <Footer /> 
       </div>
     </div>
   );
