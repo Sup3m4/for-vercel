@@ -10,6 +10,7 @@ import { BackgroundDNA } from "@/components/BackgroundDNA";
 import { EngineCodeSelector } from "@/components/EngineCodeSelector";
 import { EngineProfile } from "@/components/EngineProfile";
 import { Features } from "@/components/Features";
+import PrivacyPolicyPage from "@/components/PrivacyPolicyPage";
 import { Pricing } from "@/components/Pricing";
 import { Footer } from "@/components/Footer";
 import { getEngineProfile, engineProfiles, EngineProfile as EngineProfileType } from "@/data/carDatabase";
@@ -18,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { carDatabase } from "@/data/carDatabase";
 import type { EngineTypeEntry } from "@/data/carDatabase";
 
-type ViewState = "search" | "engine-code" | "profile";
+type ViewState = "search" | "engine-code" | "profile" | "privacy";
 
 interface VehicleSelection {
   brand: string;
@@ -147,11 +148,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative bg-transparent">
-      {viewState !== "profile" && <BackgroundDNA />}
+      {viewState !== "profile" && viewState !== "privacy" && <BackgroundDNA />}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
 
-        {viewState === "profile" && selectedProfile ? (
+        {viewState === "privacy" ? (
+          <main className="pt-24 pb-16 min-h-screen">
+            <PrivacyPolicyPage onBack={() => setViewState("search")} />
+          </main>
+        ) : viewState === "profile" && selectedProfile ? (
           <main className="pt-24 pb-16 min-h-screen">
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between mb-6"></div>
@@ -198,35 +203,33 @@ const Index = () => {
               </div>
             </section>
 
-            
-
             <section id="inspector" className="py-16 bg-transparent relative z-10 scroll-mt-28">
-  <div className="container mx-auto px-4 text-center">
-    <div className="max-w-3xl mx-auto space-y-6">
-      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-        Buying a used car? Don't gamble.
-      </h2>
-      <p className="text-lg text-slate-300 max-w-xl mx-auto">
-        Use our interactive checklist to find hidden faults and estimate repair costs before you pay.
-      </p>
-      <Button 
-        onClick={() => navigate("/inspector")} 
-        className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 px-8 rounded-full shadow-lg transition-all hover:scale-105 group text-lg mt-6"
-      >
-        <ShieldCheck className="w-5 h-5 mr-2" />
-        Start Pre-Purchase Inspection
-        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-      </Button>
-    </div>
-  </div>
-</section>
+              <div className="container mx-auto px-4 text-center">
+                <div className="max-w-3xl mx-auto space-y-6">
+                  <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                    Buying a used car? Don't gamble.
+                  </h2>
+                  <p className="text-lg text-slate-300 max-w-xl mx-auto">
+                    Use our interactive checklist to find hidden faults and estimate repair costs before you pay.
+                  </p>
+                  <Button 
+                    onClick={() => navigate("/inspector")} 
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 px-8 rounded-full shadow-lg transition-all hover:scale-105 group text-lg mt-6"
+                  >
+                    <ShieldCheck className="w-5 h-5 mr-2" />
+                    Start Pre-Purchase Inspection
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              </div>
+            </section>
 
             <Features />
             <Pricing />
           </>
         )}
 
-        <Footer /> 
+        <Footer onOpenPolicy={() => { setViewState("privacy"); window.scrollTo({ top: 0, behavior: "smooth" }); }} /> 
       </div>
     </div>
   );

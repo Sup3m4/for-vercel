@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Suspense, useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, Html, useProgress, useAnimations, OrbitControls, ContactShadows, MeshReflectorMaterial, Environment, SpotLight } from '@react-three/drei';
-import { AlertTriangle, X, Eye, EyeOff, CircleDot, ChevronLeft, Lock, ChevronRight, Sun, Moon, Lightbulb, LightbulbOff } from 'lucide-react';
+import { AlertTriangle, X, Eye, EyeOff, CircleDot, Maximize, Minimize, ChevronLeft, Lock, ChevronRight, Sun, Moon, Lightbulb, LightbulbOff } from 'lucide-react';
 import * as THREE from 'three'; 
 import { Center } from '@react-three/drei';
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -14,6 +14,8 @@ import { bmwEngineProfiles } from '@/data/carDatabase/brands/bmw/engineprofiles'
 import { mercedesEngineProfiles } from '@/data/carDatabase/brands/mercedes-benz/engineprofiles';
 
 const XOR_KEY = 0xAA;
+
+
 
 function Loader() {
   const { progress } = useProgress();
@@ -335,77 +337,83 @@ function UniversalCarLights({
 }
 
 // --- KAMERA VEZÉRLŐ ---
-function CameraController({ activeSpot, hotspots, modelRadius, modelRef }: { activeSpot: number | null, hotspots?: Hotspot3D[], modelRadius: number, modelRef: React.RefObject<THREE.Group> }) {
+function CameraController({ activeSpot, hotspots, modelRadius, modelRef, setIsCameraMoving }: { activeSpot: number | null, hotspots?: Hotspot3D[], modelRadius: number, modelRef: React.RefObject<THREE.Group>, setIsCameraMoving: (val: boolean) => void }) {
   const { camera, controls } = useThree();
   const targetVec = useRef(new THREE.Vector3(0, 0, 0)); 
   const cameraPosVec = useRef(new THREE.Vector3(0, 2, 6)); 
-  const [isAnimating, setIsAnimating] = useState(false);
+  const isAnimating = useRef(false);
   const lastSpot = useRef(activeSpot);
 
   useEffect(() => {
     if (activeSpot !== lastSpot.current) {
       lastSpot.current = activeSpot;
       
-      if (activeSpot !== null && hotspots && hotspots[activeSpot]) {
+      if (activeSpot !== null && hotspots && hotspots[activeSpot] && modelRef.current) {
         const spot = hotspots[activeSpot];
-        
-        // 1. ÁTVÁLTÁS VILÁGKOORDINÁTÁRA
-        // A hotspot a kicsinyített modell belső terében van. Ezt átszámoljuk a valós világba:
         const worldPos = new THREE.Vector3(spot.x, spot.y, spot.z);
-        const centerWorld = new THREE.Vector3(0, 0, 0);
+        modelRef.current.localToWorld(worldPos);
         
-        if (modelRef && modelRef.current) {
-            modelRef.current.localToWorld(worldPos);
-            
-            // Megkeressük az autó TÉNYLEGES fizikai közepét a térben
-            const box = new THREE.Box3().setFromObject(modelRef.current);
-            box.getCenter(centerWorld);
-        }
+        const box = new THREE.Box3().setFromObject(modelRef.current);
+        const centerWorld = new THREE.Vector3();
+        box.getCenter(centerWorld);
 
-        // 2. CÉLPONT (A te eredeti UI eltolás logikád!)
-        const isTop = worldPos.y > 0.3;
-        const verticalOffset = isTop ? -(modelRadius * 0.20) : (modelRadius * 0.20); 
         targetVec.current.copy(worldPos);
-        targetVec.current.y += verticalOffset;
+        targetVec.current.y -= (modelRadius * 0.15); 
 
-        // 3. KAMERA IRÁNYA ÉS POZÍCIÓJA
-        // A Varázslat: Kivonjuk az autó közepét a hotspotból. 
-        // Ez egy olyan nyílvesszőt hoz létre, ami az autó közepéből fixen KIFELÉ (a hotspot felé) mutat!
-        let direction = worldPos.clone().sub(centerWorld).normalize();
-        
-        if (direction.length() < 0.1) direction.set(0, 0.5, 1).normalize();
-
-        // Okos Magasság (Ne menjen a padló alá)
-        direction.y = Math.max(0.4, Math.abs(direction.y)); 
+        let direction = worldPos.clone().sub(centerWorld);
+        if (direction.lengthSq() < 0.01) direction.set(0.5, 0.5, 0.5);
+        direction.normalize();
+        direction.y = Math.max(0.1, Math.min(0.6, direction.y)); 
         direction.normalize();
 
         const isMobile = window.innerWidth < 768;
-        const multiplier = isMobile ? 4.2 : 2.7;
-        const distance = Math.max(modelRadius * multiplier, 2.5); 
+        const idealDistance = Math.max(modelRadius * (isMobile ? 1.6 : 1.1), 1.5); 
         
-        // A kamerát letesszük a hotspotra, és kitoljuk ezen a "kifelé" mutató vonalon
-        cameraPosVec.current.copy(worldPos).add(direction.multiplyScalar(distance));
-        
-        if (cameraPosVec.current.y < 0.6) {
-            cameraPosVec.current.y = 1.0; 
-        }
+        cameraPosVec.current.copy(worldPos).add(direction.multiplyScalar(idealDistance));
+        if (cameraPosVec.current.y < 0.3) cameraPosVec.current.y = 0.3;
 
-        setIsAnimating(true);
-        const timer = setTimeout(() => setIsAnimating(false), 2000);
+        // JELEZZÜK, HOGY A KAMERA REPÜLNI KEZD
+        isAnimating.current = true;
+        setIsCameraMoving(true);
+        
+        const timer = setTimeout(() => {
+            isAnimating.current = false;
+            setIsCameraMoving(false); // MEGÉRKEZETT, VISSZAKAPCSOLJUK A PAJZSOT
+        }, 3000);
         return () => clearTimeout(timer);
-      } else {
-        targetVec.current.set(0, 0, 0);
+        
+      } else if (activeSpot === null && modelRef.current) {
+        const box = new THREE.Box3().setFromObject(modelRef.current);
+        box.getCenter(targetVec.current);
+        
+        // Fókuszálás elindul, de a pajzsot AZONNAL visszazárjuk!
+        isAnimating.current = true;
+        setIsCameraMoving(false); 
+        
+        const timer = setTimeout(() => {
+            isAnimating.current = false;
+        }, 3000);
+        return () => clearTimeout(timer);
       }
     }
-  }, [activeSpot, hotspots, modelRadius, modelRef]);
+  }, [activeSpot, hotspots, modelRadius, modelRef, setIsCameraMoving]);
 
   useFrame((state, delta) => {
     // @ts-ignore
     if (!controls) return;
-    // @ts-ignore
-    controls.target.lerp(targetVec.current, 4 * delta);
-    if (isAnimating && activeSpot !== null) {
-        camera.position.lerp(cameraPosVec.current, 3 * delta);
+    const smoothSpeed = 2.0; 
+
+    if (isAnimating.current) {
+        // @ts-ignore
+        controls.target.lerp(targetVec.current, smoothSpeed * delta);
+        if (activeSpot !== null) camera.position.lerp(cameraPosVec.current, smoothSpeed * delta);
+        // @ts-ignore
+        if (controls.update) controls.update(); 
+    } else {
+        // @ts-ignore
+        controls.target.lerp(targetVec.current, smoothSpeed * delta);
+        // @ts-ignore
+        if (controls.update) controls.update();
     }
   });
   
@@ -424,7 +432,7 @@ function ViewerStatus({ message }: { message: string }) {
 
 
 // --- MODELL KOMPONENS ---
-function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, isHeadlightOn = true, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
+function Model({ path, hotspots, showHotspots, activeSpot, setIsCameraMoving, hotspotSettings, setActiveSpot, setIsHoveringHotspot, scale = 1, rotation = [0, 0, 0], setCalculatedMinDistance, setCalculatedMaxDistance, isHeadlightOn = true, setModelRadius, onModelLoaded, isNightMode, isMobile, forcedForwardDir, setDetectedHeadlights, setDetectedTaillights, setDetectedDrllight, customLightNames, manualLightPositions, activeProfile }: any) {
   
   const [scene, setScene] = useState<THREE.Group | null>(null);
   const [animations, setAnimations] = useState<THREE.AnimationClip[]>([]);
@@ -488,6 +496,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
   const modelRef = useRef<THREE.Group>(null);
   const [smartHotspots, setSmartHotspots] = useState<Hotspot3D[]>([]);
   const [modelRadiusState, setModelRadiusState] = useState(4);
+
 
   
   
@@ -711,7 +720,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
         
         // --- NEW: PROFILE-BASED CAMERA ZOOM LIMITS ---
         // Alapértelmezett szorzó 1.2 (ha nincs megadva a profilban)
-        const minZoomMultiplier = activeProfile?.cameraSettings?.minDistanceMultiplier ?? 1.2;
+        const minZoomMultiplier = activeProfile?.cameraSettings?.minDistanceMultiplier ?? 1.15;
         const maxZoomMultiplier = activeProfile?.cameraSettings?.maxDistanceMultiplier ?? (isMobileCheck ? 4.5 : 3.5);
 
         const minDist = sphere.radius * minZoomMultiplier;
@@ -855,6 +864,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
   if (!scene) return null;
 
   return (
+    
     <group>
       <Center>
       {scene && (
@@ -887,18 +897,15 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
               }
             }}
 >
-            {showHotspots && smartHotspots.map((spot: Hotspot3D, index: number) => {
-                const isTop = spot.y > 0.3;
-                let horizontalClass = '-translate-x-1/2'; 
-                if (spot.x > 0.5) horizontalClass = '-translate-x-[90%]'; 
-                else if (spot.x < -0.5) horizontalClass = '-translate-x-[10%]'; 
+{showHotspots && smartHotspots.map((spot: Hotspot3D, index: number) => {
                 return (
                     <group key={index} position={[spot.x, spot.y, spot.z]}>
                     <Html 
                         position={[0, 0, 0]}
                         zIndexRange={[100, 0]}
                         occlude={false} 
-                        distanceFactor={hotspotSettings?.distanceFactor ?? Math.max(modelRadiusState * 2.2, 2)}
+                        // Ez a distanceFactor RAGASZTJA ODA stabilan a pöttyöket az autóhoz:
+                        distanceFactor={hotspotSettings?.distanceFactor ?? Math.max(modelRadiusState * 1.5, 2)}
                         eps={0.001}
                         style={{ pointerEvents: 'none', userSelect: 'none', WebkitUserSelect: 'none' }}
                     >
@@ -924,10 +931,9 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
                         {activeSpot === index && (
                             <div 
                                 className={`
-                                    absolute w-72 p-0 bg-slate-900/90 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl text-left z-[100] 
+                                    absolute w-72 p-0 bg-slate-900/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl text-left z-[100] 
                                     animate-in fade-in zoom-in-95 cursor-default select-text overflow-hidden
-                                    ${isTop ? 'top-8 origin-top' : 'bottom-8 origin-bottom'}
-                                    ${horizontalClass}
+                                    top-full mt-3 -translate-x-1/2
                                 `}
                             >
                             <div className="flex justify-between items-center p-4 border-b border-white/5 bg-gradient-to-r from-white/5 to-transparent">
@@ -955,7 +961,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
         </primitive>
         )}
         </Center>
-      <CameraController activeSpot={activeSpot} hotspots={smartHotspots} modelRadius={modelRadiusState} modelRef={modelRef} />
+        <CameraController activeSpot={activeSpot} hotspots={smartHotspots} modelRadius={modelRadiusState} modelRef={modelRef} setIsCameraMoving={setIsCameraMoving} />
     </group>
   );
 }
@@ -970,7 +976,10 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   const [calculatedMinDistance, setCalculatedMinDistance] = useState(2.5);
   const [calculatedMaxDistance, setCalculatedMaxDistance] = useState(12);
   const [modelRadius, setModelRadius] = useState(4);
+  const [isCameraMoving, setIsCameraMoving] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isNightMode, setIsNightMode] = useState(false);
   const [isHeadlightOn, setIsHeadlightOn] = useState(true);
   const [detectedHeadlights, setDetectedHeadlights] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
@@ -978,6 +987,29 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   const [detectedDrllight, setDetectedDrllight] = useState<{left: THREE.Vector3, right: THREE.Vector3} | null>(null);
   const [webglFailed, setWebglFailed] = useState(false);
   const [hasLostContext, setHasLostContext] = useState(false);
+
+  const toggleFullscreen = () => {
+    if (!containerRef.current) return;
+    if (!document.fullscreenElement) {
+      containerRef.current.requestFullscreen().catch(err => {
+        console.error("Error attempting to enable fullscreen:", err);
+      });
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen().catch(err => {
+        console.error("Error attempting to exit fullscreen:", err);
+      });
+      setIsFullscreen(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
   
 
   const activeProfile = useMemo(() => {
@@ -1058,6 +1090,10 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
   }, []);
 
   
+
+  
+
+  
   const formatManualLights = (pos: any) => {
     if (!pos) return null;
     return {
@@ -1088,8 +1124,9 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
 
   return (
     <div 
+      ref={containerRef} /* <--- 1. IDE KERÜL A REF */
       id="canvas-container"
-      className={`w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden relative border shadow-2xl group touch-none transition-colors duration-1000 ${isNightMode ? 'bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-black to-black border-slate-800' : 'bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 via-gray-200 to-gray-300 border-slate-200'}`}
+      className={`w-full ${isFullscreen ? 'h-screen' : 'h-[400px] md:h-[500px]'} rounded-xl overflow-hidden relative border shadow-2xl group touch-none transition-colors duration-1000 ${isNightMode ? 'bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-black to-black border-slate-800' : 'bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 via-gray-200 to-gray-300 border-slate-200'}`}
     >
       <div className="absolute top-6 left-6 pointer-events-none z-10 select-none">
          <h1 className={`font-black text-6xl md:text-8xl tracking-tighter uppercase absolute -top-4 -left-2 mix-blend-overlay transition-colors duration-1000 ${isNightMode ? 'text-white/10' : 'text-black/5'}`}></h1>
@@ -1171,6 +1208,17 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
                 )}
             </div>
           )}
+          <div className="relative group">
+              <button 
+                  onClick={(e) => { 
+                      e.stopPropagation(); 
+                      toggleFullscreen(); 
+                  }} 
+                  className="backdrop-blur-md border rounded-full p-2.5 transition-all hover:scale-110 flex items-center justify-center bg-slate-900/10 border-slate-900/20 text-slate-700 hover:bg-slate-900/20 dark:bg-white/10 dark:border-white/20 dark:text-white/70 dark:hover:bg-white/20 cursor-pointer"
+              >
+                  {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5" />}
+              </button>
+          </div>
       </div>
 
       {(webglFailed || hasLostContext) && (
@@ -1239,6 +1287,7 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
               setDetectedDrllight={setDetectedDrllight}
               hotspotSettings={activeProfile?.hotspotSettings}
               activeProfile={activeProfile}
+              setIsCameraMoving={setIsCameraMoving}
           />
 
           {/* FÉNYEK RENDERELÉSE - NINCS TÖBB DUPLIKÁCIÓ */}
@@ -1286,12 +1335,17 @@ export default function Car3DViewer({ modelPath, hotspots, scale = 1, activeProf
             />
           )}
 
-          <OrbitControls 
+<OrbitControls 
             makeDefault 
             autoRotate={false} 
             autoRotateSpeed={0.35} 
             enablePan={false} 
-            minDistance={calculatedMinDistance}
+            /* A PAJZS LOGIKÁJA: 
+               - Repülés közben: 0.1 (hogy ne akadjon ki)
+               - Megérkezés után (hotspot nézet): A modell méretének 50%-a (Nem engedi át a burkolaton!)
+               - Alapnézetben: A normál távolság.
+            */
+               minDistance={isCameraMoving ? 0.1 : (activeSpot !== null ? Math.max(modelRadius * 0.7, 1.5) : calculatedMinDistance)}
             maxDistance={calculatedMaxDistance}
             minPolarAngle={0}
             maxPolarAngle={Math.PI / 2 - 0.05} 

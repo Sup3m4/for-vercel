@@ -1,9 +1,7 @@
 import { Dna } from "lucide-react";
 
-export function Footer() {
+export function Footer({ onOpenPolicy }: { onOpenPolicy: () => void }) {
   return (
-    // A bg-secondary/20 helyett a glass-card-subtle osztályt kapja, 
-    // a keret pedig félhomályos lesz (border-border/50), akárcsak a header[cite: 29, 30].
     <footer className="py-12 border-t border-border/50 glass-card-subtle">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -19,10 +17,15 @@ export function Footer() {
 
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6">
-            <FooterLink href="#">Privacy Policy</FooterLink>
-            <FooterLink href="#">Terms of Service</FooterLink>
-            <FooterLink href="#">Contact</FooterLink>
-            <FooterLink href="#">API</FooterLink>
+            <button 
+              onClick={onOpenPolicy}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer bg-transparent border-none"
+            >
+              Privacy Policy
+            </button>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms of Service</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-muted-foreground transition-colors">Contact</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">API</a>
           </nav>
 
           {/* Copyright */}
@@ -32,16 +35,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-    >
-      {children}
-    </a>
   );
 }

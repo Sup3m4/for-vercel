@@ -57,12 +57,21 @@ export function Pricing() {
 
         {/* Ha a bundle megvan, egy üzenetet mutatunk a kártyák helyett vagy felett */}
         {isBundleOwner ? (
-  <div className="max-w-2xl mx-auto bg-primary/10 border border-primary/30 rounded-3xl p-8 text-center mb-12 shadow-xl">
-    <Sparkles className="w-12 h-12 text-primary mx-auto mb-4" />
-    <h3 className="text-2xl font-bold text-foreground mb-2">You already own the Pro Bundle! 🎉</h3>
-    <p className="text-muted-foreground">You have full, unlimited access to all engine profiles and 3D models.</p>
-  </div>
-) : (
+          <div className="max-w-2xl mx-auto bg-slate-900/70 backdrop-blur-xl border border-primary/40 rounded-3xl p-10 text-center mb-12 shadow-xl relative overflow-hidden">
+            {/* Finom belső fény effekt */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 pointer-events-none" />
+            
+            <div className="relative z-10">
+              <div className="w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 flex items-center justify-center mx-auto mb-5 shadow-inner">
+                <Sparkles className="w-8 h-8 text-primary animate-pulse" />
+              </div>
+              <h3 className="text-3xl font-extrabold text-white mb-3">You already own the Pro Bundle! 🎉</h3>
+              <p className="text-base text-slate-300 max-w-md mx-auto leading-relaxed">
+                You have full, unlimited access to all engine profiles and 3D models across all brands.
+              </p>
+            </div>
+          </div>
+        ) : (
           <>
             {/* 3 Márka Pass Kártyák */}
             <div className="flex flex-wrap justify-center gap-6 mb-8 max-w-6xl mx-auto">
