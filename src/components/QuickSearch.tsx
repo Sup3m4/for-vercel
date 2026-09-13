@@ -652,20 +652,21 @@ return (
             
             {/* LEGÖRDÜLŐ LISTA */}
             {showSuggestions && suggestions.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-xl shadow-2xl z-[999] overflow-hidden max-h-[350px] overflow-y-auto custom-scrollbar">
+                <div className="absolute top-full left-0 right-0 mt-2 bg-slate-900/95 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl z-[999] overflow-hidden max-h-[350px] overflow-y-auto custom-scrollbar text-white">
                     {suggestions.map((s, i) => (
                         <button 
                           key={i} 
                           onClick={() => selectSuggestion(s)} 
-                          className="w-full text-left p-4 hover:bg-muted/50 border-b border-border/50 last:border-0 flex items-center justify-between group transition-colors"
+                          className="w-full text-left p-4 hover:bg-white/5 border-b border-white/5 last:border-0 flex items-center justify-between group transition-colors"
                         >
                             <div className="flex flex-col">
                               <div className="flex items-center gap-2 mb-1">
-                                  <span className="font-bold font-mono text-primary bg-primary/10 px-1.5 py-0.5 rounded text-sm">{s.code}</span>
-                                  <span className="font-bold text-foreground">{s.brand} {s.model}</span>
+                              <span className="font-bold font-mono text-teal-300 bg-teal-500/20 border border-teal-500/30 px-2 py-0.5 rounded text-sm shadow-sm">
+  {s.code}
+</span>                                 <span className="font-bold text-white">{s.brand} {s.model}</span>
                               </div>
-                              <div className="text-xs text-muted-foreground flex items-center gap-2">
-                                  <span className="bg-secondary px-1.5 py-0.5 rounded">{s.generation}</span>
+                              <div className="text-xs text-slate-400 flex items-center gap-2">
+                                  <span className="bg-slate-800 px-1.5 py-0.5 rounded">{s.generation}</span>
                                   <span>•</span>
                                   <span>{s.engineType}</span>
                               </div>
@@ -675,18 +676,18 @@ return (
                                 {(s.hp || s.torque) && (
                                   <div className="text-right hidden sm:block">
                                       {s.hp && (
-                                          <div className="flex items-center gap-1 justify-end text-xs font-bold text-muted-foreground">
+                                          <div className="flex items-center gap-1 justify-end text-xs font-bold text-slate-400">
                                               {s.hp} <Zap className="w-3 h-3 text-yellow-500" />
                                           </div>
                                       )}
                                       {s.torque && (
-                                          <div className="flex items-center gap-1 justify-end text-xs font-bold text-muted-foreground">
+                                          <div className="flex items-center gap-1 justify-end text-xs font-bold text-slate-400">
                                               {s.torque} <Gauge className="w-3 h-3 text-blue-500" />
                                           </div>
                                       )}
                                   </div>
                                 )}
-                                <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-1" />
+                                <ChevronRight className="w-5 h-5 text-slate-500 group-hover:text-primary transition-transform group-hover:translate-x-1" />
                             </div>
                         </button>
                     ))}
@@ -704,18 +705,18 @@ return (
     </div>
 
     {showSmartSelector && (
-      <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in duration-300">
-         <div className="bg-background w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl shadow-2xl relative border border-border overflow-hidden">
-            <div className="p-6 border-b border-border bg-muted/30">
-              <button onClick={() => setShowSmartSelector(false)} className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors text-muted-foreground hover:text-foreground">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-md p-4 animate-in fade-in duration-300">
+         <div className="bg-slate-900 w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl shadow-2xl relative border border-white/10 overflow-hidden text-white">
+            <div className="p-6 border-b border-white/10 bg-slate-950/40">
+              <button onClick={() => setShowSmartSelector(false)} className="absolute top-4 right-4 p-2 rounded-full hover:bg-white/10 transition-colors text-slate-400 hover:text-white">
                   <X className="w-6 h-6"/>
               </button>
               <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4 shadow-sm">
-                      <AlertCircle className="w-6 h-6 text-yellow-600" />
+                  <div className="w-12 h-12 bg-yellow-500/20 text-yellow-500 rounded-full flex items-center justify-center mb-4 shadow-sm border border-yellow-500/30">
+                      <AlertCircle className="w-6 h-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Match Found</h3>
-                  <p className="text-muted-foreground mt-2 max-w-md">
+                  <h3 className="text-2xl font-bold text-white">Match Found</h3>
+                  <p className="text-slate-400 mt-2 max-w-md">
                       Please confirm the exact variant for <strong>{foundMatches[0]?.brand} {foundMatches[0]?.model}</strong>.
                   </p>
               </div>
@@ -731,23 +732,25 @@ return (
                           onSelectVehicleConfig(m.brand, m.model, m.generation, m.engineType);
                         } else {
                           onEngineCodeFound(m.brand, m.model, m.generation, m.engineType, m.code, m.profileId); }} }
-                      className="w-full text-left p-4 rounded-xl border border-border bg-card hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all flex items-center justify-between group"
+                      className="w-full text-left p-4 rounded-xl border border-white/10 bg-slate-950/60 hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all flex items-center justify-between group"
                   >
                           <div className="flex items-center gap-5">
                               <div className="shrink-0"><BrandLogo brand={m.brand} /></div>
                               <div>
-                                  <div className="font-bold text-lg flex items-center gap-2">
+                                  <div className="font-bold text-lg flex items-center gap-2 text-white">
                                       {m.model} 
                                       <span className="px-2 py-0.5 rounded text-sm bg-primary/10 text-primary font-medium">{m.engineType}</span>
                                   </div>
-                                  <div className="text-sm text-muted-foreground mt-1 flex items-center gap-2">
-                                      <span className="font-mono bg-muted px-1.5 py-0.5 rounded text-foreground">{m.code}</span>
-                                      {m.hp && <span className="text-muted-foreground">• {m.hp}</span>}
-                                      <span className="text-muted-foreground">• {m.generation}</span>
+                                  <div className="text-sm text-slate-400 mt-1 flex items-center gap-2">
+                                  <span className="font-mono font-bold text-teal-300 bg-teal-500/20 border border-teal-500/30 px-2 py-0.5 rounded text-sm">
+  {m.code}
+</span>
+                                      {m.hp && <span className="text-slate-400">• {m.hp}</span>}
+                                      <span className="text-slate-400">• {m.generation}</span>
                                   </div>
                               </div>
                           </div>
-                          <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-1" />
+                          <ChevronRight className="w-5 h-5 text-slate-500 group-hover:text-primary transition-transform group-hover:translate-x-1" />
                       </button>
                   ))}
             </div>
