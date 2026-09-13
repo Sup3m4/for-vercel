@@ -215,4 +215,28 @@
       box-shadow: 0 0 40px hsl(215 90% 52% / 0.4);
     }
   }
+} /* <-- Itt záródik az @layer components vagy a layer alap */
+
+/* EZT A RÉSZT TEDD TELJESEN KÍVÜLRE, A FÁJL LEGALJÁRA: */
+@media print {
+  /* 1. Teljesen nullázzuk a nyomtatási oldal margóját, hogy a bönyésző ne tudjon hova fejlécet rajzolni */
+  @page {
+    size: A4;
+    margin: 0 !important;
+  }
+
+  /* 2. A margót és a térközt ide, a body-ra adjuk át belső margóként (padding) */
+  body {
+    margin: 0 !important;
+    padding: 20mm 15mm 20mm 15mm !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: white !important;
+    color: black !important;
+  }
+
+  /* 3. Elrejtjük a gombokat és a navigációt nyomtatáskor */
+  .print\:hidden {
+    display: none !important;
+  }
 }

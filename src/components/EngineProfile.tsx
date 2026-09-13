@@ -26,9 +26,9 @@ import {
     X,
     DollarSign,
     Cpu,
-    Info,
+    Info, Printer, Download,
     Settings,
-    Wind,
+    Wind, ArrowLeft,
     Activity,
     ExternalLink,
     Leaf,
@@ -69,6 +69,67 @@ export function EngineProfile({ profile }: EngineProfileProps) {
   const hardwareConcurrency = typeof navigator !== "undefined" ? navigator.hardwareConcurrency ?? 8 : 8;
   const deviceMemory = typeof navigator !== "undefined" ? ((navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8) : 8;
   const isLowEndDevice = hardwareConcurrency <= 6 || deviceMemory <= 4;
+
+  const [isSaved, setIsSaved] = useState(() => {
+    const savedEngines = JSON.parse(localStorage.getItem('car_dna_saved_engines') || '[]');
+    return savedEngines.includes(profile.id);
+  });
+
+  const handleToggleSave = () => {
+    const savedEngines = JSON.parse(localStorage.getItem('car_dna_saved_engines') || '[]');
+    let updated;
+    
+    if (isSaved) {
+      updated = savedEngines.filter((id: string) => id !== profile.id);
+      setIsSaved(false);
+    } else {
+      updated = [...savedEngines, profile.id];
+      setIsSaved(true);
+    }
+    
+    localStorage.setItem('car_dna_saved_engines', JSON.stringify(updated));
+  };
+ 
+  const [isPrinting, setIsPrinting] = useState(false);
+
+  const handleDownloadPdf = () => {
+    // 1. Kényszerítve nyitottra állítunk minden lenyitható szekciót
+    setIsPrinting(true);
+    setIsSpecsExpanded(true);
+    setIsMaintenanceExpanded(true);
+    setIsCrossRefExpanded(true);
+
+    // 2. Adunk egy kis időt (150ms) a Reactnak, hogy felrajzolja őket a DOM-ba, és csak utána hívjuk a nyomtatást
+    setTimeout(() => {
+      window.print();
+      
+      // 3. Nyomtatás után egy pici késleltetéssel visszaállítjuk az állapotot
+      setTimeout(() => {
+        setIsPrinting(false);
+      }, 500);
+    }, 150);
+  };
+
+  useEffect(() => {
+    const handleBeforePrint = () => {
+      setIsPrinting(true);
+      setIsSpecsExpanded(true);
+      setIsMaintenanceExpanded(true);
+      setIsCrossRefExpanded(true);
+    };
+
+    const handleAfterPrint = () => {
+      setIsPrinting(false);
+    };
+
+    window.addEventListener('beforeprint', handleBeforePrint);
+    window.addEventListener('afterprint', handleAfterPrint);
+
+    return () => {
+      window.removeEventListener('beforeprint', handleBeforePrint);
+      window.removeEventListener('afterprint', handleAfterPrint);
+    };
+  }, []);
 
   
 
@@ -200,13 +261,50 @@ export function EngineProfile({ profile }: EngineProfileProps) {
     ];
   }, [profile.tuningGraphData, baseHp, baseNm]);
 
+  
+
   return (
     <div id="basic-specs" className="w-full max-w-6xl mx-auto space-y-6 animate-slide-up relative">
       <PageNavigator />
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 px-2 print:hidden">
+        
+        {/* 1. Bal oldal: Vissza gomb */}
+        <button 
+          onClick={() => window.history.back()} 
+          className="text-muted-foreground hover:text-foreground flex items-center gap-2 text-sm transition-colors cursor-pointer"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Engine Code Selection
+        </button>
+
+        {/* 2. Pontosan Közép: PDF Letöltés gomb (Stílusos, kiemelt megjelenéssel) */}
+        <Button 
+          onClick={handleDownloadPdf}
+          className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-5 py-2.5 rounded-xl shadow-lg hover:shadow-primary/25 transition-all flex items-center gap-2"
+        >
+          <Download className="w-4 h-4" />
+          Download as PDF
+        </Button>
+
+        {/* 3. Jobb oldal: Mentés gomb */}
+        <button
+                  onClick={handleToggleSave}
+                  className={cn(
+                    "flex items-center gap-2 px-4 py-2 rounded-xl border text-xs font-bold transition-all duration-300 shadow-lg cursor-pointer hover:scale-105 active:scale-95 backdrop-blur-md",
+                    isSaved 
+                      ? "bg-amber-500/20 text-amber-400 border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.3)]" 
+                      : "bg-slate-900/80 text-slate-300 border-white/10 hover:text-white hover:bg-slate-800"
+                  )}
+                >
+                  <Star className={cn("w-4 h-4 transition-transform", isSaved && "fill-amber-400 scale-110 text-amber-400")} />
+                  <span>{isSaved ? "Saved in Garage" : "Save Engine Profile"}</span>
+                </button>
+
+      </div>
       {/* Header Card */}
       <div className="glass-card rounded-2xl p-6 md:p-8">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          <div>
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6"><div>
+          
             <div className="flex items-center gap-3 mb-2">
               <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full uppercase tracking-wider">
                 {profile.brand}
@@ -240,6 +338,8 @@ export function EngineProfile({ profile }: EngineProfileProps) {
               <span className="text-muted-foreground">{profile.displacement}</span>
             </div>
           </div>
+
+          
 
           {/* Risk Rating (LOCKED / UNLOCKED) */}
           <div className="flex-shrink-0">
@@ -535,7 +635,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
             </div>
 
             {/* Dropdown Content - Csak akkor renderelődik, ha prémium ÉS le van nyitva */}
-            {isSpecsExpanded && isPremiumUnlocked && (
+            {(isSpecsExpanded || isPrinting) && isPremiumUnlocked && (
               <div className="mt-8 grid grid-cols-1 gap-8 animate-fade-in">
                 
                 <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
@@ -822,7 +922,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
               </button>
 
               {/* LENYÍLÓ TARTALOM */}
-              {isMaintenanceExpanded && (
+              {(isMaintenanceExpanded || isPrinting) && (
                 <div className="mt-4 space-y-6 animate-in slide-in-from-top-4 duration-500">
                   
                   {/* 1. FOLYADÉKOK ÉS HAJTÁSLÁNC (KIEMELT) */}
@@ -929,7 +1029,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
               </button>
 
               {/* LENYÍLÓ TARTALOM */}
-              {isCrossRefExpanded && (
+              {(isCrossRefExpanded || isPrinting) && (
                 <div className="mt-4 bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm animate-in slide-in-from-top-4 duration-500 relative">
                   
                   {/* UNLOCK GOMB (OVERLAY) - Csak ha le van zárva */}

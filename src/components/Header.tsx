@@ -9,7 +9,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-card-subtle border-b border-border/50">
-      <div className="container mx-auto px-4">
+      <div className="max-w-7,5xl w-full mx-0 px-6 md:px-10">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
@@ -24,8 +24,10 @@ export function Header() {
           {/* Desktop Navigation - A szöveges Profile link marad a helyén */}
           <nav className="hidden md:flex items-center gap-8">
             <NavLink href="#search">Search</NavLink>
+            <NavLink href="#inspector">Vehicle History</NavLink>
             <NavLink href="#features">Features</NavLink>
             <NavLink href="#pricing">Pricing</NavLink>
+            
             <SignedIn>
               <NavLink href="/profile">Profile</NavLink>
             </SignedIn>
@@ -70,8 +72,10 @@ export function Header() {
         >
           <nav className="flex flex-col gap-2">
             <MobileNavLink href="#search" onClick={() => setIsMenuOpen(false)}>Search</MobileNavLink>
+            <MobileNavLink href="#inspector" onClick={() => setIsMenuOpen(false)}>Vehicle History</MobileNavLink>
             <MobileNavLink href="#features" onClick={() => setIsMenuOpen(false)}>Features</MobileNavLink>
             <MobileNavLink href="#pricing" onClick={() => setIsMenuOpen(false)}>Pricing</MobileNavLink>
+           
             
             <SignedIn>
               <MobileNavLink href="/profile" onClick={() => setIsMenuOpen(false)}>Profile</MobileNavLink>
@@ -98,10 +102,38 @@ export function Header() {
 // --- Segédkomponensek a stílushoz ---
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        // Alapértelmezett eltolás a többi gomhnak (pl. Search, Pricing)
+        let headerOffset = 330; 
+
+        // KÜLÖN SZABÁLY CSAK A FEATURES-RE:
+        if (href === "#features") {
+          headerOffset = 80;
+        } else if (href === "#pricing") {
+          headerOffset = 1; 
+        }
+
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }
+  };
+
   return (
     <a
       href={href}
-      className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+      onClick={handleClick}
+      className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
     >
       {children}
     </a>
@@ -117,11 +149,32 @@ function MobileNavLink({
   children: React.ReactNode;
   onClick: () => void;
 }) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      onClick(); // Bezárja a mobil menüt
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        const headerOffset = 300;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    } else {
+      onClick();
+    }
+  };
+
   return (
     <a
       href={href}
-      onClick={onClick}
-      className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
+      onClick={handleClick}
+      className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors block"
     >
       {children}
     </a>

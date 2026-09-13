@@ -13,7 +13,7 @@ import { Features } from "@/components/Features";
 import { Pricing } from "@/components/Pricing";
 import { Footer } from "@/components/Footer";
 import { getEngineProfile, engineProfiles, EngineProfile as EngineProfileType } from "@/data/carDatabase";
-import { ArrowLeft, ShieldCheck, ArrowRight } from "lucide-react";
+import { ArrowLeft, ShieldCheck, Download, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { carDatabase } from "@/data/carDatabase";
 import type { EngineTypeEntry } from "@/data/carDatabase";
@@ -35,6 +35,7 @@ const Index = () => {
   const [viewState, setViewState] = useState<ViewState>("search");
   const [vehicleSelection, setVehicleSelection] = useState<VehicleSelection | null>(null);
   const [selectedProfile, setSelectedProfile] = useState<EngineProfileType | null>(null);
+  
 
   // --- 1. URL MONITORING & PROFILE LOADING ---
   useEffect(() => {
@@ -90,32 +91,7 @@ const Index = () => {
     }
   };
 
-  const [isSaved, setIsSaved] = useState(false);
-
-  useEffect(() => {
-    if (selectedProfile) {
-      const savedEngines = JSON.parse(localStorage.getItem('car_dna_saved_engines') || '[]');
-      setIsSaved(savedEngines.includes(selectedProfile.id));
-    }
-  }, [selectedProfile]);
-
-  const handleToggleSave = () => {
-    if (!selectedProfile) return;
-    
-    // Ellenőrzés, hogy be van-e jelentkezve (ha használod a Clerk hookot az Indexben is)
-    // Megjegyzés: Ha a Clerk useUser-t itt is be akarod hívni, importáld be a @clerk/clerk-react-ből.
-    
-    const savedEngines = JSON.parse(localStorage.getItem('car_dna_saved_engines') || '[]');
-    let updated;
-    if (isSaved) {
-      updated = savedEngines.filter((id: string) => id !== selectedProfile.id);
-      setIsSaved(false);
-    } else {
-      updated = [...savedEngines, selectedProfile.id];
-      setIsSaved(true);
-    }
-    localStorage.setItem('car_dna_saved_engines', JSON.stringify(updated));
-  };
+  
 
   // --- 4. QUICK SEARCH HANDLER ---
   const handleQuickSearch = (brand: string, model: string, generation: string, engineType: string, engineCode: string, profileId?: string) => {
@@ -178,29 +154,7 @@ const Index = () => {
         {viewState === "profile" && selectedProfile ? (
           <main className="pt-24 pb-16 min-h-screen">
             <div className="container mx-auto px-4">
-              <div className="flex items-center justify-between mb-6">
-                <Button
-                  variant="ghost"
-                  onClick={handleBackToEngineCode}
-                  className="gap-2 text-slate-300 hover:text-white hover:bg-white/10"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  Back to Engine Code Selection
-                </Button>
-
-                <button
-                  onClick={handleToggleSave}
-                  className={cn(
-                    "flex items-center gap-2 px-4 py-2 rounded-xl border text-xs font-bold transition-all duration-300 shadow-lg cursor-pointer hover:scale-105 active:scale-95 backdrop-blur-md",
-                    isSaved 
-                      ? "bg-amber-500/20 text-amber-400 border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.3)]" 
-                      : "bg-slate-900/80 text-slate-300 border-white/10 hover:text-white hover:bg-slate-800"
-                  )}
-                >
-                  <Star className={cn("w-4 h-4 transition-transform", isSaved && "fill-amber-400 scale-110 text-amber-400")} />
-                  <span>{isSaved ? "Saved in Garage" : "Save Engine Profile"}</span>
-                </button>
-              </div>
+              <div className="flex items-center justify-between mb-6"></div>
 
               <EngineProfile profile={selectedProfile} />
             </div>
@@ -246,26 +200,26 @@ const Index = () => {
 
             
 
-            <section className="py-16 bg-transparent relative z-10">
-              <div className="container mx-auto px-4 text-center">
-                <div className="max-w-3xl mx-auto space-y-6">
-                  <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-                    Buying a used car? Don't gamble.
-                  </h2>
-                  <p className="text-lg text-slate-300 max-w-xl mx-auto">
-                    Use our interactive checklist to find hidden faults and estimate repair costs before you pay.
-                  </p>
-                  <Button 
-                    onClick={() => navigate("/inspector")} 
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 px-8 rounded-full shadow-lg transition-all hover:scale-105 group text-lg mt-6"
-                  >
-                    <ShieldCheck className="w-5 h-5 mr-2" />
-                    Start Pre-Purchase Inspection
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </div>
-            </section>
+            <section id="inspector" className="py-16 bg-transparent relative z-10 scroll-mt-28">
+  <div className="container mx-auto px-4 text-center">
+    <div className="max-w-3xl mx-auto space-y-6">
+      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+        Buying a used car? Don't gamble.
+      </h2>
+      <p className="text-lg text-slate-300 max-w-xl mx-auto">
+        Use our interactive checklist to find hidden faults and estimate repair costs before you pay.
+      </p>
+      <Button 
+        onClick={() => navigate("/inspector")} 
+        className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 px-8 rounded-full shadow-lg transition-all hover:scale-105 group text-lg mt-6"
+      >
+        <ShieldCheck className="w-5 h-5 mr-2" />
+        Start Pre-Purchase Inspection
+        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+      </Button>
+    </div>
+  </div>
+</section>
 
             <Features />
             <Pricing />

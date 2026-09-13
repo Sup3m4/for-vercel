@@ -37,7 +37,7 @@ export function Pricing() {
   };
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-transparent">
+    <section id="pricing" className="relative py-24 md:py-32 overflow-hidden bg-transparent">
       {/* Enyhébb, áttetszőbb gradiens, hogy átengedje a DNS-t */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-transparent pointer-events-none" />
 
