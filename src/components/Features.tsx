@@ -18,7 +18,7 @@ export function Features() {
             Intelligence That Matters
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Every CarDNA profile contains actionable data compiled from manufacturer
+            Every engine profile contains actionable data compiled from manufacturer
             documentation, workshop manuals, and real-world experience.
           </p>
         </div>

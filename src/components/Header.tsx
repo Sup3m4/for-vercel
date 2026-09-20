@@ -12,14 +12,15 @@ export function Header() {
       <div className="max-w-7,5xl w-full mx-0 px-6 md:px-10">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center group-hover:shadow-glow transition-shadow">
-              <Dna className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-foreground">
-              Car<span className="text-primary">DNA</span>
-            </span>
-          </a>
+          {/* Logo */}
+<a href="/" className="flex items-center gap-2 group">
+  <div className="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center group-hover:shadow-glow transition-shadow bg-secondary">
+    <img src="/images/logo.jpg" alt="PistonDNA Logo" className="w-full h-full object-cover" />
+  </div>
+  <span className="text-xl font-bold text-foreground">
+    Piston<span className="text-primary">DNA</span>
+  </span>
+</a>
 
           {/* Desktop Navigation - A szöveges Profile link marad a helyén */}
           <nav className="hidden md:flex items-center gap-8">

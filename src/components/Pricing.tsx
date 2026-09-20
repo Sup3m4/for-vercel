@@ -147,7 +147,7 @@ export function Pricing() {
             {/* Pro Bundle Kártya (Csak akkor látszik, ha nincs meg a bundle) */}
             <div className="max-w-6xl mx-auto bg-slate-900/90 backdrop-blur-xl border-2 border-primary/50 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
               <div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white">Cardna Pro Garage Bundle</h3>
+                <h3 className="text-2xl md:text-3xl font-extrabold text-white">PistonDNA Pro Garage Bundle</h3>
                 <p className="text-sm text-slate-300 mt-2">Unlock all 3 brands together at a discounted price.</p>
               </div>
               <div className="flex flex-col items-center md:items-end w-full md:w-auto">
