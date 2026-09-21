@@ -21,15 +21,14 @@ export default defineConfig(({ mode }) => {
         stringArray: true,
         stringArrayEncoding: ['base64'],
         stringArrayThreshold: 0.75,
-        // ITT A LÉNYEG: Kizárjuk a node_modules-on kívül a data mappát is, 
-        // hogy az obfuszkátor ne rontsa el a motorfájlok kulcsait!
-        exclude: [/node_modules/, /src\/data/]
+        exclude: [/node_modules/]
       } as any),
     ].filter(Boolean),
     build: {
-      chunkSizeWarningLimit: 100000,
+      chunkSizeWarningLimit: 100000, // Teljesen kikapcsolja a méretbeli figyelmeztetéseket helyben
       rollupOptions: {
         output: {
+          // Biztosítjuk, hogy a kimeneti fájlok elnevezése tiszta maradjon a build során
           entryFileNames: 'assets/[name]-[hash].js',
           chunkFileNames: 'assets/[name]-[hash].js',
           assetFileNames: 'assets/[name]-[hash].[ext]'
