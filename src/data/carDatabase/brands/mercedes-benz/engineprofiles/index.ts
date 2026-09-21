@@ -1,19 +1,28 @@
 import type { EngineProfile } from "@/data/carDatabase";
 
+// 1. Betöltjük az adott mappa összes .ts fájlját
 const modules = import.meta.glob<Record<string, any>>('./*.ts', { eager: true });
 
-export const mercedesEngineProfiles: EngineProfile[] = Object.keys(modules)
-  .filter(path => !path.includes('index'))
-  .flatMap(path => {
+// 2. ITT NEVEZD ÁT A MÁRKÁDNAK MEGFELELŐEN:
+// (pl. bmwEngineProfiles, audiEngineProfiles, vagy mercedesEngineProfiles)
+export const mercedesEngineProfiles: EngineProfile[] = [];
+
+for (const path in modules) {
+  if (!path.includes('index')) {
     const mod = modules[path];
 
-    if (mod.default) {
-      return Array.isArray(mod.default) ? mod.default : [mod.default];
-    }
+    // Végigmegyünk a fájlban lévő összes exporton
+    for (const key in mod) {
+      if (key === '__esModule') continue;
 
-    return Object.keys(mod)
-      .filter(key => key !== '__esModule')
-      .map(key => mod[key])
-      .flatMap(content => Array.isArray(content) ? content : [content])
-      .filter(content => content && typeof content === 'object' && 'id' in content); 
-  }) as EngineProfile[];
+      const content = mod[key];
+      
+      // Ha a fájlban egy tömb van (pl. export const firstseriesProfiles = [...] ), kibontjuk
+      if (Array.isArray(content)) {
+        mercedesEngineProfiles.push(...content);
+      } else if (content && typeof content === 'object' && 'id' in content) {
+        mercedesEngineProfiles.push(content as EngineProfile);
+      }
+    }
+  }
+}

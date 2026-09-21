@@ -1,22 +1,29 @@
 import type { EngineProfile } from "@/data/carDatabase";
 
+// 1. Megnézzük, hogy egyáltalán talál-e fájlokat a glob
 const modules = import.meta.glob<Record<string, any>>('./*.ts', { eager: true });
+console.log("DEBUG [BMW Index]: Talált fájlok útvonalai:", Object.keys(modules));
 
-export const bmwEngineProfiles: EngineProfile[] = Object.keys(modules)
-  .filter(path => !path.includes('index'))
-  .flatMap(path => {
+export const bmwEngineProfiles: EngineProfile[] = [];
+
+for (const path in modules) {
+  if (!path.includes('index')) {
     const mod = modules[path];
+    console.log(`DEBUG [BMW Index]: Fájl vizsgálata -> ${path}`, mod);
 
-    // 1. Ha default exportot használsz
-    if (mod.default) {
-      return Array.isArray(mod.default) ? mod.default : [mod.default];
+    for (const key in mod) {
+      if (key === '__esModule') continue;
+
+      const content = mod[key];
+      console.log(`DEBUG [BMW Index]: Kulcs a fájlban: "${key}", Típusa tömb-e?: ${Array.isArray(content)}`, content);
+
+      if (Array.isArray(content)) {
+        bmwEngineProfiles.push(...content);
+      } else if (content && typeof content === 'object' && 'id' in content) {
+        bmwEngineProfiles.push(content as EngineProfile);
+      }
     }
+  }
+}
 
-    // 2. Ha named exportot használsz (pl. export const bmwB47 = {...})
-    return Object.keys(mod)
-      .filter(key => key !== '__esModule')
-      .map(key => mod[key])
-      .flatMap(content => Array.isArray(content) ? content : [content])
-      // CSAK azokat az objektumokat engedjük át, amiknek van 'id' mezője (vagyis biztosan profilok)
-      .filter(content => content && typeof content === 'object' && 'id' in content); 
-  }) as EngineProfile[];
+console.log("DEBUG [BMW Index]: Összes sikeresen betöltött BMW elem száma:", bmwEngineProfiles.length);
