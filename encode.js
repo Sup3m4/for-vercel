@@ -5,8 +5,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const inputPath = path.join(__dirname, 'public/images/brands/mercedes/S-Class/C217/c217.glb');
-const outputPath = path.join(__dirname, 'public/images/brands/mercedes/S-Class/C217/c217.dat');
+const inputPath = path.join(__dirname, 'public/images/brands/mercedes/S-Class/W140/w140.glb');
+const outputPath = path.join(__dirname, 'public/images/brands/mercedes/S-Class/W140/w140.dat');
 const XOR_KEY = 0xAA;
 
 try {
