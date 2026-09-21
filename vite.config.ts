@@ -4,14 +4,10 @@ import path from 'path';
 import obfuscator from 'rollup-plugin-obfuscator';
 
 export default defineConfig(({ mode }) => {
-  // Megnézzük, hogy a Cloudflare környezetében vagyunk-e (a Cloudflare automatikusan beállítja a CF_PAGES=1 változót)
-  const isCloudflare = process.env.CF_PAGES === '1';
-
   return {
     plugins: [
       react(),
-      // AZ ÚJ LOGIKA: Csak akkor zavarja össze a kódot, ha nem a Cloudflare-en vagyunk
-      mode === 'production' && !isCloudflare && obfuscator({
+      mode === 'production' && obfuscator({
         compact: true,
         controlFlowFlattening: false,
         deadCodeInjection: false,
@@ -29,17 +25,13 @@ export default defineConfig(({ mode }) => {
       } as any),
     ].filter(Boolean),
     build: {
-      chunkSizeWarningLimit: 10000,
+      chunkSizeWarningLimit: 100000, // Teljesen kikapcsolja a méretbeli figyelmeztetéseket helyben
       rollupOptions: {
         output: {
-          manualChunks(id) {
-            if (id.includes('node_modules')) {
-              if (id.includes('three') || id.includes('@react-three') || id.includes('fiber')) {
-                return 'v-3d';
-              }
-              return 'v-core';
-            }
-          }
+          // Biztosítjuk, hogy a kimeneti fájlok elnevezése tiszta maradjon a build során
+          entryFileNames: 'assets/[name]-[hash].js',
+          chunkFileNames: 'assets/[name]-[hash].js',
+          assetFileNames: 'assets/[name]-[hash].[ext]'
         }
       }
     },
