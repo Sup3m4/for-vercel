@@ -1,44 +1,38 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
-import obfuscator from 'rollup-plugin-obfuscator';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from "path"
 
-export default defineConfig(({ mode }) => {
-  return {
-    plugins: [
-      react(),
-      mode === 'production' && obfuscator({
-        compact: true,
-        controlFlowFlattening: false,
-        deadCodeInjection: false,
-        debugProtection: false,
-        disableConsoleOutput: false,
-        identifierNamesGenerator: 'hexadecimal',
-        log: false,
-        renameGlobals: false,
-        rotateStringArray: true,
-        selfDefending: false,
-        stringArray: true,
-        stringArrayEncoding: ['base64'],
-        stringArrayThreshold: 0.75,
-        exclude: [/node_modules/]
-      } as any),
-    ].filter(Boolean),
-    build: {
-      chunkSizeWarningLimit: 100000, // Teljesen kikapcsolja a méretbeli figyelmeztetéseket helyben
-      rollupOptions: {
-        output: {
-          // Biztosítjuk, hogy a kimeneti fájlok elnevezése tiszta maradjon a build során
-          entryFileNames: 'assets/[name]-[hash].js',
-          chunkFileNames: 'assets/[name]-[hash].js',
-          assetFileNames: 'assets/[name]-[hash].[ext]'
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // React és node_modules külső függőségek külön fájlba
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+          
+          // CSAK a konkrét motorprofil adatfájlokat daraboljuk szét egyesével!
+          // Az index.ts fájlokat szándékosan kihagyjuk, hogy a futási sorrend ne boruljon fel
+          if (id.includes('/engineprofiles/') && !id.endsWith('index.ts')) {
+            const pathParts = id.split('/');
+            // Fájlnév kinyerése (pl. "1series")
+            const filename = pathParts.pop()?.replace('.ts', '') || 'data';
+            // Márkanév kinyerése (pl. "bmw") - az "engineprofiles" előtti mappa
+            const brand = pathParts[pathParts.length - 2]; 
+            
+            // Így minden egyes széria külön kis fájl lesz (pl. data-bmw-1series, data-audi-a3)
+            return `data-${brand}-${filename}`;
+          }
         }
       }
     },
-    resolve: {
-      alias: {
-        '@': path.resolve(import.meta.dirname, './src'),
-      },
-    },
-  };
-});
+    chunkSizeWarningLimit: 2000,
+  }
+})
