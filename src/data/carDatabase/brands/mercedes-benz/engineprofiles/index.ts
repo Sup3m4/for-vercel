@@ -1,34 +1,23 @@
 import type { EngineProfile } from "@/data/carDatabase";
-import { abclassProfiles } from "./abclass";
-import { cclassProfiles } from "./cclass";
-import { clandclaclassProfiles} from "./cl+claclass";
-import { clccleclkProfiles } from "./clccleclkclass";
-import { clsclassProfiles } from "./clsclass";
-import { eclassProfiles } from "./eclass";
-import { eclasssecondProfiles } from "./eclasssecond";
-import { gglclassProfiles } from "./gglclass";
-import { mlglsclassProfiles } from "./mlglsclass";
-import { gtsclassProfiles } from "./gtsclass";
 
+// Dinamikusan, különálló darabokká bontva tölti be a mappában lévő ts fájlokat
+const profileModules = import.meta.glob<{ [key: string]: EngineProfile[] } | EngineProfile[]>('./*.ts', { eager: false });
 
+export async function getMercedesEngineProfiles(): Promise<EngineProfile[]> {
+  const allProfiles: EngineProfile[] = [];
 
+  for (const path in profileModules) {
+    if (!path.includes('index')) {
+      const mod = await profileModules[path]();
+      const content = 'default' in mod ? mod.default : Object.values(mod)[0];
+      
+      if (Array.isArray(content)) {
+        allProfiles.push(...content);
+      } else if (content) {
+        allProfiles.push(content as EngineProfile);
+      }
+    }
+  }
 
-
-
-export const mercedesEngineProfiles: EngineProfile[] = [
-
-...abclassProfiles,
-...cclassProfiles,
-...clandclaclassProfiles,
-...clccleclkProfiles,
-...clsclassProfiles,
-...eclassProfiles,
-...eclasssecondProfiles,
-...gglclassProfiles,
-...mlglsclassProfiles,
-...gtsclassProfiles,
-
-
-
-
-]
+  return allProfiles;
+}
