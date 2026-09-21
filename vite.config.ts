@@ -4,10 +4,14 @@ import path from 'path';
 import obfuscator from 'rollup-plugin-obfuscator';
 
 export default defineConfig(({ mode }) => {
+  // Megnézzük, hogy a Cloudflare környezetében vagyunk-e (a Cloudflare automatikusan beállítja a CF_PAGES=1 változót)
+  const isCloudflare = process.env.CF_PAGES === '1';
+
   return {
     plugins: [
       react(),
-      mode === 'production' && obfuscator({
+      // AZ ÚJ LOGIKA: Csak akkor zavarja össze a kódot, ha nem a Cloudflare-en vagyunk
+      mode === 'production' && !isCloudflare && obfuscator({
         compact: true,
         controlFlowFlattening: false,
         deadCodeInjection: false,
@@ -21,24 +25,18 @@ export default defineConfig(({ mode }) => {
         stringArray: true,
         stringArrayEncoding: ['base64'],
         stringArrayThreshold: 0.75,
-        // Kifejezetten megtiltjuk, hogy a node_modules-t vagy a szétvágott chunkokat bántsa
-        exclude: [/node_modules/, /vendor/, /chunk/]
+        exclude: [/node_modules/]
       } as any),
     ].filter(Boolean),
     build: {
       chunkSizeWarningLimit: 10000,
-      // Kényszerítjük a Vite-et, hogy különálló fizikai fájlokba mentse a modulokat
-      cssCodeSplit: true,
       rollupOptions: {
         output: {
-          // Teljesen különálló fájlneveket kényszerítünk ki a külső elemeknek
           manualChunks(id) {
             if (id.includes('node_modules')) {
-              // Ha 3D könyvtár, kap egy teljesen egyedi "v-3d" nevet
               if (id.includes('three') || id.includes('@react-three') || id.includes('fiber')) {
                 return 'v-3d';
               }
-              // Minden más külső könyvtár egy külön "v-core" fájlba megy
               return 'v-core';
             }
           }
