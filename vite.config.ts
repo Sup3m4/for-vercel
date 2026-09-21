@@ -21,22 +21,25 @@ export default defineConfig(({ mode }) => {
         stringArray: true,
         stringArrayEncoding: ['base64'],
         stringArrayThreshold: 0.75,
-        exclude: [/node_modules/]
+        // Kifejezetten megtiltjuk, hogy a node_modules-t vagy a szétvágott chunkokat bántsa
+        exclude: [/node_modules/, /vendor/, /chunk/]
       } as any),
     ].filter(Boolean),
     build: {
       chunkSizeWarningLimit: 10000,
+      // Kényszerítjük a Vite-et, hogy különálló fizikai fájlokba mentse a modulokat
+      cssCodeSplit: true,
       rollupOptions: {
         output: {
-          // Ez a finomhangolt logika megakadályozza az ezer fájl létrejöttét
+          // Teljesen különálló fájlneveket kényszerítünk ki a külső elemeknek
           manualChunks(id) {
             if (id.includes('node_modules')) {
-              // Ha Three.js-t vagy ehhez kapcsolódó 3D csomagot talál, azt egyetlen különálló "vendor-3d" fájlba gyűjti
+              // Ha 3D könyvtár, kap egy teljesen egyedi "v-3d" nevet
               if (id.includes('three') || id.includes('@react-three') || id.includes('fiber')) {
-                return 'vendor-3d';
+                return 'v-3d';
               }
-              // Minden más egyéb külső alapcsomagot (pl. React) egyetlen közös "vendor-core" fájlba rak
-              return 'vendor-core';
+              // Minden más külső könyvtár egy külön "v-core" fájlba megy
+              return 'v-core';
             }
           }
         }
