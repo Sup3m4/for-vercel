@@ -3,7 +3,7 @@ import { Database } from "lucide-react";
 export function Hero() {
   return (
     <section className="relative pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
-      {/* A négyzetrács (tech-grid) eltávolítva a tiszta, sötét háttér érdekében[cite: 33] */}
+      {/* A négyzetrács (tech-grid) eltávolítva a tiszta, sötét háttér érdekében */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/40 to-transparent pointer-events-none" />
 
       {/* Glow Effects */}
@@ -26,8 +26,11 @@ export function Hero() {
             <span className="gradient-text">True DNA</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          {/* Subheadline - Elegáns slate-200 szín, finom árnyékolással keret nélkül */}
+          <p 
+            className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto mb-8 animate-slide-up drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] leading-relaxed font-normal" 
+            style={{ animationDelay: "0.1s" }}
+          >
             Access detailed technical profiles, 3D models, known vulnerabilities, maintenance schedules,
             and tuning potential for thousands of automotive engines. Make informed decisions
             backed by real engineering data.

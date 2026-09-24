@@ -11,6 +11,7 @@ import { EngineCodeSelector } from "@/components/EngineCodeSelector";
 import { EngineProfile } from "@/components/EngineProfile";
 import { Features } from "@/components/Features";
 import PrivacyPolicyPage from "@/components/PrivacyPolicyPage";
+import TermsOfServicePage from "@/components/TermsOfServicePage";
 import { Pricing } from "@/components/Pricing";
 import { Footer } from "@/components/Footer";
 import { getEngineProfile, engineProfiles, EngineProfile as EngineProfileType } from "@/data/carDatabase";
@@ -19,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { carDatabase } from "@/data/carDatabase";
 import type { EngineTypeEntry } from "@/data/carDatabase";
 
-type ViewState = "search" | "engine-code" | "profile" | "privacy";
+type ViewState = "search" | "engine-code" | "profile" | "privacy" | "terms";
 
 interface VehicleSelection {
   brand: string;
@@ -148,13 +149,25 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative bg-transparent">
-      {viewState !== "profile" && viewState !== "privacy" && <BackgroundDNA />}
+      {viewState !== "profile" && viewState !== "privacy" && viewState !== "terms" && <BackgroundDNA />}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
 
         {viewState === "privacy" ? (
           <main className="pt-24 pb-16 min-h-screen">
             <PrivacyPolicyPage onBack={() => setViewState("search")} />
+          </main>
+        ) : viewState === "terms" ? (
+          <main className="pt-24 pb-16 min-h-screen">
+            <TermsOfServicePage 
+              onBack={() => setViewState("search")} 
+              onNavigate={(page) => {
+                if (page === 'privacy') {
+                  setViewState("privacy");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            />
           </main>
         ) : viewState === "profile" && selectedProfile ? (
           <main className="pt-24 pb-16 min-h-screen">
@@ -209,17 +222,20 @@ const Index = () => {
                   <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
                     Buying a used car? Don't gamble.
                   </h2>
-                  <p className="text-lg text-slate-300 max-w-xl mx-auto">
-                    Use our interactive checklist to find hidden faults and estimate repair costs before you pay.
-                  </p>
-                  <Button 
-                    onClick={() => navigate("/inspector")} 
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 px-8 rounded-full shadow-lg transition-all hover:scale-105 group text-lg mt-6"
-                  >
-                    <ShieldCheck className="w-5 h-5 mr-2" />
-                    Start Pre-Purchase Inspection
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <div className="max-w-2xl mx-auto mb-6 px-6 py-3.5 rounded-2xl bg-slate-950/30 border border-blue-500/30 backdrop-blur-md shadow-[0_0_30px_rgba(59,130,246,0.15)] text-center relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/10 to-blue-500/5 pointer-events-none" />
+  <p className="text-sm md:text-base font-medium text-slate-200 relative z-10 leading-relaxed">
+    <span className="text-blue-400 font-semibold">Check the VIN with carVertical</span> to uncover hidden accidents, mileage rollbacks, and past damages before you buy anything.
+  </p>
+</div>
+<Button 
+  onClick={() => window.open("IDE_JÖN_A_CARVERTICAL_LINKOD", "_blank")} 
+  className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 px-8 rounded-full shadow-lg transition-all hover:scale-105 group text-lg mt-6"
+>
+  <ShieldCheck className="w-5 h-5 mr-2" />
+  Check Car History on carVertical
+  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+</Button>
                 </div>
               </div>
             </section>
@@ -229,7 +245,11 @@ const Index = () => {
           </>
         )}
 
-        <Footer onOpenPolicy={() => { setViewState("privacy"); window.scrollTo({ top: 0, behavior: "smooth" }); }} /> 
+<Footer 
+          onOpenPolicy={() => { setViewState("privacy"); window.scrollTo({ top: 0, behavior: "smooth" }); }} 
+          onOpenTerms={() => { setViewState("terms"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+        />
+          
       </div>
     </div>
   );

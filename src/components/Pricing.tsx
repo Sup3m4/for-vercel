@@ -43,15 +43,15 @@ export function Pricing() {
 
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md mb-6">
             <Zap className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Secure Clerk Checkout</span>
+            <span className="text-sm font-medium text-primary-foreground">Secure Clerk Checkout</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Unlock Your Vehicle's <span className="gradient-text">Full Potential</span>
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Sign in with your account to get lifetime access to interactive 3D models and engine databases.
+            Sign in with your account to buy lifetime access to interactive 3D models and engine databases.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export function Pricing() {
                         <img src="/images/audi.png" alt="Audi Logo" className="w-12 h-12 object-contain" />
                       </div>
                     </div>
-                    <p className="text-sm text-slate-300 mt-2">Exclusive lifetime access to Audi 3D models.</p>
+                    <p className="text-sm text-slate-300 mt-2">Exclusive lifetime access to the Audi brand. Unlock the complete engine profile, 3D models and more.</p>
                     <div className="my-6 text-3xl font-extrabold text-white">€2.99</div>
                   </div>
                   <button 
@@ -108,7 +108,7 @@ export function Pricing() {
                         <img src="/images/bmw-1596080_1280.png" alt="BMW Logo" className="w-12 h-12 object-contain" />
                       </div>
                     </div>
-                    <p className="text-sm text-slate-300 mt-2">Exclusive lifetime access to BMW 3D models.</p>
+                    <p className="text-sm text-slate-300 mt-2">Exclusive lifetime access to the BMW brand. Unlock the complete engine profile, 3D models and more.</p>
                     <div className="my-6 text-3xl font-extrabold text-white">€2.99</div>
                   </div>
                   <button 
@@ -130,7 +130,7 @@ export function Pricing() {
                         <img src="/images/mercedes-logo.png" alt="Mercedes Logo" className="w-12 h-12 object-contain" />
                       </div>
                     </div>
-                    <p className="text-sm text-slate-300 mt-2">Exclusive lifetime access to Mercedes 3D models.</p>
+                    <p className="text-sm text-slate-300 mt-2">Exclusive lifetime access to the Mercedes brand. Unlock the complete engine profile, 3D models and more.</p>
                     <div className="my-6 text-3xl font-extrabold text-white">€2.99</div>
                   </div>
                   <button 
@@ -147,12 +147,18 @@ export function Pricing() {
             {/* Pro Bundle Kártya (Csak akkor látszik, ha nincs meg a bundle) */}
             <div className="max-w-6xl mx-auto bg-slate-900/90 backdrop-blur-xl border-2 border-primary/50 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
               <div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white">PistonDNA Pro Garage Bundle</h3>
+                <h3 className="text-2xl md:text-3xl font-extrabold text-white">PistonDNA Bundle</h3>
                 <p className="text-sm text-slate-300 mt-2">Unlock all 3 brands together at a discounted price.</p>
               </div>
+
+              {/* Logó középen */}
+              <div className="w-32 h-32 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 overflow-hidden shadow-inner flex-shrink-0 md:-ml-80">
+                <img src="/images/logo.jpg" alt="PistonDNA Logo" className="w-full h-full object-cover" />
+              </div>
+
               <div className="flex flex-col items-center md:items-end w-full md:w-auto">
                 <div className="text-3xl font-extrabold text-white mb-4">€5.99</div>
-                <button 
+                <button
                   onClick={() => handleCheckout('bundle')}
                   className="w-full md:w-auto py-4 px-8 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-sm cursor-pointer transition-colors shadow-lg"
                 >
