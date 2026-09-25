@@ -84,7 +84,7 @@ export default function TermsOfServicePage({
               Certain 3D models and digital assets utilized within our Services are the property of third-party creators and are used in accordance with their respective licenses, including Creative Commons attribution frameworks. Proper credit, licensing details, and links to the original creators are maintained and fully complied with.
             </p>
             <p className="text-slate-300 text-sm md:text-[15px] leading-relaxed italic bg-white/5 p-4 rounded-xl border border-white/5">
-              <strong>Notice regarding inadvertent omissions:</strong> We highly respect intellectual property rights. If you believe that any 3D model, credit, attribution, or trademark has been incorrectly displayed, omitted, or lacks proper licensing information due to an inadvertent oversight, please notify us immediately at <a href="mailto:makaidavidlevente@gmail.com" className="text-primary underline hover:text-opacity-80">makaidavidlevente@gmail.com</a>. Upon verification, we will promptly correct the omission, update the attribution, or remove the content in question in good faith.
+              <strong>Notice regarding inadvertent omissions:</strong> We highly respect intellectual property rights. If you believe that any 3D model, credit, attribution, or trademark has been incorrectly displayed, omitted, or lacks proper licensing information due to an inadvertent oversight, please notify us immediately at <a href="mailto:info@coolkids.hu" className="text-primary underline hover:text-opacity-80">info@coolkids.hu</a>. Upon verification, we will promptly correct the omission, update the attribution, or remove the content in question in good faith.
             </p>
           </div>
 
@@ -168,7 +168,7 @@ export default function TermsOfServicePage({
             <li>Providing accurate, current, and complete profile information during registration.</li>
             <li>Maintaining the absolute confidentiality of your password, account credentials, and login sessions.</li>
             <li>All activities, transactions, and purchases that occur under your specific account.</li>
-            <li>Notifying us immediately at makaidavidlevente@gmail.com of any unauthorized use or security breach of your account.</li>
+            <li>Notifying us immediately at info@coolkids.hu of any unauthorized use or security breach of your account.</li>
           </ul>
           <p className="mb-4">
             Your user account is strictly personal and non-transferable. You are expressly prohibited from sharing, selling, or leasing your login credentials to any third party. Coolkids Bt. reserves the right, at its sole discretion, to suspend, restrict, or permanently terminate your account without notice or liability if we believe you have violated these Terms, engaged in fraudulent activity, shared your account access, or if your account poses a security risk to our Services or other users.
@@ -290,7 +290,7 @@ export default function TermsOfServicePage({
 
 <h3 className="text-lg font-semibold text-white mt-4 mb-2">9.4 Refunds</h3>
 <p className="mb-4">
-  In alignment with Section 11 of these Terms, all digital purchases for brand passes and multi-brand bundles 
+  In alignment with Section 10 of these Terms, all digital purchases for brand passes and multi-brand bundles 
   are strictly non-refundable due to the instant delivery and consumption of our digital Content. Once the payment clears, 
   the digital access tokens are instantly and permanently provisioned to your Clerk user profile.
 </p>
@@ -323,7 +323,7 @@ export default function TermsOfServicePage({
   <p className="mb-4">
     If you experience severe technical difficulties or database rendering errors that prevent you from accessing 
     the purchased digital models, you must report the issue to us within 14 days of purchase at 
-    <a href="mailto:makaidavidlevente@gmail.com" className="text-blue-400 underline ml-1">makaidavidlevente@gmail.com</a>. 
+    <a href="mailto:info@coolkids.hu" className="text-blue-400 underline ml-1">info@coolkids.hu</a>. 
     Coolkids Bt. will investigate the technical discrepancy in good faith. Refunds or account credits will be 
     issued solely at our absolute discretion if we determine that a severe backend system failure caused 
     permanent unresolvable access limitations.
@@ -413,7 +413,7 @@ export default function TermsOfServicePage({
     limited, non-exclusive, non-transferable, non-sublicensable, revocable license to access, view, and interact with the 
     purchased digital Content solely for your personal, educational, or internal informational purposes via our platform. 
     This license does not transfer any ownership rights in the Company IP to you. You may not extract, replicate, distribute, 
-    or exploit any 3D models or specifications for commercial commercial application, resale, or software engineering without 
+    or exploit any 3D models or specifications for commercial application, resale, or software engineering without 
     our explicit prior written consent.
   </p>
   <p className="mb-4">
@@ -641,49 +641,30 @@ export default function TermsOfServicePage({
 
 
 
-  <h2 className="text-xl font-bold text-white mb-4">22. Entire Agreement and Severability</h2>
-  <p className="mb-4">
-    These Terms, together with our {' '}
+  <h2 className="text-xl font-bold text-white mt-8 mb-4">22. Entire Agreement</h2>
+<p className="mb-4">
+  These Terms, together with our{' '}
   <button 
     type="button" 
     onClick={() => onNavigate('privacy')} 
     className="text-primary underline hover:text-opacity-80 cursor-pointer font-medium bg-transparent border-none p-0 inline"
   >
     Privacy Policy
-  </button> and any official electronic invoices, order confirmations, 
-    or transaction receipts issued by Coolkids Bt. upon a successful transaction through Stripe, constitute 
-    the entire and exclusive agreement between you and Coolkids Bt. regarding your access to and utilization 
-    of our Services. This agreement completely supersedes and replaces any prior or contemporaneous oral 
-    or written agreements, communications, marketing promises, or understandings between you and Coolkids Bt. 
-    relating to your use of our Services.
-  </p>
-  <p className="mb-4">
-    If any provision of these Terms is found by a court of competent jurisdiction or relevant Alternative Dispute 
-    Resolution body to be invalid, illegal, or unenforceable under applicable law, such invalidity shall not affect 
-    the remaining provisions of these Terms. The remaining sections shall continue in full force and effect, and the 
-    unenforceable provision shall be deemed modified to the minimum extent necessary to make it valid and enforceable.
-  </p>  
+  </button>{' '}
+  and any official electronic invoices, order confirmations, or transaction receipts issued by Coolkids Bt. upon a successful transaction through Stripe, constitute the entire and exclusive agreement between you and Coolkids Bt. regarding your access to and utilization of our Services. This agreement completely supersedes and replaces any prior or contemporaneous oral or written agreements, communications, marketing promises, or understandings between you and Coolkids Bt. relating to your use of our Services.
+</p>
 
 
 
 
 
-
-  <h2 className="text-xl font-bold text-white mb-4">23. Waiver and Severability</h2>
-  <p className="mb-4">
-    The failure or delay of Coolkids Bt. to exercise or enforce any right, power, or provision of these 
-    Terms shall not constitute or be construed as a present or future waiver of such right or provision, 
-    nor shall it limit our right to enforce such provision at a later time. Any waiver of any provision 
-    of these Terms by Coolkids Bt. shall only be legally effective if executed in an official written 
-    statement signed by an authorized representative of the company.
-  </p>
-  <p className="mb-4">
-    If any provision of these Terms is determined by a court of competent jurisdiction, relevant arbitrator, 
-    or Alternative Dispute Resolution body to be invalid, illegal, or completely unenforceable under applicable 
-    Hungarian or European Union law, such invalidity shall be strictly confined to that specific provision. 
-    The remaining provisions of these Terms shall remain unaffected and continue in full force and effect to the 
-    maximum extent permitted by law.
-  </p>
+<h2 className="text-xl font-bold text-white mt-8 mb-4">23. Waiver and Severability</h2>
+<p className="mb-4">
+  The failure or delay of Coolkids Bt. to exercise or enforce any right, power, or provision of these Terms shall not constitute or be construed as a present or future waiver of such right or provision, nor shall it limit our right to enforce such provision at a later time. Any waiver of any provision of these Terms by Coolkids Bt. shall only be legally effective if executed in an official written statement signed by an authorized representative of the company.
+</p>
+<p className="mb-4">
+  If any provision of these Terms is determined by a court of competent jurisdiction, relevant arbitrator, or Alternative Dispute Resolution body to be invalid, illegal, or completely unenforceable under applicable Hungarian or European Union law, such invalidity shall be strictly confined to that specific provision. The remaining provisions of these Terms shall remain unaffected and continue in full force and effect to the maximum extent permitted by law, with the unenforceable provision deemed modified to the minimum extent necessary to make it valid and enforceable.
+</p>
 
 
 
@@ -728,7 +709,7 @@ export default function TermsOfServicePage({
   <p className="mb-4">
     Upon termination of your account or these Terms for any reason, all provisions which by their nature should logically 
     survive termination shall continue in full force and effect, including but not limited to 
-    <strong> Section 3 & 13 (Proprietary & Intellectual Property Rights), Section 12 (Prohibited Conduct), 
+    <strong> Section 2 & 13 (Definitions & Intellectual Property Rights), Section 12 (Prohibited Conduct), 
     Section 18 (Limitation of Liability), and Section 20 & 21 (Governing Law and Dispute Resolution)</strong>.
   </p>
 

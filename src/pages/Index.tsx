@@ -7,6 +7,7 @@ import { Star } from "lucide-react";
 import { QuickSearch } from "@/components/QuickSearch";
 import { CatalogSearcher } from "@/components/CatalogSearcher";
 import { BackgroundDNA } from "@/components/BackgroundDNA";
+import ContactPage from '@/components/ContactPage';
 import { EngineCodeSelector } from "@/components/EngineCodeSelector";
 import { EngineProfile } from "@/components/EngineProfile";
 import { Features } from "@/components/Features";
@@ -20,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { carDatabase } from "@/data/carDatabase";
 import type { EngineTypeEntry } from "@/data/carDatabase";
 
-type ViewState = "search" | "engine-code" | "profile" | "privacy" | "terms";
+type ViewState = "search" | "engine-code" | "profile" | "privacy" | "contact" | "terms";
 
 interface VehicleSelection {
   brand: string;
@@ -149,16 +150,20 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative bg-transparent">
-      {viewState !== "profile" && viewState !== "privacy" && viewState !== "terms" && <BackgroundDNA />}
+     {viewState !== "profile" && viewState !== "privacy" && viewState !== "terms" && viewState !== "contact" && <BackgroundDNA />}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
 
         {viewState === "privacy" ? (
-          <main className="pt-24 pb-16 min-h-screen">
+          <main className="pt-24 pb-16 min-h-screen bg-slate-950">
             <PrivacyPolicyPage onBack={() => setViewState("search")} />
           </main>
+        ) : viewState === "contact" ? (
+          <main className="pt-24 pb-16 min-h-screen bg-slate-950">
+            <ContactPage onBack={() => setViewState("search")} />
+          </main>
         ) : viewState === "terms" ? (
-          <main className="pt-24 pb-16 min-h-screen">
+          <main className="pt-24 pb-16 min-h-screen bg-slate-950">
             <TermsOfServicePage 
               onBack={() => setViewState("search")} 
               onNavigate={(page) => {
@@ -248,6 +253,7 @@ const Index = () => {
 <Footer 
           onOpenPolicy={() => { setViewState("privacy"); window.scrollTo({ top: 0, behavior: "smooth" }); }} 
           onOpenTerms={() => { setViewState("terms"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          onOpenContact={() => { setViewState("contact"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
         />
           
       </div>

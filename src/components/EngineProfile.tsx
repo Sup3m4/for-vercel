@@ -1648,7 +1648,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
               >
                 <div>
                   <div className="font-bold text-lg group-hover:text-primary transition-colors">{profile.brand} Pass</div>
-                  <div className="text-xs text-slate-400">Lifetime access to all {profile.brand} 3D models</div>
+                  <div className="text-xs text-slate-400">Lifetime access to all {profile.brand} 3D models and engine profiles</div>
                 </div>
                 <div className="text-right">
                   {loadingProduct === brandKey ? (
@@ -1672,7 +1672,7 @@ export function EngineProfile({ profile }: EngineProfileProps) {
                     <Sparkles className="w-4 h-4 text-primary" />
                     Pro Garage Bundle
                   </div>
-                  <div className="text-xs text-slate-300">All brands (Audi, BMW, Mercedes)</div>
+                  <div className="text-xs text-slate-300">All brands included (Audi, BMW, Mercedes)</div>
                 </div>
                 <div className="text-right">
                   {loadingProduct === 'bundle' ? (

@@ -2,10 +2,12 @@ import { Dna } from "lucide-react";
 
 export function Footer({ 
   onOpenPolicy, 
-  onOpenTerms 
+  onOpenTerms,
+  onOpenContact
 }: { 
   onOpenPolicy: () => void; 
   onOpenTerms?: () => void; 
+  onOpenContact: () => void;
 }) {
   return (
     <footer className="py-12 border-t border-border/50 glass-card-subtle">
@@ -35,7 +37,13 @@ export function Footer({
             >
               Terms of Service
             </button>
-            <a href="#" className="text-sm text-muted-foreground hover:text-muted-foreground transition-colors">Contact</a>
+            <button 
+  onClick={onOpenContact}
+  className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer bg-transparent border-none"
+>
+  Contact
+</button>
+
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">API</a>
           </nav>
 
