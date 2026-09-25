@@ -1,13 +1,10 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // 1. Importáld ezt
 
-export default function TermsOfServicePage({ 
-  onBack, 
-  onNavigate 
-}: { 
-  onBack: () => void; 
-  onNavigate: (page: string) => void; 
-}) {
+export default function TermsOfServicePage() {
+  const navigate = useNavigate(); // 2. Hozd létre a navigációt
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,7 +15,7 @@ export default function TermsOfServicePage({
         
         {/* Vissza gomb a főoldalra */}
         <button 
-          onClick={onBack}
+          onClick={() => navigate('/')}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-medium transition-colors mb-8 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Home
@@ -97,8 +94,8 @@ export default function TermsOfServicePage({
         <h2 className="text-xl font-bold text-white mt-8 mb-4">1. Introduction</h2>
 <p className="mb-4">
   These Terms of Service ("Terms") govern your access to and use of the Coolkids Bt. website, available at{" "}
-  <a href="https://vercel.app" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">
-    https://vercel.app
+  <a href="pistondna.com" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">
+    pistondna.com
   </a>
   , whether accessed via computer, mobile device, or any other technology, including our online store, digital engine profiles, 
   and interactive 3D models (collectively, the "Services").
@@ -470,7 +467,7 @@ export default function TermsOfServicePage({
   Your privacy is important to us. Our{' '}
   <button 
     type="button" 
-    onClick={() => onNavigate('privacy')} 
+    onClick={() => navigate('/privacypolicy')} // <--- Itt javítsd át erre!
     className="text-primary underline hover:text-opacity-80 cursor-pointer font-medium bg-transparent border-none p-0 inline"
   >
     Privacy Policy
@@ -481,7 +478,7 @@ export default function TermsOfServicePage({
   By accessing or using our Services, you acknowledge that you have read and understood our{' '}
   <button 
     type="button" 
-    onClick={() => onNavigate('privacy')} 
+    onClick={() => navigate('/privacypolicy')} // <--- Itt javítsd át erre!
     className="text-primary underline hover:text-opacity-80 cursor-pointer font-medium bg-transparent border-none p-0 inline"
   >
     Privacy Policy
@@ -646,7 +643,7 @@ export default function TermsOfServicePage({
   These Terms, together with our{' '}
   <button 
     type="button" 
-    onClick={() => onNavigate('privacy')} 
+    onClick={() => navigate('/privacypolicy')} // <--- Itt javítsd át erre!
     className="text-primary underline hover:text-opacity-80 cursor-pointer font-medium bg-transparent border-none p-0 inline"
   >
     Privacy Policy

@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowLeft, Mail, MapPin, Building, ShieldCheck, Server, FileText } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // 1. Importáld ezt
 
-export default function ContactPage({ onBack }: { onBack: () => void }) {
+export default function ContactPage() {
+  const navigate = useNavigate(); // 2. Hozd létre a navigációt
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -12,7 +15,7 @@ export default function ContactPage({ onBack }: { onBack: () => void }) {
         
         {/* Back button */}
         <button 
-          onClick={onBack}
+          onClick={() => navigate('/')}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-medium transition-colors mb-8 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Home

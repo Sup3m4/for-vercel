@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
-export default function PrivacyPolicyPage({ onBack }: { onBack: () => void }) {
+export default function PrivacyPolicyPage() {
+  const navigate = useNavigate(); // 2. Hozd létre a navigációt
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -12,7 +15,7 @@ export default function PrivacyPolicyPage({ onBack }: { onBack: () => void }) {
         
         {/* Vissza gomb a főoldalra */}
         <button 
-          onClick={onBack}
+          onClick={() => navigate('/')}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-medium transition-colors mb-8 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Home
@@ -26,7 +29,7 @@ export default function PrivacyPolicyPage({ onBack }: { onBack: () => void }) {
 
           <h2 className="text-xl font-bold text-white mt-8 mb-4">1. Introduction</h2>
 <p className="mb-4">
-  This Privacy Policy describes how Coolkids Bt. ("we," "us," or "our") collects, uses, and discloses your personal information when you use our online store and services available at <a href="https://for-vercel-alpha.vercel.app/" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">https://for-vercel-alpha.vercel.app/</a> (the "Service").
+  This Privacy Policy describes how Coolkids Bt. ("we," "us," or "our") collects, uses, and discloses your personal information when you use our online store and services available at <a href="pistondna.com" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">pistondna.com</a> (the "Service").
 </p>
 <p className="mb-4">
   We are committed to protecting your personal information and your right to privacy. We process your personal data in accordance with the General Data Protection Regulation (GDPR) (EU) 2016/679 and applicable local data protection laws. When you visit our online store and services and use our products, you trust us with your personal information. We take your privacy very seriously. In this Privacy Policy, we seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it.
@@ -49,7 +52,7 @@ export default function PrivacyPolicyPage({ onBack }: { onBack: () => void }) {
             <li><strong>Personal Data</strong>: any information that directly, indirectly, or in connection with other information allows for the identification of a natural person.</li>
             <li><strong>Service</strong>: refers to the online store and services provided by Coolkids Bt. as described in the relative terms and on this platform.</li>
             <li><strong>Third-party service</strong>: refers to advertisers, contest sponsors, promotional and marketing partners, and others who provide our content or whose products or services we think may interest you.</li>
-            <li><strong>Website</strong>: Coolkids Bt.'s site, which can be accessed via <a href="https://for-vercel-alpha.vercel.app/" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">https://for-vercel-alpha.vercel.app/</a></li>
+            <li><strong>Website</strong>: Coolkids Bt.'s site, which can be accessed via <a href="pistondna.com" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">pistondna.com</a></li>
             <li><strong>You</strong>: a person or entity that is registered with Coolkids Bt. to use the Services.</li>
           </ul>
 
@@ -176,14 +179,13 @@ export default function PrivacyPolicyPage({ onBack }: { onBack: () => void }) {
 <h4 className="text-lg font-semibold text-white mt-4">9.4 Hosting Services</h4>
 <p className="mb-4">We use third-party infrastructure and hosting providers to host our Website and ensure its global availability and security.</p>
 <p className="mb-4 text-slate-300">
-  <strong>Vercel</strong>: We use Vercel Inc. to host and deploy our digital Service worldwide. Vercel automatically processes certain operational infrastructure logs (such as your IP address and request timestamps) necessary to securely deliver our Website content to your browser. Their Privacy Policy can be viewed at{' '}
-  <a 
-    href="https://vercel.com" 
+<strong>Cloudflare</strong>: We use Cloudflare, Inc. to host and secure our digital Service worldwide. Cloudflare automatically processes certain operational infrastructure logs (such as your IP address and request timestamps) necessary to securely deliver our Website content to your browser. Their Privacy Policy can be viewed at{' '}  <a 
+    href="https://www.cloudflare.com/privacypolicy/" 
     target="_blank" 
     rel="noreferrer" 
     className="text-primary underline hover:text-opacity-80"
   >
-    https://vercel.com
+    https://www.cloudflare.com/privacypolicy/
   </a>.
 </p>
           
@@ -222,8 +224,8 @@ export default function PrivacyPolicyPage({ onBack }: { onBack: () => void }) {
 <p className="mb-4">If you have any questions about this Privacy Policy, please contact us:</p>
           
 <ul className="list-disc pl-6 space-y-2 text-gray-300 mb-4">
-  <li>By email: <a href="mailto:makaidavidlevente@gmail.com" className="text-primary underline hover:text-opacity-80">makaidavidlevente@gmail.com</a></li>
-  <li>By visiting this page on our website: <a href="https://for-vercel-alpha.vercel.app/" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">https://for-vercel-alpha.vercel.app/</a></li>
+  <li>By email: <a href="mailto:info@coolkids.hu" className="text-primary underline hover:text-opacity-80">info@coolkids.hu</a></li>
+  <li>By visiting this page on our website: <a href="pistondna.com" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">pistondna.com</a></li>
   <li>By phone number: +36 30 354 5744</li>
   <li>By mail: Coolkids Bt., Hungary, 5600, Bekescsaba, Jokai street 20 4/14</li>
 </ul>

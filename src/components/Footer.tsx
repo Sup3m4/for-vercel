@@ -1,14 +1,7 @@
 import { Dna } from "lucide-react";
+import { Link } from "react-router-dom";
 
-export function Footer({ 
-  onOpenPolicy, 
-  onOpenTerms,
-  onOpenContact
-}: { 
-  onOpenPolicy: () => void; 
-  onOpenTerms?: () => void; 
-  onOpenContact: () => void;
-}) {
+export function Footer() {
   return (
     <footer className="py-12 border-t border-border/50 glass-card-subtle">
       <div className="container mx-auto px-4">
@@ -23,26 +16,28 @@ export function Footer({
             </span>
           </div>
 
-          {/* Links */}
+          {/* Links - Itt cseréljük a gombokat Link-re */}
           <nav className="flex flex-wrap justify-center gap-6">
-            <button 
-              onClick={onOpenPolicy}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer bg-transparent border-none"
+            <Link 
+              to="/privacypolicy"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             >
               Privacy Policy
-            </button>
-            <button 
-              onClick={onOpenTerms}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer bg-transparent border-none"
+            </Link>
+            
+            <Link 
+              to="/termsofservice"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             >
               Terms of Service
-            </button>
-            <button 
-  onClick={onOpenContact}
-  className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer bg-transparent border-none"
->
-  Contact
-</button>
+            </Link>
+            
+            <Link 
+              to="/contact"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            >
+              Contact
+            </Link>
 
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">API</a>
           </nav>

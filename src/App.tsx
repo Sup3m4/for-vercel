@@ -3,12 +3,15 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PurchaseInspector from "./components/PurchaseInspector";
 import ComparatorPage from "./pages/ComparatorPage";
 import SavedPage from "./pages/SavedPage";
 import ProfilePage from "./pages/ProfilePage";
+import Index from "./pages/Index";
+import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
+import TermsOfServicePage from "./components/TermsOfServicePage";
+import ContactPage from "./components/ContactPage";
 import { EngineProfile } from "./components/EngineProfile";
 <Route path="/profile" element={<ProfilePage />} />
 
@@ -29,6 +32,9 @@ const App = () => (
           <Route path="/comparator" element={<ComparatorPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicyPage />} />
+        <Route path="/termsofservice" element={<TermsOfServicePage />} />
+        <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
