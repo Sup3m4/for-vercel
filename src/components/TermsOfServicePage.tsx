@@ -638,12 +638,12 @@ export default function TermsOfServicePage() {
 
 
 
-  <h2 className="text-xl font-bold text-white mt-8 mb-4">22. Entire Agreement</h2>
+  <h2 className="text-xl font-bold text-white mt-8 mb-4">22. Entire Agreement</h2> 
 <p className="mb-4">
   These Terms, together with our{' '}
   <button 
     type="button" 
-    onClick={() => navigate('/privacypolicy')} // <--- Itt javítsd át erre!
+    onClick={() => navigate('/privacypolicy')} // <--- Itt javítsd át erre! fwfa
     className="text-primary underline hover:text-opacity-80 cursor-pointer font-medium bg-transparent border-none p-0 inline"
   >
     Privacy Policy
