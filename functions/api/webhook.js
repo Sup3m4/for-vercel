@@ -1,34 +1,31 @@
 import Stripe from 'stripe';
 import { createClerkClient } from '@clerk/backend';
-import { buffer } from 'micro';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY });
+export async function onRequestPost(context) {
+  const { request, env } = context;
 
-// Kikapcsoljuk a Next.js alapértelmezett body parserét a nyers adatokhoz
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+  const stripe = new Stripe(env.STRIPE_SECRET_KEY, {
+    apiVersion: '2023-10-16',
+  });
+  
+  const clerkClient = createClerkClient({ secretKey: env.CLERK_SECRET_KEY });
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  const signature = request.headers.get('stripe-signature');
+  const webhookSecret = env.STRIPE_WEBHOOK_SECRET;
+
+  if (!signature || !webhookSecret) {
+    return new Response('Missing signature or webhook secret', { status: 400 });
   }
-
-  const buf = await buffer(req);
-  const sig = req.headers['stripe-signature'];
-  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
   let event;
 
   try {
-    // Nincsenek felesleges felkiáltójelek, a JS kezeli
-    event = stripe.webhooks.constructEvent(buf, sig, webhookSecret);
+    // Cloudflare Pages-en a request.text() adja vissza a Stripe által küldett nyers adatot
+    const body = await request.text();
+    event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
   } catch (err) {
     console.error(`Webhook signature verification failed: ${err.message}`);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
+    return new Response(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
   // Ha sikeres a fizetés
@@ -49,10 +46,16 @@ export default async function handler(req, res) {
         console.log(`Sikeresen frissítve a Clerk user (${clerkUserId}) prémium státusza erre: ${productType}.`);
       } catch (err) {
         console.error('Hiba a Clerk metadata frissítésekor:', err);
-        return res.status(500).json({ error: 'Clerk update failed' });
+        return new Response(JSON.stringify({ error: 'Clerk update failed' }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' },
+        });
       }
     }
   }
 
-  return res.status(200).json({ received: true });
+  return new Response(JSON.stringify({ received: true }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' },
+  });
 }
