@@ -34,6 +34,11 @@ export async function onRequestPost(context) {
       payment_method_types: ['card'],
       line_items: [{ price: priceId, quantity: 1 }],
       mode: 'payment',
+
+      tax_id_collection: {
+        enabled: true,
+      },
+
       success_url: `${origin}/?success=true`,
       cancel_url: `${origin}/`,
       metadata: {
