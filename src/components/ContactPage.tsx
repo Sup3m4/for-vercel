@@ -45,7 +45,7 @@ export default function ContactPage() {
 
               <div className="space-y-1">
                 <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Representative / Owner</span>
-                <p className="text-white font-medium">Szilvia Medovarszki</p>
+                <p className="text-white font-medium">David Makai</p>
               </div>
 
               <div className="space-y-1 md:col-span-2">
@@ -62,14 +62,14 @@ export default function ContactPage() {
 
               <div className="space-y-1">
                 <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Tax Number</span>
-                <p className="text-white font-medium font-mono">25554946-1-04</p>
+                <p className="text-white font-medium font-mono">HU25554946</p>
               </div>
 
               <div className="space-y-1 md:col-span-2">
                 <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Official E-mail</span>
                 <p className="text-white font-medium flex items-center gap-2 mt-1">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" /> 
-                  <a href="mailto:info@coolkids.hu" className="text-primary underline hover:opacity-80">info@coolkids.hu</a>
+                  <a href="mailto:info@pistondna.com" className="text-primary underline hover:opacity-80">info@pistondna.com</a>
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
               <ShieldCheck className="w-5 h-5 text-primary" /> Customer Support & Inquiries
             </h2>
             <p className="text-slate-300 text-sm md:text-[15px] leading-relaxed">
-              For any technical, billing, or legal questions, feel free to contact us at the e-mail address above (<a href="mailto:info@coolkids.hu" className="text-primary underline font-medium">info@coolkids.hu</a>). We strive to respond to your inquiries as quickly as possible, within a maximum of 48 hours.
+              For any technical, billing, or legal questions, feel free to contact us at the e-mail address above (<a href="mailto:info@pistondna.com" className="text-primary underline font-medium">info@pistondna.com</a>). We strive to respond to your inquiries as quickly as possible, within a maximum of 48 hours.
             </p>
           </div>
 

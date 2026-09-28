@@ -224,7 +224,7 @@ export default function PrivacyPolicyPage() {
 <p className="mb-4">If you have any questions about this Privacy Policy, please contact us:</p>
           
 <ul className="list-disc pl-6 space-y-2 text-gray-300 mb-4">
-  <li>By email: <a href="mailto:info@coolkids.hu" className="text-primary underline hover:text-opacity-80">info@coolkids.hu</a></li>
+  <li>By email: <a href="mailto:info@pistondna.com" className="text-primary underline hover:text-opacity-80">info@pistondna.com</a></li>
   <li>By visiting this page on our website: <a href="pistondna.com" target="_blank" rel="noreferrer" className="text-primary underline hover:text-opacity-80">pistondna.com</a></li>
   <li>By phone number: +36 30 354 5744</li>
   <li>By mail: Coolkids Bt., Hungary, 5600, Bekescsaba, Jokai street 20 4/14</li>

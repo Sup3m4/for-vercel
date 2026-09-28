@@ -81,7 +81,7 @@ export default function TermsOfServicePage() {
               Certain 3D models and digital assets utilized within our Services are the property of third-party creators and are used in accordance with their respective licenses, including Creative Commons attribution frameworks. Proper credit, licensing details, and links to the original creators are maintained and fully complied with.
             </p>
             <p className="text-slate-300 text-sm md:text-[15px] leading-relaxed italic bg-white/5 p-4 rounded-xl border border-white/5">
-              <strong>Notice regarding inadvertent omissions:</strong> We highly respect intellectual property rights. If you believe that any 3D model, credit, attribution, or trademark has been incorrectly displayed, omitted, or lacks proper licensing information due to an inadvertent oversight, please notify us immediately at <a href="mailto:info@coolkids.hu" className="text-primary underline hover:text-opacity-80">info@coolkids.hu</a>. Upon verification, we will promptly correct the omission, update the attribution, or remove the content in question in good faith.
+              <strong>Notice regarding inadvertent omissions:</strong> We highly respect intellectual property rights. If you believe that any 3D model, credit, attribution, or trademark has been incorrectly displayed, omitted, or lacks proper licensing information due to an inadvertent oversight, please notify us immediately at <a href="mailto:info@pistondna.com" className="text-primary underline hover:text-opacity-80">info@pistondna.com</a>. Upon verification, we will promptly correct the omission, update the attribution, or remove the content in question in good faith.
             </p>
           </div>
 
@@ -104,8 +104,8 @@ export default function TermsOfServicePage() {
   These Terms constitute a legally binding agreement between you ("User", "you", or "your") and <strong>Coolkids Bt.</strong>, 
   a legal entity registered under the laws of Hungary, with company registration number <strong>Cg.04-06-009292</strong>, 
   having its registered office address at <strong>Hungary, 5600, Bekescsaba, Jokai street 20 4/14</strong>, represented by 
-  its Owner <strong>Szilvia Medovarszki</strong>, acting in accordance with the bylaws, with the official corporate email address 
-  <strong> info@coolkids.hu</strong> (hereinafter – “Service Provider”, "we", "us", or "our").
+  its Owner <strong>David Makai</strong>, acting in accordance with the bylaws, with the official corporate email address 
+  <strong> info@pistondna.com</strong> (hereinafter – “Service Provider”, "we", "us", or "our").
 </p>
 <p className="mb-4">
   By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms. 
@@ -165,7 +165,7 @@ export default function TermsOfServicePage() {
             <li>Providing accurate, current, and complete profile information during registration.</li>
             <li>Maintaining the absolute confidentiality of your password, account credentials, and login sessions.</li>
             <li>All activities, transactions, and purchases that occur under your specific account.</li>
-            <li>Notifying us immediately at info@coolkids.hu of any unauthorized use or security breach of your account.</li>
+            <li>Notifying us immediately at info@pistondna.com of any unauthorized use or security breach of your account.</li>
           </ul>
           <p className="mb-4">
             Your user account is strictly personal and non-transferable. You are expressly prohibited from sharing, selling, or leasing your login credentials to any third party. Coolkids Bt. reserves the right, at its sole discretion, to suspend, restrict, or permanently terminate your account without notice or liability if we believe you have violated these Terms, engaged in fraudulent activity, shared your account access, or if your account poses a security risk to our Services or other users.
@@ -320,7 +320,7 @@ export default function TermsOfServicePage() {
   <p className="mb-4">
     If you experience severe technical difficulties or database rendering errors that prevent you from accessing 
     the purchased digital models, you must report the issue to us within 14 days of purchase at 
-    <a href="mailto:info@coolkids.hu" className="text-blue-400 underline ml-1">info@coolkids.hu</a>. 
+    <a href="mailto:info@pistondna.com" className="text-blue-400 underline ml-1">info@pistondna.com</a>. 
     Coolkids Bt. will investigate the technical discrepancy in good faith. Refunds or account credits will be 
     issued solely at our absolute discretion if we determine that a severe backend system failure caused 
     permanent unresolvable access limitations.
@@ -437,7 +437,7 @@ export default function TermsOfServicePage() {
     If you are a copyright owner or an authorized agent thereof and believe in good faith that any 3D models, data sheets, 
     or Content accessible on or through our Services infringe upon your intellectual property rights, you may submit a formal 
     written DMCA or DSA notification to our designated Copyright Agent via email at: 
-    {" "}<a href="mailto:info@coolkids.hu" className="text-blue-400 underline">info@coolkids.hu</a> or by mail directed to 
+    {" "}<a href="mailto:info@pistondna.com" className="text-blue-400 underline">info@pistondna.com</a> or by mail directed to 
     our registered office address at Hungary, 5600, Bekescsaba, Jokai street 20 4/14.
   </p>
   <p className="mb-4">
@@ -618,7 +618,7 @@ export default function TermsOfServicePage() {
   <p className="mb-4">
     In the event of any controversy, dispute, or claim arising out of or relating to these Terms, you and Coolkids Bt. 
     agree to first attempt to resolve the matter through informal, good-faith negotiations by contacting us directly at 
-    {" "}<a href="mailto:info@coolkids.hu" className="text-blue-400 underline">info@coolkids.hu</a>.
+    {" "}<a href="mailto:info@pistondna.com" className="text-blue-400 underline">info@pistondna.com</a>.
   </p>
   <p className="mb-4">
     For business entities, automotive workshops, and corporate users (B2B), if an informal resolution cannot be reached 
@@ -755,12 +755,12 @@ export default function TermsOfServicePage() {
       <strong>Company Registration Number:</strong> Cg.04-06-009292
     </li>
     <li>
-      <strong>Official Representative:</strong> Szilvia Medovarszki (Owner)
+      <strong>Official Representative:</strong> David Makai (Owner)
     </li>
     <li>
       <strong>Official Email Address:</strong>{" "}
-      <a href="mailto:info@coolkids.hu" className="text-blue-400 underline">
-        info@coolkids.hu
+      <a href="mailto:info@pistondna.com" className="text-blue-400 underline">
+      info@pistondna.com
       </a>
     </li>
   </ul>
@@ -863,7 +863,7 @@ export default function TermsOfServicePage() {
 </ul>
 <p className="mb-4">
   To exercise any of these rights, please submit your formal request to our data compliance team at:
-  {" "}<a href="mailto:info@coolkids.hu" className="text-blue-400 underline">info@coolkids.hu</a>. 
+  {" "}<a href="mailto:info@pistondna.com" className="text-blue-400 underline">info@pistondna.com</a>. 
   We will verify your identity and respond to your application without undue delay, and at the latest within thirty (30) days of receipt.
 </p>
 <p className="mb-4">
@@ -918,7 +918,7 @@ export default function TermsOfServicePage() {
 </ul>
 <p className="mb-4">
   To exercise your rights, you can submit a verifiable consumer request by contacting our data protection team directly via email at: 
-  {" "}<a href="mailto:info@coolkids.hu" className="text-blue-400 underline">info@coolkids.hu</a>. 
+  {" "}<a href="mailto:info@pistondna.com" className="text-blue-400 underline">info@pistondna.com</a>. 
   You may make a consumer request up to twice within a twelve (12) month period. We will verify your identity using your Clerk credentials 
   and respond to your request within forty-five (45) days, with a possible extension of up to forty-five (45) additional days 
   when reasonably necessary due to technical complexity.
@@ -940,7 +940,7 @@ export default function TermsOfServicePage() {
   a dedicated "Do Not Sell My Personal Information" opt-out web link is not required on our platform. However, if you have 
   any questions or seek further verifiable confirmation regarding our data restriction policies, you are welcome to contact 
   our data compliance officer at any time via email at: 
-  {" "}<a href="mailto:info@coolkids.hu" className="text-blue-400 underline">info@coolkids.hu</a>.
+  {" "}<a href="mailto:info@pistondna.com" className="text-blue-400 underline">info@pistondna.com</a>.
 </p>
 
 <h2 className="text-xl font-bold text-white mt-8 mb-4">Additional Terms</h2>
