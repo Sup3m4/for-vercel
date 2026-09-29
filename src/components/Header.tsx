@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+import { useNavigate, useLocation } from "react-router-dom"; // Ezt add hozzá a fájl tetején lévő importokhoz!
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -103,16 +104,25 @@ export function Header() {
 // --- Segédkomponensek a stílushoz ---
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.substring(1);
+
+      // HA NEM A FŐOLDALON VAGYUNK: Irány a főoldal a hash-sel!
+      if (location.pathname !== "/") {
+        navigate(`/${href}`);
+        return;
+      }
+
+      // Ha már a főoldalon vagyunk, jöhet a sima görgetés
       const element = document.getElementById(targetId);
       if (element) {
-        // Alapértelmezett eltolás a többi gomhnak (pl. Search, Pricing)
         let headerOffset = 330; 
 
-        // KÜLÖN SZABÁLY CSAK A FEATURES-RE:
         if (href === "#features") {
           headerOffset = 80;
         } else if (href === "#pricing") {
@@ -150,10 +160,20 @@ function MobileNavLink({
   children: React.ReactNode;
   onClick: () => void;
 }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       onClick(); // Bezárja a mobil menüt
+      
+      // HA NEM A FŐOLDALON VAGYUNK: Irány a főoldal
+      if (location.pathname !== "/") {
+        navigate(`/${href}`);
+        return;
+      }
+
       const targetId = href.substring(1);
       const element = document.getElementById(targetId);
       if (element) {

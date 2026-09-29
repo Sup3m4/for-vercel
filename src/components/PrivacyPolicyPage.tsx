@@ -2,7 +2,11 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
-export default function PrivacyPolicyPage() {
+interface PrivacyPolicyPageProps {
+  onBack?: () => void;
+}
+
+export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
   const navigate = useNavigate(); // 2. Hozd létre a navigációt
 
   React.useEffect(() => {

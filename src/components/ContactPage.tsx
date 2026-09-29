@@ -2,7 +2,11 @@ import React from 'react';
 import { ArrowLeft, Mail, MapPin, Building, ShieldCheck, Server, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom'; // 1. Importáld ezt
 
-export default function ContactPage() {
+interface ContactPageProps {
+  onBack?: () => void;
+}
+
+export default function ContactPage({ onBack }: ContactPageProps) {
   const navigate = useNavigate(); // 2. Hozd létre a navigációt
 
   React.useEffect(() => {

@@ -1,7 +1,13 @@
 import { Dna } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function Footer() {
+interface FooterProps {
+  onOpenPolicy: () => void;
+  onOpenTerms: () => void;
+  onOpenContact: () => void;
+}
+
+export function Footer({ onOpenPolicy, onOpenTerms, onOpenContact }: FooterProps) {
   return (
     <footer className="py-12 border-t border-border/50 glass-card-subtle">
       <div className="container mx-auto px-4">

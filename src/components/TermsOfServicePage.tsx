@@ -2,7 +2,12 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom'; // 1. Importáld ezt
 
-export default function TermsOfServicePage() {
+interface TermsOfServicePageProps {
+  onBack?: () => void;
+  onNavigate?: (page: string) => void; // A ? jelöli, hogy opcionális lehet
+}
+
+export default function TermsOfServicePage({ onBack, onNavigate }: TermsOfServicePageProps) {
   const navigate = useNavigate(); // 2. Hozd létre a navigációt
 
   React.useEffect(() => {

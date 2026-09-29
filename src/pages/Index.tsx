@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { cn } from "@/lib/utils";
@@ -40,11 +40,17 @@ const Index = () => {
   const [selectedProfile, setSelectedProfile] = useState<EngineProfileType | null>(null);
   
 
+
+  
   // --- 1. URL MONITORING & PROFILE LOADING ---
   useEffect(() => {
     if (engineId) {
-      // p?.id-ra javítva, így ha a tömbben undefined van, nem száll el a React
-      const profile = engineProfiles.find(p => p?.id === engineId);
+      // Pontos illeszkedés keresése a generált slug alapján (nincs többé félreértés a hasonló motorkódok miatt)
+      const profile = engineProfiles.find(p => {
+        if (!p?.brand || !p?.model || !p?.generation || !p?.engineCode) return false;
+        return createSlug(p) === engineId.toLowerCase();
+      });
+      
       if (profile) {
         setSelectedProfile(profile);
         setViewState("profile");
@@ -53,8 +59,48 @@ const Index = () => {
     } else {
       setViewState("search");
       setSelectedProfile(null);
+
+      // --- Hash görgetési logika ---
+      if (location.hash) {
+        const targetId = location.hash.substring(1);
+        setTimeout(() => {
+          const element = document.getElementById(targetId);
+          if (element) {
+            let headerOffset = targetId === "features" ? 80 : (targetId === "pricing" ? 1 : 330);
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        }, 150);
+      }
     }
-  }, [engineId]);
+  }, [engineId, location]);
+
+  
+  const createSlug = (p: any) => {
+    const brand = p.brand ? p.brand.toLowerCase() : '';
+    
+    // Kivesszük a modell utolsó részét (pl. "5 Series 520d" -> "520d" vagy "X1 16d" -> "16d")
+    const modelWords = p.model ? p.model.split(' ') : '';
+    const specificModel = modelWords[modelWords.length - 1] || ''; 
+    
+    // A generációból csak az első rövid kódot tartjuk meg (pl. "G60/61/68..." -> "g60" vagy "E84..." -> "e84")
+    const genClean = p.generation ? p.generation.split(/[\s/(\-]+/)[0].toLowerCase() : '';
+    
+    const engineCode = p.engineCode ? p.engineCode.toLowerCase() : '';
+  
+    const rawString = `${brand}-${specificModel}-${genClean}-${engineCode}`;
+    return rawString
+      .toLowerCase()
+      .replace(/[/\\+()]/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+      .replace(/-+/g, '-');
+  };
+  
 
   // --- 2. CATALOG SEARCH HANDLER ---
   const handleSearchEngineType = (brand: string, model: string, generation: string, engineType: string) => {
@@ -82,13 +128,13 @@ const Index = () => {
     specificTorque?: string,
     profileId?: string
   ) => {
-    // A p?. biztosítja, hogy ha a p undefined, ne omoljon össze, hanem ugorjon a következőre
     const baseProfile = profileId 
       ? engineProfiles.find(p => p?.id === profileId)
       : engineProfiles.find(p => p?.engineCode === engineCode);
   
     if (baseProfile) {
-      navigate(`/engine/${baseProfile.id}`);
+      // ITT A JAVÍTÁS: createSlug használata a régi id helyett
+      navigate(`/engine/${createSlug(baseProfile)}`);
     } else {
       alert(`DNA profile for ${engineCode} is not yet available.`);
     }
@@ -121,11 +167,11 @@ const Index = () => {
 
     // Ha megvan a profil, azonnal megnyitjuk!
     if (profile) {
-      navigate(`/engine/${profile.id}`);
+      // ITT IS A JAVÍTÁS: createSlug használata
+      navigate(`/engine/${createSlug(profile)}`);
       setSelectedProfile(profile);
       setViewState("profile");
     } else {
-      // Csak akkor dob át a szelektorra, ha tényleg nincs 3D profil a rendszerben
       console.warn(`3D profil nem található ehhez a motorkódhoz: ${engineCode}`);
       setViewState("engine-code");
     }

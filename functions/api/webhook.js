@@ -20,7 +20,7 @@ export async function onRequestPost(context) {
   let event;
 
   try {
-    // Cloudflare Pages-en a request.text() adja vissza a Stripe által küldett nyers adatot
+    // Cloudflare Pages-en a request.text() adja vissza a Stripe által küldött nyers adatot
     const body = await request.text();
     event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
   } catch (err) {
@@ -33,17 +33,41 @@ export async function onRequestPost(context) {
     const session = event.data.object;
     
     const clerkUserId = session.metadata?.clerkUserId;
-    const productType = session.metadata?.productType;
+    const productType = session.metadata?.productType; // pl. 'audi', 'bmw', 'mercedes', 'bundle'
 
     if (clerkUserId && productType) {
       try {
-        await clerkClient.users.updateUserMetadata(clerkUserId, {
-          publicMetadata: {
+        // Dinamikus metaadatok összeállítása a termék típusa alapján
+        let metadataUpdates = { isPremium: true, passType: productType };
+
+        if (productType === 'bundle') {
+          metadataUpdates = {
             isPremium: true,
+            access: "full",
+            hasBundle: true,
+            hasAudi: true,
+            hasBmw: true,
+            hasMercedes: true,
             passType: productType,
-          },
+          };
+        } else if (['audi', 'bmw', 'mercedes'].includes(productType)) {
+          // Dinamikusan beállítja pl. a hasAudi: true vagy hasBmw: true értéket
+          const brandKey = `has${productType.charAt(0).toUpperCase() + productType.slice(1)}`;
+          metadataUpdates = {
+            isPremium: true,
+            access: "partial",
+            hasBundle: false,
+            [brandKey]: true,
+            passType: productType,
+          };
+        }
+
+        // Clerk user metaadatok frissítése a hivatalos SDK-val
+        await clerkClient.users.updateUserMetadata(clerkUserId, {
+          publicMetadata: metadataUpdates,
         });
-        console.log(`Sikeresen frissítve a Clerk user (${clerkUserId}) prémium státusza erre: ${productType}.`);
+
+        console.log(`Sikeresen frissítve a Clerk user (${clerkUserId}) jogosultsága erre:`, metadataUpdates);
       } catch (err) {
         console.error('Hiba a Clerk metadata frissítésekor:', err);
         return new Response(JSON.stringify({ error: 'Clerk update failed' }), {
