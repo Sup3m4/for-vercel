@@ -8,10 +8,16 @@
   </head>
   <body>
 
-    <div style="max-width: 600px; margin: 40px auto; padding: 20px;"> //fwf dw
+    <div style="max-width: 600px; margin: 40px auto; padding: 20px; text-align: center;">
       <h1>Vásárlás véglegesítése</h1>
+      
+      <!-- ITT A HIÁNYZÓ GOMB, AMIT A JS KERES -->
+      <button id="buy-button" style="padding: 12px 24px; font-size: 18px; background: #635bff; color: white; border: none; border-radius: 6px; cursor: pointer;">
+        Fizetés indítása
+      </button>
+
       <!-- Ide fogja beilleszteni a Stripe a fizetési űrlapot -->
-      <div id="checkout-form"></div>
+      <div id="checkout-form" style="margin-top: 20px;"></div>
     </div>
 
     <script>
