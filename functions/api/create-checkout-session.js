@@ -32,15 +32,14 @@ export async function onRequestPost(context) {
 
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
-      ui_mode: 'form',
       line_items: [{ price: priceId, quantity: 1 }],
       billing_address_collection: 'required',
       submit_type: 'auto',
       tax_id_collection: {
         enabled: true,
       },
-      integration_identifier: 'custom_embedded_web_0001',
-      return_url: `${origin}/?success=true`,
+      success_url: `${origin}/?success=true`,
+      cancel_url: `${origin}/`,
       metadata: {
         clerkUserId: clerkUserId,
         productType: productType,
