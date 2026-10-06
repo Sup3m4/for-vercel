@@ -40,9 +40,6 @@ export async function onRequestPost(context) {
         enabled: true,
       },
       integration_identifier: 'custom_embedded_web_0001',
-      saved_payment_method_options: {
-        payment_method_save: 'enabled',
-      },
       success_url: `${origin}/?success=true`,
       cancel_url: `${origin}/`,
       metadata: {
