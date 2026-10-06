@@ -40,8 +40,7 @@ export async function onRequestPost(context) {
         enabled: true,
       },
       integration_identifier: 'custom_embedded_web_0001',
-      success_url: `${origin}/?success=true`,
-      cancel_url: `${origin}/`,
+      return_url: `${origin}/?success=true`,
       metadata: {
         clerkUserId: clerkUserId,
         productType: productType,
