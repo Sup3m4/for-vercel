@@ -4,9 +4,9 @@ export async function onRequestPost(context) {
   const { request, env } = context;
 
   try {
-    // Stripe inicializálása a Cloudflare környezeti változókból (env)
+    // Stripe inicializálása a Cloudflare környezeti változókból a frissített API verzióval
     const stripe = new Stripe(env.STRIPE_SECRET_KEY, {
-      apiVersion: '2023-10-16',
+      apiVersion: '2026-03-25.dahlia; custom_checkout_payment_form_preview=v1',
     });
 
     const body = await request.json();
@@ -31,14 +31,18 @@ export async function onRequestPost(context) {
     const origin = url.origin;
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: [{ price: priceId, quantity: 1 }],
       mode: 'payment',
-
+      ui_mode: 'form',
+      line_items: [{ price: priceId, quantity: 1 }],
+      billing_address_collection: 'required',
+      submit_type: 'auto',
       tax_id_collection: {
         enabled: true,
       },
-
+      integration_identifier: 'custom_embedded_web_0001',
+      saved_payment_method_options: {
+        payment_method_save: 'enabled',
+      },
       success_url: `${origin}/?success=true`,
       cancel_url: `${origin}/`,
       metadata: {

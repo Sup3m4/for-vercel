@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <title>PistonDNA - Biztonságos fizetés</title>
+    <!-- A Stripe hivatalos JS könyvtára -->
+    <script src="https://js.stripe.com/dahlia/stripe.js"></script>
+  </head>
+  <body>
+
+    <div style="max-width: 600px; margin: 40px auto; padding: 20px;">
+      <h1>Vásárlás véglegesítése</h1>
+      <!-- Ide fogja beilleszteni a Stripe a fizetési űrlapot -->
+      <div id="checkout-form"></div>
+    </div>
+
+    <script>
+      // 1. Inicializáld a Stripe-ot a publikus kulcsoddal (cseréld ki a saját pk_test_... kulcsodra)
+      const stripe = Stripe('ide_ird_a_sajat_publishable_key_kulcsodat');
+
+      async function initializeCheckout() {
+        try {
+          // 2. Meghívjuk a te szerveroldali végpontunkat, amit az előbb hoztunk létre
+          const response = await fetch('/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              productType: 'bundle', // Vagy dinamikusan, pl. URL-ből kiolvasva
+              clerkUserId: 'user_123' // A bejelentkezett felhasználó ID-je
+            }),
+          });
+
+          const data = await response.json();
+          
+          if (data.url) {
+            // Ha a szerver visszaküldte az URL-t, átirányítjuk vagy betöltjük
+            window.location.href = data.url;
+          } else if (data.clientSecret) {
+            // Ha közvetlenül beágyazott űrlapot használunk:
+            // (A Stripe embedded/form módjához tartozó mount logika ide kerül)
+            console.log("Session létrejött");
+          }
+        } catch (err) {
+          console.error('Hiba a fizetés indításakor:', err);
+        }
+      }
+
+      // Futtassuk le az inicializálást betöltődéskor
+      initializeCheckout();
+    </script>
+  </body>
+</html>

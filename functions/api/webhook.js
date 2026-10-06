@@ -5,7 +5,7 @@ export async function onRequestPost(context) {
   const { request, env } = context;
 
   const stripe = new Stripe(env.STRIPE_SECRET_KEY, {
-    apiVersion: '2023-10-16',
+    apiVersion: '2026-03-25.dahlia; custom_checkout_payment_form_preview=v1',
   });
   
   const clerkClient = createClerkClient({ secretKey: env.CLERK_SECRET_KEY });
