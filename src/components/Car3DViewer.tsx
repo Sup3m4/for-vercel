@@ -876,27 +876,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, setIsCameraMoving, ho
             setDetectedHeadlights={setDetectedHeadlights}
             setDetectedTaillights={setDetectedTaillights}
             setDetectedRdllight={setDetectedDrllight}
-            onClick={(e: any) => {
-              e.stopPropagation();
-              
-              const { x, y, z } = e.point;
-              const formattedX = Number(x.toFixed(2));
-              const formattedY = Number(y.toFixed(2));
-              const formattedZ = Number(z.toFixed(2));
-            
-              const clipboardString = `{ x: ${formattedX}, y: ${formattedY}, z: ${formattedZ} }`;
-            
-              if (navigator.clipboard) {
-                navigator.clipboard.writeText(clipboardString)
-                  .then(() => {
-                    console.log("✅ Vágólapra másolva:", clipboardString);
-                  })
-                  .catch(err => {
-                    console.error("❌ Hiba a másolásnál:", err);
-                  });
-              }
-            }}
->
+          >
 {showHotspots && smartHotspots.map((spot: Hotspot3D, index: number) => {
                 return (
                     <group key={index} position={[spot.x, spot.y, spot.z]}>

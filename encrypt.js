@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 const XOR_KEY = 0xAA; 
 const TARGET_DIR = path.join(__dirname, 'public', 'images', 'brands');
 
-console.log(`🔍 Keresés indítása a 'brands' mappában: ${TARGET_DIR}`);
+
 
 if (!fs.existsSync(TARGET_DIR)) {
   console.error(`❌ HIBA: A 'brands' mappa nem létezik ezen az útvonalon: ${TARGET_DIR}`);
@@ -39,7 +39,7 @@ function walkAndEncrypt(currentDir) {
         }
         
         fs.writeFileSync(outputPath, buffer);
-        console.log(`🔒 Titkosítva: ${path.relative(TARGET_DIR, fullPath)} ➡️ .dat`);
+       
         totalProcessed++;
       } catch (error) {
         console.error(`❌ Hiba a(z) ${entry.name} fájl titkosításakor:`, error);
@@ -49,4 +49,3 @@ function walkAndEncrypt(currentDir) {
 }
 
 walkAndEncrypt(TARGET_DIR);
-console.log(`\n✅ Kész! Összesen ${totalProcessed} db .glb fájl lett automatikusan feldolgozva a mappákban.`);

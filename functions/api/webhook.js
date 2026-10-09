@@ -67,7 +67,7 @@ export async function onRequestPost(context) {
           publicMetadata: metadataUpdates,
         });
 
-        console.log(`Sikeresen frissítve a Clerk user (${clerkUserId}) jogosultsága erre:`, metadataUpdates);
+       
       } catch (err) {
         console.error('Hiba a Clerk metadata frissítésekor:', err);
         return new Response(JSON.stringify({ error: 'Clerk update failed' }), {

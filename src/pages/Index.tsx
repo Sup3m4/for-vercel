@@ -45,7 +45,7 @@ const Index = () => {
   // --- 1. URL MONITORING & PROFILE LOADING ---
   useEffect(() => {
     if (engineId) {
-      // Pontos illeszkedés keresése a generált slug alapján (nincs többé félreértés a hasonló motorkódok miatt)
+      // Pontos illeszkedés keresése a generált slug alapján
       const profile = engineProfiles.find(p => {
         if (!p?.brand || !p?.model || !p?.generation || !p?.engineCode) return false;
         return createSlug(p) === engineId.toLowerCase();
@@ -55,6 +55,13 @@ const Index = () => {
         setSelectedProfile(profile);
         setViewState("profile");
         window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // --- IDE JÖN AZ ÚJ ELŐZMÉNY MENTÉS ---
+        const history = JSON.parse(localStorage.getItem('car_dna_recent_engines') || '[]');
+        const filtered = history.filter((id: string) => id !== profile.id);
+        const updated = [profile.id, ...filtered].slice(0, 10); // Legfeljebb 10 elem
+        localStorage.setItem('car_dna_recent_engines', JSON.stringify(updated));
+        // -------------------------------------
       }
     } else {
       setViewState("search");

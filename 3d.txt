@@ -418,20 +418,16 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
   const activeManualLights = activeProfile?.manualLightPositions;
   const fileName = (path.split('/').pop() || "").split('?')[0];
 
-  useEffect(() => {
-    console.log("=== LIGHT DETECTION DATA ===");
-    console.log("Custom Light Names received:", customLightNames);
-}, [customLightNames]);
+
   useMemo(() => {
     if (!scene) return;
     
-    // --- EZT ADD HOZZÁ: LISTÁZÁS ---
-    console.log("=== 🔍 MODELL ALKATRÉSZEK LISTÁJA ===");
+
     
     scene.traverse((child: any) => {
        if (child.isMesh) {
           // KIÍRJUK MINDEN MESH NEVÉT:
-          console.log(`- "${child.name}"`); 
+
           
           child.castShadow = true;
           child.receiveShadow = true;
@@ -441,7 +437,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
           }
        }
     });
-    console.log("=====================================");
+
  }, [scene]);
  
 
@@ -461,7 +457,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
   const tailCenters: THREE.Vector3[] = [];
   const drlCenters: THREE.Vector3[] = [];
 
-  console.log("=== 🔍 EXACT LIGHT SEARCH STARTING ===");
+ 
 
   // OPTIMIZATION: Read profile values only once before the loop
   const drlGlow = activeProfile?.lightSettings?.meshGlowDrl ?? 5;
@@ -518,7 +514,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
           }
 
           if (matched) {
-              console.log(`✅ EXACT MATCH (${lightType}):`, child.name);
+            
               child.castShadow = false;
 
               const childBox = new THREE.Box3().setFromObject(child);
@@ -531,7 +527,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
               const isCombinedMesh = isXLonger ? childSize.z > 0.8 : childSize.x > 0.8;
 
               if (isCombinedMesh) {
-                  console.log(`⚠️ Combined ${lightType} mesh detected! Splitting into left and right.`);
+               
                   const leftPos = childCenter.clone();
                   const rightPos = childCenter.clone();
                   
@@ -557,7 +553,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
     }
   });
 
-  console.log(`Result: ${drlCenters.length} DRL, ${headCenters.length} Headlight, ${tailCenters.length} Taillight.`);
+ 
 
   // Sort the matched centers based on car orientation
   const sortLeftRight = (centers: THREE.Vector3[]) => {
@@ -591,12 +587,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
     box.getSize(size);
     box.getCenter(center);
 
-    console.log("=== 3D MODEL REAL SIZE ===");
-    console.log(`File: ${path}`);
-    console.log(`Width (X): ${size.x.toFixed(2)}`);
-    console.log(`Height (Y): ${size.y.toFixed(2)}`);
-    console.log(`Length (Z): ${size.z.toFixed(2)}`);
-    console.log("===============================");
+  
     
     let frontCount = 0; let frontZSum = 0;
     modelRef.current.traverse((child) => {
@@ -786,9 +777,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
       // 1. A PONTOS KATTINTÁS HELYE (Világkoordináta)
       const hitPoint = e.point;
       
-      console.log("------------------------------------------------");
-      console.log("🎯 CÉLZOTT KOORDINÁTÁK (Ezt másold be!):");
-      console.log(`Elem neve: "${e.object.name}"`);
+     
       
       // 2. FORMÁZOTT ADAT (X mindig pozitív legyen a szimmetria miatt)
       // A toFixed(2) két tizedesjegyre kerekít, ami bőven elég
@@ -798,9 +787,7 @@ function Model({ path, hotspots, showHotspots, activeSpot, hotspotSettings, setA
           z: Number(hitPoint.z.toFixed(2))
       };
       
-      console.log("manualLightPositions:");
-      console.log(JSON.stringify(coordinateData, null, 2));
-      console.log("------------------------------------------------");
+    
 
       // 3. GYORS VISSZAJELZÉS
       window.alert(`KOORDINÁTÁK MÁSOLVA A KONZOLRA (F12)!\n\nX: ${coordinateData.x}\nY: ${coordinateData.y}\nZ: ${coordinateData.z}\n\nNyisd meg a konzolt és másold ki!`);
